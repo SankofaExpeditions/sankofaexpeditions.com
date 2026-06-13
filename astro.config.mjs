@@ -4,7 +4,6 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://sankofaexpeditions.github.io',
-  base: '/sankofaexpeditions.com',
+  site: 'https://sankofaexpeditions.com',
   integrations: [sitemap()],
 });
