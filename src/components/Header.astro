@@ -1,0 +1,234 @@
+---
+const navItems = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/expeditions', label: 'Expeditions' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+
+<header class="site-header" role="banner">
+  <div class="container header-inner">
+    <a href="/" class="logo" aria-label="Sankofa Expeditions — Home">
+      <svg class="logo-icon" viewBox="0 0 64 64" width="40" height="40" aria-hidden="true">
+        <defs>
+          <linearGradient id="logo-g" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#C4841D" />
+            <stop offset="100%" style="stop-color:#E8A849" />
+          </linearGradient>
+        </defs>
+        <circle cx="32" cy="32" r="30" fill="#121212"/>
+        <path d="M20 42 C20 42 18 30 24 24 C28 20 34 20 36 24 C38 28 36 32 32 34 L38 34 C40 34 42 32 42 28 C42 22 38 18 32 16 C24 14 16 18 14 26 C12 34 16 42 20 42Z" fill="url(#logo-g)"/>
+        <circle cx="30" cy="24" r="2" fill="#121212"/>
+        <ellipse cx="22" cy="40" rx="4" ry="5" fill="url(#logo-g)"/>
+      </svg>
+      <span class="logo-text">
+        <span class="logo-text-primary">Sankofa</span>
+        <span class="logo-text-secondary">Expeditions</span>
+      </span>
+    </a>
+
+    <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">
+      <span class="hamburger"></span>
+    </button>
+
+    <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+      <ul class="nav-list" role="list">
+        {navItems.map(item => (
+          <li>
+            <a href={item.href} class="nav-link">{item.label}</a>
+          </li>
+        ))}
+      </ul>
+      <a href="#join" class="btn btn--primary btn--sm nav-cta">Get Intel</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--color-dark);
+    border-bottom: 1px solid rgba(196, 132, 29, 0.15);
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-xl);
+  }
+
+  /* Logo */
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .logo-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+  }
+
+  .logo-text-primary {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text-light);
+    letter-spacing: -0.01em;
+  }
+
+  .logo-text-secondary {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+
+  /* Navigation */
+  .main-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+  }
+
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    list-style: none;
+  }
+
+  .nav-link {
+    display: block;
+    padding: var(--space-sm) var(--space-md);
+    color: var(--color-text-on-dark);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    transition: color var(--transition-fast), background var(--transition-fast);
+  }
+
+  .nav-link:hover {
+    color: var(--color-gold);
+    background: rgba(196, 132, 29, 0.08);
+  }
+
+  .nav-cta {
+    white-space: nowrap;
+  }
+
+  /* Mobile Toggle */
+  .mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--space-sm);
+    z-index: 101;
+  }
+
+  .hamburger,
+  .hamburger::before,
+  .hamburger::after {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--color-text-light);
+    border-radius: 2px;
+    transition: all var(--transition-base);
+  }
+
+  .hamburger {
+    position: relative;
+  }
+
+  .hamburger::before,
+  .hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+  }
+
+  .hamburger::before { top: -7px; }
+  .hamburger::after { top: 7px; }
+
+  /* Mobile Styles */
+  @media (max-width: 768px) {
+    .mobile-toggle {
+      display: block;
+    }
+
+    .main-nav {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: min(320px, 85vw);
+      height: 100vh;
+      background: var(--color-dark);
+      flex-direction: column;
+      align-items: flex-start;
+      padding: calc(var(--header-height) + var(--space-xl)) var(--space-xl) var(--space-xl);
+      transition: right var(--transition-slow);
+      border-left: 1px solid rgba(196, 132, 29, 0.15);
+    }
+
+    .main-nav.is-open {
+      right: 0;
+    }
+
+    .nav-list {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    .nav-link {
+      font-size: 1.1rem;
+      padding: var(--space-md);
+      width: 100%;
+    }
+
+    .nav-cta {
+      width: 100%;
+      text-align: center;
+      margin-top: var(--space-md);
+    }
+  }
+</style>
+
+<script>
+  const toggle = document.querySelector('.mobile-toggle');
+  const nav = document.querySelector('.main-nav');
+
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    // Close on link click
+    nav.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+</script>

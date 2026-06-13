@@ -1,0 +1,123 @@
+---
+---
+
+<section id="mission" class="section section--alt" aria-labelledby="mission-heading">
+  <div class="container">
+    <div class="mission-layout">
+      <div class="mission-content">
+        <span class="eyebrow">Our Mission</span>
+        <h2 id="mission-heading">Go Back and Fetch It. Then Build Forward.</h2>
+        <hr class="divider" style="margin-left: 0;" />
+        <p>
+          <strong>Sankofa</strong> is an Akan word from Ghana meaning <em>"go back and get it."</em> The Sankofa bird flies forward while looking backward—carrying the egg of knowledge, wisdom, and heritage into the future.
+        </p>
+        <p>
+          <strong>Sankofa Expeditions</strong> exists because the African diaspora deserves more than travel brochures and tourist traps. We provide real intelligence—the kind that helps you navigate visa processes, understand local economies, find trustworthy partners, secure housing, and actually build something lasting on the continent.
+        </p>
+        <p>
+          Whether you're exploring relocation, launching a business, investing in real estate, or reconnecting with your roots, we provide the infrastructure and intelligence that turns intention into action.
+        </p>
+      </div>
+      <aside class="mission-pillars" aria-label="Core pillars">
+        <div class="pillar">
+          <div class="pillar-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+            </svg>
+          </div>
+          <h3>Pan-African Coverage</h3>
+          <p>Intelligence across all 54 African nations—not just the popular destinations. We go where the opportunity is, not just where the flights are cheap.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+            </svg>
+          </div>
+          <h3>Diaspora-First</h3>
+          <p>Built by diaspora, for diaspora. We understand the unique challenges of reconnecting with and building on a continent that's been systematically misrepresented.</p>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3>Verified Intel</h3>
+          <p>No recycled blog content or AI-generated fluff. Our intelligence comes from boots on the ground, real relationships, and hard-won experience.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<style>
+  .mission-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+    align-items: start;
+  }
+
+  @media (min-width: 960px) {
+    .mission-layout {
+      grid-template-columns: 1.2fr 1fr;
+    }
+  }
+
+  .mission-content p {
+    font-size: 1.05rem;
+    color: var(--color-text);
+    line-height: 1.8;
+  }
+
+  .mission-content strong {
+    color: var(--color-dark);
+  }
+
+  .mission-pillars {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .pillar {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-xl);
+    transition: all var(--transition-base);
+  }
+
+  .pillar:hover {
+    box-shadow: var(--shadow-md);
+    border-color: rgba(196, 132, 29, 0.25);
+  }
+
+  .pillar-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(196, 132, 29, 0.1), rgba(232, 168, 73, 0.08));
+    border-radius: var(--radius-sm);
+    color: var(--color-gold);
+    margin-bottom: var(--space-md);
+  }
+
+  .pillar h3 {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .pillar p {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+</style>

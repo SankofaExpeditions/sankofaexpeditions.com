@@ -1,0 +1,224 @@
+---
+const currentYear = new Date().getFullYear();
+
+const footerNav = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'Expeditions', href: '/expeditions' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Contact', href: '/contact' },
+];
+
+const socialLinks = [
+  { label: 'X (Twitter)', href: 'https://x.com/ExpeditSankofa', icon: 'x' },
+  { label: 'Instagram', href: 'https://instagram.com/expeditsankofa', icon: 'instagram' },
+  { label: 'TikTok', href: 'https://tiktok.com/@expeditsankofa', icon: 'tiktok' },
+  { label: 'Email', href: 'mailto:info@sankofaexpeditions.com', icon: 'email' },
+  { label: 'Cash App', href: 'https://cash.app/$investgeek', icon: 'cashapp' },
+];
+---
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Brand Column -->
+      <div class="footer-brand">
+        <a href="/" class="footer-logo" aria-label="Sankofa Expeditions — Home">
+          <svg class="footer-logo-icon" viewBox="0 0 64 64" width="36" height="36" aria-hidden="true">
+            <defs>
+              <linearGradient id="footer-g" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#C4841D" />
+                <stop offset="100%" style="stop-color:#E8A849" />
+              </linearGradient>
+            </defs>
+            <circle cx="32" cy="32" r="30" fill="#1A1A2E"/>
+            <path d="M20 42 C20 42 18 30 24 24 C28 20 34 20 36 24 C38 28 36 32 32 34 L38 34 C40 34 42 32 42 28 C42 22 38 18 32 16 C24 14 16 18 14 26 C12 34 16 42 20 42Z" fill="url(#footer-g)"/>
+            <circle cx="30" cy="24" r="2" fill="#1A1A2E"/>
+            <ellipse cx="22" cy="40" rx="4" ry="5" fill="url(#footer-g)"/>
+          </svg>
+          <span class="footer-logo-text">Sankofa Expeditions</span>
+        </a>
+        <p class="footer-tagline">
+          Intelligence, infrastructure, and real-world pathways for Africans and the African diaspora to move, build, and thrive across the continent.
+        </p>
+      </div>
+
+      <!-- Navigation Column -->
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <h3 class="footer-heading">Navigate</h3>
+        <ul role="list">
+          {footerNav.map(item => (
+            <li><a href={item.href}>{item.label}</a></li>
+          ))}
+        </ul>
+      </nav>
+
+      <!-- Connect Column -->
+      <div class="footer-connect">
+        <h3 class="footer-heading">Connect</h3>
+        <ul class="social-links" role="list">
+          {socialLinks.map(link => (
+            <li>
+              <a href={link.href} target={link.icon !== 'email' ? '_blank' : undefined} rel={link.icon !== 'email' ? 'noopener noreferrer' : undefined} aria-label={`Follow us on ${link.label}`}>
+                {link.icon === 'x' && (
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                )}
+                {link.icon === 'instagram' && (
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                  </svg>
+                )}
+                {link.icon === 'tiktok' && (
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                    <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.48V13a8.28 8.28 0 005.58 2.17V11.7a4.83 4.83 0 01-3.77-1.24V6.69h3.77z"/>
+                  </svg>
+                )}
+                {link.icon === 'email' && (
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                    <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                  </svg>
+                )}
+                {link.icon === 'cashapp' && (
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                    <path d="M23.59 3.47A5.1 5.1 0 0020.47.38C19.21.01 17.88 0 15.22 0H8.78C6.12 0 4.79.01 3.53.38A5.1 5.1 0 00.41 3.47C.04 4.73 0 6.08 0 8.78v6.44c0 2.7.04 4.05.41 5.31A5.1 5.1 0 003.53 23.62c1.26.37 2.59.38 5.25.38h6.44c2.66 0 3.99-.01 5.25-.38a5.1 5.1 0 003.12-3.09c.37-1.26.41-2.61.41-5.31V8.78c0-2.7-.04-4.05-.41-5.31zM17.42 15.3c-.55 1.78-2.17 2.94-4.64 3.24l-.34 1.67a.38.38 0 01-.37.31h-1.82a.38.38 0 01-.37-.44l.3-1.49c-.67-.07-1.36-.22-2.05-.43a7.7 7.7 0 01-1.18-.5.38.38 0 01-.16-.49l.67-1.64a.38.38 0 01.52-.19c.87.47 1.82.74 2.77.82l.46-2.29c-1.95-.51-3.96-1.34-3.44-3.98.33-1.68 1.75-2.82 3.98-3.14l.34-1.67a.38.38 0 01.37-.31h1.82c.23 0 .4.2.37.44l-.3 1.42c.51.05 1.03.15 1.56.3.52.15.88.3 1.07.41a.38.38 0 01.16.49l-.62 1.65a.38.38 0 01-.49.21c-.71-.3-1.5-.5-2.28-.56l-.43 2.16c2.06.54 4.07 1.35 3.54 4.02z"/>
+                  </svg>
+                )}
+                <span>{link.label}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <p>&copy; {currentYear} Sankofa Expeditions. All rights reserved.</p>
+      <p class="footer-motto">
+        <em>"Se wo were fi na wosankofa a yenkyi."</em> — It is not wrong to go back for that which you have forgotten.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--color-dark);
+    color: var(--color-text-on-dark);
+    padding: var(--space-3xl) 0 var(--space-xl);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+    margin-bottom: var(--space-2xl);
+  }
+
+  @media (min-width: 640px) {
+    .footer-grid {
+      grid-template-columns: 2fr 1fr 1fr;
+    }
+  }
+
+  /* Brand */
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    text-decoration: none;
+    margin-bottom: var(--space-md);
+  }
+
+  .footer-logo-text {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-text-light);
+  }
+
+  .footer-tagline {
+    font-size: 0.9rem;
+    color: var(--color-text-on-dark);
+    opacity: 0.75;
+    line-height: 1.6;
+    max-width: 360px;
+  }
+
+  /* Headings */
+  .footer-heading {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-gold);
+    margin-bottom: var(--space-md);
+  }
+
+  /* Nav */
+  .footer-nav ul {
+    list-style: none;
+  }
+
+  .footer-nav li {
+    margin-bottom: var(--space-sm);
+  }
+
+  .footer-nav a {
+    color: var(--color-text-on-dark);
+    opacity: 0.8;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: opacity var(--transition-fast), color var(--transition-fast);
+  }
+
+  .footer-nav a:hover {
+    opacity: 1;
+    color: var(--color-gold);
+  }
+
+  /* Social */
+  .social-links {
+    list-style: none;
+  }
+
+  .social-links li {
+    margin-bottom: var(--space-sm);
+  }
+
+  .social-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--color-text-on-dark);
+    opacity: 0.8;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: opacity var(--transition-fast), color var(--transition-fast);
+  }
+
+  .social-links a:hover {
+    opacity: 1;
+    color: var(--color-gold);
+  }
+
+  /* Bottom */
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: var(--space-xl);
+    text-align: center;
+  }
+
+  .footer-bottom p {
+    font-size: 0.85rem;
+    opacity: 0.6;
+    margin: 0 auto var(--space-sm);
+  }
+
+  .footer-motto {
+    font-size: 0.8rem !important;
+    opacity: 0.4 !important;
+    max-width: 500px;
+  }
+</style>

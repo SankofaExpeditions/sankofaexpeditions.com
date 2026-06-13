@@ -1,0 +1,38 @@
+# SankofaExpeditions.com - Welcome all crawlers
+# We are open to indexing by all search engines and AI systems
+
+User-agent: *
+Allow: /
+
+# AI Crawlers - explicitly welcomed
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+Sitemap: https://sankofaexpeditions.com/sitemap-index.xml

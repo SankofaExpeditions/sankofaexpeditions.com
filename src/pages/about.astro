@@ -1,0 +1,480 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'About Sankofa Expeditions';
+const description = 'Sankofa Expeditions is an intelligence platform built by the diaspora, for the diaspora. We deliver verified, on-the-ground intelligence about Africa — not tourist brochures, not opinions, but actionable truth.';
+
+const jsonLd = [
+  // AboutPage
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "@id": "https://sankofaexpeditions.com/about/#aboutpage",
+    "url": "https://sankofaexpeditions.com/about",
+    "name": title,
+    "description": description,
+    "isPartOf": {
+      "@id": "https://sankofaexpeditions.com/#website"
+    },
+    "about": {
+      "@id": "https://sankofaexpeditions.com/#organization"
+    },
+    "mainEntity": {
+      "@id": "https://sankofaexpeditions.com/#organization"
+    },
+    "inLanguage": "en-US",
+    "datePublished": "2024-01-01",
+    "dateModified": new Date().toISOString().split('T')[0]
+  },
+  // WebPage
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://sankofaexpeditions.com/about/#webpage",
+    "url": "https://sankofaexpeditions.com/about",
+    "name": title,
+    "description": description,
+    "isPartOf": {
+      "@id": "https://sankofaexpeditions.com/#website"
+    },
+    "breadcrumb": {
+      "@id": "https://sankofaexpeditions.com/about/#breadcrumb"
+    },
+    "inLanguage": "en-US"
+  },
+  // BreadcrumbList
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://sankofaexpeditions.com/about/#breadcrumb",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sankofaexpeditions.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About",
+        "item": "https://sankofaexpeditions.com/about"
+      }
+    ]
+  }
+];
+---
+
+<BaseLayout title={title} description={description} ogType="website" jsonLd={jsonLd}>
+
+  <!-- Hero Banner -->
+  <section class="about-hero" aria-labelledby="about-heading">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li aria-current="page">About</li>
+        </ol>
+      </nav>
+      <span class="eyebrow">Who We Are</span>
+      <h1 id="about-heading">
+        About <span class="gradient-text">Sankofa Expeditions</span>
+      </h1>
+      <p class="about-hero__subtitle">
+        We're not a travel agency. We're the intelligence platform the African diaspora has been waiting for.
+      </p>
+    </div>
+  </section>
+
+  <!-- The Origin Story -->
+  <article class="section" aria-labelledby="origin-heading">
+    <div class="container container--narrow">
+      <header class="section-header">
+        <span class="eyebrow">The Origin Story</span>
+        <h2 id="origin-heading">Why Sankofa Exists</h2>
+        <hr class="divider" />
+      </header>
+      <div class="prose">
+        <p>
+          The diaspora's relationship with Africa is broken. Not by distance, not by time — by information gaps, gatekeepers, and tourist traps. For too long, the African diaspora has been fed a diet of curated highlights, surface-level travel content, and overpriced "heritage tours" that barely scratch the surface of what the continent actually offers.
+        </p>
+        <p>
+          Sankofa Expeditions was born to fix that.
+        </p>
+        <p>
+          Founded by someone who lived the diaspora experience and saw firsthand that the biggest barrier to meaningful engagement with Africa wasn't money or desire — <strong>it was intelligence</strong>. Real, verified, on-the-ground intelligence about how things actually work. Where to go. Who to trust. What it actually costs. What the visa situation really looks like. What nobody tells you until you've already landed.
+        </p>
+        <p>
+          We built Sankofa because we got tired of watching people get burned by bad information, exploited by middlemen, and disillusioned by experiences that didn't match the marketing. The diaspora deserves better. Africa deserves better. This is our answer.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <!-- The Name -->
+  <section class="section section--alt" aria-labelledby="name-heading">
+    <div class="container container--narrow">
+      <header class="section-header">
+        <span class="eyebrow">The Name</span>
+        <h2 id="name-heading">What Sankofa Means</h2>
+        <hr class="divider" />
+      </header>
+      <div class="sankofa-meaning">
+        <div class="sankofa-symbol" aria-hidden="true">
+          <svg viewBox="0 0 140 140" width="140" height="140">
+            <defs>
+              <linearGradient id="sankofa-g" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#C4841D;stop-opacity:0.9" />
+                <stop offset="100%" style="stop-color:#E8A849;stop-opacity:0.9" />
+              </linearGradient>
+            </defs>
+            <circle cx="70" cy="70" r="65" fill="none" stroke="url(#sankofa-g)" stroke-width="1" opacity="0.25" />
+            <g transform="translate(25, 20) scale(1.4)">
+              <path d="M20 42 C20 42 18 30 24 24 C28 20 34 20 36 24 C38 28 36 32 32 34 L38 34 C40 34 42 32 42 28 C42 22 38 18 32 16 C24 14 16 18 14 26 C12 34 16 42 20 42Z" fill="url(#sankofa-g)"/>
+              <circle cx="30" cy="24" r="2" fill="#121212"/>
+              <ellipse cx="22" cy="40" rx="4" ry="5" fill="url(#sankofa-g)"/>
+            </g>
+          </svg>
+        </div>
+        <div class="prose">
+          <p>
+            <strong>Sankofa</strong> is an Akan concept from Ghana. The Sankofa bird flies forward while looking backward — carrying an egg in its mouth, a symbol of the future nurtured by wisdom from the past.
+          </p>
+          <blockquote>
+            <p>"Se wo were fi na wosankofa a yenkyi"</p>
+            <cite>— It is not wrong to go back for that which you have forgotten.</cite>
+          </blockquote>
+          <p>
+            We go back to Africa not with nostalgia but with purpose. Not as tourists but as people reclaiming a connection that was severed, armed with intelligence and intent. The Sankofa bird doesn't fly backward — it moves forward with its eye on where it came from. That's exactly what we do.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Makes Us Different -->
+  <section class="section" aria-labelledby="difference-heading">
+    <div class="container">
+      <header class="section-header">
+        <span class="eyebrow">What Makes Us Different</span>
+        <h2 id="difference-heading">Intelligence, Not Itineraries</h2>
+        <hr class="divider" />
+        <p>We're not a travel agency. We're an intelligence platform. There's a difference.</p>
+      </header>
+      <div class="grid grid--3">
+        <div class="card difference-card">
+          <div class="difference-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 20H6a2 2 0 01-2-2V6a2 2 0 012-2h12a2 2 0 012 2v4" />
+              <path d="M15 2v4" /><path d="M9 2v4" /><path d="M4 10h16" />
+              <circle cx="18" cy="18" r="3" /><path d="M20.2 20.2L22 22" />
+            </svg>
+          </div>
+          <h3>Travel Agencies Sell Packages</h3>
+          <p>Pre-packaged tours with markup, middlemen, and zero transparency. You pay for convenience and get a curated bubble.</p>
+          <div class="difference-vs">
+            <span class="eyebrow">We deliver intelligence</span>
+            <p>Deep-dive country profiles, real cost breakdowns, visa navigation, and ground-truth reporting so you move with clarity and power.</p>
+          </div>
+        </div>
+        <div class="card difference-card">
+          <div class="difference-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 10l5-5" /><path d="M20 5h-5v5" />
+              <rect x="3" y="3" width="7" height="7" rx="1" />
+              <rect x="14" y="14" width="7" height="7" rx="1" />
+              <path d="M3 14l5 5" /><path d="M3 19h5v-5" />
+            </svg>
+          </div>
+          <h3>Tourism Sites Show Highlights</h3>
+          <p>Glossy photos, best-case scenarios, and SEO-optimized listicles that tell you where to take selfies, not how to navigate reality.</p>
+          <div class="difference-vs">
+            <span class="eyebrow">We show reality</span>
+            <p>What it actually costs, what the infrastructure looks like, what the safety situation is, and what nobody puts in the brochure.</p>
+          </div>
+        </div>
+        <div class="card difference-card">
+          <div class="difference-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 20h9" /><path d="M16.5 3.5a2.121 2.121 0 113 3L7 19l-4 1 1-4L16.5 3.5z" />
+            </svg>
+          </div>
+          <h3>Blogs Share Opinions</h3>
+          <p>Personal anecdotes, sponsored content, and hot takes from a two-week trip. Useful for vibes, useless for decisions.</p>
+          <div class="difference-vs">
+            <span class="eyebrow">We verify facts on the ground</span>
+            <p>On-the-ground networks across Africa feeding us verified, current intelligence. Not stories — data you can act on.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Team / Leadership -->
+  <section class="section section--dark" aria-labelledby="team-heading">
+    <div class="container container--narrow text-center">
+      <header class="section-header">
+        <span class="eyebrow" style="color: var(--color-gold-light);">Leadership</span>
+        <h2 id="team-heading">Who's Behind This</h2>
+        <hr class="divider" />
+      </header>
+      <div class="team-statement">
+        <p>
+          Led by diaspora. Powered by on-the-ground networks across Africa.
+        </p>
+        <p>
+          Our team spans the Atlantic — from diaspora communities in the Americas, Europe, and the Caribbean to trusted operators, researchers, and cultural brokers in countries across the African continent. We're not observing from a distance. We're embedded.
+        </p>
+        <p>
+          We don't name-drop or chase clout. We let the intelligence speak for itself. When we say something about a country, a visa process, a cost of living, or an opportunity — it's because someone in our network has verified it. That's the standard.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" aria-labelledby="about-cta-heading">
+    <div class="container container--narrow text-center">
+      <header class="section-header">
+        <span class="eyebrow">Join the Movement</span>
+        <h2 id="about-cta-heading">Ready to Move with Intelligence?</h2>
+        <hr class="divider" />
+        <p>
+          The diaspora is waking up. Africa is calling. But you don't answer that call with blind faith — you answer it with intelligence. Get on our list and receive verified intel drops, country deep-dives, and diaspora pathway updates.
+        </p>
+      </header>
+      <div class="about-cta-actions">
+        <a href="/#join" class="btn btn--primary">Get the Intel →</a>
+        <a href="/" class="btn btn--secondary">Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* =====================
+     About Hero
+     ===================== */
+  .about-hero {
+    background: var(--color-dark);
+    color: var(--color-text-on-dark);
+    padding: var(--space-3xl) 0 var(--space-4xl);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      radial-gradient(ellipse at 30% 60%, rgba(196, 132, 29, 0.06) 0%, transparent 60%),
+      radial-gradient(ellipse at 70% 20%, rgba(196, 132, 29, 0.04) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .about-hero .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Breadcrumb */
+  .breadcrumb {
+    margin-bottom: var(--space-xl);
+  }
+
+  .breadcrumb ol {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    list-style: none;
+    font-size: 0.85rem;
+  }
+
+  .breadcrumb li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .breadcrumb li + li::before {
+    content: '/';
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  .breadcrumb a {
+    color: var(--color-gold-light);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .breadcrumb a:hover {
+    color: var(--color-gold);
+  }
+
+  .breadcrumb [aria-current="page"] {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .about-hero .eyebrow {
+    margin-bottom: var(--space-md);
+  }
+
+  .about-hero h1 {
+    color: var(--color-text-light);
+    margin-bottom: var(--space-lg);
+    max-width: 700px;
+  }
+
+  .about-hero__subtitle {
+    font-size: 1.2rem;
+    color: var(--color-text-on-dark);
+    opacity: 0.85;
+    max-width: 600px;
+    line-height: 1.7;
+  }
+
+  /* =====================
+     Prose (body text)
+     ===================== */
+  .prose {
+    max-width: 70ch;
+    margin: 0 auto;
+  }
+
+  .prose p {
+    font-size: 1.08rem;
+    line-height: 1.8;
+    color: var(--color-text);
+    margin-bottom: var(--space-lg);
+  }
+
+  .prose strong {
+    color: var(--color-dark);
+    font-weight: 600;
+  }
+
+  /* =====================
+     Sankofa Meaning
+     ===================== */
+  .sankofa-meaning {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2xl);
+  }
+
+  @media (min-width: 768px) {
+    .sankofa-meaning {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
+
+  .sankofa-symbol {
+    flex-shrink: 0;
+    opacity: 0.9;
+  }
+
+  blockquote {
+    border-left: 3px solid var(--color-gold);
+    padding-left: var(--space-lg);
+    margin: var(--space-xl) 0;
+  }
+
+  blockquote p {
+    font-size: 1.15rem !important;
+    font-style: italic;
+    color: var(--color-dark) !important;
+    font-weight: 500;
+    margin-bottom: var(--space-sm) !important;
+  }
+
+  blockquote cite {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    font-style: normal;
+  }
+
+  /* =====================
+     Difference Cards
+     ===================== */
+  .difference-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    padding: var(--space-xl) var(--space-lg);
+  }
+
+  .difference-icon {
+    color: var(--color-gold);
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(196, 132, 29, 0.08);
+    border-radius: var(--radius-sm);
+  }
+
+  .difference-card h3 {
+    font-size: 1.15rem;
+    margin: 0;
+  }
+
+  .difference-card > p {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    margin: 0;
+    line-height: 1.65;
+  }
+
+  .difference-vs {
+    margin-top: auto;
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .difference-vs .eyebrow {
+    margin-bottom: var(--space-xs);
+  }
+
+  .difference-vs p {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  /* =====================
+     Team Statement
+     ===================== */
+  .team-statement p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: var(--color-text-on-dark);
+    max-width: 65ch;
+    margin: 0 auto var(--space-lg);
+  }
+
+  .team-statement p:first-child {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--color-text-light);
+  }
+
+  /* =====================
+     About CTA
+     ===================== */
+  .about-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+  }
+</style>

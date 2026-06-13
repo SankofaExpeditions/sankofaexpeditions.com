@@ -1,0 +1,93 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalURL?: string;
+  ogImage?: string;
+  ogType?: string;
+  jsonLd?: object | object[];
+}
+
+const {
+  title,
+  description,
+  canonicalURL = Astro.url.href,
+  ogImage = '/og-image.png',
+  ogType = 'website',
+  jsonLd,
+} = Astro.props;
+
+const siteName = 'Sankofa Expeditions';
+const fullTitle = title === siteName ? `${siteName} — African Intelligence for the Diaspora` : `${title} | ${siteName}`;
+---
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Primary Meta Tags -->
+  <title>{fullTitle}</title>
+  <meta name="title" content={fullTitle} />
+  <meta name="description" content={description} />
+  <meta name="author" content="Sankofa Expeditions" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href={canonicalURL} />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" href="/favicon.ico" sizes="32x32" />
+
+  <!-- Fonts — Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content={ogType} />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={new URL(ogImage, Astro.site)} />
+  <meta property="og:site_name" content={siteName} />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content={canonicalURL} />
+  <meta name="twitter:title" content={fullTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={new URL(ogImage, Astro.site)} />
+  <meta name="twitter:site" content="@ExpeditSankofa" />
+  <meta name="twitter:creator" content="@ExpeditSankofa" />
+
+  <!-- AI / GEO Optimization Meta -->
+  <meta name="generator" content={Astro.generator} />
+
+  <!-- JSON-LD Structured Data -->
+  {jsonLd && (
+    Array.isArray(jsonLd)
+      ? jsonLd.map((ld) => (
+          <script type="application/ld+json" set:html={JSON.stringify(ld)} />
+        ))
+      : <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  )}
+</head>
+<body>
+  <a href="#main-content" class="sr-only" style="position:fixed;top:0;left:0;z-index:999;background:var(--color-gold);color:var(--color-dark);padding:0.5rem 1rem;font-weight:600;">Skip to main content</a>
+
+  <Header />
+
+  <main id="main-content" role="main">
+    <slot />
+  </main>
+
+  <Footer />
+</body>
+</html>

@@ -1,17 +1,168 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Mission from '../components/Mission.astro';
+import ValueProps from '../components/ValueProps.astro';
+import TrustSignals from '../components/TrustSignals.astro';
+import EmailCapture from '../components/EmailCapture.astro';
 
+const title = 'Sankofa Expeditions';
+const description = 'Intelligence, infrastructure, and real-world pathways for Africans and the African diaspora to move, build, and thrive across the continent. Travel intelligence, diaspora pathways, on-the-ground infrastructure, and community.';
+
+const jsonLd = [
+  // Organization
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://sankofaexpeditions.com/#organization",
+    "name": "Sankofa Expeditions",
+    "alternateName": "SankofaExpeditions",
+    "url": "https://sankofaexpeditions.com",
+    "logo": "https://sankofaexpeditions.com/favicon.svg",
+    "description": "Intelligence, infrastructure, and real-world pathways for Africans and the African diaspora to move, build, and thrive across the continent.",
+    "foundingDate": "2024",
+    "sameAs": [
+      "https://x.com/ExpeditSankofa",
+      "https://instagram.com/expeditsankofa",
+      "https://tiktok.com/@expeditsankofa"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "email": "info@sankofaexpeditions.com",
+      "availableLanguage": ["English"]
+    },
+    "areaServed": {
+      "@type": "Place",
+      "name": "Africa"
+    },
+    "knowsAbout": [
+      "African travel intelligence",
+      "African diaspora relocation",
+      "African diaspora pathways",
+      "Pan-African infrastructure",
+      "African visa navigation",
+      "African real estate",
+      "African business facilitation",
+      "Heritage reconnection",
+      "Africa investment opportunities",
+      "Diaspora return programs",
+      "African cost of living",
+      "African country profiles"
+    ]
+  },
+  // WebSite
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://sankofaexpeditions.com/#website",
+    "url": "https://sankofaexpeditions.com",
+    "name": "Sankofa Expeditions",
+    "description": "The intelligence layer for Africa's next chapter. Real-world pathways for the African diaspora.",
+    "publisher": {
+      "@id": "https://sankofaexpeditions.com/#organization"
+    },
+    "inLanguage": "en-US"
+  },
+  // WebPage
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://sankofaexpeditions.com/#webpage",
+    "url": "https://sankofaexpeditions.com",
+    "name": title,
+    "description": description,
+    "isPartOf": {
+      "@id": "https://sankofaexpeditions.com/#website"
+    },
+    "about": {
+      "@id": "https://sankofaexpeditions.com/#organization"
+    },
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://sankofaexpeditions.com/og-image.png"
+    },
+    "inLanguage": "en-US",
+    "datePublished": "2024-01-01",
+    "dateModified": new Date().toISOString().split('T')[0]
+  },
+  // BreadcrumbList
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sankofaexpeditions.com"
+      }
+    ]
+  },
+  // Service offerings
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "African Travel Intelligence & Diaspora Services",
+    "provider": {
+      "@id": "https://sankofaexpeditions.com/#organization"
+    },
+    "name": "Sankofa Expeditions Intelligence Services",
+    "description": "Comprehensive African intelligence services including travel intelligence, diaspora pathway planning, on-the-ground infrastructure access, and community networking for Africans and the African diaspora.",
+    "areaServed": {
+      "@type": "Place",
+      "name": "Africa"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Sankofa Expeditions Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Travel Intelligence",
+            "description": "Deep-dive country profiles, visa navigation, safety intel, cost-of-living data, and cultural briefings across all 54 African nations."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Diaspora Pathways",
+            "description": "Structured programs for heritage reconnection, relocation planning, citizenship pathways, and cultural immersion across Africa."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "On-the-Ground Infrastructure",
+            "description": "Vetted local contacts, real estate connections, legal partners, business facilitation, and ground transportation across Africa."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Community & Network",
+            "description": "Growing network of diaspora builders, investors, and explorers sharing intelligence and building collaboratively."
+          }
+        }
+      ]
+    }
+  }
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <Hero />
+
+  <Mission />
+
+  <ValueProps />
+
+  <TrustSignals />
+
+  <EmailCapture />
+</BaseLayout>
