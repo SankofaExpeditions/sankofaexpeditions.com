@@ -18,18 +18,23 @@ const jsonLd = [
     "name": "Sankofa Expeditions",
     "alternateName": "SankofaExpeditions",
     "url": "https://sankofaexpeditions.com",
-    "logo": "https://sankofaexpeditions.com/favicon.svg",
+    "logo": "https://sankofaexpeditions.com/logo-black.png",
+    "image": "https://sankofaexpeditions.com/og-image.png",
     "description": "Intelligence, infrastructure, and real-world pathways for Africans and the African diaspora to move, build, and thrive across the continent.",
     "foundingDate": "2024",
+    "slogan": "Sometimes you need to go back and get it.",
+    "telephone": "+1-702-389-4202",
     "sameAs": [
       "https://x.com/ExpeditSankofa",
       "https://instagram.com/expeditsankofa",
-      "https://tiktok.com/@expeditsankofa"
+      "https://tiktok.com/@expeditsankofa",
+      "https://linkedin.com/company/sankofaexpeditions"
     ],
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "customer service",
-      "email": "info@sankofaexpeditions.com",
+      "telephone": "+1-702-389-4202",
+      "email": "expeditsankofa@gmail.com",
       "availableLanguage": ["English"]
     },
     "areaServed": {
@@ -122,7 +127,7 @@ const jsonLd = [
           "itemOffered": {
             "@type": "Service",
             "name": "Travel Intelligence",
-            "description": "Deep-dive country profiles, visa navigation, safety intel, cost-of-living data, and cultural briefings across all 54 African nations."
+            "description": "On-the-ground intelligence for African travel: visa requirements, safety, costs, logistics, and cultural context."
           }
         },
         {
@@ -130,7 +135,7 @@ const jsonLd = [
           "itemOffered": {
             "@type": "Service",
             "name": "Diaspora Pathways",
-            "description": "Structured programs for heritage reconnection, relocation planning, citizenship pathways, and cultural immersion across Africa."
+            "description": "Real routes for return, reconnection, and building across the African continent."
           }
         },
         {
@@ -138,7 +143,7 @@ const jsonLd = [
           "itemOffered": {
             "@type": "Service",
             "name": "On-the-Ground Infrastructure",
-            "description": "Vetted local contacts, real estate connections, legal partners, business facilitation, and ground transportation across Africa."
+            "description": "Verified networks of partners, legal support, real estate, and business facilitation across Africa."
           }
         },
         {
@@ -146,7 +151,7 @@ const jsonLd = [
           "itemOffered": {
             "@type": "Service",
             "name": "Community & Network",
-            "description": "Growing network of diaspora builders, investors, and explorers sharing intelligence and building collaboratively."
+            "description": "Connect with diaspora members who have built, relocated, and invested across the continent."
           }
         }
       ]
@@ -157,12 +162,8 @@ const jsonLd = [
 
 <BaseLayout title={title} description={description} jsonLd={jsonLd}>
   <Hero />
-
   <Mission />
-
   <ValueProps />
-
   <TrustSignals />
-
   <EmailCapture />
 </BaseLayout>

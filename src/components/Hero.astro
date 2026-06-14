@@ -1,69 +1,36 @@
 ---
+// Hero — monochrome authority, no gradients
 ---
 
 <section class="hero" aria-labelledby="hero-heading">
-  <div class="container hero-inner">
+  <div class="container hero-grid">
     <div class="hero-content">
-      <span class="eyebrow">African Intelligence • Diaspora Pathways • Real Infrastructure</span>
-      <h1 id="hero-heading">
-        The Intelligence Layer for
-        <span class="gradient-text">Africa's Next Chapter</span>
-      </h1>
+      <p class="hero-eyebrow">African Intelligence · Diaspora Pathways · Real Infrastructure</p>
+      <h1 id="hero-heading">The Intelligence Layer for Africa's Next Chapter</h1>
       <p class="hero-description">
-        Sankofa Expeditions delivers on-the-ground intelligence, infrastructure access, and real-world pathways for Africans and the African diaspora to move, build, and thrive across the continent. We don't sell dreams—we build bridges.
+        Sankofa Expeditions® delivers on-the-ground intelligence, infrastructure access, and real-world pathways for Africans and the African diaspora to move, build, and thrive across the continent. We don't sell dreams — we build bridges.
       </p>
       <div class="hero-actions">
-        <a href="#join" class="btn btn--primary">Get the Intel</a>
-        <a href="#mission" class="btn btn--secondary">Learn More</a>
+        <a href="/contact" class="btn btn--white">Get the Intel</a>
+        <a href="/about" class="btn btn--outline-white">Learn More</a>
       </div>
-      <div class="hero-signal">
-        <div class="signal-item">
-          <span class="signal-number">54</span>
-          <span class="signal-label">African Nations Covered</span>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">54</span>
+          <span class="stat-label">African Nations Covered</span>
         </div>
-        <div class="signal-item">
-          <span class="signal-number">1000+</span>
-          <span class="signal-label">Diaspora Connected</span>
+        <div class="stat">
+          <span class="stat-number">1000+</span>
+          <span class="stat-label">Diaspora Connected</span>
         </div>
-        <div class="signal-item">
-          <span class="signal-number">24/7</span>
-          <span class="signal-label">On-Ground Intel</span>
+        <div class="stat">
+          <span class="stat-number">24/7</span>
+          <span class="stat-label">On-Ground Intel</span>
         </div>
       </div>
     </div>
     <div class="hero-visual" aria-hidden="true">
-      <div class="hero-symbol">
-        <svg viewBox="0 0 200 200" width="100%" height="100%">
-          <defs>
-            <linearGradient id="hero-g" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:#C4841D;stop-opacity:0.9" />
-              <stop offset="50%" style="stop-color:#E8A849;stop-opacity:0.7" />
-              <stop offset="100%" style="stop-color:#C4841D;stop-opacity:0.9" />
-            </linearGradient>
-            <filter id="glow">
-              <feGaussianBlur stdDeviation="4" result="blur" />
-              <feMerge>
-                <feMergeNode in="blur" />
-                <feMergeNode in="SourceGraphic" />
-              </feMerge>
-            </filter>
-          </defs>
-          <!-- Outer ring -->
-          <circle cx="100" cy="100" r="90" fill="none" stroke="url(#hero-g)" stroke-width="1" opacity="0.3" />
-          <circle cx="100" cy="100" r="75" fill="none" stroke="url(#hero-g)" stroke-width="0.5" opacity="0.2" />
-          <!-- Large Sankofa bird -->
-          <g transform="translate(45, 35) scale(1.7)" filter="url(#glow)">
-            <path d="M20 42 C20 42 18 30 24 24 C28 20 34 20 36 24 C38 28 36 32 32 34 L38 34 C40 34 42 32 42 28 C42 22 38 18 32 16 C24 14 16 18 14 26 C12 34 16 42 20 42Z" fill="url(#hero-g)"/>
-            <circle cx="30" cy="24" r="2" fill="#121212"/>
-            <ellipse cx="22" cy="40" rx="4" ry="5" fill="url(#hero-g)"/>
-          </g>
-          <!-- Decorative dots (African pattern) -->
-          <circle cx="30" cy="30" r="2" fill="#C4841D" opacity="0.3" />
-          <circle cx="170" cy="30" r="2" fill="#C4841D" opacity="0.3" />
-          <circle cx="30" cy="170" r="2" fill="#C4841D" opacity="0.3" />
-          <circle cx="170" cy="170" r="2" fill="#C4841D" opacity="0.3" />
-        </svg>
-      </div>
+      <img src="/logo-white.png" alt="" class="hero-logo-mark" width="280" height="280" />
     </div>
   </div>
 </section>
@@ -72,9 +39,12 @@
   .hero {
     background: var(--color-dark);
     color: var(--color-text-on-dark);
-    padding: var(--space-3xl) 0 var(--space-4xl);
+    padding: var(--space-4xl) 0;
     position: relative;
     overflow: hidden;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
   }
 
   .hero::before {
@@ -85,106 +55,107 @@
     right: 0;
     bottom: 0;
     background:
-      radial-gradient(ellipse at 20% 50%, rgba(196, 132, 29, 0.06) 0%, transparent 60%),
-      radial-gradient(ellipse at 80% 20%, rgba(196, 132, 29, 0.04) 0%, transparent 50%);
+      radial-gradient(ellipse at 75% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 60%);
     pointer-events: none;
   }
 
-  .hero-inner {
+  .hero-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--space-2xl);
+    gap: var(--space-3xl);
     align-items: center;
     position: relative;
     z-index: 1;
   }
 
   @media (min-width: 960px) {
-    .hero-inner {
-      grid-template-columns: 1.2fr 0.8fr;
+    .hero-grid {
+      grid-template-columns: 1.3fr 0.7fr;
     }
   }
 
-  .hero-content {
-    max-width: 640px;
+  .hero-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: var(--space-lg);
   }
 
-  .hero .eyebrow {
+  .hero h1 {
+    color: #FFFFFF;
     margin-bottom: var(--space-lg);
-    font-size: 0.8rem;
-  }
-
-  #hero-heading {
-    color: var(--color-text-light);
-    margin-bottom: var(--space-lg);
-    line-height: 1.1;
+    max-width: 18ch;
   }
 
   .hero-description {
     font-size: 1.125rem;
-    color: var(--color-text-on-dark);
-    opacity: 0.85;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 55ch;
     margin-bottom: var(--space-xl);
-    line-height: 1.7;
   }
 
   .hero-actions {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-md);
-    margin-bottom: var(--space-2xl);
+    margin-bottom: var(--space-3xl);
   }
 
-  /* Trust Signals */
-  .hero-signal {
+  /* Stats */
+  .hero-stats {
     display: flex;
+    gap: var(--space-2xl);
     flex-wrap: wrap;
-    gap: var(--space-xl);
-    padding-top: var(--space-xl);
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
 
-  .signal-item {
+  .stat {
     display: flex;
     flex-direction: column;
   }
 
-  .signal-number {
-    font-size: 1.5rem;
+  .stat-number {
+    font-family: var(--font-serif);
+    font-size: 2rem;
     font-weight: 700;
-    color: var(--color-gold);
+    color: #FFFFFF;
     line-height: 1;
+    margin-bottom: 4px;
   }
 
-  .signal-label {
-    font-size: 0.8rem;
-    color: var(--color-text-on-dark);
-    opacity: 0.6;
-    margin-top: var(--space-xs);
+  .stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 500;
   }
 
   /* Visual */
   .hero-visual {
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  @media (min-width: 960px) {
+  .hero-logo-mark {
+    width: 280px;
+    height: auto;
+    opacity: 0.12;
+    filter: grayscale(100%);
+  }
+
+  @media (max-width: 959px) {
     .hero-visual {
-      display: flex;
+      display: none;
     }
-  }
 
-  .hero-symbol {
-    width: 100%;
-    max-width: 360px;
-    aspect-ratio: 1;
-    animation: float 6s ease-in-out infinite;
-  }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
+    .hero {
+      min-height: auto;
+      padding: var(--space-3xl) 0;
+    }
   }
 </style>
