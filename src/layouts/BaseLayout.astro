@@ -12,10 +12,15 @@ interface Props {
   jsonLd?: object | object[];
 }
 
+// Strip .html extension from URLs for clean canonicals (build.format: 'file' adds .html)
+function cleanURL(url: string): string {
+  return url.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
+}
+
 const {
   title,
   description,
-  canonicalURL = Astro.url.href,
+  canonicalURL = cleanURL(Astro.url.href),
   ogImage = '/og-image.png',
   ogType = 'website',
   jsonLd,
