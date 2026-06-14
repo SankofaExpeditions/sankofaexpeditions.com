@@ -1,0 +1,347 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'The Sankofa Journal';
+const description = 'Stories, insights, and intelligence from the African diaspora. Explore heritage travel guides, cultural deep-dives, and on-the-ground reports from across the continent.';
+
+const articles = [
+  {
+    title: 'Understanding the Sankofa Symbol',
+    excerpt: 'The Sankofa bird flies forward while looking backward — but what does this Akan concept really mean for the diaspora today? A deep dive into the philosophy that drives our mission.',
+    category: 'Culture & Heritage',
+    readTime: '8 min read',
+  },
+  {
+    title: 'Planning Your First Heritage Trip',
+    excerpt: 'Forget the tourist brochures. Here\'s the real intelligence you need before booking your first trip to the African continent — visas, costs, safety, and what nobody tells you.',
+    category: 'Travel Intelligence',
+    readTime: '12 min read',
+  },
+  {
+    title: 'Top 5 Destinations in Ghana',
+    excerpt: 'From Cape Coast Castle to Kumasi\'s Kejetia Market, these are the destinations that matter — not for selfies, but for understanding where you come from and where you\'re going.',
+    category: 'Destination Briefings',
+    readTime: '10 min read',
+  },
+];
+
+const jsonLd = [
+  // Blog CollectionPage
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": "https://sankofaexpeditions.com/blog/#collectionpage",
+    "url": "https://sankofaexpeditions.com/blog",
+    "name": title,
+    "description": description,
+    "isPartOf": {
+      "@id": "https://sankofaexpeditions.com/#website"
+    },
+    "about": {
+      "@id": "https://sankofaexpeditions.com/#organization"
+    },
+    "inLanguage": "en-US",
+    "datePublished": "2024-01-01",
+    "dateModified": new Date().toISOString().split('T')[0]
+  },
+  // WebPage
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://sankofaexpeditions.com/blog/#webpage",
+    "url": "https://sankofaexpeditions.com/blog",
+    "name": title,
+    "description": description,
+    "isPartOf": {
+      "@id": "https://sankofaexpeditions.com/#website"
+    },
+    "breadcrumb": {
+      "@id": "https://sankofaexpeditions.com/blog/#breadcrumb"
+    },
+    "inLanguage": "en-US"
+  },
+  // BreadcrumbList
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://sankofaexpeditions.com/blog/#breadcrumb",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sankofaexpeditions.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://sankofaexpeditions.com/blog"
+      }
+    ]
+  }
+];
+---
+
+<BaseLayout title={title} description={description} ogType="website" jsonLd={jsonLd}>
+
+  <!-- Hero Banner -->
+  <section class="blog-hero" aria-labelledby="blog-heading">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li aria-current="page">Blog</li>
+        </ol>
+      </nav>
+      <span class="eyebrow">Intel Drops & Insights</span>
+      <h1 id="blog-heading">
+        The <span class="gradient-text">Sankofa Journal</span>
+      </h1>
+      <p class="blog-hero__subtitle">
+        Stories, travel intelligence, and cultural deep-dives from across the African continent — written by the diaspora, for the diaspora.
+      </p>
+    </div>
+  </section>
+
+  <!-- Coming Soon Articles -->
+  <section class="section" aria-labelledby="articles-heading">
+    <div class="container">
+      <header class="section-header">
+        <span class="eyebrow">Coming Soon</span>
+        <h2 id="articles-heading">Upcoming Intel Drops</h2>
+        <hr class="divider" />
+        <p>We're preparing our first wave of deep-dive articles. Here's what's on deck.</p>
+      </header>
+      <div class="grid grid--3">
+        {articles.map((article) => (
+          <article class="card article-card">
+            <div class="article-card__image-placeholder" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
+                <line x1="4" y1="22" x2="4" y2="15" />
+              </svg>
+            </div>
+            <div class="article-card__content">
+              <div class="article-card__meta">
+                <span class="article-card__category">{article.category}</span>
+                <span class="article-card__badge">Coming Soon</span>
+              </div>
+              <h3 class="article-card__title">{article.title}</h3>
+              <p class="article-card__excerpt">{article.excerpt}</p>
+              <span class="article-card__read-time">{article.readTime}</span>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Subscribe CTA -->
+  <section class="section section--dark" aria-labelledby="subscribe-heading">
+    <div class="container container--narrow text-center">
+      <header class="section-header">
+        <span class="eyebrow" style="color: var(--color-gold-light);">Stay Informed</span>
+        <h2 id="subscribe-heading">Don't Miss an Intel Drop</h2>
+        <hr class="divider" />
+        <p>
+          Be the first to receive our articles, country deep-dives, and diaspora pathway updates. No spam, no fluff — just verified intelligence delivered to your inbox.
+        </p>
+      </header>
+      <div class="subscribe-actions">
+        <a href="/#join" class="btn btn--primary">Subscribe for Updates →</a>
+        <a href="/" class="btn btn--secondary">Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* =====================
+     Blog Hero
+     ===================== */
+  .blog-hero {
+    background: var(--color-dark);
+    color: var(--color-text-on-dark);
+    padding: var(--space-3xl) 0 var(--space-4xl);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .blog-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      radial-gradient(ellipse at 30% 60%, rgba(196, 132, 29, 0.06) 0%, transparent 60%),
+      radial-gradient(ellipse at 70% 20%, rgba(196, 132, 29, 0.04) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .blog-hero .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Breadcrumb */
+  .breadcrumb {
+    margin-bottom: var(--space-xl);
+  }
+
+  .breadcrumb ol {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    list-style: none;
+    font-size: 0.85rem;
+  }
+
+  .breadcrumb li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .breadcrumb li + li::before {
+    content: '/';
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  .breadcrumb a {
+    color: var(--color-gold-light);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+
+  .breadcrumb a:hover {
+    color: var(--color-gold);
+  }
+
+  .breadcrumb [aria-current="page"] {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .blog-hero .eyebrow {
+    margin-bottom: var(--space-md);
+  }
+
+  .blog-hero h1 {
+    color: var(--color-text-light);
+    margin-bottom: var(--space-lg);
+    max-width: 700px;
+  }
+
+  .blog-hero__subtitle {
+    font-size: 1.2rem;
+    color: var(--color-text-on-dark);
+    opacity: 0.85;
+    max-width: 600px;
+    line-height: 1.7;
+  }
+
+  /* =====================
+     Article Cards
+     ===================== */
+  .article-card {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow: hidden;
+    cursor: default;
+  }
+
+  .article-card__image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 180px;
+    background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-accent) 100%);
+    color: var(--color-gold);
+    position: relative;
+  }
+
+  .article-card__image-placeholder::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 50% 50%, rgba(196, 132, 29, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .article-card__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    padding: var(--space-xl) var(--space-lg);
+    flex: 1;
+  }
+
+  .article-card__meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+
+  .article-card__category {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-gold);
+  }
+
+  .article-card__badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-dark);
+    background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
+    border-radius: 100px;
+    line-height: 1;
+  }
+
+  .article-card__title {
+    font-size: 1.15rem;
+    margin: var(--space-xs) 0 0;
+    color: var(--color-dark);
+    line-height: 1.35;
+  }
+
+  .article-card__excerpt {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: var(--color-text-muted);
+    margin: var(--space-xs) 0 0;
+    flex: 1;
+  }
+
+  .article-card__read-time {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin-top: var(--space-md);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
+  }
+
+  /* =====================
+     Subscribe CTA
+     ===================== */
+  .subscribe-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+  }
+</style>
