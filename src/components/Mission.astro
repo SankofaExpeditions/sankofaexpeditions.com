@@ -1,19 +1,26 @@
 ---
-// Mission section — clean monochrome
+import { t, getLangFromUrl } from '../i18n/index';
+import type { Lang } from '../i18n/index';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = getLangFromUrl(Astro.url) } = Astro.props;
 ---
 
 <section class="section mission" aria-labelledby="mission-heading">
   <div class="container">
     <div class="section-header">
-      <span class="eyebrow">Our Mission</span>
-      <h2 id="mission-heading">Go Back and Get It. Then Build Forward.</h2>
+      <span class="eyebrow">{t('mission.eyebrow', lang)}</span>
+      <h2 id="mission-heading">{t('mission.title', lang)}</h2>
       <hr class="divider" />
     </div>
 
     <div class="mission-prose">
-      <p><strong>Sankofa</strong> is an Akan word from Ghana meaning <em>"go back and get it."</em> The Sankofa bird flies forward while looking backward — carrying the egg of knowledge, wisdom, and heritage into the future.</p>
-      <p><strong>Sankofa Expeditions®</strong> exists because the African diaspora deserves more than travel brochures and tourist traps. We provide real intelligence — the kind that helps you navigate visa processes, understand local economies, find trustworthy partners, secure housing, and actually build something lasting on the continent.</p>
-      <p>Whether you're exploring relocation, launching a business, investing in real estate, or reconnecting with your roots, we provide the infrastructure and intelligence that turns intention into action.</p>
+      <p set:html={t('mission.p1', lang)} />
+      <p set:html={t('mission.p2', lang)} />
+      <p>{t('mission.p3', lang)}</p>
     </div>
 
     <aside class="pillars" aria-label="Core pillars">
@@ -21,22 +28,22 @@
         <div class="pillar-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
         </div>
-        <h3>Pan-African Coverage</h3>
-        <p>Intelligence spanning all 54 African nations — not just the tourist-friendly highlights.</p>
+        <h3>{t('mission.pillar1.title', lang)}</h3>
+        <p>{t('mission.pillar1.desc', lang)}</p>
       </div>
       <div class="pillar">
         <div class="pillar-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
-        <h3>Diaspora-First</h3>
-        <p>Built by the diaspora, for the diaspora. We understand the journey because we live it.</p>
+        <h3>{t('mission.pillar2.title', lang)}</h3>
+        <p>{t('mission.pillar2.desc', lang)}</p>
       </div>
       <div class="pillar">
         <div class="pillar-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
         </div>
-        <h3>Verified Intel</h3>
-        <p>Every data point verified on the ground. No recycled blog posts, no second-hand opinions.</p>
+        <h3>{t('mission.pillar3.title', lang)}</h3>
+        <p>{t('mission.pillar3.desc', lang)}</p>
       </div>
     </aside>
   </div>

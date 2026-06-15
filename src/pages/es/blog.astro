@@ -1,0 +1,145 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { t, getLocalizedPath } from '../../i18n/index';
+
+const lang = 'es';
+const title = t('blog.title', lang);
+const description = t('blog.subtitle', lang);
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()
+);
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": "https://sankofaexpeditions.com/es/blog/#collectionpage",
+    "url": "https://sankofaexpeditions.com/es/blog",
+    "name": title,
+    "description": description,
+    "isPartOf": { "@id": "https://sankofaexpeditions.com/#website" },
+    "about": { "@id": "https://sankofaexpeditions.com/#organization" },
+    "inLanguage": "es-ES",
+    "datePublished": "2024-01-01",
+    "dateModified": new Date().toISOString().split('T')[0]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": t('nav.home', lang), "item": "https://sankofaexpeditions.com/es" },
+      { "@type": "ListItem", "position": 2, "name": t('nav.blog', lang), "item": "https://sankofaexpeditions.com/es/blog" }
+    ]
+  }
+];
+---
+
+<BaseLayout title={title} description={description} ogType="website" jsonLd={jsonLd} lang="es">
+
+  <!-- Hero Banner -->
+  <section class="blog-hero" aria-labelledby="blog-heading">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href={getLocalizedPath('/', lang)}>{t('nav.home', lang)}</a></li>
+          <li aria-current="page">{t('nav.blog', lang)}</li>
+        </ol>
+      </nav>
+      <span class="eyebrow">{t('blog.eyebrow', lang)}</span>
+      <h1 id="blog-heading">{t('blog.title', lang)}</h1>
+      <p class="blog-hero__subtitle">
+        {t('blog.subtitle', lang)}
+      </p>
+    </div>
+  </section>
+
+  <!-- Articles -->
+  <section class="section" aria-labelledby="articles-heading">
+    <div class="container">
+      <header class="section-header">
+        <span class="eyebrow">{t('blog.latest', lang)}</span>
+        <h2 id="articles-heading">{posts.length} {t('blog.published', lang)}</h2>
+        <hr class="divider" />
+      </header>
+      <div class="articles-grid">
+        {posts.map((post) => (
+          <a href={`/blog/${post.id}`} class="article-card card">
+            <div class="article-card__content">
+              <div class="article-card__meta">
+                <span class="article-card__category">{post.data.category}</span>
+                {post.data.readTime && <span class="article-card__read-time">{post.data.readTime}</span>}
+              </div>
+              <h3 class="article-card__title">{post.data.title}</h3>
+              <p class="article-card__excerpt">{post.data.description}</p>
+              <div class="article-card__footer">
+                <time datetime={post.data.publishDate.toISOString()}>
+                  {new Date(post.data.publishDate).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
+                </time>
+                <span class="article-card__arrow">{t('blog.read', lang)}</span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Subscribe CTA -->
+  <section class="section section--dark" aria-labelledby="subscribe-heading">
+    <div class="container container--narrow text-center">
+      <header class="section-header">
+        <span class="eyebrow">{t('blog.subscribe.eyebrow', lang)}</span>
+        <h2 id="subscribe-heading">{t('blog.subscribe.title', lang)}</h2>
+        <hr class="divider" />
+        <p>
+          {t('blog.subscribe.desc', lang)}
+        </p>
+      </header>
+      <div class="subscribe-actions">
+        <a href={getLocalizedPath('/', lang) + '#join'} class="btn btn--white">{t('blog.subscribe.cta', lang)}</a>
+        <a href={getLocalizedPath('/contact', lang)} class="btn btn--outline-white">{t('blog.subscribe.contact', lang)}</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .blog-hero {
+    background: var(--color-dark);
+    color: var(--color-text-on-dark);
+    padding: var(--space-3xl) 0 var(--space-4xl);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .blog-hero .container { position: relative; z-index: 1; }
+  .breadcrumb { margin-bottom: var(--space-xl); }
+  .breadcrumb ol { display: flex; align-items: center; gap: var(--space-sm); list-style: none; font-size: 0.85rem; }
+  .breadcrumb li + li::before { content: '/'; color: rgba(255, 255, 255, 0.3); margin-right: var(--space-sm); }
+  .breadcrumb a { color: rgba(255, 255, 255, 0.5); transition: color var(--transition-fast); }
+  .breadcrumb a:hover { color: #fff; }
+  .breadcrumb [aria-current="page"] { color: rgba(255, 255, 255, 0.4); }
+  .blog-hero .eyebrow { margin-bottom: var(--space-md); }
+  .blog-hero h1 { color: var(--color-text-light); margin-bottom: var(--space-lg); max-width: 700px; }
+  .blog-hero__subtitle { font-size: 1.15rem; color: var(--color-text-on-dark); opacity: 0.75; max-width: 600px; line-height: 1.7; }
+
+  .articles-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-xl); }
+  @media (min-width: 640px) { .articles-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 960px) { .articles-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .article-card { text-decoration: none; display: flex; flex-direction: column; padding: 0; overflow: hidden; cursor: pointer; }
+  .article-card:hover { border-color: var(--color-dark); }
+  .article-card__content { display: flex; flex-direction: column; gap: var(--space-sm); padding: var(--space-xl) var(--space-lg); flex: 1; }
+  .article-card__meta { display: flex; align-items: center; justify-content: space-between; gap: var(--space-sm); }
+  .article-card__category { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-text-muted); }
+  .article-card__read-time { font-size: 0.75rem; color: var(--color-text-muted); }
+  .article-card__title { font-size: 1.2rem; margin: var(--space-xs) 0 0; color: var(--color-dark); line-height: 1.35; }
+  .article-card__excerpt { font-size: 0.9rem; line-height: 1.6; color: var(--color-text-muted); margin: var(--space-xs) 0 0; flex: 1; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .article-card__footer { display: flex; justify-content: space-between; align-items: center; margin-top: var(--space-md); padding-top: var(--space-md); border-top: 1px solid var(--color-border); font-size: 0.8rem; color: var(--color-text-muted); }
+  .article-card__arrow { font-weight: 600; color: var(--color-dark); }
+
+  .subscribe-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-md); margin-top: var(--space-xl); }
+</style>

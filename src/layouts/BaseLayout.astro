@@ -1,6 +1,8 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { getLangFromUrl } from '../i18n/index';
+import type { Lang } from '../i18n/index';
 import '../styles/global.css';
 
 interface Props {
@@ -10,6 +12,7 @@ interface Props {
   ogImage?: string;
   ogType?: string;
   jsonLd?: object | object[];
+  lang?: Lang;
 }
 
 // Strip .html extension from URLs for clean canonicals (build.format: 'file' adds .html)
@@ -24,14 +27,23 @@ const {
   ogImage = '/og-image.png',
   ogType = 'website',
   jsonLd,
+  lang = getLangFromUrl(Astro.url),
 } = Astro.props;
 
 const siteName = 'Sankofa Expeditions®';
 const fullTitle = title === 'Sankofa Expeditions' ? `Sankofa Expeditions® — African Intelligence for the Diaspora` : `${title} | Sankofa Expeditions®`;
+
+const langLocaleMap: Record<string, string> = {
+  en: 'en_US',
+  fr: 'fr_FR',
+  es: 'es_ES',
+};
+const locale = langLocaleMap[lang] || 'en_US';
+const htmlLang = lang === 'en' ? 'en' : lang;
 ---
 
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang={htmlLang} dir="ltr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -62,7 +74,7 @@ const fullTitle = title === 'Sankofa Expeditions' ? `Sankofa Expeditions® — A
   <meta property="og:description" content={description} />
   <meta property="og:image" content={new URL(ogImage, Astro.site)} />
   <meta property="og:site_name" content={siteName} />
-  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale" content={locale} />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -88,12 +100,12 @@ const fullTitle = title === 'Sankofa Expeditions' ? `Sankofa Expeditions® — A
 <body>
   <a href="#main-content" class="sr-only" style="position:fixed;top:0;left:0;z-index:999;background:var(--color-dark);color:#fff;padding:0.5rem 1rem;font-weight:600;">Skip to main content</a>
 
-  <Header />
+  <Header lang={lang} />
 
   <main id="main-content" role="main">
     <slot />
   </main>
 
-  <Footer />
+  <Footer lang={lang} />
 </body>
 </html>

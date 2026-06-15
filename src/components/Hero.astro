@@ -1,31 +1,38 @@
 ---
-// Hero — monochrome authority, no gradients
+import { t, getLangFromUrl, getLocalizedPath } from '../i18n/index';
+import type { Lang } from '../i18n/index';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = getLangFromUrl(Astro.url) } = Astro.props;
 ---
 
 <section class="hero" aria-labelledby="hero-heading">
   <div class="container hero-grid">
     <div class="hero-content">
-      <p class="hero-eyebrow">African Intelligence · Diaspora Pathways · Real Infrastructure</p>
-      <h1 id="hero-heading">The Intelligence Layer for Africa's Next Chapter</h1>
+      <p class="hero-eyebrow">{t('hero.eyebrow', lang)}</p>
+      <h1 id="hero-heading">{t('hero.title', lang)}</h1>
       <p class="hero-description">
-        Sankofa Expeditions® delivers on-the-ground intelligence, infrastructure access, and real-world pathways for Africans and the African diaspora to move, build, and thrive across the continent. We don't sell dreams — we build bridges.
+        {t('hero.description', lang)}
       </p>
       <div class="hero-actions">
-        <a href="/contact" class="btn btn--white">Get the Intel</a>
-        <a href="/about" class="btn btn--outline-white">Learn More</a>
+        <a href={getLocalizedPath('/contact', lang)} class="btn btn--white">{t('hero.cta.primary', lang)}</a>
+        <a href={getLocalizedPath('/about', lang)} class="btn btn--outline-white">{t('hero.cta.secondary', lang)}</a>
       </div>
       <div class="hero-stats">
         <div class="stat">
           <span class="stat-number">54</span>
-          <span class="stat-label">African Nations Covered</span>
+          <span class="stat-label">{t('hero.stat.nations', lang)}</span>
         </div>
         <div class="stat">
           <span class="stat-number">1000+</span>
-          <span class="stat-label">Diaspora Connected</span>
+          <span class="stat-label">{t('hero.stat.diaspora', lang)}</span>
         </div>
         <div class="stat">
           <span class="stat-number">24/7</span>
-          <span class="stat-label">On-Ground Intel</span>
+          <span class="stat-label">{t('hero.stat.intel', lang)}</span>
         </div>
       </div>
     </div>

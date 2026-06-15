@@ -1,20 +1,27 @@
 ---
-// Email Capture — monochrome dark section
+import { t, getLangFromUrl } from '../i18n/index';
+import type { Lang } from '../i18n/index';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = getLangFromUrl(Astro.url) } = Astro.props;
 ---
 
 <section id="join" class="section section--dark email-capture" aria-labelledby="capture-heading">
   <div class="container container--narrow text-center">
     <header class="section-header">
-      <span class="eyebrow">Join the Movement</span>
-      <h2 id="capture-heading">Get the Intel Before Everyone Else</h2>
+      <span class="eyebrow">{t('capture.eyebrow', lang)}</span>
+      <h2 id="capture-heading">{t('capture.title', lang)}</h2>
       <hr class="divider" />
-      <p>Join our list for exclusive intelligence drops: country deep-dives, diaspora opportunities, visa updates, investment signals, and on-the-ground dispatches from across Africa. No spam. Pure signal.</p>
+      <p>{t('capture.desc', lang)}</p>
     </header>
 
     <form class="capture-form" aria-label="Email newsletter signup">
-      <input type="text" name="name" placeholder="Your first name" required aria-label="Your first name" />
-      <input type="email" name="email" placeholder="Your email address" required aria-label="Your email address" />
-      <button type="submit" class="btn btn--white">Get Intel →</button>
+      <input type="text" name="name" placeholder={t('capture.name', lang)} required aria-label={t('capture.name', lang)} />
+      <input type="email" name="email" placeholder={t('capture.email', lang)} required aria-label={t('capture.email', lang)} />
+      <button type="submit" class="btn btn--white">{t('capture.submit', lang)}</button>
     </form>
 
     <div class="capture-social">
@@ -29,7 +36,7 @@
       </a>
     </div>
 
-    <p class="capture-privacy">We respect your inbox. Unsubscribe anytime.</p>
+    <p class="capture-privacy">{t('capture.privacy', lang)}</p>
   </div>
 </section>
 

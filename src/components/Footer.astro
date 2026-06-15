@@ -1,12 +1,21 @@
 ---
+import { t, getLangFromUrl, getLocalizedPath } from '../i18n/index';
+import type { Lang } from '../i18n/index';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = getLangFromUrl(Astro.url) } = Astro.props;
+
 const currentYear = new Date().getFullYear();
 
 const footerNav = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
-  { label: 'Expeditions', href: '/expeditions' },
-  { label: 'Blog', href: '/blog' },
-  { label: 'Contact', href: '/contact' },
+  { label: t('nav.home', lang), href: getLocalizedPath('/', lang) },
+  { label: t('nav.about', lang), href: getLocalizedPath('/about', lang) },
+  { label: t('nav.expeditions', lang), href: getLocalizedPath('/expeditions', lang) },
+  { label: t('nav.blog', lang), href: getLocalizedPath('/blog', lang) },
+  { label: t('nav.contact', lang), href: getLocalizedPath('/contact', lang) },
 ];
 
 const socialLinks = [
@@ -23,21 +32,21 @@ const socialLinks = [
     <div class="footer-grid">
       <!-- Brand Column -->
       <div class="footer-brand">
-        <a href="/" class="footer-logo" aria-label="Sankofa Expeditions® — Home">
+        <a href={getLocalizedPath('/', lang)} class="footer-logo" aria-label="Sankofa Expeditions® — Home">
           <img src="/logo-white.png" alt="Sankofa Expeditions logo" class="footer-logo-icon" width="36" height="36" />
           <span class="footer-logo-text">Sankofa Expeditions<sup>®</sup></span>
         </a>
         <p class="footer-tagline">
-          Intelligence, infrastructure, and real-world pathways for Africans and the African diaspora to move, build, and thrive across the continent.
+          {t('footer.tagline', lang)}
         </p>
         <p class="footer-tagline footer-tagline--motto">
-          <em>"Sometimes you need to go back and get it."</em>
+          <em>{t('footer.motto', lang)}</em>
         </p>
       </div>
 
       <!-- Navigation Column -->
       <nav class="footer-nav" aria-label="Footer navigation">
-        <h3 class="footer-heading">Navigate</h3>
+        <h3 class="footer-heading">{t('footer.navigate', lang)}</h3>
         <ul role="list">
           {footerNav.map(item => (
             <li><a href={item.href}>{item.label}</a></li>
@@ -47,7 +56,7 @@ const socialLinks = [
 
       <!-- Connect Column -->
       <div class="footer-connect">
-        <h3 class="footer-heading">Connect</h3>
+        <h3 class="footer-heading">{t('footer.connect', lang)}</h3>
         <div class="footer-contact-info">
           <a href="tel:+17023894202" class="footer-phone">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
@@ -96,9 +105,9 @@ const socialLinks = [
 
     <!-- Bottom Bar -->
     <div class="footer-bottom">
-      <p>&copy; {currentYear} Sankofa Expeditions®. All rights reserved.</p>
+      <p>{t('footer.copyright', lang)}</p>
       <p class="footer-motto">
-        <em>"Se wo were fi na wosankofa a yenkyi."</em> — It is not wrong to go back for that which you have forgotten.
+        <em>{t('footer.proverb', lang)}</em>
       </p>
     </div>
   </div>

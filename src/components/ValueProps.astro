@@ -1,4 +1,13 @@
 ---
+import { getLangFromUrl } from '../i18n/index';
+import type { Lang } from '../i18n/index';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = getLangFromUrl(Astro.url) } = Astro.props;
+
 const offerings = [
   {
     title: 'Travel Intelligence',

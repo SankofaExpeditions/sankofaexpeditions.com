@@ -1,10 +1,20 @@
 ---
+import { getLangFromUrl, t, languages, getLocalizedPath } from '../i18n/index';
+import type { Lang } from '../i18n/index';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = getLangFromUrl(Astro.url) } = Astro.props;
+const currentPath = Astro.url.pathname.replace(/^\/(fr|es)/, '') || '/';
+
 const navItems = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/expeditions', label: 'Expeditions' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/contact', label: 'Contact' },
+  { href: getLocalizedPath('/', lang), label: t('nav.home', lang) },
+  { href: getLocalizedPath('/about', lang), label: t('nav.about', lang) },
+  { href: getLocalizedPath('/expeditions', lang), label: t('nav.expeditions', lang) },
+  { href: getLocalizedPath('/blog', lang), label: t('nav.blog', lang) },
+  { href: getLocalizedPath('/contact', lang), label: t('nav.contact', lang) },
 ];
 ---
 
@@ -14,7 +24,7 @@ const navItems = [
       <img src="/logo-white.png" alt="Sankofa Expeditions logo" class="logo-icon" width="44" height="44" />
       <span class="logo-text">
         <span class="logo-text-primary">Sankofa Expeditions<sup>®</sup></span>
-        <span class="logo-tagline">Sometimes you need to go back and get it.</span>
+        <span class="logo-tagline">{t('header.tagline', lang)}</span>
       </span>
     </a>
 
@@ -30,7 +40,16 @@ const navItems = [
           </li>
         ))}
       </ul>
-      <a href="/contact" class="btn btn--white btn--sm nav-cta">Get Intel</a>
+      <a href={getLocalizedPath('/contact', lang)} class="btn btn--white btn--sm nav-cta">{t('nav.cta', lang)}</a>
+      <div class="lang-switcher">
+        {Object.entries(languages).map(([code, { flag }]) => (
+          <a
+            href={getLocalizedPath(currentPath, code as Lang)}
+            class:list={['lang-btn', { active: code === lang }]}
+            aria-label={languages[code as Lang].label}
+          >{flag}</a>
+        ))}
+      </div>
     </nav>
   </div>
 </header>
@@ -132,6 +151,38 @@ const navItems = [
 
   .nav-cta {
     white-space: nowrap;
+  }
+
+  /* Language Switcher */
+  .lang-switcher {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    margin-left: var(--space-sm);
+  }
+
+  .lang-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    font-size: 0.9rem;
+    border-radius: 50%;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.06);
+    transition: all var(--transition-fast);
+    opacity: 0.5;
+  }
+
+  .lang-btn:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .lang-btn.active {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.15);
   }
 
   /* Mobile Toggle */

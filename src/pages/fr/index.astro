@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Hero from '../../components/Hero.astro';
+import Mission from '../../components/Mission.astro';
+import ValueProps from '../../components/ValueProps.astro';
+import TrustSignals from '../../components/TrustSignals.astro';
+import EmailCapture from '../../components/EmailCapture.astro';
+import { t } from '../../i18n/index';
+
+const lang = 'fr';
+const title = 'Sankofa Expeditions';
+const description = t('hero.description', lang);
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://sankofaexpeditions.com/#organization",
+    "name": "Sankofa Expeditions",
+    "alternateName": "SankofaExpeditions",
+    "url": "https://sankofaexpeditions.com",
+    "logo": "https://sankofaexpeditions.com/logo-black.png",
+    "image": "https://sankofaexpeditions.com/og-image.png",
+    "description": t('footer.tagline', lang),
+    "foundingDate": "2024",
+    "slogan": t('header.tagline', lang),
+    "telephone": "+1-702-389-4202",
+    "sameAs": [
+      "https://x.com/ExpeditSankofa",
+      "https://instagram.com/expeditsankofa",
+      "https://tiktok.com/@expeditsankofa",
+      "https://linkedin.com/company/sankofaexpeditions"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "telephone": "+1-702-389-4202",
+      "email": "expeditsankofa@gmail.com",
+      "availableLanguage": ["English", "French"]
+    },
+    "areaServed": {
+      "@type": "Place",
+      "name": "Africa"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://sankofaexpeditions.com/#website",
+    "url": "https://sankofaexpeditions.com",
+    "name": "Sankofa Expeditions",
+    "description": t('hero.title', lang),
+    "publisher": {
+      "@id": "https://sankofaexpeditions.com/#organization"
+    },
+    "inLanguage": "fr-FR"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://sankofaexpeditions.com/fr/#webpage",
+    "url": "https://sankofaexpeditions.com/fr",
+    "name": title,
+    "description": description,
+    "isPartOf": {
+      "@id": "https://sankofaexpeditions.com/#website"
+    },
+    "about": {
+      "@id": "https://sankofaexpeditions.com/#organization"
+    },
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://sankofaexpeditions.com/og-image.png"
+    },
+    "inLanguage": "fr-FR",
+    "datePublished": "2024-01-01",
+    "dateModified": new Date().toISOString().split('T')[0]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": t('nav.home', lang),
+        "item": "https://sankofaexpeditions.com/fr"
+      }
+    ]
+  }
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd} lang="fr">
+  <Hero lang="fr" />
+  <Mission lang="fr" />
+  <ValueProps lang="fr" />
+  <TrustSignals lang="fr" />
+  <EmailCapture lang="fr" />
+</BaseLayout>

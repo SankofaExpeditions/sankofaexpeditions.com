@@ -1,17 +1,25 @@
 ---
-// Trust Signals — monochrome
+import { t, getLangFromUrl } from '../i18n/index';
+import type { Lang } from '../i18n/index';
+
+interface Props {
+  lang?: Lang;
+}
+
+const { lang = getLangFromUrl(Astro.url) } = Astro.props;
+
 const trustItems = [
   {
-    title: 'Boots on the Ground',
-    description: 'Our intelligence comes from real people in real places — not scraped data or recycled blog posts. We verify everything through our on-the-ground network across Africa.',
+    title: t('trust.item1.title', lang),
+    description: t('trust.item1.desc', lang),
   },
   {
-    title: 'Diaspora-Owned & Led',
-    description: 'We understand the diaspora experience because we live it. Every pathway we recommend, every connection we make — it\'s informed by our own journey of return and reconnection.',
+    title: t('trust.item2.title', lang),
+    description: t('trust.item2.desc', lang),
   },
   {
-    title: 'No Gatekeeping',
-    description: 'The information barrier is the biggest obstacle for diaspora looking to engage with Africa. We tear it down. Premium intelligence delivered without the premium price wall.',
+    title: t('trust.item3.title', lang),
+    description: t('trust.item3.desc', lang),
   },
 ];
 ---
@@ -19,10 +27,10 @@ const trustItems = [
 <section class="section trust-section" aria-labelledby="trust-heading">
   <div class="container">
     <header class="section-header">
-      <span class="eyebrow">Why Trust Sankofa</span>
-      <h2 id="trust-heading">Built Different. Built for This.</h2>
+      <span class="eyebrow">{t('trust.eyebrow', lang)}</span>
+      <h2 id="trust-heading">{t('trust.title', lang)}</h2>
       <hr class="divider" />
-      <p>We're not another travel agency. We're an intelligence platform built by the diaspora, for the diaspora.</p>
+      <p>{t('trust.subtitle', lang)}</p>
     </header>
 
     <div class="trust-grid">
@@ -36,8 +44,8 @@ const trustItems = [
     </div>
 
     <blockquote class="trust-quote">
-      <p>"The diaspora doesn't need another tour. It needs infrastructure, intelligence, and someone who understands what it means to go back."</p>
-      <footer>— Sankofa Expeditions®</footer>
+      <p>{t('trust.quote', lang)}</p>
+      <footer>{t('trust.quoteAttr', lang)}</footer>
     </blockquote>
   </div>
 </section>

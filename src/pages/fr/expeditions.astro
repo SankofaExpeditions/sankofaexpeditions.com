@@ -1,0 +1,160 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { t, getLocalizedPath } from '../../i18n/index';
+
+const lang = 'fr';
+const title = t('nav.expeditions', lang) + ' — Sankofa Expeditions';
+const description = 'Expéditions guidées par l\'intelligence pour la diaspora africaine — renseignement de relocalisation, reconnaissance d\'affaires, voyages patrimoniaux et scouting d\'investissement.';
+
+const services = [
+  { icon: '🏠', name: 'Relocation Intelligence', slug: 'relocation-intelligence', description: 'Visa pathways, cost of living, housing, healthcare, education, safety intel for 54 African nations.' },
+  { icon: '📊', name: 'Business Reconnaissance', slug: 'business-reconnaissance', description: 'Market research, partner vetting, regulatory guidance, and on-the-ground due diligence.' },
+  { icon: '🌍', name: 'Heritage & Roots Journeys', slug: 'heritage-roots-journeys', description: 'DNA-to-destination travel, cultural immersion, and ancestral reconnection.' },
+  { icon: '💰', name: 'Investment Scouting', slug: 'investment-scouting', description: 'Real estate, agriculture, tech, and infrastructure opportunities with verified local intel.' },
+  { icon: '👥', name: 'Group Expeditions', slug: 'group-expeditions', description: 'Curated group experiences for diaspora communities, organizations, and families.' },
+  { icon: '🔍', name: 'Custom Intelligence Requests', slug: 'custom-intelligence', description: 'Bespoke research and intelligence for specific countries, cities, or objectives.' },
+];
+
+const steps = [
+  { number: '01', title: 'Share Your Objective', description: 'Tell us where you want to go, what you want to build, or what you need to know.' },
+  { number: '02', title: 'We Deploy Intelligence', description: 'Our on-the-ground network activates. We gather verified, current intelligence tailored to your needs.' },
+  { number: '03', title: 'You Move with Confidence', description: 'Armed with real intelligence, you make decisions and take action from a position of knowledge.' },
+];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://sankofaexpeditions.com/fr/expeditions#webpage",
+    "url": "https://sankofaexpeditions.com/fr/expeditions",
+    "name": title,
+    "description": description,
+    "isPartOf": { "@id": "https://sankofaexpeditions.com/#website" },
+    "about": { "@id": "https://sankofaexpeditions.com/#organization" },
+    "inLanguage": "fr-FR",
+    "datePublished": "2024-01-01",
+    "dateModified": new Date().toISOString().split('T')[0]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": t('nav.home', lang), "item": "https://sankofaexpeditions.com/fr" },
+      { "@type": "ListItem", "position": 2, "name": t('nav.expeditions', lang), "item": "https://sankofaexpeditions.com/fr/expeditions" }
+    ]
+  }
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd} lang="fr">
+
+  <!-- Hero Banner -->
+  <section class="exp-hero" aria-labelledby="exp-hero-heading">
+    <div class="container exp-hero-inner">
+      <span class="eyebrow">Intelligence Services</span>
+      <h1 id="exp-hero-heading">
+        {t('nav.expeditions', lang)} & Intelligence Services
+      </h1>
+      <p class="exp-hero-description">
+        Every journey across Africa should be backed by real intelligence. We deliver verified, on-the-ground knowledge so you move with clarity — not guesswork.
+      </p>
+      <nav class="exp-hero-breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href={getLocalizedPath('/', lang)}>{t('nav.home', lang)}</a></li>
+          <li aria-current="page">{t('nav.expeditions', lang)}</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Service Categories -->
+  <section class="section section--alt" aria-labelledby="services-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">What We Offer</span>
+        <h2 id="services-heading">Intelligence Service Categories</h2>
+        <p>Six distinct pathways — each backed by verified, on-the-ground intelligence.</p>
+      </div>
+      <div class="grid grid--3">
+        {services.map((service) => (
+          <article class="card exp-service-card" id={service.slug}>
+            <div class="exp-service-icon" aria-hidden="true">{service.icon}</div>
+            <h3 class="exp-service-name">{service.name}</h3>
+            <p class="exp-service-desc">{service.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section section--dark" aria-labelledby="how-it-works-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">The Process</span>
+        <h2 id="how-it-works-heading">How It Works</h2>
+        <p>Three steps from objective to action.</p>
+      </div>
+      <div class="exp-steps">
+        {steps.map((step) => (
+          <div class="exp-step">
+            <div class="exp-step-number" aria-hidden="true">{step.number}</div>
+            <div class="exp-step-content">
+              <h3>{step.title}</h3>
+              <p>{step.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section exp-cta-section" aria-labelledby="cta-heading">
+    <div class="container text-center">
+      <span class="eyebrow">Start Your Expedition</span>
+      <h2 id="cta-heading">Ready to Move with Intelligence?</h2>
+      <hr class="divider" />
+      <p class="exp-cta-description">
+        Tell us your objective. We'll deploy the intelligence you need.
+      </p>
+      <div class="exp-cta-actions">
+        <a href={getLocalizedPath('/contact', lang)} class="btn btn--primary">{t('nav.contact', lang)} →</a>
+        <a href={getLocalizedPath('/', lang)} class="btn btn--secondary">{t('nav.home', lang)}</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .exp-hero { background: var(--color-dark); color: var(--color-text-on-dark); padding: var(--space-3xl) 0; position: relative; overflow: hidden; text-align: center; }
+  .exp-hero-inner { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+  .exp-hero .eyebrow { margin-bottom: var(--space-lg); }
+  .exp-hero h1 { color: var(--color-text-light); margin-bottom: var(--space-lg); line-height: 1.1; }
+  .exp-hero-description { font-size: 1.15rem; color: var(--color-text-on-dark); opacity: 0.85; max-width: 600px; margin: 0 auto var(--space-xl); line-height: 1.7; }
+  .exp-hero-breadcrumb ol { display: flex; justify-content: center; align-items: center; gap: var(--space-sm); list-style: none; font-size: 0.85rem; }
+  .exp-hero-breadcrumb li { display: flex; align-items: center; gap: var(--space-sm); color: var(--color-text-on-dark); opacity: 0.6; }
+  .exp-hero-breadcrumb li + li::before { content: '→'; color: var(--color-gold); opacity: 0.5; }
+  .exp-hero-breadcrumb a { color: var(--color-gold-light); text-decoration: none; opacity: 1; }
+
+  .exp-service-card { display: flex; flex-direction: column; gap: var(--space-sm); transition: all var(--transition-base); }
+  .exp-service-card:hover { border-color: var(--color-gold); box-shadow: var(--shadow-gold); }
+  .exp-service-icon { font-size: 2rem; line-height: 1; margin-bottom: var(--space-xs); }
+  .exp-service-name { font-size: 1.2rem; font-weight: 700; color: var(--color-dark); margin: 0; }
+  .exp-service-desc { font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7; margin: 0; flex-grow: 1; }
+
+  .exp-steps { display: grid; grid-template-columns: 1fr; gap: var(--space-xl); max-width: 900px; margin: 0 auto; }
+  @media (min-width: 768px) { .exp-steps { grid-template-columns: repeat(3, 1fr); gap: var(--space-2xl); } }
+  .exp-step { text-align: center; position: relative; }
+  .exp-step-number { font-size: 3rem; font-weight: 800; color: var(--color-gold); line-height: 1; margin-bottom: var(--space-md); opacity: 0.8; }
+  .exp-step-content h3 { color: var(--color-text-light); font-size: 1.25rem; margin-bottom: var(--space-sm); }
+  .exp-step-content p { color: var(--color-text-on-dark); opacity: 0.8; font-size: 0.95rem; line-height: 1.7; margin: 0; }
+
+  .exp-cta-section { background: var(--color-bg); }
+  .exp-cta-section h2 { margin-bottom: 0; }
+  .exp-cta-description { font-size: 1.1rem; color: var(--color-text-muted); max-width: 560px; margin: var(--space-md) auto var(--space-xl); }
+  .exp-cta-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-md); margin-bottom: var(--space-xl); }
+
+  @media (min-width: 768px) { .exp-hero { padding: var(--space-4xl) 0; } }
+</style>
