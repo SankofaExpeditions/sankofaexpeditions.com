@@ -108,7 +108,7 @@ const jsonLd = [
       <div class="contact-grid">
         <!-- Contact Form -->
         <div class="contact-form-wrapper card">
-          <form class="contact-form" method="POST" action="/contact" name="contact" aria-label="Contact form">
+          <form class="contact-form" method="POST" action="https://formspree.io/f/xwpkgjdo" name="contact" aria-label="Contact form">
             <div class="form-group">
               <label for="contact-name">Full Name <span aria-hidden="true">*</span></label>
               <input
@@ -164,6 +164,14 @@ const jsonLd = [
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
             </button>
           </form>
+
+          <div class="contact-form-success" aria-live="polite" hidden>
+            <div class="success-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            </div>
+            <h3>Message Sent!</h3>
+            <p>Thank you for reaching out. We typically respond within <strong>24–48 hours</strong>.</p>
+          </div>
         </div>
 
         <!-- Sidebar — Direct Contact Info -->
@@ -521,4 +529,63 @@ const jsonLd = [
     margin: 0;
     max-width: none;
   }
+
+  /* Contact form success state */
+  .contact-form-success {
+    text-align: center;
+    padding: var(--space-3xl) var(--space-xl);
+  }
+
+  .contact-form-success .success-icon {
+    color: var(--color-gold);
+    margin-bottom: var(--space-lg);
+  }
+
+  .contact-form-success h3 {
+    font-size: 1.5rem;
+    color: var(--color-dark);
+    margin-bottom: var(--space-sm);
+  }
+
+  .contact-form-success p {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    margin: 0;
+  }
 </style>
+
+<script>
+  // Handle Formspree contact form submission via fetch for inline thank-you
+  document.querySelectorAll('.contact-form').forEach((form) => {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formEl = e.currentTarget as HTMLFormElement;
+      const successEl = formEl.parentElement?.querySelector('.contact-form-success') as HTMLElement;
+      const submitBtn = formEl.querySelector('button[type="submit"]') as HTMLButtonElement;
+
+      // Disable button to prevent double-submit
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+      }
+
+      try {
+        const response = await fetch(formEl.action, {
+          method: 'POST',
+          body: new FormData(formEl),
+          headers: { 'Accept': 'application/json' },
+        });
+
+        if (response.ok) {
+          formEl.hidden = true;
+          if (successEl) successEl.hidden = false;
+        } else {
+          // Fallback: submit normally
+          formEl.submit();
+        }
+      } catch {
+        formEl.submit();
+      }
+    });
+  });
+</script>

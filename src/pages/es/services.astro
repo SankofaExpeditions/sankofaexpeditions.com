@@ -1,0 +1,748 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { t } from '../../i18n/index';
+
+const lang = 'es';
+const title = 'Servicios y Precios';
+const description = 'Niveles de servicios de inteligencia de Sankofa Expeditions — desde Informes de Inteligencia de un solo país hasta Expediciones Personalizadas de servicio completo. Investigación de campo, inteligencia verificada e informes accionables para la diáspora africana.';
+
+const tiers = [
+  {
+    name: 'Informe de Inteligencia',
+    slug: 'intelligence-brief',
+    tagline: 'Investigación de un solo país para objetivos específicos',
+    description: 'Un informe de inteligencia conciso y accionable que cubre un país y un objetivo principal — ideal para miembros de la diáspora que exploran un destino de reubicación, un mercado de inversión o una conexión patrimonial específica.',
+    highlights: [
+      'Enfoque en un solo país',
+      'Un objetivo de investigación principal',
+      'Datos de campo verificados',
+      'Entrega en 2 semanas',
+      'Informe digital (PDF + interactivo)',
+      'Una ronda de preguntas y respuestas',
+    ],
+    cta: 'Solicitar un Informe',
+    featured: false,
+  },
+  {
+    name: 'Paquete de Reconocimiento',
+    slug: 'reconnaissance-package',
+    tagline: 'Análisis multi-país para tomadores de decisiones',
+    description: 'Un paquete de inteligencia integral que cubre múltiples países u objetivos — diseñado para miembros de la diáspora que comparan destinos, exploran oportunidades de negocio regionales o planifican viajes patrimoniales con múltiples paradas.',
+    highlights: [
+      'Hasta 3 países comparados',
+      'Múltiples objetivos de investigación',
+      'Análisis comparativo y puntuación',
+      'Entrevistas con fuentes de campo',
+      'Entrega en 4 semanas',
+      'Informe detallado + resumen ejecutivo',
+      'Dos rondas de consulta de seguimiento',
+      'Actualizaciones trimestrales (6 meses)',
+    ],
+    cta: 'Obtener una Propuesta',
+    featured: true,
+  },
+  {
+    name: 'Expedición Personalizada',
+    slug: 'custom-expedition',
+    tagline: 'Servicio completo para misiones complejas',
+    description: 'Un compromiso de inteligencia a medida adaptado a sus necesidades exactas — desde reconocimiento de negocios multinacional hasta expediciones patrimoniales grupales, diligencia debida de inversión o logística de reubicación continental.',
+    highlights: [
+      'Alcance de países ilimitado',
+      'Brief de investigación completamente personalizado',
+      'Analista de inteligencia dedicado',
+      'Visitas de reconocimiento en campo',
+      'Verificación de socios y proveedores',
+      'Mapeo legal y regulatorio',
+      'Mandato de asesoría continua',
+      'Respuesta y programación prioritarias',
+      'Opción de briefing presencial',
+    ],
+    cta: 'Iniciar una Conversación',
+    featured: false,
+  },
+];
+
+const comparisonFeatures = [
+  { feature: 'Alcance de países', brief: '1 país', recon: 'Hasta 3 países', custom: 'Ilimitado' },
+  { feature: 'Objetivos de investigación', brief: '1 principal', recon: 'Múltiples', custom: 'A medida' },
+  { feature: 'Fuentes de campo', brief: '✓', recon: '✓', custom: '✓' },
+  { feature: 'Entrevistas con fuentes', brief: '—', recon: '✓', custom: '✓' },
+  { feature: 'Análisis comparativo', brief: '—', recon: '✓', custom: '✓' },
+  { feature: 'Visitas de reconocimiento', brief: '—', recon: '—', custom: '✓' },
+  { feature: 'Verificación de socios', brief: '—', recon: 'Básica', custom: 'Integral' },
+  { feature: 'Mapeo legal y regulatorio', brief: 'Resumen', recon: 'Detallado', custom: 'Mapeo completo' },
+  { feature: 'Plazo de entrega', brief: '~2 semanas', recon: '~4 semanas', custom: 'A medida' },
+  { feature: 'Consulta de seguimiento', brief: '1 ronda', recon: '2 rondas', custom: 'Mandato continuo' },
+  { feature: 'Actualizaciones trimestrales', brief: '—', recon: '6 meses', custom: '12 meses' },
+  { feature: 'Analista dedicado', brief: '—', recon: '—', custom: '✓' },
+  { feature: 'Briefing presencial', brief: '—', recon: '—', custom: '✓' },
+];
+
+const faqItems = [
+  {
+    question: '¿Cuánto cuestan sus servicios?',
+    answer: 'Los precios dependen del alcance, la profundidad y el número de países involucrados. No publicamos precios fijos porque cada compromiso es personalizado. Un Informe de Inteligencia para un país será muy diferente de un Paquete de Reconocimiento multinacional. Contáctenos con sus objetivos y le proporcionaremos una propuesta detallada en 48 horas — sin compromiso.',
+  },
+  {
+    question: '¿Cuál es la diferencia entre un Informe y un Paquete de Reconocimiento?',
+    answer: 'Un Informe de Inteligencia se enfoca en un solo país y un objetivo principal — es una instantánea enfocada. Un Paquete de Reconocimiento cubre hasta tres países con análisis comparativo, entrevistas con fuentes y actualizaciones continuas. Piense en el Informe como un ataque quirúrgico; el Paquete de Reconocimiento es una campaña completa.',
+  },
+  {
+    question: '¿Cómo recopilan su inteligencia?',
+    answer: 'Nuestra inteligencia proviene de fuentes verificadas en el terreno a través de África — personas reales en lugares reales. Combinamos redes de fuentes locales, datos oficiales, reconocimiento de primera mano y entrevistas con expertos. No reciclamos artículos de blog ni extraemos bases de datos obsoletas. Cada dato es actual y verificado.',
+  },
+  {
+    question: '¿Puedo actualizar de un nivel a otro?',
+    answer: 'Absolutamente. Muchos clientes comienzan con un Informe de Inteligencia y actualizan a un Paquete de Reconocimiento o una Expedición Personalizada a medida que sus planes se desarrollan. Aplicamos su inversión inicial al nivel superior — sin gasto desperdiciado.',
+  },
+  {
+    question: '¿Ofrecen tarifas grupales u organizacionales?',
+    answer: 'Sí. Trabajamos con organizaciones de la diáspora, clubes de inversión, grupos religiosos y equipos corporativos. Los compromisos grupales se estructuran como Expediciones Personalizadas con costos compartidos y entregables adaptados. Contáctenos para discutir las necesidades de su grupo.',
+  },
+  {
+    question: '¿Qué países cubren?',
+    answer: 'Las 54 naciones africanas. Nuestra red de inteligencia abarca todo el continente — desde centros establecidos de la diáspora como Ghana, Kenia y Sudáfrica hasta destinos emergentes como Ruanda, Senegal y Tanzania. Ningún país queda excluido.',
+  },
+  {
+    question: '¿Cuánto tiempo tarda en recibir mi informe?',
+    answer: 'Los Informes de Inteligencia se entregan típicamente en 2 semanas. Los Paquetes de Reconocimiento toman aproximadamente 4 semanas. Las Expediciones Personalizadas siguen un cronograma que establecemos juntos según el alcance y la complejidad. La entrega acelerada está disponible para compromisos urgentes.',
+  },
+];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://sankofaexpeditions.com/es/services#webpage",
+    "url": "https://sankofaexpeditions.com/es/services",
+    "name": title,
+    "description": description,
+    "isPartOf": { "@id": "https://sankofaexpeditions.com/#website" },
+    "about": { "@id": "https://sankofaexpeditions.com/#organization" },
+    "inLanguage": "es-ES",
+    "datePublished": "2024-01-01",
+    "dateModified": new Date().toISOString().split('T')[0]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": t('nav.home', lang), "item": "https://sankofaexpeditions.com/es" },
+      { "@type": "ListItem", "position": 2, "name": "Servicios", "item": "https://sankofaexpeditions.com/es/services" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://sankofaexpeditions.com/es/services#service",
+    "serviceType": "Servicios de Inteligencia e Investigación",
+    "provider": { "@id": "https://sankofaexpeditions.com/#organization" },
+    "name": "Servicios de Inteligencia Sankofa Expeditions",
+    "description": "Servicios de inteligencia y expedición para la diáspora africana — cubriendo reubicación, negocios, patrimonio, inversión e inteligencia personalizada en las 54 naciones africanas.",
+    "areaServed": { "@type": "Place", "name": "África" },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Niveles de Servicios de Inteligencia",
+      "itemListElement": tiers.map((tier, index) => ({
+        "@type": "Offer",
+        "name": tier.name,
+        "description": tier.description,
+        "position": index + 1,
+        "itemOffered": {
+          "@type": "Service",
+          "name": tier.name,
+          "description": tier.description,
+          "provider": { "@id": "https://sankofaexpeditions.com/#organization" }
+        }
+      }))
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://sankofaexpeditions.com/es/services#faq",
+    "mainEntity": faqItems.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  }
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalURL="https://sankofaexpeditions.com/es/services"
+  jsonLd={jsonLd}
+  lang="es"
+>
+
+  <!-- Hero Banner -->
+  <section class="svc-hero" aria-labelledby="svc-hero-heading">
+    <div class="container svc-hero-inner">
+      <span class="eyebrow">Servicios de Inteligencia</span>
+      <h1 id="svc-hero-heading">Servicios y Precios</h1>
+      <p class="svc-hero-description">
+        Cada compromiso está adaptado a sus objetivos. Elija el nivel de inteligencia que corresponda a su misión — desde informes de país enfocados hasta expediciones completas a través del continente.
+      </p>
+      <nav class="svc-hero-breadcrumb" aria-label="Migas de pan">
+        <ol>
+          <li><a href="/es">{t('nav.home', lang)}</a></li>
+          <li aria-current="page">Servicios</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Service Tiers -->
+  <section class="section" aria-labelledby="tiers-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Elija Su Nivel</span>
+        <h2 id="tiers-heading">Niveles de Servicios de Inteligencia</h2>
+        <p>Tres niveles de profundidad — cada uno respaldado por inteligencia verificada de campo en toda África.</p>
+      </div>
+      <div class="svc-tiers">
+        {tiers.map((tier) => (
+          <article class={`card svc-tier-card ${tier.featured ? 'svc-tier-card--featured' : ''}`} id={tier.slug}>
+            {tier.featured && <div class="svc-tier-badge">Más Popular</div>}
+            <div class="svc-tier-header">
+              <h3 class="svc-tier-name">{tier.name}</h3>
+              <p class="svc-tier-tagline">{tier.tagline}</p>
+            </div>
+            <div class="svc-tier-price">
+              <span class="svc-tier-price-label">Contáctenos para precios</span>
+              <span class="svc-tier-price-note">Adaptado a sus objetivos</span>
+            </div>
+            <p class="svc-tier-desc">{tier.description}</p>
+            <ul class="svc-tier-features" role="list">
+              {tier.highlights.map((item) => (
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <a href="/es/contact" class={`btn ${tier.featured ? 'btn--primary' : 'btn--secondary'} svc-tier-cta`}>
+              {tier.cta}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section class="section section--alt" aria-labelledby="compare-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Lado a Lado</span>
+        <h2 id="compare-heading">Comparar Niveles de Servicio</h2>
+        <p>Vea exactamente qué incluye cada nivel de compromiso.</p>
+      </div>
+      <div class="svc-table-wrapper">
+        <table class="svc-table" role="table">
+          <thead>
+            <tr>
+              <th scope="col">Característica</th>
+              <th scope="col">Informe de Inteligencia</th>
+              <th scope="col" class="svc-table-featured">Paquete de Reconocimiento</th>
+              <th scope="col">Expedición Personalizada</th>
+            </tr>
+          </thead>
+          <tbody>
+            {comparisonFeatures.map((row) => (
+              <tr>
+                <td class="svc-table-feature">{row.feature}</td>
+                <td>{row.brief}</td>
+                <td class="svc-table-featured">{row.recon}</td>
+                <td>{row.custom}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section section--dark" aria-labelledby="process-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">El Proceso</span>
+        <h2 id="process-heading">Cómo Funciona</h2>
+        <p>Del primer contacto a la inteligencia accionable — simple, directo, sin perder tiempo.</p>
+      </div>
+      <div class="svc-process">
+        <div class="svc-process-step">
+          <div class="svc-process-number" aria-hidden="true">01</div>
+          <h3>Comparta Su Objetivo</h3>
+          <p>Díganos qué quiere lograr — reubicación, negocios, patrimonio, inversión o algo único. Primero escuchamos.</p>
+        </div>
+        <div class="svc-process-step">
+          <div class="svc-process-number" aria-hidden="true">02</div>
+          <h3>Reciba Su Propuesta</h3>
+          <p>En 48 horas, entregamos una propuesta personalizada con alcance, cronograma y precios — sin paquetes genéricos, sin compromiso.</p>
+        </div>
+        <div class="svc-process-step">
+          <div class="svc-process-number" aria-hidden="true">03</div>
+          <h3>Desplegamos la Inteligencia</h3>
+          <p>Nuestra red de campo se activa. Investigamos, verificamos, entrevistamos fuentes y compilamos su informe de inteligencia.</p>
+        </div>
+        <div class="svc-process-step">
+          <div class="svc-process-number" aria-hidden="true">04</div>
+          <h3>Usted Actúa con Confianza</h3>
+          <p>Armado con inteligencia verificada — no artículos de blog ni folletos turísticos — ejecuta su plan desde una posición de conocimiento.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section" aria-labelledby="faq-heading">
+    <div class="container container--narrow">
+      <div class="section-header">
+        <span class="eyebrow">FAQ</span>
+        <h2 id="faq-heading">Preguntas Frecuentes</h2>
+        <p>Respuestas a preguntas comunes sobre nuestros servicios, precios y proceso.</p>
+      </div>
+      <dl class="faq-list" role="list">
+        {faqItems.map((item) => (
+          <details class="faq-item card" name="faq">
+            <summary class="faq-item__question" role="listitem">
+              <h3>{item.question}</h3>
+              <svg class="faq-item__chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </summary>
+            <div class="faq-item__answer">
+              <p>{item.answer}</p>
+            </div>
+          </details>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--dark svc-cta-section" aria-labelledby="cta-heading">
+    <div class="container text-center">
+      <span class="eyebrow">Comience Ahora</span>
+      <h2 id="cta-heading">¿Listo para Actuar con Inteligencia?</h2>
+      <hr class="divider" />
+      <p class="svc-cta-description">
+        Comparta su objetivo y le recomendaremos el nivel adecuado — o crearemos algo completamente a medida. Cada compromiso comienza con una conversación, no con una tarjeta de crédito.
+      </p>
+      <div class="svc-cta-actions">
+        <a href="/es/contact" class="btn btn--primary">
+          Contáctenos
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="/es/expeditions" class="btn btn--secondary">Ver Expediciones</a>
+      </div>
+      <p class="svc-cta-email">
+        O escríbanos directamente: <a href="mailto:info@sankofaexpeditions.com"><strong>info@sankofaexpeditions.com</strong></a>
+      </p>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* ================================
+     Services Page Styles (ES)
+     ================================ */
+
+  .svc-hero {
+    background: var(--color-dark);
+    color: var(--color-text-on-dark);
+    padding: var(--space-3xl) 0 var(--space-3xl);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .svc-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(ellipse at 30% 50%, rgba(196, 132, 29, 0.06) 0%, transparent 60%),
+      radial-gradient(ellipse at 70% 20%, rgba(196, 132, 29, 0.04) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .svc-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .svc-hero .eyebrow { margin-bottom: var(--space-lg); }
+
+  .svc-hero h1 {
+    color: var(--color-text-light);
+    margin-bottom: var(--space-lg);
+    line-height: 1.1;
+  }
+
+  .svc-hero-description {
+    font-size: 1.15rem;
+    color: var(--color-text-on-dark);
+    opacity: 0.85;
+    max-width: 600px;
+    margin: 0 auto var(--space-xl);
+    line-height: 1.7;
+  }
+
+  .svc-hero-breadcrumb ol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-sm);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.85rem;
+  }
+
+  .svc-hero-breadcrumb li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--color-text-on-dark);
+    opacity: 0.6;
+  }
+
+  .svc-hero-breadcrumb li + li::before {
+    content: '→';
+    color: var(--color-gold);
+    opacity: 0.5;
+  }
+
+  .svc-hero-breadcrumb a {
+    color: var(--color-gold-light);
+    text-decoration: none;
+    opacity: 1;
+  }
+
+  .svc-hero-breadcrumb a:hover {
+    color: var(--color-gold);
+    text-decoration: underline;
+  }
+
+  .svc-hero-breadcrumb li[aria-current="page"] {
+    color: var(--color-text-on-dark);
+    opacity: 0.8;
+  }
+
+  .svc-tiers {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    align-items: stretch;
+  }
+
+  @media (min-width: 960px) {
+    .svc-tiers {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .svc-tier-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-base);
+  }
+
+  .svc-tier-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .svc-tier-card--featured {
+    border-color: var(--color-dark);
+    border-width: 2px;
+    box-shadow: var(--shadow-md);
+  }
+
+  .svc-tier-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--color-dark);
+    color: var(--color-text-light);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.4rem 1rem;
+    border-radius: 0 0 0 var(--radius-md);
+  }
+
+  .svc-tier-header { margin-bottom: var(--space-lg); }
+
+  .svc-tier-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin: 0 0 var(--space-xs);
+  }
+
+  .svc-tier-tagline {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin: 0;
+    max-width: 100%;
+  }
+
+  .svc-tier-price {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: var(--space-md) 0;
+    margin-bottom: var(--space-md);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .svc-tier-price-label {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-dark);
+  }
+
+  .svc-tier-price-note {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  .svc-tier-desc {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin-bottom: var(--space-lg);
+    max-width: 100%;
+  }
+
+  .svc-tier-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    flex-grow: 1;
+  }
+
+  .svc-tier-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    font-size: 0.9rem;
+    color: var(--color-text);
+    line-height: 1.5;
+  }
+
+  .svc-tier-features svg {
+    flex-shrink: 0;
+    color: var(--color-dark);
+    margin-top: 2px;
+  }
+
+  .svc-tier-card--featured .svc-tier-features svg {
+    color: var(--color-gold);
+  }
+
+  .svc-tier-cta {
+    width: 100%;
+    margin-top: auto;
+  }
+
+  .svc-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+  }
+
+  .svc-table {
+    width: 100%;
+    min-width: 640px;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+
+  .svc-table thead {
+    background: var(--color-dark);
+    color: var(--color-text-light);
+  }
+
+  .svc-table th {
+    padding: var(--space-md) var(--space-lg);
+    text-align: left;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+
+  .svc-table td {
+    padding: var(--space-md) var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text);
+    vertical-align: top;
+  }
+
+  .svc-table tbody tr:last-child td { border-bottom: none; }
+  .svc-table tbody tr:hover { background: var(--color-bg-alt); }
+
+  .svc-table-feature {
+    font-weight: 600;
+    color: var(--color-dark);
+    white-space: nowrap;
+  }
+
+  .svc-table-featured { background: rgba(10, 10, 10, 0.03); }
+  thead .svc-table-featured { background: rgba(255, 255, 255, 0.08); }
+
+  .svc-process {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 768px) {
+    .svc-process { grid-template-columns: repeat(2, 1fr); gap: var(--space-2xl); }
+  }
+
+  @media (min-width: 960px) {
+    .svc-process { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  .svc-process-step { text-align: center; }
+
+  .svc-process-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-gold);
+    line-height: 1;
+    margin-bottom: var(--space-md);
+    opacity: 0.8;
+  }
+
+  .svc-process-step h3 {
+    color: var(--color-text-light);
+    font-size: 1.15rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .svc-process-step p {
+    color: var(--color-text-on-dark);
+    opacity: 0.8;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .faq-item {
+    cursor: pointer;
+    transition: all var(--transition-base);
+    overflow: hidden;
+  }
+
+  .faq-item:hover {
+    border-color: var(--color-gold);
+    transform: none;
+  }
+
+  .faq-item__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    list-style: none;
+    user-select: none;
+  }
+
+  .faq-item__question::-webkit-details-marker { display: none; }
+
+  .faq-item__question h3 {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    margin: 0;
+    flex: 1;
+  }
+
+  .faq-item__chevron {
+    flex-shrink: 0;
+    color: var(--color-text-muted);
+    transition: transform var(--transition-base);
+  }
+
+  .faq-item[open] .faq-item__chevron {
+    transform: rotate(180deg);
+    color: var(--color-gold);
+  }
+
+  .faq-item__answer {
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
+    margin-top: var(--space-md);
+  }
+
+  .faq-item__answer p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .svc-cta-section { padding: var(--space-4xl) 0; }
+
+  .svc-cta-description {
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin: 0 auto var(--space-xl);
+    line-height: 1.7;
+    color: var(--color-text-on-dark);
+    opacity: 0.85;
+  }
+
+  .svc-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+  }
+
+  .svc-cta-email {
+    font-size: 0.9rem;
+    color: var(--color-text-on-dark);
+    opacity: 0.7;
+  }
+
+  .svc-cta-email a { color: var(--color-gold-light); }
+  .svc-cta-email a:hover { color: var(--color-gold); }
+</style>

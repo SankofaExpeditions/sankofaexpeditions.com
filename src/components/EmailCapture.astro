@@ -18,11 +18,21 @@ const { lang = getLangFromUrl(Astro.url) } = Astro.props;
       <p>{t('capture.desc', lang)}</p>
     </header>
 
-    <form class="capture-form" aria-label="Email newsletter signup">
-      <input type="text" name="name" placeholder={t('capture.name', lang)} required aria-label={t('capture.name', lang)} />
+    <form
+      class="capture-form"
+      method="POST"
+      action="https://buttondown.com/api/emails/embed-subscribe/sankofaexpeditions"
+      aria-label="Email newsletter signup"
+    >
+      <input type="text" name="metadata__name" placeholder={t('capture.name', lang)} required aria-label={t('capture.name', lang)} />
       <input type="email" name="email" placeholder={t('capture.email', lang)} required aria-label={t('capture.email', lang)} />
+      <input type="hidden" name="tag" value="website" />
       <button type="submit" class="btn btn--white">{t('capture.submit', lang)}</button>
     </form>
+
+    <div class="capture-success" aria-live="polite" hidden>
+      <p>✓ {t('capture.success', lang) || 'Thank you! Check your inbox to confirm your subscription.'}</p>
+    </div>
 
     <div class="capture-social">
       <a href="https://x.com/ExpeditSankofa" target="_blank" rel="noopener noreferrer" aria-label="Follow on X">
@@ -97,9 +107,51 @@ const { lang = getLangFromUrl(Astro.url) } = Astro.props;
     background: rgba(255, 255, 255, 0.12);
   }
 
+  .capture-success {
+    max-width: 600px;
+    margin: 0 auto var(--space-2xl);
+    padding: var(--space-md) var(--space-lg);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-sm);
+    color: #FFFFFF;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .capture-success p {
+    margin: 0;
+  }
+
   .capture-privacy {
     font-size: 0.75rem;
     color: rgba(255, 255, 255, 0.3);
     margin: 0 auto;
   }
 </style>
+
+<script>
+  // Handle Buttondown form submission via fetch for inline thank-you
+  document.querySelectorAll('.capture-form').forEach((form) => {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formEl = e.currentTarget as HTMLFormElement;
+      const successEl = formEl.parentElement?.querySelector('.capture-success') as HTMLElement;
+
+      try {
+        await fetch(formEl.action, {
+          method: 'POST',
+          body: new FormData(formEl),
+          mode: 'no-cors',
+        });
+
+        // Hide form, show success
+        formEl.hidden = true;
+        if (successEl) successEl.hidden = false;
+      } catch {
+        // Fallback: submit the form normally
+        formEl.submit();
+      }
+    });
+  });
+</script>

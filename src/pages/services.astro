@@ -1,0 +1,784 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Services & Pricing';
+const description = 'Sankofa Expeditions intelligence service tiers — from single-country Intelligence Briefs to full-service Custom Expeditions. On-the-ground research, verified intel, and actionable reports for the African diaspora.';
+
+const tiers = [
+  {
+    name: 'Intelligence Brief',
+    slug: 'intelligence-brief',
+    tagline: 'Single-country research for focused objectives',
+    description: 'A concise, actionable intelligence report covering one country and one primary objective — ideal for diaspora members exploring a specific relocation destination, investment market, or heritage connection.',
+    highlights: [
+      'Single-country focus',
+      'One primary research objective',
+      'Verified on-the-ground data',
+      'Delivered within 2 weeks',
+      'Digital report (PDF + interactive)',
+      'One round of follow-up Q&A',
+    ],
+    cta: 'Request a Brief',
+    featured: false,
+  },
+  {
+    name: 'Reconnaissance Package',
+    slug: 'reconnaissance-package',
+    tagline: 'Multi-country deep-dive for serious movers',
+    description: 'A comprehensive intelligence package covering multiple countries or objectives — designed for diaspora members comparing destinations, scouting business opportunities across regions, or planning multi-stop heritage journeys.',
+    highlights: [
+      'Up to 3 countries compared',
+      'Multiple research objectives',
+      'Comparative analysis & scoring',
+      'On-the-ground source interviews',
+      'Delivered within 4 weeks',
+      'Detailed report + executive summary',
+      'Two rounds of follow-up consultation',
+      'Quarterly intel updates (6 months)',
+    ],
+    cta: 'Get a Proposal',
+    featured: true,
+  },
+  {
+    name: 'Custom Expedition',
+    slug: 'custom-expedition',
+    tagline: 'Full-service intelligence for complex missions',
+    description: 'A bespoke, full-service intelligence engagement tailored to your exact needs — from multi-nation business reconnaissance to coordinated group heritage expeditions, investment due diligence, or relocation logistics across the continent.',
+    highlights: [
+      'Unlimited country scope',
+      'Fully custom research brief',
+      'Dedicated intelligence analyst',
+      'On-the-ground reconnaissance visits',
+      'Partner & vendor vetting',
+      'Legal & regulatory mapping',
+      'Ongoing advisory retainer',
+      'Priority response & scheduling',
+      'In-person briefing option',
+    ],
+    cta: 'Start a Conversation',
+    featured: false,
+  },
+];
+
+const comparisonFeatures = [
+  { feature: 'Country scope', brief: '1 country', recon: 'Up to 3 countries', custom: 'Unlimited' },
+  { feature: 'Research objectives', brief: '1 primary', recon: 'Multiple', custom: 'Fully custom' },
+  { feature: 'On-the-ground sources', brief: '✓', recon: '✓', custom: '✓' },
+  { feature: 'Source interviews', brief: '—', recon: '✓', custom: '✓' },
+  { feature: 'Comparative analysis', brief: '—', recon: '✓', custom: '✓' },
+  { feature: 'Reconnaissance visits', brief: '—', recon: '—', custom: '✓' },
+  { feature: 'Partner & vendor vetting', brief: '—', recon: 'Basic', custom: 'Comprehensive' },
+  { feature: 'Legal & regulatory mapping', brief: 'Overview', recon: 'Detailed', custom: 'Full mapping' },
+  { feature: 'Delivery timeline', brief: '~2 weeks', recon: '~4 weeks', custom: 'Custom' },
+  { feature: 'Follow-up consultation', brief: '1 round', recon: '2 rounds', custom: 'Ongoing retainer' },
+  { feature: 'Quarterly intel updates', brief: '—', recon: '6 months', custom: '12 months' },
+  { feature: 'Dedicated analyst', brief: '—', recon: '—', custom: '✓' },
+  { feature: 'In-person briefing', brief: '—', recon: '—', custom: '✓' },
+];
+
+const faqItems = [
+  {
+    question: 'How much do your services cost?',
+    answer: 'Pricing depends on the scope, depth, and number of countries involved. We don\'t publish fixed prices because every engagement is tailored. An Intelligence Brief for one country will differ significantly from a multi-nation Reconnaissance Package. Contact us with your objectives and we\'ll provide a detailed proposal within 48 hours — no obligation.',
+  },
+  {
+    question: 'What\'s the difference between a Brief and a Reconnaissance Package?',
+    answer: 'An Intelligence Brief focuses on a single country and one primary objective — it\'s a focused snapshot. A Reconnaissance Package covers up to three countries with comparative analysis, source interviews, and ongoing updates. Think of the Brief as a surgical strike; the Reconnaissance Package is a full campaign.',
+  },
+  {
+    question: 'How do you gather your intelligence?',
+    answer: 'Our intelligence comes from verified on-the-ground sources across Africa — real people in real places. We combine local source networks, official data, firsthand reconnaissance, and expert interviews. We don\'t recycle blog posts or scrape outdated databases. Every data point is current and verified.',
+  },
+  {
+    question: 'Can I upgrade from one tier to another?',
+    answer: 'Absolutely. Many clients start with an Intelligence Brief and upgrade to a Reconnaissance Package or Custom Expedition as their plans develop. We apply your initial investment toward the upgraded tier — no wasted spend.',
+  },
+  {
+    question: 'Do you offer group or organizational rates?',
+    answer: 'Yes. We work with diaspora organizations, investment clubs, church groups, and corporate teams. Group engagements are structured as Custom Expeditions with shared costs and tailored deliverables. Contact us to discuss your group\'s needs.',
+  },
+  {
+    question: 'What countries do you cover?',
+    answer: 'All 54 African nations. Our intelligence network spans the entire continent — from established diaspora hubs like Ghana, Kenya, and South Africa to emerging destinations like Rwanda, Senegal, and Tanzania. No country is off-limits.',
+  },
+  {
+    question: 'How long does it take to receive my report?',
+    answer: 'Intelligence Briefs are typically delivered within 2 weeks. Reconnaissance Packages take approximately 4 weeks. Custom Expeditions follow a timeline we establish together based on scope and complexity. Rush delivery is available for time-sensitive engagements.',
+  },
+];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://sankofaexpeditions.com/services#webpage",
+    "url": "https://sankofaexpeditions.com/services",
+    "name": title,
+    "description": description,
+    "isPartOf": { "@id": "https://sankofaexpeditions.com/#website" },
+    "about": { "@id": "https://sankofaexpeditions.com/#organization" },
+    "inLanguage": "en-US",
+    "datePublished": "2024-01-01",
+    "dateModified": new Date().toISOString().split('T')[0]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sankofaexpeditions.com" },
+      { "@type": "ListItem", "position": 2, "name": "Services & Pricing", "item": "https://sankofaexpeditions.com/services" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://sankofaexpeditions.com/services#service",
+    "serviceType": "Intelligence & Research Services",
+    "provider": { "@id": "https://sankofaexpeditions.com/#organization" },
+    "name": "Sankofa Expeditions Intelligence Services",
+    "description": "Intelligence-driven research and expedition services for the African diaspora — covering relocation, business, heritage, investment, and custom intelligence across all 54 African nations.",
+    "areaServed": { "@type": "Place", "name": "Africa" },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Intelligence Service Tiers",
+      "itemListElement": tiers.map((tier, index) => ({
+        "@type": "Offer",
+        "name": tier.name,
+        "description": tier.description,
+        "position": index + 1,
+        "itemOffered": {
+          "@type": "Service",
+          "name": tier.name,
+          "description": tier.description,
+          "provider": { "@id": "https://sankofaexpeditions.com/#organization" }
+        }
+      }))
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://sankofaexpeditions.com/services#faq",
+    "mainEntity": faqItems.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  }
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalURL="https://sankofaexpeditions.com/services"
+  jsonLd={jsonLd}
+>
+
+  <!-- Hero Banner -->
+  <section class="svc-hero" aria-labelledby="svc-hero-heading">
+    <div class="container svc-hero-inner">
+      <span class="eyebrow">Intelligence Services</span>
+      <h1 id="svc-hero-heading">Services & Pricing</h1>
+      <p class="svc-hero-description">
+        Every engagement is tailored to your objectives. Choose the intelligence tier that matches your mission — from focused country briefs to full-service expeditions across the continent.
+      </p>
+      <nav class="svc-hero-breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li aria-current="page">Services</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Service Tiers -->
+  <section class="section" aria-labelledby="tiers-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Choose Your Tier</span>
+        <h2 id="tiers-heading">Intelligence Service Tiers</h2>
+        <p>Three levels of depth — each backed by verified, on-the-ground intelligence across Africa.</p>
+      </div>
+      <div class="svc-tiers">
+        {tiers.map((tier) => (
+          <article class={`card svc-tier-card ${tier.featured ? 'svc-tier-card--featured' : ''}`} id={tier.slug}>
+            {tier.featured && <div class="svc-tier-badge">Most Popular</div>}
+            <div class="svc-tier-header">
+              <h3 class="svc-tier-name">{tier.name}</h3>
+              <p class="svc-tier-tagline">{tier.tagline}</p>
+            </div>
+            <div class="svc-tier-price">
+              <span class="svc-tier-price-label">Contact for pricing</span>
+              <span class="svc-tier-price-note">Tailored to your objectives</span>
+            </div>
+            <p class="svc-tier-desc">{tier.description}</p>
+            <ul class="svc-tier-features" role="list">
+              {tier.highlights.map((item) => (
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <a href="/contact" class={`btn ${tier.featured ? 'btn--primary' : 'btn--secondary'} svc-tier-cta`}>
+              {tier.cta}
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section class="section section--alt" aria-labelledby="compare-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Side by Side</span>
+        <h2 id="compare-heading">Compare Service Tiers</h2>
+        <p>See exactly what's included at each level of engagement.</p>
+      </div>
+      <div class="svc-table-wrapper">
+        <table class="svc-table" role="table">
+          <thead>
+            <tr>
+              <th scope="col">Feature</th>
+              <th scope="col">Intelligence Brief</th>
+              <th scope="col" class="svc-table-featured">Reconnaissance Package</th>
+              <th scope="col">Custom Expedition</th>
+            </tr>
+          </thead>
+          <tbody>
+            {comparisonFeatures.map((row) => (
+              <tr>
+                <td class="svc-table-feature">{row.feature}</td>
+                <td>{row.brief}</td>
+                <td class="svc-table-featured">{row.recon}</td>
+                <td>{row.custom}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section section--dark" aria-labelledby="process-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">The Process</span>
+        <h2 id="process-heading">How It Works</h2>
+        <p>From first contact to actionable intelligence — simple, direct, no wasted time.</p>
+      </div>
+      <div class="svc-process">
+        <div class="svc-process-step">
+          <div class="svc-process-number" aria-hidden="true">01</div>
+          <h3>Share Your Objective</h3>
+          <p>Tell us what you're trying to accomplish — relocation, business, heritage, investment, or something unique. We listen first.</p>
+        </div>
+        <div class="svc-process-step">
+          <div class="svc-process-number" aria-hidden="true">02</div>
+          <h3>Receive Your Proposal</h3>
+          <p>Within 48 hours, we deliver a tailored proposal with scope, timeline, and pricing — no generic packages, no obligation.</p>
+        </div>
+        <div class="svc-process-step">
+          <div class="svc-process-number" aria-hidden="true">03</div>
+          <h3>We Deploy Intelligence</h3>
+          <p>Our on-the-ground network activates. We research, verify, interview sources, and compile your intelligence report.</p>
+        </div>
+        <div class="svc-process-step">
+          <div class="svc-process-number" aria-hidden="true">04</div>
+          <h3>You Move with Confidence</h3>
+          <p>Armed with verified intelligence — not blog posts or tourist brochures — you execute your plan from a position of knowledge.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section" aria-labelledby="faq-heading">
+    <div class="container container--narrow">
+      <div class="section-header">
+        <span class="eyebrow">FAQ</span>
+        <h2 id="faq-heading">Frequently Asked Questions</h2>
+        <p>Answers to common questions about our services, pricing, and process.</p>
+      </div>
+      <dl class="faq-list" role="list">
+        {faqItems.map((item) => (
+          <details class="faq-item card" name="faq">
+            <summary class="faq-item__question" role="listitem">
+              <h3>{item.question}</h3>
+              <svg class="faq-item__chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </summary>
+            <div class="faq-item__answer">
+              <p>{item.answer}</p>
+            </div>
+          </details>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--dark svc-cta-section" aria-labelledby="cta-heading">
+    <div class="container text-center">
+      <span class="eyebrow">Get Started</span>
+      <h2 id="cta-heading">Ready to Move with Intelligence?</h2>
+      <hr class="divider" />
+      <p class="svc-cta-description">
+        Tell us your objective and we'll recommend the right tier — or build something entirely custom. Every engagement starts with a conversation, not a credit card.
+      </p>
+      <div class="svc-cta-actions">
+        <a href="/contact" class="btn btn--primary">
+          Contact Us
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="/expeditions" class="btn btn--secondary">View Expeditions</a>
+      </div>
+      <p class="svc-cta-email">
+        Or email us directly: <a href="mailto:info@sankofaexpeditions.com"><strong>info@sankofaexpeditions.com</strong></a>
+      </p>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* ================================
+     Services Page Styles
+     ================================ */
+
+  /* Hero */
+  .svc-hero {
+    background: var(--color-dark);
+    color: var(--color-text-on-dark);
+    padding: var(--space-3xl) 0 var(--space-3xl);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .svc-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(ellipse at 30% 50%, rgba(196, 132, 29, 0.06) 0%, transparent 60%),
+      radial-gradient(ellipse at 70% 20%, rgba(196, 132, 29, 0.04) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .svc-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .svc-hero .eyebrow { margin-bottom: var(--space-lg); }
+
+  .svc-hero h1 {
+    color: var(--color-text-light);
+    margin-bottom: var(--space-lg);
+    line-height: 1.1;
+  }
+
+  .svc-hero-description {
+    font-size: 1.15rem;
+    color: var(--color-text-on-dark);
+    opacity: 0.85;
+    max-width: 600px;
+    margin: 0 auto var(--space-xl);
+    line-height: 1.7;
+  }
+
+  /* Breadcrumb */
+  .svc-hero-breadcrumb ol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-sm);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.85rem;
+  }
+
+  .svc-hero-breadcrumb li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--color-text-on-dark);
+    opacity: 0.6;
+  }
+
+  .svc-hero-breadcrumb li + li::before {
+    content: '→';
+    color: var(--color-gold);
+    opacity: 0.5;
+  }
+
+  .svc-hero-breadcrumb a {
+    color: var(--color-gold-light);
+    text-decoration: none;
+    opacity: 1;
+  }
+
+  .svc-hero-breadcrumb a:hover {
+    color: var(--color-gold);
+    text-decoration: underline;
+  }
+
+  .svc-hero-breadcrumb li[aria-current="page"] {
+    color: var(--color-text-on-dark);
+    opacity: 0.8;
+  }
+
+  /* Service Tiers Grid */
+  .svc-tiers {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    align-items: stretch;
+  }
+
+  @media (min-width: 960px) {
+    .svc-tiers {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* Tier Card */
+  .svc-tier-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-base);
+  }
+
+  .svc-tier-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .svc-tier-card--featured {
+    border-color: var(--color-dark);
+    border-width: 2px;
+    box-shadow: var(--shadow-md);
+  }
+
+  .svc-tier-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--color-dark);
+    color: var(--color-text-light);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.4rem 1rem;
+    border-radius: 0 0 0 var(--radius-md);
+  }
+
+  .svc-tier-header {
+    margin-bottom: var(--space-lg);
+  }
+
+  .svc-tier-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin: 0 0 var(--space-xs);
+  }
+
+  .svc-tier-tagline {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin: 0;
+    max-width: 100%;
+  }
+
+  /* Pricing display */
+  .svc-tier-price {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: var(--space-md) 0;
+    margin-bottom: var(--space-md);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .svc-tier-price-label {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-dark);
+  }
+
+  .svc-tier-price-note {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  .svc-tier-desc {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin-bottom: var(--space-lg);
+    max-width: 100%;
+  }
+
+  /* Feature list */
+  .svc-tier-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    flex-grow: 1;
+  }
+
+  .svc-tier-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    font-size: 0.9rem;
+    color: var(--color-text);
+    line-height: 1.5;
+  }
+
+  .svc-tier-features svg {
+    flex-shrink: 0;
+    color: var(--color-dark);
+    margin-top: 2px;
+  }
+
+  .svc-tier-card--featured .svc-tier-features svg {
+    color: var(--color-gold);
+  }
+
+  /* Tier CTA */
+  .svc-tier-cta {
+    width: 100%;
+    margin-top: auto;
+  }
+
+  /* Comparison Table */
+  .svc-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+  }
+
+  .svc-table {
+    width: 100%;
+    min-width: 640px;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+
+  .svc-table thead {
+    background: var(--color-dark);
+    color: var(--color-text-light);
+  }
+
+  .svc-table th {
+    padding: var(--space-md) var(--space-lg);
+    text-align: left;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+
+  .svc-table td {
+    padding: var(--space-md) var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text);
+    vertical-align: top;
+  }
+
+  .svc-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .svc-table tbody tr:hover {
+    background: var(--color-bg-alt);
+  }
+
+  .svc-table-feature {
+    font-weight: 600;
+    color: var(--color-dark);
+    white-space: nowrap;
+  }
+
+  .svc-table-featured {
+    background: rgba(10, 10, 10, 0.03);
+  }
+
+  thead .svc-table-featured {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  /* Process Steps */
+  .svc-process {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 768px) {
+    .svc-process {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-2xl);
+    }
+  }
+
+  @media (min-width: 960px) {
+    .svc-process {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .svc-process-step {
+    text-align: center;
+  }
+
+  .svc-process-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-gold);
+    line-height: 1;
+    margin-bottom: var(--space-md);
+    opacity: 0.8;
+  }
+
+  .svc-process-step h3 {
+    color: var(--color-text-light);
+    font-size: 1.15rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .svc-process-step p {
+    color: var(--color-text-on-dark);
+    opacity: 0.8;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  /* FAQ Section */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .faq-item {
+    cursor: pointer;
+    transition: all var(--transition-base);
+    overflow: hidden;
+  }
+
+  .faq-item:hover {
+    border-color: var(--color-gold);
+    transform: none;
+  }
+
+  .faq-item__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    list-style: none;
+    user-select: none;
+  }
+
+  .faq-item__question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item__question h3 {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    margin: 0;
+    flex: 1;
+  }
+
+  .faq-item__chevron {
+    flex-shrink: 0;
+    color: var(--color-text-muted);
+    transition: transform var(--transition-base);
+  }
+
+  .faq-item[open] .faq-item__chevron {
+    transform: rotate(180deg);
+    color: var(--color-gold);
+  }
+
+  .faq-item__answer {
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
+    margin-top: var(--space-md);
+  }
+
+  .faq-item__answer p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    max-width: 100%;
+    margin: 0;
+  }
+
+  /* CTA Section */
+  .svc-cta-section {
+    padding: var(--space-4xl) 0;
+  }
+
+  .svc-cta-description {
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin: 0 auto var(--space-xl);
+    line-height: 1.7;
+    color: var(--color-text-on-dark);
+    opacity: 0.85;
+  }
+
+  .svc-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+  }
+
+  .svc-cta-email {
+    font-size: 0.9rem;
+    color: var(--color-text-on-dark);
+    opacity: 0.7;
+  }
+
+  .svc-cta-email a {
+    color: var(--color-gold-light);
+  }
+
+  .svc-cta-email a:hover {
+    color: var(--color-gold);
+  }
+</style>
