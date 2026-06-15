@@ -128,7 +128,7 @@ export const ui = {
     // Homepage
     'hero.eyebrow': 'Intelligence Africaine · Parcours Diaspora · Infrastructure Réelle',
     'hero.title': "La couche d'intelligence pour le prochain chapitre de l'Afrique",
-    'hero.description': "Sankofa Expeditions® fournit du renseignement de terrain, un accès aux infrastructures et des parcours concrets pour les Africains et la diaspora africaine, pour se déplacer, construire et prospérer à travers le continent. On ne vend pas des rêves, on construit des ponts.",
+    'hero.description': "Renseignement de terrain, accès aux infrastructures et parcours concrets pour la diaspora africaine. On ne vend pas des rêves, on construit des ponts.",
     'hero.cta.primary': 'Obtenir les Renseignements',
     'hero.cta.secondary': 'En savoir plus',
     'hero.stat.nations': 'Nations Africaines Couvertes',
@@ -210,7 +210,7 @@ export const ui = {
     // Homepage
     'hero.eyebrow': 'Inteligencia Africana · Rutas de la Diáspora · Infraestructura Real',
     'hero.title': 'La Capa de Inteligencia para el Próximo Capítulo de África',
-    'hero.description': 'Sankofa Expeditions® ofrece inteligencia de campo, acceso a infraestructura y caminos reales para africanos y la diáspora africana, para moverse, construir y prosperar en el continente. No vendemos sueños, construimos puentes.',
+    'hero.description': 'Inteligencia de campo, acceso a infraestructura y caminos reales para la diáspora africana. No vendemos sueños, construimos puentes.',
     'hero.cta.primary': 'Obtener Información',
     'hero.cta.secondary': 'Saber Más',
     'hero.stat.nations': 'Naciones Africanas Cubiertas',
