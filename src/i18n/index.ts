@@ -14,10 +14,12 @@ export function getLangFromUrl(url: URL): Lang {
 }
 
 export function getLocalizedPath(path: string, lang: Lang): string {
-  // Strip any existing lang prefix
-  const cleanPath = path.replace(/^\/(en|fr|es)/, '');
+  // Strip any existing lang prefix and .html extension
+  const cleanPath = path.replace(/\.html$/, '').replace(/^\/(en|fr|es)/, '');
   if (lang === defaultLang) return cleanPath || '/';
-  return `/${lang}${cleanPath || ''}`;
+  // For homepage (cleanPath is '' or '/'), return just the lang prefix without trailing slash
+  if (cleanPath === '/' || cleanPath === '') return `/${lang}`;
+  return `/${lang}${cleanPath}`;
 }
 
 // UI strings used across all pages
@@ -67,6 +69,34 @@ export const ui = {
     'mission.pillar3.desc': 'Every data point verified on the ground. No recycled blog posts, no second-hand opinions.',
 
     // Trust
+    // ValueProps
+    'vp.eyebrow': 'What We Deliver',
+    'vp.title': 'Intelligence Meets Infrastructure',
+    'vp.subtitle': 'Four pillars of real-world support for the African diaspora.',
+    'vp.travel.title': 'Travel Intelligence',
+    'vp.travel.desc': 'On-the-ground intel that goes beyond tourist guides, real costs, safety protocols, transportation, housing, and cultural context.',
+    'vp.travel.h1': 'Visa & entry requirements',
+    'vp.travel.h2': 'Cost-of-living breakdowns',
+    'vp.travel.h3': 'Safety & health intelligence',
+    'vp.travel.h4': 'Local transport & logistics',
+    'vp.diaspora.title': 'Diaspora Pathways',
+    'vp.diaspora.desc': 'Real routes for return, reconnection, and building. Not hypotheticals, tested pathways from people who have done it.',
+    'vp.diaspora.h1': 'Relocation roadmaps',
+    'vp.diaspora.h2': 'Dual citizenship guidance',
+    'vp.diaspora.h3': 'Heritage reconnection',
+    'vp.diaspora.h4': 'Community integration',
+    'vp.infra.title': 'On-the-Ground Infrastructure',
+    'vp.infra.desc': 'Verified networks of lawyers, realtors, business partners, and service providers across the continent.',
+    'vp.infra.h1': 'Vetted local partners',
+    'vp.infra.h2': 'Legal & real estate networks',
+    'vp.infra.h3': 'Banking & finance guidance',
+    'vp.infra.h4': 'Business setup support',
+    'vp.community.title': 'Community & Network',
+    'vp.community.desc': "Connect with diaspora members who have already made the move, built the business, or walked the path you're considering.",
+    'vp.community.h1': 'Diaspora community access',
+    'vp.community.h2': 'Mentorship connections',
+    'vp.community.h3': 'Group expeditions',
+    'vp.community.h4': 'Ongoing support network',
     'trust.eyebrow': 'Why Trust Sankofa',
     'trust.title': 'Built Different. Built for This.',
     'trust.subtitle': "We're not another travel agency. We're an intelligence platform built by the diaspora, for the diaspora.",
@@ -149,6 +179,34 @@ export const ui = {
     'mission.pillar3.desc': 'Chaque donnée vérifiée sur le terrain. Pas d\'articles recyclés, pas d\'opinions de seconde main.',
 
     // Trust
+    // ValueProps
+    'vp.eyebrow': 'Ce Que Nous Offrons',
+    'vp.title': "L'Intelligence Rencontre l'Infrastructure",
+    'vp.subtitle': 'Quatre piliers de soutien concret pour la diaspora africaine.',
+    'vp.travel.title': 'Renseignement Voyage',
+    'vp.travel.desc': "Du renseignement de terrain qui va au-delà des guides touristiques: coûts réels, protocoles de sécurité, transport, logement et contexte culturel.",
+    'vp.travel.h1': 'Exigences de visa et d\'entrée',
+    'vp.travel.h2': 'Analyses du coût de la vie',
+    'vp.travel.h3': 'Renseignement santé et sécurité',
+    'vp.travel.h4': 'Transport et logistique locaux',
+    'vp.diaspora.title': 'Parcours Diaspora',
+    'vp.diaspora.desc': "Des voies réelles pour le retour, la reconnexion et la construction. Pas des hypothèses, des parcours testés par ceux qui l'ont fait.",
+    'vp.diaspora.h1': 'Feuilles de route de relocalisation',
+    'vp.diaspora.h2': 'Guidance double nationalité',
+    'vp.diaspora.h3': 'Reconnexion patrimoniale',
+    'vp.diaspora.h4': "Intégration communautaire",
+    'vp.infra.title': 'Infrastructure de Terrain',
+    'vp.infra.desc': "Réseaux vérifiés d'avocats, agents immobiliers, partenaires commerciaux et prestataires à travers le continent.",
+    'vp.infra.h1': 'Partenaires locaux vérifiés',
+    'vp.infra.h2': 'Réseaux juridiques et immobiliers',
+    'vp.infra.h3': 'Guidance bancaire et financière',
+    'vp.infra.h4': "Accompagnement création d'entreprise",
+    'vp.community.title': 'Communauté et Réseau',
+    'vp.community.desc': "Connectez-vous avec des membres de la diaspora qui ont déjà fait le pas, construit l'entreprise, ou parcouru le chemin que vous envisagez.",
+    'vp.community.h1': 'Accès communauté diaspora',
+    'vp.community.h2': 'Connexions mentorat',
+    'vp.community.h3': 'Expéditions de groupe',
+    'vp.community.h4': 'Réseau de soutien continu',
     'trust.eyebrow': 'Pourquoi Nous Faire Confiance',
     'trust.title': 'Différent. Conçu pour Ça.',
     'trust.subtitle': "Nous ne sommes pas une agence de voyage. Nous sommes une plateforme d'intelligence créée par la diaspora, pour la diaspora.",
@@ -231,6 +289,34 @@ export const ui = {
     'mission.pillar3.desc': 'Cada dato verificado en campo. Sin artículos reciclados, sin opiniones de segunda mano.',
 
     // Trust
+    // ValueProps
+    'vp.eyebrow': 'Lo Que Ofrecemos',
+    'vp.title': 'La Inteligencia Encuentra la Infraestructura',
+    'vp.subtitle': 'Cuatro pilares de apoyo real para la diáspora africana.',
+    'vp.travel.title': 'Inteligencia de Viaje',
+    'vp.travel.desc': 'Inteligencia de campo que va más allá de las guías turísticas: costos reales, protocolos de seguridad, transporte, vivienda y contexto cultural.',
+    'vp.travel.h1': 'Requisitos de visa y entrada',
+    'vp.travel.h2': 'Análisis del costo de vida',
+    'vp.travel.h3': 'Inteligencia de salud y seguridad',
+    'vp.travel.h4': 'Transporte y logística local',
+    'vp.diaspora.title': 'Caminos de la Diáspora',
+    'vp.diaspora.desc': 'Rutas reales para el retorno, la reconexión y la construcción. No hipótesis, caminos probados por quienes ya lo hicieron.',
+    'vp.diaspora.h1': 'Hojas de ruta de reubicación',
+    'vp.diaspora.h2': 'Guía de doble nacionalidad',
+    'vp.diaspora.h3': 'Reconexión patrimonial',
+    'vp.diaspora.h4': 'Integración comunitaria',
+    'vp.infra.title': 'Infraestructura de Campo',
+    'vp.infra.desc': 'Redes verificadas de abogados, agentes inmobiliarios, socios comerciales y proveedores en todo el continente.',
+    'vp.infra.h1': 'Socios locales verificados',
+    'vp.infra.h2': 'Redes legales e inmobiliarias',
+    'vp.infra.h3': 'Guía bancaria y financiera',
+    'vp.infra.h4': 'Apoyo en creación de empresas',
+    'vp.community.title': 'Comunidad y Red',
+    'vp.community.desc': 'Conéctese con miembros de la diáspora que ya dieron el paso, construyeron el negocio o recorrieron el camino que usted está considerando.',
+    'vp.community.h1': 'Acceso a comunidad diáspora',
+    'vp.community.h2': 'Conexiones de mentoría',
+    'vp.community.h3': 'Expediciones grupales',
+    'vp.community.h4': 'Red de apoyo continuo',
     'trust.eyebrow': 'Por Qué Confiar en Sankofa',
     'trust.title': 'Diferente. Hecho para Esto.',
     'trust.subtitle': 'No somos otra agencia de viajes. Somos una plataforma de inteligencia creada por la diáspora, para la diáspora.',

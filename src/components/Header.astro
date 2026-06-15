@@ -7,7 +7,7 @@ interface Props {
 }
 
 const { lang = getLangFromUrl(Astro.url) } = Astro.props;
-const currentPath = Astro.url.pathname.replace(/^\/(fr|es)/, '') || '/';
+const currentPath = Astro.url.pathname.replace(/\.html$/, '').replace(/^\/(fr|es)/, '') || '/';
 
 const navItems = [
   { href: getLocalizedPath('/', lang), label: t('nav.home', lang) },

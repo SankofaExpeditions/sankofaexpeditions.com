@@ -1,5 +1,5 @@
 ---
-import { getLangFromUrl } from '../i18n/index';
+import { getLangFromUrl, t } from '../i18n/index';
 import type { Lang } from '../i18n/index';
 
 interface Props {
@@ -10,24 +10,24 @@ const { lang = getLangFromUrl(Astro.url) } = Astro.props;
 
 const offerings = [
   {
-    title: 'Travel Intelligence',
-    description: 'On-the-ground intel that goes beyond tourist guides, real costs, safety protocols, transportation, housing, and cultural context.',
-    highlights: ['Visa & entry requirements', 'Cost-of-living breakdowns', 'Safety & health intelligence', 'Local transport & logistics'],
+    title: t('vp.travel.title', lang),
+    description: t('vp.travel.desc', lang),
+    highlights: [t('vp.travel.h1', lang), t('vp.travel.h2', lang), t('vp.travel.h3', lang), t('vp.travel.h4', lang)],
   },
   {
-    title: 'Diaspora Pathways',
-    description: 'Real routes for return, reconnection, and building. Not hypotheticals, tested pathways from people who have done it.',
-    highlights: ['Relocation roadmaps', 'Dual citizenship guidance', 'Heritage reconnection', 'Community integration'],
+    title: t('vp.diaspora.title', lang),
+    description: t('vp.diaspora.desc', lang),
+    highlights: [t('vp.diaspora.h1', lang), t('vp.diaspora.h2', lang), t('vp.diaspora.h3', lang), t('vp.diaspora.h4', lang)],
   },
   {
-    title: 'On-the-Ground Infrastructure',
-    description: 'Verified networks of lawyers, realtors, business partners, and service providers across the continent.',
-    highlights: ['Vetted local partners', 'Legal & real estate networks', 'Banking & finance guidance', 'Business setup support'],
+    title: t('vp.infra.title', lang),
+    description: t('vp.infra.desc', lang),
+    highlights: [t('vp.infra.h1', lang), t('vp.infra.h2', lang), t('vp.infra.h3', lang), t('vp.infra.h4', lang)],
   },
   {
-    title: 'Community & Network',
-    description: 'Connect with diaspora members who have already made the move, built the business, or walked the path you\'re considering.',
-    highlights: ['Diaspora community access', 'Mentorship connections', 'Group expeditions', 'Ongoing support network'],
+    title: t('vp.community.title', lang),
+    description: t('vp.community.desc', lang),
+    highlights: [t('vp.community.h1', lang), t('vp.community.h2', lang), t('vp.community.h3', lang), t('vp.community.h4', lang)],
   },
 ];
 ---
@@ -35,10 +35,10 @@ const offerings = [
 <section class="section section--alt" aria-labelledby="offerings-heading">
   <div class="container">
     <header class="section-header">
-      <span class="eyebrow">What We Deliver</span>
-      <h2 id="offerings-heading">Intelligence Meets Infrastructure</h2>
+      <span class="eyebrow">{t('vp.eyebrow', lang)}</span>
+      <h2 id="offerings-heading">{t('vp.title', lang)}</h2>
       <hr class="divider" />
-      <p>Four pillars of real-world support for the African diaspora.</p>
+      <p>{t('vp.subtitle', lang)}</p>
     </header>
 
     <div class="offerings-grid">
