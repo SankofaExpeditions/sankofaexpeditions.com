@@ -3,11 +3,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
 const title = 'The Sankofa Journal';
-const description = 'Intelligence drops, country deep-dives, and diaspora pathways. Real data from the ground — not opinions, not travel brochures.';
+const description = 'Intelligence drops, country deep-dives, and practical guides for the African diaspora — relocation, investment, heritage, and on-the-ground intel.';
 
-// Get all blog posts sorted by date (newest first)
 const posts = (await getCollection('blog')).sort(
-  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+  (a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()
 );
 
 const jsonLd = [
@@ -27,7 +26,6 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "@id": "https://sankofaexpeditions.com/blog/#breadcrumb",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sankofaexpeditions.com" },
       { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://sankofaexpeditions.com/blog" }
@@ -37,6 +35,7 @@ const jsonLd = [
 ---
 
 <BaseLayout title={title} description={description} ogType="website" jsonLd={jsonLd}>
+
   <!-- Hero Banner -->
   <section class="blog-hero" aria-labelledby="blog-heading">
     <div class="container">
@@ -46,68 +45,63 @@ const jsonLd = [
           <li aria-current="page">Blog</li>
         </ol>
       </nav>
-      <span class="eyebrow">Intel Drops & Deep Dives</span>
+      <span class="eyebrow">Intel Drops & Guides</span>
       <h1 id="blog-heading">The Sankofa Journal</h1>
       <p class="blog-hero__subtitle">
-        Intelligence from the ground — country profiles, visa guides, diaspora pathways, and real data for Africans and the African diaspora.
+        Deep-dive intelligence for the African diaspora — country profiles, relocation guides, visa intel, and on-the-ground dispatches from across the continent.
       </p>
     </div>
   </section>
 
-  {posts.length > 0 ? (
-    <!-- Published Articles -->
-    <section class="section" aria-labelledby="articles-heading">
-      <div class="container">
-        <div class="articles-grid">
-          {posts.map((post) => (
-            <article class="article-card card">
-              <a href={`/blog/${post.id}`} class="article-card__link">
-                <div class="article-card__content">
-                  <div class="article-card__meta">
-                    <span class="article-card__category">{post.data.category}</span>
-                    {post.data.readTime && <span class="article-card__read-time">{post.data.readTime}</span>}
-                  </div>
-                  <h2 class="article-card__title">{post.data.title}</h2>
-                  <p class="article-card__excerpt">{post.data.description}</p>
-                  <div class="article-card__footer">
-                    <time datetime={post.data.publishDate.toISOString()}>
-                      {new Date(post.data.publishDate).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
-                    </time>
-                    <span class="article-card__arrow">Read →</span>
-                  </div>
-                </div>
-              </a>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  ) : (
-    <!-- Coming Soon State -->
-    <section class="section" aria-labelledby="coming-heading">
-      <div class="container container--narrow text-center">
-        <h2 id="coming-heading">First Intel Drops Coming Soon</h2>
+  <!-- Articles -->
+  <section class="section" aria-labelledby="articles-heading">
+    <div class="container">
+      <header class="section-header">
+        <span class="eyebrow">Latest Intelligence</span>
+        <h2 id="articles-heading">{posts.length} Intel Drops Published</h2>
         <hr class="divider" />
-        <p>We're finalizing our first wave of deep-dive intelligence articles. Subscribe below to get notified when we publish.</p>
+      </header>
+      <div class="articles-grid">
+        {posts.map((post) => (
+          <a href={`/blog/${post.id}`} class="article-card card">
+            <div class="article-card__content">
+              <div class="article-card__meta">
+                <span class="article-card__category">{post.data.category}</span>
+                {post.data.readTime && <span class="article-card__read-time">{post.data.readTime}</span>}
+              </div>
+              <h3 class="article-card__title">{post.data.title}</h3>
+              <p class="article-card__excerpt">{post.data.description}</p>
+              <div class="article-card__footer">
+                <time datetime={post.data.publishDate.toISOString()}>
+                  {new Date(post.data.publishDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                </time>
+                <span class="article-card__arrow">Read →</span>
+              </div>
+            </div>
+          </a>
+        ))}
       </div>
-    </section>
-  )}
+    </div>
+  </section>
 
   <!-- Subscribe CTA -->
   <section class="section section--dark" aria-labelledby="subscribe-heading">
     <div class="container container--narrow text-center">
       <header class="section-header">
-        <span class="eyebrow" style="color: rgba(255, 255, 255, 0.5);">Stay Informed</span>
+        <span class="eyebrow">Stay Informed</span>
         <h2 id="subscribe-heading">Don't Miss an Intel Drop</h2>
         <hr class="divider" />
-        <p>Be the first to receive country deep-dives, diaspora pathway updates, and on-the-ground intelligence. No spam — pure signal.</p>
+        <p>
+          Be the first to receive our articles, country deep-dives, and diaspora pathway updates. No spam, no fluff — just verified intelligence delivered to your inbox.
+        </p>
       </header>
       <div class="subscribe-actions">
         <a href="/#join" class="btn btn--white">Subscribe for Updates →</a>
-        <a href="/" class="btn btn--outline-white">Back to Home</a>
+        <a href="/contact" class="btn btn--outline-white">Contact Us</a>
       </div>
     </div>
   </section>
+
 </BaseLayout>
 
 <style>
@@ -115,17 +109,25 @@ const jsonLd = [
     background: var(--color-dark);
     color: var(--color-text-on-dark);
     padding: var(--space-3xl) 0 var(--space-4xl);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .blog-hero .container {
+    position: relative;
+    z-index: 1;
   }
 
   .breadcrumb { margin-bottom: var(--space-xl); }
   .breadcrumb ol { display: flex; align-items: center; gap: var(--space-sm); list-style: none; font-size: 0.85rem; }
-  .breadcrumb li + li::before { content: '/'; color: rgba(255, 255, 255, 0.25); margin-right: var(--space-sm); }
-  .breadcrumb a { color: rgba(255, 255, 255, 0.5); }
+  .breadcrumb li + li::before { content: '/'; color: rgba(255, 255, 255, 0.3); margin-right: var(--space-sm); }
+  .breadcrumb a { color: rgba(255, 255, 255, 0.5); transition: color var(--transition-fast); }
   .breadcrumb a:hover { color: #fff; }
   .breadcrumb [aria-current="page"] { color: rgba(255, 255, 255, 0.4); }
 
-  .blog-hero h1 { color: #fff; margin-bottom: var(--space-lg); }
-  .blog-hero__subtitle { font-size: 1.15rem; color: rgba(255, 255, 255, 0.65); max-width: 55ch; line-height: 1.7; }
+  .blog-hero .eyebrow { margin-bottom: var(--space-md); }
+  .blog-hero h1 { color: var(--color-text-light); margin-bottom: var(--space-lg); max-width: 700px; }
+  .blog-hero__subtitle { font-size: 1.15rem; color: var(--color-text-on-dark); opacity: 0.75; max-width: 600px; line-height: 1.7; }
 
   /* Articles Grid */
   .articles-grid {
@@ -142,26 +144,87 @@ const jsonLd = [
     .articles-grid { grid-template-columns: repeat(3, 1fr); }
   }
 
-  .article-card { padding: 0; overflow: hidden; }
-  .article-card__link { display: block; text-decoration: none; color: inherit; }
-  .article-card__content { padding: var(--space-xl); display: flex; flex-direction: column; gap: var(--space-sm); min-height: 260px; }
+  .article-card {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow: hidden;
+    cursor: pointer;
+  }
 
-  .article-card__meta { display: flex; align-items: center; gap: var(--space-md); flex-wrap: wrap; }
+  .article-card:hover {
+    border-color: var(--color-dark);
+  }
+
+  .article-card__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    padding: var(--space-xl) var(--space-lg);
+    flex: 1;
+  }
+
+  .article-card__meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-sm);
+  }
+
   .article-card__category {
-    font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
     color: var(--color-text-muted);
   }
-  .article-card__read-time { font-size: 0.75rem; color: var(--color-text-muted); }
 
-  .article-card__title { font-size: 1.2rem; margin: var(--space-xs) 0; line-height: 1.3; }
-  .article-card__excerpt { font-size: 0.9rem; line-height: 1.65; color: var(--color-text-muted); flex: 1; }
+  .article-card__read-time {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+  }
+
+  .article-card__title {
+    font-size: 1.2rem;
+    margin: var(--space-xs) 0 0;
+    color: var(--color-dark);
+    line-height: 1.35;
+  }
+
+  .article-card__excerpt {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    margin: var(--space-xs) 0 0;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 
   .article-card__footer {
-    display: flex; justify-content: space-between; align-items: center;
-    padding-top: var(--space-md); border-top: 1px solid var(--color-border); margin-top: var(--space-md);
-    font-size: 0.8rem; color: var(--color-text-muted);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: var(--space-md);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
   }
-  .article-card__arrow { font-weight: 600; color: var(--color-dark); }
 
-  .subscribe-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-md); margin-top: var(--space-xl); }
+  .article-card__arrow {
+    font-weight: 600;
+    color: var(--color-dark);
+  }
+
+  .subscribe-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+  }
 </style>
