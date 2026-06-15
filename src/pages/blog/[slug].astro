@@ -1,0 +1,78 @@
+---
+import { getCollection, render } from 'astro:content';
+import BlogPost from '../../layouts/BlogPost.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const { title, description, publishDate, updatedDate, author, category, tags } = post.data;
+
+const jsonLd: object[] = [
+  // Article
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "author": {
+      "@type": "Organization",
+      "name": author,
+      "@id": "https://sankofaexpeditions.com/#organization"
+    },
+    "publisher": {
+      "@id": "https://sankofaexpeditions.com/#organization"
+    },
+    "datePublished": publishDate.toISOString(),
+    "dateModified": (updatedDate || publishDate).toISOString(),
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://sankofaexpeditions.com/blog/${post.id}`
+    },
+    "isPartOf": {
+      "@id": "https://sankofaexpeditions.com/#website"
+    },
+    "inLanguage": "en-US",
+    "keywords": tags.join(', '),
+    "articleSection": category,
+    "image": post.data.ogImage || "https://sankofaexpeditions.com/og-image.png"
+  },
+  // BreadcrumbList
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sankofaexpeditions.com" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://sankofaexpeditions.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": title, "item": `https://sankofaexpeditions.com/blog/${post.id}` }
+    ]
+  }
+];
+
+// Add FAQPage schema if post has FAQ data
+if (post.data.faq && post.data.faq.length > 0) {
+  jsonLd.push({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": post.data.faq.map((item: { question: string; answer: string }) => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  });
+}
+---
+
+<BlogPost post={post} jsonLd={jsonLd}>
+  <Content />
+</BlogPost>
