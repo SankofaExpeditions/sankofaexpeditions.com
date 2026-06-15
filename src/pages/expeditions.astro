@@ -1,0 +1,507 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Expeditions & Intelligence Services';
+const description = 'Intelligence-driven expeditions for the African diaspora — relocation intelligence, business reconnaissance, heritage journeys, investment scouting, and custom research across all 54 African nations.';
+
+const services = [
+  {
+    icon: '🏠',
+    name: 'Relocation Intelligence',
+    slug: 'relocation-intelligence',
+    description: 'Visa pathways, cost of living, housing, healthcare, education, safety intel for 54 African nations. Everything you need to make an informed move.',
+  },
+  {
+    icon: '📊',
+    name: 'Business Reconnaissance',
+    slug: 'business-reconnaissance',
+    description: 'Market research, partner vetting, regulatory guidance, and on-the-ground due diligence. Move into African markets with verified intelligence.',
+  },
+  {
+    icon: '🌍',
+    name: 'Heritage & Roots Journeys',
+    slug: 'heritage-roots-journeys',
+    description: 'DNA-to-destination travel, cultural immersion, and ancestral reconnection. Walk the land your ancestors walked — with intelligence guiding every step.',
+  },
+  {
+    icon: '💰',
+    name: 'Investment Scouting',
+    slug: 'investment-scouting',
+    description: 'Real estate, agriculture, tech, and infrastructure opportunities with verified local intel. Deploy capital with confidence, not guesswork.',
+  },
+  {
+    icon: '👥',
+    name: 'Group Expeditions',
+    slug: 'group-expeditions',
+    description: 'Curated group experiences for diaspora communities, organizations, and families. Collective intelligence, shared discovery.',
+  },
+  {
+    icon: '🔍',
+    name: 'Custom Intelligence Requests',
+    slug: 'custom-intelligence',
+    description: 'Bespoke research and intelligence for specific countries, cities, or objectives. If you need to know it, we can find it.',
+  },
+];
+
+const steps = [
+  {
+    number: '01',
+    title: 'Share Your Objective',
+    description: 'Tell us where you want to go, what you want to build, or what you need to know. Every expedition starts with your mission.',
+  },
+  {
+    number: '02',
+    title: 'We Deploy Intelligence',
+    description: 'Our on-the-ground network activates. We gather verified, current intelligence tailored to your specific needs and timeline.',
+  },
+  {
+    number: '03',
+    title: 'You Move with Confidence',
+    description: 'Armed with real intelligence — not tourist brochures — you make decisions and take action from a position of knowledge.',
+  },
+];
+
+const jsonLd = [
+  // WebPage
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://sankofaexpeditions.com/expeditions#webpage",
+    "url": "https://sankofaexpeditions.com/expeditions",
+    "name": title,
+    "description": description,
+    "isPartOf": {
+      "@id": "https://sankofaexpeditions.com/#website"
+    },
+    "about": {
+      "@id": "https://sankofaexpeditions.com/#organization"
+    },
+    "inLanguage": "en-US",
+    "datePublished": "2024-01-01",
+    "dateModified": new Date().toISOString().split('T')[0]
+  },
+  // BreadcrumbList
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sankofaexpeditions.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Expeditions & Intelligence Services",
+        "item": "https://sankofaexpeditions.com/expeditions"
+      }
+    ]
+  },
+  // Service with OfferCatalog
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://sankofaexpeditions.com/expeditions#service",
+    "serviceType": "Intelligence-Driven Expeditions & Research Services",
+    "provider": {
+      "@id": "https://sankofaexpeditions.com/#organization"
+    },
+    "name": "Sankofa Expeditions Intelligence Services",
+    "description": "Intelligence-driven expeditions and research services for the African diaspora — covering relocation, business, heritage, investment, group travel, and custom intelligence across all 54 African nations.",
+    "areaServed": {
+      "@type": "Place",
+      "name": "Africa"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Expedition & Intelligence Services",
+      "itemListElement": services.map((service, index) => ({
+        "@type": "OfferCatalog",
+        "name": service.name,
+        "description": service.description,
+        "position": index + 1,
+        "itemOffered": {
+          "@type": "Service",
+          "name": service.name,
+          "description": service.description,
+          "provider": {
+            "@id": "https://sankofaexpeditions.com/#organization"
+          }
+        }
+      }))
+    }
+  }
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalURL="https://sankofaexpeditions.com/expeditions"
+  jsonLd={jsonLd}
+>
+
+  <!-- Hero Banner -->
+  <section class="exp-hero" aria-labelledby="exp-hero-heading">
+    <div class="container exp-hero-inner">
+      <span class="eyebrow">Intelligence Services</span>
+      <h1 id="exp-hero-heading">
+        Expeditions &
+        Expeditions & Intelligence Services
+      </h1>
+      <p class="exp-hero-description">
+        Every journey across Africa should be backed by real intelligence. We deliver verified, on-the-ground knowledge so you move with clarity — not guesswork.
+      </p>
+      <nav class="exp-hero-breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li aria-current="page">Expeditions</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- What We Mean by Expeditions -->
+  <section class="section" aria-labelledby="what-we-mean-heading">
+    <div class="container container--narrow">
+      <div class="section-header">
+        <span class="eyebrow">Our Philosophy</span>
+        <h2 id="what-we-mean-heading">What We Mean by Expeditions</h2>
+        <hr class="divider" />
+      </div>
+      <div class="exp-philosophy">
+        <p>
+          Sankofa Expeditions aren't tourist trips. They're <strong>intelligence-driven journeys</strong> — whether physical travel, remote research, relocation scouting, or business reconnaissance.
+        </p>
+        <p>
+          Every expedition is backed by verified on-the-ground intelligence. We don't deal in secondhand information or recycled travel guides. Our network spans the continent — real people, real data, real-time insights across all 54 African nations.
+        </p>
+        <p>
+          Whether you're planning a permanent move, exploring investment opportunities, reconnecting with ancestral roots, or conducting business due diligence — an expedition with Sankofa means moving with <strong>intelligence, not assumptions</strong>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Categories -->
+  <section class="section section--alt" aria-labelledby="services-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">What We Offer</span>
+        <h2 id="services-heading">Intelligence Service Categories</h2>
+        <p>Six distinct pathways — each backed by verified, on-the-ground intelligence.</p>
+      </div>
+      <div class="grid grid--3">
+        {services.map((service) => (
+          <article class="card exp-service-card" id={service.slug}>
+            <div class="exp-service-icon" aria-hidden="true">{service.icon}</div>
+            <h3 class="exp-service-name">{service.name}</h3>
+            <p class="exp-service-desc">{service.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section section--dark" aria-labelledby="how-it-works-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">The Process</span>
+        <h2 id="how-it-works-heading">How It Works</h2>
+        <p>Three steps from objective to action. Simple, direct, intelligence-driven.</p>
+      </div>
+      <div class="exp-steps">
+        {steps.map((step) => (
+          <div class="exp-step">
+            <div class="exp-step-number" aria-hidden="true">{step.number}</div>
+            <div class="exp-step-content">
+              <h3>{step.title}</h3>
+              <p>{step.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section exp-cta-section" aria-labelledby="cta-heading">
+    <div class="container text-center">
+      <span class="eyebrow">Start Your Expedition</span>
+      <h2 id="cta-heading">Ready to Move with Intelligence?</h2>
+      <hr class="divider" />
+      <p class="exp-cta-description">
+        Tell us your objective — relocation, business, heritage, investment, or something entirely unique. We'll deploy the intelligence you need.
+      </p>
+      <div class="exp-cta-actions">
+        <a href="mailto:info@sankofaexpeditions.com?subject=Expedition%20Inquiry" class="btn btn--primary">
+          Contact Us
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href="/" class="btn btn--secondary">Back to Home</a>
+      </div>
+      <p class="exp-cta-email">
+        Or email us directly: <a href="mailto:info@sankofaexpeditions.com"><strong>info@sankofaexpeditions.com</strong></a>
+      </p>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* ================================
+     Expeditions Page Styles
+     ================================ */
+
+  /* Hero */
+  .exp-hero {
+    background: var(--color-dark);
+    color: var(--color-text-on-dark);
+    padding: var(--space-3xl) 0 var(--space-3xl);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .exp-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+      radial-gradient(ellipse at 30% 50%, rgba(196, 132, 29, 0.06) 0%, transparent 60%),
+      radial-gradient(ellipse at 70% 20%, rgba(196, 132, 29, 0.04) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .exp-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .exp-hero .eyebrow {
+    margin-bottom: var(--space-lg);
+  }
+
+  .exp-hero h1 {
+    color: var(--color-text-light);
+    margin-bottom: var(--space-lg);
+    line-height: 1.1;
+  }
+
+  .exp-hero-description {
+    font-size: 1.15rem;
+    color: var(--color-text-on-dark);
+    opacity: 0.85;
+    max-width: 600px;
+    margin: 0 auto var(--space-xl);
+    line-height: 1.7;
+  }
+
+  /* Breadcrumb */
+  .exp-hero-breadcrumb ol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-sm);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.85rem;
+  }
+
+  .exp-hero-breadcrumb li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--color-text-on-dark);
+    opacity: 0.6;
+  }
+
+  .exp-hero-breadcrumb li + li::before {
+    content: '→';
+    color: var(--color-gold);
+    opacity: 0.5;
+  }
+
+  .exp-hero-breadcrumb a {
+    color: var(--color-gold-light);
+    text-decoration: none;
+    opacity: 1;
+  }
+
+  .exp-hero-breadcrumb a:hover {
+    color: var(--color-gold);
+    text-decoration: underline;
+  }
+
+  .exp-hero-breadcrumb li[aria-current="page"] {
+    color: var(--color-text-on-dark);
+    opacity: 0.8;
+  }
+
+  /* Philosophy / What We Mean */
+  .exp-philosophy {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .exp-philosophy p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-text);
+    margin-bottom: var(--space-lg);
+    max-width: 100%;
+  }
+
+  .exp-philosophy strong {
+    color: var(--color-dark);
+    font-weight: 600;
+  }
+
+  /* Service Cards */
+  .exp-service-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    transition: all var(--transition-base);
+  }
+
+  .exp-service-card:hover {
+    border-color: var(--color-gold);
+    box-shadow: var(--shadow-gold);
+  }
+
+  .exp-service-icon {
+    font-size: 2rem;
+    line-height: 1;
+    margin-bottom: var(--space-xs);
+  }
+
+  .exp-service-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin: 0;
+  }
+
+  .exp-service-desc {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin: 0;
+    flex-grow: 1;
+  }
+
+  /* How It Works Steps */
+  .exp-steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 768px) {
+    .exp-steps {
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-2xl);
+    }
+  }
+
+  .exp-step {
+    text-align: center;
+    position: relative;
+  }
+
+  .exp-step-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--color-gold);
+    line-height: 1;
+    margin-bottom: var(--space-md);
+    opacity: 0.8;
+  }
+
+  .exp-step-content h3 {
+    color: var(--color-text-light);
+    font-size: 1.25rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .exp-step-content p {
+    color: var(--color-text-on-dark);
+    opacity: 0.8;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  /* Connector lines between steps (desktop) */
+  @media (min-width: 768px) {
+    .exp-step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 1.5rem;
+      right: -1.25rem;
+      width: 2.5rem;
+      height: 1px;
+      background: linear-gradient(90deg, var(--color-gold), transparent);
+      opacity: 0.3;
+    }
+  }
+
+  /* CTA Section */
+  .exp-cta-section {
+    background: var(--color-bg);
+  }
+
+  .exp-cta-section h2 {
+    margin-bottom: 0;
+  }
+
+  .exp-cta-description {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    max-width: 560px;
+    margin: var(--space-md) auto var(--space-xl);
+  }
+
+  .exp-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+  }
+
+  .exp-cta-email {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+  }
+
+  .exp-cta-email a {
+    color: var(--color-gold-dark);
+  }
+
+  .exp-cta-email a:hover {
+    color: var(--color-gold);
+  }
+
+  /* Responsive fine-tuning */
+  @media (min-width: 768px) {
+    .exp-hero {
+      padding: var(--space-4xl) 0;
+    }
+  }
+</style>
