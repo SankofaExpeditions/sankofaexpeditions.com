@@ -1,7 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { getLangFromUrl } from '../i18n/index';
+import { getLangFromUrl, getLocalizedPath } from '../i18n/index';
 import type { Lang } from '../i18n/index';
 import '../styles/global.css';
 
@@ -40,6 +40,19 @@ const langLocaleMap: Record<string, string> = {
 };
 const locale = langLocaleMap[lang] || 'en_US';
 const htmlLang = lang === 'en' ? 'en' : lang;
+
+// Generate hreflang URLs
+const siteBase = 'https://sankofaexpeditions.com';
+const pathWithoutLang = Astro.url.pathname
+  .replace(/^\/(fr|es)/, '')
+  .replace(/\.html$/, '')
+  .replace(/\/index$/, '') || '/';
+const hreflangs = [
+  { lang: 'en', href: `${siteBase}${pathWithoutLang === '/' ? '' : pathWithoutLang}` },
+  { lang: 'fr', href: `${siteBase}/fr${pathWithoutLang === '/' ? '' : pathWithoutLang}` },
+  { lang: 'es', href: `${siteBase}/es${pathWithoutLang === '/' ? '' : pathWithoutLang}` },
+  { lang: 'x-default', href: `${siteBase}${pathWithoutLang === '/' ? '' : pathWithoutLang}` },
+];
 ---
 
 <!DOCTYPE html>
@@ -56,6 +69,11 @@ const htmlLang = lang === 'en' ? 'en' : lang;
   <meta name="author" content="Sankofa Expeditions" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <link rel="canonical" href={canonicalURL} />
+
+  <!-- Hreflang — Language Alternates -->
+  {hreflangs.map(({ lang: hl, href }) => (
+    <link rel="alternate" hreflang={hl} href={href} />
+  ))}
 
   <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
