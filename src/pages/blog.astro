@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
 const title = 'The Sankofa Journal';
-const description = 'Intelligence drops, country deep-dives, and practical guides for the African diaspora — relocation, investment, heritage, and on-the-ground intel.';
+const description = 'Intelligence drops, country deep-dives, and practical guides for the African diaspora, relocation, investment, heritage, and on-the-ground intel.';
 
 const posts = (await getCollection('blog')).sort(
   (a, b) => new Date(b.data.publishDate).getTime() - new Date(a.data.publishDate).getTime()
@@ -48,7 +48,7 @@ const jsonLd = [
       <span class="eyebrow">Intel Drops & Guides</span>
       <h1 id="blog-heading">The Sankofa Journal</h1>
       <p class="blog-hero__subtitle">
-        Deep-dive intelligence for the African diaspora — country profiles, relocation guides, visa intel, and on-the-ground dispatches from across the continent.
+        Deep-dive intelligence for the African diaspora, country profiles, relocation guides, visa intel, and on-the-ground dispatches from across the continent.
       </p>
     </div>
   </section>
@@ -92,7 +92,7 @@ const jsonLd = [
         <h2 id="subscribe-heading">Don't Miss an Intel Drop</h2>
         <hr class="divider" />
         <p>
-          Be the first to receive our articles, country deep-dives, and diaspora pathway updates. No spam, no fluff — just verified intelligence delivered to your inbox.
+          Be the first to receive our articles, country deep-dives, and diaspora pathway updates. No spam, no fluff, just verified intelligence delivered to your inbox.
         </p>
       </header>
       <div class="subscribe-actions">

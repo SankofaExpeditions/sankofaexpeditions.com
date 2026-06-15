@@ -1,12 +1,12 @@
 /* ===================================
-   Sankofa Expeditions® — Global Styles
+   Sankofa Expeditions®. Global Styles
    Monochrome authority · Serif headings
    Mobile-first responsive design
    =================================== */
 
 /* CSS Custom Properties */
 :root {
-  /* Brand Colors — Monochrome Authority */
+  /* Brand Colors. Monochrome Authority */
   --color-bg: #FAFAFA;
   --color-bg-alt: #F0F0F0;
   --color-surface: #FFFFFF;
@@ -21,11 +21,11 @@
   --color-accent: #333333;
   --color-accent-hover: #555555;
 
-  /* Brand Gold — reserved for single CTA highlight only */
+  /* Brand Gold, reserved for single CTA highlight only */
   --color-gold: #C4841D;
   --color-gold-light: #D4943A;
 
-  /* Typography — Serif Authority */
+  /* Typography. Serif Authority */
   --font-serif: 'Cormorant Garamond', 'Georgia', 'Times New Roman', serif;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
