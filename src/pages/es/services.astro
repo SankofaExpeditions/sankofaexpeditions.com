@@ -10,6 +10,7 @@ const tiers = [
   {
     name: 'Informe de Inteligencia',
     slug: 'intelligence-brief',
+    price: '497',
     tagline: 'Investigación de un solo país para objetivos específicos',
     description: 'Un informe de inteligencia conciso y accionable que cubre un país y un objetivo principal — ideal para miembros de la diáspora que exploran un destino de reubicación, un mercado de inversión o una conexión patrimonial específica.',
     highlights: [
@@ -26,6 +27,7 @@ const tiers = [
   {
     name: 'Paquete de Reconocimiento',
     slug: 'reconnaissance-package',
+    price: '1,997',
     tagline: 'Análisis multi-país para tomadores de decisiones',
     description: 'Un paquete de inteligencia integral que cubre múltiples países u objetivos — diseñado para miembros de la diáspora que comparan destinos, exploran oportunidades de negocio regionales o planifican viajes patrimoniales con múltiples paradas.',
     highlights: [
@@ -44,6 +46,7 @@ const tiers = [
   {
     name: 'Expedición Personalizada',
     slug: 'custom-expedition',
+    price: '4,997',
     tagline: 'Servicio completo para misiones complejas',
     description: 'Un compromiso de inteligencia a medida adaptado a sus necesidades exactas — desde reconocimiento de negocios multinacional hasta expediciones patrimoniales grupales, diligencia debida de inversión o logística de reubicación continental.',
     highlights: [
@@ -215,7 +218,8 @@ const jsonLd = [
               <p class="svc-tier-tagline">{tier.tagline}</p>
             </div>
             <div class="svc-tier-price">
-              <span class="svc-tier-price-label">Contáctenos para precios</span>
+              <span class="svc-tier-price-label">Desde</span>
+              <span class="svc-tier-price-amount">${tier.price}</span>
               <span class="svc-tier-price-note">Adaptado a sus objetivos</span>
             </div>
             <p class="svc-tier-desc">{tier.description}</p>
@@ -513,10 +517,19 @@ const jsonLd = [
   }
 
   .svc-tier-price-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+  }
+
+  .svc-tier-price-amount {
     font-family: var(--font-serif);
-    font-size: 1.25rem;
-    font-weight: 600;
+    font-size: 2.25rem;
+    font-weight: 700;
     color: var(--color-dark);
+    line-height: 1;
   }
 
   .svc-tier-price-note {
