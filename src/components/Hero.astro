@@ -149,10 +149,10 @@ const { lang = getLangFromUrl(Astro.url) } = Astro.props;
   }
 
   .hero-logo-mark {
-    width: 280px;
-    height: auto;
-    opacity: 0.12;
-    filter: grayscale(100%);
+    width: 100%;
+    max-width: 280px;
+    opacity: 0.35;
+    filter: none;
   }
 
   @media (max-width: 959px) {
