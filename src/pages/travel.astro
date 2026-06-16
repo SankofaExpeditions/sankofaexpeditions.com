@@ -1,0 +1,376 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import EmailCapture from '../components/EmailCapture.astro';
+import { getLangFromUrl, t } from '../i18n/index';
+
+const lang = getLangFromUrl(Astro.url);
+const title = `${t('travel.packages.title', lang)} | Sankofa Expeditions`;
+const description = t('travel.meta.desc', lang);
+
+const packages = [
+  { slug: 'heritage', icon: '🏛️', titleKey: 'travel.heritage.title', descKey: 'travel.heritage.desc', priceKey: 'travel.heritage.price' },
+  { slug: 'relocation', icon: '🏠', titleKey: 'travel.relocation.title', descKey: 'travel.relocation.desc', priceKey: 'travel.relocation.price' },
+  { slug: 'business', icon: '💼', titleKey: 'travel.business.title', descKey: 'travel.business.desc', priceKey: 'travel.business.price' },
+  { slug: 'investment', icon: '📈', titleKey: 'travel.investment.title', descKey: 'travel.investment.desc', priceKey: 'travel.investment.price' },
+  { slug: 'groups', icon: '👥', titleKey: 'travel.groups.title', descKey: 'travel.groups.desc', priceKey: 'travel.groups.price' },
+  { slug: 'safari', icon: '🦁', titleKey: 'travel.safari.title', descKey: 'travel.safari.desc', priceKey: 'travel.safari.price' },
+];
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sankofaexpeditions.com" },
+    { "@type": "ListItem", "position": 2, "name": "Travel", "item": "https://sankofaexpeditions.com/travel" }
+  ]
+};
+
+const travelAgencyJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  "@id": "https://sankofaexpeditions.com/#travelagency",
+  "name": "Sankofa Expeditions",
+  "url": "https://sankofaexpeditions.com/travel",
+  "logo": "https://sankofaexpeditions.com/logo-black.png",
+  "image": "https://sankofaexpeditions.com/og-image.png",
+  "description": "Curated African expeditions for the diaspora. Heritage journeys, relocation scouting, luxury safaris, business reconnaissance, and group adventures.",
+  "telephone": "+1-702-389-4202",
+  "email": "expeditsankofa@gmail.com",
+  "priceRange": "$2,000 - $15,000+",
+  "areaServed": {
+    "@type": "Continent",
+    "name": "Africa"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "African Expeditions",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "TouristTrip", "name": "Heritage & Roots Journeys", "description": "Trace your lineage across West and East Africa" }},
+      { "@type": "Offer", "itemOffered": { "@type": "TouristTrip", "name": "Relocation Intelligence", "description": "Scout your next home with eyes-open guided clarity" }},
+      { "@type": "Offer", "itemOffered": { "@type": "TouristTrip", "name": "Business Reconnaissance", "description": "Market entry trips for entrepreneurs ready to move" }},
+      { "@type": "Offer", "itemOffered": { "@type": "TouristTrip", "name": "Investment Scouting", "description": "Real estate and opportunity tours across the continent" }},
+      { "@type": "Offer", "itemOffered": { "@type": "TouristTrip", "name": "Group Expeditions", "description": "Curated group journeys for communities, orgs, and families" }},
+      { "@type": "Offer", "itemOffered": { "@type": "TouristTrip", "name": "Luxury Afrika Safari", "description": "Elevated wildlife and cultural immersion for discerning travelers" }}
+    ]
+  }
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What types of African expeditions does Sankofa Expeditions offer?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We offer six categories: Heritage & Roots Journeys for tracing your lineage, Relocation Intelligence for scouting your next home, Business Reconnaissance for market entry, Investment Scouting for real estate and opportunities, Group Expeditions for communities and families, and Luxury Afrika Safari for premium wildlife and cultural immersion." }
+    },
+    {
+      "@type": "Question",
+      "name": "How much do Sankofa Expeditions trips cost?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Pricing varies by expedition type. Relocation Intelligence starts at $2,000, Business Reconnaissance from $3,500, Heritage Journeys and Investment Scouting from $4,500 per person, Group Expeditions from $2,500 per person, and Luxury Afrika Safari from $8,000 per person. Custom quotes are available for all packages." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Sankofa Expeditions a licensed travel agency?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Sankofa Expeditions is a licensed and accredited travel agency. Our booking infrastructure is powered by Outside Agents, an established travel booking platform since 1998." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I book a free consultation before committing to a trip?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We offer a free 30-minute Discovery Call where you can discuss your travel goals, ask questions, and get personalized recommendations with no obligation." }
+    },
+    {
+      "@type": "Question", 
+      "name": "Who are Sankofa Expeditions trips designed for?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Our expeditions are designed specifically for the African diaspora. Whether you are reconnecting with your roots, scouting for relocation, exploring business opportunities, or seeking a luxury safari experience, we build every journey with the diaspora perspective at the center." }
+    }
+  ]
+};
+
+const jsonLd = [breadcrumbJsonLd, travelAgencyJsonLd, faqJsonLd];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd} lang={lang}>
+  <!-- Hero -->
+  <section class="travel-hero" aria-labelledby="travel-hero-title">
+    <div class="container">
+      <h1 id="travel-hero-title">{t('travel.hero.headline', lang)}</h1>
+      <p class="hero-sub">{t('travel.hero.subheadline', lang)}</p>
+      <div class="hero-ctas">
+        <a href="#packages" class="btn btn-primary">{t('travel.hero.cta.explore', lang)}</a>
+        <a href={lang === 'en' ? '/quote' : `/${lang}/quote`} class="btn btn-secondary">{t('travel.hero.cta.quote', lang)}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 Package Cards -->
+  <section id="packages" class="travel-packages" aria-labelledby="packages-title">
+    <div class="container">
+      <h2 id="packages-title">{t('travel.packages.title', lang)}</h2>
+      <div class="package-grid">
+        {packages.map((pkg) => (
+          <article class="package-card" aria-labelledby={`pkg-${pkg.slug}`}>
+            <span class="package-icon" aria-hidden="true">{pkg.icon}</span>
+            <h3 id={`pkg-${pkg.slug}`}>{t(pkg.titleKey, lang)}</h3>
+            <p class="package-desc">{t(pkg.descKey, lang)}</p>
+            <p class="package-price">{t(pkg.priceKey, lang)}</p>
+            <div class="package-ctas">
+              <a href={lang === 'en' ? `/travel/${pkg.slug}` : `/${lang}/travel/${pkg.slug}`} class="btn btn-outline">{t('travel.learnmore', lang)}</a>
+              <a href={lang === 'en' ? `/quote?pkg=${pkg.slug}` : `/${lang}/quote?pkg=${pkg.slug}`} class="btn btn-primary-sm">{t('travel.getquote', lang)}</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <section class="trust-bar" aria-label="Accreditation">
+    <div class="container">
+      <p>{t('travel.trust.licensed', lang)} &middot; IATAN &middot; CLIA &middot; ASTA</p>
+      <p>{t('travel.trust.powered', lang)} &middot; Est. 1998</p>
+      <p>{t('travel.trust.serving', lang)}</p>
+    </div>
+  </section>
+
+  <!-- Not Sure CTA -->
+  <section class="not-sure" aria-labelledby="not-sure-title">
+    <div class="container">
+      <h2 id="not-sure-title">{t('travel.notsure.title', lang)}</h2>
+      <p>{t('travel.notsure.desc', lang)}</p>
+      <a href={lang === 'en' ? '/consult' : `/${lang}/consult`} class="btn btn-primary">{t('travel.notsure.cta', lang)}</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section" aria-labelledby="faq-title">
+    <div class="container">
+      <h2 id="faq-title">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <details>
+          <summary>What types of African expeditions does Sankofa Expeditions offer?</summary>
+          <p>We offer six categories: Heritage & Roots Journeys for tracing your lineage, Relocation Intelligence for scouting your next home, Business Reconnaissance for market entry, Investment Scouting for real estate and opportunities, Group Expeditions for communities and families, and Luxury Afrika Safari for premium wildlife and cultural immersion.</p>
+        </details>
+        <details>
+          <summary>How much do Sankofa Expeditions trips cost?</summary>
+          <p>Pricing varies by expedition type. Relocation Intelligence starts at $2,000, Business Reconnaissance from $3,500, Heritage Journeys and Investment Scouting from $4,500 per person, Group Expeditions from $2,500 per person, and Luxury Afrika Safari from $8,000 per person. Custom quotes are available for all packages.</p>
+        </details>
+        <details>
+          <summary>Is Sankofa Expeditions a licensed travel agency?</summary>
+          <p>Yes. Sankofa Expeditions is a licensed and accredited travel agency. Our booking infrastructure is powered by Outside Agents, an established travel booking platform since 1998.</p>
+        </details>
+        <details>
+          <summary>Can I book a free consultation before committing to a trip?</summary>
+          <p>Absolutely. We offer a free 30-minute Discovery Call where you can discuss your travel goals, ask questions, and get personalized recommendations with no obligation.</p>
+        </details>
+        <details>
+          <summary>Who are Sankofa Expeditions trips designed for?</summary>
+          <p>Our expeditions are designed specifically for the African diaspora. Whether you are reconnecting with your roots, scouting for relocation, exploring business opportunities, or seeking a luxury safari experience, we build every journey with the diaspora perspective at the center.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <EmailCapture lang={lang} />
+</BaseLayout>
+
+<style>
+  .travel-hero {
+    padding: 6rem 0 4rem;
+    text-align: center;
+    background: var(--color-dark, #111);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .travel-hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+  .hero-sub {
+    font-size: 1.15rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.7;
+  }
+  .hero-ctas {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-block;
+    padding: 0.85rem 2rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .btn-primary {
+    background: #fff;
+    color: #111;
+  }
+  .btn-primary:hover { background: #e0e0e0; }
+  .btn-secondary {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.4);
+  }
+  .btn-secondary:hover { border-color: #fff; }
+
+  .travel-packages {
+    padding: 5rem 0;
+  }
+  .travel-packages h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #fff;
+  }
+  .package-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .package-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 2rem;
+    text-align: center;
+    transition: border-color 0.2s;
+  }
+  .package-card:hover { border-color: rgba(255,255,255,0.3); }
+  .package-icon { font-size: 2.5rem; display: block; margin-bottom: 1rem; }
+  .package-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+    color: #fff;
+  }
+  .package-desc {
+    color: rgba(255,255,255,0.65);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  .package-price {
+    font-weight: 700;
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+  .package-ctas {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn-outline {
+    padding: 0.6rem 1.2rem;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff;
+    font-size: 0.85rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover { border-color: #fff; }
+  .btn-primary-sm {
+    padding: 0.6rem 1.2rem;
+    background: #fff;
+    color: #111;
+    font-size: 0.85rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+  .btn-primary-sm:hover { background: #e0e0e0; }
+
+  .trust-bar {
+    padding: 3rem 0;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .trust-bar p {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.9rem;
+    margin: 0.3rem 0;
+  }
+
+  .not-sure {
+    padding: 5rem 0;
+    text-align: center;
+  }
+  .not-sure h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+  .not-sure p {
+    color: rgba(255,255,255,0.7);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+  }
+
+  .faq-section {
+    padding: 4rem 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .faq-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  details {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 1.25rem 0;
+  }
+  summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: #fff;
+    font-size: 1rem;
+    list-style: none;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::before {
+    content: '+';
+    margin-right: 0.75rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.5);
+  }
+  details[open] summary::before { content: '\2212'; }
+  details p {
+    color: rgba(255,255,255,0.65);
+    margin-top: 0.75rem;
+    line-height: 1.7;
+    font-size: 0.95rem;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .package-grid { grid-template-columns: 1fr; }
+    .travel-hero { padding: 4rem 0 3rem; }
+  }
+</style>

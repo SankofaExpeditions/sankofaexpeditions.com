@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import EmailCapture from '../../components/EmailCapture.astro';
+import { t } from '../../i18n/index';
+
+const lang = 'fr';
+const title = `${t('consult.title', lang)} | Sankofa Expeditions`;
+const description = t('consult.meta.desc', lang);
+const jsonLd = [{ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sankofaexpeditions.com" }, { "@type": "ListItem", "position": 2, "name": "Consult", "item": "https://sankofaexpeditions.com/fr/consult" }] }];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd} lang={lang}>
+  <section class="consult-section" aria-labelledby="consult-title">
+    <div class="container">
+      <h1 id="consult-title">{t('consult.title', lang)}</h1>
+      <p class="consult-subtitle">{t('consult.subtitle', lang)}</p>
+      <div class="consult-grid">
+        <article class="consult-card featured" aria-labelledby="disc-title">
+          <div class="card-badge">Recommended</div>
+          <h2 id="disc-title">{t('consult.discovery.title', lang)}</h2>
+          <p class="card-price">{t('consult.discovery.price', lang)}</p>
+          <p class="card-desc">{t('consult.discovery.desc', lang)}</p>
+          <a href="https://calendly.com/expeditsankofa/30min" target="_blank" rel="noopener" class="btn btn-primary">{t('consult.discovery.cta', lang)}</a>
+        </article>
+        <article class="consult-card" aria-labelledby="itin-title">
+          <h2 id="itin-title">{t('consult.itinerary.title', lang)}</h2>
+          <p class="card-price">{t('consult.itinerary.price', lang)}</p>
+          <p class="card-desc">{t('consult.itinerary.desc', lang)}</p>
+          <span class="btn btn-disabled">{t('consult.itinerary.cta', lang)}</span>
+        </article>
+        <article class="consult-card" aria-labelledby="prem-title">
+          <h2 id="prem-title">{t('consult.premium.title', lang)}</h2>
+          <p class="card-price">{t('consult.premium.price', lang)}</p>
+          <p class="card-desc">{t('consult.premium.desc', lang)}</p>
+          <span class="btn btn-disabled">{t('consult.premium.cta', lang)}</span>
+        </article>
+      </div>
+      <p class="consult-note">{t('consult.note', lang)}</p>
+    </div>
+  </section>
+  <EmailCapture lang={lang} />
+</BaseLayout>
+
+<style>
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
+  .consult-section { padding: 5rem 0; }
+  .consult-section h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4.5vw, 3rem); color: #fff; text-align: center; margin-bottom: 0.75rem; }
+  .consult-subtitle { text-align: center; color: rgba(255,255,255,0.65); margin-bottom: 3rem; font-size: 1.05rem; max-width: 650px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+  .consult-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 2rem; }
+  .consult-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 2.5rem 2rem; text-align: center; position: relative; }
+  .consult-card.featured { border-color: rgba(255,255,255,0.3); }
+  .card-badge { position: absolute; top: -0.75rem; left: 50%; transform: translateX(-50%); background: #fff; color: #111; padding: 0.25rem 1rem; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+  .consult-card h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: #fff; margin-bottom: 0.75rem; }
+  .card-price { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 1rem; }
+  .card-desc { color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.6; margin-bottom: 2rem; }
+  .btn { display: inline-block; padding: 0.85rem 2rem; text-decoration: none; font-weight: 600; font-size: 0.95rem; border-radius: 2px; }
+  .btn-primary { background: #fff; color: #111; }
+  .btn-primary:hover { background: #e0e0e0; }
+  .btn-disabled { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.35); cursor: not-allowed; border: 1px solid rgba(255,255,255,0.1); }
+  .consult-note { text-align: center; color: rgba(255,255,255,0.45); font-size: 0.9rem; font-style: italic; margin-top: 1rem; }
+  @media (max-width: 768px) { .consult-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; } }
+</style>

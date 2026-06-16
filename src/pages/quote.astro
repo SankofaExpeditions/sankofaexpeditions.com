@@ -1,0 +1,207 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getLangFromUrl, t } from '../i18n/index';
+
+const lang = getLangFromUrl(Astro.url);
+const title = `${t('quote.title', lang)} | Sankofa Expeditions`;
+const description = t('quote.meta.desc', lang);
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sankofaexpeditions.com" },
+    { "@type": "ListItem", "position": 2, "name": "Travel", "item": "https://sankofaexpeditions.com/travel" },
+    { "@type": "ListItem", "position": 3, "name": "Quote", "item": "https://sankofaexpeditions.com/quote" }
+  ]
+};
+
+const jsonLd = [breadcrumbJsonLd];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd} lang={lang}>
+  <section class="quote-section" aria-labelledby="quote-title">
+    <div class="container">
+      <h1 id="quote-title">{t('quote.title', lang)}</h1>
+      <p class="quote-subtitle">{t('quote.subtitle', lang)}</p>
+
+      <form id="quote-form" action="https://formspree.io/f/xwpkgjdo" method="POST" class="quote-form">
+        <input type="hidden" name="_subject" value="New Quote Request - Sankofa Expeditions" />
+        <input type="hidden" name="_language" value={lang} />
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstname">{t('quote.firstname', lang)} *</label>
+            <input type="text" id="firstname" name="firstname" required />
+          </div>
+          <div class="form-group">
+            <label for="lastname">{t('quote.lastname', lang)} *</label>
+            <input type="text" id="lastname" name="lastname" required />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">{t('quote.email', lang)} *</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">{t('quote.phone', lang)}</label>
+            <input type="tel" id="phone" name="phone" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="interest">{t('quote.interest', lang)} *</label>
+          <select id="interest" name="interest" required>
+            <option value="">--</option>
+            <option value="heritage">{t('quote.interest.heritage', lang)}</option>
+            <option value="relocation">{t('quote.interest.relocation', lang)}</option>
+            <option value="business">{t('quote.interest.business', lang)}</option>
+            <option value="investment">{t('quote.interest.investment', lang)}</option>
+            <option value="groups">{t('quote.interest.groups', lang)}</option>
+            <option value="safari">{t('quote.interest.safari', lang)}</option>
+            <option value="notsure">{t('quote.interest.notsure', lang)}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="destinations">{t('quote.destinations', lang)}</label>
+          <input type="text" id="destinations" name="destinations" placeholder="e.g. Ghana, Kenya, Tanzania" />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="dates">{t('quote.dates', lang)}</label>
+            <input type="text" id="dates" name="dates" placeholder="e.g. March 2027" />
+          </div>
+          <div class="form-group">
+            <label for="travelers">{t('quote.travelers', lang)}</label>
+            <input type="number" id="travelers" name="travelers" min="1" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="budget">{t('quote.budget', lang)}</label>
+          <select id="budget" name="budget">
+            <option value="">--</option>
+            <option value="under3k">{t('quote.budget.under3k', lang)}</option>
+            <option value="3to7k">{t('quote.budget.3to7k', lang)}</option>
+            <option value="7to15k">{t('quote.budget.7to15k', lang)}</option>
+            <option value="15kplus">{t('quote.budget.15kplus', lang)}</option>
+            <option value="prefer">{t('quote.budget.prefer', lang)}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="hearabout">{t('quote.hearabout', lang)}</label>
+          <select id="hearabout" name="hearabout">
+            <option value="">--</option>
+            <option value="instagram">{t('quote.hear.instagram', lang)}</option>
+            <option value="facebook">{t('quote.hear.facebook', lang)}</option>
+            <option value="referral">{t('quote.hear.referral', lang)}</option>
+            <option value="google">{t('quote.hear.google', lang)}</option>
+            <option value="other">{t('quote.hear.other', lang)}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="vision">{t('quote.vision', lang)}</label>
+          <textarea id="vision" name="vision" rows="5"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">{t('quote.submit', lang)}</button>
+      </form>
+
+      <div id="quote-success" class="success-msg" style="display: none;">
+        <p>{t('quote.success', lang)}</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem; color: rgba(255,255,255,0.5);">Follow us on <a href="https://instagram.com/expeditsankofa" style="color: #fff;">Instagram</a> for travel inspiration.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const form = document.getElementById('quote-form');
+  const success = document.getElementById('quote-success');
+  
+  // Pre-fill interest from URL param
+  const params = new URLSearchParams(window.location.search);
+  const pkg = params.get('pkg');
+  if (pkg) {
+    const select = document.getElementById('interest') as HTMLSelectElement;
+    if (select) {
+      for (let i = 0; i < select.options.length; i++) {
+        if (select.options[i].value === pkg) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+    }
+  }
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form as HTMLFormElement);
+    try {
+      await fetch((form as HTMLFormElement).action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } });
+      (form as HTMLElement).style.display = 'none';
+      if (success) success.style.display = 'block';
+    } catch (err) {
+      alert('Something went wrong. Please try again or email expeditsankofa@gmail.com');
+    }
+  });
+</script>
+
+<style>
+  .container { max-width: 700px; margin: 0 auto; padding: 0 1.5rem; }
+  .quote-section { padding: 5rem 0; }
+  .quote-section h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    color: #fff;
+    text-align: center;
+    margin-bottom: 0.75rem;
+  }
+  .quote-subtitle {
+    text-align: center;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 3rem;
+    font-size: 1.05rem;
+  }
+  .quote-form { display: flex; flex-direction: column; gap: 1.25rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  .form-group { display: flex; flex-direction: column; }
+  .form-group label {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: #fff;
+    padding: 0.75rem;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: border-color 0.2s;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: rgba(255,255,255,0.4);
+  }
+  .form-group select { appearance: auto; }
+  .form-group select option { background: #222; color: #fff; }
+  .btn { display: inline-block; padding: 0.85rem 2rem; text-decoration: none; font-weight: 600; font-size: 0.95rem; border-radius: 2px; transition: all 0.2s; cursor: pointer; border: none; }
+  .btn-primary { background: #fff; color: #111; width: 100%; margin-top: 0.5rem; }
+  .btn-primary:hover { background: #e0e0e0; }
+  .success-msg { text-align: center; padding: 3rem 0; }
+  .success-msg p { color: #fff; font-size: 1.15rem; line-height: 1.6; }
+
+  @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+</style>

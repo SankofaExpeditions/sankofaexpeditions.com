@@ -12,6 +12,7 @@ const currentPath = Astro.url.pathname.replace(/\.html$/, '').replace(/^\/(fr|es
 const navItems = [
   { href: getLocalizedPath('/', lang), label: t('nav.home', lang) },
   { href: getLocalizedPath('/about', lang), label: t('nav.about', lang) },
+  { href: getLocalizedPath('/travel', lang), label: t('nav.travel', lang) },
   { href: getLocalizedPath('/expeditions', lang), label: t('nav.expeditions', lang) },
   { href: getLocalizedPath('/services', lang), label: t('nav.services', lang) },
   { href: getLocalizedPath('/blog', lang), label: t('nav.blog', lang) },

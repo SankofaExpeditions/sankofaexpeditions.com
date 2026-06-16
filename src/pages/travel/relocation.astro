@@ -1,0 +1,193 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import EmailCapture from '../../components/EmailCapture.astro';
+import { getLangFromUrl, t } from '../../i18n/index';
+
+const lang = getLangFromUrl(Astro.url);
+const title = `${t('travel.relocation.title', lang)} | Sankofa Expeditions`;
+const description = t('travel.relocation.desc', lang);
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sankofaexpeditions.com" },
+    { "@type": "ListItem", "position": 2, "name": "Travel", "item": "https://sankofaexpeditions.com/travel" },
+    { "@type": "ListItem", "position": 3, "name": t('travel.relocation.title', lang), "item": "https://sankofaexpeditions.com/travel/relocation" }
+  ]
+};
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "TouristTrip",
+  "name": t('travel.relocation.title', lang),
+  "description": t('travel.relocation.desc', lang),
+  "provider": {
+    "@type": "TravelAgency",
+    "name": "Sankofa Expeditions",
+    "url": "https://sankofaexpeditions.com"
+  },
+  "touristType": "African diaspora travelers"
+};
+
+const jsonLd = [breadcrumbJsonLd, serviceJsonLd];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd} lang={lang}>
+  <section class="pkg-hero" aria-labelledby="pkg-title">
+    <div class="container">
+      <a href="/travel" class="back-link">&larr; {t('travel.packages.title', lang)}</a>
+      <span class="pkg-icon" aria-hidden="true">🏠</span>
+      <h1 id="pkg-title">{t('travel.relocation.title', lang)}</h1>
+      <p class="pkg-tagline">{t('travel.relocation.desc', lang)}</p>
+      <a href="/quote?pkg=relocation" class="btn btn-primary">{t('travel.pkg.cta.plan', lang)}</a>
+    </div>
+  </section>
+
+  <section class="pkg-details">
+    <div class="container">
+      <div class="details-grid">
+        <div class="detail-section">
+          <h2>{t('travel.pkg.included', lang)}</h2>
+          <ul class="included-list">
+          <li>Neighborhood scouting and housing tours</li>
+          <li>Cost-of-living analysis and comparison</li>
+          <li>Legal residency pathway consultation</li>
+          <li>Banking and financial setup guidance</li>
+          <li>School and healthcare facility visits</li>
+          <li>Local expat and diaspora community introductions</li>
+          <li>Utility and infrastructure assessment</li>
+          <li>Post-trip relocation action plan</li>
+          </ul>
+        </div>
+        <div class="detail-section">
+          <h2>{t('travel.pkg.notincluded', lang)}</h2>
+          <ul class="not-included-list">
+          <li>International flights</li>
+          <li>Travel insurance</li>
+          <li>Legal fees for visa/residency applications</li>
+          <li>Property deposits or rental payments</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pkg-pricing" aria-labelledby="pricing-title">
+    <div class="container">
+      <h2 id="pricing-title">{t('travel.pkg.pricing', lang)}</h2>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>{t('travel.pkg.standard', lang)}</h3>
+          <p class="price">$2,000 - $3,500</p>
+          <a href="/quote?pkg=relocation" class="btn btn-outline">{t('travel.getquote', lang)}</a>
+        </div>
+        <div class="pricing-card featured">
+          <h3>{t('travel.pkg.premium', lang)}</h3>
+          <p class="price">$4,000 - $6,000</p>
+          <a href="/quote?pkg=relocation" class="btn btn-primary-sm">{t('travel.getquote', lang)}</a>
+        </div>
+        <div class="pricing-card">
+          <h3>{t('travel.pkg.elite', lang)}</h3>
+          <p class="price">$7,000+</p>
+          <a href="/quote?pkg=relocation" class="btn btn-outline">{t('travel.getquote', lang)}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pkg-itinerary" aria-labelledby="itinerary-title">
+    <div class="container">
+      <h2 id="itinerary-title">{t('travel.pkg.itinerary', lang)}</h2>
+      <ol class="itinerary-list">
+          <li>Day 1: Arrival, city orientation, initial briefing</li>
+          <li>Day 2: Neighborhood tours (3-4 areas)</li>
+          <li>Day 3: Housing viewings and rental market overview</li>
+          <li>Day 4: Banking, healthcare, and school visits</li>
+          <li>Day 5: Expat community meetups and local networking</li>
+          <li>Day 6: Final wrap-up, action plan delivery</li>
+          <li>Day 7: Departure</li>
+      </ol>
+      <p class="itinerary-note">Full itinerary provided upon consultation.</p>
+    </div>
+  </section>
+
+  <section class="pkg-destinations" aria-labelledby="dest-title">
+    <div class="container">
+      <h2 id="dest-title">{t('travel.pkg.destinations', lang)}</h2>
+      <div class="country-grid">
+        <span class="country-badge">Ghana 🇬🇭</span>
+        <span class="country-badge">Rwanda 🇷🇼</span>
+        <span class="country-badge">Kenya 🇰🇪</span>
+        <span class="country-badge">South Africa 🇿🇦</span>
+        <span class="country-badge">Tanzania 🇹🇿</span>
+        <span class="country-badge">Senegal 🇸🇳</span>
+        <span class="country-badge">Mauritius 🇲🇺</span>
+        <span class="country-badge">Cape Verde 🇨🇻</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="pkg-cta-bottom">
+    <div class="container">
+      <a href="/quote?pkg=relocation" class="btn btn-primary">{t('travel.pkg.cta.plan', lang)}</a>
+      <a href="/consult" class="btn btn-secondary">{t('travel.pkg.cta.call', lang)}</a>
+    </div>
+  </section>
+
+  <EmailCapture lang={lang} />
+</BaseLayout>
+
+<style>
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
+  .pkg-hero { padding: 5rem 0 3rem; text-align: center; background: var(--color-dark, #111); border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .back-link { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.9rem; display: inline-block; margin-bottom: 1.5rem; }
+  .back-link:hover { color: #fff; }
+  .pkg-icon { font-size: 3rem; display: block; margin-bottom: 1rem; }
+  .pkg-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4.5vw, 3rem); color: #fff; margin-bottom: 0.75rem; }
+  .pkg-tagline { color: rgba(255,255,255,0.7); font-size: 1.15rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+  .btn { display: inline-block; padding: 0.85rem 2rem; text-decoration: none; font-weight: 600; font-size: 0.95rem; border-radius: 2px; transition: all 0.2s; }
+  .btn-primary { background: #fff; color: #111; }
+  .btn-primary:hover { background: #e0e0e0; }
+  .btn-secondary { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.4); margin-left: 1rem; }
+  .btn-secondary:hover { border-color: #fff; }
+  .btn-outline { padding: 0.6rem 1.5rem; border: 1px solid rgba(255,255,255,0.3); color: #fff; font-size: 0.9rem; text-decoration: none; font-weight: 500; }
+  .btn-outline:hover { border-color: #fff; }
+  .btn-primary-sm { padding: 0.6rem 1.5rem; background: #fff; color: #111; font-size: 0.9rem; text-decoration: none; font-weight: 600; }
+  .btn-primary-sm:hover { background: #e0e0e0; }
+
+  .pkg-details { padding: 4rem 0; }
+  .details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .detail-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: #fff; margin-bottom: 1.5rem; }
+  .included-list, .not-included-list { list-style: none; padding: 0; }
+  .included-list li { padding: 0.5rem 0; color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .included-list li::before { content: '\2713'; margin-right: 0.75rem; color: #4ade80; }
+  .not-included-list li { padding: 0.5rem 0; color: rgba(255,255,255,0.5); }
+  .not-included-list li::before { content: '\2717'; margin-right: 0.75rem; color: rgba(255,255,255,0.3); }
+
+  .pkg-pricing { padding: 4rem 0; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; }
+  .pkg-pricing h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: #fff; margin-bottom: 2rem; }
+  .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 900px; margin: 0 auto; }
+  .pricing-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 2rem; }
+  .pricing-card.featured { border-color: rgba(255,255,255,0.3); }
+  .pricing-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: #fff; margin-bottom: 0.75rem; }
+  .price { font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 1.5rem; }
+
+  .pkg-itinerary { padding: 4rem 0; border-top: 1px solid rgba(255,255,255,0.1); }
+  .pkg-itinerary h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: #fff; margin-bottom: 2rem; text-align: center; }
+  .itinerary-list { max-width: 700px; margin: 0 auto; padding-left: 1.5rem; }
+  .itinerary-list li { padding: 0.75rem 0; color: rgba(255,255,255,0.75); border-bottom: 1px solid rgba(255,255,255,0.05); line-height: 1.6; }
+  .itinerary-note { text-align: center; color: rgba(255,255,255,0.45); font-style: italic; margin-top: 1.5rem; }
+
+  .pkg-destinations { padding: 4rem 0; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; }
+  .pkg-destinations h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: #fff; margin-bottom: 2rem; }
+  .country-grid { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
+  .country-badge { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 0.5rem 1rem; font-size: 0.9rem; color: rgba(255,255,255,0.8); }
+
+  .pkg-cta-bottom { padding: 4rem 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+
+  @media (max-width: 768px) {
+    .details-grid { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; }
+  }
+</style>

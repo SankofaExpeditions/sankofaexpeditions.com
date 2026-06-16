@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import EmailCapture from '../../../components/EmailCapture.astro';
+import { t } from '../../../i18n/index';
+
+const lang = 'es';
+const title = `${t('travel.safari.title', lang)} | Sankofa Expeditions`;
+const description = t('travel.safari.desc', lang);
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sankofaexpeditions.com" },
+    { "@type": "ListItem", "position": 2, "name": t('nav.travel', lang), "item": "https://sankofaexpeditions.com/es/travel" },
+    { "@type": "ListItem", "position": 3, "name": t('travel.safari.title', lang), "item": "https://sankofaexpeditions.com/es/travel/safari" }
+  ]
+};
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "TouristTrip",
+  "name": t('travel.safari.title', lang),
+  "description": t('travel.safari.desc', lang),
+  "provider": { "@type": "TravelAgency", "name": "Sankofa Expeditions", "url": "https://sankofaexpeditions.com" }
+};
+
+const jsonLd = [breadcrumbJsonLd, serviceJsonLd];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd} lang={lang}>
+  <section class="pkg-hero" aria-labelledby="pkg-title">
+    <div class="container">
+      <a href="/es/travel" class="back-link">&larr; {t('travel.packages.title', lang)}</a>
+      <h1 id="pkg-title">{t('travel.safari.title', lang)}</h1>
+      <p class="pkg-tagline">{t('travel.safari.desc', lang)}</p>
+      <p class="pkg-price">{t('travel.safari.price', lang)}</p>
+      <div class="pkg-ctas">
+        <a href="/es/quote?pkg=safari" class="btn btn-primary">{t('travel.pkg.cta.plan', lang)}</a>
+        <a href="/es/consult" class="btn btn-secondary">{t('travel.pkg.cta.call', lang)}</a>
+      </div>
+    </div>
+  </section>
+
+  <EmailCapture lang={lang} />
+</BaseLayout>
+
+<style>
+  .container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+  .pkg-hero { padding: 5rem 0 4rem; text-align: center; background: var(--color-dark, #111); border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .back-link { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.9rem; display: inline-block; margin-bottom: 1.5rem; }
+  .back-link:hover { color: #fff; }
+  .pkg-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 4.5vw, 3rem); color: #fff; margin-bottom: 0.75rem; }
+  .pkg-tagline { color: rgba(255,255,255,0.7); font-size: 1.15rem; margin-bottom: 1rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+  .pkg-price { font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 2rem; }
+  .pkg-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn { display: inline-block; padding: 0.85rem 2rem; text-decoration: none; font-weight: 600; font-size: 0.95rem; border-radius: 2px; transition: all 0.2s; }
+  .btn-primary { background: #fff; color: #111; }
+  .btn-primary:hover { background: #e0e0e0; }
+  .btn-secondary { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.4); }
+  .btn-secondary:hover { border-color: #fff; }
+</style>
