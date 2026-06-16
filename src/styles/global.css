@@ -185,7 +185,7 @@ img {
 .eyebrow {
   display: inline-block;
   font-family: var(--font-sans);
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.15em;
@@ -194,8 +194,8 @@ img {
 }
 
 .section--dark .eyebrow {
-  color: var(--color-text-on-dark);
-  opacity: 0.6;
+  color: rgba(255, 255, 255, 0.8);
+  opacity: 1;
 }
 
 /* Buttons */
