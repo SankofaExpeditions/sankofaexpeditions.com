@@ -33,6 +33,7 @@ export const ui = {
     'nav.blog': 'Blog',
     'nav.contact': 'Contact',
     'nav.travel': 'Travel',
+    'nav.directory': 'Directories',
     'nav.cta': 'Get Intel',
 
     // Header
@@ -242,6 +243,7 @@ export const ui = {
     'nav.blog': 'Blog',
     'nav.contact': 'Contact',
     'nav.travel': 'Voyages',
+    'nav.directory': 'Répertoires',
     'nav.cta': 'Renseignements',
 
     // Header
@@ -451,6 +453,7 @@ export const ui = {
     'nav.blog': 'Blog',
     'nav.contact': 'Contacto',
     'nav.travel': 'Viajes',
+    'nav.directory': 'Directorios',
     'nav.cta': 'Informes',
 
     // Header
