@@ -1,0 +1,647 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Bitcoin Circular Economies in Africa | Sankofa Expeditions';
+const description = 'A directory of operating Bitcoin circular economies across Africa, communities where people earn, spend, and save in Bitcoin daily. Starting with Ghana.';
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://sankofaexpeditions.com/bitcoin-circular-economies/#webpage",
+    "url": "https://sankofaexpeditions.com/bitcoin-circular-economies",
+    "name": title,
+    "description": description,
+    "isPartOf": { "@id": "https://sankofaexpeditions.com/#website" },
+    "breadcrumb": { "@id": "https://sankofaexpeditions.com/bitcoin-circular-economies/#breadcrumb" },
+    "inLanguage": "en-US",
+    "dateModified": new Date().toISOString().split('T')[0]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://sankofaexpeditions.com/bitcoin-circular-economies/#breadcrumb",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sankofaexpeditions.com" },
+      { "@type": "ListItem", "position": 2, "name": "Bitcoin Circular Economies", "item": "https://sankofaexpeditions.com/bitcoin-circular-economies" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": "https://sankofaexpeditions.com/bitcoin-circular-economies/#list",
+    "name": "Bitcoin Circular Economies in Africa",
+    "description": "Operating Bitcoin circular economies across Africa where communities earn, spend, and save in Bitcoin daily.",
+    "numberOfItems": 3,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Organization",
+          "name": "Bitcoin Dua",
+          "url": "https://www.bitcoindua.org/",
+          "description": "Practical Bitcoin education, youth STEM programs, and merchant onboarding in Agbozume, Volta Region, Ghana. Approximately 30 local merchants onboarded. Funded in part by Block (Jack Dorsey) with $50,000 in late 2024 and $100,000 in 2025.",
+          "foundingDate": "2023",
+          "founder": { "@type": "Person", "name": "Mawufemor Kofi Folivi" },
+          "location": {
+            "@type": "Place",
+            "name": "Agbozume, Volta Region, Ghana",
+            "address": { "@type": "PostalAddress", "addressCountry": "GH", "addressRegion": "Volta Region" }
+          },
+          "sameAs": ["https://x.com/bitcoin_dua", "https://www.bitcoindua.org/"]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Organization",
+          "name": "Bitfiasi Initiative",
+          "url": "https://bitfiasi.org",
+          "description": "Bitcoin circular economy project in Dodowa, Ghana. Onboarding local merchants to accept Lightning payments. Light node of Mi Primer Bitcoin.",
+          "foundingDate": "2024",
+          "location": {
+            "@type": "Place",
+            "name": "Dodowa, Greater Accra Region, Ghana",
+            "address": { "@type": "PostalAddress", "addressCountry": "GH", "addressRegion": "Greater Accra" }
+          },
+          "sameAs": ["https://x.com/bitfiasi", "https://bitfiasi.org"]
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Organization",
+          "name": "Bitcoin Aves",
+          "url": "https://geyser.fund/project/bitcoinaavesgh",
+          "description": "Bitcoin education and circular economy project in Akatsi, Volta Region, Ghana. Combines Bitcoin literacy with youth empowerment and food production programs. Light node of Mi Primer Bitcoin.",
+          "foundingDate": "2025",
+          "location": {
+            "@type": "Place",
+            "name": "Akatsi, Volta Region, Ghana",
+            "address": { "@type": "PostalAddress", "addressCountry": "GH", "addressRegion": "Volta Region" }
+          },
+          "sameAs": ["https://x.com/bitcoin_aves"]
+        }
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a Bitcoin circular economy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A Bitcoin circular economy is a local community where people earn, spend, and save in Bitcoin without needing to convert to fiat currency at every step. Merchants accept Bitcoin, workers receive wages or rewards in sats, and value circulates locally using the Lightning Network for fast, low-fee transactions. The model was pioneered by Bitcoin Beach in El Zonte, El Salvador, and is being replicated in communities across Africa."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where are Bitcoin circular economies operating in Ghana?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "As of 2025-2026, documented operating Bitcoin circular economies in Ghana include Bitcoin Dua in Agbozume (Volta Region), Bitfiasi Initiative in Dodowa (Greater Accra Region), and Bitcoin Aves in Akatsi (Volta Region). All three are building local merchant networks, conducting Bitcoin education, and operating on the Lightning Network."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the African diaspora connect with these communities?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Diaspora members can support these projects through Bitcoin donations via their Lightning addresses or Geyser fund campaigns, visit them during heritage or relocation trips, or connect through their public social media channels. Bitcoin Dua in particular has received international attention and is welcoming to visitors and collaborators."
+        }
+      }
+    ]
+  }
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Bitcoin in Africa</p>
+      <h1>Bitcoin Circular Economies in Africa</h1>
+      <p class="hero-sub">
+        Communities where Bitcoin is money, not an investment. People earn it, spend it locally, and save it. No exchanges, no speculation, just sound money working in daily life. This is a living directory of those communities, starting with Ghana.
+      </p>
+    </div>
+  </section>
+
+  <!-- What this is -->
+  <section class="section explainer">
+    <div class="container container--narrow">
+      <h2>What a Bitcoin Circular Economy Actually Is</h2>
+      <p>
+        The model was built by Bitcoin Beach in El Zonte, El Salvador: anchor a community with Bitcoin education, onboard a handful of merchants, reward youth participation in sats, and let value circulate locally instead of cashing out at every step. The Lightning Network makes it practical. Transactions settle in seconds for near-zero fees.
+      </p>
+      <p>
+        In Africa, this matters for concrete reasons. Naira lost over 70% of its value between 2022 and 2025. The cedi dropped 60% in the same window. Cross-border remittances in sub-Saharan Africa cost 8 to 10% on average. Bitcoin fixes the fee problem now via Lightning, and it fixes the debasement problem for anyone willing to hold it.
+      </p>
+      <p>
+        The communities below are not talking about Bitcoin. They are using it.
+      </p>
+    </div>
+  </section>
+
+  <!-- Directory -->
+  <section class="section directory" aria-labelledby="directory-heading">
+    <div class="container">
+      <header class="section-header">
+        <span class="eyebrow">Confirmed Operating Projects</span>
+        <h2 id="directory-heading">Ghana</h2>
+        <hr class="divider" />
+        <p>Three documented Bitcoin circular economies operating in Ghana as of 2025-2026. All data sourced from their public websites, social media, and published media coverage.</p>
+      </header>
+
+      <div class="project-grid">
+
+        <!-- Bitcoin Dua -->
+        <article class="project-card" id="bitcoin-dua">
+          <div class="project-card-header">
+            <div class="project-meta">
+              <span class="project-country">Ghana</span>
+              <span class="project-region">Volta Region</span>
+            </div>
+            <span class="verified-badge" title="Verified: website, published media, grant documentation">Verified</span>
+          </div>
+          <h3>Bitcoin Dua</h3>
+          <p class="project-location">Agbozume, Volta Region (near Togo border)</p>
+          <p class="project-desc">
+            One of the clearest Bitcoin Beach-style circular economies in West Africa. Founded by Mawufemor Kofi Folivi, a 20-year community organizer in Agbozume and Managing Director of the Talent Foundation. Started after Kofi attended the Africa Bitcoin Conference in December 2022, inspired in part by Bitcoin Ekasi in South Africa.
+          </p>
+          <ul class="project-facts">
+            <li>Education center with 20+ laptops teaching Bitcoin and coding</li>
+            <li>Approximately 30 local merchants onboarded to accept Lightning payments</li>
+            <li>Youth sports programs rewarding players in sats (using Fedi)</li>
+            <li>Community sports complex under construction</li>
+            <li>$50,000 grant from Block (Jack Dorsey) in late 2024</li>
+            <li>$100,000 grant from Block in 2025</li>
+          </ul>
+          <div class="project-coverage">
+            <p class="coverage-label">In the press:</p>
+            <ul class="coverage-links">
+              <li><a href="https://www.forbes.com/sites/frankcorva/2026/01/04/ghana-legalizes-crypto-while-ghanaian-village-shows-bitcoins-potential/" target="_blank" rel="noopener noreferrer">Forbes, January 2026</a></li>
+              <li><a href="https://www.fedi.xyz/blog/community-spotlight-bitcoin-dua" target="_blank" rel="noopener noreferrer">Fedi Community Spotlight, April 2026</a></li>
+              <li><a href="https://www.youtube.com/watch?v=HmK25cZVJ4I" target="_blank" rel="noopener noreferrer">YouTube: "Bitcoin Dua: Empowering Youth Through Bitcoin & STEM"</a></li>
+            </ul>
+          </div>
+          <div class="project-links">
+            <a href="https://www.bitcoindua.org/" target="_blank" rel="noopener noreferrer" class="project-link project-link--primary">bitcoindua.org</a>
+            <a href="https://x.com/bitcoin_dua" target="_blank" rel="noopener noreferrer" class="project-link">@bitcoin_dua</a>
+          </div>
+        </article>
+
+        <!-- Bitfiasi Initiative -->
+        <article class="project-card" id="bitfiasi">
+          <div class="project-card-header">
+            <div class="project-meta">
+              <span class="project-country">Ghana</span>
+              <span class="project-region">Greater Accra</span>
+            </div>
+            <span class="verified-badge">Verified</span>
+          </div>
+          <h3>Bitfiasi Initiative</h3>
+          <p class="project-location">Dodowa, Greater Accra Region</p>
+          <p class="project-desc">
+            Building a Bitcoin circular economy in Dodowa under the hashtag #DodowaGoesBitcoin. Founded in 2024 by Gideon Kombat (@FinallyGidkom) and Sena K. Ami (@SenaKAmi). A light node of Mi Primer Bitcoin, the international Bitcoin education network. Operates on Blink and has merchants listed on BTCMap.
+          </p>
+          <ul class="project-facts">
+            <li>Active merchant onboarding in Dodowa market area</li>
+            <li>BTCMap listed merchant (dobrc@blink.sv)</li>
+            <li>Lightning address: bitfiasi@blink.sv</li>
+            <li>Light node of Mi Primer Bitcoin international education network</li>
+            <li>Founded February 2024, active as of 2026</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://bitfiasi.org" target="_blank" rel="noopener noreferrer" class="project-link project-link--primary">bitfiasi.org</a>
+            <a href="https://x.com/bitfiasi" target="_blank" rel="noopener noreferrer" class="project-link">@bitfiasi</a>
+            <a href="https://btcmap.org/merchant/32384" target="_blank" rel="noopener noreferrer" class="project-link">BTCMap listing</a>
+          </div>
+        </article>
+
+        <!-- Bitcoin Aves -->
+        <article class="project-card" id="bitcoin-aves">
+          <div class="project-card-header">
+            <div class="project-meta">
+              <span class="project-country">Ghana</span>
+              <span class="project-region">Volta Region</span>
+            </div>
+            <span class="verified-badge">Verified</span>
+          </div>
+          <h3>Bitcoin Aves</h3>
+          <p class="project-location">Akatsi, Volta Region</p>
+          <p class="project-desc">
+            Bitcoin education and circular economy project in Akatsi with a distinctive approach: pairing Bitcoin literacy with youth empowerment and food production and processing programs. A light node of Mi Primer Bitcoin. Listed by Geyser Fund alongside Bitcoin Beach and Bitcoin Ekasi as one of the top Bitcoin circular economy projects globally.
+          </p>
+          <ul class="project-facts">
+            <li>Bitcoin education focused on African youth</li>
+            <li>Food production and processing programs run alongside financial literacy</li>
+            <li>Light node of Mi Primer Bitcoin education network</li>
+            <li>Part of the FBCE (Foundation for Bitcoin Circular Economies) global network</li>
+            <li>Active since 2025, Geyser fund campaign running</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://geyser.fund/project/bitcoinaavesgh" target="_blank" rel="noopener noreferrer" class="project-link project-link--primary">Support on Geyser</a>
+            <a href="https://x.com/bitcoin_aves" target="_blank" rel="noopener noreferrer" class="project-link">@bitcoin_aves</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Coming soon -->
+  <section class="section coming-soon-section">
+    <div class="container container--narrow">
+      <h2>Other African Countries</h2>
+      <p>
+        Bitcoin circular economy projects are active or developing in South Africa (Bitcoin Ekasi, Cato Manor), the DRC, Kenya, and elsewhere. We are documenting verified projects as we confirm details. If you are running or know of an active project, <a href="/contact">reach out</a>.
+      </p>
+      <div class="country-queue">
+        <div class="country-item">
+          <span class="country-flag">🇿🇦</span>
+          <span>South Africa</span>
+          <span class="status-pill status-pill--pending">Documenting</span>
+        </div>
+        <div class="country-item">
+          <span class="country-flag">🇳🇬</span>
+          <span>Nigeria</span>
+          <span class="status-pill status-pill--pending">Documenting</span>
+        </div>
+        <div class="country-item">
+          <span class="country-flag">🇰🇪</span>
+          <span>Kenya</span>
+          <span class="status-pill status-pill--pending">Documenting</span>
+        </div>
+        <div class="country-item">
+          <span class="country-flag">🇨🇩</span>
+          <span>DRC</span>
+          <span class="status-pill status-pill--pending">Documenting</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section faq-section" aria-labelledby="faq-heading">
+    <div class="container container--narrow">
+      <h2 id="faq-heading">Questions</h2>
+      <dl class="faq-list">
+        <div class="faq-item">
+          <dt>What is a Bitcoin circular economy?</dt>
+          <dd>A local community where people earn, spend, and save in Bitcoin without converting to fiat at every transaction. Merchants accept it. Workers receive wages or rewards in sats. Value circulates locally via the Lightning Network. The model was built by Bitcoin Beach in El Zonte, El Salvador.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>How does the diaspora connect with these communities?</dt>
+          <dd>Through direct contact via their websites or social media, Bitcoin donations via Lightning (all three projects accept sats), visiting during heritage or scouting trips, or partnering on education and grant programs. Bitcoin Dua in particular is welcoming to international collaborators.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>Is this different from crypto adoption in Africa?</dt>
+          <dd>Completely. Crypto adoption in Africa is largely speculation and stablecoins. Bitcoin circular economies are about using Bitcoin as actual money for daily transactions. No altcoins, no trading. Just people saving, earning, and spending in a currency that does not debase.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>How is this directory built?</dt>
+          <dd>Every listing is manually verified against the project's own website, social media presence, and published media coverage. We do not add projects based on claims alone. If a project is listed as "Documenting," we are still confirming details from primary sources.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .page-hero {
+    background: var(--color-dark);
+    color: var(--color-text-on-dark);
+    padding: var(--space-4xl) 0 var(--space-3xl);
+  }
+
+  .page-hero .eyebrow {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: var(--space-lg);
+  }
+
+  .page-hero h1 {
+    color: #fff;
+    max-width: 22ch;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-sub {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 60ch;
+  }
+
+  /* Explainer */
+  .explainer {
+    background: var(--color-bg);
+  }
+
+  .container--narrow {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+  }
+
+  .explainer h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .explainer p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+  }
+
+  /* Directory */
+  .directory {
+    background: var(--color-bg-alt);
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 768px) {
+    .project-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1100px) {
+    .project-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .project-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: var(--space-xl);
+    position: relative;
+  }
+
+  .project-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-md);
+  }
+
+  .project-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .project-country {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text);
+  }
+
+  .project-region {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+  }
+
+  .verified-badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    padding: 3px 8px;
+    white-space: nowrap;
+  }
+
+  .project-card h3 {
+    font-size: 1.35rem;
+    margin-bottom: var(--space-xs);
+  }
+
+  .project-location {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+    font-style: italic;
+  }
+
+  .project-desc {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+  }
+
+  .project-facts {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-lg);
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-md);
+  }
+
+  .project-facts li {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    padding: var(--space-xs) 0;
+    border-bottom: 1px solid var(--color-border);
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .project-facts li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--color-text);
+    font-size: 0.75rem;
+  }
+
+  .coverage-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-xs);
+  }
+
+  .coverage-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-lg);
+  }
+
+  .coverage-links li {
+    font-size: 0.875rem;
+    margin-bottom: 4px;
+  }
+
+  .coverage-links a {
+    color: var(--color-text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .coverage-links a:hover {
+    color: var(--color-text-muted);
+  }
+
+  .project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-top: auto;
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .project-link {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    padding: 6px 12px;
+    border: 1px solid var(--color-border);
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .project-link:hover {
+    border-color: var(--color-text);
+    color: var(--color-text);
+  }
+
+  .project-link--primary {
+    background: var(--color-dark);
+    color: var(--color-text-on-dark);
+    border-color: var(--color-dark);
+  }
+
+  .project-link--primary:hover {
+    background: #333;
+    border-color: #333;
+    color: #fff;
+  }
+
+  /* Coming soon */
+  .coming-soon-section {
+    background: var(--color-bg);
+  }
+
+  .coming-soon-section h2 {
+    margin-bottom: var(--space-md);
+  }
+
+  .coming-soon-section > .container--narrow > p {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-xl);
+  }
+
+  .coming-soon-section a {
+    color: var(--color-text);
+  }
+
+  .country-queue {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-lg);
+  }
+
+  .country-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+  }
+
+  .country-flag {
+    font-size: 1.25rem;
+  }
+
+  .status-pill {
+    margin-left: auto;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 3px 10px;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+  }
+
+  /* FAQ */
+  .faq-section {
+    background: var(--color-bg-alt);
+  }
+
+  .faq-section h2 {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .faq-item {
+    border-top: 1px solid var(--color-border);
+    padding: var(--space-lg) 0;
+  }
+
+  .faq-item:last-child {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .faq-item dt {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+  }
+
+  .faq-item dd {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+</style>
