@@ -1,0 +1,49 @@
+{
+  "country": "South Africa",
+  "countryCode": "ZA",
+  "flag": "🇿🇦",
+  "region": "Southern Africa",
+  "summary": "South Africa is home to Bitcoin Ekasi, one of the OG Bitcoin circular economy projects globally and the direct model that inspired Ghana's Bitcoin Dua. Research on additional SA projects is ongoing.",
+  "lastUpdated": "2026-11-05",
+  "entries": [
+    {
+      "id": "bitcoin-ekasi",
+      "name": "Bitcoin Ekasi",
+      "status": "verified",
+      "country": "South Africa",
+      "countryCode": "ZA",
+      "region": "Western Cape",
+      "city": "Mossel Bay",
+      "locationLabel": "Mossel Bay, Western Cape",
+      "founded": "2021",
+      "founder": "Hermann Vivier",
+      "website": "https://support.bitcoinekasi.com",
+      "x": "https://x.com/BitcoinEkasi",
+      "lightning": null,
+      "geyser": null,
+      "btcmap": null,
+      "description": "One of the original Bitcoin circular economy projects in Africa and the direct inspiration for Bitcoin Dua in Ghana. Founded by Hermann Vivier in November 2021 in Mossel Bay. Runs the Bitcoin Diploma education program, rewards surf kids in sats, and has documented merchants accepting Lightning payments locally. Featured in Forbes Africa. 29,000+ followers on X.",
+      "facts": [
+        "Founded November 2021, one of the earliest African Bitcoin circular economies",
+        "Bitcoin Diploma classes with weekly student cohorts earning sats",
+        "Surf kids program: The Surfer Kids rewarded in sats, partnered with Unravel Surf",
+        "TRIBE OF 21 road trip through South African coastlines documenting sats-accepting towns",
+        "29,000+ followers on X, one of the most active African Bitcoin projects online",
+        "Direct inspiration for Bitcoin Dua (Ghana) and cited as a model globally",
+        "Crowdfund for Ekasi Center: support.bitcoinekasi.com"
+      ],
+      "press": [
+        { "outlet": "Forbes Africa", "date": "July 2026", "url": "https://www.forbesafrica.com", "label": "Forbes Africa feature (Freddie Hiney)" }
+      ],
+      "networks": ["Africa Bitcoin Conference", "Bitcoin Beach"],
+      "lastVerified": "2026-11-05"
+    }
+  ],
+  "queue": [
+    { "name": "Soweto BTC", "xHandle": "SowetoBTC", "status": "documenting" },
+    { "name": "Bitcoin Famba", "xHandle": "BitcoinFamba", "status": "documenting" },
+    { "name": "Bitcoin Tofo", "xHandle": "bitcointofo", "status": "documenting" },
+    { "name": "MoneyBadger Pay", "xHandle": "MoneyBadgerPay", "status": "documenting" },
+    { "name": "Mavapay", "xHandle": "Mavapay_Money", "status": "documenting" }
+  ]
+}

@@ -1,0 +1,518 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { readFileSync, readdirSync } from 'fs';
+import { join } from 'path';
+
+const title = 'Africa Dual Citizenship Tracker for Diaspora | Sankofa Expeditions';
+const description = 'Compare African dual citizenship rules and diaspora right-of-return programs by country. Ghana, Nigeria, Kenya, South Africa, Senegal, Sierra Leone, Ethiopia. Verified legal status.';
+
+// Load all country data files
+const dataDir = join(process.cwd(), 'src/data/directories/citizenship');
+const countryFiles = readdirSync(dataDir).filter(f => f.endsWith('.json'));
+const countries = countryFiles.map(f => {
+  const data = JSON.parse(readFileSync(join(dataDir, f), 'utf-8'));
+  return {
+    slug: f.replace('.json', ''),
+    ...data,
+  };
+}).sort((a, b) => {
+  // Active programs first, then restricted, then not permitted
+  const order: Record<string, string | number> = { 'active': 0, 'active-with-disruptions': 1, 'active-with-restrictions': 2, 'restricted': 3 };
+  const aOrder = (order[a.citizenship.diasporaProgram.status] as number) ?? 4;
+  const bOrder = (order[b.citizenship.diasporaProgram.status] as number) ?? 4;
+  return aOrder - bOrder;
+});
+
+const allowsCount = countries.filter(c => c.citizenship.dualCitizenshipPermitted === true).length;
+
+const statusLabel: Record<string, string> = {
+  'active': 'Program Active',
+  'active-with-disruptions': 'Active, Disruptions Reported',
+  'active-with-restrictions': 'Active with Restrictions',
+  'restricted': 'Restricted',
+};
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://sankofaexpeditions.com/directories/citizenship/#webpage",
+    "url": "https://sankofaexpeditions.com/directories/citizenship",
+    "name": title,
+    "description": description,
+    "isPartOf": { "@id": "https://sankofaexpeditions.com/#website" },
+    "breadcrumb": { "@id": "https://sankofaexpeditions.com/directories/citizenship/#breadcrumb" },
+    "inLanguage": "en-US",
+    "dateModified": new Date().toISOString().split('T')[0]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://sankofaexpeditions.com/directories/citizenship/#breadcrumb",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sankofaexpeditions.com" },
+      { "@type": "ListItem", "position": 2, "name": "Directories", "item": "https://sankofaexpeditions.com/directories" },
+      { "@type": "ListItem", "position": 3, "name": "Citizenship Tracker", "item": "https://sankofaexpeditions.com/directories/citizenship" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": "https://sankofaexpeditions.com/directories/citizenship/#list",
+    "name": "Africa Dual Citizenship Programs for Diaspora by Country",
+    "description": "Comparison of dual citizenship rules and diaspora right-of-return programs across Africa.",
+    "numberOfItems": countries.length,
+    "itemListElement": countries.map((c, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": c.country,
+      "url": `https://sankofaexpeditions.com/directories/citizenship/${c.slug}`
+    }))
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which African countries allow dual citizenship?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "As of 2026, Ghana, Nigeria, Sierra Leone, and Senegal permit dual citizenship or have citizenship-by-descent programs for diaspora. Kenya and South Africa generally prohibit dual citizenship for adults, though Kenya allows children to hold dual status until age 23. Ethiopia does not permit dual citizenship but offers an Origin ID Card that provides residency and work rights."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can African Americans claim African citizenship?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In most cases, African citizenship requires proof of specific national lineage (a Ghanaian parent, Nigerian parent, etc.) not general African descent. Ghana's Right of Abode and citizenship programs are available to persons of Ghanaian origin. Nigeria protects citizenship for those born of Nigerian parents. Without documented lineage to a specific country, most citizenship-by-descent pathways are not accessible. Some countries, particularly Ghana, have created special residency or honorary programs for the broader African diaspora."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Ghana's current citizenship status for diaspora?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ghana's legal framework for dual citizenship and citizenship by descent is active under the 1992 Constitution and Ghana Citizenship Act 2000. The legal right exists for persons of Ghanaian origin. As of 2026, there have been reported administrative disruptions in processing. Contact the Ghana Embassy or Ghana Passport and Citizenship Office to confirm current processing times before applying."
+        }
+      }
+    ]
+  }
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/directories">Directories</a>
+        <span aria-hidden="true"> / </span>
+        <span>Citizenship Tracker</span>
+      </nav>
+      <p class="eyebrow">Reconnect Officially</p>
+      <h1>Africa Dual Citizenship Tracker</h1>
+      <p class="hero-sub">
+        A verified guide to dual citizenship rules and diaspora right-of-return programs across Africa. Which countries allow it, what it costs, and what it actually requires.
+      </p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">{allowsCount}</span>
+          <span class="stat-label">Countries Allow Dual</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">{countries.length}</span>
+          <span class="stat-label">Countries Tracked</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">Weekly</span>
+          <span class="stat-label">Updated</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section context-section">
+    <div class="container container--narrow">
+      <h2>What You Actually Need to Know</h2>
+      <p>
+        Citizenship law in Africa is not uniform. Some countries have strong diaspora programs built on constitutional rights. Others prohibit dual citizenship entirely. And most of them have a gap between what the law says and how quickly the government processes applications.
+      </p>
+      <p>
+        This tracker focuses on the practical question: can you get it, and how. Each entry is sourced from official legal texts, government announcements, and embassy publications. We do not speculate on what programs might exist.
+      </p>
+      <p>
+        One important clarification: "African diaspora citizenship" is not a thing. Each country has its own rules based on lineage to that specific country. Claiming general African descent does not qualify you for citizenship in any African country unless you can document specific national lineage.
+      </p>
+    </div>
+  </section>
+
+  <section class="section countries-section">
+    <div class="container">
+      <header class="section-header">
+        <h2>Countries</h2>
+        <p>Select a country to see full eligibility criteria, process steps, and official sources.</p>
+      </header>
+
+      <div class="countries-grid">
+        {countries.map((c) => (
+          <a href={`/directories/citizenship/${c.slug}`} class={`country-card country-card--${c.citizenship.diasporaProgram.status}`}>
+            <div class="country-card-top">
+              <span class="country-flag" aria-hidden="true">{c.flag}</span>
+              <div class="country-info">
+                <span class="country-name">{c.country}</span>
+                <span class="country-region">{c.region}</span>
+              </div>
+              <div class="dual-indicator">
+                {c.citizenship.dualCitizenshipPermitted === true
+                  ? <span class="dual-yes">Dual OK</span>
+                  : <span class="dual-no">No Dual</span>
+                }
+              </div>
+            </div>
+            <p class="country-summary">{c.summary}</p>
+            <div class="country-card-footer">
+              <span class={`status-badge status-badge--${c.citizenship.diasporaProgram.status}`}>
+                {statusLabel[c.citizenship.diasporaProgram.status] ?? c.citizenship.diasporaProgram.status}
+              </span>
+              <span class="card-arrow" aria-hidden="true">&rarr;</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq-section">
+    <div class="container container--narrow">
+      <h2>Common Questions</h2>
+      <dl class="faq-list">
+        <div class="faq-item">
+          <dt>Which African countries allow dual citizenship?</dt>
+          <dd>As of 2026: Ghana, Nigeria, Sierra Leone, and Senegal permit dual citizenship or have citizenship-by-descent programs. Kenya and South Africa generally prohibit it for adults. Ethiopia does not allow it but offers an Origin ID Card for residency rights.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>Can African Americans claim African citizenship?</dt>
+          <dd>In most cases, no, without documented lineage to a specific country. African citizenship requires proof of parentage or birth connection to that specific nation, not general African descent. Ghana has the most accessible path for the broader diaspora but still requires proof of Ghanaian origin.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>What is Ghana's current citizenship status for diaspora?</dt>
+          <dd>The legal framework is active under the 1992 Constitution and Ghana Citizenship Act 2000. As of 2026, administrative processing has seen reported disruptions. The right exists for persons of Ghanaian origin. Contact the Ghana Embassy for current processing timelines before applying.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section methodology-section">
+    <div class="container container--narrow">
+      <h2>How This Directory Works</h2>
+      <p>
+        Every entry is verified against official legal sources: constitutions, nationality acts, and government proclamations. Administrative status (whether the program is processing applications smoothly) is noted separately from legal status. These are different things and both matter.
+      </p>
+      <p>
+        This directory is not legal advice. If you are seriously pursuing citizenship in an African country, consult an immigration attorney familiar with that country's laws. <a href="/contact">We can point you toward resources</a>.
+      </p>
+      <p>
+        Updated weekly. If you see an error or know of a legal change, <a href="/contact">reach out</a>.
+      </p>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .page-hero {
+    background: var(--color-dark);
+    color: var(--color-text-on-dark);
+    padding: var(--space-4xl) 0 var(--space-3xl);
+  }
+
+  .breadcrumb {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: var(--space-lg);
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .breadcrumb a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .page-hero .eyebrow {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: var(--space-lg);
+  }
+
+  .page-hero h1 {
+    color: #fff;
+    max-width: 22ch;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-sub {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 60ch;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: var(--space-2xl);
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .stat-num {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  /* Context */
+  .context-section {
+    background: var(--color-bg);
+  }
+
+  .container--narrow {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+  }
+
+  .context-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .context-section p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+  }
+
+  /* Countries */
+  .countries-section {
+    background: var(--color-bg-alt);
+  }
+
+  .section-header {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .section-header h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .section-header p {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .countries-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    max-width: 1100px;
+  }
+
+  @media (min-width: 700px) {
+    .countries-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .countries-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .country-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: var(--space-xl);
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    transition: border-color 0.2s;
+  }
+
+  .country-card:hover {
+    border-color: var(--color-text-muted);
+  }
+
+  .country-card-top {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .country-flag {
+    font-size: 2rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .country-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+  }
+
+  .country-name {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .country-region {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  .dual-indicator {
+    flex-shrink: 0;
+  }
+
+  .dual-yes,
+  .dual-no {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 3px 8px;
+  }
+
+  .dual-yes {
+    background: var(--color-dark);
+    color: #fff;
+  }
+
+  .dual-no {
+    background: transparent;
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+  }
+
+  .country-summary {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    margin: 0;
+    flex: 1;
+  }
+
+  .country-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .status-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+  }
+
+  .card-arrow {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    transition: transform 0.2s;
+  }
+
+  .country-card:hover .card-arrow {
+    transform: translateX(4px);
+    color: var(--color-text);
+  }
+
+  /* FAQ */
+  .faq-section {
+    background: var(--color-bg);
+  }
+
+  .faq-section h2 {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .faq-item dt {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+  }
+
+  .faq-item dd {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  /* Methodology */
+  .methodology-section {
+    background: var(--color-bg-alt);
+  }
+
+  .methodology-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .methodology-section p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+  }
+
+  .methodology-section a {
+    color: var(--color-text);
+  }
+</style>

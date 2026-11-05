@@ -1,0 +1,45 @@
+{
+  "country": "Senegal",
+  "countryCode": "SN",
+  "flag": "🇸🇳",
+  "region": "West Africa",
+  "summary": "Senegal permits dual citizenship. Senegalese born abroad or Senegalese who have naturalized abroad can retain or reclaim their Senegalese nationality. The country has strong diaspora ties, especially with France and North America.",
+  "lastUpdated": "2026-11-05",
+  "citizenship": {
+    "dualCitizenshipPermitted": true,
+    "dualCitizenshipNote": "Senegal's Code de la Nationalité Sénégalaise (Nationality Code) permits dual citizenship. Senegalese nationals do not automatically lose citizenship by acquiring foreign nationality.",
+    "diasporaProgram": {
+      "name": "Senegalese Citizenship / Nationality by Descent",
+      "status": "active",
+      "statusNote": "Active. Senegal has an extensive diaspora, estimated at 3 million people, and maintains strong consular services. Senegalese by descent can apply for nationality through the Ministry of Justice.",
+      "eligibility": "Persons born to a Senegalese father (or mother under specific conditions). Children born abroad to Senegalese parents are Senegalese by birth.",
+      "applicationFeeUSD": null,
+      "applicationFeeNote": "Contact the Senegalese Embassy or Ministry of Justice for current fees. Fees are denominated in West African CFA francs.",
+      "keyDocuments": [
+        "Birth certificate proving Senegalese parentage",
+        "Senegalese parent's birth certificate or ID (Carte Nationale d'Identite)",
+        "Current foreign passport",
+        "Completed nationality application",
+        "Police clearance certificate"
+      ],
+      "processSteps": [
+        "Contact nearest Senegalese Embassy or Consulate",
+        "Submit nationality by descent application",
+        "Documents processed by Ministry of Justice in Dakar",
+        "Senegalese nationality certificate and passport issued"
+      ],
+      "officialUrl": "https://www.justice.gouv.sn",
+      "embassyUrl": "https://www.ambasenegal-us.org",
+      "lastVerified": "2026-11-05",
+      "verificationNote": "Based on Senegalese Nationality Code provisions. Official government website primarily in French. Embassy contact recommended for English-speaking applicants."
+    }
+  },
+  "keyFacts": [
+    "Dual citizenship permitted, Senegalese don't lose citizenship by naturalizing abroad",
+    "Citizenship by descent available through Senegalese parent",
+    "Large diaspora in France, Italy, Spain, USA, and Gabon",
+    "Official process in French, embassy assistance available",
+    "Dakar is a growing hub for West African diaspora entrepreneurs"
+  ],
+  "whyItMatters": "Senegal's pro-diaspora stance is well-established. With a large and influential diaspora sending remittances that constitute a significant share of GDP, Senegal has strong incentive to maintain diaspora citizenship connections. The process works through the embassy system."
+}

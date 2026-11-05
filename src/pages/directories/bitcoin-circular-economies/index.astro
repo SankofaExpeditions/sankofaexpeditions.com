@@ -1,0 +1,391 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { readFileSync, readdirSync } from 'fs';
+import { join } from 'path';
+
+const title = 'Bitcoin Circular Economies in Africa | Sankofa Expeditions';
+const description = 'A directory of operating Bitcoin circular economies across Africa. Communities where people earn, spend, and save in Bitcoin daily. Verified from primary sources.';
+
+// Load all country data files
+const dataDir = join(process.cwd(), 'src/data/directories/bitcoin-circular-economies');
+const countryFiles = readdirSync(dataDir).filter(f => f.endsWith('.json'));
+const countries = countryFiles.map(f => {
+  const data = JSON.parse(readFileSync(join(dataDir, f), 'utf-8'));
+  return {
+    slug: f.replace('.json', ''),
+    ...data,
+    verifiedCount: data.entries.filter((e: any) => e.status === 'verified').length,
+  };
+}).sort((a, b) => b.verifiedCount - a.verifiedCount);
+
+const totalVerified = countries.reduce((sum, c) => sum + c.verifiedCount, 0);
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://sankofaexpeditions.com/directories/bitcoin-circular-economies/#webpage",
+    "url": "https://sankofaexpeditions.com/directories/bitcoin-circular-economies",
+    "name": title,
+    "description": description,
+    "isPartOf": { "@id": "https://sankofaexpeditions.com/#website" },
+    "breadcrumb": { "@id": "https://sankofaexpeditions.com/directories/bitcoin-circular-economies/#breadcrumb" },
+    "inLanguage": "en-US",
+    "dateModified": new Date().toISOString().split('T')[0]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://sankofaexpeditions.com/directories/bitcoin-circular-economies/#breadcrumb",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sankofaexpeditions.com" },
+      { "@type": "ListItem", "position": 2, "name": "Directories", "item": "https://sankofaexpeditions.com/directories" },
+      { "@type": "ListItem", "position": 3, "name": "Bitcoin Circular Economies", "item": "https://sankofaexpeditions.com/directories/bitcoin-circular-economies" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": "https://sankofaexpeditions.com/directories/bitcoin-circular-economies/#list",
+    "name": "Bitcoin Circular Economies in Africa by Country",
+    "description": "Operating Bitcoin circular economies across Africa where communities earn, spend, and save in Bitcoin daily.",
+    "numberOfItems": countries.length,
+    "itemListElement": countries.map((c, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": c.country,
+      "url": `https://sankofaexpeditions.com/directories/bitcoin-circular-economies/${c.slug}`
+    }))
+  }
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/directories">Directories</a>
+        <span aria-hidden="true"> / </span>
+        <span>Bitcoin Circular Economies</span>
+      </nav>
+      <p class="eyebrow">Bitcoin in Africa</p>
+      <h1>Bitcoin Circular Economies in Africa</h1>
+      <p class="hero-sub">
+        Communities where Bitcoin is money, not an investment. People earn it, spend it locally, and save it. This is a living directory of those communities across the continent.
+      </p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">{totalVerified}</span>
+          <span class="stat-label">Verified Projects</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">{countries.length}</span>
+          <span class="stat-label">Countries</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">Weekly</span>
+          <span class="stat-label">Updated</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section explainer">
+    <div class="container container--narrow">
+      <h2>What a Bitcoin Circular Economy Actually Is</h2>
+      <p>
+        The model was built by Bitcoin Beach in El Zonte, El Salvador: anchor a community with Bitcoin education, onboard a handful of merchants, reward youth participation in sats, and let value circulate locally instead of cashing out at every step. The Lightning Network makes it practical. Transactions settle in seconds for near-zero fees.
+      </p>
+      <p>
+        In Africa, this matters for concrete reasons. The naira lost over 70% of its value between 2022 and 2025. The cedi dropped 60% in the same window. Cross-border remittances in sub-Saharan Africa cost 8 to 10% on average. Bitcoin fixes the fee problem now via Lightning, and it fixes the debasement problem for anyone willing to hold it.
+      </p>
+      <p>
+        The communities listed here are not talking about Bitcoin. They are using it.
+      </p>
+    </div>
+  </section>
+
+  <section class="section countries-section">
+    <div class="container">
+      <header class="section-header">
+        <h2>Countries</h2>
+        <p>Select a country to browse its verified listings.</p>
+      </header>
+
+      <div class="countries-grid">
+        {countries.map((c) => (
+          <a href={`/directories/bitcoin-circular-economies/${c.slug}`} class="country-card">
+            <div class="country-card-top">
+              <span class="country-flag" aria-hidden="true">{c.flag}</span>
+              <div class="country-info">
+                <span class="country-name">{c.country}</span>
+                <span class="country-region">{c.region}</span>
+              </div>
+            </div>
+            <p class="country-summary">{c.summary}</p>
+            <div class="country-card-footer">
+              <span class="verified-count">
+                {c.verifiedCount} verified {c.verifiedCount === 1 ? 'project' : 'projects'}
+              </span>
+              <span class="card-arrow" aria-hidden="true">&rarr;</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section methodology-section">
+    <div class="container container--narrow">
+      <h2>How This Directory Works</h2>
+      <p>
+        Every listing is manually verified against the project's own website, social media presence, and published media coverage. We do not add projects based on claims alone. If a project is listed as "Documenting," we are still confirming details from primary sources.
+      </p>
+      <p>
+        This directory is updated weekly. If you are running or know of an active project, <a href="/contact">reach out</a>.
+      </p>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .page-hero {
+    background: var(--color-dark);
+    color: var(--color-text-on-dark);
+    padding: var(--space-4xl) 0 var(--space-3xl);
+  }
+
+  .breadcrumb {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: var(--space-lg);
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .breadcrumb a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .page-hero .eyebrow {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: var(--space-lg);
+  }
+
+  .page-hero h1 {
+    color: #fff;
+    max-width: 22ch;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-sub {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 60ch;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: var(--space-2xl);
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .stat-num {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  /* Explainer */
+  .explainer {
+    background: var(--color-bg);
+  }
+
+  .container--narrow {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+  }
+
+  .explainer h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .explainer p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+  }
+
+  /* Countries */
+  .countries-section {
+    background: var(--color-bg-alt);
+  }
+
+  .section-header {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .section-header h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .section-header p {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .countries-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    max-width: 900px;
+  }
+
+  @media (min-width: 600px) {
+    .countries-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 900px) {
+    .countries-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .country-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: var(--space-xl);
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    transition: border-color 0.2s;
+  }
+
+  .country-card:hover {
+    border-color: var(--color-text-muted);
+  }
+
+  .country-card-top {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .country-flag {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .country-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .country-name {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .country-region {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  .country-summary {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    margin: 0;
+    flex: 1;
+  }
+
+  .country-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .verified-count {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+  }
+
+  .card-arrow {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    transition: transform 0.2s;
+  }
+
+  .country-card:hover .card-arrow {
+    transform: translateX(4px);
+    color: var(--color-text);
+  }
+
+  /* Methodology */
+  .methodology-section {
+    background: var(--color-bg);
+  }
+
+  .methodology-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .methodology-section p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+  }
+
+  .methodology-section a {
+    color: var(--color-text);
+  }
+</style>

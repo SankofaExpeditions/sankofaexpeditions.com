@@ -1,0 +1,45 @@
+{
+  "country": "South Africa",
+  "countryCode": "ZA",
+  "flag": "🇿🇦",
+  "region": "Southern Africa",
+  "summary": "South Africa does not permit dual citizenship except in specific circumstances. Citizens who acquire foreign nationality without prior permission lose their South African citizenship automatically.",
+  "lastUpdated": "2026-11-05",
+  "citizenship": {
+    "dualCitizenshipPermitted": false,
+    "dualCitizenshipNote": "South Africa's Citizenship Act (Act 88 of 1995) generally prohibits dual citizenship. South African citizens who voluntarily acquire foreign citizenship lose their SA citizenship unless they applied for and received prior permission from the Minister of Home Affairs to retain it.",
+    "diasporaProgram": {
+      "name": "No dedicated diaspora program",
+      "status": "restricted",
+      "statusNote": "South Africa does not have a diaspora citizenship or right-of-return program. South Africans who emigrated and took foreign citizenship typically lost their SA citizenship. Re-acquisition is possible but requires a formal process through DHA.",
+      "eligibility": "South Africans by birth or descent. Those who lost citizenship by acquiring foreign nationality may apply to re-acquire it through DHA.",
+      "applicationFeeUSD": null,
+      "applicationFeeNote": "Contact DHA (Department of Home Affairs) for current fees.",
+      "keyDocuments": [
+        "South African birth certificate",
+        "Previous South African passport or ID",
+        "Current foreign passport",
+        "Renunciation of foreign citizenship (may be required)",
+        "Completed DHA application form"
+      ],
+      "processSteps": [
+        "Contact DHA (Department of Home Affairs) or SA Embassy",
+        "Determine citizenship status (whether it was lost or retained)",
+        "Apply for re-acquisition of citizenship if applicable",
+        "Consider permanent residency as an alternative pathway"
+      ],
+      "officialUrl": "https://www.dha.gov.za",
+      "embassyUrl": "https://www.southafrica-usa.net",
+      "lastVerified": "2026-11-05",
+      "verificationNote": "Based on South African Citizenship Act 88 of 1995. South Africa's dual citizenship rules are strict and commonly misunderstood. Legal advice recommended."
+    }
+  },
+  "keyFacts": [
+    "Dual citizenship generally NOT permitted",
+    "SA citizens who took foreign nationality without DHA permission lose SA citizenship",
+    "Re-acquisition of citizenship is possible through DHA process",
+    "South Africa offers permanent residency as an alternative",
+    "Many SA diaspora have unknowingly lost their citizenship"
+  ],
+  "whyItMatters": "South Africa's strict dual citizenship laws have caused significant confusion in the diaspora. Many South Africans who emigrated to the UK, US, or Australia and later naturalized there have unknowingly lost their SA citizenship. Understanding your status before planning a return is essential."
+}

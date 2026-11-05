@@ -1,0 +1,45 @@
+{
+  "country": "Nigeria",
+  "countryCode": "NG",
+  "flag": "🇳🇬",
+  "region": "West Africa",
+  "summary": "Nigeria does not permit dual citizenship through naturalization, but Nigerians by birth who acquire foreign citizenship do not legally lose their Nigerian citizenship. The government operates a Non-Resident Nigerian program for diaspora engagement.",
+  "lastUpdated": "2026-11-05",
+  "citizenship": {
+    "dualCitizenshipPermitted": true,
+    "dualCitizenshipNote": "Nigeria's 1999 Constitution (Section 28) allows dual citizenship for persons who were Nigerian citizens by birth. A Nigerian by birth who becomes a citizen of another country retains Nigerian citizenship. However, Nigerians who acquired citizenship by registration or naturalization may lose Nigerian citizenship upon voluntarily acquiring a foreign nationality.",
+    "diasporaProgram": {
+      "name": "Non-Resident Nigerian (NRN) / Nigerian Citizenship by Birth",
+      "status": "active",
+      "statusNote": "The legal protection of Nigerian citizenship by birth is enshrined in the Constitution and active. The NRN program provides official recognition and documentation for Nigerians in the diaspora.",
+      "eligibility": "Persons born of Nigerian parents who have acquired foreign citizenship. Children born abroad to at least one Nigerian parent are Nigerian citizens by birth.",
+      "applicationFeeUSD": null,
+      "applicationFeeNote": "NRN registration fees vary. Contact the Nigerian Embassy or Nigeria in Diaspora Commission (NiDCOM) for current fee schedule.",
+      "keyDocuments": [
+        "Nigerian birth certificate or parents' Nigerian passport",
+        "Current foreign passport",
+        "Proof of Nigerian parentage",
+        "Completed NRN application form",
+        "Two passport photographs"
+      ],
+      "processSteps": [
+        "Confirm eligibility (Nigerian by birth or descent)",
+        "Register with Nigerian Embassy or High Commission in your country",
+        "Apply for NRN certificate through NiDCOM portal",
+        "Obtain Nigerian passport or travel document if needed"
+      ],
+      "officialUrl": "https://www.immigration.gov.ng",
+      "embassyUrl": "https://nigeriaembassyusa.org",
+      "lastVerified": "2026-11-05",
+      "verificationNote": "Constitutional provisions verified. NRN program details from NiDCOM (Nigeria in Diaspora Commission) public information."
+    }
+  },
+  "keyFacts": [
+    "Nigerians by birth retain citizenship even after acquiring foreign nationality",
+    "Dual citizenship by birth is constitutionally protected",
+    "NiDCOM (Nigeria in Diaspora Commission) coordinates diaspora engagement",
+    "Nigerian passport can be obtained from any Nigerian Embassy",
+    "Children of Nigerians born abroad are Nigerian citizens by birth"
+  ],
+  "whyItMatters": "Nigeria's approach to dual citizenship is pragmatic: if you were born Nigerian, you stay Nigerian. The diaspora is estimated at 17 million people. NiDCOM has been pushing for stronger reintegration pathways including investment and property rights for diaspora Nigerians."
+}

@@ -1,0 +1,588 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { readFileSync, readdirSync } from 'fs';
+import { join } from 'path';
+
+export async function getStaticPaths() {
+  const dataDir = join(process.cwd(), 'src/data/directories/bitcoin-circular-economies');
+  const files = readdirSync(dataDir).filter(f => f.endsWith('.json'));
+  return files.map(f => ({ params: { country: f.replace('.json', '') } }));
+}
+
+const { country } = Astro.params;
+const dataDir = join(process.cwd(), 'src/data/directories/bitcoin-circular-economies');
+const data = JSON.parse(readFileSync(join(dataDir, `${country}.json`), 'utf-8'));
+
+const verified = data.entries.filter((e: any) => e.status === 'verified');
+const queued = data.queue || [];
+
+const pageUrl = `https://sankofaexpeditions.com/directories/bitcoin-circular-economies/${country}`;
+const title = `Bitcoin Circular Economies in ${data.country} | Sankofa Expeditions`;
+const description = `Verified Bitcoin circular economy projects operating in ${data.country}. ${data.summary}`;
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${pageUrl}/#webpage`,
+    "url": pageUrl,
+    "name": title,
+    "description": description,
+    "isPartOf": { "@id": "https://sankofaexpeditions.com/#website" },
+    "breadcrumb": { "@id": `${pageUrl}/#breadcrumb` },
+    "inLanguage": "en-US",
+    "dateModified": data.lastUpdated
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": `${pageUrl}/#breadcrumb`,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sankofaexpeditions.com" },
+      { "@type": "ListItem", "position": 2, "name": "Directories", "item": "https://sankofaexpeditions.com/directories" },
+      { "@type": "ListItem", "position": 3, "name": "Bitcoin Circular Economies", "item": "https://sankofaexpeditions.com/directories/bitcoin-circular-economies" },
+      { "@type": "ListItem", "position": 4, "name": data.country, "item": pageUrl }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": `${pageUrl}/#list`,
+    "name": `Bitcoin Circular Economies in ${data.country}`,
+    "description": data.summary,
+    "numberOfItems": verified.length,
+    "itemListElement": verified.map((entry: any, i: number) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "item": {
+        "@type": "Organization",
+        "name": entry.name,
+        "url": entry.website || entry.geyser || entry.x,
+        "description": entry.description,
+        "foundingDate": entry.founded,
+        ...(entry.founder ? { "founder": { "@type": "Person", "name": entry.founder } } : {}),
+        "location": {
+          "@type": "Place",
+          "name": entry.locationLabel,
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": entry.countryCode,
+            "addressRegion": entry.region
+          }
+        },
+        "sameAs": [entry.website, entry.x, entry.geyser, entry.btcmap].filter(Boolean)
+      }
+    }))
+  }
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/directories">Directories</a>
+        <span aria-hidden="true"> / </span>
+        <a href="/directories/bitcoin-circular-economies">Bitcoin Circular Economies</a>
+        <span aria-hidden="true"> / </span>
+        <span>{data.country}</span>
+      </nav>
+      <p class="eyebrow">Bitcoin in Africa &middot; {data.region}</p>
+      <h1>Bitcoin Circular Economies in {data.country}</h1>
+      <p class="hero-sub">{data.summary}</p>
+      <div class="hero-meta">
+        <span class="meta-pill">{data.flag} {data.country}</span>
+        <span class="meta-pill">{verified.length} verified {verified.length === 1 ? 'project' : 'projects'}</span>
+        <span class="meta-pill">Updated {data.lastUpdated}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Verified listings -->
+  <section class="section directory-section" aria-labelledby="directory-heading">
+    <div class="container">
+      <header class="section-header">
+        <span class="eyebrow-label">Confirmed Operating Projects</span>
+        <h2 id="directory-heading">{data.country}</h2>
+        <hr class="divider" />
+        <p>All data sourced from project websites, social media, and published media coverage. Only confirmed entries are listed here.</p>
+      </header>
+
+      <div class="project-grid">
+        {verified.map((entry: any) => (
+          <article class="project-card" id={entry.id}>
+            <div class="project-card-header">
+              <div class="project-meta">
+                <span class="project-country">{entry.country}</span>
+                <span class="project-region">{entry.region}</span>
+              </div>
+              <span class="verified-badge" title={`Verified: website, social media${entry.press.length ? ', published press' : ''}`}>Verified</span>
+            </div>
+
+            <h3>{entry.name}</h3>
+            <p class="project-location">{entry.locationLabel}</p>
+            <p class="project-desc">{entry.description}</p>
+
+            <ul class="project-facts">
+              {entry.facts.map((fact: string) => (
+                <li>{fact}</li>
+              ))}
+            </ul>
+
+            {entry.press.length > 0 && (
+              <div class="project-coverage">
+                <p class="coverage-label">In the press:</p>
+                <ul class="coverage-links">
+                  {entry.press.map((item: any) => (
+                    <li>
+                      <a href={item.url} target="_blank" rel="noopener noreferrer">
+                        {item.label || item.outlet}{item.date ? `, ${item.date}` : ''}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            <div class="project-links">
+              {entry.website && (
+                <a href={entry.website} target="_blank" rel="noopener noreferrer" class="project-link project-link--primary">
+                  {entry.website.replace('https://', '').replace('http://', '').replace(/\/$/, '')}
+                </a>
+              )}
+              {entry.x && (
+                <a href={entry.x} target="_blank" rel="noopener noreferrer" class="project-link">
+                  @{entry.x.split('/').pop()}
+                </a>
+              )}
+              {entry.geyser && (
+                <a href={entry.geyser} target="_blank" rel="noopener noreferrer" class="project-link">
+                  Geyser Fund
+                </a>
+              )}
+              {entry.btcmap && (
+                <a href={entry.btcmap} target="_blank" rel="noopener noreferrer" class="project-link">
+                  BTCMap
+                </a>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Queue -->
+  {queued.length > 0 && (
+    <section class="section queue-section">
+      <div class="container container--narrow">
+        <h2>More Projects Being Documented</h2>
+        <p>
+          These projects are on our radar. We are verifying details from primary sources before adding them to the live listings.
+        </p>
+        <div class="country-queue">
+          {queued.map((item: any) => (
+            <div class="country-item">
+              <span class="queue-name">{item.name}</span>
+              {item.xHandle && (
+                <span class="queue-handle">@{item.xHandle}</span>
+              )}
+              <span class="status-pill status-pill--pending">Documenting</span>
+            </div>
+          ))}
+        </div>
+        <p class="queue-note">
+          Know of a project that belongs here? <a href="/contact">Reach out</a>.
+        </p>
+      </div>
+    </section>
+  )}
+
+  <!-- Back link -->
+  <section class="section back-section">
+    <div class="container container--narrow">
+      <a href="/directories/bitcoin-circular-economies" class="back-link">&larr; All countries</a>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .page-hero {
+    background: var(--color-dark);
+    color: var(--color-text-on-dark);
+    padding: var(--space-4xl) 0 var(--space-3xl);
+  }
+
+  .breadcrumb {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: var(--space-lg);
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .breadcrumb a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .page-hero .eyebrow {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: var(--space-lg);
+  }
+
+  .page-hero h1 {
+    color: #fff;
+    max-width: 22ch;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-sub {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 60ch;
+    margin-bottom: var(--space-xl);
+  }
+
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  .meta-pill {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 4px 10px;
+  }
+
+  /* Directory */
+  .directory-section {
+    background: var(--color-bg-alt);
+  }
+
+  .section-header {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .eyebrow-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-text-muted);
+    display: block;
+    margin-bottom: var(--space-sm);
+  }
+
+  .section-header h2 {
+    margin-bottom: var(--space-md);
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin: var(--space-lg) 0;
+    max-width: 60px;
+  }
+
+  .section-header p {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    max-width: 60ch;
+    margin: 0;
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+    max-width: 960px;
+  }
+
+  @media (min-width: 768px) {
+    .project-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1100px) {
+    .project-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .project-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-md);
+  }
+
+  .project-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .project-country {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text);
+  }
+
+  .project-region {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+  }
+
+  .verified-badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    padding: 3px 8px;
+    white-space: nowrap;
+  }
+
+  .project-card h3 {
+    font-size: 1.35rem;
+    margin-bottom: var(--space-xs);
+  }
+
+  .project-location {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+    font-style: italic;
+  }
+
+  .project-desc {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+    flex: 1;
+  }
+
+  .project-facts {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-lg);
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-md);
+  }
+
+  .project-facts li {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    padding: var(--space-xs) 0;
+    border-bottom: 1px solid var(--color-border);
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .project-facts li::before {
+    content: '/';
+    position: absolute;
+    left: 0;
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+  }
+
+  .project-coverage {
+    margin-bottom: var(--space-lg);
+  }
+
+  .coverage-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-xs);
+  }
+
+  .coverage-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .coverage-links li {
+    font-size: 0.875rem;
+    margin-bottom: 4px;
+  }
+
+  .coverage-links a {
+    color: var(--color-text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .coverage-links a:hover {
+    color: var(--color-text-muted);
+  }
+
+  .project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-top: auto;
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .project-link {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    padding: 6px 12px;
+    border: 1px solid var(--color-border);
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .project-link:hover {
+    border-color: var(--color-text);
+    color: var(--color-text);
+  }
+
+  .project-link--primary {
+    background: var(--color-dark);
+    color: var(--color-text-on-dark);
+    border-color: var(--color-dark);
+  }
+
+  .project-link--primary:hover {
+    background: #333;
+    border-color: #333;
+    color: #fff;
+  }
+
+  /* Queue */
+  .queue-section {
+    background: var(--color-bg);
+  }
+
+  .container--narrow {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+  }
+
+  .queue-section h2 {
+    margin-bottom: var(--space-md);
+  }
+
+  .queue-section > .container--narrow > p {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-xl);
+  }
+
+  .country-queue {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid var(--color-border);
+    margin-bottom: var(--space-xl);
+  }
+
+  .country-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+  }
+
+  .queue-name {
+    font-weight: 500;
+    color: var(--color-text);
+  }
+
+  .queue-handle {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+  }
+
+  .status-pill {
+    margin-left: auto;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 3px 10px;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+  }
+
+  .queue-note {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  .queue-note a {
+    color: var(--color-text);
+  }
+
+  /* Back */
+  .back-section {
+    background: var(--color-bg-alt);
+    padding: var(--space-xl) 0;
+  }
+
+  .back-link {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    text-decoration: none;
+  }
+
+  .back-link:hover {
+    color: var(--color-text);
+  }
+</style>

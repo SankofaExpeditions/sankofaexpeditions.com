@@ -1,0 +1,563 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { readFileSync, readdirSync } from 'fs';
+import { join } from 'path';
+
+const title = 'Africa Digital Nomad Visas | Comparison by Country | Sankofa Expeditions';
+const description = 'Compare Africa digital nomad and remote work visas by country. Mauritius, Namibia, South Africa, Rwanda, Kenya, Cape Verde. Official requirements, fees, and application links.';
+
+// Load all country data files
+const dataDir = join(process.cwd(), 'src/data/directories/nomad-visas');
+const countryFiles = readdirSync(dataDir).filter(f => f.endsWith('.json'));
+const countries = countryFiles.map(f => {
+  const data = JSON.parse(readFileSync(join(dataDir, f), 'utf-8'));
+  return {
+    slug: f.replace('.json', ''),
+    ...data,
+  };
+}).sort((a, b) => {
+  // Active programs first, then unverified, then not-launched/no-program
+  const order: Record<string, number> = { 'active': 0, 'unverified': 1, 'not-launched': 2, 'no-program': 3 };
+  const aOrder = order[a.program.status] ?? 4;
+  const bOrder = order[b.program.status] ?? 4;
+  return aOrder - bOrder;
+});
+
+const activeCount = countries.filter(c => c.program.status === 'active').length;
+
+const statusLabel: Record<string, string> = {
+  'active': 'Program Active',
+  'unverified': 'Unverified',
+  'not-launched': 'Not Yet Launched',
+  'no-program': 'No Program',
+};
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://sankofaexpeditions.com/directories/nomad-visas/#webpage",
+    "url": "https://sankofaexpeditions.com/directories/nomad-visas",
+    "name": title,
+    "description": description,
+    "isPartOf": { "@id": "https://sankofaexpeditions.com/#website" },
+    "breadcrumb": { "@id": "https://sankofaexpeditions.com/directories/nomad-visas/#breadcrumb" },
+    "inLanguage": "en-US",
+    "dateModified": new Date().toISOString().split('T')[0]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://sankofaexpeditions.com/directories/nomad-visas/#breadcrumb",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sankofaexpeditions.com" },
+      { "@type": "ListItem", "position": 2, "name": "Directories", "item": "https://sankofaexpeditions.com/directories" },
+      { "@type": "ListItem", "position": 3, "name": "Digital Nomad Visas", "item": "https://sankofaexpeditions.com/directories/nomad-visas" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": "https://sankofaexpeditions.com/directories/nomad-visas/#list",
+    "name": "Africa Digital Nomad Visa Programs by Country",
+    "description": "Comparison of digital nomad and remote work visa programs across Africa.",
+    "numberOfItems": countries.length,
+    "itemListElement": countries.map((c, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": c.country,
+      "url": `https://sankofaexpeditions.com/directories/nomad-visas/${c.slug}`
+    }))
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which African countries have digital nomad visas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "As of 2026, Mauritius (Premium Visa) and Namibia (Digital Nomad Visa) have confirmed, operational digital nomad visa programs. South Africa, Rwanda, and Kenya do not have formal digital nomad visa programs, though remote workers can enter on tourist visas for shorter stays. Cape Verde reportedly has a program but official government confirmation was unavailable at time of research."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the cheapest Africa digital nomad visa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Mauritius offers the cheapest option: the Premium Visa is free to apply for and has no published minimum income requirement. Namibia's Digital Nomad Visa costs approximately USD $175 and requires at least USD $2,000/month in income."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I work in Africa remotely without a special visa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Many African countries allow tourist visa entries of 30-90 days. Working remotely for a foreign employer while on a tourist visa exists in a legal gray area in most jurisdictions. For longer stays or legal certainty, Mauritius and Namibia offer the clearest formal pathways."
+        }
+      }
+    ]
+  }
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/directories">Directories</a>
+        <span aria-hidden="true"> / </span>
+        <span>Digital Nomad Visas</span>
+      </nav>
+      <p class="eyebrow">Work from Africa</p>
+      <h1>Africa Digital Nomad Visas</h1>
+      <p class="hero-sub">
+        A verified comparison of remote work visa programs across the continent. Which countries have official programs, what they cost, and what they actually require.
+      </p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">{activeCount}</span>
+          <span class="stat-label">Active Programs</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">{countries.length}</span>
+          <span class="stat-label">Countries Tracked</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">Weekly</span>
+          <span class="stat-label">Updated</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section context-section">
+    <div class="container container--narrow">
+      <h2>The Reality of Remote Work Visas in Africa</h2>
+      <p>
+        Most of the world has not launched formal digital nomad visa programs yet, and Africa is no exception. As of 2026, only two African countries have confirmed, operational programs: Mauritius and Namibia. South Africa proposed one but it has not launched. Rwanda, Kenya, and others are popular remote work destinations but rely on tourist visa entries.
+      </p>
+      <p>
+        This directory tracks the actual legal status of each program, not the media rumors. If a program has not launched on the official government website, it is listed as not launched. If we could not verify from an official source, we say so.
+      </p>
+    </div>
+  </section>
+
+  <section class="section countries-section">
+    <div class="container">
+      <header class="section-header">
+        <h2>Countries</h2>
+        <p>Select a country to see full requirements and application details.</p>
+      </header>
+
+      <div class="countries-grid">
+        {countries.map((c) => (
+          <a href={`/directories/nomad-visas/${c.slug}`} class={`country-card country-card--${c.program.status}`}>
+            <div class="country-card-top">
+              <span class="country-flag" aria-hidden="true">{c.flag}</span>
+              <div class="country-info">
+                <span class="country-name">{c.country}</span>
+                <span class="country-region">{c.region}</span>
+              </div>
+              <span class={`status-badge status-badge--${c.program.status}`}>
+                {statusLabel[c.program.status] ?? c.program.status}
+              </span>
+            </div>
+            <p class="country-summary">{c.summary}</p>
+            {c.program.status === 'active' && (
+              <div class="quick-facts">
+                {c.program.incomeRequirementUSD && (
+                  <div class="quick-fact">
+                    <span class="qf-label">Income req.</span>
+                    <span class="qf-value">${c.program.incomeRequirementUSD.toLocaleString()}/mo</span>
+                  </div>
+                )}
+                {c.program.incomeRequirementUSD === null && c.program.status === 'active' && (
+                  <div class="quick-fact">
+                    <span class="qf-label">Income req.</span>
+                    <span class="qf-value">None published</span>
+                  </div>
+                )}
+                {c.program.applicationFeeUSD !== null && (
+                  <div class="quick-fact">
+                    <span class="qf-label">Fee</span>
+                    <span class="qf-value">{c.program.applicationFeeUSD === 0 ? 'Free' : `~$${c.program.applicationFeeUSD}`}</span>
+                  </div>
+                )}
+                {c.program.durationMonths && (
+                  <div class="quick-fact">
+                    <span class="qf-label">Duration</span>
+                    <span class="qf-value">{c.program.durationMonths} months</span>
+                  </div>
+                )}
+              </div>
+            )}
+            <div class="country-card-footer">
+              <span class="card-cta">View details &rarr;</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq-section">
+    <div class="container container--narrow">
+      <h2>Common Questions</h2>
+      <dl class="faq-list">
+        <div class="faq-item">
+          <dt>Which African countries have digital nomad visas?</dt>
+          <dd>As of November 2026, Mauritius (Premium Visa) and Namibia (Digital Nomad Visa) have confirmed programs. South Africa's proposed program has not launched. Cape Verde reportedly has one but official confirmation was unavailable.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>What is the cheapest Africa digital nomad visa?</dt>
+          <dd>Mauritius. The Premium Visa is free to apply for and has no published income minimum. Namibia costs approximately $175 USD but requires $2,000/month income proof.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>Can I work remotely in Africa on a tourist visa?</dt>
+          <dd>Many countries allow 30-90 day tourist entries, and working remotely for a foreign employer is a legal gray area in most jurisdictions. For legal certainty, Mauritius and Namibia offer formal pathways. Shorter stays on tourist visas are common practice, but it is not the same as a legally sanctioned remote work visa.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section methodology-section">
+    <div class="container container--narrow">
+      <h2>How This Directory Works</h2>
+      <p>
+        Every entry is verified against official government sources, not travel blogs. If the government immigration website does not list a program, we mark it as not launched. If official portals were unreachable during research, we mark it as unverified. We do not publish information we cannot trace to a primary source.
+      </p>
+      <p>
+        This directory is updated weekly. If you know of a program change, <a href="/contact">reach out</a>.
+      </p>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .page-hero {
+    background: var(--color-dark);
+    color: var(--color-text-on-dark);
+    padding: var(--space-4xl) 0 var(--space-3xl);
+  }
+
+  .breadcrumb {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: var(--space-lg);
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .breadcrumb a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .page-hero .eyebrow {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: var(--space-lg);
+  }
+
+  .page-hero h1 {
+    color: #fff;
+    max-width: 22ch;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-sub {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 60ch;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: var(--space-2xl);
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .stat-num {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  /* Context */
+  .context-section {
+    background: var(--color-bg);
+  }
+
+  .container--narrow {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+  }
+
+  .context-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .context-section p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+  }
+
+  /* Countries */
+  .countries-section {
+    background: var(--color-bg-alt);
+  }
+
+  .section-header {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .section-header h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .section-header p {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .countries-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    max-width: 1100px;
+  }
+
+  @media (min-width: 700px) {
+    .countries-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .countries-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .country-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: var(--space-xl);
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    transition: border-color 0.2s;
+  }
+
+  .country-card:hover {
+    border-color: var(--color-text-muted);
+  }
+
+  .country-card--no-program,
+  .country-card--not-launched {
+    opacity: 0.8;
+  }
+
+  .country-card-top {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .country-flag {
+    font-size: 2rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .country-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+  }
+
+  .country-name {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .country-region {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  .status-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 3px 8px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .status-badge--active {
+    background: var(--color-dark);
+    color: #fff;
+  }
+
+  .status-badge--unverified {
+    background: transparent;
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+  }
+
+  .status-badge--not-launched,
+  .status-badge--no-program {
+    background: transparent;
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+  }
+
+  .country-summary {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    margin: 0;
+    flex: 1;
+  }
+
+  /* Quick facts row */
+  .quick-facts {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    padding: var(--space-md) 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .quick-fact {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .qf-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+  }
+
+  .qf-value {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .country-card-footer {
+    margin-top: auto;
+    padding-top: var(--space-sm);
+  }
+
+  .card-cta {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+  }
+
+  .country-card:hover .card-cta {
+    color: var(--color-text);
+  }
+
+  /* FAQ */
+  .faq-section {
+    background: var(--color-bg);
+  }
+
+  .faq-section h2 {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .faq-item dt {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+  }
+
+  .faq-item dd {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  /* Methodology */
+  .methodology-section {
+    background: var(--color-bg-alt);
+  }
+
+  .methodology-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .methodology-section p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+  }
+
+  .methodology-section a {
+    color: var(--color-text);
+  }
+</style>

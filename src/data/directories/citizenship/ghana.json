@@ -1,0 +1,47 @@
+{
+  "country": "Ghana",
+  "countryCode": "GH",
+  "flag": "🇬🇭",
+  "region": "West Africa",
+  "summary": "Ghana's Right of Abode and dual citizenship for diaspora of Ghanaian descent remains legally available, but administrative processes have faced reported disruptions in 2026. Verify current processing status before applying.",
+  "lastUpdated": "2026-11-05",
+  "citizenship": {
+    "dualCitizenshipPermitted": true,
+    "dualCitizenshipNote": "Ghana's 1992 Constitution (Article 8) and the Ghana Citizenship Act, 2000 (Act 591) permit dual citizenship for persons of Ghanaian descent.",
+    "diasporaProgram": {
+      "name": "Right of Abode / Citizenship by Descent",
+      "status": "active-with-disruptions",
+      "statusNote": "The legal framework is active. Administrative processing at the Passport and Citizenship office has experienced reported backlogs and disruptions in 2026. Contact the Ghana Embassy or the Registrar-General's Department directly to confirm current processing times.",
+      "eligibility": "Persons of Ghanaian origin, including those born abroad to at least one Ghanaian parent. Also available to foreign spouses of Ghanaian citizens after 5 years of marriage.",
+      "applicationFeeUSD": null,
+      "applicationFeeNote": "Fees vary by application type and are subject to change. Contact Ghana Passport and Citizenship Office or nearest Ghana Embassy for current fee schedule.",
+      "keyDocuments": [
+        "Birth certificate proving Ghanaian parentage",
+        "Parent's or grandparent's Ghanaian birth certificate or passport",
+        "Affidavit of Ghanaian origin",
+        "Current valid passport",
+        "Police clearance certificate",
+        "Two passport photographs"
+      ],
+      "processSteps": [
+        "Gather proof of Ghanaian lineage (birth certificates going back one generation)",
+        "Complete citizenship application at Ghana Passport and Citizenship Office, Accra, or via Ghana Embassy in your country",
+        "Submit required documents and application fee",
+        "Attend interview if required",
+        "Await decision (processing times vary)"
+      ],
+      "officialUrl": "https://www.ghanaimmigration.org",
+      "embassyUrl": "https://ghanaembassyusa.org",
+      "lastVerified": "2026-11-05",
+      "verificationNote": "Legal framework verified against Ghana Citizenship Act 2000 and Constitution. Administrative status as of 2026 based on reported disruptions from diaspora community sources. Direct confirmation required from Ghana Embassy or Citizenship Office."
+    }
+  },
+  "keyFacts": [
+    "Dual citizenship legally permitted under 1992 Constitution",
+    "Citizenship by descent available for persons of Ghanaian origin",
+    "2026: Administrative processing reportedly disrupted, verify before applying",
+    "Ghana's Year of Return (2019) and Sankofa initiatives have helped thousands reconnect",
+    "Right of Abode gives permanent residency rights without full citizenship"
+  ],
+  "whyItMatters": "Ghana has the most visible diaspora reconnection program in West Africa. The legal pathway exists and has been used by thousands of diaspora descendants. The 2026 administrative disruptions are a timing issue, not a legal barrier."
+}

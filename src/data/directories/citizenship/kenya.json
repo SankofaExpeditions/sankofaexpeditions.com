@@ -1,0 +1,45 @@
+{
+  "country": "Kenya",
+  "countryCode": "KE",
+  "flag": "🇰🇪",
+  "region": "East Africa",
+  "summary": "Kenya does not generally permit dual citizenship except in limited cases. Citizenship by descent requires renouncing other citizenships upon reaching adulthood. Limited diaspora pathway exists.",
+  "lastUpdated": "2026-11-05",
+  "citizenship": {
+    "dualCitizenshipPermitted": false,
+    "dualCitizenshipNote": "Kenya's Constitution (2010) generally prohibits dual citizenship for adults. A child with one Kenyan parent can hold dual citizenship until age 23, at which point they must choose one nationality. Exceptions exist for Kenyan citizens by birth who acquire citizenship by naturalization elsewhere.",
+    "diasporaProgram": {
+      "name": "Citizenship by Descent (with restrictions)",
+      "status": "active-with-restrictions",
+      "statusNote": "Citizenship by descent is available, but adult dual citizenship is generally not permitted. The law requires renouncing foreign citizenship upon naturalization or upon reaching adulthood for those born with dual status.",
+      "eligibility": "Persons born to at least one Kenyan parent may claim citizenship by descent. However, upon reaching age 23, holders of dual citizenship must choose one nationality.",
+      "applicationFeeUSD": null,
+      "applicationFeeNote": "Contact Kenya Immigration Service or nearest Kenya Embassy for current fees.",
+      "keyDocuments": [
+        "Birth certificate with Kenyan parent's details",
+        "Kenyan parent's birth certificate or passport",
+        "Current foreign passport",
+        "Renunciation of foreign citizenship (required for adult applicants)",
+        "Completed citizenship application"
+      ],
+      "processSteps": [
+        "Contact Kenya Immigration Service or Embassy",
+        "Submit citizenship by descent application",
+        "If adult, process renunciation of foreign citizenship",
+        "Approval and issuance of Kenyan ID and passport"
+      ],
+      "officialUrl": "https://immigration.go.ke",
+      "embassyUrl": "https://www.kenyaembassyusa.org",
+      "lastVerified": "2026-11-05",
+      "verificationNote": "Based on Kenya Constitution 2010 provisions on citizenship. Adults seeking to reconnect with Kenyan roots face the dual citizenship restriction. Legal advice recommended."
+    }
+  },
+  "keyFacts": [
+    "Dual citizenship generally NOT permitted for adults",
+    "Children with one Kenyan parent can hold dual status until age 23",
+    "Adults must choose one nationality when naturalizing",
+    "Citizenship by descent is available but requires renouncing other citizenship",
+    "Legal advice strongly recommended before applying"
+  ],
+  "whyItMatters": "Kenya's dual citizenship restriction is the most significant barrier for African-American and diaspora Kenyans who want to reconnect. The country is one of East Africa's most dynamic economies, but the citizenship pathway requires a real commitment to give up another passport."
+}

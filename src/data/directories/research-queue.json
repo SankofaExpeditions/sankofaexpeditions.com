@@ -1,0 +1,55 @@
+{
+  "_note": "This queue feeds the weekly directory research cron. Items are worked top-to-bottom. When an entry is researched and added to its country JSON, remove it from this list.",
+  "queue": [
+    {
+      "priority": 1,
+      "name": "Soweto BTC",
+      "category": "bitcoin-circular-economies",
+      "country": "South Africa",
+      "countryCode": "ZA",
+      "xHandle": "SowetoBTC",
+      "websiteHint": null,
+      "notes": "Soweto-based Bitcoin project, South Africa"
+    },
+    {
+      "priority": 2,
+      "name": "BTC Kakuma",
+      "category": "bitcoin-circular-economies",
+      "country": "Kenya",
+      "countryCode": "KE",
+      "xHandle": "btckakuma",
+      "websiteHint": null,
+      "notes": "Bitcoin project at Kakuma refugee camp"
+    },
+    {
+      "priority": 3,
+      "name": "Bitcoin Famba",
+      "category": "bitcoin-circular-economies",
+      "country": "South Africa",
+      "countryCode": "ZA",
+      "xHandle": "BitcoinFamba",
+      "websiteHint": null,
+      "notes": "South Africa circular economy project"
+    },
+    {
+      "priority": 4,
+      "name": "Bitcoin Tofo",
+      "category": "bitcoin-circular-economies",
+      "country": "Mozambique",
+      "countryCode": "MZ",
+      "xHandle": "bitcointofo",
+      "websiteHint": null,
+      "notes": "Tofo Beach, Mozambique - confirm if circular economy or just acceptance"
+    },
+    {
+      "priority": 5,
+      "name": "Kiveclair",
+      "category": "bitcoin-circular-economies",
+      "country": "Kenya",
+      "countryCode": "KE",
+      "xHandle": null,
+      "websiteHint": "kiveclair.org",
+      "notes": "Kenya Bitcoin project - confirm circular economy model vs general adoption"
+    }
+  ]
+}

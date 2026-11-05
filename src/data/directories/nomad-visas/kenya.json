@@ -1,0 +1,35 @@
+{
+  "country": "Kenya",
+  "countryCode": "KE",
+  "flag": "🇰🇪",
+  "region": "East Africa",
+  "summary": "Kenya has no dedicated digital nomad visa. Remote workers use the Electronic Travel Authorisation (eTA) for stays up to 90 days. No formal remote work program has been announced.",
+  "lastUpdated": "2026-11-05",
+  "program": {
+    "name": null,
+    "status": "no-program",
+    "incomeRequirementUSD": null,
+    "incomeNote": null,
+    "applicationFeeUSD": null,
+    "applicationFeeNote": null,
+    "durationMonths": null,
+    "renewable": null,
+    "renewalNote": null,
+    "processingTimeWeeks": null,
+    "processingNote": null,
+    "workRestrictions": null,
+    "officialApplyUrl": "https://fns.immigration.go.ke",
+    "officialSourceUrl": "https://immigration.go.ke/work-permits-and-passes/",
+    "lastVerified": "2026-11-05",
+    "verificationNote": "Confirmed: Kenya Directorate of Immigration Services lists Work Permit classes A through M, none of which cover remote work for foreign employers. The eTA (Electronic Travel Authorisation) handles most tourist and short-stay visits."
+  },
+  "keyFacts": [
+    "No digital nomad visa program as of November 2026",
+    "eTA (Electronic Travel Authorisation) available for tourist stays up to 90 days",
+    "Nairobi is a major tech and startup hub with strong coworking infrastructure",
+    "Kenya has very good international fiber connectivity",
+    "Watch immigration.go.ke for any future program"
+  ],
+  "requirements": [],
+  "whyItMatters": "Kenya is East Africa's tech capital. Nairobi's iHub, Westlands coworking scene, and fast LTE/fiber coverage make it a practical remote work base. The 90-day eTA covers shorter stays; longer-term arrangements require a different visa strategy."
+}

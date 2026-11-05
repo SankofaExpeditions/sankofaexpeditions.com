@@ -1,0 +1,46 @@
+{
+  "country": "Namibia",
+  "countryCode": "NA",
+  "flag": "🇳🇦",
+  "region": "Southern Africa",
+  "summary": "Namibia's official Digital Nomad Visa runs 6 months, costs roughly $175, and requires $2,000/month income. Not renewable, but reapplication is allowed after 12 months.",
+  "lastUpdated": "2026-11-05",
+  "program": {
+    "name": "Namibia Digital Nomad Visa",
+    "status": "active",
+    "incomeRequirementUSD": 2000,
+    "incomeNote": "USD $2,000/month for the main applicant. USD $1,000/month for accompanying spouse. USD $500/month per accompanying child.",
+    "applicationFeeUSD": 175,
+    "applicationFeeNote": "NAD 3,300 (approximately USD $175-180). Paid after approval and before arrival, not at application.",
+    "durationMonths": 6,
+    "renewable": false,
+    "renewalNote": "Non-renewable. Must wait 12 months after expiry before reapplying.",
+    "processingTimeWeeks": null,
+    "processingNote": "Processing time not publicly stated. Applications are submitted through NIPDB (Namibia Investment Promotion and Development Board), not directly to Home Affairs. NIPDB submits a motivation letter to the Ministry on your behalf.",
+    "workRestrictions": "Cannot change immigration status while on this visa. Work must be for foreign employers only.",
+    "officialApplyUrl": "https://www.nipdb.com/digital-nomad-visa",
+    "officialSourceUrl": "https://www.nipdb.com/digital-nomad-visa",
+    "lastVerified": "2026-11-05",
+    "verificationNote": "Confirmed from nipdb.com (Namibia Investment Promotion and Development Board), the official government agency administering this program in coordination with the Ministry of Home Affairs."
+  },
+  "keyFacts": [
+    "USD $2,000/month income required for main applicant",
+    "6 months duration, not renewable",
+    "Must reapply through NIPDB, not Home Affairs directly",
+    "NAD 3,300 (~$175) fee paid after approval",
+    "Must wait 12 months before reapplying"
+  ],
+  "requirements": [
+    "Visa Application Form (3-1/0033)",
+    "Medical Certificate (3-1/0003)",
+    "Radiological Report (31/0004)",
+    "Certified passport copy",
+    "Travel and health insurance",
+    "Proof of income (payslip or employment contract)",
+    "6-month bank statements",
+    "Motivation letter from employer",
+    "Education certificates",
+    "Police Clearance Certificate (translated to English)"
+  ],
+  "whyItMatters": "Namibia is a standout remote work destination: stable, English-speaking, and genuinely uncrowded. The official program has real requirements (income proof, medical, police clearance) but the NIPDB process is straightforward. The 6-month limit with no renewal is the main constraint."
+}

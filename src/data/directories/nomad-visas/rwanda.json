@@ -1,0 +1,35 @@
+{
+  "country": "Rwanda",
+  "countryCode": "RW",
+  "flag": "🇷🇼",
+  "region": "East Africa",
+  "summary": "Rwanda has no dedicated digital nomad visa. Remote workers typically enter on tourist visas (up to 90 days). Rwanda is exploring remote work infrastructure but has no formal program.",
+  "lastUpdated": "2026-11-05",
+  "program": {
+    "name": null,
+    "status": "no-program",
+    "incomeRequirementUSD": null,
+    "incomeNote": null,
+    "applicationFeeUSD": null,
+    "applicationFeeNote": null,
+    "durationMonths": null,
+    "renewable": null,
+    "renewalNote": null,
+    "processingTimeWeeks": null,
+    "processingNote": null,
+    "workRestrictions": null,
+    "officialApplyUrl": "https://www.migration.gov.rw",
+    "officialSourceUrl": "https://www.migration.gov.rw/our-services/permit/other-permits",
+    "lastVerified": "2026-11-05",
+    "verificationNote": "Confirmed: Rwanda Directorate General of Immigration and Emigration lists no Digital Nomad or Remote Work visa category. The closest category is K (Assured Income), which covers retired persons not seeking employment."
+  },
+  "keyFacts": [
+    "No digital nomad visa program as of November 2026",
+    "Tourist visa: 90 days on arrival for most nationalities, free for many",
+    "Kigali is a popular remote work hub despite no formal visa pathway",
+    "Rwanda has reliable fast internet and coworking infrastructure",
+    "Watch migration.gov.rw for future program announcements"
+  ],
+  "requirements": [],
+  "whyItMatters": "Rwanda consistently ranks as one of Africa's best-run cities for remote workers. Kigali has clean infrastructure, reliable power, and fast internet. The visa gap is a limitation, but many nomads use the free 90-day tourist entry and renew periodically."
+}

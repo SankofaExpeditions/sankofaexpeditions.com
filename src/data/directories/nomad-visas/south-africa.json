@@ -1,0 +1,35 @@
+{
+  "country": "South Africa",
+  "countryCode": "ZA",
+  "flag": "🇿🇦",
+  "region": "Southern Africa",
+  "summary": "South Africa proposed a Digital Nomad Visa but it has not launched. As of November 2026, no such program exists on the Department of Home Affairs website.",
+  "lastUpdated": "2026-11-05",
+  "program": {
+    "name": null,
+    "status": "not-launched",
+    "incomeRequirementUSD": null,
+    "incomeNote": "No income requirement exists because no program exists. The USD $55,000/year figure cited in media was part of an unconfirmed proposal.",
+    "applicationFeeUSD": null,
+    "applicationFeeNote": null,
+    "durationMonths": null,
+    "renewable": null,
+    "renewalNote": null,
+    "processingTimeWeeks": null,
+    "processingNote": null,
+    "workRestrictions": null,
+    "officialApplyUrl": null,
+    "officialSourceUrl": "https://www.dha.gov.za/index.php/immigration-services",
+    "lastVerified": "2026-11-05",
+    "verificationNote": "Confirmed not launched. Full visa category list on dha.gov.za shows no Digital Nomad, Remote Work, or equivalent visa. The proposed program was announced in development but no launch has occurred as of November 2026."
+  },
+  "keyFacts": [
+    "No digital nomad visa exists as of November 2026",
+    "Proposal was reported but never enacted",
+    "$55,000/year income requirement was an unconfirmed media figure",
+    "Remote workers currently use tourist visas (90 days for most nationalities)",
+    "Watch dha.gov.za for any launch announcement"
+  ],
+  "requirements": [],
+  "whyItMatters": "South Africa remains one of the most popular Africa destinations for diaspora and remote workers, but the visa gap is real. Until the program launches, remote workers typically use 90-day tourist visa entries with periodic border runs."
+}

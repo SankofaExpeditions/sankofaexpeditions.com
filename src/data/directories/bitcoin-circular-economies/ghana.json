@@ -1,0 +1,104 @@
+{
+  "country": "Ghana",
+  "countryCode": "GH",
+  "flag": "🇬🇭",
+  "region": "West Africa",
+  "summary": "Three documented Bitcoin circular economies operating in Ghana as of 2025-2026. All data sourced from their public websites, social media, and published media coverage.",
+  "lastUpdated": "2026-07-27",
+  "entries": [
+    {
+      "id": "bitcoin-dua",
+      "name": "Bitcoin Dua",
+      "status": "verified",
+      "country": "Ghana",
+      "countryCode": "GH",
+      "region": "Volta Region",
+      "city": "Agbozume",
+      "locationLabel": "Agbozume, Volta Region (near Togo border)",
+      "founded": "2023",
+      "founder": "Mawufemor Kofi Folivi",
+      "website": "https://www.bitcoindua.org/",
+      "x": "https://x.com/bitcoin_dua",
+      "lightning": null,
+      "geyser": null,
+      "btcmap": null,
+      "description": "One of the clearest Bitcoin Beach-style circular economies in West Africa. Founded by Mawufemor Kofi Folivi, a 20+ year community organizer in Agbozume and Managing Director of the Talent Foundation. Started after Kofi attended the Africa Bitcoin Conference in December 2022, inspired in part by Bitcoin Ekasi in South Africa.",
+      "facts": [
+        "Education center with 20+ laptops teaching Bitcoin and coding",
+        "Approximately 30 local merchants onboarded to accept Lightning payments",
+        "Youth sports programs rewarding players in sats (using Fedi)",
+        "Community sports complex under construction",
+        "$50,000 grant from Block (Jack Dorsey) in late 2024",
+        "$100,000 grant from Block in 2025"
+      ],
+      "press": [
+        { "outlet": "Forbes", "date": "January 2026", "url": "https://www.forbes.com/sites/frankcorva/2026/01/04/ghana-legalizes-crypto-while-ghanaian-village-shows-bitcoins-potential/" },
+        { "outlet": "Fedi Community Spotlight", "date": "April 2026", "url": "https://www.fedi.xyz/blog/community-spotlight-bitcoin-dua" },
+        { "outlet": "YouTube", "date": "2025", "url": "https://www.youtube.com/watch?v=HmK25cZVJ4I", "label": "Bitcoin Dua: Empowering Youth Through Bitcoin and STEM" }
+      ],
+      "networks": ["Mi Primer Bitcoin", "FBCE"],
+      "lastVerified": "2026-07-27"
+    },
+    {
+      "id": "bitfiasi-initiative",
+      "name": "Bitfiasi Initiative",
+      "status": "verified",
+      "country": "Ghana",
+      "countryCode": "GH",
+      "region": "Greater Accra",
+      "city": "Dodowa",
+      "locationLabel": "Dodowa, Greater Accra Region",
+      "founded": "2024",
+      "founder": "Gideon Kombat and Sena K. Ami",
+      "website": "https://bitfiasi.org",
+      "x": "https://x.com/bitfiasi",
+      "lightning": "bitfiasi@blink.sv",
+      "geyser": null,
+      "btcmap": "https://btcmap.org/merchant/32384",
+      "description": "Building a Bitcoin circular economy in Dodowa under the hashtag #DodowaGoesBitcoin. Founded in 2024 by Gideon Kombat (@FinallyGidkom) and Sena K. Ami (@SenaKAmi). A light node of Mi Primer Bitcoin, the international Bitcoin education network. Operates on Blink and has merchants listed on BTCMap.",
+      "facts": [
+        "Active merchant onboarding in Dodowa market area",
+        "BTCMap listed merchant (dobrc@blink.sv)",
+        "Lightning address: bitfiasi@blink.sv",
+        "Light node of Mi Primer Bitcoin international education network",
+        "Founded February 2024, active as of 2026"
+      ],
+      "press": [],
+      "networks": ["Mi Primer Bitcoin", "BTCMap"],
+      "lastVerified": "2026-07-27"
+    },
+    {
+      "id": "bitcoin-aves",
+      "name": "Bitcoin Aves",
+      "status": "verified",
+      "country": "Ghana",
+      "countryCode": "GH",
+      "region": "Volta Region",
+      "city": "Akatsi",
+      "locationLabel": "Akatsi, Volta Region",
+      "founded": "2025",
+      "founder": null,
+      "website": null,
+      "x": "https://x.com/bitcoin_aves",
+      "lightning": null,
+      "geyser": "https://geyser.fund/project/bitcoinaavesgh",
+      "btcmap": null,
+      "description": "Bitcoin education and circular economy project in Akatsi with a distinctive approach: pairing Bitcoin literacy with youth empowerment and food production and processing programs. A light node of Mi Primer Bitcoin. Listed by Geyser alongside Bitcoin Beach and Bitcoin Ekasi as one of the top Bitcoin circular economy projects globally.",
+      "facts": [
+        "Bitcoin education focused on African youth",
+        "Food production and processing programs run alongside financial literacy",
+        "Light node of Mi Primer Bitcoin education network",
+        "Part of the FBCE (Foundation for Bitcoin Circular Economies) global network",
+        "Active since 2025, Geyser fund campaign running"
+      ],
+      "press": [],
+      "networks": ["Mi Primer Bitcoin", "FBCE", "Geyser Fund"],
+      "lastVerified": "2026-07-27"
+    }
+  ],
+  "queue": [
+    { "name": "Soweto BTC", "xHandle": "SowetoBTC", "status": "documenting" },
+    { "name": "Bitcoin Famba", "xHandle": "BitcoinFamba", "status": "documenting" },
+    { "name": "Bitcoin Tofo", "xHandle": "bitcointofo", "status": "documenting" }
+  ]
+}

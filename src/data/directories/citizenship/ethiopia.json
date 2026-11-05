@@ -1,0 +1,46 @@
+{
+  "country": "Ethiopia",
+  "countryCode": "ET",
+  "flag": "🇪🇹",
+  "region": "East Africa / Horn of Africa",
+  "summary": "Ethiopia does not permit dual citizenship. However, the government created an 'Origin ID Card' (also called the Ethiopian Diaspora Card) in 2019 that gives diaspora Ethiopians residency and investment rights without citizenship.",
+  "lastUpdated": "2026-11-05",
+  "citizenship": {
+    "dualCitizenshipPermitted": false,
+    "dualCitizenshipNote": "Ethiopia's Nationality Proclamation (No. 378/2003) generally prohibits dual citizenship. Ethiopians who voluntarily acquire foreign citizenship automatically lose their Ethiopian citizenship.",
+    "diasporaProgram": {
+      "name": "Ethiopian Origin ID Card (Diaspora Card)",
+      "status": "active",
+      "statusNote": "Active since 2019. The Ethiopian Origin ID Card (sometimes called the Ethiopian Diaspora ID or Origin Card) gives holders of foreign passports who are of Ethiopian origin the right to reside, work, invest, own property, and access services in Ethiopia without needing a residency visa.",
+      "eligibility": "Persons of Ethiopian origin who hold foreign citizenship. Requires proof of Ethiopian birth or Ethiopian parentage. The program is targeted at the diaspora estimated at 3+ million people.",
+      "applicationFeeUSD": null,
+      "applicationFeeNote": "Contact Ethiopian Embassy for current fees. Fees have changed since the program's launch.",
+      "keyDocuments": [
+        "Current foreign passport",
+        "Ethiopian birth certificate or parents' Ethiopian documents",
+        "Proof of Ethiopian origin",
+        "Completed Origin ID application form",
+        "Two passport photographs"
+      ],
+      "processSteps": [
+        "Contact Ethiopian Embassy in your country",
+        "Submit Origin ID application with proof of Ethiopian origin",
+        "Pay applicable fees",
+        "Receive Ethiopian Origin ID Card",
+        "Card grants residency, work, investment, and property rights in Ethiopia"
+      ],
+      "officialUrl": "https://www.immigration.gov.et",
+      "embassyUrl": "https://ethiopianembassy.org",
+      "lastVerified": "2026-11-05",
+      "verificationNote": "Ethiopian Origin ID Card program confirmed from Ethiopian government announcements and embassy publications. Dual citizenship restriction based on Proclamation No. 378/2003."
+    }
+  },
+  "keyFacts": [
+    "Dual citizenship NOT permitted, Ethiopians lose citizenship upon naturalizing abroad",
+    "Ethiopian Origin ID Card (Diaspora Card) is the alternative pathway",
+    "Origin Card gives residency, work rights, investment rights, and property rights",
+    "Ethiopian birr was devalued 30% overnight in 2024 under IMF program",
+    "Addis Ababa is a major hub for pan-African institutions and business"
+  ],
+  "whyItMatters": "Ethiopia's approach is pragmatic: no citizenship, but the Origin ID Card gives diaspora Ethiopians almost all the practical rights of residency. For the 3+ million diaspora who want to return and invest, the Origin Card is the clearest legal pathway. The citizenship restriction is real but workable."
+}

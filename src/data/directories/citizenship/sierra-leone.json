@@ -1,0 +1,47 @@
+{
+  "country": "Sierra Leone",
+  "countryCode": "SL",
+  "flag": "🇸🇱",
+  "region": "West Africa",
+  "summary": "Sierra Leone permits dual citizenship. The country has a Citizenship by Descent pathway for persons of Sierra Leonean origin and has been expanding diaspora engagement since the 2018 constitutional reform.",
+  "lastUpdated": "2026-11-05",
+  "citizenship": {
+    "dualCitizenshipPermitted": true,
+    "dualCitizenshipNote": "Sierra Leone's Citizenship Act and 2018 constitutional amendments permit dual citizenship. Diaspora Sierra Leoneans who took foreign citizenship can reclaim or retain their Sierra Leonean citizenship.",
+    "diasporaProgram": {
+      "name": "Citizenship by Descent / Dual Citizenship",
+      "status": "active",
+      "statusNote": "Active. The 2018 constitutional amendment was a significant pro-diaspora reform. Processing is handled through the Sierra Leone Directorate of Immigration and through embassies abroad.",
+      "eligibility": "Persons born in Sierra Leone or born abroad to at least one Sierra Leonean parent. Diaspora persons of Sierra Leonean origin who lost citizenship upon naturalizing abroad may reclaim it.",
+      "applicationFeeUSD": null,
+      "applicationFeeNote": "Application fees not publicly listed. Contact Sierra Leone High Commission or Embassy in your country for current fees.",
+      "keyDocuments": [
+        "Birth certificate or parent's Sierra Leonean birth certificate",
+        "Current foreign passport",
+        "Proof of Sierra Leonean descent or origin",
+        "Police clearance certificate",
+        "Two passport photographs",
+        "Completed citizenship application form"
+      ],
+      "processSteps": [
+        "Contact nearest Sierra Leone Embassy or High Commission",
+        "Submit citizenship by descent application with supporting documents",
+        "Application reviewed by Sierra Leone Directorate of Immigration",
+        "Approval and citizenship certificate issued",
+        "Apply for Sierra Leonean passport"
+      ],
+      "officialUrl": "https://www.immigration.gov.sl",
+      "embassyUrl": "https://embassyofsierraleone.org",
+      "lastVerified": "2026-11-05",
+      "verificationNote": "Based on 2018 constitutional reform provisions. Direct embassy contact recommended to confirm current processing procedures and fees."
+    }
+  },
+  "keyFacts": [
+    "Dual citizenship permitted following 2018 constitutional reform",
+    "Diaspora Sierra Leoneans who naturalized abroad may reclaim citizenship",
+    "Citizenship by descent available for persons born to Sierra Leonean parents",
+    "Sierra Leone has a small but tight-knit diaspora primarily in UK, US, and Canada",
+    "Contact Sierra Leone Embassy for current processing times"
+  ],
+  "whyItMatters": "Sierra Leone's 2018 reform opened the door for thousands of diaspora descendants to reconnect officially. The country is rebuilding after decades of conflict, and the government has signaled it wants diaspora investment and return."
+}

@@ -1,0 +1,612 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { readFileSync, readdirSync } from 'fs';
+import { join } from 'path';
+
+export async function getStaticPaths() {
+  const dataDir = join(process.cwd(), 'src/data/directories/nomad-visas');
+  const files = readdirSync(dataDir).filter(f => f.endsWith('.json'));
+  return files.map(f => ({ params: { country: f.replace('.json', '') } }));
+}
+
+const { country: countrySlug } = Astro.params;
+const dataDir = join(process.cwd(), 'src/data/directories/nomad-visas');
+const data = JSON.parse(readFileSync(join(dataDir, `${countrySlug}.json`), 'utf-8'));
+
+const { country, countryCode, flag, region, program, keyFacts, requirements, whyItMatters, lastUpdated } = data;
+
+const statusLabel: Record<string, string> = {
+  'active': 'Program Active',
+  'unverified': 'Unverified',
+  'not-launched': 'Not Yet Launched',
+  'no-program': 'No Program',
+};
+
+const statusDesc: Record<string, string> = {
+  'active': 'This program is confirmed from official government sources.',
+  'unverified': 'This program is reported but could not be confirmed from official government sources. Verify before making plans.',
+  'not-launched': 'This program was announced or proposed but has not launched on the official government website.',
+  'no-program': 'No digital nomad or remote work visa program exists for this country as of last verification.',
+};
+
+const title = `${country} Digital Nomad Visa ${new Date().getFullYear()} | Requirements & Application | Sankofa Expeditions`;
+const description = data.summary.length > 155 ? data.summary.substring(0, 152) + '...' : data.summary;
+
+const pageUrl = `https://sankofaexpeditions.com/directories/nomad-visas/${countrySlug}`;
+
+const jsonLdItems: any[] = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${pageUrl}/#webpage`,
+    "url": pageUrl,
+    "name": title,
+    "description": description,
+    "isPartOf": { "@id": "https://sankofaexpeditions.com/#website" },
+    "breadcrumb": { "@id": `${pageUrl}/#breadcrumb` },
+    "inLanguage": "en-US",
+    "dateModified": lastUpdated
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": `${pageUrl}/#breadcrumb`,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sankofaexpeditions.com" },
+      { "@type": "ListItem", "position": 2, "name": "Directories", "item": "https://sankofaexpeditions.com/directories" },
+      { "@type": "ListItem", "position": 3, "name": "Digital Nomad Visas", "item": "https://sankofaexpeditions.com/directories/nomad-visas" },
+      { "@type": "ListItem", "position": 4, "name": country, "item": pageUrl }
+    ]
+  }
+];
+
+if (program.status === 'active') {
+  jsonLdItems.push({
+    "@context": "https://schema.org",
+    "@type": "GovernmentService",
+    "name": program.name,
+    "description": `${country} digital nomad visa program for remote workers.`,
+    "areaServed": {
+      "@type": "Country",
+      "name": country
+    },
+    "url": program.officialApplyUrl || program.officialSourceUrl,
+    "provider": {
+      "@type": "GovernmentOrganization",
+      "name": `${country} Government`
+    }
+  });
+}
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLdItems}>
+
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/directories">Directories</a>
+        <span aria-hidden="true"> / </span>
+        <a href="/directories/nomad-visas">Digital Nomad Visas</a>
+        <span aria-hidden="true"> / </span>
+        <span>{country}</span>
+      </nav>
+      <div class="hero-flag" aria-hidden="true">{flag}</div>
+      <p class="eyebrow">{region}</p>
+      <h1>{country} Digital Nomad Visa</h1>
+      <p class="hero-sub">{data.summary}</p>
+      <div class={`program-status program-status--${program.status}`}>
+        <span class="status-dot" aria-hidden="true"></span>
+        <span class="status-text">{statusLabel[program.status] ?? program.status}</span>
+      </div>
+    </div>
+  </section>
+
+  {program.status === 'active' || program.status === 'unverified' ? (
+    <section class="section details-section">
+      <div class="container container--narrow">
+        <h2>{program.name ?? 'Program Details'}</h2>
+
+        {program.status === 'unverified' && (
+          <div class="alert alert--warning">
+            <strong>Unverified:</strong> This program is reported but could not be confirmed from an official government website during research. Treat details as approximate. Contact the {country} Embassy directly before making plans.
+          </div>
+        )}
+
+        <div class="details-grid">
+          <div class="detail-row">
+            <span class="detail-label">Income Requirement</span>
+            <span class="detail-value">
+              {program.incomeRequirementUSD !== null
+                ? `$${program.incomeRequirementUSD.toLocaleString()}/month`
+                : 'None published'}
+            </span>
+            {program.incomeNote && <span class="detail-note">{program.incomeNote}</span>}
+          </div>
+
+          <div class="detail-row">
+            <span class="detail-label">Application Fee</span>
+            <span class="detail-value">
+              {program.applicationFeeUSD === 0
+                ? 'Free'
+                : program.applicationFeeUSD !== null
+                  ? `~$${program.applicationFeeUSD} USD`
+                  : 'See official source'}
+            </span>
+            {program.applicationFeeNote && <span class="detail-note">{program.applicationFeeNote}</span>}
+          </div>
+
+          <div class="detail-row">
+            <span class="detail-label">Duration</span>
+            <span class="detail-value">
+              {program.durationMonths ? `${program.durationMonths} months` : 'See official source'}
+            </span>
+          </div>
+
+          <div class="detail-row">
+            <span class="detail-label">Renewable</span>
+            <span class="detail-value">
+              {program.renewable === true ? 'Yes' : program.renewable === false ? 'No' : 'Unconfirmed'}
+            </span>
+            {program.renewalNote && <span class="detail-note">{program.renewalNote}</span>}
+          </div>
+
+          {program.processingNote && (
+            <div class="detail-row">
+              <span class="detail-label">Processing</span>
+              <span class="detail-value">{program.processingNote}</span>
+            </div>
+          )}
+
+          {program.workRestrictions && (
+            <div class="detail-row">
+              <span class="detail-label">Work Restrictions</span>
+              <span class="detail-value">{program.workRestrictions}</span>
+            </div>
+          )}
+        </div>
+
+        {program.officialApplyUrl && (
+          <div class="apply-cta">
+            <a href={program.officialApplyUrl} target="_blank" rel="noopener noreferrer" class="apply-link">
+              Apply at Official Government Portal &rarr;
+            </a>
+            <p class="apply-note">Opens the official government application page. Sankofa Expeditions is not affiliated with any government immigration authority.</p>
+          </div>
+        )}
+      </div>
+    </section>
+  ) : (
+    <section class="section details-section">
+      <div class="container container--narrow">
+        <h2>Program Status</h2>
+        <div class="alert alert--info">
+          <strong>{statusLabel[program.status]}:</strong> {statusDesc[program.status]}
+        </div>
+        {program.officialSourceUrl && (
+          <p class="source-link-row">
+            Check for updates: <a href={program.officialSourceUrl} target="_blank" rel="noopener noreferrer">{country} official immigration portal &rarr;</a>
+          </p>
+        )}
+      </div>
+    </section>
+  )}
+
+  {keyFacts.length > 0 && (
+    <section class="section facts-section">
+      <div class="container container--narrow">
+        <h2>Key Facts</h2>
+        <ul class="facts-list">
+          {keyFacts.map((fact: string) => (
+            <li>{fact}</li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  {requirements.length > 0 && (
+    <section class="section requirements-section">
+      <div class="container container--narrow">
+        <h2>Application Requirements</h2>
+        <ul class="requirements-list">
+          {requirements.map((req: string) => (
+            <li>{req}</li>
+          ))}
+        </ul>
+        <p class="requirements-note">
+          Requirements are based on official government sources as of {lastUpdated}. Requirements can change. Always verify with the official portal or embassy before applying.
+        </p>
+      </div>
+    </section>
+  )}
+
+  {whyItMatters && (
+    <section class="section context-section">
+      <div class="container container--narrow">
+        <h2>Why {country}</h2>
+        <p>{whyItMatters}</p>
+      </div>
+    </section>
+  )}
+
+  <section class="section verification-section">
+    <div class="container container--narrow">
+      <h3>About This Entry</h3>
+      <p class="verification-meta">
+        Last verified: {lastUpdated}. Source: {program.verificationNote}
+      </p>
+      {program.officialSourceUrl && (
+        <p class="verification-meta">
+          Official source: <a href={program.officialSourceUrl} target="_blank" rel="noopener noreferrer">{program.officialSourceUrl}</a>
+        </p>
+      )}
+      <p class="verification-meta">
+        See a discrepancy? <a href="/contact">Let us know</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="section nav-section">
+    <div class="container">
+      <div class="nav-links">
+        <a href="/directories/nomad-visas" class="nav-back">&larr; All Africa Nomad Visas</a>
+        <a href="/directories" class="nav-back">All Directories &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .page-hero {
+    background: var(--color-dark);
+    color: var(--color-text-on-dark);
+    padding: var(--space-4xl) 0 var(--space-3xl);
+  }
+
+  .breadcrumb {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: var(--space-lg);
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .breadcrumb a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .hero-flag {
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: var(--space-lg);
+  }
+
+  .page-hero .eyebrow {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: var(--space-md);
+  }
+
+  .page-hero h1 {
+    color: #fff;
+    max-width: 25ch;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-sub {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 60ch;
+    margin-bottom: var(--space-xl);
+  }
+
+  .program-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+
+  .status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .program-status--active .status-dot { background: #5eff9c; }
+  .program-status--unverified .status-dot { background: rgba(255,255,255,0.4); }
+  .program-status--not-launched .status-dot { background: rgba(255,255,255,0.3); }
+  .program-status--no-program .status-dot { background: rgba(255,255,255,0.3); }
+
+  .status-text {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.9);
+  }
+
+  /* Shared */
+  .container--narrow {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+  }
+
+  /* Details */
+  .details-section {
+    background: var(--color-bg);
+  }
+
+  .details-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .alert {
+    padding: var(--space-lg);
+    border-left: 3px solid;
+    margin-bottom: var(--space-xl);
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--color-text-muted);
+  }
+
+  .alert--warning {
+    border-color: var(--color-text-muted);
+    background: var(--color-bg-alt);
+  }
+
+  .alert--info {
+    border-color: var(--color-border);
+    background: var(--color-bg-alt);
+  }
+
+  .alert strong {
+    color: var(--color-text);
+  }
+
+  .details-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--color-border);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .detail-row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+    align-items: start;
+  }
+
+  .detail-row:last-child {
+    border-bottom: none;
+  }
+
+  .detail-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    padding-top: 2px;
+  }
+
+  .detail-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    grid-column: 2;
+  }
+
+  .detail-note {
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    grid-column: 2;
+    margin-top: 4px;
+  }
+
+  .apply-cta {
+    background: var(--color-dark);
+    padding: var(--space-xl);
+  }
+
+  .apply-link {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: var(--space-md);
+  }
+
+  .apply-link:hover {
+    text-decoration: underline;
+  }
+
+  .apply-note {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.6);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .source-link-row {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    margin-top: var(--space-lg);
+    line-height: 1.7;
+  }
+
+  .source-link-row a {
+    color: var(--color-text);
+  }
+
+  /* Facts */
+  .facts-section {
+    background: var(--color-bg-alt);
+  }
+
+  .facts-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .facts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .facts-list li {
+    padding-left: var(--space-lg);
+    position: relative;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+
+  .facts-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+  }
+
+  /* Requirements */
+  .requirements-section {
+    background: var(--color-bg);
+  }
+
+  .requirements-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .requirements-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-xl) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .requirements-list li {
+    padding: var(--space-md) var(--space-lg);
+    border: 1px solid var(--color-border);
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  .requirements-note {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    line-height: 1.65;
+  }
+
+  /* Context */
+  .context-section {
+    background: var(--color-bg-alt);
+  }
+
+  .context-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .context-section p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+  }
+
+  /* Verification */
+  .verification-section {
+    background: var(--color-bg);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .verification-section h3 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+    font-weight: 700;
+  }
+
+  .verification-meta {
+    font-size: 0.8125rem;
+    line-height: 1.65;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-sm);
+  }
+
+  .verification-meta a {
+    color: var(--color-text);
+  }
+
+  /* Nav */
+  .nav-section {
+    background: var(--color-bg-alt);
+    padding: var(--space-xl) 0;
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-lg);
+  }
+
+  .nav-back {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    text-decoration: none;
+  }
+
+  .nav-back:hover {
+    color: var(--color-text);
+  }
+
+  @media (max-width: 600px) {
+    .detail-row {
+      grid-template-columns: 1fr;
+    }
+    .detail-value,
+    .detail-note {
+      grid-column: 1;
+    }
+  }
+</style>

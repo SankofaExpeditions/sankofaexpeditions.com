@@ -1,0 +1,382 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Africa Directories | Sankofa Expeditions';
+const description = 'Verified directories of African Bitcoin circular economies, coworking spaces, emergency contacts, and expat services. Researched and updated weekly.';
+
+const directories = [
+  {
+    slug: 'bitcoin-circular-economies',
+    name: 'Bitcoin Circular Economies',
+    description: 'Operating communities across Africa where people earn, spend, and save in Bitcoin daily. No speculation, no exchanges. Just sound money working in real life.',
+    countriesLive: ['Ghana', 'South Africa'],
+    countriesQueued: ['Kenya', 'Mozambique', 'Nigeria'],
+    eyebrow: 'Bitcoin in Africa',
+    icon: '₿',
+  },
+  {
+    slug: 'nomad-visas',
+    name: 'Digital Nomad Visas',
+    description: 'Which African countries have remote work visas, what they cost, and what they actually require. Official sources only. If a program hasn\'t launched on the government website, we say so.',
+    countriesLive: ['Mauritius', 'Namibia', 'South Africa', 'Rwanda', 'Kenya', 'Cape Verde'],
+    countriesQueued: [],
+    eyebrow: 'Work from Africa',
+    icon: '◫',
+  },
+  {
+    slug: 'citizenship',
+    name: 'Dual Citizenship Tracker',
+    description: 'A verified guide to dual citizenship rules and diaspora right-of-return programs across Africa. Which countries allow it, what it costs, and what the process actually looks like.',
+    countriesLive: ['Ghana', 'Nigeria', 'Sierra Leone', 'Kenya', 'South Africa', 'Senegal', 'Ethiopia'],
+    countriesQueued: [],
+    eyebrow: 'Reconnect Officially',
+    icon: '◉',
+  },
+  {
+    slug: null,
+    name: 'African Coworking Spaces',
+    description: 'Verified coworking spaces across the continent for diaspora remote workers, entrepreneurs, and digital nomads. Real costs, real amenities, real reviews.',
+    countriesLive: [],
+    countriesQueued: ['Ghana', 'South Africa', 'Kenya', 'Rwanda', 'Nigeria'],
+    eyebrow: 'Work Infrastructure',
+    icon: '⬡',
+    comingSoon: true,
+  },
+  {
+    slug: null,
+    name: 'Emergency Contacts by Country',
+    description: 'Embassy numbers, hospitals, legal contacts, and insurance providers for every African country. The intel you hope you never need but must have before you land.',
+    countriesLive: [],
+    countriesQueued: ['Ghana', 'South Africa', 'Kenya', 'Nigeria', 'Ethiopia'],
+    eyebrow: 'Safety Intel',
+    icon: '◈',
+    comingSoon: true,
+  },
+  {
+    slug: null,
+    name: 'Expat Service Providers',
+    description: 'Relocation agents, local banks, visa attorneys, real estate brokers, and shipping companies with verified track records working with the diaspora.',
+    countriesLive: [],
+    countriesQueued: ['Ghana', 'South Africa', 'Kenya'],
+    eyebrow: 'Relocation Infrastructure',
+    icon: '◎',
+    comingSoon: true,
+  },
+];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://sankofaexpeditions.com/directories/#webpage",
+    "url": "https://sankofaexpeditions.com/directories",
+    "name": title,
+    "description": description,
+    "isPartOf": { "@id": "https://sankofaexpeditions.com/#website" },
+    "breadcrumb": { "@id": "https://sankofaexpeditions.com/directories/#breadcrumb" },
+    "inLanguage": "en-US",
+    "dateModified": new Date().toISOString().split('T')[0]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://sankofaexpeditions.com/directories/#breadcrumb",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sankofaexpeditions.com" },
+      { "@type": "ListItem", "position": 2, "name": "Directories", "item": "https://sankofaexpeditions.com/directories" }
+    ]
+  }
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Africa Intelligence</p>
+      <h1>Directories</h1>
+      <p class="hero-sub">
+        Verified, researched, and updated weekly. These are not lists scraped from the internet. Every entry is confirmed from primary sources before it goes live.
+      </p>
+    </div>
+  </section>
+
+  <section class="section directories-grid-section">
+    <div class="container">
+      <div class="directories-grid">
+        {directories.map((dir) => (
+          <article class:list={['dir-card', { 'dir-card--soon': dir.comingSoon }]}>
+            <div class="dir-card-top">
+              <div class="dir-icon" aria-hidden="true">{dir.icon}</div>
+              <span class="dir-eyebrow">{dir.eyebrow}</span>
+            </div>
+            <h2 class="dir-name">{dir.name}</h2>
+            <p class="dir-desc">{dir.description}</p>
+
+            {dir.countriesLive.length > 0 && (
+              <div class="dir-countries">
+                <span class="countries-label">Live now:</span>
+                <ul class="countries-list">
+                  {dir.countriesLive.map((c) => (
+                    <li>
+                      {dir.slug
+                        ? <a href={`/directories/${dir.slug}/${c.toLowerCase().replace(/\s+/g, '-')}`}>{c}</a>
+                        : <span>{c}</span>
+                      }
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {dir.countriesQueued.length > 0 && (
+              <div class="dir-countries dir-countries--queued">
+                <span class="countries-label">{dir.comingSoon ? 'Building:' : 'In queue:'}</span>
+                <ul class="countries-list countries-list--muted">
+                  {dir.countriesQueued.map((c) => <li>{c}</li>)}
+                </ul>
+              </div>
+            )}
+
+            <div class="dir-card-footer">
+              {dir.slug && !dir.comingSoon ? (
+                <a href={`/directories/${dir.slug}`} class="dir-cta">Browse Directory &rarr;</a>
+              ) : (
+                <span class="dir-soon-label">Coming Soon</span>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section methodology-section">
+    <div class="container container--narrow">
+      <h2>How These Directories Work</h2>
+      <p>
+        Every entry is verified before it goes live. That means checking the organization's own website, their social media activity, and published press coverage. If we cannot confirm it from primary sources, it goes into the "Documenting" queue instead of the live listings.
+      </p>
+      <p>
+        Directories are updated weekly. If you are running or know of a project that belongs here, <a href="/contact">reach out</a>.
+      </p>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .page-hero {
+    background: var(--color-dark);
+    color: var(--color-text-on-dark);
+    padding: var(--space-4xl) 0 var(--space-3xl);
+  }
+
+  .page-hero .eyebrow {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: var(--space-lg);
+  }
+
+  .page-hero h1 {
+    color: #fff;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-sub {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 60ch;
+  }
+
+  /* Grid */
+  .directories-grid-section {
+    background: var(--color-bg-alt);
+  }
+
+  .directories-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 700px) {
+    .directories-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Cards */
+  .dir-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: var(--space-2xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .dir-card--soon {
+    opacity: 0.75;
+  }
+
+  .dir-card-top {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .dir-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--color-text);
+    width: 2rem;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .dir-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-text-muted);
+  }
+
+  .dir-name {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .dir-desc {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin: 0;
+    flex: 1;
+  }
+
+  .dir-countries {
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-md);
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+
+  .countries-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+  }
+
+  .countries-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .countries-list li {
+    font-size: 0.8125rem;
+    color: var(--color-text);
+  }
+
+  .countries-list li + li::before {
+    content: '·';
+    margin-right: 6px;
+    color: var(--color-text-muted);
+  }
+
+  .countries-list a {
+    color: var(--color-text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .countries-list a:hover {
+    color: var(--color-text-muted);
+  }
+
+  .countries-list--muted li {
+    color: var(--color-text-muted);
+  }
+
+  .dir-card-footer {
+    margin-top: auto;
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .dir-cta {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .dir-cta:hover {
+    color: var(--color-text-muted);
+  }
+
+  .dir-soon-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    padding: 4px 10px;
+    border: 1px solid var(--color-border);
+    display: inline-block;
+  }
+
+  /* Methodology */
+  .methodology-section {
+    background: var(--color-bg);
+  }
+
+  .container--narrow {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+  }
+
+  .methodology-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .methodology-section p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+  }
+
+  .methodology-section a {
+    color: var(--color-text);
+  }
+</style>

@@ -1,0 +1,35 @@
+{
+  "country": "Cape Verde",
+  "countryCode": "CV",
+  "flag": "🇨🇻",
+  "region": "West Africa / Atlantic Islands",
+  "summary": "Cape Verde reportedly has a Digital Nomad Visa program, but official government websites were not accessible during verification. Data below is unconfirmed. Verify before applying.",
+  "lastUpdated": "2026-11-05",
+  "program": {
+    "name": "Visto Nómadas Digitais (reported)",
+    "status": "unverified",
+    "incomeRequirementUSD": 1650,
+    "incomeNote": "Approximately USD $1,650/month (CVE 2,130,000/year) reported by third-party sources. UNCONFIRMED from official government source.",
+    "applicationFeeUSD": 65,
+    "applicationFeeNote": "Approximately USD $60-65 (CVE 6,320) reported. UNCONFIRMED from official government source.",
+    "durationMonths": 6,
+    "renewable": null,
+    "renewalNote": "Renewal policy unconfirmed.",
+    "processingTimeWeeks": null,
+    "processingNote": null,
+    "workRestrictions": null,
+    "officialApplyUrl": null,
+    "officialSourceUrl": "https://www.governo.cv",
+    "lastVerified": "2026-11-05",
+    "verificationNote": "UNVERIFIED. Cape Verde government immigration portals (senaifronteiras.gov.cv, portondinosilhas.gov.cv) were inaccessible during research. Data comes from third-party aggregators. Contact Cape Verde Embassy in Washington DC or Boston Consulate to confirm before applying."
+  },
+  "keyFacts": [
+    "Program reportedly exists but could not be confirmed from official sources",
+    "10 islands offering Atlantic beaches and Portuguese-Creole culture",
+    "Sal and Santiago islands have best infrastructure for remote workers",
+    "Portuguese is official language; English widely spoken in tourist areas",
+    "Direct flights from Boston and Lisbon"
+  ],
+  "requirements": [],
+  "whyItMatters": "Cape Verde's island setting, stable democracy, and Atlantic location make it a compelling Africa-adjacent remote work base. The diaspora connection is strong, particularly with Cape Verdean communities in New England. Verify the visa status directly before planning a move."
+}
