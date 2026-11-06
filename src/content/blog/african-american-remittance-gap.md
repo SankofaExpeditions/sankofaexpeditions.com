@@ -1,6 +1,6 @@
 ---
 title: "Why African Americans Are the Only Diaspora Not Building Back Home"
-description: "Every major diaspora in America sends remittances home and builds estates in their motherland. African Americans are the exception. Here is why, and what to do about it."
+description: "Every diaspora in America sends remittances home and builds estates abroad. African Americans are the exception. Here is why, and what to do."
 publishDate: 2026-06-17
 author: "Sankofa Expeditions"
 category: "DIASPORA INTELLIGENCE"
