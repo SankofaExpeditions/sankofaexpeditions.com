@@ -14,7 +14,7 @@
       "statusNote": "South Africa does not have a diaspora citizenship or right-of-return program. South Africans who emigrated and took foreign citizenship typically lost their SA citizenship. Re-acquisition is possible but requires a formal process through DHA.",
       "eligibility": "South Africans by birth or descent. Those who lost citizenship by acquiring foreign nationality may apply to re-acquire it through DHA.",
       "applicationFeeUSD": null,
-      "applicationFeeNote": "Contact DHA (Department of Home Affairs) for current fees.",
+      "applicationFeeNote": "DHA updated its fee schedule in April 2025 (10-15% increase). Current fees: Citizenship by Descent (Registration) R1,520; Naturalization Application R4,330; Retention of Citizenship (before naturalizing abroad) R1,520; Renunciation of Citizenship R1,100. No further fee increases announced for the 2026/2027 fiscal year as of November 2026. Verify directly at dha.gov.za before applying.",
       "keyDocuments": [
         "South African birth certificate",
         "Previous South African passport or ID",
@@ -30,8 +30,8 @@
       ],
       "officialUrl": "https://www.dha.gov.za",
       "embassyUrl": "https://www.southafrica-usa.net",
-      "lastVerified": "2026-11-05",
-      "verificationNote": "Based on South African Citizenship Act 88 of 1995. South Africa's dual citizenship rules are strict and commonly misunderstood. Legal advice recommended."
+      "lastVerified": "2026-11-07",
+      "verificationNote": "Legal framework verified against South African Citizenship Act 88 of 1995. Status refreshed November 2026: no amendments enacted in 2025-2026. A Citizenship Amendment Bill proposing to extend citizenship by descent beyond the first-generation limitation was tabled in Parliament in late 2025 but had not been enacted as of Q1 2026. DHA fee schedule updated April 2025 (10-15% increase). Citizenship processing backlogs remain severe at 18-24 months as of early 2026, acknowledged by the Minister of Home Affairs in a February 2026 parliamentary response. dha.gov.za confirmed operational with minor intermittent section issues. South Africa's dual citizenship rules are strict and commonly misunderstood; legal advice recommended."
     }
   },
   "keyFacts": [

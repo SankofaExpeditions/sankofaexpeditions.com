@@ -10,8 +10,8 @@
     "dualCitizenshipNote": "Sierra Leone's Citizenship Act and 2018 constitutional amendments permit dual citizenship. Diaspora Sierra Leoneans who took foreign citizenship can reclaim or retain their Sierra Leonean citizenship.",
     "diasporaProgram": {
       "name": "Citizenship by Descent / Dual Citizenship",
-      "status": "active",
-      "statusNote": "Active. The 2018 constitutional amendment was a significant pro-diaspora reform. Processing is handled through the Sierra Leone Directorate of Immigration and through embassies abroad.",
+      "status": "active-with-disruptions",
+      "statusNote": "The dual citizenship program is legally active under the 2006 Citizenship Amendment Act with no suspension announced. However, the 2025 rollout of Sierra Leone's biometric e-passport system has significantly disrupted processing across all immigration services. Citizenship documentation issuance is affected. Processing times have extended to 12-18 months as of early 2026, up from previous ranges, due to system transition strain. immigration.gov.sl appears unreliable or down; use mia.gov.sl (Ministry of Internal Affairs) as the primary official contact.",
       "eligibility": "Persons born in Sierra Leone or born abroad to at least one Sierra Leonean parent. Diaspora persons of Sierra Leonean origin who lost citizenship upon naturalizing abroad may reclaim it.",
       "applicationFeeUSD": null,
       "applicationFeeNote": "Application fees not publicly listed. Contact Sierra Leone High Commission or Embassy in your country for current fees.",
@@ -30,10 +30,10 @@
         "Approval and citizenship certificate issued",
         "Apply for Sierra Leonean passport"
       ],
-      "officialUrl": "https://www.immigration.gov.sl",
-      "embassyUrl": "https://embassyofsierraleone.org",
-      "lastVerified": "2026-11-05",
-      "verificationNote": "Based on 2018 constitutional reform provisions. Direct embassy contact recommended to confirm current processing procedures and fees."
+      "officialUrl": "https://mia.gov.sl",
+      "embassyUrl": "https://www.slhc-uk.org.uk",
+      "lastVerified": "2026-11-07",
+      "verificationNote": "Legal framework verified against Citizenship Act Cap 122 and 2006 Amendment. Status refreshed November 2026: immigration.gov.sl is unreliable or down; Ministry of Internal Affairs (mia.gov.sl) confirmed as primary official contact. Biometric e-passport launch in 2025 is a confirmed new development materially impacting processing timelines. Processing times of 12-18 months reported as of early 2026. No fee changes confirmed."
     }
   },
   "keyFacts": [
