@@ -207,6 +207,19 @@ const jsonLd = [
     </div>
   </section>
 
+  {['ghana','kenya','nigeria','rwanda','south-africa'].includes(countrySlug) && (
+    <section class="section crosslink-section">
+      <div class="container container--narrow">
+        <p class="crosslink-text">
+          Planning a move to {country}? Save the emergency contacts first.{' '}
+          <a href={`/directories/emergency-contacts/${countrySlug}`}>
+            {country} emergency numbers, embassies &amp; hospitals &rarr;
+          </a>
+        </p>
+      </div>
+    </section>
+  )}
+
   <section class="section nav-section">
     <div class="container">
       <div class="nav-links">
@@ -552,6 +565,27 @@ const jsonLd = [
 
   .verification-meta a {
     color: var(--color-text);
+  }
+
+  /* Crosslink */
+  .crosslink-section {
+    background: var(--color-bg-alt);
+    padding-top: 0;
+  }
+
+  .crosslink-text {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    padding: var(--space-lg);
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+    margin: 0;
+    line-height: 1.65;
+  }
+
+  .crosslink-text a {
+    color: var(--color-text);
+    font-weight: 600;
   }
 
   /* Nav */
