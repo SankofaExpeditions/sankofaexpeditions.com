@@ -1,0 +1,255 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = 'Empieza Aquí | Tu Hoja de Ruta a África - Sankofa Expeditions';
+const description = '¿Nuevo en Sankofa Expeditions? Este es tu punto de partida. Entiende quiénes somos, qué hacemos, y encuentra el camino correcto para tu reubicación, herencia, negocio o inversión en África.';
+
+const paths = [
+  {
+    emoji: '🏠',
+    headline: 'Quiero reubícarme en África',
+    description: 'Estás pensando en hacer un traslado permanente o semi-permanente al continente. Necesitas inteligencia real sobre visas, costo de vida, vivienda, salud, banca y comunidad.',
+    links: [
+      { label: 'Visas Nómadas y Reubicación', href: '/directories/nomad-visas' },
+      { label: 'Ciudadanía por Descendencia e Inversión', href: '/directories/citizenship' },
+      { label: 'Contactos de Emergencia por País', href: '/directories/emergency-contacts' },
+      { label: 'Solicitar un Brief de Reubicación', href: '/services' },
+    ],
+    cta: { label: 'Explorar Intel de Reubicación', href: '/travel/relocation' },
+  },
+  {
+    emoji: '🌍',
+    headline: 'Quiero reconectar con mi herencia',
+    description: 'Estás listo para pisar la tierra de tus antepasados. Resultados de ADN, apellidos, o un profundo llamado hacia el continente. Te ayudamos a ir de la curiosidad a la conexión significativa.',
+    links: [
+      { label: 'Viajes de Herencia y Raíces', href: '/travel/heritage' },
+      { label: 'Resumen de Expediciones', href: '/expeditions' },
+      { label: 'Reservar una Consulta Gratuita', href: '/consult' },
+    ],
+    cta: { label: 'Explorar Viajes de Herencia', href: '/travel/heritage' },
+  },
+  {
+    emoji: '📊',
+    headline: 'Quiero construir o invertir en África',
+    description: 'Ves la oportunidad. Necesitas inteligencia sobre el terreno antes de desplegar capital o tiempo. Investigación de mercado, verificación de socios, mapeo regulatorio y reconocimiento empresarial en todo el continente.',
+    links: [
+      { label: 'Reconocimiento Empresarial', href: '/travel/business' },
+      { label: 'Prospección de Inversiones', href: '/travel/investment' },
+      { label: 'Economías Circulares Bitcoin', href: '/directories/bitcoin-circular-economies' },
+      { label: 'Solicitar un Paquete Recon', href: '/services' },
+    ],
+    cta: { label: 'Explorar Intel Empresarial', href: '/travel/business' },
+  },
+  {
+    emoji: '👥',
+    headline: 'Quiero llevar un grupo',
+    description: 'Estás organizando un viaje grupal, delegación diáspora, grupo religioso o reunión familiar. Nos encargamos de la logística, la inteligencia y la coordinación en el terreno para que puedas concentrarte en la experiencia.',
+    links: [
+      { label: 'Expediciones Grupales', href: '/travel/groups' },
+      { label: 'Obtener una Propuesta de Grupo', href: '/contact' },
+    ],
+    cta: { label: 'Planificar una Expedición Grupal', href: '/travel/groups' },
+  },
+];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://sankofaexpeditions.com/es/start-here#webpage",
+    "url": "https://sankofaexpeditions.com/es/start-here",
+    "name": title,
+    "description": description,
+    "isPartOf": { "@id": "https://sankofaexpeditions.com/#website" },
+    "about": { "@id": "https://sankofaexpeditions.com/#organization" },
+    "inLanguage": "es-ES",
+    "datePublished": "2024-01-01",
+    "dateModified": new Date().toISOString().split('T')[0]
+  }
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalURL="https://sankofaexpeditions.com/es/start-here"
+  jsonLd={jsonLd}
+>
+
+  <section class="sh-hero" aria-labelledby="sh-hero-heading">
+    <div class="container sh-hero-inner">
+      <span class="eyebrow">¿Nuevo Aquí?</span>
+      <h1 id="sh-hero-heading">Empieza Aquí</h1>
+      <p class="sh-hero-desc">
+        Nos encontraste. Ahora averigüemos a dónde vas.
+        Sankofa Expeditions es una empresa de inteligencia y expediciones para la diáspora africana.
+        Elige tu camino a continuación y te dirigiremos exactamente a lo que necesitas.
+      </p>
+      <nav class="sh-hero-breadcrumb" aria-label="Migas de pan">
+        <ol>
+          <li><a href="/es">Inicio</a></li>
+          <li aria-current="page">Empieza Aquí</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <section class="section sh-what" aria-labelledby="sh-what-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Quiénes Somos</span>
+        <h2 id="sh-what-heading">Inteligencia para la Diáspora Africana</h2>
+        <p>Investigamos, verificamos y entregamos información accionable para que puedas moverte, construir e invertir en el África subsahariana con confianza.</p>
+      </div>
+      <div class="sh-pillars">
+        <div class="sh-pillar card">
+          <div class="sh-pillar-icon" aria-hidden="true">🔍</div>
+          <h3>Investigación sobre el Terreno</h3>
+          <p>Fuentes reales en lugares reales. No artículos de blog reciclados. Inteligencia verificada desde redes locales en 54 naciones.</p>
+        </div>
+        <div class="sh-pillar card">
+          <div class="sh-pillar-icon" aria-hidden="true">📋</div>
+          <h3>Directorios Gratuitos</h3>
+          <p>Datos de acceso abierto sobre visas nómadas, vías de ciudadanía, contactos de emergencia y ecosistemas Bitcoin. Úsalos ahora, sin registro.</p>
+        </div>
+        <div class="sh-pillar card">
+          <div class="sh-pillar-icon" aria-hidden="true">🧭</div>
+          <h3>Inteligencia Personalizada</h3>
+          <p>Briefs de investigación y planificación de expediciones a medida para reubicación, herencia, negocios e inversión en todo el continente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt sh-paths" aria-labelledby="sh-paths-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Encuentra Tu Camino</span>
+        <h2 id="sh-paths-heading">¿Qué te Trae Aquí?</h2>
+        <p>Dinos tu objetivo y te dirigiremos exactamente a los recursos correctos.</p>
+      </div>
+      <div class="sh-path-grid">
+        {paths.map((path) => (
+          <article class="sh-path-card card">
+            <div class="sh-path-emoji" aria-hidden="true">{path.emoji}</div>
+            <h3 class="sh-path-headline">{path.headline}</h3>
+            <p class="sh-path-desc">{path.description}</p>
+            <ul class="sh-path-links" role="list">
+              {path.links.map(link => (
+                <li>
+                  <a href={link.href}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <a href={path.cta.href} class="btn btn--primary sh-path-cta">{path.cta.label}</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dark sh-resources" aria-labelledby="sh-resources-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Intel Gratuito, Ahora</span>
+        <h2 id="sh-resources-heading">Comienza con Nuestros Directorios Abiertos</h2>
+        <p>Sin registro. Sin muro de pago. Datos reales, actualizados regularmente.</p>
+      </div>
+      <div class="sh-resource-grid">
+        <a href="/directories/nomad-visas" class="sh-resource-card">
+          <span class="sh-resource-icon" aria-hidden="true">🛂</span>
+          <h3>Directorio de Visas Nómadas</h3>
+          <p>Requisitos, duración, costo y elegibilidad para 6 países africanos que activamente dan la bienvenida a trabajadores remotos y miembros de la diáspora.</p>
+          <span class="sh-resource-link">Explorar visas →</span>
+        </a>
+        <a href="/directories/citizenship" class="sh-resource-card">
+          <span class="sh-resource-icon" aria-hidden="true">🪪</span>
+          <h3>Directorio de Ciudadanía</h3>
+          <p>Vías de ciudadanía por descendencia, naturalización e inversión en 11 naciones africanas. Conoce tus derechos antes de aterrizar.</p>
+          <span class="sh-resource-link">Explorar ciudadanía →</span>
+        </a>
+        <a href="/directories/emergency-contacts" class="sh-resource-card">
+          <span class="sh-resource-icon" aria-hidden="true">📞</span>
+          <h3>Contactos de Emergencia</h3>
+          <p>Números de emergencia verificados, contactos de la embajada de EE.UU. y servicios médicos para Ghana, Kenia, Nigeria, Ruanda y Sudáfrica.</p>
+          <span class="sh-resource-link">Explorar contactos →</span>
+        </a>
+        <a href="/directories/bitcoin-circular-economies" class="sh-resource-card">
+          <span class="sh-resource-icon" aria-hidden="true">₿</span>
+          <h3>Economías Circulares Bitcoin</h3>
+          <p>Donde Bitcoin es dinero real en África. Comerciantes, servicios y comunidades funcionando con dinero sólido en todo el continente.</p>
+          <span class="sh-resource-link">Explorar Bitcoin →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dark sh-cta-section" aria-labelledby="sh-cta-heading">
+    <div class="container text-center">
+      <span class="eyebrow">¿Listo?</span>
+      <h2 id="sh-cta-heading">Hablemos de Adónde Vas</h2>
+      <hr class="divider" />
+      <p class="sh-cta-desc">
+        Reserva una consulta gratuita de 30 minutos. Sin presentaciones de ventas. Sin obligación.
+        Solo una conversación directa sobre tu objetivo en África y la inteligencia que necesitas para ejecutarlo.
+      </p>
+      <div class="sh-cta-actions">
+        <a href="https://calendly.com/expeditsankofa/30min" target="_blank" rel="noopener" class="btn btn--primary">
+          Reservar una Consulta Gratuita
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="/services" class="btn btn--secondary">Ver Servicios y Precios</a>
+      </div>
+      <p class="sh-cta-newsletter">
+        ¿No estás listo para hablar? <a href="https://sankofa-expeditions.beehiiv.com/subscribe" target="_blank" rel="noopener">Suscríbete a nuestro boletín semanal de intel</a> y obtén primero una visión general.
+      </p>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .sh-hero { background: var(--color-dark); color: var(--color-text-on-dark); padding: var(--space-3xl) 0; position: relative; overflow: hidden; text-align: center; }
+  .sh-hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 20% 60%, rgba(196, 132, 29, 0.07) 0%, transparent 60%), radial-gradient(ellipse at 80% 30%, rgba(196, 132, 29, 0.05) 0%, transparent 50%); pointer-events: none; }
+  .sh-hero-inner { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; }
+  .sh-hero h1 { color: var(--color-text-light); margin-bottom: var(--space-lg); }
+  .sh-hero-desc { font-size: 1.1rem; color: var(--color-text-on-dark); opacity: 0.85; max-width: 600px; margin: 0 auto var(--space-xl); line-height: 1.7; }
+  .sh-hero-breadcrumb ol { display: flex; justify-content: center; align-items: center; gap: var(--space-sm); list-style: none; padding: 0; margin: 0; font-size: 0.85rem; }
+  .sh-hero-breadcrumb li { display: flex; align-items: center; gap: var(--space-sm); color: var(--color-text-on-dark); opacity: 0.6; }
+  .sh-hero-breadcrumb li + li::before { content: '→'; color: var(--color-gold); opacity: 0.5; }
+  .sh-hero-breadcrumb a { color: var(--color-gold-light); text-decoration: none; opacity: 1; }
+  .sh-hero-breadcrumb a:hover { color: var(--color-gold); text-decoration: underline; }
+  .sh-pillars { display: grid; grid-template-columns: 1fr; gap: var(--space-xl); }
+  @media (min-width: 768px) { .sh-pillars { grid-template-columns: repeat(3, 1fr); } }
+  .sh-pillar { text-align: center; padding: var(--space-2xl); }
+  .sh-pillar-icon { font-size: 2.5rem; margin-bottom: var(--space-lg); display: block; }
+  .sh-pillar h3 { font-size: 1.1rem; margin-bottom: var(--space-md); }
+  .sh-path-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-xl); }
+  @media (min-width: 768px) { .sh-path-grid { grid-template-columns: repeat(2, 1fr); } }
+  .sh-path-card { display: flex; flex-direction: column; padding: var(--space-2xl); }
+  .sh-path-emoji { font-size: 2rem; margin-bottom: var(--space-md); }
+  .sh-path-headline { font-size: 1.2rem; margin-bottom: var(--space-md); color: var(--color-dark); }
+  .sh-path-desc { color: var(--color-text-muted); line-height: 1.65; margin-bottom: var(--space-lg); flex: 1; }
+  .sh-path-links { list-style: none; padding: 0; margin: 0 0 var(--space-xl) 0; display: flex; flex-direction: column; gap: var(--space-sm); }
+  .sh-path-links a { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--color-dark); text-decoration: none; font-weight: 500; }
+  .sh-path-links a:hover { color: var(--color-gold); text-decoration: underline; }
+  .sh-path-links svg { flex-shrink: 0; color: var(--color-gold); }
+  .sh-path-cta { margin-top: auto; align-self: flex-start; }
+  .sh-resource-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-lg); }
+  @media (min-width: 640px) { .sh-resource-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .sh-resource-grid { grid-template-columns: repeat(4, 1fr); } }
+  .sh-resource-card { display: flex; flex-direction: column; padding: var(--space-xl); text-decoration: none; color: var(--color-text-on-dark); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-lg); background: rgba(255,255,255,0.04); transition: all var(--transition-base); }
+  .sh-resource-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(196, 132, 29, 0.3); transform: translateY(-2px); }
+  .sh-resource-icon { font-size: 1.8rem; margin-bottom: var(--space-md); }
+  .sh-resource-card h3 { font-size: 1rem; color: var(--color-text-light); margin-bottom: var(--space-sm); }
+  .sh-resource-card p { font-size: 0.875rem; color: var(--color-text-on-dark); opacity: 0.75; line-height: 1.6; flex: 1; margin-bottom: var(--space-lg); }
+  .sh-resource-link { font-size: 0.85rem; color: var(--color-gold-light); font-weight: 600; margin-top: auto; }
+  .sh-cta-section { text-align: center; }
+  .sh-cta-desc { font-size: 1.1rem; color: var(--color-text-on-dark); opacity: 0.85; max-width: 560px; margin: 0 auto var(--space-2xl); line-height: 1.7; }
+  .sh-cta-actions { display: flex; gap: var(--space-lg); justify-content: center; flex-wrap: wrap; margin-bottom: var(--space-xl); }
+  .sh-cta-newsletter { font-size: 0.9rem; color: var(--color-text-on-dark); opacity: 0.65; }
+  .sh-cta-newsletter a { color: var(--color-gold-light); text-decoration: underline; }
+</style>

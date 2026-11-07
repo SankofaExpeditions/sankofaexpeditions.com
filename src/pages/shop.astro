@@ -1,0 +1,235 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Shop | Sankofa Expeditions';
+const description = 'Books, guides, and tools for the African diaspora from Sankofa Expeditions. Coming soon.';
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://sankofaexpeditions.com/shop#webpage",
+    "url": "https://sankofaexpeditions.com/shop",
+    "name": title,
+    "description": description,
+    "isPartOf": { "@id": "https://sankofaexpeditions.com/#website" },
+    "about": { "@id": "https://sankofaexpeditions.com/#organization" },
+    "inLanguage": "en-US",
+    "datePublished": "2024-01-01",
+    "dateModified": new Date().toISOString().split('T')[0]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sankofaexpeditions.com" },
+      { "@type": "ListItem", "position": 2, "name": "Shop", "item": "https://sankofaexpeditions.com/shop" }
+    ]
+  }
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalURL="https://sankofaexpeditions.com/shop"
+  jsonLd={jsonLd}
+>
+
+  <section class="shop-cs" aria-labelledby="shop-cs-heading">
+    <div class="container shop-cs-inner">
+      <nav class="shop-cs-breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li aria-current="page">Shop</li>
+        </ol>
+      </nav>
+
+      <div class="shop-cs-badge" aria-label="Status">Coming Soon</div>
+
+      <h1 id="shop-cs-heading">The Shop is on its way.</h1>
+
+      <p class="shop-cs-desc">
+        Books, guides, field manuals, and tools for the African diaspora.
+        We are building something worth having. Check back soon.
+      </p>
+
+      <div class="shop-cs-preview">
+        <div class="shop-cs-item">
+          <span class="shop-cs-item-icon" aria-hidden="true">📖</span>
+          <span>Field Guides</span>
+        </div>
+        <div class="shop-cs-item">
+          <span class="shop-cs-item-icon" aria-hidden="true">🗺️</span>
+          <span>Relocation Playbooks</span>
+        </div>
+        <div class="shop-cs-item">
+          <span class="shop-cs-item-icon" aria-hidden="true">📊</span>
+          <span>Intelligence Reports</span>
+        </div>
+        <div class="shop-cs-item">
+          <span class="shop-cs-item-icon" aria-hidden="true">🎓</span>
+          <span>Digital Courses</span>
+        </div>
+      </div>
+
+      <p class="shop-cs-cta-text">In the meantime, our free directories and blog are open and loaded with intelligence.</p>
+
+      <div class="shop-cs-actions">
+        <a href="/directories" class="btn btn--primary">
+          Browse Free Directories
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="https://sankofa-expeditions.beehiiv.com/subscribe" target="_blank" rel="noopener" class="btn btn--secondary">
+          Get the Intel Newsletter
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .shop-cs {
+    min-height: 85vh;
+    background: var(--color-dark);
+    color: var(--color-text-on-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-3xl) 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shop-cs::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(ellipse at 25% 50%, rgba(196, 132, 29, 0.08) 0%, transparent 60%),
+      radial-gradient(ellipse at 75% 30%, rgba(196, 132, 29, 0.05) 0%, transparent 55%);
+    pointer-events: none;
+  }
+
+  .shop-cs-inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  /* Breadcrumb */
+  .shop-cs-breadcrumb {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .shop-cs-breadcrumb ol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-sm);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.85rem;
+  }
+
+  .shop-cs-breadcrumb li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--color-text-on-dark);
+    opacity: 0.5;
+  }
+
+  .shop-cs-breadcrumb li + li::before {
+    content: '→';
+    color: var(--color-gold);
+    opacity: 0.4;
+  }
+
+  .shop-cs-breadcrumb a {
+    color: var(--color-gold-light);
+    text-decoration: none;
+    opacity: 1;
+  }
+
+  .shop-cs-breadcrumb a:hover {
+    text-decoration: underline;
+  }
+
+  /* Badge */
+  .shop-cs-badge {
+    display: inline-block;
+    background: rgba(196, 132, 29, 0.15);
+    border: 1px solid rgba(196, 132, 29, 0.35);
+    color: var(--color-gold-light);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.4rem 1.2rem;
+    border-radius: 100px;
+    margin-bottom: var(--space-xl);
+  }
+
+  /* Heading */
+  .shop-cs h1 {
+    color: var(--color-text-light);
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin-bottom: var(--space-lg);
+    line-height: 1.1;
+  }
+
+  .shop-cs-desc {
+    font-size: 1.1rem;
+    color: var(--color-text-on-dark);
+    opacity: 0.8;
+    max-width: 480px;
+    margin: 0 auto var(--space-2xl);
+    line-height: 1.7;
+  }
+
+  /* Preview items */
+  .shop-cs-preview {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .shop-cs-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius-md);
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    color: var(--color-text-on-dark);
+    opacity: 0.75;
+  }
+
+  .shop-cs-item-icon {
+    font-size: 1.1rem;
+  }
+
+  .shop-cs-cta-text {
+    font-size: 0.9rem;
+    color: var(--color-text-on-dark);
+    opacity: 0.55;
+    margin-bottom: var(--space-xl);
+  }
+
+  /* Actions */
+  .shop-cs-actions {
+    display: flex;
+    gap: var(--space-lg);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+</style>

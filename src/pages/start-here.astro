@@ -1,0 +1,566 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Start Here | Your Africa Roadmap from Sankofa Expeditions';
+const description = 'New to Sankofa Expeditions? This is your starting point. Understand who we are, what we do, and find the right path for your relocation, heritage, business, or investment journey to Africa.';
+
+const paths = [
+  {
+    emoji: '🏠',
+    headline: 'I want to relocate to Africa',
+    description: 'You are thinking about making a permanent or semi-permanent move to the continent. You need real intelligence on visas, cost of living, housing, healthcare, banking, and community.',
+    links: [
+      { label: 'Nomad & Relocation Visas', href: '/directories/nomad-visas' },
+      { label: 'Citizenship by Descent & Investment', href: '/directories/citizenship' },
+      { label: 'Emergency Contacts by Country', href: '/directories/emergency-contacts' },
+      { label: 'Request a Relocation Intel Brief', href: '/services' },
+    ],
+    cta: { label: 'Explore Relocation Intel', href: '/travel/relocation' },
+  },
+  {
+    emoji: '🌍',
+    headline: 'I want to reconnect with my heritage',
+    description: 'You are ready to walk the land your ancestors walked. DNA results, family names, or a deep pull toward the continent. We help you go from curiosity to meaningful connection.',
+    links: [
+      { label: 'Heritage & Roots Journeys', href: '/travel/heritage' },
+      { label: 'Expeditions Overview', href: '/expeditions' },
+      { label: 'Book a Free Consult', href: '/consult' },
+    ],
+    cta: { label: 'Explore Heritage Journeys', href: '/travel/heritage' },
+  },
+  {
+    emoji: '📊',
+    headline: 'I want to build or invest in Africa',
+    description: 'You see the opportunity. You need on-the-ground intel before deploying capital or time. Market research, partner vetting, regulatory mapping, and business reconnaissance across the continent.',
+    links: [
+      { label: 'Business Reconnaissance', href: '/travel/business' },
+      { label: 'Investment Scouting', href: '/travel/investment' },
+      { label: 'Bitcoin Circular Economies', href: '/directories/bitcoin-circular-economies' },
+      { label: 'Request a Recon Package', href: '/services' },
+    ],
+    cta: { label: 'Explore Business Intel', href: '/travel/business' },
+  },
+  {
+    emoji: '👥',
+    headline: 'I want to bring a group',
+    description: 'You are organizing a group trip, diaspora delegation, church group, or family reunion. We handle the logistics, intelligence, and on-the-ground coordination so you can focus on the experience.',
+    links: [
+      { label: 'Group Expeditions', href: '/travel/groups' },
+      { label: 'Get a Group Proposal', href: '/contact' },
+    ],
+    cta: { label: 'Plan a Group Expedition', href: '/travel/groups' },
+  },
+];
+
+const faqs = [
+  {
+    question: 'What exactly is Sankofa Expeditions and who is it for?',
+    answer: 'Sankofa Expeditions is an intelligence and expedition company for the African diaspora. We research, verify, and deliver actionable information for diaspora members who want to relocate, invest, reconnect with heritage, or build businesses across sub-Saharan Africa. We are not a standard travel agency. We are a research and intelligence operation that happens to move people.',
+  },
+  {
+    question: 'How is Sankofa Expeditions different from a regular travel agency?',
+    answer: 'Standard travel agencies book flights and hotels. We deploy on-the-ground intelligence networks. Our reports come from real sources in real places, not recycled blog posts or tourist brochures. Every engagement is tailored to your specific objectives, whether that is finding the best visa pathway, vetting a business partner, or identifying the right neighborhood in Accra, Nairobi, or Lagos.',
+  },
+  {
+    question: 'I am completely new to Africa travel. Where do I actually start?',
+    answer: 'Start with a free 30-minute consultation. Tell us your objective and we will tell you exactly what intelligence you need and how we can get it. No obligation, no sales pitch. Just a direct conversation about your goals.',
+  },
+  {
+    question: 'Which African countries does Sankofa Expeditions cover?',
+    answer: 'All 54 African nations, with deep expertise in sub-Saharan Africa. Our primary focus includes Ghana, Nigeria, Kenya, South Africa, Rwanda, Senegal, Tanzania, Ethiopia, Benin, Ivory Coast, and other high-interest diaspora destinations. No country is off-limits.',
+  },
+  {
+    question: 'Does Sankofa Expeditions offer free resources I can use right now?',
+    answer: 'Yes. Our directories are free and openly accessible: nomad visa data for 6 countries, citizenship pathways for 11 nations, emergency contacts for key diaspora hubs, and Bitcoin circular economy research. Our blog publishes in-depth intelligence regularly. Subscribe to the newsletter for weekly intel delivered to your inbox.',
+  },
+  {
+    question: 'What does Sankofa mean and why that name?',
+    answer: 'Sankofa is a word from the Akan language of Ghana, often depicted as a bird reaching backward to retrieve an egg while moving forward. It means: go back and get it. Know where you came from so you can move forward with purpose. That is exactly what we do. We help the diaspora reach back to the continent and move forward with intelligence.',
+  },
+];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://sankofaexpeditions.com/start-here#webpage",
+    "url": "https://sankofaexpeditions.com/start-here",
+    "name": title,
+    "description": description,
+    "isPartOf": { "@id": "https://sankofaexpeditions.com/#website" },
+    "about": { "@id": "https://sankofaexpeditions.com/#organization" },
+    "inLanguage": "en-US",
+    "datePublished": "2024-01-01",
+    "dateModified": new Date().toISOString().split('T')[0]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sankofaexpeditions.com" },
+      { "@type": "ListItem", "position": 2, "name": "Start Here", "item": "https://sankofaexpeditions.com/start-here" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://sankofaexpeditions.com/start-here#faq",
+    "mainEntity": faqs.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  }
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonicalURL="https://sankofaexpeditions.com/start-here"
+  jsonLd={jsonLd}
+>
+
+  <!-- Hero -->
+  <section class="sh-hero" aria-labelledby="sh-hero-heading">
+    <div class="container sh-hero-inner">
+      <span class="eyebrow">New Here?</span>
+      <h1 id="sh-hero-heading">Start Here</h1>
+      <p class="sh-hero-desc">
+        You found us. Now let's figure out where you're going.
+        Sankofa Expeditions is an intelligence and expedition company for the African diaspora.
+        Pick your path below and we will point you at exactly what you need.
+      </p>
+      <nav class="sh-hero-breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li aria-current="page">Start Here</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- What We Do (3-col quick intro) -->
+  <section class="section sh-what" aria-labelledby="sh-what-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Who We Are</span>
+        <h2 id="sh-what-heading">Intelligence for the African Diaspora</h2>
+        <p>We research, verify, and deliver actionable information so you can move, build, and invest across sub-Saharan Africa with confidence.</p>
+      </div>
+      <div class="sh-pillars">
+        <div class="sh-pillar card">
+          <div class="sh-pillar-icon" aria-hidden="true">🔍</div>
+          <h3>On-the-Ground Research</h3>
+          <p>Real sources in real places. Not recycled blog posts. Verified intelligence from local networks across 54 nations.</p>
+        </div>
+        <div class="sh-pillar card">
+          <div class="sh-pillar-icon" aria-hidden="true">📋</div>
+          <h3>Free Directories</h3>
+          <p>Open-access data on nomad visas, citizenship pathways, emergency contacts, and Bitcoin ecosystems. Use them now, no sign-up required.</p>
+        </div>
+        <div class="sh-pillar card">
+          <div class="sh-pillar-icon" aria-hidden="true">🧭</div>
+          <h3>Custom Intelligence</h3>
+          <p>Tailored research briefs and expedition planning for relocation, heritage, business, and investment across the continent.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Choose Your Path -->
+  <section class="section section--alt sh-paths" aria-labelledby="sh-paths-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Find Your Path</span>
+        <h2 id="sh-paths-heading">What Brings You Here?</h2>
+        <p>Tell us your objective and we will direct you to exactly the right resources.</p>
+      </div>
+      <div class="sh-path-grid">
+        {paths.map((path) => (
+          <article class="sh-path-card card">
+            <div class="sh-path-emoji" aria-hidden="true">{path.emoji}</div>
+            <h3 class="sh-path-headline">{path.headline}</h3>
+            <p class="sh-path-desc">{path.description}</p>
+            <ul class="sh-path-links" role="list">
+              {path.links.map(link => (
+                <li>
+                  <a href={link.href}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <a href={path.cta.href} class="btn btn--primary sh-path-cta">{path.cta.label}</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Free Resources Banner -->
+  <section class="section section--dark sh-resources" aria-labelledby="sh-resources-heading">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Free Intel, Right Now</span>
+        <h2 id="sh-resources-heading">Start with Our Open Directories</h2>
+        <p>No sign-up. No paywall. Real data, updated regularly.</p>
+      </div>
+      <div class="sh-resource-grid">
+        <a href="/directories/nomad-visas" class="sh-resource-card card card--dark">
+          <span class="sh-resource-icon" aria-hidden="true">🛂</span>
+          <h3>Nomad Visa Directory</h3>
+          <p>Visa requirements, duration, cost, and eligibility for 6 African countries actively courting remote workers and diaspora returnees.</p>
+          <span class="sh-resource-link">Explore visas →</span>
+        </a>
+        <a href="/directories/citizenship" class="sh-resource-card card card--dark">
+          <span class="sh-resource-icon" aria-hidden="true">🪪</span>
+          <h3>Citizenship Directory</h3>
+          <p>Citizenship by descent, naturalization, and investment pathways across 11 African nations. Know your rights before you land.</p>
+          <span class="sh-resource-link">Explore citizenship →</span>
+        </a>
+        <a href="/directories/emergency-contacts" class="sh-resource-card card card--dark">
+          <span class="sh-resource-icon" aria-hidden="true">📞</span>
+          <h3>Emergency Contacts</h3>
+          <p>Verified emergency numbers, US embassy contacts, and medical services for Ghana, Kenya, Nigeria, Rwanda, and South Africa.</p>
+          <span class="sh-resource-link">Explore contacts →</span>
+        </a>
+        <a href="/directories/bitcoin-circular-economies" class="sh-resource-card card card--dark">
+          <span class="sh-resource-icon" aria-hidden="true">₿</span>
+          <h3>Bitcoin Circular Economies</h3>
+          <p>Where Bitcoin is real money in Africa. Merchants, services, and communities running on sound money across the continent.</p>
+          <span class="sh-resource-link">Explore Bitcoin →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" aria-labelledby="sh-faq-heading">
+    <div class="container container--narrow">
+      <div class="section-header">
+        <span class="eyebrow">Common Questions</span>
+        <h2 id="sh-faq-heading">Frequently Asked Questions</h2>
+        <p>Answers for people who just found us and want to know if we are the right fit.</p>
+      </div>
+      <dl class="faq-list" role="list">
+        {faqs.map((item) => (
+          <details class="faq-item card" name="faq-sh">
+            <summary class="faq-item__question" role="listitem">
+              <h3>{item.question}</h3>
+              <svg class="faq-item__chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </summary>
+            <div class="faq-item__answer">
+              <p>{item.answer}</p>
+            </div>
+          </details>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--dark sh-cta-section" aria-labelledby="sh-cta-heading">
+    <div class="container text-center">
+      <span class="eyebrow">Ready?</span>
+      <h2 id="sh-cta-heading">Let's Talk About Where You're Going</h2>
+      <hr class="divider" />
+      <p class="sh-cta-desc">
+        Book a free 30-minute consultation. No pitch. No obligation.
+        Just a direct conversation about your Africa objective and the intelligence you need to execute it.
+      </p>
+      <div class="sh-cta-actions">
+        <a href="https://calendly.com/expeditsankofa/30min" target="_blank" rel="noopener" class="btn btn--primary">
+          Book a Free Consultation
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="/services" class="btn btn--secondary">View Services & Pricing</a>
+      </div>
+      <p class="sh-cta-newsletter">
+        Not ready to talk? <a href="https://sankofa-expeditions.beehiiv.com/subscribe" target="_blank" rel="noopener">Subscribe to our weekly intel newsletter</a> and get the lay of the land first.
+      </p>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .sh-hero {
+    background: var(--color-dark);
+    color: var(--color-text-on-dark);
+    padding: var(--space-3xl) 0;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .sh-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(ellipse at 20% 60%, rgba(196, 132, 29, 0.07) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 30%, rgba(196, 132, 29, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .sh-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .sh-hero h1 {
+    color: var(--color-text-light);
+    margin-bottom: var(--space-lg);
+  }
+
+  .sh-hero-desc {
+    font-size: 1.15rem;
+    color: var(--color-text-on-dark);
+    opacity: 0.85;
+    max-width: 600px;
+    margin: 0 auto var(--space-xl);
+    line-height: 1.7;
+  }
+
+  /* Breadcrumb */
+  .sh-hero-breadcrumb ol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-sm);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.85rem;
+  }
+
+  .sh-hero-breadcrumb li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--color-text-on-dark);
+    opacity: 0.6;
+  }
+
+  .sh-hero-breadcrumb li + li::before {
+    content: '→';
+    color: var(--color-gold);
+    opacity: 0.5;
+  }
+
+  .sh-hero-breadcrumb a {
+    color: var(--color-gold-light);
+    text-decoration: none;
+    opacity: 1;
+  }
+
+  .sh-hero-breadcrumb a:hover {
+    color: var(--color-gold);
+    text-decoration: underline;
+  }
+
+  /* Pillars */
+  .sh-pillars {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  @media (min-width: 768px) {
+    .sh-pillars {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .sh-pillar {
+    text-align: center;
+    padding: var(--space-2xl);
+  }
+
+  .sh-pillar-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-lg);
+    display: block;
+  }
+
+  .sh-pillar h3 {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-md);
+  }
+
+  /* Paths */
+  .sh-path-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  @media (min-width: 768px) {
+    .sh-path-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .sh-path-card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-2xl);
+  }
+
+  .sh-path-emoji {
+    font-size: 2rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .sh-path-headline {
+    font-size: 1.2rem;
+    margin-bottom: var(--space-md);
+    color: var(--color-dark);
+  }
+
+  .sh-path-desc {
+    color: var(--color-text-muted);
+    line-height: 1.65;
+    margin-bottom: var(--space-lg);
+    flex: 1;
+  }
+
+  .sh-path-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-xl) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .sh-path-links a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--color-dark);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .sh-path-links a:hover {
+    color: var(--color-gold);
+    text-decoration: underline;
+  }
+
+  .sh-path-links svg {
+    flex-shrink: 0;
+    color: var(--color-gold);
+  }
+
+  .sh-path-cta {
+    margin-top: auto;
+    align-self: flex-start;
+  }
+
+  /* Resources */
+  .sh-resource-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  @media (min-width: 640px) {
+    .sh-resource-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .sh-resource-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .sh-resource-card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-xl);
+    text-decoration: none;
+    color: var(--color-text-on-dark);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius-lg);
+    background: rgba(255,255,255,0.04);
+    transition: all var(--transition-base);
+  }
+
+  .sh-resource-card:hover {
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(196, 132, 29, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .sh-resource-icon {
+    font-size: 1.8rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .sh-resource-card h3 {
+    font-size: 1rem;
+    color: var(--color-text-light);
+    margin-bottom: var(--space-sm);
+  }
+
+  .sh-resource-card p {
+    font-size: 0.875rem;
+    color: var(--color-text-on-dark);
+    opacity: 0.75;
+    line-height: 1.6;
+    flex: 1;
+    margin-bottom: var(--space-lg);
+  }
+
+  .sh-resource-link {
+    font-size: 0.85rem;
+    color: var(--color-gold-light);
+    font-weight: 600;
+    margin-top: auto;
+  }
+
+  /* CTA */
+  .sh-cta-section {
+    text-align: center;
+  }
+
+  .sh-cta-desc {
+    font-size: 1.1rem;
+    color: var(--color-text-on-dark);
+    opacity: 0.85;
+    max-width: 560px;
+    margin: 0 auto var(--space-2xl);
+    line-height: 1.7;
+  }
+
+  .sh-cta-actions {
+    display: flex;
+    gap: var(--space-lg);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--space-xl);
+  }
+
+  .sh-cta-newsletter {
+    font-size: 0.9rem;
+    color: var(--color-text-on-dark);
+    opacity: 0.65;
+  }
+
+  .sh-cta-newsletter a {
+    color: var(--color-gold-light);
+    text-decoration: underline;
+  }
+</style>
