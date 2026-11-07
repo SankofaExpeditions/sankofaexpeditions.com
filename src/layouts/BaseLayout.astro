@@ -31,7 +31,7 @@ const {
 } = Astro.props;
 
 const siteName = 'Sankofa Expeditions®';
-const fullTitle = title === 'Sankofa Expeditions' ? `Sankofa Expeditions®, African Intelligence for the Diaspora` : `${title} | Sankofa Expeditions®`;
+const fullTitle = title === 'Sankofa Expeditions' ? `Sankofa Expeditions®, African Intelligence for the Diaspora` : title.includes('Sankofa Expeditions') ? title : `${title} | Sankofa Expeditions®`;
 
 const langLocaleMap: Record<string, string> = {
   en: 'en_US',
@@ -48,10 +48,10 @@ const pathWithoutLang = Astro.url.pathname
   .replace(/\.html$/, '')
   .replace(/\/index$/, '') || '/';
 const hreflangs = [
-  { lang: 'en', href: `${siteBase}${pathWithoutLang === '/' ? '' : pathWithoutLang}` },
+  { lang: 'en', href: `${siteBase}${pathWithoutLang === '/' ? '/' : pathWithoutLang}` },
   { lang: 'fr', href: `${siteBase}/fr${pathWithoutLang === '/' ? '' : pathWithoutLang}` },
   { lang: 'es', href: `${siteBase}/es${pathWithoutLang === '/' ? '' : pathWithoutLang}` },
-  { lang: 'x-default', href: `${siteBase}${pathWithoutLang === '/' ? '' : pathWithoutLang}` },
+  { lang: 'x-default', href: `${siteBase}${pathWithoutLang === '/' ? '/' : pathWithoutLang}` },
 ];
 ---
 
