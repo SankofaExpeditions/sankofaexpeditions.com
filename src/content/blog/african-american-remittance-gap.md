@@ -8,13 +8,13 @@ tags: ["diaspora", "remittances", "African Americans", "Ghana", "Rwanda", "Right
 readTime: "18 min read"
 featured: true
 faq:
-  - question: "Why don't African Americans send remittances to Africa?"
+  - question: "Why do African immigrants send money to Africa but African Americans don't?"
     answer: "The African American community largely lacks the specific country-of-origin ties that drive remittance behavior in other diaspora groups. Slavery systematically severed knowledge of origin countries, ethnic groups, and family networks across generations. This is not a cultural deficiency but the predictable result of forced erasure of cross-border identity."
   - question: "Can African Americans get residency in Africa?"
     answer: "Yes. Ghana's Citizenship Act, 2000 (Act 591), Section 13, grants the Right of Abode to any person of African descent in the diaspora. It has been in force since October 2000. Rwanda's Move to Rwanda program, launched in 2021, offers 10-year renewable residence permits and a citizenship pathway to people of African descent worldwide, including African Americans."
   - question: "What is the Right of Abode in Ghana?"
     answer: "The Right of Abode is a provision under Ghana's Citizenship Act, 2000 (Act 591) that grants any person of African descent in the diaspora the right to live and work in Ghana indefinitely. It does not require an investment minimum or proof of specific Ghanaian ancestry. Applications go through the Ghana Immigration Service."
-  - question: "How much do African countries receive in remittances?"
+  - question: "How much money flows into sub-Saharan Africa as remittances each year?"
     answer: "All of sub-Saharan Africa combined received approximately $54 billion in remittances in 2023, according to World Bank data. By comparison, India received $125 billion and Mexico received $67 billion. Most remittances to Africa come from African-born immigrants, not from African Americans."
   - question: "What is Rwanda's Move to Rwanda program?"
     answer: "Move to Rwanda is a program launched by the Rwandan government in September 2021 targeting people of African descent worldwide, including African Americans. It offers a 10-year renewable residence permit, the right to work and invest in Rwanda, and a pathway to Rwandan citizenship. It is administered by the Rwanda Development Board."
