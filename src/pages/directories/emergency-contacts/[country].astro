@@ -1,0 +1,863 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { readFileSync, readdirSync } from 'fs';
+import { join } from 'path';
+
+export async function getStaticPaths() {
+  const dataDir = join(process.cwd(), 'src/data/directories/emergency-contacts');
+  const files = readdirSync(dataDir).filter(f => f.endsWith('.json'));
+  return files.map(f => ({ params: { country: f.replace('.json', '') } }));
+}
+
+const { country: countrySlug } = Astro.params;
+const dataDir = join(process.cwd(), 'src/data/directories/emergency-contacts');
+const data = JSON.parse(readFileSync(join(dataDir, `${countrySlug}.json`), 'utf-8'));
+
+const { country, countryCode, flag, region, summary, emergencyServices, embassies, hospitals, insurance, keyAlerts, additionalResources, lastUpdated } = data;
+
+const pageUrl = `https://sankofaexpeditions.com/directories/emergency-contacts/${countrySlug}`;
+const title = `${country} Emergency Contacts ${new Date().getFullYear()} | Embassy, Hospitals & Police | Sankofa Expeditions`;
+const description = summary.length > 155 ? summary.substring(0, 152) + '...' : summary;
+
+const jsonLdItems: any[] = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${pageUrl}/#webpage`,
+    "url": pageUrl,
+    "name": title,
+    "description": description,
+    "isPartOf": { "@id": "https://sankofaexpeditions.com/#website" },
+    "breadcrumb": { "@id": `${pageUrl}/#breadcrumb` },
+    "inLanguage": "en-US",
+    "dateModified": lastUpdated
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": `${pageUrl}/#breadcrumb`,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sankofaexpeditions.com" },
+      { "@type": "ListItem", "position": 2, "name": "Directories", "item": "https://sankofaexpeditions.com/directories" },
+      { "@type": "ListItem", "position": 3, "name": "Emergency Contacts", "item": "https://sankofaexpeditions.com/directories/emergency-contacts" },
+      { "@type": "ListItem", "position": 4, "name": country, "item": pageUrl }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": `What is the emergency police number in ${country}?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `${emergencyServices.police.number}. ${emergencyServices.police.description}.`
+        }
+      },
+      {
+        "@type": "Question",
+        "name": `What is the ambulance number in ${country}?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `${emergencyServices.ambulance.number}. ${emergencyServices.ambulance.description}.`
+        }
+      },
+      {
+        "@type": "Question",
+        "name": `What is the US Embassy phone number in ${country}?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": (() => {
+            const usEmbassy = embassies.find((e: any) => e.country === 'United States');
+            return usEmbassy ? `${usEmbassy.name}: ${usEmbassy.mainPhone}. For after-hours citizen emergencies: ${usEmbassy.emergencyAfterHours}.` : `No U.S. Embassy is located in ${country}.`;
+          })()
+        }
+      }
+    ]
+  }
+];
+
+// Add GovernmentService entries for each embassy
+embassies.forEach((e: any) => {
+  jsonLdItems.push({
+    "@context": "https://schema.org",
+    "@type": "GovernmentOffice",
+    "name": e.name,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": e.address,
+      "addressCountry": countryCode
+    },
+    "telephone": e.mainPhone,
+    "url": e.website || undefined
+  });
+});
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLdItems}>
+
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/directories">Directories</a>
+        <span aria-hidden="true"> / </span>
+        <a href="/directories/emergency-contacts">Emergency Contacts</a>
+        <span aria-hidden="true"> / </span>
+        <span>{country}</span>
+      </nav>
+      <div class="hero-flag" aria-hidden="true">{flag}</div>
+      <p class="eyebrow">{region}</p>
+      <h1>{country} Emergency Contacts</h1>
+      <p class="hero-sub">{summary}</p>
+    </div>
+  </section>
+
+  <!-- Key Alerts -->
+  {keyAlerts && keyAlerts.length > 0 && (
+    <section class="section alerts-section">
+      <div class="container container--narrow">
+        <h2>What to Know Before You Go</h2>
+        <ul class="alerts-list" role="list">
+          {keyAlerts.map((alert: string) => (
+            <li class="alert-item">{alert}</li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  <!-- Emergency Services -->
+  <section class="section services-section">
+    <div class="container container--narrow">
+      <h2>Emergency Numbers</h2>
+      <div class="services-grid" role="list">
+
+        <div class="service-card service-card--critical" role="listitem">
+          <div class="service-header">
+            <span class="service-icon" aria-hidden="true">🚔</span>
+            <span class="service-label">Police</span>
+            <span class="service-number">{emergencyServices.police.number}</span>
+          </div>
+          <p class="service-desc">{emergencyServices.police.description}</p>
+          {emergencyServices.police.notes && (
+            <p class="service-note">{emergencyServices.police.notes}</p>
+          )}
+        </div>
+
+        <div class="service-card service-card--critical" role="listitem">
+          <div class="service-header">
+            <span class="service-icon" aria-hidden="true">🚑</span>
+            <span class="service-label">Ambulance</span>
+            <span class="service-number">{emergencyServices.ambulance.number}</span>
+          </div>
+          <p class="service-desc">{emergencyServices.ambulance.description}</p>
+          {emergencyServices.ambulance.notes && (
+            <p class="service-note">{emergencyServices.ambulance.notes}</p>
+          )}
+        </div>
+
+        <div class="service-card" role="listitem">
+          <div class="service-header">
+            <span class="service-icon" aria-hidden="true">🚒</span>
+            <span class="service-label">Fire</span>
+            <span class="service-number">{emergencyServices.fire.number}</span>
+          </div>
+          <p class="service-desc">{emergencyServices.fire.description}</p>
+          {emergencyServices.fire.notes && (
+            <p class="service-note">{emergencyServices.fire.notes}</p>
+          )}
+        </div>
+
+        {emergencyServices.tourist && (
+          <div class="service-card" role="listitem">
+            <div class="service-header">
+              <span class="service-icon" aria-hidden="true">ℹ</span>
+              <span class="service-label">Tourist Line</span>
+              <span class="service-number">{emergencyServices.tourist.number}</span>
+            </div>
+            <p class="service-desc">{emergencyServices.tourist.description}</p>
+            {emergencyServices.tourist.notes && (
+              <p class="service-note">{emergencyServices.tourist.notes}</p>
+            )}
+          </div>
+        )}
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Embassies -->
+  <section class="section embassies-section">
+    <div class="container container--narrow">
+      <h2>Embassies & High Commissions</h2>
+      <div class="embassies-list">
+        {embassies.map((e: any) => (
+          <article class="embassy-card">
+            <div class="embassy-header">
+              <div class="embassy-title">
+                <span class="embassy-country">{e.country}</span>
+                <h3 class="embassy-name">{e.name}</h3>
+                <span class="embassy-type-badge">{e.type}</span>
+              </div>
+            </div>
+            <div class="embassy-details">
+              <div class="embassy-row">
+                <span class="erow-label">Address</span>
+                <span class="erow-value">{e.address}</span>
+              </div>
+              <div class="embassy-row">
+                <span class="erow-label">Main Phone</span>
+                <span class="erow-value erow-value--phone">
+                  <a href={`tel:${e.mainPhone.replace(/\s/g, '')}`}>{e.mainPhone}</a>
+                </span>
+              </div>
+              {e.emergencyAfterHours && e.emergencyAfterHours !== e.mainPhone && (
+                <div class="embassy-row">
+                  <span class="erow-label">Emergency (after hours)</span>
+                  <span class="erow-value erow-value--phone">
+                    <a href={`tel:${e.emergencyAfterHours.replace(/\s/g, '')}`}>{e.emergencyAfterHours}</a>
+                  </span>
+                </div>
+              )}
+              {e.emergencyNote && (
+                <div class="embassy-row embassy-row--note">
+                  <span class="erow-label">Note</span>
+                  <span class="erow-value erow-note">{e.emergencyNote}</span>
+                </div>
+              )}
+              {e.website && (
+                <div class="embassy-row">
+                  <span class="erow-label">Website</span>
+                  <span class="erow-value">
+                    <a href={e.website} target="_blank" rel="noopener noreferrer" class="external-link">{e.website}</a>
+                  </span>
+                </div>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Hospitals -->
+  <section class="section hospitals-section">
+    <div class="container container--narrow">
+      <h2>Recommended Hospitals</h2>
+      <p class="section-intro">English-speaking hospitals with emergency departments, ordered by quality for diaspora visitors.</p>
+      <div class="hospitals-list">
+        {hospitals.map((h: any) => (
+          <article class="hospital-card">
+            <div class="hospital-header">
+              <div class="hospital-info">
+                <h3 class="hospital-name">{h.name}</h3>
+                <div class="hospital-meta">
+                  <span class="hospital-city">{h.city}</span>
+                  <span class="hospital-type-badge hospital-type-badge--{h.type.toLowerCase().replace(/[^a-z]/g, '-')}">{h.type}</span>
+                  {h.emergency24hr && <span class="hospital-badge">24hr Emergency</span>}
+                  {h.englishSpeaking && <span class="hospital-badge">English</span>}
+                </div>
+              </div>
+            </div>
+            <p class="hospital-desc">{h.notes}</p>
+            <div class="hospital-contact">
+              <a href={`tel:${h.phone.replace(/\s/g, '')}`} class="hospital-phone">{h.phone}</a>
+              <span class="hospital-address">{h.address}</span>
+              {h.website && (
+                <a href={h.website} target="_blank" rel="noopener noreferrer" class="hospital-website external-link">
+                  {h.website.replace('https://', '')} &rarr;
+                </a>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Insurance Note -->
+  {insurance && (
+    <section class="section insurance-section">
+      <div class="container container--narrow">
+        <h2>Insurance & Medical Costs</h2>
+        {insurance.nhis && <p>{insurance.nhis}</p>}
+        {insurance.recommendation && <p class="insurance-rec">{insurance.recommendation}</p>}
+      </div>
+    </section>
+  )}
+
+  <!-- Additional Resources -->
+  {additionalResources && additionalResources.length > 0 && (
+    <section class="section resources-section">
+      <div class="container container--narrow">
+        <h2>Additional Resources</h2>
+        <div class="resources-grid">
+          {additionalResources.map((r: any) => (
+            <div class="resource-card">
+              <span class="resource-name">{r.name}</span>
+              <span class="resource-desc">{r.description}</span>
+              <span class="resource-contact">{r.contact}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Verification -->
+  <section class="section verification-section">
+    <div class="container container--narrow">
+      <h3>About This Entry</h3>
+      <p class="verification-meta">
+        Last verified: {lastUpdated}. All numbers confirmed from official government websites, embassy.gov, and hospital contact pages.
+      </p>
+      <p class="verification-meta">
+        See a discrepancy or a changed number? <a href="/contact">Let us know</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="section nav-section">
+    <div class="container">
+      <div class="nav-links">
+        <a href="/directories/emergency-contacts" class="nav-back">&larr; All Emergency Contacts</a>
+        <a href="/directories" class="nav-back">All Directories &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .page-hero {
+    background: var(--color-dark);
+    color: var(--color-text-on-dark);
+    padding: var(--space-4xl) 0 var(--space-3xl);
+  }
+
+  .breadcrumb {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: var(--space-lg);
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .breadcrumb a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .hero-flag {
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: var(--space-lg);
+  }
+
+  .page-hero .eyebrow {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: var(--space-md);
+  }
+
+  .page-hero h1 {
+    color: #fff;
+    max-width: 25ch;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-sub {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 60ch;
+  }
+
+  /* Shared */
+  .container--narrow {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+  }
+
+  /* Alerts */
+  .alerts-section {
+    background: var(--color-dark);
+    padding-top: 0;
+    padding-bottom: var(--space-3xl);
+  }
+
+  .alerts-section h2 {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: var(--space-xl);
+  }
+
+  .alerts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .alert-item {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.85);
+    padding-left: var(--space-lg);
+    position: relative;
+  }
+
+  .alert-item::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.875rem;
+  }
+
+  /* Services */
+  .services-section {
+    background: var(--color-bg);
+  }
+
+  .services-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+  }
+
+  @media (min-width: 600px) {
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .service-card {
+    border: 1px solid var(--color-border);
+    padding: var(--space-xl);
+    background: var(--color-bg-alt);
+  }
+
+  .service-card--critical {
+    border-color: var(--color-text);
+  }
+
+  .service-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .service-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .service-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+  }
+
+  .service-number {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-left: auto;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .service-desc {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-text);
+    margin: 0 0 var(--space-sm) 0;
+    font-weight: 500;
+  }
+
+  .service-note {
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  /* Embassies */
+  .embassies-section {
+    background: var(--color-bg-alt);
+  }
+
+  .embassies-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .embassies-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .embassy-card {
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+  }
+
+  .embassy-header {
+    padding: var(--space-xl) var(--space-xl) var(--space-md);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .embassy-country {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    display: block;
+    margin-bottom: var(--space-sm);
+  }
+
+  .embassy-name {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0 0 var(--space-sm) 0;
+  }
+
+  .embassy-type-badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    padding: 2px 8px;
+    border: 1px solid var(--color-border);
+    display: inline-block;
+  }
+
+  .embassy-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .embassy-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: var(--space-md);
+    padding: var(--space-md) var(--space-xl);
+    border-bottom: 1px solid var(--color-border);
+    align-items: start;
+  }
+
+  .embassy-row:last-child {
+    border-bottom: none;
+  }
+
+  .erow-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    padding-top: 2px;
+  }
+
+  .erow-value {
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    line-height: 1.6;
+  }
+
+  .erow-value--phone a {
+    color: var(--color-text);
+    font-weight: 600;
+    text-decoration: none;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .erow-value--phone a:hover {
+    text-decoration: underline;
+  }
+
+  .erow-note {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+
+  .external-link {
+    color: var(--color-text);
+    font-size: 0.8125rem;
+    word-break: break-all;
+  }
+
+  @media (max-width: 600px) {
+    .embassy-row {
+      grid-template-columns: 1fr;
+      gap: var(--space-xs, 4px);
+    }
+  }
+
+  /* Hospitals */
+  .hospitals-section {
+    background: var(--color-bg);
+  }
+
+  .hospitals-section h2 {
+    margin-bottom: var(--space-md);
+  }
+
+  .section-intro {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-xl);
+  }
+
+  .hospitals-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .hospital-card {
+    border: 1px solid var(--color-border);
+    padding: var(--space-xl);
+    background: var(--color-bg-alt);
+  }
+
+  .hospital-header {
+    margin-bottom: var(--space-md);
+  }
+
+  .hospital-name {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0 0 var(--space-sm) 0;
+  }
+
+  .hospital-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+
+  .hospital-city {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+  }
+
+  .hospital-type-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 2px 7px;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+  }
+
+  .hospital-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 2px 7px;
+    background: var(--color-dark);
+    color: #fff;
+    display: inline-block;
+  }
+
+  .hospital-desc {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: var(--color-text-muted);
+    margin: 0 0 var(--space-md) 0;
+  }
+
+  .hospital-contact {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs, 4px);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .hospital-phone {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: var(--color-text);
+    text-decoration: none;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .hospital-phone:hover {
+    text-decoration: underline;
+  }
+
+  .hospital-address {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+  }
+
+  .hospital-website {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  /* Insurance */
+  .insurance-section {
+    background: var(--color-bg-alt);
+  }
+
+  .insurance-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .insurance-section p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+  }
+
+  .insurance-rec {
+    padding: var(--space-lg);
+    border-left: 3px solid var(--color-text);
+    background: var(--color-bg);
+    font-size: 0.9375rem !important;
+  }
+
+  /* Resources */
+  .resources-section {
+    background: var(--color-bg);
+  }
+
+  .resources-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .resources-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  @media (min-width: 600px) {
+    .resources-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .resource-card {
+    border: 1px solid var(--color-border);
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: var(--color-bg-alt);
+  }
+
+  .resource-name {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  .resource-desc {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+
+  .resource-contact {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text);
+    font-variant-numeric: tabular-nums;
+    margin-top: var(--space-sm);
+  }
+
+  /* Verification */
+  .verification-section {
+    background: var(--color-bg-alt);
+  }
+
+  .verification-section h3 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+  }
+
+  .verification-meta {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: var(--space-sm);
+  }
+
+  .verification-meta a {
+    color: var(--color-text);
+  }
+
+  /* Nav */
+  .nav-section {
+    background: var(--color-dark);
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-lg);
+    flex-wrap: wrap;
+  }
+
+  .nav-back {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+  }
+
+  .nav-back:hover {
+    color: #fff;
+  }
+</style>

@@ -1,0 +1,131 @@
+{
+  "country": "Ghana",
+  "countryCode": "GH",
+  "flag": "🇬🇭",
+  "region": "West Africa",
+  "summary": "Essential emergency numbers, embassy contacts, and recommended hospitals for Ghana. Whether you are in Accra, Kumasi, or Cape Coast, these are the numbers to have saved before you land.",
+  "lastUpdated": "2026-11-07",
+  "emergencyServices": {
+    "police": {
+      "number": "191",
+      "description": "Ghana Police Service national emergency line",
+      "notes": "For serious emergencies in Accra, the GPS Emergency Unit can be reached at +233 302 773906. Response times vary significantly outside city centers."
+    },
+    "ambulance": {
+      "number": "193",
+      "description": "National Ambulance Service of Ghana",
+      "notes": "Coverage is best in Accra and Kumasi. In other regions, it may be faster to arrange private transport to the nearest hospital."
+    },
+    "fire": {
+      "number": "192",
+      "description": "Ghana National Fire Service",
+      "notes": null
+    },
+    "tourist": {
+      "number": "0800 111 500",
+      "description": "Ghana Tourism Authority toll-free tourist assistance line",
+      "notes": "Available during business hours. For general visitor assistance and referrals."
+    }
+  },
+  "embassies": [
+    {
+      "country": "United States",
+      "name": "U.S. Embassy Accra",
+      "address": "No. 24, 4th Circular Road, Cantonments, Accra",
+      "mainPhone": "+233 030 274 1000",
+      "emergencyAfterHours": "+233 030 274 1000",
+      "emergencyNote": "For after-hours citizen emergencies, the main switchboard routes to duty officer",
+      "website": "https://gh.usembassy.gov",
+      "type": "Embassy"
+    },
+    {
+      "country": "United Kingdom",
+      "name": "British High Commission Accra",
+      "address": "Julius Nyerere Link, Accra",
+      "mainPhone": "+233 302 213250",
+      "emergencyAfterHours": "+233 302 213250",
+      "emergencyNote": "For after-hours consular emergencies, call the main number and follow the out-of-hours recording",
+      "website": "https://www.gov.uk/world/organisations/british-high-commission-accra",
+      "type": "High Commission"
+    },
+    {
+      "country": "Canada",
+      "name": "Canadian High Commission Accra",
+      "address": "42 Independence Avenue, Sankara Interchange, Accra",
+      "mainPhone": "+233 302 211521",
+      "emergencyAfterHours": "+1 613 996 8885",
+      "emergencyNote": "Call the Ottawa Emergency Watch and Response Centre for after-hours emergencies",
+      "website": "https://www.canadainternational.gc.ca/ghana",
+      "type": "High Commission"
+    }
+  ],
+  "hospitals": [
+    {
+      "name": "Korle Bu Teaching Hospital",
+      "city": "Accra",
+      "type": "Public",
+      "emergency24hr": true,
+      "englishSpeaking": true,
+      "phone": "+233 302 665401",
+      "address": "Guggisberg Avenue, Korle Bu, Accra",
+      "notes": "Ghana's largest hospital. Best for serious emergencies. Can be crowded. The main casualty department handles trauma and critical care.",
+      "website": null
+    },
+    {
+      "name": "Trust Hospital",
+      "city": "Accra",
+      "type": "Private",
+      "emergency24hr": true,
+      "englishSpeaking": true,
+      "phone": "+233 302 240862",
+      "address": "10 Sixth Road, Asylum Down, Accra",
+      "notes": "Leading private hospital in Accra. Preferred by expats and diaspora. Accepts major international insurance. Modern facilities with diagnostic labs.",
+      "website": "https://www.trusthospital.net"
+    },
+    {
+      "name": "Nyaho Medical Centre",
+      "city": "Accra",
+      "type": "Private",
+      "emergency24hr": true,
+      "englishSpeaking": true,
+      "phone": "+233 302 775341",
+      "address": "F831/3 Seventh Avenue, Ridge, Accra",
+      "notes": "High-quality private facility in Ridge. Used by international organizations and embassies. Emergency, inpatient, and specialist care available.",
+      "website": "https://www.nyahomed.com"
+    },
+    {
+      "name": "Komfo Anokye Teaching Hospital",
+      "city": "Kumasi",
+      "type": "Public",
+      "emergency24hr": true,
+      "englishSpeaking": true,
+      "phone": "+233 322 022301",
+      "address": "Bantama, Kumasi, Ashanti Region",
+      "notes": "Main teaching hospital for Kumasi and the Ashanti Region. Best option for emergencies in the central and northern parts of Ghana.",
+      "website": null
+    }
+  ],
+  "insurance": {
+    "nhis": "Ghana's National Health Insurance Scheme (NHIS) covers basic services at accredited facilities. Visitors are not eligible but private insurance is accepted at most private hospitals.",
+    "recommendation": "Carry travel insurance that covers medical evacuation. Quality private hospital care in Accra is affordable by international standards but major injuries requiring evacuation to South Africa or Europe cost $20,000+."
+  },
+  "keyAlerts": [
+    "Dial 191 for police, 193 for ambulance, 192 for fire. Save these before you land.",
+    "Private hospitals in Accra (Trust, Nyaho) are significantly better-equipped than public facilities for non-emergency and specialist care",
+    "Medical evacuation to South Africa or Europe is available via AMREF and other providers. Confirm your insurance covers this",
+    "The U.S. Embassy emergency line is active 24/7. Use it for citizen emergencies only",
+    "In Accra traffic, an Uber to Trust or Nyaho may be faster than waiting for an ambulance"
+  ],
+  "additionalResources": [
+    {
+      "name": "AMREF Flying Doctors",
+      "description": "Medical evacuation across East and West Africa",
+      "contact": "+254 20 6999000"
+    },
+    {
+      "name": "Ghana Police Headquarters",
+      "description": "Non-emergency headquarters line",
+      "contact": "+233 302 773906"
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "country": "Rwanda",
+  "countryCode": "RW",
+  "flag": "🇷🇼",
+  "region": "East Africa",
+  "summary": "Emergency contacts for Rwanda. Kigali is one of Africa's safest and most organized cities, with responsive emergency services and improving private healthcare. These are the numbers to have saved.",
+  "lastUpdated": "2026-11-07",
+  "emergencyServices": {
+    "police": {
+      "number": "112",
+      "description": "Rwanda National Police emergency line",
+      "notes": "Also reachable at +250 788 311 155. Rwanda Police is known for fast response times in Kigali, particularly in Nyarugenge and Kicukiro districts. English-speaking officers widely available."
+    },
+    "ambulance": {
+      "number": "912",
+      "description": "Rwanda Emergency Medical Services",
+      "notes": "Also reachable at +250 788 303 018. SAMU Rwanda (Service d'Aide Médicale Urgente) handles major medical emergencies. Private hospital ambulances can also be dispatched from King Faisal Hospital."
+    },
+    "fire": {
+      "number": "111",
+      "description": "Rwanda Fire and Rescue Service",
+      "notes": "Also reachable at +250 788 311 177. Response in Kigali is generally reliable."
+    },
+    "tourist": {
+      "number": "+250 788 177 020",
+      "description": "Rwanda Development Board Tourist Support Line",
+      "notes": "Available during business hours. Rwanda has strong tourism infrastructure and an English-speaking service sector."
+    }
+  },
+  "embassies": [
+    {
+      "country": "United States",
+      "name": "U.S. Embassy Kigali",
+      "address": "2657 Avenue de la Gendarmerie, Kacyiru, Kigali",
+      "mainPhone": "+250 252 596 400",
+      "emergencyAfterHours": "+250 252 596 400",
+      "emergencyNote": "Call main number and follow the after-hours emergency recording for citizen emergencies",
+      "website": "https://rw.usembassy.gov",
+      "type": "Embassy"
+    },
+    {
+      "country": "United Kingdom",
+      "name": "British High Commission Kigali",
+      "address": "Parcelle No. 1131, Boulevard de l'Umuganda, Kacyiru, Kigali",
+      "mainPhone": "+250 252 556 000",
+      "emergencyAfterHours": "+250 252 556 000",
+      "emergencyNote": "Call main number for after-hours recording and duty officer access",
+      "website": "https://www.gov.uk/world/organisations/british-high-commission-kigali",
+      "type": "High Commission"
+    },
+    {
+      "country": "Canada",
+      "name": "Canadian High Commission Nairobi (Accredited to Rwanda)",
+      "address": "Limuru Road, Gigiri, Nairobi, Kenya",
+      "mainPhone": "+254 20 3663000",
+      "emergencyAfterHours": "+1 613 996 8885",
+      "emergencyNote": "Canada does not have a resident High Commission in Kigali. Consular services are handled from Nairobi. Ottawa emergency line available 24/7.",
+      "website": "https://www.canadainternational.gc.ca/kenya",
+      "type": "High Commission (Accredited)"
+    }
+  ],
+  "hospitals": [
+    {
+      "name": "King Faisal Hospital",
+      "city": "Kigali",
+      "type": "Public (Parastatal)",
+      "emergency24hr": true,
+      "englishSpeaking": true,
+      "phone": "+250 788 303 562",
+      "address": "KN 2 Rd, Kiyovu, Kigali",
+      "notes": "Rwanda's top referral hospital and de facto best hospital in the country. Excellent emergency care and specialist services. Used by the diplomatic community, government officials, and international visitors. English-speaking staff throughout.",
+      "website": "https://www.kfh.rw"
+    },
+    {
+      "name": "Clinic Galien",
+      "city": "Kigali",
+      "type": "Private",
+      "emergency24hr": true,
+      "englishSpeaking": true,
+      "phone": "+250 252 503 902",
+      "address": "KG 11 Ave, Kiyovu, Kigali",
+      "notes": "Quality private clinic in central Kigali. Good for outpatient care, general consultations, and minor emergencies. Used by expats and business travelers.",
+      "website": null
+    },
+    {
+      "name": "CHUK (University Central Hospital of Kigali)",
+      "city": "Kigali",
+      "type": "Public",
+      "emergency24hr": true,
+      "englishSpeaking": true,
+      "phone": "+250 252 575 555",
+      "address": "KN 4 Ave, Nyarugenge, Kigali",
+      "notes": "Main public teaching hospital. Handles major trauma and emergency cases. Can be busy but has improving facilities and trained staff.",
+      "website": null
+    }
+  ],
+  "insurance": {
+    "nhis": "Rwanda's Mutuelle de Santé is the community health insurance scheme for residents. Visitors are not covered. Rwanda has a reputation for affordable, improving healthcare by regional standards.",
+    "recommendation": "Carry comprehensive travel insurance. King Faisal Hospital is the gold standard in Kigali and accepts international insurance. Medical evacuation to Nairobi (45-minute flight) or South Africa is available for serious cases requiring advanced care not available locally."
+  },
+  "keyAlerts": [
+    "Dial 112 (police), 912 (ambulance), 111 (fire). Save these before you land",
+    "King Faisal Hospital is the best medical facility in Rwanda and should be your first call for any serious emergency",
+    "Rwanda has one of Africa's best safety reputations. Crime against tourists is rare but not impossible",
+    "Canada does not have a resident mission in Rwanda. Canadians should contact the High Commission in Nairobi or the Ottawa emergency line",
+    "English is widely spoken in Kigali's service sector and government institutions. Language barriers are minimal for English speakers"
+  ],
+  "additionalResources": [
+    {
+      "name": "AMREF Flying Doctors",
+      "description": "Medical evacuation from Rwanda to Nairobi or South Africa",
+      "contact": "+254 20 6999000"
+    },
+    {
+      "name": "Rwanda National Police (Non-Emergency)",
+      "description": "Main police line",
+      "contact": "+250 788 311 155"
+    },
+    {
+      "name": "SAMU Rwanda",
+      "description": "Emergency medical dispatch",
+      "contact": "+250 788 303 018"
+    }
+  ]
+}

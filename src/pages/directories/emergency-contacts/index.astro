@@ -1,0 +1,543 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { readFileSync, readdirSync } from 'fs';
+import { join } from 'path';
+
+const title = 'Africa Emergency Contacts by Country | Sankofa Expeditions';
+const description = 'Embassy numbers, ambulance, police, fire, and recommended hospitals for Ghana, Kenya, South Africa, Nigeria, and Rwanda. Verified from official sources. Save these before you land.';
+
+// Load all country data files
+const dataDir = join(process.cwd(), 'src/data/directories/emergency-contacts');
+const countryFiles = readdirSync(dataDir).filter(f => f.endsWith('.json'));
+const countries = countryFiles.map(f => {
+  const data = JSON.parse(readFileSync(join(dataDir, f), 'utf-8'));
+  return {
+    slug: f.replace('.json', ''),
+    ...data,
+  };
+}).sort((a, b) => a.country.localeCompare(b.country));
+
+const pageUrl = 'https://sankofaexpeditions.com/directories/emergency-contacts';
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${pageUrl}/#webpage`,
+    "url": pageUrl,
+    "name": title,
+    "description": description,
+    "isPartOf": { "@id": "https://sankofaexpeditions.com/#website" },
+    "breadcrumb": { "@id": `${pageUrl}/#breadcrumb` },
+    "inLanguage": "en-US",
+    "dateModified": new Date().toISOString().split('T')[0]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": `${pageUrl}/#breadcrumb`,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sankofaexpeditions.com" },
+      { "@type": "ListItem", "position": 2, "name": "Directories", "item": "https://sankofaexpeditions.com/directories" },
+      { "@type": "ListItem", "position": 3, "name": "Emergency Contacts", "item": pageUrl }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": `${pageUrl}/#list`,
+    "name": "Africa Emergency Contacts by Country",
+    "description": "Embassy numbers, emergency services, and hospitals for African countries.",
+    "numberOfItems": countries.length,
+    "itemListElement": countries.map((c, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": `${c.country} Emergency Contacts`,
+      "url": `${pageUrl}/${c.slug}`
+    }))
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the emergency number in Ghana?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In Ghana: 191 for police, 193 for ambulance, and 192 for fire. The U.S. Embassy in Accra is reachable at +233 030 274 1000."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the emergency number in Kenya?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In Kenya: dial 999 or 112 (from mobile) for all emergencies: police, fire, and ambulance. The U.S. Embassy in Nairobi is reachable at +254 20 363 6000."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the emergency number in South Africa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In South Africa: 10111 for police, 10177 for ambulance, or 112 from a mobile for all emergencies. Private ambulances Netcare 911 (082 911) and ER24 (084 124) respond faster in urban areas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the emergency number in Nigeria?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In Nigeria: dial 112 for all emergencies. In Lagos, 767 connects to the state emergency management agency."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the emergency number in Rwanda?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In Rwanda: 112 for police, 912 for ambulance, and 111 for fire. King Faisal Hospital in Kigali (+250 788 303 562) is the top medical facility."
+        }
+      }
+    ]
+  }
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/directories">Directories</a>
+        <span aria-hidden="true"> / </span>
+        <span>Emergency Contacts</span>
+      </nav>
+      <p class="eyebrow">Safety Intel</p>
+      <h1>Africa Emergency Contacts</h1>
+      <p class="hero-sub">
+        Embassy numbers, ambulance lines, police, fire, and recommended hospitals for every country. The intel you hope you never need but must have saved before you land.
+      </p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">{countries.length}</span>
+          <span class="stat-label">Countries</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">Verified</span>
+          <span class="stat-label">Official Sources</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">Weekly</span>
+          <span class="stat-label">Updated</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section context-section">
+    <div class="container container--narrow">
+      <h2>Why You Need This Before You Arrive</h2>
+      <p>
+        Most travelers assume emergency services work the same way everywhere. They do not. Ambulance response times in Lagos are measured in traffic jams, not minutes. South Africa has two separate ambulance systems: a government one that is underfunded and two private ones that actually show up fast. Rwanda's King Faisal Hospital is better than most expect. Knowing the difference in advance is not paranoia. It is logistics.
+      </p>
+      <p>
+        Every entry here is verified against official government websites, embassy portals, and confirmed hospital contact pages. If a number could not be confirmed from a primary source, it is not listed.
+      </p>
+    </div>
+  </section>
+
+  <section class="section countries-section">
+    <div class="container">
+      <header class="section-header">
+        <h2>Countries</h2>
+        <p>Select a country for the full breakdown: emergency numbers, embassy contacts, and hospital recommendations.</p>
+      </header>
+
+      <div class="countries-grid">
+        {countries.map((c) => (
+          <a href={`/directories/emergency-contacts/${c.slug}`} class="country-card">
+            <div class="country-card-top">
+              <span class="country-flag" aria-hidden="true">{c.flag}</span>
+              <div class="country-info">
+                <span class="country-name">{c.country}</span>
+                <span class="country-region">{c.region}</span>
+              </div>
+            </div>
+            <p class="country-summary">{c.summary}</p>
+            <div class="quick-numbers">
+              <div class="quick-num">
+                <span class="qn-label">Police</span>
+                <span class="qn-value">{c.emergencyServices.police.number}</span>
+              </div>
+              <div class="quick-num">
+                <span class="qn-label">Ambulance</span>
+                <span class="qn-value">{c.emergencyServices.ambulance.number}</span>
+              </div>
+              <div class="quick-num">
+                <span class="qn-label">Fire</span>
+                <span class="qn-value">{c.emergencyServices.fire.number}</span>
+              </div>
+            </div>
+            <div class="country-card-footer">
+              <span class="card-cta">Full contacts &rarr;</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq-section">
+    <div class="container container--narrow">
+      <h2>Quick Reference: Emergency Numbers</h2>
+      <dl class="faq-list">
+        <div class="faq-item">
+          <dt>Ghana</dt>
+          <dd>191 (police) · 193 (ambulance) · 192 (fire)</dd>
+        </div>
+        <div class="faq-item">
+          <dt>Kenya</dt>
+          <dd>999 or 112 from mobile. Covers police, ambulance, and fire.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>South Africa</dt>
+          <dd>10111 (police) · 10177 (ambulance) · 112 (mobile, all emergencies) · Netcare 911: 082 911 · ER24: 084 124</dd>
+        </div>
+        <div class="faq-item">
+          <dt>Nigeria</dt>
+          <dd>112 (all emergencies) · Lagos: 767</dd>
+        </div>
+        <div class="faq-item">
+          <dt>Rwanda</dt>
+          <dd>112 (police) · 912 (ambulance) · 111 (fire)</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section methodology-section">
+    <div class="container container--narrow">
+      <h2>How This Directory Works</h2>
+      <p>
+        Every phone number is verified against official government websites, embassy.gov, and ukhighcommission.gov. Hospital listings are confirmed operational via their own websites or verified press coverage. If we cannot confirm a number from a primary source, it is not listed.
+      </p>
+      <p>
+        This directory is updated weekly. If you find a number has changed or a hospital has closed, <a href="/contact">let us know</a>.
+      </p>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .page-hero {
+    background: var(--color-dark);
+    color: var(--color-text-on-dark);
+    padding: var(--space-4xl) 0 var(--space-3xl);
+  }
+
+  .breadcrumb {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: var(--space-lg);
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .breadcrumb a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .page-hero .eyebrow {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: var(--space-lg);
+  }
+
+  .page-hero h1 {
+    color: #fff;
+    max-width: 22ch;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-sub {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 60ch;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: var(--space-2xl);
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .stat-num {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  /* Context */
+  .context-section {
+    background: var(--color-bg);
+  }
+
+  .container--narrow {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+  }
+
+  .context-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .context-section p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+  }
+
+  /* Countries */
+  .countries-section {
+    background: var(--color-bg-alt);
+  }
+
+  .section-header {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .section-header h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .section-header p {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .countries-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    max-width: 1100px;
+  }
+
+  @media (min-width: 700px) {
+    .countries-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .countries-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .country-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: var(--space-xl);
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    transition: border-color 0.2s;
+  }
+
+  .country-card:hover {
+    border-color: var(--color-text-muted);
+  }
+
+  .country-card-top {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .country-flag {
+    font-size: 2rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .country-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+  }
+
+  .country-name {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .country-region {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  .country-summary {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    margin: 0;
+    flex: 1;
+  }
+
+  /* Quick numbers row */
+  .quick-numbers {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    padding: var(--space-md) 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .quick-num {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .qn-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+  }
+
+  .qn-value {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--color-text);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .country-card-footer {
+    margin-top: auto;
+    padding-top: var(--space-sm);
+  }
+
+  .card-cta {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text);
+  }
+
+  /* FAQ */
+  .faq-section {
+    background: var(--color-bg);
+  }
+
+  .faq-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--color-border);
+  }
+
+  .faq-item {
+    padding: var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: var(--space-md);
+  }
+
+  .faq-item:last-child {
+    border-bottom: none;
+  }
+
+  .faq-item dt {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    padding-top: 2px;
+  }
+
+  .faq-item dd {
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    margin: 0;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+
+  @media (max-width: 600px) {
+    .faq-item {
+      grid-template-columns: 1fr;
+      gap: var(--space-sm);
+    }
+  }
+
+  /* Methodology */
+  .methodology-section {
+    background: var(--color-bg-alt);
+  }
+
+  .methodology-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .methodology-section p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+  }
+
+  .methodology-section a {
+    color: var(--color-text);
+  }
+</style>

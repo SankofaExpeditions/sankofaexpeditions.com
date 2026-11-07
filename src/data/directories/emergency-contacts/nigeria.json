@@ -1,0 +1,146 @@
+{
+  "country": "Nigeria",
+  "countryCode": "NG",
+  "flag": "🇳🇬",
+  "region": "West Africa",
+  "summary": "Emergency contacts for Nigeria: Lagos, Abuja, and Port Harcourt. Nigeria's private hospital sector has improved significantly. Know these numbers before you arrive.",
+  "lastUpdated": "2026-11-07",
+  "emergencyServices": {
+    "police": {
+      "number": "112",
+      "description": "Nigeria Police Force emergency line (also works from mobile)",
+      "notes": "Also try 199 from NTEL/MTN or the Lagos Emergency Management Agency at 767 (for Lagos State). Response quality varies significantly. For serious security incidents in Lagos, the Rapid Response Squad (RRS) can be more responsive."
+    },
+    "ambulance": {
+      "number": "112",
+      "description": "Federal Road Safety Corps and Emergency Medical Services",
+      "notes": "Lagos Emergency: 767. LASAMBUS (Lagos State Ambulance Service): +234 1 7944444. Private ambulances from hospitals like Reddington or Eko Hospital are often faster. 112 is the main national number."
+    },
+    "fire": {
+      "number": "112",
+      "description": "Lagos State Fire Service via 112 or 01-7652348",
+      "notes": "Lagos Fire Service direct: 01-7652348. Abuja Fire Service: 09-8701391. Response times outside major cities can be slow."
+    },
+    "tourist": {
+      "number": "+234 1 2693944",
+      "description": "Nigeria Tourism Development Corporation",
+      "notes": "Available during business hours for general tourist assistance."
+    }
+  },
+  "embassies": [
+    {
+      "country": "United States",
+      "name": "U.S. Embassy Abuja",
+      "address": "Plot 1075 Diplomatic Drive, Central District Area, Abuja",
+      "mainPhone": "+234 9 461 4000",
+      "emergencyAfterHours": "+234 9 461 4000",
+      "emergencyNote": "Call main number and follow prompts for after-hours citizen emergency services",
+      "website": "https://ng.usembassy.gov",
+      "type": "Embassy"
+    },
+    {
+      "country": "United States",
+      "name": "U.S. Consulate General Lagos",
+      "address": "2 Walter Carrington Crescent, Victoria Island, Lagos",
+      "mainPhone": "+234 1 460 3400",
+      "emergencyAfterHours": "+234 1 460 3400",
+      "emergencyNote": "After-hours emergencies routed via main number and duty officer",
+      "website": "https://ng.usembassy.gov/embassy-consulates/lagos",
+      "type": "Consulate"
+    },
+    {
+      "country": "United Kingdom",
+      "name": "British High Commission Abuja",
+      "address": "Plot 1137, IBB Way, Maitama District, Abuja",
+      "mainPhone": "+234 9 462 2200",
+      "emergencyAfterHours": "+234 9 462 2200",
+      "emergencyNote": "Call main number for after-hours emergency recording and duty officer access",
+      "website": "https://www.gov.uk/world/organisations/british-high-commission-abuja",
+      "type": "High Commission"
+    },
+    {
+      "country": "Canada",
+      "name": "Canadian High Commission Abuja",
+      "address": "15A Usuma Street, Maitama District, Abuja",
+      "mainPhone": "+234 9 461 2900",
+      "emergencyAfterHours": "+1 613 996 8885",
+      "emergencyNote": "Ottawa Emergency Watch and Response Centre for after-hours citizen emergencies",
+      "website": "https://www.canadainternational.gc.ca/nigeria",
+      "type": "High Commission"
+    }
+  ],
+  "hospitals": [
+    {
+      "name": "Reddington Hospital",
+      "city": "Lagos",
+      "type": "Private",
+      "emergency24hr": true,
+      "englishSpeaking": true,
+      "phone": "+234 1 7120033",
+      "address": "12 Catholic Mission Street, Victoria Island, Lagos",
+      "notes": "One of Lagos's top private hospitals. Full emergency services, ICU, and specialist care. Accepts major international insurance. Preferred by diaspora and expatriates in Victoria Island.",
+      "website": "https://www.reddingtonhospital.com"
+    },
+    {
+      "name": "Eko Hospital",
+      "city": "Lagos",
+      "type": "Private",
+      "emergency24hr": true,
+      "englishSpeaking": true,
+      "phone": "+234 1 2666290",
+      "address": "31 Mobolaji Bank Anthony Way, Ikeja, Lagos",
+      "notes": "Leading private hospital in Ikeja, Lagos. 24-hour emergency, ICU, medical evacuation support. Accredited and well-equipped. Good for the airport area and mainland.",
+      "website": "https://www.ekohospital.com"
+    },
+    {
+      "name": "Lagos University Teaching Hospital (LUTH)",
+      "city": "Lagos",
+      "type": "Public",
+      "emergency24hr": true,
+      "englishSpeaking": true,
+      "phone": "+234 1 7746752",
+      "address": "Ishaga Road, Surulere, Lagos",
+      "notes": "Main academic hospital for Lagos. Handles serious emergencies but can be severely overcrowded. Best used as a last resort or for specialized cases only.",
+      "website": null
+    },
+    {
+      "name": "Nisa Premier Hospital",
+      "city": "Abuja",
+      "type": "Private",
+      "emergency24hr": true,
+      "englishSpeaking": true,
+      "phone": "+234 9 870 3100",
+      "address": "Plot 877, Cadastral Zone, Jabi, Abuja",
+      "notes": "Top private hospital in Abuja. Used by the diplomatic community and government officials. Full emergency and specialist care. Accepts international insurance.",
+      "website": "https://www.nisapremierhospital.com"
+    }
+  ],
+  "insurance": {
+    "nhis": "Nigeria's National Health Insurance Authority (NHIA) is primarily for employed Nigerians. Visitors and diaspora should not rely on it. Private hospital care is affordable by international standards but payment is typically required upfront without insurance.",
+    "recommendation": "Carry travel insurance with direct billing capability at private hospitals. Many Nigerian private hospitals require payment upfront and will reimburse via insurance later. Confirm your insurer has direct billing relationships in Nigeria. Medical evacuation to South Africa or Europe is recommended for serious long-term care."
+  },
+  "keyAlerts": [
+    "Dial 112 for all emergencies. This is the universal number across networks",
+    "In Lagos, 767 connects to the state emergency management agency",
+    "Private hospitals require upfront payment or insurance proof at admission. Carry documentation.",
+    "The U.S. has both an Embassy in Abuja and a Consulate in Lagos. Use the Lagos number if you are in the Southwest",
+    "Traffic in Lagos is severe. In a medical emergency, calling an Uber or private vehicle may be faster than waiting for ambulance"
+  ],
+  "additionalResources": [
+    {
+      "name": "LASAMBUS (Lagos Ambulance)",
+      "description": "Lagos State Ambulance Service",
+      "contact": "+234 1 7944444"
+    },
+    {
+      "name": "Lagos RRS (Rapid Response Squad)",
+      "description": "Lagos State police rapid response",
+      "contact": "+234 1 7004-RRS"
+    },
+    {
+      "name": "AMREF Flying Doctors",
+      "description": "Medical evacuation from Nigeria",
+      "contact": "+254 20 6999000"
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "country": "South Africa",
+  "countryCode": "ZA",
+  "flag": "🇿🇦",
+  "region": "Southern Africa",
+  "summary": "Emergency contacts, embassy numbers, and hospitals for South Africa. The country has strong private medical infrastructure but wide gaps between public and private care. Have these numbers saved for Cape Town, Johannesburg, and Durban.",
+  "lastUpdated": "2026-11-07",
+  "emergencyServices": {
+    "police": {
+      "number": "10111",
+      "description": "South African Police Service (SAPS) emergency line",
+      "notes": "From a mobile phone, dial 112. SAPS response quality varies by area. In Cape Town, the City of Cape Town law enforcement can also be reached at 021 480 7700."
+    },
+    "ambulance": {
+      "number": "10177",
+      "description": "Emergency Medical Services (EMS) national line",
+      "notes": "From mobile: 112. Private ambulance services (Netcare 911, ER24) are significantly faster in urban areas. Netcare 911: 082 911. ER24: 084 124."
+    },
+    "fire": {
+      "number": "10111",
+      "description": "Report via SAPS national line",
+      "notes": "Cape Town Fire: 021 480 7700. Johannesburg Fire: 011 375 5911. Report fire via local municipality numbers where possible."
+    },
+    "tourist": {
+      "number": "0800 111 990",
+      "description": "South African Tourism Safety Information Line",
+      "notes": "Available for tourist assistance and safety information during office hours."
+    }
+  },
+  "embassies": [
+    {
+      "country": "United States",
+      "name": "U.S. Embassy Pretoria",
+      "address": "877 Pretorius Street, Arcadia, Pretoria",
+      "mainPhone": "+27 12 431 4000",
+      "emergencyAfterHours": "+27 12 431 4000",
+      "emergencyNote": "After-hours citizen emergencies: call main line and follow the emergency recording to reach duty officer",
+      "website": "https://za.usembassy.gov",
+      "type": "Embassy"
+    },
+    {
+      "country": "United States",
+      "name": "U.S. Consulate Cape Town",
+      "address": "2 Reddam Avenue, Westlake, Cape Town",
+      "mainPhone": "+27 21 702 7300",
+      "emergencyAfterHours": "+27 21 702 7300",
+      "emergencyNote": "After-hours emergencies routed via main number",
+      "website": "https://za.usembassy.gov/embassy-consulates/cape-town",
+      "type": "Consulate"
+    },
+    {
+      "country": "United Kingdom",
+      "name": "British High Commission Pretoria",
+      "address": "255 Hill Street, Arcadia, Pretoria",
+      "mainPhone": "+27 12 421 7500",
+      "emergencyAfterHours": "+27 12 421 7500",
+      "emergencyNote": "Call main number after hours and follow the emergency recording",
+      "website": "https://www.gov.uk/world/organisations/british-high-commission-pretoria",
+      "type": "High Commission"
+    },
+    {
+      "country": "Canada",
+      "name": "Canadian High Commission Pretoria",
+      "address": "1103 Arcadia Street, Hatfield, Pretoria",
+      "mainPhone": "+27 12 422 3000",
+      "emergencyAfterHours": "+1 613 996 8885",
+      "emergencyNote": "Ottawa Emergency Watch and Response Centre for after-hours citizen emergencies",
+      "website": "https://www.canadainternational.gc.ca/south_africa-afrique_du_sud",
+      "type": "High Commission"
+    }
+  ],
+  "hospitals": [
+    {
+      "name": "Groote Schuur Hospital",
+      "city": "Cape Town",
+      "type": "Public",
+      "emergency24hr": true,
+      "englishSpeaking": true,
+      "phone": "+27 21 404 9111",
+      "address": "Main Road, Observatory, Cape Town",
+      "notes": "World-famous academic hospital, site of the first heart transplant. Major public trauma and emergency center. Can be crowded but handles serious trauma well.",
+      "website": "https://www.westerncape.gov.za/your_gov/59"
+    },
+    {
+      "name": "Netcare Christiaan Barnard Memorial Hospital",
+      "city": "Cape Town",
+      "type": "Private",
+      "emergency24hr": true,
+      "englishSpeaking": true,
+      "phone": "+27 21 480 6111",
+      "address": "181 Longmarket Street, Cape Town City Centre",
+      "notes": "Leading private hospital in Cape Town's CBD. Excellent emergency and cardiac care. Accepts international insurance. Preferred by expats and visitors in the city center.",
+      "website": "https://www.netcare.co.za"
+    },
+    {
+      "name": "Milpark Hospital",
+      "city": "Johannesburg",
+      "type": "Private",
+      "emergency24hr": true,
+      "englishSpeaking": true,
+      "phone": "+27 11 480 5600",
+      "address": "9 Guild Road, Parktown West, Johannesburg",
+      "notes": "Top private hospital in Johannesburg. Recognized trauma unit. Accepts international insurance. Covers the airport corridor and northern suburbs.",
+      "website": "https://www.milparkhosp.co.za"
+    },
+    {
+      "name": "Inkosi Albert Luthuli Central Hospital",
+      "city": "Durban",
+      "type": "Public",
+      "emergency24hr": true,
+      "englishSpeaking": true,
+      "phone": "+27 31 240 1000",
+      "address": "800 Vusi Mzimela Road, Mayville, Durban",
+      "notes": "KwaZulu-Natal's main academic hospital. Major trauma and emergency center for Durban. Advanced diagnostic and surgical capabilities for a public facility.",
+      "website": null
+    }
+  ],
+  "insurance": {
+    "nhis": "South Africa does not have a comprehensive national health insurance yet (NHI implementation is ongoing). Public hospitals are government-funded but under severe strain. Private medical care is excellent but expensive without coverage.",
+    "recommendation": "Carry comprehensive travel insurance that covers private hospital admission and emergency evacuation. Discovery Health and Netcare are the dominant private networks. Netcare 911 (082 911) and ER24 (084 124) are the gold-standard private ambulance services in urban areas."
+  },
+  "keyAlerts": [
+    "Dial 10111 for police, 10177 for ambulance, or 112 from any mobile",
+    "Private ambulances (Netcare 911: 082 911 / ER24: 084 124) respond faster than government EMS in cities",
+    "Public hospitals handle serious trauma but private facilities are strongly preferred for non-emergency and planned care",
+    "The U.S. has both an Embassy in Pretoria and a Consulate in Cape Town. Use the Cape Town number if you are in the Western Cape",
+    "Medical evacuation from South Africa to Europe is significantly more affordable than from other sub-Saharan countries due to flight frequency"
+  ],
+  "additionalResources": [
+    {
+      "name": "Netcare 911 (Private Ambulance)",
+      "description": "Best private ambulance service in South Africa",
+      "contact": "082 911"
+    },
+    {
+      "name": "ER24 (Private Ambulance)",
+      "description": "24-hour private emergency response",
+      "contact": "084 124"
+    },
+    {
+      "name": "SAPS (Non-emergency)",
+      "description": "South African Police crime reporting",
+      "contact": "10111"
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "country": "Kenya",
+  "countryCode": "KE",
+  "flag": "🇰🇪",
+  "region": "East Africa",
+  "summary": "Critical emergency contacts for Kenya, including Nairobi and Mombasa. Kenya has the strongest private hospital infrastructure in East Africa. Know these numbers before you need them.",
+  "lastUpdated": "2026-11-07",
+  "emergencyServices": {
+    "police": {
+      "number": "999",
+      "description": "Kenya National Police Service emergency line",
+      "notes": "Also reachable at 112 from mobile. The DCI (Directorate of Criminal Investigations) for non-emergency crime reporting: +254 20 4341234."
+    },
+    "ambulance": {
+      "number": "999",
+      "description": "Kenya Red Cross ambulance",
+      "notes": "Kenya Red Cross ambulance: +254 703 037000. St. John Ambulance Kenya: +254 20 2210000. Private ambulance services (AMREF, Nairobi Hospital) are often faster in urban areas."
+    },
+    "fire": {
+      "number": "999",
+      "description": "Kenya Fire Brigade Service",
+      "notes": "Nairobi County Fire: +254 20 2222181. Response times outside Nairobi and Mombasa can be very slow."
+    },
+    "tourist": {
+      "number": "+254 20 2888022",
+      "description": "Kenya Tourist Police Unit",
+      "notes": "Specifically for crimes against tourists and visitor assistance. Available during business hours."
+    }
+  },
+  "embassies": [
+    {
+      "country": "United States",
+      "name": "U.S. Embassy Nairobi",
+      "address": "United Nations Avenue, Gigiri, Nairobi",
+      "mainPhone": "+254 20 363 6000",
+      "emergencyAfterHours": "+254 20 363 6000",
+      "emergencyNote": "Call main number after hours and select the emergency option for U.S. citizen services",
+      "website": "https://ke.usembassy.gov",
+      "type": "Embassy"
+    },
+    {
+      "country": "United Kingdom",
+      "name": "British High Commission Nairobi",
+      "address": "Upper Hill Road, Nairobi",
+      "mainPhone": "+254 20 2884000",
+      "emergencyAfterHours": "+254 20 2884000",
+      "emergencyNote": "Call main number after hours for the out-of-hours emergency recording and duty officer",
+      "website": "https://www.gov.uk/world/organisations/british-high-commission-nairobi",
+      "type": "High Commission"
+    },
+    {
+      "country": "Canada",
+      "name": "Canadian High Commission Nairobi",
+      "address": "Limuru Road, Gigiri, Nairobi",
+      "mainPhone": "+254 20 3663000",
+      "emergencyAfterHours": "+1 613 996 8885",
+      "emergencyNote": "Ottawa Emergency Watch and Response Centre for after-hours citizen emergencies",
+      "website": "https://www.canadainternational.gc.ca/kenya",
+      "type": "High Commission"
+    }
+  ],
+  "hospitals": [
+    {
+      "name": "Aga Khan University Hospital",
+      "city": "Nairobi",
+      "type": "Private",
+      "emergency24hr": true,
+      "englishSpeaking": true,
+      "phone": "+254 20 3662000",
+      "address": "3rd Parklands Avenue, Parklands, Nairobi",
+      "notes": "East Africa's premier private hospital. Full emergency and trauma center, ICU, specialist services. Accepts major international insurance. Preferred by expats and diplomatic community.",
+      "website": "https://www.aku.edu/nairobi"
+    },
+    {
+      "name": "Nairobi Hospital",
+      "city": "Nairobi",
+      "type": "Private",
+      "emergency24hr": true,
+      "englishSpeaking": true,
+      "phone": "+254 20 2845000",
+      "address": "Argwings Kodhek Road, Nairobi",
+      "notes": "Full-service private hospital with strong emergency department. Has its own ambulance service. Accepts international insurance. Well-regarded for cardiac and orthopedic care.",
+      "website": "https://www.nairobihospital.org"
+    },
+    {
+      "name": "Kenyatta National Hospital",
+      "city": "Nairobi",
+      "type": "Public",
+      "emergency24hr": true,
+      "englishSpeaking": true,
+      "phone": "+254 20 2726300",
+      "address": "Hospital Road, Upper Hill, Nairobi",
+      "notes": "Kenya's national referral hospital. Largest in East Africa. Best for serious trauma when private options are not accessible. Can be crowded and under-resourced.",
+      "website": "https://www.knh.or.ke"
+    },
+    {
+      "name": "Coast General Teaching and Referral Hospital",
+      "city": "Mombasa",
+      "type": "Public",
+      "emergency24hr": true,
+      "englishSpeaking": true,
+      "phone": "+254 41 2314201",
+      "address": "Hospital Road, Ganjoni, Mombasa",
+      "notes": "Main public hospital for the coast region. Referral destination for serious emergencies in Mombasa and surrounding counties.",
+      "website": null
+    }
+  ],
+  "insurance": {
+    "nhis": "Kenya's National Hospital Insurance Fund (NHIF) covers Kenyan citizens and some residents. Visitors should carry comprehensive travel insurance. NHIF is not applicable to tourists.",
+    "recommendation": "Carry travel insurance that explicitly covers medical evacuation. Aga Khan and Nairobi Hospital are world-class but serious long-term care may require evacuation to South Africa or Europe. AMREF Flying Doctors offers annual evacuation memberships popular with expats."
+  },
+  "keyAlerts": [
+    "Dial 999 or 112 (mobile) for all emergencies: police, fire, ambulance",
+    "Aga Khan Hospital in Nairobi is the gold standard for private emergency care in East Africa",
+    "AMREF Flying Doctors provides medical evacuation across the continent. Worth an annual membership if staying long-term",
+    "Mombasa has significantly fewer private hospital options than Nairobi. Plan accordingly for coastal visits",
+    "The Kenya Tourist Police Unit (+254 20 2888022) is specifically for crimes against visitors"
+  ],
+  "additionalResources": [
+    {
+      "name": "AMREF Flying Doctors",
+      "description": "Medical evacuation, headquartered in Nairobi",
+      "contact": "+254 20 6999000"
+    },
+    {
+      "name": "St. John Ambulance Kenya",
+      "description": "Ambulance service, Nairobi",
+      "contact": "+254 20 2210000"
+    },
+    {
+      "name": "DCI Kenya (Crime Reporting)",
+      "description": "Non-emergency crime reporting",
+      "contact": "+254 20 4341234"
+    }
+  ]
+}
