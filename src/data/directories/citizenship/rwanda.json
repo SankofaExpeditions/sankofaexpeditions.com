@@ -1,0 +1,49 @@
+{
+  "country": "Rwanda",
+  "countryCode": "RW",
+  "flag": "🇷🇼",
+  "region": "East Africa",
+  "summary": "Rwanda permits dual citizenship under Organic Law N°30/2008, Article 13. The country has an active diaspora engagement program through the Rwanda Diaspora Directorate. Citizenship by descent can be applied for online via irembo.gov.rw or at any Rwandan embassy.",
+  "lastUpdated": "2026-11-07",
+  "citizenship": {
+    "dualCitizenshipPermitted": true,
+    "dualCitizenshipNote": "Organic Law N°30/2008 of 25/07/2008 Relating to Rwandan Nationality, Article 13: 'Where a Rwandan national holds another nationality, that person shall hold both nationalities.' Rwanda changed its policy in 2007 and formalized it in the 2008 law to encourage diaspora return. Important caveat: the same Article 13 states the Government of Rwanda shall not recognize the other nationality of a person who is a Rwandan national within Rwanda. Inside Rwanda, dual nationals are treated exclusively as Rwandan citizens. Constitutional basis: Constitution of Rwanda (adopted 2003, revised 2015), Article 7.",
+    "diasporaProgram": {
+      "name": "Rwanda Diaspora Citizenship Facilitation (Rwanda Diaspora Directorate)",
+      "status": "active",
+      "statusNote": "Active and well-structured. The Rwanda Diaspora Directorate under the Ministry of Foreign Affairs and International Cooperation (MINAFFET) manages citizenship facilitation for Rwandans abroad. No disruptions or program suspensions have been identified as of November 2026. Applications can be submitted online via irembo.gov.rw, at DGIE offices in Kigali, or through any Rwandan embassy or high commission. GLOBALCIT's Rwanda profile was last updated March 2024 with no changes flagged.",
+      "eligibility": "Any person born to at least one Rwandan parent acquires citizenship by descent regardless of birthplace (Organic Law Art. 6). Special diaspora provision (Art. 10): all persons born before 7 June 2004 to at least one Rwandan parent who do not currently hold Rwandan citizenship may apply. This covers descendants of Rwandans who fled for involuntary reasons including the 1959 Hutu revolution, 1973, and the 1994 genocide against the Tutsi. Citizenship transmission is gender-neutral: either parent may transmit citizenship.",
+      "applicationFeeUSD": null,
+      "applicationFeeNote": "Specific official fee amounts for citizenship by descent applications are not widely published. Fees may apply at time of application. For current fee information, contact DGIE directly at migration.gov.rw or check irembo.gov.rw at the time of application. Embassy or high commission service fees may apply separately for applications filed abroad.",
+      "keyDocuments": [
+        "Completed citizenship application form",
+        "Proof of citizenship of either parent (national ID, passport, or other supporting documents)",
+        "Birth certificate of the applicant",
+        "Identification document of the applicant (national ID or passport)",
+        "2 passport-sized photographs",
+        "Any additional documents as required by DGIE on a case-by-case basis"
+      ],
+      "processSteps": [
+        "Option A (Online): Create an account on irembo.gov.rw, navigate to DGIE Citizenship section, upload documents, and submit",
+        "Option B (From abroad): Gather and certify all required documents, submit through the Rwandan Embassy or High Commission in your country of residence",
+        "Option C (In Rwanda): Submit application directly at DGIE offices, Kigali",
+        "DGIE reviews documents and conducts vetting",
+        "Upon approval, citizenship is confirmed by official record",
+        "Apply for Rwandan national ID and passport through DGIE or via irembo.gov.rw"
+      ],
+      "officialUrl": "https://www.migration.gov.rw/our-services/citizenship",
+      "embassyUrl": "https://minaffet.gov.rw/diaspora/",
+      "lastVerified": "2026-11-07",
+      "verificationNote": "Legal framework verified against Organic Law N°30/2008 text (via Refworld and multiple secondary sources), Wikipedia's Rwandan nationality law article, DGIE official site snippets, GLOBALCIT Rwanda profile (last updated March 2024), Visit Rwanda diaspora page, and MINAFFET diaspora directorate. Online application portal irembo.gov.rw confirmed active. Processing times and exact fee amounts could not be confirmed from official sources; verify directly with DGIE."
+    }
+  },
+  "keyFacts": [
+    "Dual citizenship permitted under Organic Law N°30/2008, Article 13 (policy change began 2007, formalized 2008)",
+    "Inside Rwanda, dual nationals are treated exclusively as Rwandan citizens regardless of foreign passport held",
+    "Citizenship by descent: either parent can transmit citizenship, gender-neutral transmission",
+    "Special diaspora provision (Art. 10): persons born before June 7, 2004 to a Rwandan parent who lack citizenship may apply",
+    "Applications accepted online at irembo.gov.rw, at DGIE Kigali, or via any Rwandan embassy worldwide",
+    "Ndi Umunyarwanda ('I am Rwandan') is a reconciliation initiative, not a citizenship program"
+  ],
+  "whyItMatters": "Rwanda has built one of Africa's most practical diaspora citizenship systems: online applications, embassy submissions, and a legal framework that explicitly covers descendants of those who fled during the genocide era. For diaspora members whose families left Rwanda involuntarily before 1994, the legal pathway is clear and the administrative infrastructure to use it exists. Rwanda's remarkable post-genocide transformation and economic growth make it one of the most compelling destinations for African diaspora considering a return."
+}

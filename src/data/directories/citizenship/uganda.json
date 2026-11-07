@@ -1,0 +1,53 @@
+{
+  "country": "Uganda",
+  "countryCode": "UG",
+  "flag": "🇺🇬",
+  "region": "East Africa",
+  "summary": "Uganda permits dual citizenship for nationals by birth under the Constitution (Article 15, as amended 2000) and the Citizenship and Immigration Control Act (Section 15A, 2009 amendment). Ugandans living abroad who hold foreign passports can apply for a Certificate of Dual Citizenship via the DCIC.",
+  "lastUpdated": "2026-11-07",
+  "citizenship": {
+    "dualCitizenshipPermitted": true,
+    "dualCitizenshipNote": "The Constitution of Uganda (1995), as amended by the Constitution (Amendment) Act No. 11 of 2000, introduced dual citizenship provisions at Article 15. The Citizenship and Immigration Control Act, Cap. 66, as amended by the Citizenship and Immigration Control (Amendment) Act, 2009, operationalizes dual citizenship at Section 15A. Only Ugandans by birth (born to at least one Ugandan parent) can hold dual citizenship. Ugandans who acquired citizenship only through naturalization or registration cannot hold dual citizenship.",
+    "diasporaProgram": {
+      "name": "Certificate of Dual Citizenship (Directorate of Citizenship and Immigration Control)",
+      "status": "active",
+      "statusNote": "Active. Uganda's dual citizenship framework has been in place since the 2000 constitutional amendment and 2009 CICA amendment. The Directorate of Citizenship and Immigration Control (DCIC) administers applications. Ugandans living abroad with foreign passports apply for a formal Certificate of Dual Citizenship. Some reports of bureaucratic delays at DCIC have emerged in 2024-2025, though no program suspension or legislative changes have been identified as of November 2026. Uganda's National Diaspora Policy (2015) supports diaspora engagement including citizenship rights.",
+      "eligibility": "Ugandans by birth: persons born in Uganda or outside Uganda to at least one Ugandan citizen parent. Citizenship transmission is gender-neutral after constitutional reform. Applies to Ugandans born in the diaspora who hold foreign passports. Dual citizenship is not available to those who acquired Ugandan citizenship only through naturalization or registration. African diaspora without documented Ugandan parentage would need to explore naturalization, not the dual citizenship pathway.",
+      "applicationFeeUSD": null,
+      "applicationFeeNote": "Specific fee amounts could not be confirmed from official sources. Reports from secondary sources suggest the Certificate of Dual Citizenship may cost approximately $100-$250 USD (or UGX equivalent), but this is unverified. Fees may differ for in-country versus embassy applications. Verify current fees directly at immigration.go.ug or the nearest Ugandan diplomatic mission.",
+      "keyDocuments": [
+        "Completed application Form 1 (available from DCIC offices or Ugandan missions abroad)",
+        "Valid foreign passport",
+        "Birth certificate of the applicant",
+        "Birth certificate of Ugandan parent(s) or proof of their Ugandan citizenship (Ugandan passport, National ID, or prior citizenship certificate)",
+        "Lineage documentation if applicable (grandparent's Ugandan documents)",
+        "Two recent passport-sized photographs (white background)",
+        "Police clearance certificate from country of residence",
+        "Statutory declaration or affidavit of Ugandan heritage",
+        "Processing fee payment receipt"
+      ],
+      "processSteps": [
+        "Contact the nearest Ugandan Embassy or High Commission to obtain Form 1 (Dual Citizenship Application Form)",
+        "Compile all required documents",
+        "Option A (From abroad): Submit completed application and documents to the Ugandan mission, which forwards to DCIC in Kampala for vetting",
+        "Option B (In Uganda): Visit the Directorate of Citizenship and Immigration Control, Plot 75 Jinja Road, Kampala",
+        "DCIC conducts vetting and background check",
+        "Upon approval, the Certificate of Dual Citizenship is issued",
+        "Collect certificate from the mission or directly from DCIC in Kampala"
+      ],
+      "officialUrl": "https://www.immigration.go.ug",
+      "embassyUrl": "https://www.ugandahighcommission.co.uk",
+      "lastVerified": "2026-11-07",
+      "verificationNote": "Legal framework verified against Wikipedia's Ugandan nationality law article, the Constitution of Uganda (1995 as amended 2000), Citizenship and Immigration Control Act Cap. 66 as amended 2009, immigration.go.ug (partial access), and multiple secondary legal sources. Dual citizenship framework is consistently confirmed across sources. Specific fee amounts are approximations from secondary sources and require direct verification with DCIC or the nearest Ugandan mission. No major 2025-2026 legislative amendments identified."
+    }
+  },
+  "keyFacts": [
+    "Dual citizenship permitted for Ugandans by birth: Constitution Article 15 (amended 2000) and CICA Section 15A (2009)",
+    "Only Ugandans by birth qualify; those who naturalized or registered as citizens only cannot hold dual citizenship",
+    "Apply for a Certificate of Dual Citizenship via DCIC in Kampala or through any Ugandan embassy or high commission",
+    "Citizenship transmission is gender-neutral: either parent can pass citizenship to children born abroad",
+    "Uganda's National Diaspora Policy (2015) supports diaspora engagement including citizenship rights",
+    "Some bureaucratic delays at DCIC reported 2024-2025; no program suspension confirmed"
+  ],
+  "whyItMatters": "Uganda's dual citizenship framework is one of the cleaner implementations in East Africa: it has been in law since 2000, it applies equally regardless of which parent is Ugandan, and there is a clear administrative process to formalize dual status. For diaspora members with Ugandan heritage, Uganda offers the ability to reconnect legally without surrendering another passport. Kampala has emerged as a growing tech and entrepreneurial hub, and Uganda's natural environment including Bwindi Impenetrable Forest and the source of the Nile make it compelling for diaspora explorers as well as settlers."
+}

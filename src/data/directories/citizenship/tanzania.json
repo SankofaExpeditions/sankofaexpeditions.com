@@ -1,0 +1,54 @@
+{
+  "country": "Tanzania",
+  "countryCode": "TZ",
+  "flag": "🇹🇿",
+  "region": "East Africa",
+  "summary": "Tanzania does not permit dual citizenship as of 2026. The Tanzania Citizenship Act (Cap. 452) requires renunciation of foreign citizenship to acquire Tanzanian nationality. Citizenship by descent is available but requires giving up other passports, a significant barrier for diaspora.",
+  "lastUpdated": "2026-11-07",
+  "citizenship": {
+    "dualCitizenshipPermitted": false,
+    "dualCitizenshipNote": "The Tanzania Citizenship Act, Cap. 452 (originally enacted 1995, based on the Citizenship Act of 1967) governs nationality. Section 7 provides that a Tanzanian citizen who voluntarily acquires foreign citizenship automatically loses Tanzanian citizenship. Section 8 requires a person obtaining Tanzanian citizenship to renounce any other citizenship before or upon acquisition. There have been recurring calls from the Tanzanian diaspora and some Members of Parliament to amend the law and allow dual citizenship. Under President Samia Suluhu Hassan (who took office 2021), there were signals of openness to review. However, as of November 2026, no amendment bill has been passed into law. Parliamentary discussions have occurred but no legislation has been enacted.",
+    "diasporaProgram": {
+      "name": "Citizenship by Descent (Department of Immigration and National Affairs)",
+      "status": "active-with-restrictions",
+      "statusNote": "The legal pathway for citizenship by descent exists but carries a critical restriction: applicants must renounce all other citizenships. This is a major barrier for diaspora members who hold US, UK, or EU passports and are not prepared to give them up. Tanzania has a Diaspora Policy (adopted circa 2017-2019) focused primarily on investment facilitation and remittances, not on creating a citizenship return pathway. No formal 'diaspora citizenship program' comparable to Kenya's or Rwanda's has been launched. Direct confirmation of current processing times and requirements is recommended via immigration.go.tz or the nearest Tanzanian embassy.",
+      "eligibility": "Persons born to at least one Tanzanian citizen parent are eligible for citizenship by descent. Historically, descent was recognized primarily through the paternal line; whether maternal-line citizenship has been fully equalized under current law is unconfirmed. Applicants must be willing to renounce all other citizenships upon acquiring Tanzanian nationality.",
+      "applicationFeeUSD": null,
+      "applicationFeeNote": "Specific current fee schedule from the Tanzania Immigration Department could not be confirmed from official sources. Fees are set by the Ministry of Home Affairs and are subject to change. Contact immigration.go.tz or the nearest Tanzanian embassy directly for the current fee schedule.",
+      "keyDocuments": [
+        "Completed application form (obtained from Department of Immigration)",
+        "Birth certificate of the applicant",
+        "Birth certificate(s) of Tanzanian parent(s)",
+        "Tanzanian passport or national ID of the parent(s)",
+        "Proof of renunciation of foreign citizenship (required)",
+        "Marriage certificate (if applicable)",
+        "Two passport-sized photographs",
+        "Police clearance certificate from country of residence",
+        "Affidavit or statutory declaration of allegiance"
+      ],
+      "processSteps": [
+        "Obtain application forms from the Department of Immigration headquarters in Dar es Salaam or from a Tanzanian embassy or high commission abroad",
+        "Compile all required documents",
+        "Renounce foreign citizenship at the relevant foreign embassy or authority before or concurrent with application",
+        "Submit application to the Commissioner for Immigration, Ministry of Home Affairs, Dar es Salaam",
+        "Background check and vetting by immigration authorities",
+        "Interview (may be required)",
+        "If approved, Certificate of Citizenship is issued",
+        "Register biometrics and apply for Tanzanian national ID and passport"
+      ],
+      "officialUrl": "https://www.immigration.go.tz",
+      "embassyUrl": "https://www.tanzaniahighcommission.co.uk",
+      "lastVerified": "2026-11-07",
+      "verificationNote": "Legal framework verified against Wikipedia's Tanzanian nationality law article, Tanzania Citizenship Act Cap. 452, immigration.go.tz (partial access), and multiple secondary legal sources. The prohibition on dual citizenship is consistently confirmed. The status of gender-equal descent (maternal line) under current law could not be confirmed with certainty. Specific fee amounts could not be verified from official sources. The status of any 2026 parliamentary bills on dual citizenship reform is unverified; treat as pending confirmation."
+    }
+  },
+  "keyFacts": [
+    "Dual citizenship NOT permitted: Tanzania Citizenship Act Cap. 452, Sections 7-8 require renunciation of foreign citizenship",
+    "Diaspora members who acquire Tanzanian citizenship must give up their other passport",
+    "Citizenship by descent is legally available but the renunciation requirement is a practical barrier for most diaspora",
+    "Parliamentary debates on allowing dual citizenship have occurred under President Samia Suluhu Hassan but no law has passed as of 2026",
+    "Tanzania's 2017-2019 Diaspora Policy focuses on investment and remittances, not citizenship pathways",
+    "No dedicated diaspora return citizenship program exists"
+  ],
+  "whyItMatters": "Tanzania is a compelling destination for diaspora considering relocation: Zanzibar, the Serengeti, Dar es Salaam's growing economy, and a relatively stable political environment. The dual citizenship restriction is a real policy barrier, not a reflection of unwelcoming culture. Diaspora members who want to maintain both a Tanzanian and a Western passport are currently unable to do so legally. That may change: the reform conversation is active. For those with Tanzanian lineage willing to commit fully, the citizenship pathway exists. For those exploring without committing, Tanzania's residence permit options are worth researching separately."
+}

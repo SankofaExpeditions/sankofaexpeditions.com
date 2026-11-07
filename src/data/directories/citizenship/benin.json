@@ -1,0 +1,51 @@
+{
+  "country": "Benin",
+  "countryCode": "BJ",
+  "flag": "🇧🇯",
+  "region": "West Africa",
+  "summary": "Benin permits dual citizenship since the 2004 amendment to its nationality code. Citizenship by descent follows direct lineage: documented Beninese parentage is required. No formal mass-diaspora citizenship program exists; the 2019 return initiative was largely ceremonial.",
+  "lastUpdated": "2026-11-07",
+  "citizenship": {
+    "dualCitizenshipPermitted": true,
+    "dualCitizenshipNote": "Law No. 2004-12 of November 5, 2004 amended the Code de la Nationalité Béninoise (Law No. 65-17, 1965). Article 3 of the 2004 law prevents automatic loss of Beninese citizenship when a national acquires foreign nationality. The 1990 Constitution of Benin, Articles 10-12, establishes the constitutional right to nationality.",
+    "diasporaProgram": {
+      "name": "Citizenship by Descent (via Direction des Affaires Consulaires)",
+      "status": "active",
+      "statusNote": "The legal pathway for citizenship by descent is active. Benin's 2019 'Return of the Diaspora' initiative coincided with the 400th anniversary of the transatlantic slave trade but was largely ceremonial and did not create a formal mass-citizenship pathway for the African diaspora without documented Beninese lineage. Applicants must prove direct Beninese parentage. The Ministry of Foreign Affairs continues a 'Diaspora Bénin' engagement program as of 2026 for Beninese nationals abroad.",
+      "eligibility": "Persons born to a Beninese father or Beninese mother acquire citizenship at birth regardless of birthplace. The 2004 amendment made maternal descent equal to paternal descent. Grandchildren and further generations must document the citizenship chain. African diaspora without documented Beninese lineage cannot claim citizenship on pan-African heritage alone.",
+      "applicationFeeUSD": null,
+      "applicationFeeNote": "Fees vary by embassy and application type. The Certificat de Nationalité Béninoise processed at the Direction des Affaires Consulaires in Cotonou is low-cost (a few thousand CFA francs, roughly $3-$8 USD). Embassy processing fees abroad range approximately $20-$100 USD. Fees are not standardized; verify directly with the specific embassy or consulate before applying.",
+      "keyDocuments": [
+        "Birth certificate of the applicant (certified/apostilled, translated into French if not already)",
+        "Birth certificate of the Beninese parent proving their Beninese origin",
+        "Beninese parent's national ID, passport, or nationality certificate (or death certificate plus nationality documents if deceased)",
+        "Marriage certificate (if applicable, to establish the parental link)",
+        "Family booklet (livret de famille) if one exists",
+        "Two passport-sized photographs",
+        "Completed application form (obtained from embassy or Direction des Affaires Consulaires in Cotonou)",
+        "Proof of residence or domicile (requirements vary by embassy)"
+      ],
+      "processSteps": [
+        "Locate the nearest Beninese embassy or consulate (US: Washington DC embassy or New York consulate)",
+        "Contact consular section to confirm current document requirements and schedule appointment",
+        "Compile and certify all required documents (apostilles, certified translations into French)",
+        "Submit documents to the consular section for pre-screening",
+        "Receive a Certificat de Nationalité Béninoise from the Direction des Affaires Consulaires in Cotonou or via the embassy",
+        "If civil registration records are missing (common for diaspora born abroad): initiate a jugement supplétif d'acte de naissance process through Beninese civil courts, which may require legal representation in Benin",
+        "Apply for a Beninese passport once citizenship certificate is confirmed"
+      ],
+      "officialUrl": "https://diplomatie.gouv.bj",
+      "embassyUrl": "https://beninembassy.us",
+      "lastVerified": "2026-11-07",
+      "verificationNote": "Legal framework verified against Wikipedia's Benin nationality law article, gouv.bj, diplomatie.gouv.bj, beninembassy.us, visaguide.world, Reuters, VOA, and World Bank sources. The 2004 law change is consistently confirmed across multiple sources. Specific fee amounts and jugement supplétif costs are approximations; exact current fees require direct verification with the embassy."
+    }
+  },
+  "keyFacts": [
+    "Dual citizenship permitted since Law No. 2004-12 (November 2004); Beninese nationals no longer lose citizenship upon naturalizing abroad",
+    "Citizenship by descent: children born to a Beninese father or mother acquire citizenship at birth, anywhere in the world",
+    "2019 'Return of the Diaspora' initiative was ceremonial, not a formal citizenship pathway",
+    "No documented Beninese parentage, no citizenship by descent: pan-African heritage alone is not sufficient",
+    "Civil registry digitization ongoing (World Bank-supported): some passport renewal delays reported 2024-2025, but citizenship applications are not suspended"
+  ],
+  "whyItMatters": "Benin holds deep significance for the African diaspora as one of the primary departure points of the transatlantic slave trade, particularly for Brazilians of Fon and Yoruba descent. The legal pathway exists for those who can document Beninese ancestry, and the 2004 dual citizenship reform means reconnecting does not require giving up another passport. For diaspora descendants exploring West African roots, Benin is a natural cultural anchor even where the citizenship documentation chain is difficult to trace."
+}
