@@ -83,7 +83,7 @@ const jsonLd = [{ "@context": "https://schema.org", "@type": "BreadcrumbList", "
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const data = new FormData(form as HTMLFormElement);
-    try { await fetch((form as HTMLFormElement).action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } }); (form as HTMLElement).style.display = 'none'; if (success) success.style.display = 'block'; } catch (err) { alert('Error. Email expeditsankofa@gmail.com'); }
+    try { await fetch((form as HTMLFormElement).action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } }); (form as HTMLElement).style.display = 'none'; if (success) success.style.display = 'block'; } catch (err) { alert('Error. Email info@sankofaexpeditions.com'); }
   });
 </script>
 

@@ -16,6 +16,7 @@ const footerNav = [
   { label: t('nav.directory', lang), href: getLocalizedPath('/directories', lang) },
   { label: t('nav.expeditions', lang), href: getLocalizedPath('/expeditions', lang) },
   { label: t('nav.services', lang), href: getLocalizedPath('/services', lang) },
+  { label: lang === 'fr' ? 'Voyages' : lang === 'es' ? 'Viajes' : 'Travel', href: getLocalizedPath('/travel', lang) },
   { label: t('nav.blog', lang), href: getLocalizedPath('/blog', lang) },
   { label: lang === 'fr' ? 'Commencer ici' : lang === 'es' ? 'Empieza aquí' : 'Start Here', href: getLocalizedPath('/start-here', lang) },
   { label: lang === 'fr' ? 'Boutique' : lang === 'es' ? 'Tienda' : 'Shop', href: getLocalizedPath('/shop', lang) },
