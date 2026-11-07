@@ -115,7 +115,7 @@ What this means practically:
 - You can vote, own land, and access all constitutional rights as a Nigerian citizen
 - You are not subject to CERPAC requirements
 
-The Non-Resident Nigerian (NRN) program, run by the Nigeria in Diaspora Commission (NiDCOM), provides additional documentation and engagement infrastructure for diaspora Nigerians. The NRN certificate gives you a recognized status as a diaspora member and access to government diaspora investment channels. Apply at nidc.gov.ng or through a Nigerian Embassy.
+The Non-Resident Nigerian (NRN) program, run by the Nigeria in Diaspora Commission (NiDCOM), provides additional documentation and engagement infrastructure for diaspora Nigerians. The NRN certificate gives you a recognized status as a diaspora member and access to government diaspora investment channels. Apply at nidcom.gov.ng or through a Nigerian Embassy.
 
 ---
 
@@ -583,10 +583,10 @@ This guide is a foundation, not a final answer. Nigeria has 36 states, two major
 
 **Talk to people who made the move.** No guide replaces a 30-minute conversation with a returnee who landed 18 months ago. The Lagos diaspora community is accessible and generous with information. Find them before you decide.
 
-**Book a free consultation** if you want a structured conversation about whether Nigeria fits your specific situation, your timeline, and your goals. The free discovery call is designed exactly for this.
+[Book a free consultation](/consult) if you want a structured conversation about whether Nigeria fits your specific situation, your timeline, and your goals.
 
 The right question is not whether Nigeria is ready for you. It is whether you are prepared for Nigeria. The difference between that framing is everything.
 
 ---
 
-*All visa requirements, fees, and program details verified against Nigeria Immigration Service (immigration.gov.ng), NiDCOM (nidc.gov.ng), and embassy sources as of November 2026. These change. Verify directly with the Nigerian Embassy, Nigeria Immigration Service, or a registered Nigerian immigration lawyer before making decisions. Sankofa Expeditions® is a travel intelligence company, not a legal or financial advisor.*
+*All visa requirements, fees, and program details verified against Nigeria Immigration Service (immigration.gov.ng), NiDCOM (nidcom.gov.ng), and embassy sources as of November 2026. These change. Verify directly with the Nigerian Embassy, Nigeria Immigration Service, or a registered Nigerian immigration lawyer before making decisions. Sankofa Expeditions® is a travel intelligence company, not a legal or financial advisor.*

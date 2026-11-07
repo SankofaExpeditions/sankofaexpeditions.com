@@ -634,4 +634,4 @@ The right country depends on what you're optimizing for, and the only way to kno
 
 That's what Sankofa Expeditions exists to help with. We provide the intelligence, infrastructure, and connections that turn diaspora intention into action. Not opinions, verified, on-the-ground intelligence across all 54 African nations.
 
-**Ready to move with intelligence?** [Contact us](/contact) to discuss your specific situation, or [subscribe to our newsletter](/#join) for regular intelligence drops on diaspora opportunities across Africa.
+**Ready to move with intelligence?** Start with the data: the [Citizenship Directory](/directories/citizenship) tracks legal pathways for 11 countries, and the [Nomad Visas Directory](/directories/nomad-visas) covers active digital nomad programs. If you want to go deeper on any single country, the [Ghana relocation guide](/blog/complete-guide-relocating-to-ghana) and [Nigeria relocation guide](/blog/complete-guide-relocating-to-nigeria) are the full deep-dives. For a conversation about your specific situation, the [free discovery call](/consult) is the right next step.

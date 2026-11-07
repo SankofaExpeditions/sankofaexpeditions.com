@@ -23,7 +23,7 @@ faq:
     answer: "Monthly budgets for a comfortable (not luxury) retirement: Ghana Accra suburbs $1,500-$2,700, Rwanda Kigali $1,400-$2,500, Tanzania Zanzibar $1,200-$2,200, Botswana Gaborone $1,500-$2,500, Namibia Windhoek $1,400-$2,500, Senegal Dakar $1,300-$2,300, Côte d'Ivoire Abidjan $1,400-$2,400, Kenya Diani Beach $1,200-$2,100, South Africa Cape Town $2,000-$3,500."
 ---
 
-Most retirement guides about Africa read like they were written by someone who has never been. It is 2027 and they are still recycling the same surface-level country lists. They mention "cost of living" in the abstract. They include safety warnings that apply to entire continents as though Accra and Lagos were the same place. They are designed to inform tourists, not people who are actually planning to live somewhere.
+Most retirement guides about Africa read like they were written by someone who has never been. It is 2026 and they are still recycling the same surface-level country lists. They mention "cost of living" in the abstract. They include safety warnings that apply to entire continents as though Accra and Lagos were the same place. They are designed to inform tourists, not people who are actually planning to live somewhere.
 
 This is not that guide.
 

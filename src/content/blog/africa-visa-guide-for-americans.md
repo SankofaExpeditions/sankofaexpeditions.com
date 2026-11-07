@@ -37,7 +37,7 @@ Your passport (whether American, British, French, German, or any other) is power
 
 This guide covers every single African country for **both US and EU/UK passport holders**. No exceptions, no "we'll skip the hard ones." Whether you are planning from New York, London, Paris, or Berlin, whether it is a two-week safari, property scouting in Accra, or a six-month overland route from Cairo to Cape Town, this is the reference document.
 
-**Last verified: June 2025. Visa policies change without warning. Always confirm with the relevant embassy or official government portal before booking travel.**
+**Last verified: June 2026. Visa policies change without warning. Always confirm with the relevant embassy or official government portal before booking travel.**
 
 ---
 
@@ -523,7 +523,7 @@ Africa's visa landscape is evolving faster than any other continent. Key develop
 
 ## Safety and Travel Advisory Overlay
 
-Visa access does not equal safety. Both the US State Department and the UK Foreign, Commonwealth & Development Office (FCDO) maintain travel advisory systems. As of mid-2025, African countries at the highest advisory levels include:
+Visa access does not equal safety. Both the US State Department and the UK Foreign, Commonwealth & Development Office (FCDO) maintain travel advisory systems. As of mid-2026, African countries at the highest advisory levels include:
 
 **Level 4 / FCDO "Advise Against All Travel":**
 - Libya
@@ -580,6 +580,10 @@ The third biggest mistake is leaving visa logistics until the last minute. An $8
 Plan early. Print everything. Carry cash in clean bills. Keep your passport valid and stocked with blank pages. Get your yellow fever vaccination. And go.
 
 The continent is waiting, for all of you.
+
+---
+
+If this guide helped you plan a trip, the next step is knowing your legal options once you arrive. The [Nomad Visas Directory](/directories/nomad-visas) covers active digital nomad programs across Africa. The [Citizenship Directory](/directories/citizenship) covers 11 countries where diaspora can claim or reclaim legal status. For a country-specific deep-dive, start with [Ghana](/blog/complete-guide-relocating-to-ghana) or [Nigeria](/blog/complete-guide-relocating-to-nigeria). Ready to plan an actual trip? The [free discovery call](/consult) is where the conversation starts.
 
 ---
 
