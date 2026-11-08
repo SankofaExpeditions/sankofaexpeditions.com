@@ -110,11 +110,33 @@ const jsonLd = {
       <div class="eyebrow">Safety Intelligence</div>
       <h1>Africa Safety Intel</h1>
       <p class="hero-description">
-        "Is it safe?" is the first question every diaspora traveler asks. Here are the actual numbers: State Dept advisories, Numbeo crime indices, safe neighborhoods, and what to actually watch for in each city. No tourist platitudes. Real intel.
+        Millions of people live, work, raise families, and build businesses in these cities every day. This directory gives you the same information expats and diaspora professionals actually use to navigate them. State Dept advisories, Numbeo crime data, safe neighborhoods, and practical protocols — organized so you can plan, not panic.
       </p>
       <div class="data-note">
         Sources: US State Dept travel advisories, UK FCO advice, Numbeo 2025 crime data, OSAC field reports.
         Updated November 2026.
+      </div>
+    </div>
+  </section>
+
+  <section class="context-section">
+    <div class="container container--narrow">
+      <div class="context-grid">
+        <div class="context-block">
+          <div class="context-icon">🏙️</div>
+          <h3>Every city has a geography of risk</h3>
+          <p>The neighborhoods where expats and diaspora travelers actually live, work, and move look nothing like the city-wide statistics. We show you both.</p>
+        </div>
+        <div class="context-block">
+          <div class="context-icon">📋</div>
+          <h3>Informed travel is safe travel</h3>
+          <p>The diaspora professionals who move to Lagos, Nairobi, and Cape Town are not reckless. They planned. This directory is what that planning looks like.</p>
+        </div>
+        <div class="context-block">
+          <div class="context-icon">📍</div>
+          <h3>Risk is specific, not general</h3>
+          <p>A Level 3 advisory for Nigeria reflects conditions in the northwest and northeast. Victoria Island in Lagos is a different city within the same borders. Know the difference.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -267,6 +289,45 @@ const jsonLd = {
   .rankings-section {
     padding: var(--space-3xl) 0;
     background: var(--color-bg);
+  }
+
+  /* Context section */
+  .context-section {
+    padding: var(--space-2xl) 0;
+    background: var(--color-black);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .context-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-xl);
+  }
+
+  .context-block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .context-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  .context-block h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.9);
+    margin: 0;
+    font-family: var(--font-heading);
+  }
+
+  .context-block p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+    margin: 0;
   }
 
   .section-header {

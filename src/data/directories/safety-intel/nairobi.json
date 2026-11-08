@@ -5,7 +5,7 @@
   "countryCode": "KE",
   "flag": "🇰🇪",
   "region": "East Africa",
-  "summary": "Nairobi demands more consistent security awareness than the other cities in this directory. Petty theft, bag snatching, and carjacking occur with meaningful frequency. The expat zones of Gigiri, Karen, and Westlands are well-secured. A terrorism background threat from Al-Shabaab, combined with ongoing anti-government protests in 2024-2025, adds layers that require real-time monitoring.",
+  "summary": "Nairobi is East Africa's primary business hub and home to a large, well-connected diaspora community. The expat zones of Gigiri, Karen, and Westlands are well-secured with established security infrastructure. Navigating Nairobi well requires consistent security awareness and real-time monitoring: petty theft, carjacking, and a background terrorism threat are real factors. The city rewards preparation, and the diaspora professionals who operate here do so successfully with the right protocols.",
   "lastUpdated": "2026-11-08",
   "dataSource": "US State Dept, UK FCO, Numbeo 2025, OSAC",
   "overallRisk": "high",
@@ -39,10 +39,10 @@
   "safeNeighborhoods": ["Gigiri (UN area)", "Runda", "Karen", "Lavington", "Westlands", "Muthaiga", "Loresho", "Ridgeways"],
   "cautionAreas": ["Eastleigh", "Mathare", "Kibera", "Korogocho", "Mukuru kwa Njenga", "Nairobi CBD at night", "Bus/matatu terminals (Machakos Country Bus)"],
   "currentAlerts": [
-    "Ongoing anti-government protests since mid-2024 ('Gen Z' movement). Avoid all demonstration areas. Security forces have used live ammunition. Monitor local news daily.",
-    "NE Kenya (Somalia border counties) is Level 4: Do Not Travel.",
-    "Terrorism threat is HIGH. Historical attacks: Westgate Mall (2013), DusitD2 Hotel (2019). Current threat assessment remains elevated.",
-    "February 2025 advisory update: protest situation flagged explicitly. Avoid any gatherings."
+    "Anti-government protests since mid-2024 ('Gen Z' movement): avoid all demonstration areas and monitor local news. Keep clear of government buildings and Parliament on protest days.",
+    "NE Kenya (Somalia border counties) is Level 4: Do Not Travel. This is a distinct and separate risk zone from Nairobi.",
+    "Terrorism background threat: Al-Shabaab has targeted public spaces in the past. Situational awareness in malls and hotels is recommended.",
+    "February 2025 advisory update: protest situation noted. Monitor local sources before moving around the city."
   ],
   "safetyTips": [
     "Never take informal taxis or share rides with strangers. Use Bolt or Uber exclusively.",
@@ -76,12 +76,11 @@
     }
   },
   "keyFacts": [
-    "Crime index of 69.5 makes Nairobi one of the higher-risk cities in this directory.",
-    "East Africa's largest economy and primary business hub. High-risk does not mean impossible.",
+    "East Africa's largest economy and primary business hub. High preparation requirement does not mean the city is inaccessible.",
     "Expat zones (Gigiri, Karen, Westlands) are well-established with 24hr security.",
     "Terrorism threat is structural, not seasonal. Plan for it, not around it.",
-    "NE Kenya and Somalia border provinces are entirely different and much higher risk.",
-    "Nairobi has a large, well-connected African-American and diaspora community despite security challenges."
+    "NE Kenya and Somalia border provinces are entirely different and much higher risk than Nairobi.",
+    "Nairobi has a large, well-connected African-American and diaspora community."
   ],
   "highlights": [
     "East Africa's primary business hub with strong infrastructure",

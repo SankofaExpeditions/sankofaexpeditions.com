@@ -14,7 +14,7 @@ const dataDir = join(process.cwd(), 'src/data/directories/safety-intel');
 const data = JSON.parse(readFileSync(join(dataDir, `${citySlug}.json`), 'utf-8'));
 
 const title = `${data.city}, ${data.country} Safety Intelligence | Sankofa Expeditions®`;
-const description = `${data.city} safety score ${data.overallSafetyScore}/100. US State Dept Level ${data.usDeptState.level}. Numbeo Crime Index ${data.numbeo.crimeIndex}. Safe neighborhoods, areas to avoid, and practical intel for diaspora travelers.`;
+const description = `Travel intel for ${data.city}, ${data.country}: safe neighborhoods, practical security tips, US State Dept Level ${data.usDeptState.level} advisory, and emergency contacts. Built for diaspora travelers.`;
 
 const riskColor: Record<string, string> = {
   'low': '#22c55e',
@@ -65,7 +65,7 @@ const jsonLd = {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": `Is ${data.city} safe for tourists?`,
+          "name": `How do diaspora travelers navigate ${data.city} safely?`,
           "acceptedAnswer": {
             "@type": "Answer",
             "text": `${data.city} carries a US State Dept Level ${data.usDeptState.level} advisory (${levelLabel[data.usDeptState.level]}) and a Numbeo Crime Index of ${data.numbeo.crimeIndex}. ${data.summary}`

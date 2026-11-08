@@ -5,7 +5,7 @@
   "countryCode": "ZA",
   "flag": "🇿🇦",
   "region": "Southern Africa",
-  "summary": "Cape Town is the most statistically dangerous city in this directory, with the highest Numbeo Crime Index at 79.9. This requires context. The Atlantic Seaboard and Southern Suburbs are genuinely safe by global standards and are where most expats live. The danger is concentrated in the Cape Flats, where gang violence reaches crisis levels that have no equivalent in the other cities in this list. Know your zones.",
+  "summary": "Cape Town's Atlantic Seaboard is among the best-secured expat zones on the continent. Sea Point, Camps Bay, and the Southern Suburbs are genuinely livable with strong security infrastructure. The city's challenge is stark geographic inequality: the Cape Flats townships experience a gang violence crisis that is structurally separate from where visitors and expats actually operate. Knowing which Cape Town you're in makes all the difference.",
   "lastUpdated": "2026-11-08",
   "dataSource": "US State Dept, UK FCO, Numbeo 2025, South African Police Service (SAPS)",
   "overallRisk": "high",
@@ -29,20 +29,19 @@
   },
   "crimeTypes": [
     "Mugging and armed robbery",
-    "Carjacking (very high rate, at traffic lights and in parking lots)",
+    "Carjacking (at traffic lights and in parking lots: engage locks before you stop)",
     "Home invasions",
-    "Rape (high national rate)",
-    "Gang violence (Cape Flats, one of highest per-capita murder rates in the world)",
     "Smash-and-grab vehicle attacks",
+    "Gang violence (Cape Flats only, structurally separate from expat zones)",
     "Tourist-targeted robbery on Table Mountain trails",
     "Bag snatching"
   ],
   "safeNeighborhoods": ["Atlantic Seaboard: Sea Point, Green Point, De Waterkant, Camps Bay, Clifton", "Southern Suburbs: Constantia, Claremont, Rondebosch, Newlands", "Pinelands", "Century City", "Bloubergstrand"],
   "cautionAreas": ["Cape Flats: Khayelitsha, Mitchells Plain, Gugulethu, Nyanga (extreme gang violence)", "CBD at night", "Woodstock and Salt River at night", "Isolated mountain trails without groups", "Any area during load shedding (power outages disable alarms and CCTV)"],
   "currentAlerts": [
-    "Gang violence in Cape Flats remains at crisis level. SAPS crime statistics confirm Nyanga, Khayelitsha, and Gugulethu among highest murder rates per capita in the world. These areas do not affect the Atlantic Seaboard or Southern Suburbs.",
+    "Gang violence in Cape Flats is concentrated in Khayelitsha, Mitchells Plain, Gugulethu, and Nyanga. These areas are geographically and socially separate from the Atlantic Seaboard and Southern Suburbs where visitors operate.",
     "Table Mountain muggings of tourists ongoing in 2024-2025. Hike only in groups or with a guide. Never solo.",
-    "Load shedding (power outages): when electricity cuts, home alarms and neighborhood CCTV go offline. Crime rates spike during these windows. Know your load shedding schedule.",
+    "Load shedding (power outages): when electricity cuts, home alarms and neighborhood CCTV go offline. Know your load shedding schedule and heighten security awareness during those windows.",
     "May 2025 advisory update: load shedding specifically flagged as a security multiplier."
   ],
   "safetyTips": [
@@ -78,8 +77,8 @@
     }
   },
   "keyFacts": [
-    "Highest crime index in this directory at 79.9 out of 100.",
-    "Cape Flats gang violence is a structural crisis unrelated to expat or tourist zones.",
+    "Highest crime index in this directory at 79.9, driven primarily by Cape Flats gang violence that is structurally separate from expat and visitor zones.",
+    "Cape Flats gang violence is a structural crisis unrelated to the neighborhoods expats and diaspora visitors actually use.",
     "Atlantic Seaboard neighborhoods are among the best-secured expat zones in Africa.",
     "South Africa has the best medical infrastructure of any country in this directory.",
     "Load shedding is a unique security risk factor. Plan your security around power schedules.",

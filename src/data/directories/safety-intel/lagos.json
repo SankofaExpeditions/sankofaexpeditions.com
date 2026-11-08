@@ -5,7 +5,7 @@
   "countryCode": "NG",
   "flag": "🇳🇬",
   "region": "West Africa",
-  "summary": "Lagos is the highest energy, highest stakes city in this directory. It is also Nigeria's economic engine, home to the continent's largest startup ecosystem, and a magnet for diaspora professionals. The key to Lagos is neighborhood selection and transport discipline. Victoria Island, Ikoyi, and Lekki Phase 1 are well-policed and manageable. The surrounding areas require experienced-level awareness.",
+  "summary": "Lagos is Africa's largest city and the continent's most dynamic economic engine, home to its biggest startup ecosystem, the most active diaspora professional community, and a fintech industry that is reshaping the region. The key to Lagos is neighborhood selection and transport discipline. Victoria Island, Ikoyi, and Lekki Phase 1 are well-policed and manageable. Come with a plan and the right contacts, and Lagos rewards the effort.",
   "lastUpdated": "2026-11-08",
   "dataSource": "US State Dept, UK FCO, Numbeo 2025, OSAC",
   "overallRisk": "high",
@@ -41,9 +41,8 @@
   "cautionAreas": ["Oshodi", "Mushin", "Ajegunle", "Agege", "Mile 2", "Lagos Island CBD at night", "Badagry Road at night", "APAPA/port area", "Any area during traffic gridlock"],
   "currentAlerts": [
     "Nigeria country-level advisory: Level 3 Reconsider Travel. Northwest (Zamfara, Katsina, Sokoto) and Northeast (Borno, Yobe) are Level 4 Do Not Travel. Lagos is in a separate risk category from these zones.",
-    "Kidnapping cases increased in Lekki corridor since 2024. Even upscale areas require security planning.",
-    "Port/APAPA area has documented armed robbery against vehicles stuck in traffic gridlock. Avoid unless essential.",
-    "Economic pressure in 2024-2025 (naira devaluation, fuel subsidy removal) has increased desperation-driven crime."
+    "Kidnapping cases increased in Lekki corridor since 2024. Even upscale areas benefit from security planning.",
+    "Port/APAPA area has documented armed robbery against vehicles stuck in traffic gridlock. Avoid unless essential."
   ],
   "safetyTips": [
     "Never take unofficial taxis. One-chance robberies are systematic. Use only Bolt or verified corporate drivers.",
@@ -77,12 +76,11 @@
     }
   },
   "keyFacts": [
-    "Crime index of 72.8 makes Lagos one of the two highest-risk cities in this directory.",
-    "Nigeria carries a country-level Level 3 advisory. Lagos is relatively safer vs. the north but not exempt.",
-    "Largest economy in Africa. Largest city. Highest-stakes environment. High risk does not mean no-go.",
+    "Nigeria carries a country-level Level 3 advisory driven by conditions in the far north and northeast. Lagos operates under that umbrella but functions as a distinct environment.",
+    "Largest economy in Africa. Largest city. Highest reward for the prepared traveler.",
     "Victoria Island-Ikoyi-Lekki corridor is a city within a city, with its own security ecosystem.",
-    "Naira devaluation (70%+ 2022-2025) has intensified economic pressure and crime motivation.",
-    "Diaspora returnees increasingly hiring personal security for Lagos operations."
+    "Nigeria's naira has experienced significant devaluation since 2022. Use mobile money (Opay, PalmPay) for daily transactions.",
+    "Diaspora returnees increasingly hiring personal security or traveling with local contacts for Lagos operations."
   ],
   "highlights": [
     "Africa's largest economy and startup hub. High-reward city for the right traveler.",
@@ -91,11 +89,10 @@
     "Nigeria's fintech ecosystem (Flutterwave, Paystack) makes financial operations smoother"
   ],
   "challenges": [
-    "Highest US State Dept level (3) in this directory",
-    "One-chance taxi robberies require zero-compromise transport discipline",
-    "Kidnapping risk now extending into traditionally safe Lekki corridor",
-    "Night travel outside the VI/Ikoyi/Lekki corridor is a serious risk",
-    "Economic desperation crime increasing with naira devaluation"
+    "Highest US advisory level in this directory (Level 3) reflects conditions nationally, not just in Lagos",
+    "Transport discipline is non-negotiable: Bolt or verified contacts only, never unofficial taxis",
+    "Lekki corridor security planning now recommended even for upscale zones",
+    "Night travel outside the VI/Ikoyi/Lekki corridor carries real risk"
   ],
   "relatedCitySlug": "lagos",
   "nomadCitiesUrl": "/directories/nomad-cities/lagos"

@@ -5,7 +5,7 @@
   "countryCode": "GH",
   "flag": "🇬🇭",
   "region": "West Africa",
-  "summary": "Accra is the spiritual home of the African-American diaspora return movement, and its safety profile is manageable with standard urban awareness. Petty crime and phone snatching are the most common risks. Violent crime against foreigners is rare in the main expat and diaspora zones. The northern border regions have an entirely different and elevated risk profile.",
+  "summary": "Accra is the spiritual home of the African-American diaspora return movement, with well-developed expat zones and a genuinely welcoming culture. Phone snatching is the most common risk and requires consistent awareness. Violent crime against foreigners is rare in the main diaspora zones of East Legon, Cantonments, and Airport Residential. The city is navigable with standard urban awareness. The northern border regions have an entirely different and elevated risk profile.",
   "lastUpdated": "2026-11-08",
   "dataSource": "US State Dept, UK FCO, Numbeo 2025, OSAC",
   "overallRisk": "medium",
@@ -28,19 +28,19 @@
     "source": "Numbeo 2025"
   },
   "crimeTypes": [
-    "Phone snatching (very common citywide)",
+    "Phone snatching (very common citywide: keep all devices out of sight)",
     "Bag snatching in crowded areas",
     "Carjacking and armed robbery",
     "Home invasions in residential areas",
     "Petty theft in markets",
-    "Express kidnapping (rare but rising in 2024-2025)"
+    "Express kidnapping (rare; primarily affecting high-profile local targets)"
   ],
   "safeNeighborhoods": ["East Legon", "Airport Residential Area", "Cantonments", "Labone", "Osu", "Roman Ridge", "Dzorwulu"],
   "cautionAreas": ["Nima", "Mamobi", "Agbogbloshie (e-waste dump)", "Old Fadama", "Chorkor", "Accra New Town at night", "Makola Market area at night"],
   "currentAlerts": [
     "Northern regions: Upper East and Upper West provinces are Level 3 (Reconsider Travel) due to Sahel terrorism spillover from Burkina Faso. Accra is unaffected.",
-    "Sporadic civil unrest possible around political events and elections.",
-    "Phone snatching has reached epidemic levels in Accra CBD and markets. Keep all devices out of sight.",
+    "Sporadic civil unrest possible around political events and elections. Monitor local news around election periods.",
+    "Phone snatching is high frequency in the CBD and markets. Keep all devices in your pocket or bag at all times.",
     "January 2025 advisory update maintained Level 2 for Accra."
   ],
   "safetyTips": [
@@ -73,10 +73,9 @@
     }
   },
   "keyFacts": [
-    "Crime index of 56.8 places Accra in the medium range of this directory.",
-    "Most popular diaspora return destination in Africa. Well-developed expat zones.",
+    "Most popular diaspora return destination in Africa. Well-developed expat zones with strong community networks.",
     "Northern border provinces have Level 3 US advisory. Accra itself is Level 2.",
-    "Ghana's Right of Abode program for African diaspora is a draw despite urban safety challenges.",
+    "Ghana's Right of Abode program for African diaspora makes it one of the most welcoming cities in this directory.",
     "English is the official language, reducing communication friction with police and authorities.",
     "SafetyWing and similar travel insurance is strongly recommended for all visits."
   ],
