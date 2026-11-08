@@ -1,0 +1,922 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { readFileSync, readdirSync } from 'fs';
+import { join } from 'path';
+
+export function getStaticPaths() {
+  const dataDir = join(process.cwd(), 'src/data/directories/dentists');
+  const files = readdirSync(dataDir).filter((f: string) => f.endsWith('.json'));
+  return files.map((file: string) => {
+    const slug = file.replace('.json', '');
+    const data = JSON.parse(readFileSync(join(dataDir, file), 'utf-8'));
+    return { params: { country: slug }, props: { data } };
+  });
+}
+
+const { data } = Astro.props;
+
+const {
+  country,
+  flag,
+  region,
+  capitalCity,
+  summary,
+  lastUpdated,
+  cities,
+  totalClinics,
+  diasporaVettedCount,
+  internationalTrainedCount,
+  clinics,
+} = data;
+
+const countrySlug = Astro.params.country;
+const pageUrl = `https://sankofaexpeditions.com/directories/dentists/${countrySlug}`;
+
+const isSouthAfrica = countrySlug === 'south-africa';
+
+const title = `Diaspora-Trusted Dentists in ${country} ${new Date().getFullYear()} | ${clinics.length} Verified Clinics | Sankofa Expeditions`;
+const description = `Find trusted dentists in ${country} as a diaspora returnee or visitor. ${clinics.length} verified clinics in ${cities.join(', ')}. Sorted by international training, USD pricing, and diaspora accessibility.`;
+
+const tier1Clinics = clinics.filter((c: any) => c.tier === 1);
+const tier2Clinics = clinics.filter((c: any) => c.tier === 2);
+const tier3Clinics = clinics.filter((c: any) => c.tier === 3);
+
+const diasporaVetted = clinics.filter((c: any) => c.enrichment.diasporaVetted);
+const intlTrained = clinics.filter((c: any) => c.enrichment.internationallyTrained);
+const usdAccepted = clinics.filter((c: any) => c.enrichment.acceptsUSD);
+const whatsappReady = clinics.filter((c: any) => c.enrichment.whatsappContact);
+const dentalTourism = clinics.filter((c: any) => c.enrichment.dentalTourism);
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${pageUrl}/#webpage`,
+    "url": pageUrl,
+    "name": title,
+    "description": description,
+    "isPartOf": { "@id": "https://sankofaexpeditions.com/#website" },
+    "breadcrumb": { "@id": `${pageUrl}/#breadcrumb` },
+    "inLanguage": "en-US",
+    "dateModified": lastUpdated
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": `${pageUrl}/#breadcrumb`,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sankofaexpeditions.com" },
+      { "@type": "ListItem", "position": 2, "name": "Directories", "item": "https://sankofaexpeditions.com/directories" },
+      { "@type": "ListItem", "position": 3, "name": "Dentists", "item": "https://sankofaexpeditions.com/directories/dentists" },
+      { "@type": "ListItem", "position": 4, "name": country, "item": pageUrl }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": `${pageUrl}/#list`,
+    "name": `Diaspora-Trusted Dentists in ${country}`,
+    "description": `Verified list of diaspora-trusted dental clinics in ${country}.`,
+    "numberOfItems": clinics.length,
+    "itemListElement": tier1Clinics.map((c: any, i: number) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": c.name,
+      "url": `https://${c.website}`
+    }))
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": `Which dentists in ${country} are trusted by diaspora returnees?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `The top diaspora-trusted dentists in ${country} include: ${tier1Clinics.slice(0, 3).map((c: any) => c.name).join(', ')}. All Tier 1 clinics in this directory accept USD, have internationally trained staff or strong diaspora reviews, and are reachable via WhatsApp. ${intlTrained.length} clinics in this directory have internationally trained dentists.`
+        }
+      },
+      {
+        "@type": "Question",
+        "name": `How much does a dentist cost in ${country} in USD?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": isSouthAfrica
+            ? `Dental fees in South Africa are 40 to 60 percent below UK and US prices for the same procedures. A single implant costs USD 900 to 1,400 versus USD 3,000 to 5,000 in the USA. Veneers run USD 350 to 550 per tooth versus USD 1,200 to 2,500 in the UK. General dentistry ranges from USD 55 to 150 for routine visits. Cosmetic treatments are substantially below Western pricing across Cape Town and Johannesburg.`
+            : `Dental fees in ${country} range from USD ${tier1Clinics[0]?.feeRangeUSD || '40-200'} at top-tier internationally trained clinics. Routine check-ups and cleanings typically run USD 30 to 60. Cosmetic treatments and implants vary. All Tier 1 clinics in this directory quote USD pricing directly.`
+        }
+      },
+      {
+        "@type": "Question",
+        "name": `Do dentists in ${country} accept USD?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `${usdAccepted.length} of the ${clinics.length} clinics in this directory accept USD. All Tier 1 featured clinics accept USD or quote USD pricing for international patients. It is advisable to confirm before your appointment via WhatsApp. Some clinics accept credit cards but not cash in USD.`
+        }
+      },
+      ...(isSouthAfrica ? [
+        {
+          "@type": "Question",
+          "name": "Is dental tourism in South Africa worth it for diaspora from the UK or USA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, South Africa offers the most compelling dental tourism case in sub-Saharan Africa. Implants run 40 to 65 percent below UK and US prices. Veneers are 50 to 70 percent cheaper. The quality at top Cape Town and Johannesburg clinics is internationally equivalent: several lead dentists trained at UK and European institutions. Combining dental work with a Cape Town or Johannesburg trip is a rational financial decision for anyone needing implants, veneers, or Invisalign."
+          }
+        }
+      ] : []),
+      {
+        "@type": "Question",
+        "name": `How do I book a dentist in ${country} as a diaspora visitor or returnee?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `${whatsappReady.length} of the ${clinics.length} clinics in this directory are bookable via WhatsApp. This is the standard method for international patients. Send a message describing what you need, ask for a fee estimate, and confirm your appointment time. For dental tourism visits to South Africa, it is worth contacting the clinic before you book flights to confirm procedure availability and pricing.`
+        }
+      }
+    ]
+  }
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/directories">Directories</a>
+        <span aria-hidden="true"> / </span>
+        <a href="/directories/dentists">Dentists</a>
+        <span aria-hidden="true"> / </span>
+        <span>{country}</span>
+      </nav>
+      <div class="hero-flag" aria-hidden="true">{flag}</div>
+      <p class="eyebrow">{region}</p>
+      <h1>Diaspora-Trusted Dentists in {country}</h1>
+      <p class="hero-sub">{summary}</p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">{clinics.length}</span>
+          <span class="stat-label">Verified Clinics</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">{diasporaVetted.length}</span>
+          <span class="stat-label">Diaspora Vetted</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">{intlTrained.length}</span>
+          <span class="stat-label">Internationally Trained</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">{usdAccepted.length}</span>
+          <span class="stat-label">USD Accepted</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section context-section">
+    <div class="container container--narrow">
+      {isSouthAfrica ? (
+        <>
+          <h2>Why South Africa Is Different for Diaspora Dental Care</h2>
+          <p>
+            South Africa is the only country in sub-Saharan Africa where dental tourism is a genuinely rational option for the diaspora. The same procedures performed to international standards cost 40 to 65 percent less than in the UK, USA, or Canada. A full set of porcelain veneers that costs USD 18,000 in London runs USD 7,000 to 9,000 in Cape Town. A single implant at USD 900 to 1,200 versus USD 3,000 to 5,000 in New York.
+          </p>
+          <p>
+            The quality case is strong too. Several of the top Cape Town and Johannesburg dentists trained at UK and European institutions. UCT's Dental Faculty is one of the top-ranked dental schools on the continent. Equipment standards at the leading practices are equivalent to anything you would find in London or Toronto.
+          </p>
+          <p>
+            For diaspora visitors or those doing reconnection trips to Southern Africa, planning dental work during your visit is worth calculating. {dentalTourism.length} clinics in this directory explicitly serve international dental tourism patients with pre-arrival consultation and packaged pricing.
+          </p>
+        </>
+      ) : (
+        <>
+          <h2>Finding a Dentist You Can Trust in {country}</h2>
+          <p>
+            For diaspora returning to or visiting {country}, finding a dentist is about trust, not tourism. You need to know the equipment is sterilised correctly, the dentist understands international standards, and you can communicate clearly about what you need and what it costs before anyone picks up a tool.
+          </p>
+          <p>
+            The good news: {country === 'Ghana' || country === 'Nigeria' ? `${country === 'Ghana' ? "Accra" : "Lagos"}'s` : country === 'Kenya' ? "Nairobi's" : "Kigali's"} diaspora-aware dental market has grown substantially. Internationally trained dentists who have returned home are running practices specifically suited to your needs: USD pricing, WhatsApp booking, digital X-ray, and familiarity with what you are used to abroad.
+          </p>
+          <p>
+            This directory focuses on trust indicators: international training credentials, Google review counts and ratings, USD acceptance, and WhatsApp access. We highlight the clinics where the evidence is clearest, and list regional options for coverage where the top practices are out of reach.
+          </p>
+        </>
+      )}
+    </div>
+  </section>
+
+  <section class="section tier1-section">
+    <div class="container">
+      <header class="section-header">
+        <h2>Top {tier1Clinics.length} Diaspora-Trusted Clinics</h2>
+        <p>
+          Internationally trained staff, strong Google ratings, USD pricing, and WhatsApp accessibility.
+          {isSouthAfrica && " These clinics all serve dental tourism patients from the UK, USA, and Canada."}
+        </p>
+      </header>
+
+      <div class="clinics-grid">
+        {tier1Clinics.map((clinic: any) => (
+          <article class={`clinic-card clinic-card--${clinic.listingTier}`}>
+            <div class="clinic-card-top">
+              <div class="clinic-info">
+                <div class="clinic-name-row">
+                  <h3 class="clinic-name">{clinic.name}</h3>
+                  {clinic.listingTier === 'featured' && (
+                    <span class="listing-badge listing-badge--featured">Featured</span>
+                  )}
+                  {clinic.listingTier === 'verified' && (
+                    <span class="listing-badge listing-badge--verified">Verified</span>
+                  )}
+                </div>
+                <span class="clinic-location">{clinic.neighborhood}, {clinic.city}</span>
+              </div>
+              {clinic.rating && (
+                <div class="clinic-rating">
+                  <span class="rating-num">{clinic.rating}</span>
+                  <span class="rating-label">★ {clinic.reviewSource}</span>
+                </div>
+              )}
+            </div>
+
+            {clinic.trainingNote && (
+              <p class="training-note">{clinic.trainingNote}</p>
+            )}
+
+            <p class="clinic-desc">{clinic.description}</p>
+
+            <div class="enrichment-grid">
+              <div class={`enrich-item ${clinic.enrichment.diasporaVetted ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{clinic.enrichment.diasporaVetted ? '✓' : '·'}</span>
+                <span>Diaspora vetted</span>
+              </div>
+              <div class={`enrich-item ${clinic.enrichment.internationallyTrained ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{clinic.enrichment.internationallyTrained ? '✓' : '·'}</span>
+                <span>Internationally trained</span>
+              </div>
+              <div class={`enrich-item ${clinic.enrichment.acceptsUSD ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{clinic.enrichment.acceptsUSD ? '✓' : '·'}</span>
+                <span>USD accepted</span>
+              </div>
+              <div class={`enrich-item ${clinic.enrichment.whatsappContact ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{clinic.enrichment.whatsappContact ? '✓' : '·'}</span>
+                <span>WhatsApp</span>
+              </div>
+              <div class={`enrich-item ${clinic.enrichment.acceptsInsurance ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{clinic.enrichment.acceptsInsurance ? '✓' : '·'}</span>
+                <span>Insurance accepted</span>
+              </div>
+              <div class={`enrich-item ${clinic.enrichment.emergencyAvailable ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{clinic.enrichment.emergencyAvailable ? '✓' : '·'}</span>
+                <span>Emergency access</span>
+              </div>
+              <div class={`enrich-item ${clinic.enrichment.implants ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{clinic.enrichment.implants ? '✓' : '·'}</span>
+                <span>Implants</span>
+              </div>
+              <div class={`enrich-item ${clinic.enrichment.cosmeticDentistry ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{clinic.enrichment.cosmeticDentistry ? '✓' : '·'}</span>
+                <span>Cosmetic dentistry</span>
+              </div>
+            </div>
+
+            {clinic.feeRangeUSD && (
+              <p class="fee-note">Fee range: USD {clinic.feeRangeUSD}</p>
+            )}
+
+            {clinic.highlights.length > 0 && (
+              <ul class="highlights-list">
+                {clinic.highlights.map((h: string) => (
+                  <li>{h}</li>
+                ))}
+              </ul>
+            )}
+
+            <div class="clinic-card-footer">
+              <a href={`https://${clinic.website}`} target="_blank" rel="noopener noreferrer" class="clinic-link">
+                Visit {clinic.website} &rarr;
+              </a>
+              <span class="clinic-city-tag">{clinic.city}</span>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {tier2Clinics.length > 0 && (
+    <section class="section established-section">
+      <div class="container">
+        <header class="section-header">
+          <h2>Established Clinics</h2>
+          <p>Well-reviewed practices with good reputations. Some international training or strong local track records.</p>
+        </header>
+
+        <div class="clinics-list">
+          {tier2Clinics.map((clinic: any) => (
+            <article class="clinic-row">
+              <div class="clinic-row-info">
+                <h3 class="clinic-row-name">{clinic.name}</h3>
+                <span class="clinic-row-location">{clinic.neighborhood}, {clinic.city}</span>
+                {clinic.rating && (
+                  <span class="clinic-row-rating">{clinic.rating} ★ {clinic.reviewSource}</span>
+                )}
+              </div>
+              <p class="clinic-row-desc">{clinic.description}</p>
+              <div class="clinic-row-tags">
+                {clinic.highlights.map((h: string) => (
+                  <span class="tag">{h}</span>
+                ))}
+              </div>
+              <a href={`https://${clinic.website}`} target="_blank" rel="noopener noreferrer" class="clinic-row-link">{clinic.website} &rarr;</a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {tier3Clinics.length > 0 && (
+    <section class="section regional-section">
+      <div class="container">
+        <header class="section-header">
+          <h2>Neighbourhood and Regional Clinics</h2>
+          <p>Coverage options for diaspora outside the main expat corridors. Essential services listed for completeness.</p>
+        </header>
+
+        <div class="clinics-list">
+          {tier3Clinics.map((clinic: any) => (
+            <article class="clinic-row">
+              <div class="clinic-row-info">
+                <h3 class="clinic-row-name">{clinic.name}</h3>
+                <span class="clinic-row-location">{clinic.neighborhood}, {clinic.city}</span>
+              </div>
+              <p class="clinic-row-desc">{clinic.description}</p>
+              <div class="clinic-row-tags">
+                {clinic.highlights.map((h: string) => (
+                  <span class="tag">{h}</span>
+                ))}
+              </div>
+              <a href={`https://${clinic.website}`} target="_blank" rel="noopener noreferrer" class="clinic-row-link">{clinic.website} &rarr;</a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="section faq-section">
+    <div class="container container--narrow">
+      <h2>Common Questions</h2>
+      <dl class="faq-list">
+        <div class="faq-item">
+          <dt>Which dentists in {country} are most trusted by diaspora?</dt>
+          <dd>
+            {tier1Clinics.slice(0, 3).map((c: any) => c.name).join(', ')} are the top-rated options with the strongest diaspora signals: international training, USD acceptance, WhatsApp contact, and high Google review counts. All {tier1Clinics.length} Tier 1 clinics in this directory have been shortlisted on trust indicators, not just proximity.
+          </dd>
+        </div>
+        <div class="faq-item">
+          <dt>How do I book a dentist in {country} from abroad?</dt>
+          <dd>WhatsApp is the most reliable booking channel. {whatsappReady.length} of {clinics.length} clinics in this directory are WhatsApp-accessible. Send a message explaining what you need, request a fee estimate, and confirm the appointment. For dental tourism trips to South Africa, contact clinics before booking flights to confirm procedure availability and pricing.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>Do these clinics accept USD?</dt>
+          <dd>{usdAccepted.length} of {clinics.length} clinics in this directory accept USD. All Tier 1 featured clinics accept USD or quote in USD for international patients. Some accept USD cash, others prefer card or transfer. Confirm the payment method when booking via WhatsApp.</dd>
+        </div>
+        {isSouthAfrica && (
+          <div class="faq-item">
+            <dt>Is dental tourism in South Africa worth the trip from the UK or USA?</dt>
+            <dd>For anyone needing implants, veneers, or Invisalign, the numbers are compelling. A full set of veneers costs USD 7,000 to 9,000 in Cape Town versus USD 15,000 to 25,000 in London. A single implant runs USD 900 to 1,400 here versus USD 3,000 to 5,000 in New York. Quality at the top practices is equivalent: several lead dentists trained at UK and European institutions. {dentalTourism.length} clinics in this directory serve dental tourism patients specifically.</dd>
+          </div>
+        )}
+        <div class="faq-item">
+          <dt>What should I look for when choosing a dentist in {country}?</dt>
+          <dd>Prioritise: (1) a dentist with internationally verifiable training or a strong Google review count, (2) USD acceptance or transparent pricing in a currency you understand before you sit in the chair, (3) WhatsApp responsiveness before your appointment, and (4) digital X-ray equipment on-site. The Tier 1 clinics in this directory meet all four criteria.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section verification-section">
+    <div class="container container--narrow">
+      <h3>About This Directory</h3>
+      <p class="verification-meta">
+        Last updated: {lastUpdated}. Clinics researched from primary sources: clinic websites, Google Maps reviews, training credentials, and community recommendations from diaspora relocation groups.
+      </p>
+      <p class="verification-meta">
+        This is a free directory. Clinics can claim a Verified or Featured listing by <a href="/contact">contacting us</a>. Editorial placement is not for sale. Tier 1 clinics are listed based on research, not payment.
+      </p>
+    </div>
+  </section>
+
+  <section class="section nav-section">
+    <div class="container">
+      <div class="nav-links">
+        <a href="/directories/dentists" class="nav-back">&larr; All Countries</a>
+        <a href="/directories" class="nav-back">All Directories &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .page-hero {
+    background: var(--color-dark);
+    color: var(--color-text-on-dark);
+    padding: var(--space-4xl) 0 var(--space-3xl);
+  }
+
+  .breadcrumb {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: var(--space-lg);
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .breadcrumb a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .hero-flag {
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: var(--space-lg);
+  }
+
+  .page-hero .eyebrow {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: var(--space-md);
+  }
+
+  .page-hero h1 {
+    color: #fff;
+    max-width: 28ch;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-sub {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 60ch;
+    margin-bottom: var(--space-xl);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: var(--space-2xl);
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .stat-num {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  /* Context */
+  .context-section {
+    background: var(--color-bg);
+  }
+
+  .container--narrow {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+  }
+
+  .context-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .context-section p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+  }
+
+  /* Section header */
+  .section-header {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .section-header h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .section-header p {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  /* Tier 1 grid */
+  .tier1-section {
+    background: var(--color-bg-alt);
+  }
+
+  .clinics-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    max-width: 1100px;
+  }
+
+  @media (min-width: 760px) {
+    .clinics-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .clinic-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .clinic-card--featured {
+    border-color: var(--color-text);
+  }
+
+  .clinic-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-md);
+  }
+
+  .clinic-name-row {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+
+  .clinic-name {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .listing-badge {
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 2px 7px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .listing-badge--featured {
+    background: var(--color-dark);
+    color: #fff;
+  }
+
+  .listing-badge--verified {
+    background: transparent;
+    border: 1px solid var(--color-text-muted);
+    color: var(--color-text-muted);
+  }
+
+  .clinic-location {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    display: block;
+    margin-top: 2px;
+  }
+
+  .clinic-rating {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-shrink: 0;
+  }
+
+  .rating-num {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1;
+  }
+
+  .rating-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+  }
+
+  .training-note {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--color-text-muted);
+    margin: 0;
+    padding: var(--space-sm) var(--space-md);
+    border-left: 2px solid var(--color-border);
+    line-height: 1.5;
+  }
+
+  .clinic-desc {
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  /* Enrichment grid */
+  .enrichment-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    padding: var(--space-md) 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .enrich-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+  }
+
+  .enrich-item.enrich-yes {
+    color: var(--color-text);
+  }
+
+  .enrich-icon {
+    font-size: 0.75rem;
+    width: 14px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .fee-note {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .highlights-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .highlights-list li {
+    font-size: 0.75rem;
+    padding: 3px 10px;
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+  }
+
+  .clinic-card-footer {
+    margin-top: auto;
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  .clinic-link {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .clinic-link:hover {
+    text-decoration: underline;
+  }
+
+  .clinic-city-tag {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+  }
+
+  /* Established / Regional rows */
+  .established-section {
+    background: var(--color-bg);
+  }
+
+  .regional-section {
+    background: var(--color-bg-alt);
+  }
+
+  .clinics-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--color-border);
+    max-width: 900px;
+  }
+
+  .clinic-row {
+    padding: var(--space-xl);
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .clinic-row:last-child {
+    border-bottom: none;
+  }
+
+  .clinic-row-info {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .clinic-row-name {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  .clinic-row-location {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+  }
+
+  .clinic-row-rating {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+  }
+
+  .clinic-row-desc {
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .clinic-row-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+  }
+
+  .established-section .tag {
+    background: var(--color-bg);
+  }
+
+  .clinic-row-link {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .clinic-row-link:hover {
+    text-decoration: underline;
+  }
+
+  /* FAQ */
+  .faq-section {
+    background: var(--color-bg);
+  }
+
+  .faq-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .faq-item dt {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+    line-height: 1.4;
+  }
+
+  .faq-item dd {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  /* Verification */
+  .verification-section {
+    background: var(--color-bg-alt);
+  }
+
+  .verification-section h3 {
+    margin-bottom: var(--space-lg);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .verification-meta {
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+  }
+
+  .verification-meta a {
+    color: var(--color-text);
+  }
+
+  /* Nav */
+  .nav-section {
+    background: var(--color-bg);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-lg);
+    flex-wrap: wrap;
+  }
+
+  .nav-back {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .nav-back:hover {
+    color: var(--color-text-muted);
+  }
+</style>

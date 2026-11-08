@@ -1,0 +1,989 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { readFileSync, readdirSync } from 'fs';
+import { join } from 'path';
+
+export function getStaticPaths() {
+  const dataDir = join(process.cwd(), 'src/data/directories/immigration-lawyers');
+  const files = readdirSync(dataDir).filter((f: string) => f.endsWith('.json'));
+  return files.map((file: string) => {
+    const slug = file.replace('.json', '');
+    const data = JSON.parse(readFileSync(join(dataDir, file), 'utf-8'));
+    return { params: { country: slug }, props: { data } };
+  });
+}
+
+const { data } = Astro.props;
+
+const {
+  country,
+  flag,
+  region,
+  capitalCity,
+  summary,
+  lastUpdated,
+  cities,
+  totalFirms,
+  diasporaSpecialistCount,
+  keyPrograms,
+  contextNote,
+  firms,
+} = data;
+
+const countrySlug = Astro.params.country;
+const pageUrl = `https://sankofaexpeditions.com/directories/immigration-lawyers/${countrySlug}`;
+
+const isGhana = countrySlug === 'ghana';
+const isNigeria = countrySlug === 'nigeria';
+const isSouthAfrica = countrySlug === 'south-africa';
+
+const title = `Immigration Lawyers in ${country} for Diaspora ${new Date().getFullYear()} | Verified Directory | Sankofa Expeditions`;
+const description = `Find vetted immigration lawyers${isSouthAfrica ? ' and attorneys' : ''} in ${country} for diaspora relocating from the US, UK, and Caribbean. ${totalFirms} verified firms covering ${keyPrograms?.slice(0, 3).join(', ')}.`;
+
+const tier1Firms = firms.filter((f: any) => f.tier === 1);
+const tier2Firms = firms.filter((f: any) => f.tier === 2);
+const tier3Firms = firms.filter((f: any) => f.tier === 3);
+
+const diasporaSpecialists = firms.filter((f: any) => f.enrichment?.diasporaSpecialist);
+const remoteReady = firms.filter((f: any) => f.enrichment?.remoteConsultation);
+const whatsappReady = firms.filter((f: any) => f.enrichment?.whatsappContact);
+const freeConsult = firms.filter((f: any) => f.enrichment?.freeConsultation);
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${pageUrl}/#webpage`,
+    "url": pageUrl,
+    "name": title,
+    "description": description,
+    "isPartOf": { "@id": "https://sankofaexpeditions.com/#website" },
+    "breadcrumb": { "@id": `${pageUrl}/#breadcrumb` },
+    "inLanguage": "en-US",
+    "dateModified": lastUpdated
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": `${pageUrl}/#breadcrumb`,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sankofaexpeditions.com" },
+      { "@type": "ListItem", "position": 2, "name": "Directories", "item": "https://sankofaexpeditions.com/directories" },
+      { "@type": "ListItem", "position": 3, "name": "Immigration Lawyers", "item": "https://sankofaexpeditions.com/directories/immigration-lawyers" },
+      { "@type": "ListItem", "position": 4, "name": country, "item": pageUrl }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": `${pageUrl}/#list`,
+    "name": `Immigration Lawyers in ${country} for Diaspora`,
+    "description": `Verified list of diaspora-focused immigration lawyers in ${country}.`,
+    "numberOfItems": firms.length,
+    "itemListElement": tier1Firms.map((f: any, i: number) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": f.name,
+      "url": `https://${f.website}`,
+      "item": {
+        "@type": ["LegalService", "Attorney"],
+        "name": f.name,
+        "url": `https://${f.website}`,
+        "areaServed": { "@type": "Country", "name": country },
+        "knowsAbout": f.practiceAreas
+      }
+    }))
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      ...(isGhana ? [
+        {
+          "@type": "Question",
+          "name": "What is Ghana's Right of Abode and who qualifies?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ghana's Right of Abode (ROA) is the only formal immigration program in the world designed specifically for the African diaspora. It allows persons of African descent, including African Americans and Afro-Caribbeans, to reside in Ghana indefinitely without needing to renew visas or obtain a work permit. The application is processed through the Ghana Immigration Service. A qualified immigration solicitor in Accra can guide you through ancestry documentation requirements and application submission. The process typically takes 3 to 6 months."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can African Americans apply for Right of Abode without traditional ancestry documents?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. This is one of the most important functions of an experienced Right of Abode solicitor in Ghana. Because slavery destroyed most genealogical records for African Americans, the Ghana Immigration Service accepts alternative documentation including DNA ancestry test results showing West African heritage, affidavits, historical research, and community evidence. The best ROA solicitors in Accra have established processes for clients who cannot provide traditional birth certificates or genealogical chains."
+          }
+        }
+      ] : []),
+      {
+        "@type": "Question",
+        "name": `What is the difference between an immigration lawyer and an immigration consultant in ${country}?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": isSouthAfrica
+            ? "In South Africa, immigration attorneys are admitted to the Law Society of South Africa and can provide formal legal advice, represent clients in court, and handle visa refusal appeals with the Department of Home Affairs. Immigration consultants are registered with SAIPA (South African Immigration Practitioners Association) and can handle routine permit applications but cannot legally give advice or represent clients in appeals. For diaspora relocators dealing with South Africa's complex Home Affairs system, an immigration attorney is strongly recommended over a consultant."
+            : `Immigration lawyers in ${country} are qualified legal practitioners admitted to the bar who can give formal legal advice, draft legal documents, and represent clients in proceedings. Immigration consultants may assist with form completion but are not qualified to give legal advice. For complex diaspora relocations involving investor permits, residency applications, or citizenship matters, a qualified immigration lawyer is recommended.`
+        }
+      },
+      {
+        "@type": "Question",
+        "name": `How much does an immigration lawyer cost in ${country}?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `Immigration lawyer fees in ${country} vary by service type. Initial consultations typically range from USD 50 to USD 200, with many diaspora-focused firms offering free first calls. Full immigration applications range from USD 300 to USD 2,000 depending on complexity. Investor permit applications, which require business entity formation alongside immigration paperwork, tend to cost more. ${freeConsult.length} firms in this directory offer free initial consultations.`
+        }
+      },
+      {
+        "@type": "Question",
+        "name": `Can I work with an immigration lawyer in ${country} remotely from the US or UK?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `Yes. ${remoteReady.length} of the ${firms.length} immigration lawyers in this directory offer remote consultations. WhatsApp is the standard communication channel for diaspora-facing lawyers across Africa. Most immigration paperwork can be handled remotely with the lawyer acting as your representative in ${capitalCity}. Physical presence is typically only required for biometrics and final permit collection.`
+        }
+      }
+    ]
+  }
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/directories">Directories</a>
+        <span aria-hidden="true"> / </span>
+        <a href="/directories/immigration-lawyers">Immigration Lawyers</a>
+        <span aria-hidden="true"> / </span>
+        <span>{country}</span>
+      </nav>
+      <div class="hero-flag" aria-hidden="true">{flag}</div>
+      <p class="eyebrow">{region}</p>
+      <h1>Immigration Lawyers in {country} for Diaspora</h1>
+      <p class="hero-sub">{summary}</p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">{firms.length}</span>
+          <span class="stat-label">Verified Firms</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">{diasporaSpecialists.length}</span>
+          <span class="stat-label">Diaspora Specialists</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">{remoteReady.length}</span>
+          <span class="stat-label">Remote Consultations</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">{whatsappReady.length}</span>
+          <span class="stat-label">WhatsApp Accessible</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section context-section">
+    <div class="container container--narrow">
+      {isGhana ? (
+        <>
+          <h2>Ghana's Right of Abode: The Only Program of Its Kind</h2>
+          <p>
+            Ghana is the only country in the world with a formal immigration program explicitly designed for the African diaspora. The Right of Abode (ROA) grants persons of African descent, including African Americans and Afro-Caribbeans, the right to reside in Ghana indefinitely. No visa renewals. No work permit required.
+          </p>
+          <p>
+            The complication is ancestry documentation. For many African Americans, slavery destroyed the genealogical records that would normally prove African descent. The best ROA solicitors in Accra have developed documented processes for handling this: DNA ancestry test results, historical research, affidavits, and community evidence all serve as alternative proof. This is a legal specialty, not a form-filing exercise.
+          </p>
+          {contextNote && (
+            <p>{contextNote}</p>
+          )}
+        </>
+      ) : isNigeria ? (
+        <>
+          <h2>Two Types of Immigration Help in Nigeria</h2>
+          <p>
+            Nigeria immigration legal services serve two distinct client types, and understanding which you are affects which lawyer you need.
+          </p>
+          <p>
+            If you are Nigerian-born and naturalized abroad (US, UK, Canada), you likely retain Nigerian citizenship and need help understanding your dual citizenship status, restoring lapsed documents, or setting up a legal structure to work and invest in Nigeria.
+          </p>
+          <p>
+            If you are African American or Afro-Caribbean without Nigerian citizenship, Nigeria does not have a formal diaspora return program like Ghana's Right of Abode. Your route is through investor permits via the Nigerian Investment Promotion Commission (NIPC), business visas, or employment permits. A qualified immigration lawyer helps you identify the right pathway and navigate the CERPAC (Combined Expatriate Residence Permit and Aliens Card) process.
+          </p>
+        </>
+      ) : isSouthAfrica ? (
+        <>
+          <h2>South Africa Immigration: Why You Need an Attorney, Not Just a Consultant</h2>
+          <p>
+            South Africa has the most complex immigration system in sub-Saharan Africa. The Department of Home Affairs is known for administrative delays, processing errors, and high refusal rates. Applications that would succeed in another country get rejected in South Africa due to technicalities.
+          </p>
+          <p>
+            This is why the distinction between an immigration attorney and an immigration consultant matters here more than anywhere else. Attorneys are admitted to the Law Society of South Africa and can legally represent you if your visa is refused. Consultants cannot. For diaspora relocators dealing with Critical Skills Visas, Business Visas, or Retirement Visas, an attorney provides protection that a consultant cannot.
+          </p>
+          <p>
+            Key visa categories for diaspora: Critical Skills Visa (professionals with in-demand qualifications), Business Visa (self-employed and entrepreneurs), Retirement Visa (requires passive income above a threshold), and the General Work Visa (employer-sponsored). An immigration attorney helps you identify which category fits your situation and builds the strongest possible application.
+          </p>
+        </>
+      ) : (
+        <>
+          <h2>Immigration Legal Help in {country} for Diaspora Relocators</h2>
+          <p>
+            Navigating {country}'s immigration system as a diaspora returnee requires a lawyer who understands both the legal process and the specific pathways available to you. The firms listed here specialize in investor permits, work permits, and long-term residency for international clients, with experience serving diaspora professionals and investors from the US, UK, and Caribbean.
+          </p>
+          <p>
+            Key programs include: {keyPrograms?.join(', ')}. All Tier 1 firms offer remote consultations and are reachable via WhatsApp.
+          </p>
+        </>
+      )}
+
+      {keyPrograms && keyPrograms.length > 0 && (
+        <div class="programs-list">
+          <span class="programs-label">Key programs:</span>
+          <div class="programs-tags">
+            {keyPrograms.map((p: string) => (
+              <span class="program-tag">{p}</span>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <section class="section tier1-section">
+    <div class="container">
+      <header class="section-header">
+        <h2>Top Diaspora-Focused {isSouthAfrica ? 'Immigration Attorneys' : 'Immigration Lawyers'}</h2>
+        <p>These firms actively specialize in diaspora relocation. All offer remote consultations. All reachable via WhatsApp.</p>
+      </header>
+
+      <div class="firms-grid">
+        {tier1Firms.map((firm: any) => (
+          <article class={`firm-card firm-card--${firm.listingTier}`}>
+            <div class="firm-card-top">
+              <div class="firm-info">
+                <div class="firm-name-row">
+                  <h3 class="firm-name">{firm.name}</h3>
+                  {firm.listingTier === 'featured' && (
+                    <span class="listing-badge listing-badge--featured">Featured</span>
+                  )}
+                  {firm.listingTier === 'verified' && (
+                    <span class="listing-badge listing-badge--verified">Verified</span>
+                  )}
+                </div>
+                <span class="firm-city">{firm.city}</span>
+              </div>
+              {firm.rating && (
+                <div class="firm-rating">
+                  <span class="rating-num">{firm.rating}</span>
+                  <span class="rating-label">★ {firm.reviewSource}</span>
+                </div>
+              )}
+            </div>
+
+            <p class="firm-desc">{firm.description}</p>
+
+            <div class="enrichment-grid">
+              <div class={`enrich-item ${firm.enrichment.diasporaSpecialist ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{firm.enrichment.diasporaSpecialist ? '✓' : '·'}</span>
+                <span>Diaspora specialist</span>
+              </div>
+              <div class={`enrich-item ${firm.enrichment.remoteConsultation ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{firm.enrichment.remoteConsultation ? '✓' : '·'}</span>
+                <span>Remote consultation</span>
+              </div>
+              <div class={`enrich-item ${firm.enrichment.freeConsultation ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{firm.enrichment.freeConsultation ? '✓' : '·'}</span>
+                <span>Free first consult</span>
+              </div>
+              <div class={`enrich-item ${firm.enrichment.whatsappContact ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{firm.enrichment.whatsappContact ? '✓' : '·'}</span>
+                <span>WhatsApp</span>
+              </div>
+              {isGhana && (
+                <div class={`enrich-item ${firm.enrichment.rightOfAbode ? 'enrich-yes' : 'enrich-no'}`}>
+                  <span class="enrich-icon" aria-hidden="true">{firm.enrichment.rightOfAbode ? '✓' : '·'}</span>
+                  <span>Right of Abode</span>
+                </div>
+              )}
+              {isGhana && (
+                <div class={`enrich-item ${firm.enrichment.gipcInvestorPermit ? 'enrich-yes' : 'enrich-no'}`}>
+                  <span class="enrich-icon" aria-hidden="true">{firm.enrichment.gipcInvestorPermit ? '✓' : '·'}</span>
+                  <span>GIPC investor permit</span>
+                </div>
+              )}
+              {isSouthAfrica && (
+                <div class={`enrich-item ${firm.enrichment.criticalSkillsVisa ? 'enrich-yes' : 'enrich-no'}`}>
+                  <span class="enrich-icon" aria-hidden="true">{firm.enrichment.criticalSkillsVisa ? '✓' : '·'}</span>
+                  <span>Critical skills visa</span>
+                </div>
+              )}
+              {isSouthAfrica && (
+                <div class={`enrich-item ${firm.enrichment.visaRefusalAppeal ? 'enrich-yes' : 'enrich-no'}`}>
+                  <span class="enrich-icon" aria-hidden="true">{firm.enrichment.visaRefusalAppeal ? '✓' : '·'}</span>
+                  <span>Visa refusal appeals</span>
+                </div>
+              )}
+              <div class={`enrich-item ${firm.enrichment.documentAuthentication ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{firm.enrichment.documentAuthentication ? '✓' : '·'}</span>
+                <span>Document authentication</span>
+              </div>
+              <div class={`enrich-item ${firm.enrichment.dualCitizenship ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{firm.enrichment.dualCitizenship ? '✓' : '·'}</span>
+                <span>Dual citizenship</span>
+              </div>
+            </div>
+
+            {firm.consultationFeeUSD && (
+              <p class="fee-note">Consultation: USD {firm.consultationFeeUSD}</p>
+            )}
+
+            {firm.barAssociation && (
+              <p class="bar-note">Registered: {firm.barAssociation}</p>
+            )}
+
+            {firm.highlights.length > 0 && (
+              <ul class="highlights-list">
+                {firm.highlights.map((h: string) => (
+                  <li>{h}</li>
+                ))}
+              </ul>
+            )}
+
+            <div class="firm-card-footer">
+              <a href={`https://${firm.website}`} target="_blank" rel="noopener noreferrer" class="firm-link">
+                Visit {firm.website} &rarr;
+              </a>
+              <span class="firm-city-tag">{firm.city}</span>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {tier2Firms.length > 0 && (
+    <section class="section established-section">
+      <div class="container">
+        <header class="section-header">
+          <h2>Established Firms</h2>
+          <p>Full-service law firms with immigration practices. Best for complex transactions or matters requiring broader legal expertise.</p>
+        </header>
+
+        <div class="firms-list">
+          {tier2Firms.map((firm: any) => (
+            <article class="firm-row">
+              <div class="firm-row-info">
+                <h3 class="firm-row-name">{firm.name}</h3>
+                <span class="firm-row-city">{firm.city}</span>
+              </div>
+              <p class="firm-row-desc">{firm.description}</p>
+              <div class="firm-row-tags">
+                {firm.highlights.map((h: string) => (
+                  <span class="tag">{h}</span>
+                ))}
+              </div>
+              <a href={`https://${firm.website}`} target="_blank" rel="noopener noreferrer" class="firm-row-link">{firm.website} &rarr;</a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {tier3Firms.length > 0 && (
+    <section class="section boutique-section">
+      <div class="container">
+        <header class="section-header">
+          <h2>Additional Firms</h2>
+          <p>Boutique and regional practices serving specific cities and immigration needs.</p>
+        </header>
+
+        <div class="firms-list">
+          {tier3Firms.map((firm: any) => (
+            <article class="firm-row">
+              <div class="firm-row-info">
+                <h3 class="firm-row-name">{firm.name}</h3>
+                <span class="firm-row-city">{firm.city}</span>
+              </div>
+              <p class="firm-row-desc">{firm.description}</p>
+              <div class="firm-row-tags">
+                {firm.highlights.map((h: string) => (
+                  <span class="tag">{h}</span>
+                ))}
+              </div>
+              <a href={`https://${firm.website}`} target="_blank" rel="noopener noreferrer" class="firm-row-link">{firm.website} &rarr;</a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="section faq-section">
+    <div class="container container--narrow">
+      <h2>Common Questions</h2>
+      <dl class="faq-list">
+        {isGhana && (
+          <div class="faq-item">
+            <dt>What is Ghana's Right of Abode and who qualifies?</dt>
+            <dd>Ghana's Right of Abode is the only formal immigration program in the world built specifically for the African diaspora. It grants persons of African descent, including African Americans and Afro-Caribbeans, indefinite residence in Ghana. The application goes through the Ghana Immigration Service. A qualified solicitor handles ancestry documentation, the most complex part for African Americans whose genealogical records were destroyed during slavery.</dd>
+          </div>
+        )}
+        {isGhana && (
+          <div class="faq-item">
+            <dt>Can I apply for Right of Abode without a traditional family tree?</dt>
+            <dd>Yes. The best Right of Abode solicitors in Accra have established alternative documentation processes using DNA ancestry test results, historical research, affidavits, and community evidence. This is specifically designed for African Americans who cannot produce conventional genealogical records. All 4 Tier 1 firms in this directory have documented experience with this process.</dd>
+          </div>
+        )}
+        {isNigeria && (
+          <div class="faq-item">
+            <dt>Can African Americans live legally in Nigeria long-term?</dt>
+            <dd>Yes, but through different pathways than Ghana. Nigeria does not have a formal diaspora return program equivalent to Ghana's Right of Abode. The main routes for non-Nigerian diaspora are the NIPC investor visa (requires a registered business), CERPAC (Combined Expatriate Residence Permit), or employment permits. A qualified immigration lawyer identifies the best pathway for your situation and handles the application.</dd>
+          </div>
+        )}
+        {isSouthAfrica && (
+          <div class="faq-item">
+            <dt>Why does South Africa require an attorney rather than a consultant?</dt>
+            <dd>South Africa's Department of Home Affairs is known for high refusal rates and administrative errors. Only bar-qualified attorneys can legally represent you in an appeal if your application is refused. Immigration consultants handle routine applications but cannot appear in court or formally challenge a refusal. For diaspora moving to South Africa, the investment in an attorney is worth the protection it provides.</dd>
+          </div>
+        )}
+        <div class="faq-item">
+          <dt>How much does an immigration lawyer in {country} cost?</dt>
+          <dd>Initial consultations typically range from USD 50 to USD 200, with {freeConsult.length} firms in this directory offering free first calls. Full permit applications range from USD 300 to USD 2,000 depending on complexity. Investor permit applications, which involve business registration alongside immigration paperwork, tend to cost more. Fees are usually quoted in USD for diaspora clients.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>Can I work with a {country} immigration lawyer remotely from the US or UK?</dt>
+          <dd>{remoteReady.length} of {firms.length} firms in this directory offer remote consultations. WhatsApp is the standard communication channel. Most immigration paperwork can be managed remotely, with the lawyer acting as your representative in {capitalCity}. Physical presence is typically required only for biometrics and final permit collection.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section verification-section">
+    <div class="container container--narrow">
+      <h3>About This Directory</h3>
+      <p class="verification-meta">
+        Last updated: {lastUpdated}. All firms researched from primary sources: firm websites, Google Maps, LinkedIn, bar association membership verification, and confirmed digital marketing activity targeting diaspora clients.
+      </p>
+      <p class="verification-meta">
+        This is a free directory. Firms can claim a Verified or Featured listing by <a href="/contact">contacting us</a>. Editorial placement is not for sale. Tier 1 firms are listed based on research signals, not payment.
+      </p>
+    </div>
+  </section>
+
+  <section class="section nav-section">
+    <div class="container">
+      <div class="nav-links">
+        <a href="/directories/immigration-lawyers" class="nav-back">&larr; All Countries</a>
+        <a href="/directories" class="nav-back">All Directories &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .page-hero {
+    background: var(--color-dark);
+    color: var(--color-text-on-dark);
+    padding: var(--space-4xl) 0 var(--space-3xl);
+  }
+
+  .breadcrumb {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: var(--space-lg);
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .breadcrumb a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .hero-flag {
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: var(--space-lg);
+  }
+
+  .page-hero .eyebrow {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: var(--space-md);
+  }
+
+  .page-hero h1 {
+    color: #fff;
+    max-width: 32ch;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-sub {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 60ch;
+    margin-bottom: var(--space-xl);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: var(--space-2xl);
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .stat-num {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  /* Context */
+  .context-section {
+    background: var(--color-bg);
+  }
+
+  .container--narrow {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+  }
+
+  .context-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .context-section p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+  }
+
+  .programs-list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    margin-top: var(--space-lg);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .programs-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+  }
+
+  .programs-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .program-tag {
+    font-size: 0.8rem;
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    padding: 3px 10px;
+  }
+
+  /* Section header */
+  .section-header {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .section-header h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .section-header p {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  /* Tier 1 grid */
+  .tier1-section {
+    background: var(--color-bg-alt);
+  }
+
+  .firms-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    max-width: 1100px;
+  }
+
+  @media (min-width: 760px) {
+    .firms-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .firm-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .firm-card--featured {
+    border-color: var(--color-text-muted);
+  }
+
+  .firm-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .firm-info {
+    flex: 1;
+  }
+
+  .firm-name-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+    margin-bottom: 4px;
+  }
+
+  .firm-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  .listing-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 2px 7px;
+    white-space: nowrap;
+  }
+
+  .listing-badge--featured {
+    background: var(--color-dark);
+    color: #fff;
+  }
+
+  .listing-badge--verified {
+    background: transparent;
+    border: 1px solid var(--color-text-muted);
+    color: var(--color-text-muted);
+  }
+
+  .firm-city {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  .firm-rating {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+    flex-shrink: 0;
+  }
+
+  .rating-num {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1;
+  }
+
+  .rating-label {
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+  }
+
+  .firm-desc {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .enrichment-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px 12px;
+  }
+
+  .enrich-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  .enrich-icon {
+    font-size: 0.75rem;
+    width: 14px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .enrich-yes {
+    color: var(--color-text);
+  }
+
+  .enrich-yes .enrich-icon {
+    color: var(--color-text);
+  }
+
+  .fee-note,
+  .bar-note {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    padding: 6px 10px;
+    border: 1px solid var(--color-border);
+    display: inline-block;
+    margin: 0;
+  }
+
+  .highlights-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .highlights-list li {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    padding-left: 12px;
+    position: relative;
+  }
+
+  .highlights-list li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--color-text-muted);
+  }
+
+  .firm-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
+    margin-top: auto;
+  }
+
+  .firm-link {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .firm-link:hover {
+    color: var(--color-text-muted);
+  }
+
+  .firm-city-tag {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+  }
+
+  /* Established / boutique sections */
+  .established-section {
+    background: var(--color-bg);
+  }
+
+  .boutique-section {
+    background: var(--color-bg-alt);
+  }
+
+  .firms-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    max-width: 760px;
+  }
+
+  .firm-row {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    padding-bottom: var(--space-xl);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .firm-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .firm-row-info {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .firm-row-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  .firm-row-city {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  .firm-row-desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .firm-row-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+    padding: 2px 8px;
+  }
+
+  .firm-row-link {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .firm-row-link:hover {
+    color: var(--color-text-muted);
+  }
+
+  /* FAQ */
+  .faq-section {
+    background: var(--color-bg);
+  }
+
+  .faq-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .faq-item dt {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+    line-height: 1.4;
+  }
+
+  .faq-item dd {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  /* Verification */
+  .verification-section {
+    background: var(--color-bg-alt);
+  }
+
+  .verification-meta {
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+  }
+
+  .verification-meta a {
+    color: var(--color-text);
+  }
+
+  /* Nav */
+  .nav-section {
+    background: var(--color-bg);
+    padding: var(--space-2xl) 0;
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+
+  .nav-back {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .nav-back:hover {
+    color: var(--color-text-muted);
+  }
+</style>

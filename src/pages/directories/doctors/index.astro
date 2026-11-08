@@ -1,0 +1,739 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const title = 'Doctors and Travel Clinics in Africa for Diaspora | Verified Directory | Sankofa Expeditions';
+const description = 'Vetted travel clinics and diaspora-recommended doctors across sub-Saharan Africa. Yellow fever vaccination centers, malaria prophylaxis clinics, and internationally trained GPs and specialists in Ghana, Nigeria, Kenya, Rwanda, and South Africa.';
+
+const countries = [
+  {
+    slug: 'ghana',
+    name: 'Ghana',
+    flag: '🇬🇭',
+    region: 'West Africa',
+    totalProviders: 13,
+    travelClinicsCount: 4,
+    diasporaVettedCount: 7,
+    cities: ['Accra'],
+    summary: 'Yellow fever required to enter. 13 verified providers in Airport Residential, East Legon, Osu, and Cantonments. Covers travel clinics, private hospitals, and specialist practices.',
+    status: 'live',
+    yellowFeverRequired: true,
+  },
+  {
+    slug: 'nigeria',
+    name: 'Nigeria',
+    flag: '🇳🇬',
+    region: 'West Africa',
+    totalProviders: 13,
+    travelClinicsCount: 4,
+    diasporaVettedCount: 7,
+    cities: ['Lagos'],
+    summary: 'Yellow fever required to enter. Top-tier private hospitals in Victoria Island, Ikoyi, and Lekki. Reddington Hospital and Eko Hospital are the diaspora first choices.',
+    status: 'live',
+    yellowFeverRequired: true,
+  },
+  {
+    slug: 'kenya',
+    name: 'Kenya',
+    flag: '🇰🇪',
+    region: 'East Africa',
+    totalProviders: 13,
+    travelClinicsCount: 4,
+    diasporaVettedCount: 8,
+    cities: ['Nairobi'],
+    summary: 'Nairobi is East Africa\'s medical hub. Aga Khan University Hospital and Nairobi Hospital are regional referral centers. 13 verified providers across Parklands, Upper Hill, and Karen.',
+    status: 'live',
+    yellowFeverRequired: false,
+  },
+  {
+    slug: 'rwanda',
+    name: 'Rwanda',
+    flag: '🇷🇼',
+    region: 'East Africa',
+    totalProviders: 12,
+    travelClinicsCount: 3,
+    diasporaVettedCount: 6,
+    cities: ['Kigali'],
+    summary: 'King Faisal Hospital Kigali is JCI-accredited: the same certification as top US and UK hospitals. Rwanda punches well above its weight in healthcare quality.',
+    status: 'live',
+    yellowFeverRequired: false,
+    specialCallout: 'JCI-Accredited Hospital',
+  },
+  {
+    slug: 'south-africa',
+    name: 'South Africa',
+    flag: '🇿🇦',
+    region: 'Southern Africa',
+    totalProviders: 14,
+    travelClinicsCount: 5,
+    diasporaVettedCount: 9,
+    cities: ['Johannesburg', 'Cape Town'],
+    summary: 'South Africa\'s private healthcare is on par with Western standards in equipment and training. 14 verified providers across Johannesburg and Cape Town including Netcare and Mediclinic groups.',
+    status: 'live',
+    yellowFeverRequired: false,
+  },
+];
+
+const totalProviders = countries.reduce((acc, c) => acc + c.totalProviders, 0);
+const totalTravelClinics = countries.reduce((acc, c) => acc + c.travelClinicsCount, 0);
+const totalDiasporaVetted = countries.reduce((acc, c) => acc + c.diasporaVettedCount, 0);
+
+const pageUrl = 'https://sankofaexpeditions.com/directories/doctors';
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${pageUrl}/#webpage`,
+    "url": pageUrl,
+    "name": title,
+    "description": description,
+    "isPartOf": { "@id": "https://sankofaexpeditions.com/#website" },
+    "breadcrumb": { "@id": `${pageUrl}/#breadcrumb` },
+    "inLanguage": "en-US",
+    "dateModified": new Date().toISOString().split('T')[0]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": `${pageUrl}/#breadcrumb`,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sankofaexpeditions.com" },
+      { "@type": "ListItem", "position": 2, "name": "Directories", "item": "https://sankofaexpeditions.com/directories" },
+      { "@type": "ListItem", "position": 3, "name": "Doctors and Travel Clinics", "item": pageUrl }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": `${pageUrl}/#list`,
+    "name": "Doctors and Travel Clinics in Africa for Diaspora",
+    "description": "Verified directory of travel clinics and diaspora-recommended doctors across sub-Saharan Africa.",
+    "numberOfItems": countries.length,
+    "itemListElement": countries.map((c, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": `${c.name} Doctors and Travel Clinics`,
+      "url": `https://sankofaexpeditions.com/directories/doctors/${c.slug}`
+    }))
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do I need a yellow fever vaccination to travel to West Africa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Yellow fever vaccination is required to enter Ghana and Nigeria from most countries, and from certain other African nations. Many airlines will not board you without a valid yellow fever card (the yellow ICVP booklet). You must get vaccinated at an authorized yellow fever vaccination center at least 10 days before travel. This directory lists official vaccination centers in Accra, Lagos, and other major cities."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best hospital in Nairobi for diaspora visitors?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Aga Khan University Hospital Nairobi and Nairobi Hospital are consistently the top two choices for diaspora visitors and international patients in East Africa. Both accept major international insurance including BUPA, Cigna, and AXA. Both have internationally trained consultants across all major specialties. Aga Khan Hospital is affiliated with Aga Khan University and serves as the regional referral center for complex cases across East and Central Africa."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is healthcare in Rwanda good enough for diaspora visitors?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, particularly for a country of its size. King Faisal Hospital Kigali is JCI-accredited: the Joint Commission International certification, the same standard held by the top hospitals in the United States and Western Europe. It is used by diplomats, UN staff, and the Rwandan government. Rwanda consistently outperforms regional peers on healthcare quality indicators. For diaspora visitors to Kigali, the standard of care at King Faisal is comparable to private hospitals in the UK."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I take malaria medication when visiting sub-Saharan Africa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In most cases, yes. Malaria is present in Ghana, Nigeria, Kenya (outside Nairobi city center), and other parts of sub-Saharan Africa. You should consult a travel medicine specialist at least 4 to 6 weeks before travel to get the right prophylaxis for your destination, travel style, and health history. Common options include Malarone (atovaquone/proguanil), doxycycline, and mefloquine. South Africa's major cities, Johannesburg and Cape Town, are malaria-free, but reserves and rural areas may require prophylaxis."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does my US or UK health insurance cover medical care in Africa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on your plan. BUPA, Cigna Global, Aetna International, AXA PPP, and similar international health policies typically cover care at accredited private hospitals in Africa such as Aga Khan Nairobi, Reddington Hospital Lagos, and Netcare hospitals in South Africa. Standard US domestic plans (Aetna, Blue Cross) often do not cover international care. Check your policy before travel and consider a short-term international health insurance rider if needed. Most Tier 1 providers in this directory accept major international insurers directly."
+        }
+      }
+    ]
+  }
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/directories">Directories</a>
+        <span aria-hidden="true"> / </span>
+        <span>Doctors and Travel Clinics</span>
+      </nav>
+      <p class="eyebrow">Healthcare in Sub-Saharan Africa</p>
+      <h1>Doctors and Travel Clinics for Diaspora in Africa</h1>
+      <p class="hero-sub">
+        Yellow fever vaccination centers, malaria prophylaxis clinics, and diaspora-vetted doctors across sub-Saharan Africa. Internationally trained providers. No searching forums. No guessing.
+      </p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">{totalProviders}</span>
+          <span class="stat-label">Verified Providers</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">{totalTravelClinics}</span>
+          <span class="stat-label">Travel Clinics</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">{totalDiasporaVetted}</span>
+          <span class="stat-label">Diaspora Vetted</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">{countries.length}</span>
+          <span class="stat-label">Countries Covered</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alert-section">
+    <div class="container container--narrow">
+      <div class="yellow-fever-alert">
+        <div class="alert-icon" aria-hidden="true">⚠</div>
+        <div class="alert-body">
+          <h2>Yellow Fever Vaccination: Required Before You Travel</h2>
+          <p>
+            Yellow fever vaccination is a mandatory entry requirement for Ghana and Nigeria from most countries. Many airlines will deny boarding without a valid International Certificate of Vaccination (the yellow booklet). You must be vaccinated at an authorized center at least 10 days before departure.
+          </p>
+          <p>
+            This directory lists official yellow fever vaccination centers in every country. Book before you book your flights.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section context-section">
+    <div class="container container--narrow">
+      <h2>Why This Directory Exists</h2>
+      <p>
+        When you are relocating or visiting sub-Saharan Africa as someone from the diaspora, you face a specific problem: finding healthcare you can trust. Most doctor directories are built for locals who already know which hospitals are reliable. They do not filter for English-language capability, international insurance acceptance, USD pricing, or international medical training.
+      </p>
+      <p>
+        This directory does. Every provider is sorted by the criteria that matter to diaspora visitors and returnees: travel medicine capability, international accreditation, insurance acceptance, and established reputation with the diaspora community. The framing is diaspora-first, not "expat-first": these are internationally trained African doctors and African-owned hospitals, recommended because of their quality, not their proximity to European or American enclaves.
+      </p>
+      <p>
+        Two sections appear on every country page: travel clinics and vaccination centers (for the mandatory pre-travel medicine your trip requires), and vetted GPs and hospitals (for care during your stay or relocation).
+      </p>
+    </div>
+  </section>
+
+  <section class="section countries-section">
+    <div class="container">
+      <header class="section-header">
+        <h2>Countries</h2>
+        <p>Select a country to browse verified travel clinics and healthcare providers.</p>
+      </header>
+
+      <div class="countries-grid">
+        {countries.map((c) => (
+          <a href={`/directories/doctors/${c.slug}`} class="country-card">
+            <div class="country-card-top">
+              <span class="country-flag" aria-hidden="true">{c.flag}</span>
+              <div class="country-info">
+                <span class="country-name">{c.name}</span>
+                <span class="country-region">{c.region}</span>
+              </div>
+              <div class="badges">
+                {c.yellowFeverRequired && (
+                  <span class="badge badge--alert">Yellow Fever Required</span>
+                )}
+                {c.specialCallout && (
+                  <span class="badge badge--highlight">{c.specialCallout}</span>
+                )}
+                <span class="badge badge--active">Live</span>
+              </div>
+            </div>
+            <p class="country-summary">{c.summary}</p>
+            <div class="quick-facts">
+              <div class="quick-fact">
+                <span class="qf-label">Total Providers</span>
+                <span class="qf-value">{c.totalProviders}</span>
+              </div>
+              <div class="quick-fact">
+                <span class="qf-label">Travel Clinics</span>
+                <span class="qf-value">{c.travelClinicsCount}</span>
+              </div>
+              <div class="quick-fact">
+                <span class="qf-label">Diaspora Vetted</span>
+                <span class="qf-value">{c.diasporaVettedCount}</span>
+              </div>
+              <div class="quick-fact">
+                <span class="qf-label">Cities</span>
+                <span class="qf-value">{c.cities.join(', ')}</span>
+              </div>
+            </div>
+            <div class="country-card-footer">
+              <span class="card-cta">Browse providers &rarr;</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section travel-medicine-section">
+    <div class="container container--narrow">
+      <h2>What Travel Medicine Actually Covers</h2>
+      <p>
+        Travel medicine is not optional paperwork. It is the clinical specialty that keeps you healthy before, during, and after international travel. For diaspora traveling to sub-Saharan Africa, the key consultations are:
+      </p>
+      <ul class="medicine-list">
+        <li>
+          <strong>Yellow fever vaccination:</strong> Mandatory for entry into Ghana, Nigeria, and required by many carriers for other West African routes. Certificate issued in the yellow ICVP booklet. Valid for life.
+        </li>
+        <li>
+          <strong>Malaria prophylaxis:</strong> Ghana, Nigeria, and most of East Africa outside Nairobi center are active malaria zones. Your travel doctor prescribes the right medication for your destination, duration, and health history.
+        </li>
+        <li>
+          <strong>Typhoid:</strong> Recommended for most sub-Saharan Africa travel, particularly if you are eating outside tourist-only venues.
+        </li>
+        <li>
+          <strong>Hepatitis A and B:</strong> Routine for Africa travel. Usually covered in prior vaccination history, but worth verifying.
+        </li>
+        <li>
+          <strong>Pre-travel consultation:</strong> A full review of destination-specific risks, your existing vaccinations, and any chronic conditions that require preparation. Book 4 to 6 weeks before departure.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section faq-section">
+    <div class="container container--narrow">
+      <h2>Common Questions</h2>
+      <dl class="faq-list">
+        <div class="faq-item">
+          <dt>Do I need yellow fever vaccination to enter Ghana or Nigeria?</dt>
+          <dd>Yes. Both countries require yellow fever vaccination from most incoming travelers. You need the International Certificate of Vaccination (yellow booklet) issued by an authorized center. Many airlines will not board you without it. Vaccination must be at least 10 days before arrival.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>Which city in Africa has the best private healthcare?</dt>
+          <dd>Johannesburg and Cape Town, South Africa, have the most sophisticated private hospital infrastructure, comparable to Western Europe. Nairobi, Kenya is the best in East Africa with Aga Khan and Nairobi Hospital. Kigali, Rwanda has King Faisal Hospital, which is JCI-accredited (the same standard as top US hospitals). Accra and Lagos have strong private options but slightly less specialist depth than Nairobi or Johannesburg.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>Will my international health insurance work in Africa?</dt>
+          <dd>Major international policies (BUPA International, Cigna Global, AXA PPP) are accepted at Tier 1 hospitals in this directory. Standard US domestic plans typically do not cover international care. Check your policy before travel and consider a short-term international rider if needed. All Tier 1 providers in this directory accept at least one major international insurer.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>How do I find a doctor who understands my medical history from abroad?</dt>
+          <dd>Bring a full medical summary: current medications with generic names, known conditions, allergies, and your most recent relevant test results. All Tier 1 and Tier 2 providers in this directory are English-speaking. The internationally trained doctors in this directory are accustomed to receiving patients with US, UK, and Caribbean medical histories.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>What is JCI accreditation and why does it matter for Rwanda?</dt>
+          <dd>JCI (Joint Commission International) is the international arm of the same body that accredits hospitals in the United States. A JCI-accredited hospital has been independently audited against the same quality and safety standards as top-tier American hospitals. King Faisal Hospital Kigali holds JCI accreditation. This is not marketing language. It is independently verified certification.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section methodology-section">
+    <div class="container container--narrow">
+      <h2>How This Directory Works</h2>
+      <p>
+        Every provider is researched from primary sources: hospital websites, Google Maps, international accreditation databases, and diaspora community forums. Tier 1 providers are internationally trained, yellow fever authorized, or accredited. Tier 2 are established private clinics with strong reputations. Tier 3 are regional options worth listing.
+      </p>
+      <p>
+        The framing is diaspora-first: these are African and African-owned institutions recommended for the quality of their medicine and their accessibility to English-speaking diaspora visitors, not because they cater to a Western clientele. The best hospitals in Nairobi and Johannesburg are genuinely world-class by any standard.
+      </p>
+      <p>
+        Updated regularly. If you operate a travel clinic or private hospital and want to claim or update a listing, <a href="/contact">reach out</a>.
+      </p>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .page-hero {
+    background: var(--color-dark);
+    color: var(--color-text-on-dark);
+    padding: var(--space-4xl) 0 var(--space-3xl);
+  }
+
+  .breadcrumb {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: var(--space-lg);
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .breadcrumb a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .page-hero .eyebrow {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: var(--space-lg);
+  }
+
+  .page-hero h1 {
+    color: #fff;
+    max-width: 28ch;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-sub {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 60ch;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: var(--space-2xl);
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .stat-num {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  /* Alert */
+  .alert-section {
+    background: var(--color-bg-alt);
+  }
+
+  .yellow-fever-alert {
+    display: flex;
+    gap: var(--space-lg);
+    padding: var(--space-xl);
+    border: 2px solid var(--color-text);
+    background: var(--color-bg);
+  }
+
+  .alert-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+    flex-shrink: 0;
+    padding-top: 2px;
+  }
+
+  .alert-body h2 {
+    font-size: 1.125rem;
+    margin-bottom: var(--space-md);
+  }
+
+  .alert-body p {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-sm);
+  }
+
+  .alert-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Context */
+  .context-section {
+    background: var(--color-bg);
+  }
+
+  .container--narrow {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+  }
+
+  .context-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .context-section p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+  }
+
+  /* Countries */
+  .countries-section {
+    background: var(--color-bg-alt);
+  }
+
+  .section-header {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .section-header h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .section-header p {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .countries-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    max-width: 760px;
+  }
+
+  @media (min-width: 640px) {
+    .countries-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .country-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: var(--space-xl);
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    transition: border-color 0.2s;
+  }
+
+  .country-card:hover {
+    border-color: var(--color-text-muted);
+  }
+
+  .country-card-top {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .country-flag {
+    font-size: 2rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .country-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+  }
+
+  .country-name {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .country-region {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  .badges {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-end;
+  }
+
+  .badge {
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 2px 7px;
+    white-space: nowrap;
+  }
+
+  .badge--active {
+    background: var(--color-dark);
+    color: #fff;
+  }
+
+  .badge--alert {
+    background: #7a3900;
+    color: #fff;
+  }
+
+  .badge--highlight {
+    background: #1a4a2e;
+    color: #fff;
+  }
+
+  .country-summary {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .quick-facts {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    padding: var(--space-md) 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .quick-fact {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .qf-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+  }
+
+  .qf-value {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .country-card-footer {
+    margin-top: auto;
+    padding-top: var(--space-sm);
+  }
+
+  .card-cta {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text);
+  }
+
+  /* Travel Medicine */
+  .travel-medicine-section {
+    background: var(--color-bg);
+  }
+
+  .travel-medicine-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .travel-medicine-section p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+  }
+
+  .medicine-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    padding-left: var(--space-lg);
+  }
+
+  .medicine-list li {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+  }
+
+  .medicine-list strong {
+    color: var(--color-text);
+  }
+
+  /* FAQ */
+  .faq-section {
+    background: var(--color-bg-alt);
+  }
+
+  .faq-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .faq-item dt {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+    line-height: 1.4;
+  }
+
+  .faq-item dd {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  /* Methodology */
+  .methodology-section {
+    background: var(--color-bg);
+  }
+
+  .methodology-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .methodology-section p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+  }
+
+  .methodology-section a {
+    color: var(--color-text);
+  }
+</style>

@@ -1,0 +1,915 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { readFileSync, readdirSync } from 'fs';
+import { join } from 'path';
+
+export function getStaticPaths() {
+  const dataDir = join(process.cwd(), 'src/data/directories/doctors');
+  const files = readdirSync(dataDir).filter((f: string) => f.endsWith('.json'));
+  return files.map((file: string) => {
+    const slug = file.replace('.json', '');
+    const data = JSON.parse(readFileSync(join(dataDir, file), 'utf-8'));
+    return { params: { country: slug }, props: { data } };
+  });
+}
+
+const { data } = Astro.props;
+
+const {
+  country,
+  flag,
+  region,
+  capitalCity,
+  summary,
+  lastUpdated,
+  cities,
+  totalProviders,
+  travelClinicsCount,
+  diasporaVettedCount,
+  providers,
+} = data;
+
+const countrySlug = Astro.params.country;
+const pageUrl = `https://sankofaexpeditions.com/directories/doctors/${countrySlug}`;
+
+const isRwanda = countrySlug === 'rwanda';
+
+const title = `Doctors and Travel Clinics in ${country} ${new Date().getFullYear()} | Verified Directory | Sankofa Expeditions`;
+const description = `Vetted travel clinics and diaspora-recommended doctors in ${country}. ${travelClinicsCount} travel and vaccination clinics plus ${totalProviders - travelClinicsCount} vetted medical providers in ${cities.join(', ')}. Yellow fever, malaria, GP and specialist care.`;
+
+const travelClinics = providers.filter((p: any) => p.type === 'travel-clinic');
+const medicalProviders = providers.filter((p: any) => p.type !== 'travel-clinic');
+const tier1Providers = providers.filter((p: any) => p.tier === 1);
+const tier2Providers = providers.filter((p: any) => p.tier === 2);
+const tier3Providers = providers.filter((p: any) => p.tier === 3);
+
+const yellowFeverClinics = providers.filter((p: any) => p.enrichment?.yellowFeverCert);
+const whatsappReady = providers.filter((p: any) => p.enrichment?.whatsappContact);
+const usdAccepted = providers.filter((p: any) => p.enrichment?.acceptsUSD);
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${pageUrl}/#webpage`,
+    "url": pageUrl,
+    "name": title,
+    "description": description,
+    "isPartOf": { "@id": "https://sankofaexpeditions.com/#website" },
+    "breadcrumb": { "@id": `${pageUrl}/#breadcrumb` },
+    "inLanguage": "en-US",
+    "dateModified": lastUpdated
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": `${pageUrl}/#breadcrumb`,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sankofaexpeditions.com" },
+      { "@type": "ListItem", "position": 2, "name": "Directories", "item": "https://sankofaexpeditions.com/directories" },
+      { "@type": "ListItem", "position": 3, "name": "Doctors and Travel Clinics", "item": "https://sankofaexpeditions.com/directories/doctors" },
+      { "@type": "ListItem", "position": 4, "name": country, "item": pageUrl }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": `${pageUrl}/#list`,
+    "name": `Doctors and Travel Clinics in ${country} for Diaspora`,
+    "description": `Verified list of travel clinics and diaspora-recommended doctors in ${country}.`,
+    "numberOfItems": providers.length,
+    "itemListElement": tier1Providers.map((p: any, i: number) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": p.name,
+      "url": `https://${p.website}`
+    }))
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": `Do I need a yellow fever vaccination to enter ${country}?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `Yellow fever vaccination requirements vary based on your country of origin and travel history. Many travelers to ${country} are required to show a valid yellow fever certificate. Even when not strictly required at the border, the vaccination is strongly recommended due to yellow fever risk in the region. The ${travelClinicsCount} travel clinics in this directory are authorized to issue the International Certificate of Vaccination or Prophylaxis (yellow card).`
+        }
+      },
+      {
+        "@type": "Question",
+        "name": `Where can I find an English-speaking doctor in ${capitalCity}?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `${country} has ${diasporaVettedCount} diaspora-vetted medical providers in this directory. For diaspora returnees, the key factors are international training credentials, English fluency, USD payment acceptance, and WhatsApp accessibility. The ${tier1Providers.length} Tier 1 providers in this directory meet all of these criteria. Many have doctors trained in the UK, US, or other Western institutions.`
+        }
+      },
+      {
+        "@type": "Question",
+        "name": `What medical care is available for diaspora visitors in ${country}?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `${country} has a mix of private hospitals, specialist clinics, and general practice providers serving the international community. This directory lists ${providers.length} verified providers across travel medicine, general practice, OBGYN, pediatrics, and specialist care. Private healthcare costs in ${country} are significantly lower than in the US or UK. ${usdAccepted.length} of the providers listed accept USD directly.`
+        }
+      },
+      {
+        "@type": "Question",
+        "name": `How do I book a doctor appointment in ${country}?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `WhatsApp is the primary booking method across private clinics in ${country}. ${whatsappReady.length} of the ${providers.length} providers in this directory are reachable via WhatsApp. Most private clinics in ${capitalCity} also accept walk-in appointments for travel vaccinations and routine consultations. For specialist appointments, booking 1 to 2 weeks in advance is recommended.`
+        }
+      }
+    ]
+  }
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/directories">Directories</a>
+        <span aria-hidden="true"> / </span>
+        <a href="/directories/doctors">Doctors and Travel Clinics</a>
+        <span aria-hidden="true"> / </span>
+        <span>{country}</span>
+      </nav>
+      <div class="hero-flag" aria-hidden="true">{flag}</div>
+      <p class="eyebrow">{region}</p>
+      <h1>Doctors and Travel Clinics in {country}</h1>
+      <p class="hero-sub">{summary}</p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">{providers.length}</span>
+          <span class="stat-label">Verified Providers</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">{travelClinicsCount}</span>
+          <span class="stat-label">Travel Clinics</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">{diasporaVettedCount}</span>
+          <span class="stat-label">Diaspora Vetted</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">{whatsappReady.length}</span>
+          <span class="stat-label">WhatsApp Accessible</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section context-section">
+    <div class="container container--narrow">
+      <h2>Yellow Fever, Malaria, and Healthcare in {country}</h2>
+      <p>
+        Before you land in {country}, you need to know two things: whether you need a yellow fever certificate at the border, and where to go if you need medical attention once you arrive. This directory answers both.
+      </p>
+      <p>
+        Travel clinics handle pre-trip vaccinations (yellow fever, typhoid, hepatitis A and B, meningitis), malaria prophylaxis prescriptions, and the official International Certificate of Vaccination (the yellow card) required at many African borders. The {travelClinicsCount} travel clinics listed here are authorized to issue that certificate.
+      </p>
+      {isRwanda && (
+        <p>
+          Rwanda is a standout for healthcare quality in East Africa. King Faisal Hospital in Kigali is JCI-accredited, the same international certification held by top hospitals in the United States. It serves diplomats, UN staff, and international travelers. This is a rare distinction in sub-Saharan Africa.
+        </p>
+      )}
+      <p>
+        For general care after arrival, the vetted GPs and specialists in this directory have been selected based on international training credentials, English fluency, diaspora community recommendations, and USD payment acceptance.
+      </p>
+    </div>
+  </section>
+
+  <section class="section travel-section">
+    <div class="container">
+      <header class="section-header">
+        <h2>Travel Clinics and Vaccination Centers</h2>
+        <p>Authorized yellow fever certificate issuers and travel medicine specialists. Book before you travel or on arrival for vaccines and prophylaxis.</p>
+      </header>
+
+      <div class="providers-grid">
+        {travelClinics.filter((p: any) => p.tier === 1).map((provider: any) => (
+          <article class={`provider-card provider-card--${provider.listingTier}`}>
+            <div class="provider-card-top">
+              <div class="provider-info">
+                <div class="provider-name-row">
+                  <h3 class="provider-name">{provider.name}</h3>
+                  {provider.listingTier === 'featured' && (
+                    <span class="listing-badge listing-badge--featured">Featured</span>
+                  )}
+                  {provider.listingTier === 'verified' && (
+                    <span class="listing-badge listing-badge--verified">Verified</span>
+                  )}
+                </div>
+                <span class="provider-location">{provider.neighborhood}, {provider.city}</span>
+              </div>
+              {provider.rating && (
+                <div class="provider-rating">
+                  <span class="rating-num">{provider.rating}</span>
+                  <span class="rating-label">★ {provider.reviewSource}</span>
+                </div>
+              )}
+            </div>
+
+            <p class="provider-desc">{provider.description}</p>
+
+            <div class="enrichment-grid">
+              <div class={`enrich-item ${provider.enrichment.yellowFeverCert ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{provider.enrichment.yellowFeverCert ? '✓' : '·'}</span>
+                <span>Yellow fever cert</span>
+              </div>
+              <div class={`enrich-item ${provider.enrichment.travelMedicine ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{provider.enrichment.travelMedicine ? '✓' : '·'}</span>
+                <span>Travel medicine</span>
+              </div>
+              <div class={`enrich-item ${provider.enrichment.acceptsUSD ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{provider.enrichment.acceptsUSD ? '✓' : '·'}</span>
+                <span>Accepts USD</span>
+              </div>
+              <div class={`enrich-item ${provider.enrichment.whatsappContact ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{provider.enrichment.whatsappContact ? '✓' : '·'}</span>
+                <span>WhatsApp</span>
+              </div>
+              <div class={`enrich-item ${provider.enrichment.acceptsInsurance ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{provider.enrichment.acceptsInsurance ? '✓' : '·'}</span>
+                <span>Insurance accepted</span>
+              </div>
+              <div class={`enrich-item ${provider.enrichment.emergencyAvailable ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{provider.enrichment.emergencyAvailable ? '✓' : '·'}</span>
+                <span>Emergency services</span>
+              </div>
+            </div>
+
+            {provider.highlights.length > 0 && (
+              <ul class="highlights-list">
+                {provider.highlights.map((h: string) => (
+                  <li>{h}</li>
+                ))}
+              </ul>
+            )}
+
+            <div class="provider-card-footer">
+              <a href={`https://${provider.website}`} target="_blank" rel="noopener noreferrer" class="provider-link">
+                Visit {provider.website} &rarr;
+              </a>
+              <span class="provider-location-tag">{provider.neighborhood}</span>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      {travelClinics.filter((p: any) => p.tier > 1).length > 0 && (
+        <div class="providers-list secondary-providers">
+          {travelClinics.filter((p: any) => p.tier > 1).map((provider: any) => (
+            <article class="provider-row">
+              <div class="provider-row-info">
+                <h3 class="provider-row-name">{provider.name}</h3>
+                <span class="provider-row-location">{provider.neighborhood}, {provider.city}</span>
+              </div>
+              <p class="provider-row-desc">{provider.description}</p>
+              <div class="provider-row-tags">
+                {provider.highlights.map((h: string) => (
+                  <span class="tag">{h}</span>
+                ))}
+              </div>
+              <a href={`https://${provider.website}`} target="_blank" rel="noopener noreferrer" class="provider-row-link">{provider.website} &rarr;</a>
+            </article>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+  <section class="section medical-section">
+    <div class="container">
+      <header class="section-header">
+        <h2>Vetted Doctors and Medical Centers</h2>
+        <p>Internationally trained GPs, specialists, and hospitals recommended by the diaspora community. Filtered for English fluency, USD acceptance, and verifiable credentials.</p>
+      </header>
+
+      <div class="providers-grid">
+        {medicalProviders.filter((p: any) => p.tier === 1).map((provider: any) => (
+          <article class={`provider-card provider-card--${provider.listingTier}`}>
+            <div class="provider-card-top">
+              <div class="provider-info">
+                <div class="provider-name-row">
+                  <h3 class="provider-name">{provider.name}</h3>
+                  {provider.listingTier === 'featured' && (
+                    <span class="listing-badge listing-badge--featured">Featured</span>
+                  )}
+                  {provider.listingTier === 'verified' && (
+                    <span class="listing-badge listing-badge--verified">Verified</span>
+                  )}
+                </div>
+                <span class="provider-location">{provider.neighborhood}, {provider.city}</span>
+              </div>
+              {provider.rating && (
+                <div class="provider-rating">
+                  <span class="rating-num">{provider.rating}</span>
+                  <span class="rating-label">★ {provider.reviewSource}</span>
+                </div>
+              )}
+            </div>
+
+            <p class="provider-desc">{provider.description}</p>
+
+            <div class="enrichment-grid">
+              <div class={`enrich-item ${provider.enrichment.diasporaVetted ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{provider.enrichment.diasporaVetted ? '✓' : '·'}</span>
+                <span>Diaspora vetted</span>
+              </div>
+              <div class={`enrich-item ${provider.enrichment.internationallyTrained ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{provider.enrichment.internationallyTrained ? '✓' : '·'}</span>
+                <span>Internationally trained</span>
+              </div>
+              <div class={`enrich-item ${provider.enrichment.generalPractice ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{provider.enrichment.generalPractice ? '✓' : '·'}</span>
+                <span>General practice</span>
+              </div>
+              <div class={`enrich-item ${provider.enrichment.acceptsUSD ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{provider.enrichment.acceptsUSD ? '✓' : '·'}</span>
+                <span>Accepts USD</span>
+              </div>
+              <div class={`enrich-item ${provider.enrichment.whatsappContact ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{provider.enrichment.whatsappContact ? '✓' : '·'}</span>
+                <span>WhatsApp</span>
+              </div>
+              <div class={`enrich-item ${provider.enrichment.acceptsInsurance ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{provider.enrichment.acceptsInsurance ? '✓' : '·'}</span>
+                <span>Insurance accepted</span>
+              </div>
+              <div class={`enrich-item ${provider.enrichment.obgyn ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{provider.enrichment.obgyn ? '✓' : '·'}</span>
+                <span>OBGYN</span>
+              </div>
+              <div class={`enrich-item ${provider.enrichment.pediatrics ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{provider.enrichment.pediatrics ? '✓' : '·'}</span>
+                <span>Pediatrics</span>
+              </div>
+            </div>
+
+            {provider.highlights.length > 0 && (
+              <ul class="highlights-list">
+                {provider.highlights.map((h: string) => (
+                  <li>{h}</li>
+                ))}
+              </ul>
+            )}
+
+            <div class="provider-card-footer">
+              <a href={`https://${provider.website}`} target="_blank" rel="noopener noreferrer" class="provider-link">
+                Visit {provider.website} &rarr;
+              </a>
+              <span class="provider-location-tag">{provider.neighborhood}</span>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      {medicalProviders.filter((p: any) => p.tier > 1).length > 0 && (
+        <div class="providers-list secondary-providers">
+          {medicalProviders.filter((p: any) => p.tier > 1).map((provider: any) => (
+            <article class="provider-row">
+              <div class="provider-row-info">
+                <h3 class="provider-row-name">{provider.name}</h3>
+                <span class="provider-row-location">{provider.neighborhood}, {provider.city}</span>
+              </div>
+              <p class="provider-row-desc">{provider.description}</p>
+              <div class="provider-row-tags">
+                {provider.highlights.map((h: string) => (
+                  <span class="tag">{h}</span>
+                ))}
+              </div>
+              <a href={`https://${provider.website}`} target="_blank" rel="noopener noreferrer" class="provider-row-link">{provider.website} &rarr;</a>
+            </article>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+
+  <section class="section faq-section">
+    <div class="container container--narrow">
+      <h2>Common Questions</h2>
+      <dl class="faq-list">
+        <div class="faq-item">
+          <dt>Do I need a yellow fever certificate to enter {country}?</dt>
+          <dd>Yellow fever certificate requirements depend on your country of origin and prior travel history. Many travelers to {country} must show a valid certificate at the border. Even when not required, vaccination is strongly recommended. The {travelClinicsCount} travel clinics in this directory are authorized to issue the official yellow card certificate.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>Where do diaspora returnees go for medical care in {capitalCity}?</dt>
+          <dd>The diaspora community in {capitalCity} typically uses private clinics and hospitals with internationally trained staff, USD payment options, and English-language service. This directory lists {diasporaVettedCount} diaspora-vetted providers. All Tier 1 providers have been selected based on international training credentials and community trust signals.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>How do I book a travel vaccination appointment in {country}?</dt>
+          <dd>WhatsApp is the most reliable booking method for private clinics in {country}. {whatsappReady.length} of {providers.length} providers in this directory are reachable via WhatsApp. Most travel clinics in {capitalCity} also accept walk-ins for yellow fever and standard travel vaccinations. For specialist appointments, book 1 to 2 weeks in advance.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>What do medical consultations cost in {country}?</dt>
+          <dd>Private clinic consultation fees in {country} are significantly lower than US or UK rates. A GP consultation at a diaspora-recommended clinic typically costs USD 30 to USD 80. Specialist visits range from USD 50 to USD 150. Travel vaccination packages including yellow fever, typhoid, and hepatitis typically run USD 80 to USD 200 total. {usdAccepted.length} providers in this directory explicitly accept USD.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section verification-section">
+    <div class="container container--narrow">
+      <h3>About This Directory</h3>
+      <p class="verification-meta">
+        Last updated: {lastUpdated}. All providers researched from primary sources: clinic websites, Google Maps reviews, community recommendations, and confirmed credentials.
+      </p>
+      <p class="verification-meta">
+        This is a free directory. Providers can claim a Verified or Featured listing by <a href="/contact">contacting us</a>. Editorial placement is not for sale. Tier 1 providers are listed based on verified quality signals, not payment.
+      </p>
+    </div>
+  </section>
+
+  <section class="section nav-section">
+    <div class="container">
+      <div class="nav-links">
+        <a href="/directories/doctors" class="nav-back">&larr; All Countries</a>
+        <a href="/directories" class="nav-back">All Directories &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .page-hero {
+    background: var(--color-dark);
+    color: var(--color-text-on-dark);
+    padding: var(--space-4xl) 0 var(--space-3xl);
+  }
+
+  .breadcrumb {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: var(--space-lg);
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .breadcrumb a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .hero-flag {
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: var(--space-lg);
+  }
+
+  .page-hero .eyebrow {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: var(--space-md);
+  }
+
+  .page-hero h1 {
+    color: #fff;
+    max-width: 28ch;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-sub {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 60ch;
+    margin-bottom: var(--space-xl);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: var(--space-2xl);
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .stat-num {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  /* Context */
+  .context-section {
+    background: var(--color-bg);
+  }
+
+  .container--narrow {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+  }
+
+  .context-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .context-section p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+  }
+
+  /* Section header */
+  .section-header {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .section-header h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .section-header p {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  /* Travel section */
+  .travel-section {
+    background: var(--color-bg-alt);
+  }
+
+  /* Medical section */
+  .medical-section {
+    background: var(--color-bg);
+  }
+
+  /* Provider grid */
+  .providers-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    max-width: 1100px;
+    margin-bottom: var(--space-2xl);
+  }
+
+  @media (min-width: 760px) {
+    .providers-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Provider card */
+  .provider-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .medical-section .provider-card {
+    background: var(--color-bg-alt);
+  }
+
+  .provider-card--featured {
+    border-color: var(--color-text-muted);
+  }
+
+  .provider-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .provider-info {
+    flex: 1;
+  }
+
+  .provider-name-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+    margin-bottom: 4px;
+  }
+
+  .provider-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  .listing-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 2px 7px;
+    white-space: nowrap;
+  }
+
+  .listing-badge--featured {
+    background: var(--color-dark);
+    color: #fff;
+  }
+
+  .listing-badge--verified {
+    background: transparent;
+    border: 1px solid var(--color-text-muted);
+    color: var(--color-text-muted);
+  }
+
+  .provider-location {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  .provider-rating {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+    flex-shrink: 0;
+  }
+
+  .rating-num {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1;
+  }
+
+  .rating-label {
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    white-space: nowrap;
+  }
+
+  .provider-desc {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  /* Enrichment grid */
+  .enrichment-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px 12px;
+  }
+
+  .enrich-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  .enrich-icon {
+    font-size: 0.75rem;
+    width: 14px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .enrich-yes {
+    color: var(--color-text);
+  }
+
+  .enrich-yes .enrich-icon {
+    color: var(--color-text);
+  }
+
+  /* Highlights */
+  .highlights-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .highlights-list li {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    padding-left: 12px;
+    position: relative;
+  }
+
+  .highlights-list li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--color-text-muted);
+  }
+
+  /* Provider card footer */
+  .provider-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
+    margin-top: auto;
+  }
+
+  .provider-link {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .provider-link:hover {
+    color: var(--color-text-muted);
+  }
+
+  .provider-location-tag {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+  }
+
+  /* Provider list (rows) */
+  .secondary-providers {
+    margin-top: var(--space-2xl);
+    padding-top: var(--space-2xl);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .providers-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    max-width: 760px;
+  }
+
+  .provider-row {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    padding-bottom: var(--space-xl);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .provider-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .provider-row-info {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .provider-row-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  .provider-row-location {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  .provider-row-desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .provider-row-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+    padding: 2px 8px;
+  }
+
+  .provider-row-link {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .provider-row-link:hover {
+    color: var(--color-text-muted);
+  }
+
+  /* FAQ */
+  .faq-section {
+    background: var(--color-bg-alt);
+  }
+
+  .faq-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .faq-item dt {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+    line-height: 1.4;
+  }
+
+  .faq-item dd {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  /* Verification */
+  .verification-section {
+    background: var(--color-bg);
+  }
+
+  .verification-meta {
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+  }
+
+  .verification-meta a {
+    color: var(--color-text);
+  }
+
+  /* Nav */
+  .nav-section {
+    background: var(--color-bg-alt);
+    padding: var(--space-2xl) 0;
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+
+  .nav-back {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .nav-back:hover {
+    color: var(--color-text-muted);
+  }
+</style>

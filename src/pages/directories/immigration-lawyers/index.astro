@@ -1,0 +1,839 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const title = 'Immigration Lawyers for the African Diaspora | Ghana, Nigeria, Kenya, Rwanda, South Africa | Sankofa Expeditions';
+const description = 'Find vetted immigration lawyers and attorneys for African diaspora relocating to sub-Saharan Africa. Right of Abode in Ghana, CERPAC in Nigeria, investor permits in Kenya and Rwanda, critical skills visas in South Africa.';
+
+const pageUrl = 'https://sankofaexpeditions.com/directories/immigration-lawyers';
+
+const countries = [
+  {
+    slug: 'ghana',
+    name: 'Ghana',
+    flag: '🇬🇭',
+    region: 'West Africa',
+    firmCount: 13,
+    diasporaSpecialistCount: 8,
+    cities: ['Accra', 'Kumasi'],
+    keyPrograms: ['Right of Abode', 'GIPC Investor Permit', 'Naturalization'],
+    summary: 'The only country in the world with a formal immigration program for the African diaspora: the Right of Abode. African Americans and Afro-Caribbeans with proven African ancestry can obtain indefinite residence rights. 13 verified immigration lawyers and solicitors in Accra.',
+    anchor: true,
+    status: 'live',
+    localTerm: 'lawyer / solicitor',
+    barBody: 'Ghana Bar Association',
+  },
+  {
+    slug: 'nigeria',
+    name: 'Nigeria',
+    flag: '🇳🇬',
+    region: 'West Africa',
+    firmCount: 10,
+    diasporaSpecialistCount: 5,
+    cities: ['Lagos', 'Abuja'],
+    keyPrograms: ['CERPAC', 'STR Visa', 'NIPC Investor Permit', 'Dual Citizenship'],
+    summary: 'Two distinct use cases: Nigerians abroad documenting retained dual citizenship, and non-Nigerians (including African Americans) using CERPAC or NIPC investor permits. No Right of Abode equivalent. 10 verified lawyers and solicitors in Lagos and Abuja.',
+    anchor: false,
+    status: 'live',
+    localTerm: 'lawyer / solicitor',
+    barBody: 'Nigerian Bar Association',
+  },
+  {
+    slug: 'kenya',
+    name: 'Kenya',
+    flag: '🇰🇪',
+    region: 'East Africa',
+    firmCount: 10,
+    diasporaSpecialistCount: 5,
+    cities: ['Nairobi', 'Mombasa'],
+    keyPrograms: ['Class G Investor Permit', 'Special Pass', 'Employment Permit', 'Dependent Pass'],
+    summary: "Kenya's Silicon Savannah draws diaspora tech entrepreneurs and remote workers. The Class G Investor Permit is the primary long-term residence route. No Right of Abode equivalent. 10 verified immigration advocates in Nairobi and Mombasa.",
+    anchor: false,
+    status: 'live',
+    localTerm: 'advocate',
+    barBody: 'Law Society of Kenya',
+  },
+  {
+    slug: 'rwanda',
+    name: 'Rwanda',
+    flag: '🇷🇼',
+    region: 'East Africa',
+    firmCount: 8,
+    diasporaSpecialistCount: 4,
+    cities: ['Kigali'],
+    keyPrograms: ['RDB Special Investor Status', 'Long-Term Resident Permit', 'Business Registration'],
+    summary: 'Easiest entry in Africa: all Africans arrive visa-free. Long-term residence requires a business registered with the Rwanda Development Board. Smaller legal market in Kigali creates a first-mover opportunity. 8 verified lawyers.',
+    anchor: false,
+    status: 'live',
+    localTerm: 'lawyer',
+    barBody: 'Rwanda Bar Association',
+  },
+  {
+    slug: 'south-africa',
+    name: 'South Africa',
+    flag: '🇿🇦',
+    region: 'Southern Africa',
+    firmCount: 11,
+    diasporaSpecialistCount: 5,
+    cities: ['Johannesburg', 'Cape Town', 'Durban'],
+    keyPrograms: ['Critical Skills Visa', 'Business Visa', 'Retirement Visa', 'General Work Visa'],
+    summary: "Africa's most complex immigration system. High refusal rates from Home Affairs. Only bar-qualified attorneys can appeal refusals. The attorney vs consultant distinction matters enormously here. 11 verified immigration attorneys across Johannesburg, Cape Town, and Durban.",
+    anchor: false,
+    status: 'live',
+    localTerm: 'attorney',
+    barBody: 'Law Society of South Africa',
+  },
+];
+
+const totalFirms = countries.reduce((sum, c) => sum + c.firmCount, 0);
+const totalSpecialists = countries.reduce((sum, c) => sum + c.diasporaSpecialistCount, 0);
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${pageUrl}/#webpage`,
+    "url": pageUrl,
+    "name": title,
+    "description": description,
+    "isPartOf": { "@id": "https://sankofaexpeditions.com/#website" },
+    "breadcrumb": { "@id": `${pageUrl}/#breadcrumb` },
+    "inLanguage": "en-US",
+    "dateModified": "2026-11-07"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": `${pageUrl}/#breadcrumb`,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sankofaexpeditions.com" },
+      { "@type": "ListItem", "position": 2, "name": "Directories", "item": "https://sankofaexpeditions.com/directories" },
+      { "@type": "ListItem", "position": 3, "name": "Immigration Lawyers", "item": pageUrl }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": `${pageUrl}/#list`,
+    "name": "Immigration Lawyers for the African Diaspora",
+    "description": "Verified directory of immigration lawyers for diaspora Africans and African Americans relocating to sub-Saharan Africa.",
+    "numberOfItems": countries.length,
+    "itemListElement": countries.map((c, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": `${c.name} Immigration Lawyers`,
+      "url": `https://sankofaexpeditions.com/directories/immigration-lawyers/${c.slug}`
+    }))
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the Right of Abode in Ghana?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ghana's Right of Abode is the only formal immigration program in the world designed specifically for the African diaspora. Under the Ghana Immigration Act 2000 (Act 573), African Americans, Afro-Caribbeans, and others of African descent can apply for indefinite residence rights in Ghana. It is distinct from a standard visa or permit: it recognizes ancestral connection to Africa as the basis for the right to live in Ghana. Specialized lawyers handle the application, including ancestry documentation strategies for African Americans whose genealogical records were destroyed by slavery."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which African country is easiest for diaspora immigration?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ghana is easiest for African Americans and Afro-Caribbeans because of the Right of Abode program, which is designed specifically for the diaspora. Rwanda is easiest for entry: all Africans arrive visa-free and the country is English-speaking with a welcoming diaspora policy. South Africa is the most difficult due to Home Affairs bureaucracy and high refusal rates. Nigeria and Kenya require business investment or employment-linked permits for long-term stays."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need a lawyer to apply for African immigration visas as a diaspora member?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For most African immigration programs relevant to diaspora clients, yes. Ghana's Right of Abode requires ancestry documentation that most applicants need professional help assembling. South Africa's Critical Skills and Business Visas have high refusal rates that make attorney representation important, particularly because only bar-qualified attorneys can appeal refusals. Nigeria's CERPAC and NIPC investor permit processes require legal navigation. Kenya's Class G Investor Permit requires business registration alongside immigration paperwork. Rwanda's RDB investor status requires legal and administrative coordination."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between an immigration attorney and an immigration consultant in South Africa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "In South Africa, immigration attorneys are admitted to the Law Society of South Africa and can appear in court and lodge formal appeals against Home Affairs refusals. Immigration consultants are registered with SAIPA (South African Immigration Practitioners Association) and can process routine applications but cannot appeal refusals. For diaspora clients applying for Critical Skills Visas, Business Visas, or any category with meaningful refusal risk, the recommendation is to use a bar-qualified attorney rather than a consultant."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can an African American get citizenship in Ghana?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, through naturalization after qualifying for the Right of Abode. The process starts with a Right of Abode application based on proved African ancestry. After meeting residency requirements, an ROA holder can apply for Ghanaian citizenship by naturalization. Specialized immigration lawyers in Accra handle both stages and can advise on the documentation pathway, including DNA ancestry evidence for clients whose historical records were destroyed during slavery."
+        }
+      }
+    ]
+  }
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/directories">Directories</a>
+        <span aria-hidden="true"> / </span>
+        <span>Immigration Lawyers</span>
+      </nav>
+      <p class="eyebrow">Diaspora Immigration Law</p>
+      <h1>Immigration Lawyers for the African Diaspora</h1>
+      <p class="hero-sub">
+        Vetted immigration lawyers, solicitors, and attorneys across sub-Saharan Africa. Covering Ghana's Right of Abode, CERPAC in Nigeria, investor permits in Kenya and Rwanda, and critical skills visas in South Africa. Sorted for diaspora relevance.
+      </p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">{totalFirms}</span>
+          <span class="stat-label">Verified Firms</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">{totalSpecialists}</span>
+          <span class="stat-label">Diaspora Specialists</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">5</span>
+          <span class="stat-label">Countries</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">1</span>
+          <span class="stat-label">World-Unique Program</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section roa-callout-section">
+    <div class="container container--narrow">
+      <div class="roa-callout">
+        <p class="roa-callout-eyebrow">Only One in the World</p>
+        <h2>Ghana's Right of Abode: The World's Only Formal Diaspora Immigration Program</h2>
+        <p>
+          Every country in this directory offers immigration routes that diaspora members can use. Only one offers a program designed specifically for people of African descent: Ghana's Right of Abode.
+        </p>
+        <p>
+          Under Ghana's Immigration Act 2000 (Act 573), African Americans, Afro-Caribbeans, and others of African ancestry can apply for indefinite residence rights in Ghana based on that ancestry alone. No job offer required. No minimum investment required. No expiration.
+        </p>
+        <p>
+          There is a complication that makes the right lawyers essential: ancestry documentation. Most African Americans cannot produce traditional genealogical records because slavery destroyed them. Experienced Right of Abode lawyers in Accra have developed alternative documentation strategies using DNA ancestry results, historical records, community affidavits, and other evidence. Finding one of these specialists is the most important task for African Americans considering Ghana.
+        </p>
+        <a href="/directories/immigration-lawyers/ghana" class="roa-link">Browse Ghana Right of Abode Lawyers &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section context-section">
+    <div class="container container--narrow">
+      <h2>Why This Directory Exists</h2>
+      <p>
+        The existing directories for immigration lawyers in Africa are built for corporate clients: multinationals relocating executives, HR departments managing work permits for foreign hires. They are not built for African Americans, Afro-Caribbeans, or Afro-Europeans who want to live, invest, or return to the continent.
+      </p>
+      <p>
+        The vocabulary alone is a barrier. African Americans search for "immigration lawyers." Ghana and Nigeria have lawyers and solicitors. Kenya has advocates. South Africa has attorneys. The search result landscape reflects corporate needs, not diaspora ones.
+      </p>
+      <p>
+        This directory filters for diaspora relevance: firms that speak plainly about which programs exist, which are realistic for non-citizens of African descent, and which have remote consultation capacity for clients still abroad. We call out what does not exist (Nigeria has no Right of Abode equivalent) as clearly as what does.
+      </p>
+    </div>
+  </section>
+
+  <section class="section comparison-section">
+    <div class="container">
+      <header class="section-header">
+        <h2>Country Comparison</h2>
+        <p>How the five countries compare on key factors for diaspora immigration.</p>
+      </header>
+      <div class="comparison-table-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Country</th>
+              <th>Diaspora Program</th>
+              <th>Long-Term Route</th>
+              <th>Complexity</th>
+              <th>Local Term</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="row--anchor">
+              <td><span class="flag-inline">🇬🇭</span> Ghana</td>
+              <td><strong>Right of Abode (world-unique)</strong></td>
+              <td>ROA, GIPC Investor Permit, Naturalization</td>
+              <td>Moderate (documentation-heavy)</td>
+              <td>Lawyer / Solicitor</td>
+            </tr>
+            <tr>
+              <td><span class="flag-inline">🇳🇬</span> Nigeria</td>
+              <td>None (for non-Nigerians)</td>
+              <td>CERPAC via STR Visa, NIPC Investor Permit</td>
+              <td>High (bureaucratic)</td>
+              <td>Lawyer / Solicitor</td>
+            </tr>
+            <tr>
+              <td><span class="flag-inline">🇰🇪</span> Kenya</td>
+              <td>None</td>
+              <td>Class G Investor Permit, Employment Permit</td>
+              <td>Moderate</td>
+              <td>Advocate</td>
+            </tr>
+            <tr>
+              <td><span class="flag-inline">🇷🇼</span> Rwanda</td>
+              <td>Diaspora Return Policy (Govt)</td>
+              <td>RDB Special Investor Status (10-year)</td>
+              <td>Low to Moderate</td>
+              <td>Lawyer</td>
+            </tr>
+            <tr>
+              <td><span class="flag-inline">🇿🇦</span> South Africa</td>
+              <td>None</td>
+              <td>Critical Skills Visa, Business Visa, Retirement Visa</td>
+              <td>Very High (Home Affairs)</td>
+              <td>Attorney</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section countries-section">
+    <div class="container">
+      <header class="section-header">
+        <h2>Browse by Country</h2>
+        <p>Select a country to see verified immigration lawyers, local programs explained, and diaspora-specific guidance.</p>
+      </header>
+
+      <div class="countries-grid">
+        {countries.map((c) => (
+          <a href={`/directories/immigration-lawyers/${c.slug}`} class={`country-card ${c.anchor ? 'country-card--anchor' : ''}`}>
+            <div class="country-card-top">
+              <span class="country-flag" aria-hidden="true">{c.flag}</span>
+              <div class="country-info">
+                <span class="country-name">{c.name}</span>
+                <span class="country-region">{c.region}</span>
+              </div>
+              {c.anchor && (
+                <span class="anchor-badge">Start Here</span>
+              )}
+              {!c.anchor && (
+                <span class="status-badge status-badge--active">Live</span>
+              )}
+            </div>
+            <p class="country-summary">{c.summary}</p>
+            <div class="programs-list">
+              {c.keyPrograms.slice(0, 3).map((p) => (
+                <span class="program-tag">{p}</span>
+              ))}
+            </div>
+            <div class="quick-facts">
+              <div class="quick-fact">
+                <span class="qf-label">Total Firms</span>
+                <span class="qf-value">{c.firmCount}</span>
+              </div>
+              <div class="quick-fact">
+                <span class="qf-label">Diaspora Specialists</span>
+                <span class="qf-value">{c.diasporaSpecialistCount}</span>
+              </div>
+              <div class="quick-fact">
+                <span class="qf-label">Local Title</span>
+                <span class="qf-value">{c.localTerm}</span>
+              </div>
+            </div>
+            <div class="country-card-footer">
+              <span class="card-cta">Browse firms &rarr;</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq-section">
+    <div class="container container--narrow">
+      <h2>Common Questions</h2>
+      <dl class="faq-list">
+        <div class="faq-item">
+          <dt>What is Ghana's Right of Abode and who qualifies?</dt>
+          <dd>Ghana's Right of Abode is an immigration status under the Ghana Immigration Act 2000 (Act 573) that grants indefinite residence rights to people of African descent. African Americans, Afro-Caribbeans, and Afro-Europeans with provable African ancestry can apply. The main challenge is ancestry documentation: slavery destroyed most genealogical records for African Americans. Experienced Accra lawyers use DNA ancestry results alongside affidavits and historical records as alternative documentation.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>Which African country is best for African Americans to immigrate to?</dt>
+          <dd>Ghana is the most direct because of the Right of Abode program, the only immigration instrument in the world designed for the African diaspora. Rwanda is the easiest to enter (visa-free for all Africans) and has a government-level diaspora return policy. Nigeria and Kenya require business investment or employment links for long-term stays. South Africa has the most complex system with the highest refusal rates.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>What is a CERPAC in Nigeria?</dt>
+          <dd>CERPAC stands for Combined Expatriate Residence Permit and Aliens Card. It is the primary long-term residence document for foreigners in Nigeria. To get a CERPAC, you must first enter on an STR (Subject to Regularization) visa and then apply within 90 days. It is the primary legal route for African Americans and others who want to live long-term in Nigeria and are not Nigerian citizens.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>What is the difference between a Ghana lawyer, a Kenya advocate, and a South Africa attorney?</dt>
+          <dd>These are country-specific professional titles for the same underlying role: a qualified, bar-admitted legal professional. Ghana and Nigeria use "lawyer" or "solicitor." Kenya uses "advocate," admitted through the Law Society of Kenya. South Africa uses "attorney," admitted through the Law Society of South Africa. In South Africa, using "solicitor" signals you have not done your research. In Kenya, the same applies to "attorney." Use the locally correct term when searching and when evaluating credentials.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>Can I consult an immigration lawyer before I travel to Africa?</dt>
+          <dd>Yes. All Tier 1 firms in this directory offer remote consultations. Many have clients who complete the full application process from abroad using video calls, digital document submission, and power of attorney or representation agreements. Starting the conversation before you travel is the right approach, especially for Ghana's Right of Abode or South Africa's Critical Skills Visa, which require documentation assembly that takes time.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section methodology-section">
+    <div class="container container--narrow">
+      <h2>How This Directory Works</h2>
+      <p>
+        Every firm is researched from primary sources: their own website, Google Maps, Trustpilot, LinkedIn, and social media. Firms are tiered by diaspora relevance, not by size or prestige. Tier 1 firms actively serve diaspora clients, offer remote consultations, and use WhatsApp for accessible communication. Tier 2 and 3 firms are established or boutique practices that handle the relevant program types but are not primarily diaspora-focused.
+      </p>
+      <p>
+        This directory does not list immigration consultants as primary listings. In countries where the attorney vs consultant distinction carries legal weight (especially South Africa), we flag this explicitly. For complex visa categories with meaningful refusal risk, bar-qualified representation matters.
+      </p>
+      <p>
+        Updated regularly. If you operate an immigration law firm serving diaspora clients in sub-Saharan Africa and want to claim or update your listing, <a href="/contact">reach out</a>.
+      </p>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .page-hero {
+    background: var(--color-dark);
+    color: var(--color-text-on-dark);
+    padding: var(--space-4xl) 0 var(--space-3xl);
+  }
+
+  .breadcrumb {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: var(--space-lg);
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .breadcrumb a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .page-hero .eyebrow {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: var(--space-md);
+  }
+
+  .page-hero h1 {
+    color: #fff;
+    max-width: 28ch;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-sub {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 60ch;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: var(--space-2xl);
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .stat-num {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  /* ROA Callout */
+  .roa-callout-section {
+    background: var(--color-bg-alt);
+  }
+
+  .roa-callout {
+    border: 2px solid var(--color-text);
+    padding: var(--space-2xl);
+  }
+
+  .roa-callout-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+  }
+
+  .roa-callout h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .roa-callout p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+  }
+
+  .roa-link {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text);
+    text-decoration: none;
+    margin-top: var(--space-sm);
+  }
+
+  .roa-link:hover {
+    text-decoration: underline;
+  }
+
+  /* Context */
+  .context-section {
+    background: var(--color-bg);
+  }
+
+  .container--narrow {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+  }
+
+  .context-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .context-section p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+  }
+
+  /* Comparison */
+  .comparison-section {
+    background: var(--color-bg-alt);
+  }
+
+  .section-header {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .section-header h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .section-header p {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .comparison-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+    min-width: 640px;
+  }
+
+  .comparison-table th {
+    text-align: left;
+    padding: var(--space-md) var(--space-lg);
+    border-bottom: 2px solid var(--color-text);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    background: var(--color-bg);
+  }
+
+  .comparison-table td {
+    padding: var(--space-md) var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    background: var(--color-bg);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  .comparison-table td:first-child {
+    color: var(--color-text);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .comparison-table .row--anchor td {
+    background: var(--color-bg-alt);
+  }
+
+  .comparison-table .row--anchor td:first-child {
+    color: var(--color-text);
+  }
+
+  .flag-inline {
+    margin-right: 4px;
+  }
+
+  /* Countries */
+  .countries-section {
+    background: var(--color-bg);
+  }
+
+  .countries-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    max-width: 900px;
+  }
+
+  @media (min-width: 640px) {
+    .countries-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .countries-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .country-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: var(--space-xl);
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    transition: border-color 0.2s;
+  }
+
+  .country-card:hover {
+    border-color: var(--color-text-muted);
+  }
+
+  .country-card--anchor {
+    border-color: var(--color-text);
+    grid-column: 1 / -1;
+  }
+
+  @media (min-width: 1024px) {
+    .country-card--anchor {
+      grid-column: auto;
+    }
+  }
+
+  .country-card-top {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .country-flag {
+    font-size: 2rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .country-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+  }
+
+  .country-name {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .country-region {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  .status-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 3px 8px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .status-badge--active {
+    background: var(--color-dark);
+    color: #fff;
+  }
+
+  .anchor-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 3px 8px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    background: var(--color-text);
+    color: var(--color-bg);
+  }
+
+  .country-summary {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .programs-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .program-tag {
+    font-size: 0.65rem;
+    padding: 2px 7px;
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+    white-space: nowrap;
+  }
+
+  .quick-facts {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    padding: var(--space-md) 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .quick-fact {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .qf-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+  }
+
+  .qf-value {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .country-card-footer {
+    margin-top: auto;
+    padding-top: var(--space-sm);
+  }
+
+  .card-cta {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text);
+  }
+
+  /* FAQ */
+  .faq-section {
+    background: var(--color-bg-alt);
+  }
+
+  .faq-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .faq-item dt {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+    line-height: 1.4;
+  }
+
+  .faq-item dd {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  /* Methodology */
+  .methodology-section {
+    background: var(--color-bg);
+  }
+
+  .methodology-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .methodology-section p {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+  }
+
+  .methodology-section a {
+    color: var(--color-text);
+  }
+</style>

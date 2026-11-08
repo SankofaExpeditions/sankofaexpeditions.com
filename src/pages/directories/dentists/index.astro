@@ -1,0 +1,633 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const title = 'Diaspora-Trusted Dentists in Africa | Verified Directory | Sankofa Expeditions';
+const description = 'Find trusted dentists in Ghana, Nigeria, Kenya, Rwanda, and South Africa. Verified clinics with international training, USD pricing, and diaspora accessibility. For Black Americans, Afro-Caribbeans, and Afro-Europeans relocating or visiting sub-Saharan Africa.';
+
+const countries = [
+  {
+    slug: 'ghana',
+    name: 'Ghana',
+    flag: '🇬🇭',
+    region: 'West Africa',
+    clinicCount: 14,
+    diasporaVettedCount: 7,
+    internationalTrainedCount: 5,
+    cities: ['Accra', 'Kumasi'],
+    summary: 'Accra has a growing tier of internationally trained diaspora-aware dentists in East Legon, Airport Residential, and Cantonments. 14 verified clinics across Accra and Kumasi.',
+    status: 'live',
+  },
+  {
+    slug: 'nigeria',
+    name: 'Nigeria',
+    flag: '🇳🇬',
+    region: 'West Africa',
+    clinicCount: 13,
+    diasporaVettedCount: 6,
+    internationalTrainedCount: 5,
+    cities: ['Lagos', 'Abuja'],
+    summary: 'Lagos Lekki and Victoria Island have several UK and US-trained dentists serving the returning diaspora. 13 verified clinics covering Lagos and Abuja.',
+    status: 'live',
+  },
+  {
+    slug: 'kenya',
+    name: 'Kenya',
+    flag: '🇰🇪',
+    region: 'East Africa',
+    clinicCount: 12,
+    diasporaVettedCount: 6,
+    internationalTrainedCount: 5,
+    cities: ['Nairobi'],
+    summary: 'Nairobi is East Africa\'s professional dental hub. Karen, Westlands, and Upper Hill have internationally trained practitioners. 12 verified clinics.',
+    status: 'live',
+  },
+  {
+    slug: 'rwanda',
+    name: 'Rwanda',
+    flag: '🇷🇼',
+    region: 'East Africa',
+    clinicCount: 10,
+    diasporaVettedCount: 5,
+    internationalTrainedCount: 4,
+    cities: ['Kigali'],
+    summary: 'Kigali is a smaller but fast-growing dental market. The Kimihurura and Kacyiru areas have the strongest diaspora-trusted practices. 10 verified clinics.',
+    status: 'live',
+  },
+  {
+    slug: 'south-africa',
+    name: 'South Africa',
+    flag: '🇿🇦',
+    region: 'Southern Africa',
+    clinicCount: 14,
+    diasporaVettedCount: 7,
+    internationalTrainedCount: 6,
+    cities: ['Cape Town', 'Johannesburg'],
+    summary: 'The only country in this directory where dental tourism makes rational sense. Implants and veneers run 40 to 60 percent below UK/US prices at internationally equivalent quality. 14 verified clinics.',
+    status: 'live',
+    dentalTourism: true,
+  },
+];
+
+const totalClinics = countries.reduce((sum, c) => sum + c.clinicCount, 0);
+const totalDiasporaVetted = countries.reduce((sum, c) => sum + c.diasporaVettedCount, 0);
+const totalIntlTrained = countries.reduce((sum, c) => sum + c.internationalTrainedCount, 0);
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://sankofaexpeditions.com/directories/dentists/#webpage",
+    "url": "https://sankofaexpeditions.com/directories/dentists",
+    "name": title,
+    "description": description,
+    "isPartOf": { "@id": "https://sankofaexpeditions.com/#website" },
+    "breadcrumb": { "@id": "https://sankofaexpeditions.com/directories/dentists/#breadcrumb" },
+    "inLanguage": "en-US",
+    "dateModified": new Date().toISOString().split('T')[0]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://sankofaexpeditions.com/directories/dentists/#breadcrumb",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sankofaexpeditions.com" },
+      { "@type": "ListItem", "position": 2, "name": "Directories", "item": "https://sankofaexpeditions.com/directories" },
+      { "@type": "ListItem", "position": 3, "name": "Dentists", "item": "https://sankofaexpeditions.com/directories/dentists" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": "https://sankofaexpeditions.com/directories/dentists/#list",
+    "name": "Diaspora-Trusted Dentists in Sub-Saharan Africa",
+    "description": "Verified directory of diaspora-trusted dental clinics across sub-Saharan Africa.",
+    "numberOfItems": countries.length,
+    "itemListElement": countries.map((c, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": `${c.name} Dentists`,
+      "url": `https://sankofaexpeditions.com/directories/dentists/${c.slug}`
+    }))
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I find a trusted dentist in Africa as a diaspora returnee or visitor?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `Look for dentists with internationally verifiable training credentials, strong Google review counts, USD price acceptance, and WhatsApp contact. This directory lists ${totalClinics} verified clinics across Ghana, Nigeria, Kenya, Rwanda, and South Africa filtered specifically for diaspora accessibility. All Tier 1 featured clinics have internationally trained dentists or strong diaspora community endorsement, accept USD, and are reachable via WhatsApp.`
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which African country has the best dentists for diaspora?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on your needs. For dental tourism and cost savings: South Africa (Cape Town and Johannesburg) offers implants and veneers 40 to 60 percent below UK/US prices at internationally equivalent quality. For general diaspora returnee care: Nairobi has the deepest pool of internationally trained practitioners. Lagos and Accra have strong Tier 1 options in the upscale business districts. Kigali is smaller but growing fast."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is dental tourism in South Africa worth it for Black British or Black American patients?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, for major work. A single dental implant in South Africa costs USD 900 to 1,400 versus USD 3,000 to 5,000 in the USA or UK. Porcelain veneers run USD 350 to 550 per tooth versus USD 1,200 to 2,500 in the UK. A full cosmetic treatment plan that costs USD 20,000 in London runs USD 7,000 to 10,000 in Cape Town at comparable quality. Several top Cape Town and Johannesburg dentists trained at UK and European institutions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do African dentists accept USD?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `USD acceptance varies by country and clinic. South Africa charges in ZAR but major clinics are comfortable quoting USD equivalents. In Ghana, Nigeria, and Rwanda, the top-tier diaspora-facing clinics accept USD directly. In Kenya, USD is widely accepted at the premium practices in Karen, Westlands, and Upper Hill. This directory flags USD acceptance for every clinic listed. ${totalDiasporaVetted} of ${totalClinics} listed clinics accept USD or quote USD pricing.`
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I book a dentist appointment in Africa from abroad?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "WhatsApp is the standard booking channel for diaspora patients across all five countries in this directory. Send a message describing what you need (check-up, whitening, implants, emergency), ask for a fee range in USD, and confirm appointment availability. For dental tourism trips to South Africa, contact the clinic before booking flights to confirm procedure timelines and availability."
+        }
+      }
+    ]
+  }
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/directories">Directories</a>
+        <span aria-hidden="true"> / </span>
+        <span>Dentists</span>
+      </nav>
+      <p class="eyebrow">Sub-Saharan Africa</p>
+      <h1>Diaspora-Trusted Dentists in Africa</h1>
+      <p class="hero-sub">
+        {totalClinics} verified dental clinics across Ghana, Nigeria, Kenya, Rwanda, and South Africa. Sorted by international training, USD pricing, and diaspora accessibility. For Black Americans, Afro-Caribbeans, and Afro-Europeans relocating or visiting sub-Saharan Africa.
+      </p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">{totalClinics}</span>
+          <span class="stat-label">Verified Clinics</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">{totalDiasporaVetted}</span>
+          <span class="stat-label">Diaspora Vetted</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">{totalIntlTrained}</span>
+          <span class="stat-label">Internationally Trained</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">{countries.length}</span>
+          <span class="stat-label">Countries</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section context-section">
+    <div class="container container--narrow">
+      <h2>Why This Directory Exists</h2>
+      <p>
+        One of the first practical questions diaspora returnees ask is: who do I trust with my health? Finding a dentist you can trust in a new city is harder than it sounds. Most local directories do not filter for international training, USD pricing, or diaspora familiarity. Word of mouth from the community helps, but it is scattered across WhatsApp groups and Facebook threads.
+      </p>
+      <p>
+        This directory compiles the strongest dental options in five countries based on trust signals that matter to the diaspora: verified international training credentials, Google review counts and ratings, USD acceptance, WhatsApp accessibility, and direct recommendations from the relocating diaspora community.
+      </p>
+      <p>
+        South Africa is the exception in this directory: it is the one market where dental tourism is a rational financial decision. Implants, veneers, and Invisalign run 40 to 60 percent below UK and US prices at comparable quality. The other four countries are listed on a trust and accessibility basis, not a cost-savings basis.
+      </p>
+    </div>
+  </section>
+
+  <section class="section countries-section">
+    <div class="container">
+      <header class="section-header">
+        <h2>Countries</h2>
+        <p>Select a country to browse verified clinics by city and neighbourhood.</p>
+      </header>
+
+      <div class="countries-grid">
+        {countries.map((c) => (
+          <a href={`/directories/dentists/${c.slug}`} class="country-card">
+            <div class="country-card-top">
+              <span class="country-flag" aria-hidden="true">{c.flag}</span>
+              <div class="country-info">
+                <span class="country-name">{c.name}</span>
+                <span class="country-region">{c.region}</span>
+              </div>
+              <div class="country-badges">
+                <span class="status-badge status-badge--active">Live</span>
+                {c.dentalTourism && (
+                  <span class="status-badge status-badge--tourism">Dental Tourism</span>
+                )}
+              </div>
+            </div>
+            <p class="country-summary">{c.summary}</p>
+            <div class="quick-facts">
+              <div class="quick-fact">
+                <span class="qf-label">Clinics</span>
+                <span class="qf-value">{c.clinicCount}</span>
+              </div>
+              <div class="quick-fact">
+                <span class="qf-label">Diaspora Vetted</span>
+                <span class="qf-value">{c.diasporaVettedCount}</span>
+              </div>
+              <div class="quick-fact">
+                <span class="qf-label">Intl Trained</span>
+                <span class="qf-value">{c.internationalTrainedCount}</span>
+              </div>
+              <div class="quick-fact">
+                <span class="qf-label">Cities</span>
+                <span class="qf-value">{c.cities.join(', ')}</span>
+              </div>
+            </div>
+            <div class="country-card-footer">
+              <span class="card-cta">Browse clinics &rarr;</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section context-section context-section--alt">
+    <div class="container container--narrow">
+      <h2>What to Look for in a Dentist Abroad</h2>
+      <p>
+        When you are new to a city and need dental care, four things matter: (1) a dentist who trained at an institution you can verify, ideally internationally, (2) pricing quoted in USD or at least transparently before you sit in the chair, (3) WhatsApp accessibility so you can communicate comfortably before arriving, and (4) modern equipment including digital X-ray.
+      </p>
+      <p>
+        In every country in this directory, Tier 1 clinics meet all four criteria. Tier 2 clinics meet two or three. Tier 3 clinics are listed for geographic coverage only. If you are new to the city, start with a Tier 1 clinic. The price difference from a neighbourhood clinic is usually modest in absolute terms.
+      </p>
+      <p>
+        One important note on South Africa: the dental tourism angle is real and worth calculating. If you need implants, veneers, full arch reconstruction, or Invisalign, pricing in Cape Town or Johannesburg is 40 to 65 percent below the UK and USA for equivalent-quality work. It is worth combining treatment with a visit if you are coming for other reasons anyway.
+      </p>
+    </div>
+  </section>
+
+  <section class="section faq-section">
+    <div class="container container--narrow">
+      <h2>Common Questions</h2>
+      <dl class="faq-list">
+        <div class="faq-item">
+          <dt>How do I find a trusted dentist in Africa as a diaspora returnee?</dt>
+          <dd>Look for clinics with internationally trained dentists, strong Google review counts, USD acceptance, and WhatsApp contact. This directory filters all {totalClinics} clinics for those criteria. All Tier 1 featured clinics have been shortlisted on trust indicators, not proximity or advertising.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>Which African country has the best dentists for diaspora?</dt>
+          <dd>Nairobi has the deepest pool of internationally trained practitioners in East Africa. Lagos and Accra have strong Tier 1 options in the upscale business districts. For dental tourism: South Africa is the standout, with implants and veneers 40 to 60 percent below UK/US prices at comparable quality. Kigali is smaller but growing.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>Is dental tourism in South Africa worth it for diaspora from the UK or USA?</dt>
+          <dd>For major work, yes. A single implant costs USD 900 to 1,400 in Cape Town or Johannesburg versus USD 3,000 to 5,000 in New York or London. Porcelain veneers run USD 350 to 550 per tooth versus USD 1,200 to 2,500 in the UK. The top practices have UCT-trained and UK/European-trained dentists. The savings on a full treatment plan can easily cover the cost of flights.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>Do these dentists accept USD?</dt>
+          <dd>USD acceptance is flagged for every clinic in this directory. At the Tier 1 level, most accept USD directly or quote USD pricing for international patients. South Africa charges in ZAR but major clinics quote USD equivalents. Confirm payment method via WhatsApp when booking.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>How do I book a dentist appointment from abroad?</dt>
+          <dd>WhatsApp is the standard channel across all five countries. Message the clinic, describe what you need, ask for a fee estimate in USD, and confirm availability. For dental tourism trips, contact the clinic before booking flights to confirm procedure timelines. For routine care, most Tier 1 clinics can book you within a week.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section methodology-section">
+    <div class="container container--narrow">
+      <h2>How This Directory Works</h2>
+      <p>
+        Every clinic is researched from primary sources: clinic websites, Google Maps reviews, training credential mentions, and diaspora community recommendations gathered from relocation groups across WhatsApp, Facebook, and Slack.
+      </p>
+      <p>
+        Tier 1 clinics (featured) are diaspora-trusted practices with internationally trained staff, strong Google ratings, USD acceptance, and WhatsApp accessibility. Tier 2 (established) are well-reviewed practices with some international training or strong local track records. Tier 3 (neighbourhood) are listed for geographic coverage.
+      </p>
+      <p>
+        This directory covers sub-Saharan Africa only. All {totalClinics} listings are free. Featured and Verified upgrades are available for clinics that want priority placement. If you run a dental clinic in one of these cities and want to claim or update your listing, <a href="/contact">reach out</a>.
+      </p>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .page-hero {
+    background: var(--color-dark);
+    color: var(--color-text-on-dark);
+    padding: var(--space-4xl) 0 var(--space-3xl);
+  }
+
+  .breadcrumb {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: var(--space-lg);
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .breadcrumb a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .page-hero .eyebrow {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: var(--space-lg);
+  }
+
+  .page-hero h1 {
+    color: #fff;
+    max-width: 28ch;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-sub {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 60ch;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: var(--space-2xl);
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .stat-num {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  /* Context */
+  .context-section {
+    background: var(--color-bg);
+  }
+
+  .context-section--alt {
+    background: var(--color-bg-alt);
+  }
+
+  .container--narrow {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+  }
+
+  .context-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .context-section p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+  }
+
+  /* Countries */
+  .countries-section {
+    background: var(--color-bg-alt);
+  }
+
+  .section-header {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .section-header h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .section-header p {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .countries-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    max-width: 760px;
+  }
+
+  @media (min-width: 760px) {
+    .countries-grid {
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 900px;
+    }
+  }
+
+  .country-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: var(--space-xl);
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    transition: border-color 0.2s;
+  }
+
+  .country-card:hover {
+    border-color: var(--color-text-muted);
+  }
+
+  .country-card-top {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .country-flag {
+    font-size: 2rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .country-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+  }
+
+  .country-name {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .country-region {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  .country-badges {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-end;
+    flex-shrink: 0;
+  }
+
+  .status-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 3px 8px;
+    white-space: nowrap;
+  }
+
+  .status-badge--active {
+    background: var(--color-dark);
+    color: #fff;
+  }
+
+  .status-badge--tourism {
+    background: transparent;
+    border: 1px solid var(--color-text-muted);
+    color: var(--color-text-muted);
+  }
+
+  .country-summary {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .quick-facts {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    padding: var(--space-md) 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .quick-fact {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .qf-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+  }
+
+  .qf-value {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .country-card-footer {
+    margin-top: auto;
+    padding-top: var(--space-sm);
+  }
+
+  .card-cta {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text);
+  }
+
+  /* FAQ */
+  .faq-section {
+    background: var(--color-bg);
+  }
+
+  .faq-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .faq-item dt {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+    line-height: 1.4;
+  }
+
+  .faq-item dd {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  /* Methodology */
+  .methodology-section {
+    background: var(--color-bg-alt);
+  }
+
+  .methodology-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .methodology-section p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+  }
+
+  .methodology-section a {
+    color: var(--color-text);
+  }
+</style>
