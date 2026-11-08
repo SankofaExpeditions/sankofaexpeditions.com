@@ -1,0 +1,840 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { readFileSync } from 'fs';
+import { join } from 'path';
+
+const data = JSON.parse(readFileSync(join(process.cwd(), 'src/data/directories/real-estate-lawyers/ghana.json'), 'utf-8'));
+
+const { country, flag, region, summary, lastUpdated, firms } = data;
+
+const title = `Best Ghana Real Estate Lawyers for Diaspora 2027 | ${firms.length} Verified Firms | Sankofa Expeditions`;
+const description = `The best Ghana property lawyers for diaspora buyers. ${firms.length} verified firms in Accra, Kumasi, and Tema. Sorted by diaspora specialization, remote access, WhatsApp availability, and fee transparency.`;
+
+const pageUrl = 'https://sankofaexpeditions.com/directories/real-estate-lawyers/ghana';
+
+// Separate by city
+const cities = ['accra', 'kumasi', 'tema'];
+const cityNames: Record<string, string> = { accra: 'Accra', kumasi: 'Kumasi', tema: 'Tema' };
+
+// All tier 1 firms (featured / most likely to pay)
+const tier1Firms = firms.filter((f: any) => f.tier === 1);
+const diasporaSpecialists = firms.filter((f: any) => f.enrichment.diasporaSpecialist);
+const remoteReady = firms.filter((f: any) => f.enrichment.remoteConsultation);
+const whatsappReady = firms.filter((f: any) => f.enrichment.whatsappContact);
+
+const tierLabel: Record<number, string> = {
+  1: 'Diaspora Specialist',
+  2: 'Established Firm',
+  3: 'Boutique / Regional',
+};
+
+const listingTierLabel: Record<string, string> = {
+  'featured': 'Featured',
+  'verified': 'Verified',
+  'basic': 'Listed',
+};
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${pageUrl}/#webpage`,
+    "url": pageUrl,
+    "name": title,
+    "description": description,
+    "isPartOf": { "@id": "https://sankofaexpeditions.com/#website" },
+    "breadcrumb": { "@id": `${pageUrl}/#breadcrumb` },
+    "inLanguage": "en-US",
+    "dateModified": lastUpdated
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": `${pageUrl}/#breadcrumb`,
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sankofaexpeditions.com" },
+      { "@type": "ListItem", "position": 2, "name": "Directories", "item": "https://sankofaexpeditions.com/directories" },
+      { "@type": "ListItem", "position": 3, "name": "Real Estate Lawyers", "item": "https://sankofaexpeditions.com/directories/real-estate-lawyers" },
+      { "@type": "ListItem", "position": 4, "name": "Ghana", "item": pageUrl }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": `${pageUrl}/#list`,
+    "name": "Best Ghana Real Estate Lawyers for Diaspora",
+    "description": "Verified list of Ghana property lawyers with diaspora specialization.",
+    "numberOfItems": firms.length,
+    "itemListElement": tier1Firms.map((f: any, i: number) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": f.name,
+      "url": `https://${f.website}`
+    }))
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Which Ghana property lawyer is best for diaspora buyers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The top diaspora-focused Ghana property lawyers include Lawyer Essien & Associates (4.7 Google rating, YouTube channel, free consultations), JSAS Legal Services (UK-based with Accra operations, Trustpilot 4.2), Akoto Law (4.5 Google rating, confirmed Google and Facebook Ads), LawyerInGhana.com (Ghanaian-American founded, USD pricing), and Korley Legal (certified Google Partners, GBP pricing for UK clients). All 8 Tier 1 firms offer remote consultations and WhatsApp contact."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do Ghana property lawyers offer remote consultations for diaspora buyers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `Yes. ${remoteReady.length} of the ${firms.length} firms in this directory offer remote consultations via video call or WhatsApp. This is now standard practice for diaspora-focused lawyers in Accra. Fully remote property transactions are possible using power of attorney arrangements.`
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the average cost of a property lawyer in Accra?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Accra property lawyers charge GHS 1,500 to GHS 8,000 (approximately USD 95 to USD 510) for diaspora-focused boutiques. UK-facing firms charge £500 to £2,000. Some charge 1.5 to 3 percent of property value. The average diaspora property transaction in Ghana involves USD 50,000 to USD 500,000, making legal fees a small fraction of the transaction value."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is it safe to buy property in Ghana from abroad?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It is safe when done correctly. The main risk is title fraud, which is mitigated by a proper Lands Commission title search conducted by your lawyer before any payment. Never pay a deposit before your lawyer has completed a title search. All 8 Tier 1 firms in this directory are experienced in guiding diaspora buyers through this process."
+        }
+      }
+    ]
+  }
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/directories">Directories</a>
+        <span aria-hidden="true"> / </span>
+        <a href="/directories/real-estate-lawyers">Real Estate Lawyers</a>
+        <span aria-hidden="true"> / </span>
+        <span>Ghana</span>
+      </nav>
+      <div class="hero-flag" aria-hidden="true">{flag}</div>
+      <p class="eyebrow">{region}</p>
+      <h1>Best Ghana Real Estate Lawyers for Diaspora</h1>
+      <p class="hero-sub">{summary}</p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">{firms.length}</span>
+          <span class="stat-label">Verified Firms</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">{diasporaSpecialists.length}</span>
+          <span class="stat-label">Diaspora Specialists</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">{remoteReady.length}</span>
+          <span class="stat-label">Remote Consultations</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">{whatsappReady.length}</span>
+          <span class="stat-label">WhatsApp Accessible</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section context-section">
+    <div class="container container--narrow">
+      <h2>Why You Need a Lawyer Before Buying in Ghana</h2>
+      <p>
+        Title fraud is real and common, especially in Accra and Kumasi. The same parcel of land is sometimes sold to multiple buyers. Sellers sometimes do not have clear legal title to what they are selling. The only protection is a proper Lands Commission title search conducted by your lawyer before any money moves.
+      </p>
+      <p>
+        A good Ghana property lawyer handles: title search and verification, sale agreement review and drafting, Lands Commission registration, stamp duty and transfer taxes, and power of attorney if you are buying remotely. For diaspora buyers, they also serve as your boots on the ground.
+      </p>
+    </div>
+  </section>
+
+  <section class="section tier1-section">
+    <div class="container">
+      <header class="section-header">
+        <h2>Top 8 Diaspora-Focused Firms</h2>
+        <p>These firms actively market to diaspora buyers. All offer remote consultations. All are reachable via WhatsApp.</p>
+      </header>
+
+      <div class="firms-grid">
+        {tier1Firms.map((firm: any) => (
+          <article class={`firm-card firm-card--${firm.listingTier}`}>
+            <div class="firm-card-top">
+              <div class="firm-info">
+                <div class="firm-name-row">
+                  <h3 class="firm-name">{firm.name}</h3>
+                  {firm.listingTier === 'featured' && (
+                    <span class="listing-badge listing-badge--featured">Featured</span>
+                  )}
+                  {firm.listingTier === 'verified' && (
+                    <span class="listing-badge listing-badge--verified">Verified</span>
+                  )}
+                </div>
+                <span class="firm-city">{firm.city}</span>
+              </div>
+              {firm.rating && (
+                <div class="firm-rating">
+                  <span class="rating-num">{firm.rating}</span>
+                  <span class="rating-label">★ {firm.reviewSource}</span>
+                </div>
+              )}
+            </div>
+
+            <p class="firm-desc">{firm.description}</p>
+
+            <div class="enrichment-grid">
+              <div class={`enrich-item ${firm.enrichment.diasporaSpecialist ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{firm.enrichment.diasporaSpecialist ? '✓' : '·'}</span>
+                <span>Diaspora specialist</span>
+              </div>
+              <div class={`enrich-item ${firm.enrichment.remoteConsultation ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{firm.enrichment.remoteConsultation ? '✓' : '·'}</span>
+                <span>Remote consultation</span>
+              </div>
+              <div class={`enrich-item ${firm.enrichment.freeConsultation ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{firm.enrichment.freeConsultation ? '✓' : '·'}</span>
+                <span>Free first consult</span>
+              </div>
+              <div class={`enrich-item ${firm.enrichment.whatsappContact ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{firm.enrichment.whatsappContact ? '✓' : '·'}</span>
+                <span>WhatsApp</span>
+              </div>
+              <div class={`enrich-item ${firm.enrichment.powerOfAttorney ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{firm.enrichment.powerOfAttorney ? '✓' : '·'}</span>
+                <span>Power of attorney</span>
+              </div>
+              <div class={`enrich-item ${firm.enrichment.landSearch ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{firm.enrichment.landSearch ? '✓' : '·'}</span>
+                <span>Land title search</span>
+              </div>
+              <div class={`enrich-item ${firm.enrichment.inheritanceEstate ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{firm.enrichment.inheritanceEstate ? '✓' : '·'}</span>
+                <span>Inheritance/estate</span>
+              </div>
+              <div class={`enrich-item ${firm.enrichment.fixedFeePackages ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{firm.enrichment.fixedFeePackages ? '✓' : '·'}</span>
+                <span>Fixed fee packages</span>
+              </div>
+            </div>
+
+            {firm.enrichment.fixedFeePackages && firm.enrichment.fixedFeeNote && (
+              <p class="fee-note">{firm.enrichment.fixedFeeNote}</p>
+            )}
+
+            {firm.highlights.length > 0 && (
+              <ul class="highlights-list">
+                {firm.highlights.map((h: string) => (
+                  <li>{h}</li>
+                ))}
+              </ul>
+            )}
+
+            <div class="firm-card-footer">
+              <a href={`https://${firm.website}`} target="_blank" rel="noopener noreferrer" class="firm-link">
+                Visit {firm.website} &rarr;
+              </a>
+              <span class="firm-city-tag">{firm.city}</span>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section established-section">
+    <div class="container">
+      <header class="section-header">
+        <h2>Established Accra Firms</h2>
+        <p>Major full-service firms with real estate practices. Best for commercial transactions or high-complexity matters.</p>
+      </header>
+
+      <div class="firms-list">
+        {firms.filter((f: any) => f.tier === 2).map((firm: any) => (
+          <article class="firm-row">
+            <div class="firm-row-info">
+              <h3 class="firm-row-name">{firm.name}</h3>
+              <span class="firm-row-city">{firm.city}</span>
+            </div>
+            <p class="firm-row-desc">{firm.description}</p>
+            <div class="firm-row-tags">
+              {firm.highlights.map((h: string) => (
+                <span class="tag">{h}</span>
+              ))}
+            </div>
+            <a href={`https://${firm.website}`} target="_blank" rel="noopener noreferrer" class="firm-row-link">{firm.website} &rarr;</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section boutique-section">
+    <div class="container">
+      <header class="section-header">
+        <h2>Boutique and Regional Firms</h2>
+        <p>Specialists in Accra, Tema, Kumasi, and regional areas.</p>
+      </header>
+
+      <div class="firms-list">
+        {firms.filter((f: any) => f.tier === 3).map((firm: any) => (
+          <article class="firm-row">
+            <div class="firm-row-info">
+              <h3 class="firm-row-name">{firm.name}</h3>
+              <span class="firm-row-city">{firm.city}</span>
+            </div>
+            <p class="firm-row-desc">{firm.description}</p>
+            <div class="firm-row-tags">
+              {firm.highlights.map((h: string) => (
+                <span class="tag">{h}</span>
+              ))}
+            </div>
+            <a href={`https://${firm.website}`} target="_blank" rel="noopener noreferrer" class="firm-row-link">{firm.website} &rarr;</a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq-section">
+    <div class="container container--narrow">
+      <h2>Common Questions</h2>
+      <dl class="faq-list">
+        <div class="faq-item">
+          <dt>Which Ghana property lawyer is best for diaspora buyers?</dt>
+          <dd>Lawyer Essien & Associates (4.7 Google, free consultations), JSAS Legal (UK-based, Trustpilot 4.2), Akoto Law (4.5 Google), LawyerInGhana.com (USD pricing, Ghanaian-American founder), and Korley Legal (certified Google Partners, GBP pricing) are the top five. All 8 Tier 1 firms offer remote consultations and WhatsApp contact.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>How much does a Ghana property lawyer charge?</dt>
+          <dd>Boutique diaspora firms charge GHS 1,500 to GHS 8,000 (USD 95 to USD 510). UK-facing firms charge £500 to £2,000. Some charge 1.5 to 3 percent of property value. Fees are small relative to transaction values.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>Can I buy Ghana property fully remotely?</dt>
+          <dd>Yes. {remoteReady.length} of {firms.length} listed firms offer remote consultations. Power of attorney lets a trusted local representative execute the purchase while you remain abroad. All Tier 1 firms have established processes for this.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>What should a Ghana property lawyer do before I pay any money?</dt>
+          <dd>Title search at the Lands Commission. This is non-negotiable. It confirms the seller has clean title, no encumbrances, and legal authority to sell. Never pay a deposit before this is done.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section verification-section">
+    <div class="container container--narrow">
+      <h3>About This Directory</h3>
+      <p class="verification-meta">
+        Last updated: {lastUpdated}. All firms researched from primary sources: firm websites, Google Maps, Trustpilot, LinkedIn, confirmed digital marketing activity.
+      </p>
+      <p class="verification-meta">
+        This is a free directory. Firms can claim a Verified or Featured listing by <a href="/contact">contacting us</a>. Editorial placement is not for sale — Tier 1 firms are listed based on research, not payment.
+      </p>
+    </div>
+  </section>
+
+  <section class="section nav-section">
+    <div class="container">
+      <div class="nav-links">
+        <a href="/directories/real-estate-lawyers" class="nav-back">&larr; All Countries</a>
+        <a href="/directories" class="nav-back">All Directories &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .page-hero {
+    background: var(--color-dark);
+    color: var(--color-text-on-dark);
+    padding: var(--space-4xl) 0 var(--space-3xl);
+  }
+
+  .breadcrumb {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: var(--space-lg);
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .breadcrumb a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .hero-flag {
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: var(--space-lg);
+  }
+
+  .page-hero .eyebrow {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: var(--space-md);
+  }
+
+  .page-hero h1 {
+    color: #fff;
+    max-width: 28ch;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-sub {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 60ch;
+    margin-bottom: var(--space-xl);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: var(--space-2xl);
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .stat-num {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  /* Context */
+  .context-section {
+    background: var(--color-bg);
+  }
+
+  .container--narrow {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+  }
+
+  .context-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .context-section p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+  }
+
+  /* Section header */
+  .section-header {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .section-header h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .section-header p {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  /* Tier 1 grid */
+  .tier1-section {
+    background: var(--color-bg-alt);
+  }
+
+  .firms-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    max-width: 1100px;
+  }
+
+  @media (min-width: 760px) {
+    .firms-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .firm-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .firm-card--featured {
+    border-color: var(--color-text);
+  }
+
+  .firm-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-md);
+  }
+
+  .firm-name-row {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+
+  .firm-name {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  .listing-badge {
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 2px 7px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .listing-badge--featured {
+    background: var(--color-dark);
+    color: #fff;
+  }
+
+  .listing-badge--verified {
+    background: transparent;
+    border: 1px solid var(--color-text-muted);
+    color: var(--color-text-muted);
+  }
+
+  .firm-city {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    display: block;
+    margin-top: 2px;
+  }
+
+  .firm-rating {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-shrink: 0;
+  }
+
+  .rating-num {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1;
+  }
+
+  .rating-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+  }
+
+  .firm-desc {
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  /* Enrichment grid */
+  .enrichment-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    padding: var(--space-md) 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .enrich-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+  }
+
+  .enrich-item.enrich-yes {
+    color: var(--color-text);
+  }
+
+  .enrich-icon {
+    font-size: 0.75rem;
+    width: 14px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .fee-note {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .highlights-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .highlights-list li {
+    font-size: 0.75rem;
+    padding: 3px 10px;
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+  }
+
+  .firm-card-footer {
+    margin-top: auto;
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  .firm-link {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .firm-link:hover {
+    text-decoration: underline;
+  }
+
+  .firm-city-tag {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+  }
+
+  /* Established / Boutique rows */
+  .established-section {
+    background: var(--color-bg);
+  }
+
+  .boutique-section {
+    background: var(--color-bg-alt);
+  }
+
+  .firms-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--color-border);
+    max-width: 900px;
+  }
+
+  .firm-row {
+    padding: var(--space-xl);
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .firm-row:last-child {
+    border-bottom: none;
+  }
+
+  .firm-row-info {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .firm-row-name {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  .firm-row-city {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+  }
+
+  .firm-row-desc {
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .firm-row-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-muted);
+  }
+
+  .established-section .tag {
+    background: var(--color-bg);
+  }
+
+  .firm-row-link {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .firm-row-link:hover {
+    text-decoration: underline;
+  }
+
+  /* FAQ */
+  .faq-section {
+    background: var(--color-bg);
+  }
+
+  .faq-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .faq-item dt {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+    line-height: 1.4;
+  }
+
+  .faq-item dd {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  /* Verification */
+  .verification-section {
+    background: var(--color-bg-alt);
+  }
+
+  .verification-section h3 {
+    margin-bottom: var(--space-lg);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .verification-meta {
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+  }
+
+  .verification-meta a {
+    color: var(--color-text);
+  }
+
+  /* Nav */
+  .nav-section {
+    background: var(--color-bg);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-lg);
+    flex-wrap: wrap;
+  }
+
+  .nav-back {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .nav-back:hover {
+    color: var(--color-text-muted);
+  }
+</style>

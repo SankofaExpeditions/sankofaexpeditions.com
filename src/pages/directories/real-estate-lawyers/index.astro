@@ -1,0 +1,525 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const title = 'Ghana Real Estate Lawyers for Diaspora | Verified Directory | Sankofa Expeditions';
+const description = 'The best Ghana property lawyers for diaspora buyers. 25 verified firms with diaspora experience, remote consultation availability, fee transparency, and WhatsApp contact. Accra, Kumasi, Tema.';
+
+const countries = [
+  {
+    slug: 'ghana',
+    name: 'Ghana',
+    flag: '🇬🇭',
+    region: 'West Africa',
+    firmCount: 25,
+    diasporaSpecialistCount: 14,
+    cities: ['Accra', 'Kumasi', 'Tema'],
+    summary: 'The only diaspora-focused directory of Ghana property lawyers. 25 verified firms covering Accra, Kumasi, and Tema. Sorted by diaspora specialization, remote access, and fee transparency.',
+    status: 'live',
+  },
+];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://sankofaexpeditions.com/directories/real-estate-lawyers/#webpage",
+    "url": "https://sankofaexpeditions.com/directories/real-estate-lawyers",
+    "name": title,
+    "description": description,
+    "isPartOf": { "@id": "https://sankofaexpeditions.com/#website" },
+    "breadcrumb": { "@id": "https://sankofaexpeditions.com/directories/real-estate-lawyers/#breadcrumb" },
+    "inLanguage": "en-US",
+    "dateModified": new Date().toISOString().split('T')[0]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": "https://sankofaexpeditions.com/directories/real-estate-lawyers/#breadcrumb",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sankofaexpeditions.com" },
+      { "@type": "ListItem", "position": 2, "name": "Directories", "item": "https://sankofaexpeditions.com/directories" },
+      { "@type": "ListItem", "position": 3, "name": "Real Estate Lawyers", "item": "https://sankofaexpeditions.com/directories/real-estate-lawyers" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": "https://sankofaexpeditions.com/directories/real-estate-lawyers/#list",
+    "name": "Ghana Real Estate Lawyers for Diaspora",
+    "description": "Verified directory of Ghana property lawyers specializing in diaspora clients.",
+    "numberOfItems": 1,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Ghana Real Estate Lawyers",
+        "url": "https://sankofaexpeditions.com/directories/real-estate-lawyers/ghana"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I find a trusted real estate lawyer in Ghana as a diaspora buyer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Look for Ghana property lawyers who actively serve diaspora clients, offer remote consultations via video call or WhatsApp, and have verifiable reviews on Google or Trustpilot. This directory lists 25 verified firms filtered specifically for diaspora accessibility, including 8 Tier 1 firms that run paid ads targeting diaspora buyers and have confirmed remote consultation processes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does a property lawyer cost in Ghana?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ghana property lawyer fees range from GHS 1,500 to GHS 8,000 (approximately USD 95 to USD 510) for diaspora-focused boutique firms. UK-based firms with Ghana operations often charge in GBP (£500 to £2,000). Some firms charge a percentage of property value (1.5 to 3 percent). One diaspora referral typically generates 3 to 25 times the monthly listing fee for lawyers, which is why they invest in reaching diaspora audiences."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I buy property in Ghana from abroad without visiting?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Many Ghana property lawyers offer fully remote transaction processes, including virtual property tours, digital document signing, and power of attorney arrangements. At least 12 firms in this directory offer remote consultations. Power of attorney is a common tool that allows a trusted representative to execute the purchase on your behalf in Ghana while you remain abroad."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does a Ghana property lawyer actually do for a diaspora buyer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A Ghana property lawyer performs land title searches to verify ownership and detect encumbrances, reviews and drafts sale agreements, coordinates with the Lands Commission for registration, prepares power of attorney documentation if you are buying remotely, handles stamp duty and transfer taxes, and manages the full conveyancing process. For diaspora buyers, they also serve as the boots-on-ground representative who can physically inspect documents and report to you."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the biggest risks when buying property in Ghana from the diaspora?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The main risks are: purchasing land with disputed or encumbered title (land fraud is common in Accra and Kumasi), dealing with sellers who do not have proper documentation, boundary disputes in areas without formal cadastral surveys, and paying for property that the seller does not actually have legal authority to sell. A qualified Ghana property lawyer mitigates all of these risks through a proper title search with the Lands Commission before any money changes hands."
+        }
+      }
+    ]
+  }
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/directories">Directories</a>
+        <span aria-hidden="true"> / </span>
+        <span>Real Estate Lawyers</span>
+      </nav>
+      <p class="eyebrow">Property Law in Africa</p>
+      <h1>Best Ghana Real Estate Lawyers for Diaspora</h1>
+      <p class="hero-sub">
+        The only diaspora-focused directory of Ghana property lawyers. 25 verified firms. Sorted by diaspora specialization, remote access, fee transparency, and verifiable reviews.
+      </p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">25</span>
+          <span class="stat-label">Verified Firms</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">14</span>
+          <span class="stat-label">Diaspora Specialists</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">3</span>
+          <span class="stat-label">Cities Covered</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section context-section">
+    <div class="container container--narrow">
+      <h2>Why This Directory Exists</h2>
+      <p>
+        Every year, thousands of diaspora Africans lose money on Ghana property deals gone wrong. The same story repeats: someone bought land that turned out to have a disputed title, or paid a seller who had no legal right to sell. The fix is straightforward: hire a qualified property lawyer before any money moves.
+      </p>
+      <p>
+        But finding the right one is the problem. Most Ghana law firm directories are built for local clients. They do not filter for remote consultation availability, diaspora experience, or fee transparency in USD or GBP. This directory does.
+      </p>
+      <p>
+        Every firm listed here has been researched from primary sources: their own websites, Google reviews, Trustpilot, social media, and confirmed marketing activity. If we cannot verify it, we do not publish it.
+      </p>
+    </div>
+  </section>
+
+  <section class="section countries-section">
+    <div class="container">
+      <header class="section-header">
+        <h2>Countries</h2>
+        <p>Select a country to browse verified firms by city.</p>
+      </header>
+
+      <div class="countries-grid">
+        {countries.map((c) => (
+          <a href={`/directories/real-estate-lawyers/${c.slug}`} class="country-card">
+            <div class="country-card-top">
+              <span class="country-flag" aria-hidden="true">{c.flag}</span>
+              <div class="country-info">
+                <span class="country-name">{c.name}</span>
+                <span class="country-region">{c.region}</span>
+              </div>
+              <span class="status-badge status-badge--active">Live</span>
+            </div>
+            <p class="country-summary">{c.summary}</p>
+            <div class="quick-facts">
+              <div class="quick-fact">
+                <span class="qf-label">Total Firms</span>
+                <span class="qf-value">{c.firmCount}</span>
+              </div>
+              <div class="quick-fact">
+                <span class="qf-label">Diaspora Specialists</span>
+                <span class="qf-value">{c.diasporaSpecialistCount}</span>
+              </div>
+              <div class="quick-fact">
+                <span class="qf-label">Cities</span>
+                <span class="qf-value">{c.cities.join(', ')}</span>
+              </div>
+            </div>
+            <div class="country-card-footer">
+              <span class="card-cta">Browse firms &rarr;</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq-section">
+    <div class="container container--narrow">
+      <h2>Common Questions</h2>
+      <dl class="faq-list">
+        <div class="faq-item">
+          <dt>How do I find a trusted Ghana property lawyer from abroad?</dt>
+          <dd>Look for lawyers who actively serve diaspora clients, offer remote consultations, and have verifiable Google or Trustpilot reviews. This directory filters for all three. The 8 Tier 1 firms listed under Ghana all run paid ads targeting diaspora buyers and have confirmed remote processes.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>How much does a Ghana property lawyer cost?</dt>
+          <dd>Boutique diaspora-focused firms charge GHS 1,500 to GHS 8,000 (roughly USD 95 to USD 510). UK-based firms charge £500 to £2,000. Some charge 1.5 to 3 percent of property value. One successful referral from a diaspora client typically generates 3 to 25 times the lawyer's monthly listing cost.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>Can I buy Ghana property without visiting in person?</dt>
+          <dd>Yes. At least 12 firms in this directory offer fully remote processes including video consultations, digital document review, and power of attorney arrangements that allow a local representative to execute on your behalf.</dd>
+        </div>
+        <div class="faq-item">
+          <dt>What is the biggest risk when buying property in Ghana from abroad?</dt>
+          <dd>Disputed or fraudulent land titles. This is common in Accra and Kumasi. A qualified lawyer performs a title search with the Lands Commission before any money moves, which is the core protection against fraud.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section methodology-section">
+    <div class="container container--narrow">
+      <h2>How This Directory Works</h2>
+      <p>
+        Every firm is researched from their own website, Google Maps reviews, Trustpilot, LinkedIn, and social media. Marketing activity (confirmed Google Ads, YouTube, Instagram) is used as a proxy for diaspora focus. Firms that actively spend money reaching diaspora audiences understand the value of that client base.
+      </p>
+      <p>
+        Tier 1 firms are diaspora-focused boutiques with active digital marketing. Tier 2 are established Accra firms with real estate practices. Tier 3 are boutique and regional firms. All 25 listings are free. Featured and Verified upgrades are available for firms that want priority placement.
+      </p>
+      <p>
+        Updated monthly. If you run a Ghana property law firm and want to claim or update your listing, <a href="/contact">reach out</a>.
+      </p>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .page-hero {
+    background: var(--color-dark);
+    color: var(--color-text-on-dark);
+    padding: var(--space-4xl) 0 var(--space-3xl);
+  }
+
+  .breadcrumb {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: var(--space-lg);
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .breadcrumb a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .page-hero .eyebrow {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: var(--space-lg);
+  }
+
+  .page-hero h1 {
+    color: #fff;
+    max-width: 28ch;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-sub {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 60ch;
+    margin-bottom: var(--space-2xl);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: var(--space-2xl);
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .stat-num {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  /* Context */
+  .context-section {
+    background: var(--color-bg);
+  }
+
+  .container--narrow {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+  }
+
+  .context-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .context-section p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+  }
+
+  /* Countries */
+  .countries-section {
+    background: var(--color-bg-alt);
+  }
+
+  .section-header {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .section-header h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .section-header p {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .countries-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    max-width: 600px;
+  }
+
+  .country-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: var(--space-xl);
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    transition: border-color 0.2s;
+  }
+
+  .country-card:hover {
+    border-color: var(--color-text-muted);
+  }
+
+  .country-card-top {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .country-flag {
+    font-size: 2rem;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .country-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+  }
+
+  .country-name {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .country-region {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  .status-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 3px 8px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .status-badge--active {
+    background: var(--color-dark);
+    color: #fff;
+  }
+
+  .country-summary {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .quick-facts {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    padding: var(--space-md) 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .quick-fact {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .qf-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+  }
+
+  .qf-value {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .country-card-footer {
+    margin-top: auto;
+    padding-top: var(--space-sm);
+  }
+
+  .card-cta {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text);
+  }
+
+  /* FAQ */
+  .faq-section {
+    background: var(--color-bg);
+  }
+
+  .faq-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .faq-item dt {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+    line-height: 1.4;
+  }
+
+  .faq-item dd {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  /* Methodology */
+  .methodology-section {
+    background: var(--color-bg-alt);
+  }
+
+  .methodology-section h2 {
+    margin-bottom: var(--space-xl);
+  }
+
+  .methodology-section p {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+  }
+
+  .methodology-section a {
+    color: var(--color-text);
+  }
+</style>
