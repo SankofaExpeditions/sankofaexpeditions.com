@@ -1,0 +1,103 @@
+{
+  "city": "Cape Town",
+  "citySlug": "cape-town",
+  "country": "South Africa",
+  "countryCode": "ZA",
+  "flag": "🇿🇦",
+  "region": "Southern Africa",
+  "summary": "Cape Town is the most statistically dangerous city in this directory, with the highest Numbeo Crime Index at 79.9. This requires context. The Atlantic Seaboard and Southern Suburbs are genuinely safe by global standards and are where most expats live. The danger is concentrated in the Cape Flats, where gang violence reaches crisis levels that have no equivalent in the other cities in this list. Know your zones.",
+  "lastUpdated": "2026-11-08",
+  "dataSource": "US State Dept, UK FCO, Numbeo 2025, South African Police Service (SAPS)",
+  "overallRisk": "high",
+  "overallRiskLabel": "High Risk",
+  "overallSafetyScore": 35,
+  "usDeptState": {
+    "level": 2,
+    "label": "Exercise Increased Caution",
+    "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/south-africa-travel-advisory.html",
+    "date": "May 20, 2025",
+    "summary": "Exercise increased caution due to crime. Violent crime including mugging, armed robbery, carjacking, and rape occurs throughout South Africa. Load shedding can disable alarm systems and CCTV."
+  },
+  "ukFco": {
+    "summary": "South Africa has a high level of crime including violent crime. Take care throughout the country. The main risks are mugging, bag-snatching, carjacking, and home robbery.",
+    "url": "https://www.gov.uk/foreign-travel-advice/south-africa"
+  },
+  "numbeo": {
+    "crimeIndex": 79.9,
+    "safetyIndex": 20.1,
+    "source": "Numbeo 2025"
+  },
+  "crimeTypes": [
+    "Mugging and armed robbery",
+    "Carjacking (very high rate, at traffic lights and in parking lots)",
+    "Home invasions",
+    "Rape (high national rate)",
+    "Gang violence (Cape Flats, one of highest per-capita murder rates in the world)",
+    "Smash-and-grab vehicle attacks",
+    "Tourist-targeted robbery on Table Mountain trails",
+    "Bag snatching"
+  ],
+  "safeNeighborhoods": ["Atlantic Seaboard: Sea Point, Green Point, De Waterkant, Camps Bay, Clifton", "Southern Suburbs: Constantia, Claremont, Rondebosch, Newlands", "Pinelands", "Century City", "Bloubergstrand"],
+  "cautionAreas": ["Cape Flats: Khayelitsha, Mitchells Plain, Gugulethu, Nyanga (extreme gang violence)", "CBD at night", "Woodstock and Salt River at night", "Isolated mountain trails without groups", "Any area during load shedding (power outages disable alarms and CCTV)"],
+  "currentAlerts": [
+    "Gang violence in Cape Flats remains at crisis level. SAPS crime statistics confirm Nyanga, Khayelitsha, and Gugulethu among highest murder rates per capita in the world. These areas do not affect the Atlantic Seaboard or Southern Suburbs.",
+    "Table Mountain muggings of tourists ongoing in 2024-2025. Hike only in groups or with a guide. Never solo.",
+    "Load shedding (power outages): when electricity cuts, home alarms and neighborhood CCTV go offline. Crime rates spike during these windows. Know your load shedding schedule.",
+    "May 2025 advisory update: load shedding specifically flagged as a security multiplier."
+  ],
+  "safetyTips": [
+    "Never hike Table Mountain, Lion's Head, or Signal Hill alone. Only in groups with other people visible. Muggings are targeted and planned.",
+    "Keep all doors locked while driving. Carjacking at traffic lights is extremely common. Engage locks before you stop.",
+    "Do not stop if strangers gesture at your car or flag you down on the road.",
+    "Use only Uber or Bolt. Never metered street taxis alone at night.",
+    "Home security: electric fence plus armed response is the standard for expats in Cape Town.",
+    "During load shedding windows, heighten security awareness. Deadbolts over electronic locks.",
+    "Tourist areas in the CBD (V&A Waterfront, long streets) are relatively safe during the day. Clear out before dark.",
+    "To report a crime or call police in Cape Town, dial 10111 (South African Police Service). For general emergencies including medical and fire, dial 10177 (ambulance) or 112 (national emergency from mobile). Cape Town City Emergency Services: 021 480 7700.",
+    "If you have subscribed to a home or vehicle security company (ADT, Chubb, Fidelity), their armed response number is typically faster than SAPS. Save your security company's number.",
+    "US citizens contact the U.S. Consulate General Cape Town for emergency consular assistance at +27 21 702 7300. UK nationals contact the British Consulate General Cape Town at +27 21 405 2400.",
+    "Enroll in the US Embassy Smart Traveler Enrollment Program (STEP) at step.state.gov before your trip to receive automatic security alerts for South Africa."
+  ],
+  "emergencyNumbers": {
+    "police": "10111",
+    "ambulance": "10177",
+    "fire": "107",
+    "emergencyGeneral": "112",
+    "capeTownEmergency": "021 480 7700"
+  },
+  "embassyContacts": {
+    "us": {
+      "name": "U.S. Consulate General Cape Town",
+      "phone": "+27 21 702 7300",
+      "url": "https://za.usembassy.gov/embassy-consulates/cape-town/"
+    },
+    "uk": {
+      "name": "British Consulate General Cape Town",
+      "phone": "+27 21 405 2400",
+      "url": "https://www.gov.uk/world/organisations/british-consulate-general-cape-town"
+    }
+  },
+  "keyFacts": [
+    "Highest crime index in this directory at 79.9 out of 100.",
+    "Cape Flats gang violence is a structural crisis unrelated to expat or tourist zones.",
+    "Atlantic Seaboard neighborhoods are among the best-secured expat zones in Africa.",
+    "South Africa has the best medical infrastructure of any country in this directory.",
+    "Load shedding is a unique security risk factor. Plan your security around power schedules.",
+    "Cape Town's stark inequality produces dramatically different safety experiences within 5km of each other."
+  ],
+  "highlights": [
+    "Best medical infrastructure of any city in this directory",
+    "Atlantic Seaboard is well-secured and genuinely livable",
+    "Strongest legal infrastructure and property rights in the directory",
+    "Largest African diaspora expat community with strong networks"
+  ],
+  "challenges": [
+    "Highest crime index in the directory by significant margin",
+    "Carjacking requires zero-compromise vehicle security discipline",
+    "Load shedding creates unpredictable windows of heightened risk",
+    "Table Mountain access requires group hiking only",
+    "Cape Flats gang violence is a structural crisis (not tourist-relevant but shapes city-wide stats)"
+  ],
+  "relatedCitySlug": "cape-town",
+  "nomadCitiesUrl": "/directories/nomad-cities/cape-town"
+}

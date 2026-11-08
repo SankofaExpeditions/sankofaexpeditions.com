@@ -1,0 +1,102 @@
+{
+  "city": "Lagos",
+  "citySlug": "lagos",
+  "country": "Nigeria",
+  "countryCode": "NG",
+  "flag": "🇳🇬",
+  "region": "West Africa",
+  "summary": "Lagos is the highest energy, highest stakes city in this directory. It is also Nigeria's economic engine, home to the continent's largest startup ecosystem, and a magnet for diaspora professionals. The key to Lagos is neighborhood selection and transport discipline. Victoria Island, Ikoyi, and Lekki Phase 1 are well-policed and manageable. The surrounding areas require experienced-level awareness.",
+  "lastUpdated": "2026-11-08",
+  "dataSource": "US State Dept, UK FCO, Numbeo 2025, OSAC",
+  "overallRisk": "high",
+  "overallRiskLabel": "High Risk",
+  "overallSafetyScore": 38,
+  "usDeptState": {
+    "level": 3,
+    "label": "Reconsider Travel",
+    "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/nigeria-travel-advisory.html",
+    "date": "August 28, 2024",
+    "summary": "Reconsider travel to Nigeria due to crime, terrorism, civil unrest, and kidnapping. Armed robbery, assault, and carjacking occur. Northwest and Northeast Nigeria are Level 4. Lagos is relatively safer but falls under the country-level Level 3 advisory."
+  },
+  "ukFco": {
+    "summary": "FCDO advises against all travel to some parts of Nigeria and against all but essential travel to others. Lagos is not in a do-not-travel zone but serious warnings apply. High crime rate. Kidnapping risk.",
+    "url": "https://www.gov.uk/foreign-travel-advice/nigeria"
+  },
+  "numbeo": {
+    "crimeIndex": 72.8,
+    "safetyIndex": 27.2,
+    "source": "Numbeo 2025"
+  },
+  "crimeTypes": [
+    "Armed robbery and assault",
+    "Carjacking (high frequency in traffic and at night)",
+    "One-chance taxi robberies (fake ride-hailing)",
+    "Kidnapping for ransom (rising, including in Lekki corridor)",
+    "Cybercrime and 419 scams",
+    "Home invasions",
+    "Smash-and-grab at red lights",
+    "Port/APAPA area: armed robbery against vehicles in gridlock"
+  ],
+  "safeNeighborhoods": ["Victoria Island (VI)", "Ikoyi", "Lekki Phase 1", "Banana Island (highest security in Lagos)", "Eti-Osa LGA", "Yaba (tech hub, day use)"],
+  "cautionAreas": ["Oshodi", "Mushin", "Ajegunle", "Agege", "Mile 2", "Lagos Island CBD at night", "Badagry Road at night", "APAPA/port area", "Any area during traffic gridlock"],
+  "currentAlerts": [
+    "Nigeria country-level advisory: Level 3 Reconsider Travel. Northwest (Zamfara, Katsina, Sokoto) and Northeast (Borno, Yobe) are Level 4 Do Not Travel. Lagos is in a separate risk category from these zones.",
+    "Kidnapping cases increased in Lekki corridor since 2024. Even upscale areas require security planning.",
+    "Port/APAPA area has documented armed robbery against vehicles stuck in traffic gridlock. Avoid unless essential.",
+    "Economic pressure in 2024-2025 (naira devaluation, fuel subsidy removal) has increased desperation-driven crime."
+  ],
+  "safetyTips": [
+    "Never take unofficial taxis. One-chance robberies are systematic. Use only Bolt or verified corporate drivers.",
+    "Keep all car windows up and doors locked at all times in traffic. Smash-and-grab at red lights is common.",
+    "Avoid road travel after dark outside Victoria Island, Ikoyi, and Lekki Phase 1.",
+    "Pre-arrange all airport pickups with verified, known contacts. Never approach strangers offering transport.",
+    "Use only gated, secured accommodations. Standard hotels may not have adequate security.",
+    "Travel in convoys for any significant road trip outside Lagos Island.",
+    "To report a crime or summon police in Lagos, call 112 (national emergency) or 767 (Lagos State Emergency Management Agency). The Lagos State emergency line is often faster to dispatch in the city.",
+    "In a medical emergency, call 112 or contact a private hospital directly. Lagos University Teaching Hospital (LUTH): +234 1 774 7647. Reddington Hospital (VI): +234 1 270 4400. Private hospitals respond faster than public emergency services.",
+    "US citizens contact the U.S. Consulate General Lagos for emergency consular assistance at +234 1 460 3400. UK nationals contact the British Deputy High Commission Lagos at +234 1 277 0780.",
+    "Carry minimal cash. Use mobile money (Opay, PalmPay) or card in known establishments. Flashing cash is a known trigger for targeting.",
+    "Enroll in the US Embassy Smart Traveler Enrollment Program (STEP) at step.state.gov before your trip to receive automatic security alerts for Nigeria."
+  ],
+  "emergencyNumbers": {
+    "police": "112",
+    "ambulance": "112",
+    "lagosStateEmergency": "767",
+    "fire": "112"
+  },
+  "embassyContacts": {
+    "us": {
+      "name": "U.S. Consulate General Lagos",
+      "phone": "+234 1 460 3400",
+      "url": "https://ng.usembassy.gov/embassy-consulate/lagos/"
+    },
+    "uk": {
+      "name": "British Deputy High Commission Lagos",
+      "phone": "+234 1 277 0780",
+      "url": "https://www.gov.uk/world/organisations/british-deputy-high-commission-lagos"
+    }
+  },
+  "keyFacts": [
+    "Crime index of 72.8 makes Lagos one of the two highest-risk cities in this directory.",
+    "Nigeria carries a country-level Level 3 advisory. Lagos is relatively safer vs. the north but not exempt.",
+    "Largest economy in Africa. Largest city. Highest-stakes environment. High risk does not mean no-go.",
+    "Victoria Island-Ikoyi-Lekki corridor is a city within a city, with its own security ecosystem.",
+    "Naira devaluation (70%+ 2022-2025) has intensified economic pressure and crime motivation.",
+    "Diaspora returnees increasingly hiring personal security for Lagos operations."
+  ],
+  "highlights": [
+    "Africa's largest economy and startup hub. High-reward city for the right traveler.",
+    "Victoria Island-Ikoyi-Lekki corridor is well-established for expat operations",
+    "Strong Nigerian diaspora networks provide local navigation support",
+    "Nigeria's fintech ecosystem (Flutterwave, Paystack) makes financial operations smoother"
+  ],
+  "challenges": [
+    "Highest US State Dept level (3) in this directory",
+    "One-chance taxi robberies require zero-compromise transport discipline",
+    "Kidnapping risk now extending into traditionally safe Lekki corridor",
+    "Night travel outside the VI/Ikoyi/Lekki corridor is a serious risk",
+    "Economic desperation crime increasing with naira devaluation"
+  ],
+  "relatedCitySlug": "lagos",
+  "nomadCitiesUrl": "/directories/nomad-cities/lagos"
+}

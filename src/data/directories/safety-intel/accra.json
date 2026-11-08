@@ -1,0 +1,97 @@
+{
+  "city": "Accra",
+  "citySlug": "accra",
+  "country": "Ghana",
+  "countryCode": "GH",
+  "flag": "🇬🇭",
+  "region": "West Africa",
+  "summary": "Accra is the spiritual home of the African-American diaspora return movement, and its safety profile is manageable with standard urban awareness. Petty crime and phone snatching are the most common risks. Violent crime against foreigners is rare in the main expat and diaspora zones. The northern border regions have an entirely different and elevated risk profile.",
+  "lastUpdated": "2026-11-08",
+  "dataSource": "US State Dept, UK FCO, Numbeo 2025, OSAC",
+  "overallRisk": "medium",
+  "overallRiskLabel": "Medium Risk",
+  "overallSafetyScore": 60,
+  "usDeptState": {
+    "level": 2,
+    "label": "Exercise Increased Caution",
+    "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/ghana-travel-advisory.html",
+    "date": "January 10, 2025",
+    "summary": "Exercise increased caution in Ghana due to crime and civil unrest. Violent crime such as carjackings, home invasions, and armed robbery occur. Northern regions near Burkina Faso border are Level 3."
+  },
+  "ukFco": {
+    "summary": "Exercise a high degree of caution in Ghana. Ongoing risk of violent crime and petty crime throughout. Northern border regions flagged separately at higher risk.",
+    "url": "https://www.gov.uk/foreign-travel-advice/ghana"
+  },
+  "numbeo": {
+    "crimeIndex": 56.8,
+    "safetyIndex": 43.2,
+    "source": "Numbeo 2025"
+  },
+  "crimeTypes": [
+    "Phone snatching (very common citywide)",
+    "Bag snatching in crowded areas",
+    "Carjacking and armed robbery",
+    "Home invasions in residential areas",
+    "Petty theft in markets",
+    "Express kidnapping (rare but rising in 2024-2025)"
+  ],
+  "safeNeighborhoods": ["East Legon", "Airport Residential Area", "Cantonments", "Labone", "Osu", "Roman Ridge", "Dzorwulu"],
+  "cautionAreas": ["Nima", "Mamobi", "Agbogbloshie (e-waste dump)", "Old Fadama", "Chorkor", "Accra New Town at night", "Makola Market area at night"],
+  "currentAlerts": [
+    "Northern regions: Upper East and Upper West provinces are Level 3 (Reconsider Travel) due to Sahel terrorism spillover from Burkina Faso. Accra is unaffected.",
+    "Sporadic civil unrest possible around political events and elections.",
+    "Phone snatching has reached epidemic levels in Accra CBD and markets. Keep all devices out of sight.",
+    "January 2025 advisory update maintained Level 2 for Accra."
+  ],
+  "safetyTips": [
+    "Use only Uber or Bolt. Never enter unmarked taxis. 'One-chance' taxi robberies are a known risk.",
+    "Keep your phone inside your pocket or bag at all times in public. Phone snatching is the single most common crime.",
+    "Do not walk at night in markets, the CBD, or Accra New Town.",
+    "In East Legon and Airport Residential, standard precautions are sufficient.",
+    "To report a crime or summon police in Ghana, call 191 (Police Emergency). For ambulance services call 193. For fire call 192. Save these numbers in your phone before you arrive.",
+    "If you witness or are involved in a serious incident, you can also reach the Tourist Police helpline at 0800 111 500 (toll-free). They are specifically trained to assist visitors.",
+    "US citizens contact the U.S. Embassy Accra for emergency consular assistance at +233 030 274 1000. UK nationals contact the British High Commission Accra at +233 302 213 250. Both have 24-hour emergency lines.",
+    "Carry a photocopy of your passport. Original stays secured at your accommodation.",
+    "Enroll in the US Embassy Smart Traveler Enrollment Program (STEP) at step.state.gov before your trip to receive automatic security alerts for Ghana."
+  ],
+  "emergencyNumbers": {
+    "police": "191",
+    "ambulance": "193",
+    "fire": "192",
+    "touristHelpline": "0800 111 500"
+  },
+  "embassyContacts": {
+    "us": {
+      "name": "U.S. Embassy Accra",
+      "phone": "+233 030 274 1000",
+      "url": "https://gh.usembassy.gov"
+    },
+    "uk": {
+      "name": "British High Commission Accra",
+      "phone": "+233 302 213 250",
+      "url": "https://www.gov.uk/world/organisations/british-high-commission-accra"
+    }
+  },
+  "keyFacts": [
+    "Crime index of 56.8 places Accra in the medium range of this directory.",
+    "Most popular diaspora return destination in Africa. Well-developed expat zones.",
+    "Northern border provinces have Level 3 US advisory. Accra itself is Level 2.",
+    "Ghana's Right of Abode program for African diaspora is a draw despite urban safety challenges.",
+    "English is the official language, reducing communication friction with police and authorities.",
+    "SafetyWing and similar travel insurance is strongly recommended for all visits."
+  ],
+  "highlights": [
+    "English-speaking city with strong diaspora infrastructure",
+    "Well-established safe expat zones (East Legon, Cantonments)",
+    "Violent crime against foreigners rare in main diaspora areas",
+    "Active tourism police and diaspora support networks"
+  ],
+  "challenges": [
+    "Phone snatching epidemic requires constant vigilance",
+    "Northern border regions have significantly elevated risk",
+    "Carjacking occurs, particularly at night",
+    "Rising express kidnapping incidents in 2024-2025"
+  ],
+  "relatedCitySlug": "accra",
+  "nomadCitiesUrl": "/directories/nomad-cities/accra"
+}

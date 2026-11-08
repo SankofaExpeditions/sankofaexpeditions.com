@@ -1,0 +1,97 @@
+{
+  "city": "Dar es Salaam",
+  "citySlug": "dar-es-salaam",
+  "country": "Tanzania",
+  "countryCode": "TZ",
+  "flag": "🇹🇿",
+  "region": "East Africa",
+  "summary": "Dar es Salaam has a generally lower crime rate than Nairobi or Lagos. Petty theft and phone snatching are the primary concerns. The main expat zones of Masaki, Msasani Peninsula, and Oyster Bay are genuinely safe with standard precautions. A background terrorism threat exists, primarily affecting coastal areas and Zanzibar.",
+  "lastUpdated": "2026-11-08",
+  "dataSource": "US State Dept, UK FCO, Numbeo 2025, OSAC",
+  "overallRisk": "medium",
+  "overallRiskLabel": "Medium Risk",
+  "overallSafetyScore": 65,
+  "usDeptState": {
+    "level": 2,
+    "label": "Exercise Increased Caution",
+    "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/tanzania-travel-advisory.html",
+    "date": "May 23, 2025",
+    "summary": "Exercise increased caution due to crime and terrorism. Petty theft, purse snatching, and pick-pocketing are common, especially in Dar es Salaam."
+  },
+  "ukFco": {
+    "summary": "Tanzania has a generally lower crime rate than other countries in the region. Take reasonable precautions. Some areas of Dar have higher rates of street crime.",
+    "url": "https://www.gov.uk/foreign-travel-advice/tanzania"
+  },
+  "numbeo": {
+    "crimeIndex": 50.3,
+    "safetyIndex": 49.7,
+    "source": "Numbeo 2025"
+  },
+  "crimeTypes": [
+    "Petty theft and pickpocketing (most common)",
+    "Phone grabbing from hands and open car windows",
+    "Bag snatching",
+    "Mugging at night",
+    "Terrorism threat (coastal areas and Zanzibar)",
+    "Occasional armed robbery"
+  ],
+  "safeNeighborhoods": ["Oyster Bay", "Masaki", "Msasani Peninsula", "Upanga", "Kinondoni (better parts)", "Mikocheni"],
+  "cautionAreas": ["Kariakoo market (pickpocketing)", "Ubungo bus terminal", "Temeke district", "City center CBD at night", "Any isolated area after dark"],
+  "currentAlerts": [
+    "Terrorism risk persists in coastal areas and Zanzibar. Occasional bomb threats in Dar es Salaam proper.",
+    "May 2025: Advisory updated with elevated terrorism threat for Western interests.",
+    "Zanzibar has a distinct and somewhat elevated risk profile from Dar es Salaam city.",
+    "Tourist areas are specifically targeted by opportunistic crime."
+  ],
+  "safetyTips": [
+    "Never display your phone or camera in Kariakoo or any market area.",
+    "Avoid walking along the Masaki-Oyster Bay beachfront after dark.",
+    "Use Bolt or verified app taxis only. Street taxis carry robbery risk.",
+    "Swim only at designated and staffed beaches. Strong rip currents and isolated beach muggings occur.",
+    "Keep vehicle doors locked and windows up in traffic.",
+    "Do not carry large cash amounts. Use ATMs inside secured banks or malls.",
+    "To report a crime or call police, dial 112. For medical emergencies dial 114. For fire dial 115. These are the national emergency lines for Tanzania.",
+    "US citizens contact the U.S. Embassy Dar es Salaam at +255 22 229 4000 for emergency consular assistance. UK nationals contact the British High Commission at +255 22 229 0000. Both offer 24-hour emergency lines for citizens in distress.",
+    "Enroll in the US Embassy Smart Traveler Enrollment Program (STEP) at step.state.gov to receive real-time security alerts for Tanzania."
+  ],
+  "emergencyNumbers": {
+    "police": "112",
+    "ambulance": "114",
+    "fire": "115",
+    "touristHelpline": "+255 22 211 4147"
+  },
+  "embassyContacts": {
+    "us": {
+      "name": "U.S. Embassy Dar es Salaam",
+      "phone": "+255 22 229 4000",
+      "url": "https://tz.usembassy.gov"
+    },
+    "uk": {
+      "name": "British High Commission Dar es Salaam",
+      "phone": "+255 22 229 0000",
+      "url": "https://www.gov.uk/world/organisations/british-high-commission-dar-es-salaam"
+    }
+  },
+  "keyFacts": [
+    "Crime index of 50.3 places Dar es Salaam in the mid-range of this directory.",
+    "Tanzania has lower crime rates than regional neighbors Kenya and Nigeria.",
+    "Msasani Peninsula and Oyster Bay are among the safest expat zones in East Africa.",
+    "Terrorism is a background risk, primarily affecting Zanzibar and coastal areas.",
+    "English and Swahili are both widely spoken, aiding communication with authorities.",
+    "Dar es Salaam is significantly cheaper than Nairobi for comparable lifestyle."
+  ],
+  "highlights": [
+    "Lower crime rate than Nairobi and Lagos",
+    "Safe expat zones well-established with good security infrastructure",
+    "English widely spoken, easier to navigate for diaspora",
+    "Generally welcoming attitude toward African diaspora visitors"
+  ],
+  "challenges": [
+    "Terrorism threat requires ongoing awareness",
+    "Phone snatching epidemic in market and CBD areas",
+    "Night safety requires significant caution",
+    "Zanzibar has a distinctly higher risk profile than the mainland"
+  ],
+  "relatedCitySlug": "dar-es-salaam",
+  "nomadCitiesUrl": "/directories/nomad-cities/dar-es-salaam"
+}

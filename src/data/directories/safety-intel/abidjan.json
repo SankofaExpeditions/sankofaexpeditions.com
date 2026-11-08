@@ -1,0 +1,98 @@
+{
+  "city": "Abidjan",
+  "citySlug": "abidjan",
+  "country": "Cote d'Ivoire",
+  "countryCode": "CI",
+  "flag": "🇨🇮",
+  "region": "West Africa",
+  "summary": "Abidjan is Cote d'Ivoire's economic capital and the most dynamic city in Francophone West Africa. The city rewards neighborhood awareness. Cocody's Riviera and Deux Plateaux districts are where most expats live and are genuinely safe. Motorcycle bag snatching exists citywide. The far north, near Burkina Faso and Mali, has a completely separate and elevated risk profile.",
+  "lastUpdated": "2026-11-08",
+  "dataSource": "US State Dept, UK FCO, Numbeo 2025, OSAC",
+  "overallRisk": "medium-high",
+  "overallRiskLabel": "Medium-High Risk",
+  "overallSafetyScore": 52,
+  "usDeptState": {
+    "level": 2,
+    "label": "Exercise Increased Caution",
+    "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/cote-d-ivoire-travel-advisory.html",
+    "date": "January 10, 2025",
+    "summary": "Exercise increased caution due to crime and civil unrest. Violent crimes occur including armed robbery, burglary, and carjacking. Northern border regions are Level 3."
+  },
+  "ukFco": {
+    "summary": "Exercise a high degree of caution in Cote d'Ivoire. Risk of violent and petty crime throughout the country. Northern regions bordering Mali and Burkina Faso have higher terrorism risk.",
+    "url": "https://www.gov.uk/foreign-travel-advice/ivory-coast"
+  },
+  "numbeo": {
+    "crimeIndex": 57.2,
+    "safetyIndex": 42.8,
+    "source": "Numbeo 2025"
+  },
+  "crimeTypes": [
+    "Motorbike bag snatching (high frequency citywide)",
+    "Armed robbery, especially at night",
+    "Burglary and home break-ins",
+    "Carjacking",
+    "Terrorism spillover (northern regions only)",
+    "Kidnapping low risk in Abidjan, rising in north"
+  ],
+  "safeNeighborhoods": ["Cocody (Deux Plateaux, Riviera)", "Plateau (CBD during daytime)", "Zone 4", "Marcory (Residentiel)", "Les Jardins"],
+  "cautionAreas": ["Adjame", "Abobo", "Yopougon", "Koumassi at night", "Plateau after dark", "Northern provinces bordering Burkina Faso/Mali (Level 3)"],
+  "currentAlerts": [
+    "Northern provinces bordering Burkina Faso and Mali are Level 3 (Reconsider Travel) due to Sahel terrorism spillover. Abidjan is unaffected.",
+    "Kidnapping risk is low in Abidjan but rising in northern Cote d'Ivoire.",
+    "Political situation has stabilized under Ouattara. Periodic unrest possible around elections.",
+    "Adjame and Abobo have historically been centers of political violence. Avoid during any unrest."
+  ],
+  "safetyTips": [
+    "Never resist motorbike bag snatchers. Motorcycle accidents caused by physical resistance are a documented risk.",
+    "Moto-taxi ('woro-woro') robberies are common. Use only trusted app-based taxis or pre-arranged vehicles.",
+    "Avoid driving at night where possible.",
+    "Keep all doors locked while driving and windows up in traffic.",
+    "Carry photocopies of your passport. Police checkpoints are common on major roads.",
+    "Plateau CBD is safe during working hours. Clear out before dark.",
+    "French is essential for basic navigation and emergency situations.",
+    "To report a crime or call police in Cote d'Ivoire, dial 111 (Police). For medical emergencies call 185 (ambulance). For fire call 180. The gendarmerie can be reached at 110.",
+    "US citizens contact the U.S. Embassy Abidjan for emergency consular assistance at +225 27 22 49 40 00. UK nationals contact the British Embassy Abidjan at +225 27 22 44 26 69.",
+    "Enroll in the US Embassy Smart Traveler Enrollment Program (STEP) at step.state.gov before your trip to receive automatic security alerts for Cote d'Ivoire."
+  ],
+  "emergencyNumbers": {
+    "police": "111",
+    "ambulance": "185",
+    "fire": "180",
+    "gendarmerie": "110"
+  },
+  "embassyContacts": {
+    "us": {
+      "name": "U.S. Embassy Abidjan",
+      "phone": "+225 27 22 49 40 00",
+      "url": "https://ci.usembassy.gov"
+    },
+    "uk": {
+      "name": "British Embassy Abidjan",
+      "phone": "+225 27 22 44 26 69",
+      "url": "https://www.gov.uk/world/organisations/british-embassy-abidjan"
+    }
+  },
+  "keyFacts": [
+    "Crime index of 57.2 places Abidjan slightly above Accra in this directory.",
+    "Most economically significant city in Francophone West Africa.",
+    "French is the official language. Dioula is widely spoken inland.",
+    "Northern border provinces have Level 3 US advisory. Abidjan itself is Level 2.",
+    "Motorcycle bag snatching is the most distinctive and common crime type.",
+    "Cocody-Riviera is the established expat hub with strong security infrastructure."
+  ],
+  "highlights": [
+    "Well-defined expat zones with strong security infrastructure",
+    "Dynamic city with active diaspora and professional community",
+    "Better airport and transport infrastructure than many West African peers",
+    "Cocody-Riviera is a genuinely livable expat zone"
+  ],
+  "challenges": [
+    "Motorcycle bag snatching requires constant bag awareness",
+    "Northern regions have entirely different and elevated risk profile",
+    "Night transport must be pre-arranged via trusted providers",
+    "French language barrier in emergency situations for English-speakers"
+  ],
+  "relatedCitySlug": "abidjan",
+  "nomadCitiesUrl": "/directories/nomad-cities/abidjan"
+}

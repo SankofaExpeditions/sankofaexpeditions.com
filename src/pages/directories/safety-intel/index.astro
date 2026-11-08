@@ -1,0 +1,531 @@
+---
+import { readFileSync, readdirSync } from 'fs';
+import { join } from 'path';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const dataDir = join(process.cwd(), 'src/data/directories/safety-intel');
+const files = readdirSync(dataDir).filter(f => f.endsWith('.json'));
+const cities = files
+  .map(f => {
+    const d = JSON.parse(readFileSync(join(dataDir, f), 'utf-8'));
+    return { ...d, slug: f.replace('.json', '') };
+  })
+  .sort((a, b) => b.overallSafetyScore - a.overallSafetyScore);
+
+const title = 'Africa Safety Intelligence Directory | Sankofa Expeditions®';
+const description = 'City-by-city safety scores, State Dept advisories, Numbeo crime data, and practical intel for 8 African cities. Built for diaspora travelers, not tourists.';
+
+const riskColor: Record<string, string> = {
+  'low': '#22c55e',
+  'low-medium': '#84cc16',
+  'medium': '#f59e0b',
+  'medium-high': '#f97316',
+  'high': '#ef4444',
+};
+
+const levelColor: Record<number, string> = {
+  1: '#22c55e',
+  2: '#f59e0b',
+  3: '#f97316',
+  4: '#ef4444',
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://sankofaexpeditions.com/directories/safety-intel",
+      "url": "https://sankofaexpeditions.com/directories/safety-intel",
+      "name": title,
+      "description": description,
+      "breadcrumb": { "@id": "https://sankofaexpeditions.com/directories/safety-intel#breadcrumb" },
+      "isPartOf": { "@id": "https://sankofaexpeditions.com" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sankofaexpeditions.com/directories/safety-intel#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sankofaexpeditions.com" },
+        { "@type": "ListItem", "position": 2, "name": "Directories", "item": "https://sankofaexpeditions.com/directories" },
+        { "@type": "ListItem", "position": 3, "name": "Africa Safety Intelligence", "item": "https://sankofaexpeditions.com/directories/safety-intel" }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "name": "Africa Safety Intelligence by City",
+      "numberOfItems": cities.length,
+      "itemListElement": cities.map((c, i) => ({
+        "@type": "ListItem",
+        "position": i + 1,
+        "name": `${c.city}, ${c.country} Safety Intelligence`,
+        "url": `https://sankofaexpeditions.com/directories/safety-intel/${c.slug}`,
+        "description": c.summary
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which African city is safest for diaspora visitors?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kigali, Rwanda is the safest major city for diaspora visitors, with a Numbeo Safety Index of 73.1 and a US State Dept Level 1 (Exercise Normal Precautions) advisory. Dakar, Senegal is the second safest with a Safety Index of 51.7."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Accra Ghana safe for tourists and diaspora returnees?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Accra carries a US State Dept Level 2 advisory (Exercise Increased Caution) with a Numbeo Crime Index of 56.8. The main expat and diaspora zones (East Legon, Airport Residential, Cantonments) are manageable with standard urban precautions. Phone snatching is the most common crime. Violent crime against foreigners is rare in these areas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the safest neighborhood in Nairobi for expats?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The safest neighborhoods in Nairobi for expats are Gigiri (the UN area), Runda, Karen, Lavington, Westlands, and Muthaiga. These areas have higher security infrastructure and lower crime rates than the city average."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Lagos Nigeria safe to visit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lagos carries a US State Dept Level 3 advisory (Reconsider Travel) with a Numbeo Crime Index of 72.8. The Victoria Island, Ikoyi, and Lekki Phase 1 corridor is significantly safer than the city average. Transport discipline is essential: use only app-based taxis and avoid road travel after dark outside these zones."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <section class="hero-section">
+    <div class="container">
+      <div class="eyebrow">Safety Intelligence</div>
+      <h1>Africa Safety Intel</h1>
+      <p class="hero-description">
+        "Is it safe?" is the first question every diaspora traveler asks. Here are the actual numbers: State Dept advisories, Numbeo crime indices, safe neighborhoods, and what to actually watch for in each city. No tourist platitudes. Real intel.
+      </p>
+      <div class="data-note">
+        Sources: US State Dept travel advisories, UK FCO advice, Numbeo 2025 crime data, OSAC field reports.
+        Updated November 2026.
+      </div>
+    </div>
+  </section>
+
+  <section class="rankings-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Cities Ranked by Safety</h2>
+        <p class="section-note">Sorted safest to highest risk. Score reflects overall safety assessment across all data sources.</p>
+      </div>
+      <div class="city-grid">
+        {cities.map((city, index) => (
+          <a href={`/directories/safety-intel/${city.slug}`} class="city-card">
+            <div class="card-rank">#{index + 1}</div>
+            <div class="card-header">
+              <span class="city-flag">{city.flag}</span>
+              <div class="card-titles">
+                <div class="city-name">{city.city}</div>
+                <div class="city-country">{city.country}</div>
+              </div>
+              <div class="safety-score" style={`color: ${riskColor[city.overallRisk]}`}>
+                {city.overallSafetyScore}
+                <span class="score-label">/ 100</span>
+              </div>
+            </div>
+
+            <div class="risk-badge" style={`background: ${riskColor[city.overallRisk]}22; color: ${riskColor[city.overallRisk]}; border-color: ${riskColor[city.overallRisk]}44`}>
+              {city.overallRiskLabel}
+            </div>
+
+            <p class="card-summary">{city.summary.slice(0, 160)}...</p>
+
+            <div class="card-stats">
+              <div class="stat">
+                <div class="stat-label">US State Dept</div>
+                <div class="stat-value" style={`color: ${levelColor[city.usDeptState.level]}`}>
+                  Level {city.usDeptState.level}
+                </div>
+              </div>
+              <div class="stat">
+                <div class="stat-label">Numbeo Crime</div>
+                <div class="stat-value">{city.numbeo.crimeIndex}</div>
+              </div>
+              <div class="stat">
+                <div class="stat-label">Numbeo Safety</div>
+                <div class="stat-value">{city.numbeo.safetyIndex}</div>
+              </div>
+            </div>
+
+            <div class="card-cta">View full intel report →</div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="legend-section">
+    <div class="container container--narrow">
+      <h2>How to Read This Directory</h2>
+      <div class="legend-grid">
+        <div class="legend-item">
+          <div class="legend-dot" style="background: #22c55e"></div>
+          <div>
+            <strong>Low Risk</strong>
+            <p>Standard urban precautions sufficient. Walkable, manageable for most visitors.</p>
+          </div>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background: #84cc16"></div>
+          <div>
+            <strong>Low-Medium Risk</strong>
+            <p>Petty crime exists. Neighborhood awareness and transport discipline recommended.</p>
+          </div>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background: #f59e0b"></div>
+          <div>
+            <strong>Medium Risk</strong>
+            <p>Consistent security awareness required. Safe expat zones exist. Night caution essential.</p>
+          </div>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background: #f97316"></div>
+          <div>
+            <strong>Medium-High Risk</strong>
+            <p>Strong neighborhood selection required. Transport discipline non-negotiable. Good local contacts help significantly.</p>
+          </div>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot" style="background: #ef4444"></div>
+          <div>
+            <strong>High Risk</strong>
+            <p>Experienced-level urban awareness required. Known expat zones are manageable. Requires security planning before arrival.</p>
+          </div>
+        </div>
+      </div>
+      <p class="methodology-note">
+        Numbeo scores are crowd-sourced from city residents and visitors. US State Dept levels (1-4) reflect official assessments updated periodically. Our overall safety score weights Numbeo data, official advisory levels, terrorism risk, and current alert status. All data has a date stamp. Conditions change. Always check official sources before travel.
+      </p>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container container--narrow">
+      <h2>Need a custom safety brief?</h2>
+      <p>Our Intelligence Briefs cover safety by neighborhood, hospital access, emergency contacts, and practical protocols for your specific itinerary. Starting at $297.</p>
+      <a href="/consult" class="cta-button">Book a consultation</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero-section {
+    background: var(--color-black);
+    padding: var(--space-3xl) 0 var(--space-2xl);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: var(--space-sm);
+  }
+
+  .hero-section h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    color: #fff;
+    margin-bottom: var(--space-lg);
+    line-height: 1.1;
+  }
+
+  .hero-description {
+    font-size: 1.125rem;
+    color: rgba(255,255,255,0.8);
+    max-width: 680px;
+    line-height: 1.7;
+    margin-bottom: var(--space-lg);
+  }
+
+  .data-note {
+    font-size: 0.8125rem;
+    color: rgba(255,255,255,0.5);
+    border-left: 2px solid rgba(255,255,255,0.15);
+    padding-left: var(--space-md);
+  }
+
+  .rankings-section {
+    padding: var(--space-3xl) 0;
+    background: var(--color-bg);
+  }
+
+  .section-header {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .section-header h2 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .section-note {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+  }
+
+  .city-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .city-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    padding: var(--space-xl);
+    text-decoration: none;
+    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    transition: border-color 0.2s;
+    position: relative;
+  }
+
+  .city-card:hover {
+    border-color: var(--color-text-muted);
+  }
+
+  .card-rank {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.05em;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .city-flag {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .card-titles {
+    flex: 1;
+  }
+
+  .city-name {
+    font-size: 1.1875rem;
+    font-weight: 700;
+    color: #fff;
+    font-family: var(--font-heading);
+    line-height: 1.2;
+  }
+
+  .city-country {
+    font-size: 0.8125rem;
+    color: rgba(255,255,255,0.55);
+    margin-top: 2px;
+  }
+
+  .safety-score {
+    font-size: 1.75rem;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    line-height: 1;
+    text-align: right;
+  }
+
+  .score-label {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .risk-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border: 1px solid;
+    width: fit-content;
+  }
+
+  .card-summary {
+    font-size: 0.9375rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+    flex: 1;
+    margin: 0;
+  }
+
+  .card-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-sm);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-label {
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 2px;
+  }
+
+  .stat-value {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.85);
+  }
+
+  .card-cta {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.6);
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .city-card:hover .card-cta {
+    color: #fff;
+  }
+
+  /* Legend */
+  .legend-section {
+    padding: var(--space-3xl) 0;
+    background: var(--color-black);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .legend-section h2 {
+    margin-bottom: var(--space-xl);
+    color: #fff;
+  }
+
+  .legend-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-xl);
+  }
+
+  .legend-item {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+  }
+
+  .legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+
+  .legend-item strong {
+    display: block;
+    color: rgba(255,255,255,0.9);
+    font-size: 0.9375rem;
+    margin-bottom: 2px;
+  }
+
+  .legend-item p {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.6);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .methodology-note {
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+    border-left: 2px solid rgba(255,255,255,0.1);
+    padding-left: var(--space-md);
+  }
+
+  /* CTA */
+  .cta-section {
+    padding: var(--space-3xl) 0;
+    background: var(--color-bg);
+    border-top: 1px solid var(--color-border);
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    margin-bottom: var(--space-md);
+  }
+
+  .cta-section p {
+    font-size: 1.0625rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-xl);
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: #fff;
+    color: #000;
+    padding: 14px 32px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .cta-button:hover {
+    opacity: 0.85;
+  }
+
+  .container--narrow {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+  }
+
+  @media (max-width: 640px) {
+    .city-grid {
+      grid-template-columns: 1fr;
+    }
+    .card-stats {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>

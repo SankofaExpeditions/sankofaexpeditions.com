@@ -1,0 +1,90 @@
+{
+  "city": "Kigali",
+  "citySlug": "kigali",
+  "country": "Rwanda",
+  "countryCode": "RW",
+  "flag": "🇷🇼",
+  "region": "East Africa",
+  "summary": "Kigali is the safest capital city in sub-Saharan Africa. Rwanda's strong rule of law, visible policing, and culture of civic discipline produce crime rates that are genuinely rare. For diaspora returnees and expats, Kigali is the benchmark that makes every other African city look worse by comparison.",
+  "lastUpdated": "2026-11-08",
+  "dataSource": "US State Dept, UK FCO, Numbeo 2025, OSAC",
+  "overallRisk": "low",
+  "overallRiskLabel": "Low Risk",
+  "overallSafetyScore": 92,
+  "usDeptState": {
+    "level": 1,
+    "label": "Exercise Normal Precautions",
+    "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/rwanda-travel-advisory.html",
+    "date": "November 7, 2024",
+    "summary": "Petty crime is the most common risk. The government of Rwanda maintains a strong security presence."
+  },
+  "ukFco": {
+    "summary": "Rwanda is generally a safe country. The FCDO advises against all travel to areas bordering the Democratic Republic of Congo due to active armed conflict.",
+    "url": "https://www.gov.uk/foreign-travel-advice/rwanda"
+  },
+  "numbeo": {
+    "crimeIndex": 26.9,
+    "safetyIndex": 73.1,
+    "source": "Numbeo 2025"
+  },
+  "crimeTypes": [
+    "Petty theft (primary risk; still uncommon)",
+    "Occasional pickpocketing at Nyabugogo bus station",
+    "Very low violent crime rate"
+  ],
+  "safeNeighborhoods": ["Kimihurura", "Kiyovu", "Nyarutarama", "Gacuriro", "Remera", "Gisozi"],
+  "cautionAreas": ["Nyabugogo bus station area (petty theft risk)", "Western provinces bordering DRC (conflict spillover)"],
+  "currentAlerts": [
+    "DRC-Rwanda border conflict active 2025: M23 rebel activity in eastern DRC near the Rwanda border. Kigali city is unaffected.",
+    "FCDO advises against all travel to western border provinces. Kigali has no travel restrictions."
+  ],
+  "safetyTips": [
+    "Standard urban precautions are sufficient for all of Kigali.",
+    "Helmet law strictly enforced on moto-taxis. Fines are real.",
+    "Plastic bags are banned. Do not bring them into the country.",
+    "City is walkable during daylight. Exercise standard caution at night.",
+    "Police are visible and approachable. Report any incident immediately by calling 112. Officers in Kigali generally respond quickly and professionally.",
+    "In a medical emergency, call ambulance services at 912. For fire, call 111.",
+    "If you are a US citizen, the U.S. Embassy Kigali can be reached at +250 252 596 400. UK nationals contact the British High Commission at +250 252 556 000.",
+    "Register with your embassy if staying over 30 days. The US Embassy Smart Traveler Enrollment Program (STEP) sends automatic security alerts to your email."
+  ],
+  "emergencyNumbers": {
+    "police": "112",
+    "ambulance": "912",
+    "fire": "111",
+    "touristPolice": "112"
+  },
+  "embassyContacts": {
+    "us": {
+      "name": "U.S. Embassy Kigali",
+      "phone": "+250 252 596 400",
+      "url": "https://rw.usembassy.gov"
+    },
+    "uk": {
+      "name": "British High Commission Kigali",
+      "phone": "+250 252 556 000",
+      "url": "https://www.gov.uk/world/organisations/british-high-commission-kigali"
+    }
+  },
+  "keyFacts": [
+    "Lowest crime index in this directory at 26.9 out of 100.",
+    "Only city in this group rated Level 1 by the US State Dept.",
+    "Walking at night is genuinely viable in Kigali city center.",
+    "Rwanda has some of the strictest anti-corruption enforcement in Africa.",
+    "City-wide ban on plastic bags since 2008.",
+    "Cleanest city in sub-Saharan Africa by multiple indices."
+  ],
+  "highlights": [
+    "Walkable during day and night in most neighborhoods",
+    "Strong and visible law enforcement",
+    "No advisory restrictions for the city itself",
+    "Lowest violent crime in the cohort"
+  ],
+  "challenges": [
+    "DRC border conflict requires western province avoidance",
+    "Limited nightlife infrastructure vs. other cities",
+    "Cost of living rising due to development boom"
+  ],
+  "relatedCitySlug": "kigali",
+  "nomadCitiesUrl": "/directories/nomad-cities/kigali"
+}

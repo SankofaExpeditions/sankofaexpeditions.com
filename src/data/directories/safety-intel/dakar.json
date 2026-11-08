@@ -1,0 +1,94 @@
+{
+  "city": "Dakar",
+  "citySlug": "dakar",
+  "country": "Senegal",
+  "countryCode": "SN",
+  "flag": "🇸🇳",
+  "region": "West Africa",
+  "summary": "Dakar is one of West Africa's most accessible cities for diaspora travelers. Violent crime against foreigners is relatively rare. The city's culture of teranga (Wolof for hospitality) creates a genuinely welcoming environment. After political turbulence in 2021-2024, Senegal stabilized significantly following the March 2024 elections.",
+  "lastUpdated": "2026-11-08",
+  "dataSource": "US State Dept, UK FCO, Numbeo 2025, OSAC",
+  "overallRisk": "low-medium",
+  "overallRiskLabel": "Low-Medium Risk",
+  "overallSafetyScore": 73,
+  "usDeptState": {
+    "level": 2,
+    "label": "Exercise Increased Caution",
+    "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/senegal-travel-advisory.html",
+    "date": "May 15, 2025",
+    "summary": "Crime is a concern throughout Senegal. Petty crime is most prevalent, but violent crimes occur. Situation significantly stabilized post-2024 elections."
+  },
+  "ukFco": {
+    "summary": "Senegal is generally safe but petty crime is common, particularly in Dakar. FCDO advises a high degree of caution. No specific do-not-travel zones in Dakar itself.",
+    "url": "https://www.gov.uk/foreign-travel-advice/senegal"
+  },
+  "numbeo": {
+    "crimeIndex": 48.3,
+    "safetyIndex": 51.7,
+    "source": "Numbeo 2025"
+  },
+  "crimeTypes": [
+    "Petty theft and pickpocketing (most common)",
+    "Phone and bag snatching",
+    "Tourist-targeted scams",
+    "Occasional violent crime (less common than regional peers)",
+    "Motorcycle bag snatching exists but less prevalent than Abidjan"
+  ],
+  "safeNeighborhoods": ["Les Almadies", "Plateau", "Mermoz/Sacre-Coeur", "Fann", "Ngor", "Point E", "Ouakam"],
+  "cautionAreas": ["Medina market area (pickpocketing)", "Parcelles Assainies", "Pikine at night", "Grand Dakar at night", "Casamance region (southern Senegal, separate Level 3 zone)"],
+  "currentAlerts": [
+    "Post-2024 election: political situation significantly stabilized under new President Faye. Much calmer than 2021-2024 period of intense protests.",
+    "Casamance region (southern Senegal): armed group activity by MFDC. Do not travel independently to Casamance.",
+    "May 2025 advisory update: downgraded from more serious concerns. Now primarily petty crime focused for Dakar."
+  ],
+  "safetyTips": [
+    "Exercise caution at Sandaga, Kermel, and Marche HLM markets where pickpockets operate.",
+    "Use Dakar Dem Dikk buses or app-based taxis. Negotiate taxi fares before entering.",
+    "Avoid beach areas at Yoff and Ngor after dark. Strong rip currents plus opportunistic theft.",
+    "Dakar is one of the more walkable cities in this directory for expats.",
+    "Keep photocopies of your passport. Police checkpoints are common on major roads.",
+    "Do not carry large amounts of cash visibly.",
+    "To report a crime or request police assistance, call 17 (Police Nationale). For medical emergencies, call 15 (SAMU ambulance). For fire, call 18.",
+    "US citizens contact the U.S. Embassy Dakar for emergency consular assistance at +221 33 879 4000 (available 24 hours for emergencies). UK nationals contact the British Embassy Dakar at +221 33 823 7392.",
+    "Enroll in the US Embassy Smart Traveler Enrollment Program (STEP) at step.state.gov before your trip to receive automatic security alerts for Senegal."
+  ],
+  "emergencyNumbers": {
+    "police": "17",
+    "ambulance": "15",
+    "fire": "18",
+    "gendarmerie": "17"
+  },
+  "embassyContacts": {
+    "us": {
+      "name": "U.S. Embassy Dakar",
+      "phone": "+221 33 879 4000",
+      "url": "https://sn.usembassy.gov"
+    },
+    "uk": {
+      "name": "British Embassy Dakar",
+      "phone": "+221 33 823 7392",
+      "url": "https://www.gov.uk/world/organisations/british-embassy-dakar"
+    }
+  },
+  "keyFacts": [
+    "Crime index of 48.3 makes Dakar the second safest city in this directory.",
+    "Political stabilization after 2024 elections removed a major risk factor.",
+    "Culture of teranga creates a welcoming environment for visitors.",
+    "Violent crime against foreigners is relatively rare.",
+    "Casamance region has an entirely different risk profile from Dakar city.",
+    "French is the official language. Wolof is widely spoken."
+  ],
+  "highlights": [
+    "Relatively low violent crime vs. regional peers",
+    "Post-2024 political stability significantly improved",
+    "Walkable expat zones in Almadies and Plateau",
+    "Strong diaspora community and cultural familiarity"
+  ],
+  "challenges": [
+    "Petty theft in markets requires constant vigilance",
+    "Casamance region is completely separate risk profile",
+    "Traffic and infrastructure challenges in outer suburbs"
+  ],
+  "relatedCitySlug": "dakar",
+  "nomadCitiesUrl": "/directories/nomad-cities/dakar"
+}

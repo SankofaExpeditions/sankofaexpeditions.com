@@ -1,0 +1,100 @@
+{
+  "city": "Nairobi",
+  "citySlug": "nairobi",
+  "country": "Kenya",
+  "countryCode": "KE",
+  "flag": "🇰🇪",
+  "region": "East Africa",
+  "summary": "Nairobi demands more consistent security awareness than the other cities in this directory. Petty theft, bag snatching, and carjacking occur with meaningful frequency. The expat zones of Gigiri, Karen, and Westlands are well-secured. A terrorism background threat from Al-Shabaab, combined with ongoing anti-government protests in 2024-2025, adds layers that require real-time monitoring.",
+  "lastUpdated": "2026-11-08",
+  "dataSource": "US State Dept, UK FCO, Numbeo 2025, OSAC",
+  "overallRisk": "high",
+  "overallRiskLabel": "High Risk",
+  "overallSafetyScore": 42,
+  "usDeptState": {
+    "level": 2,
+    "label": "Exercise Increased Caution",
+    "url": "https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/kenya-travel-advisory.html",
+    "date": "February 19, 2025",
+    "summary": "Exercise increased caution due to crime and terrorism. Violent crime such as armed robbery, carjacking, home invasions, and kidnapping occur. Northeast Kenya (Somalia border) is Level 4."
+  },
+  "ukFco": {
+    "summary": "High threat of terrorist attack in Kenya. Some parts at higher risk. FCDO advises against all travel to counties bordering Somalia.",
+    "url": "https://www.gov.uk/foreign-travel-advice/kenya"
+  },
+  "numbeo": {
+    "crimeIndex": 69.5,
+    "safetyIndex": 30.5,
+    "source": "Numbeo 2025"
+  },
+  "crimeTypes": [
+    "Armed robbery and mugging with violence",
+    "Carjacking (very common, especially at night)",
+    "Home invasions in residential areas",
+    "Terrorism threat from Al-Shabaab",
+    "Pickpocketing in CBD and bus areas",
+    "Corruption and bribery (common)",
+    "Bag and phone snatching"
+  ],
+  "safeNeighborhoods": ["Gigiri (UN area)", "Runda", "Karen", "Lavington", "Westlands", "Muthaiga", "Loresho", "Ridgeways"],
+  "cautionAreas": ["Eastleigh", "Mathare", "Kibera", "Korogocho", "Mukuru kwa Njenga", "Nairobi CBD at night", "Bus/matatu terminals (Machakos Country Bus)"],
+  "currentAlerts": [
+    "Ongoing anti-government protests since mid-2024 ('Gen Z' movement). Avoid all demonstration areas. Security forces have used live ammunition. Monitor local news daily.",
+    "NE Kenya (Somalia border counties) is Level 4: Do Not Travel.",
+    "Terrorism threat is HIGH. Historical attacks: Westgate Mall (2013), DusitD2 Hotel (2019). Current threat assessment remains elevated.",
+    "February 2025 advisory update: protest situation flagged explicitly. Avoid any gatherings."
+  ],
+  "safetyTips": [
+    "Never take informal taxis or share rides with strangers. Use Bolt or Uber exclusively.",
+    "Avoid Nairobi CBD on foot after dark. Carjacking risk increases sharply after sunset.",
+    "Keep vehicle windows up and doors locked at all times while driving.",
+    "Do not resist robbery. Comply and report to police after the fact.",
+    "Keep track of protest schedules. Avoid areas near government buildings, Parliament, and CBD on protest days.",
+    "To report a crime or call police in Kenya, dial 999 (national emergency) or the Tourist Police directly at +254 20 341 4040. The tourist police are specifically equipped to assist visitors and diaspora travelers.",
+    "In a medical emergency, call 999 or +254 722 729 500 (AMREF Flying Doctors, the leading air ambulance service in East Africa). Save both numbers.",
+    "US citizens contact the U.S. Embassy Nairobi for emergency consular assistance at +254 20 363 6000. UK nationals contact the British High Commission Nairobi at +254 20 287 3000. Both have 24-hour emergency lines.",
+    "Terrorism risk: be situationally aware in malls, hotels, and public spaces. Know your exits. Report any suspicious packages or behavior to venue security first, then dial 999.",
+    "Enroll in the US Embassy Smart Traveler Enrollment Program (STEP) at step.state.gov to receive real-time security alerts for Kenya, including protest and terrorism advisories."
+  ],
+  "emergencyNumbers": {
+    "police": "999",
+    "ambulance": "999",
+    "fire": "999",
+    "aarpSpecialLine": "+254 722 729 500",
+    "touristPolice": "+254 20 341 4040"
+  },
+  "embassyContacts": {
+    "us": {
+      "name": "U.S. Embassy Nairobi",
+      "phone": "+254 20 363 6000",
+      "url": "https://ke.usembassy.gov"
+    },
+    "uk": {
+      "name": "British High Commission Nairobi",
+      "phone": "+254 20 287 3000",
+      "url": "https://www.gov.uk/world/organisations/british-high-commission-nairobi"
+    }
+  },
+  "keyFacts": [
+    "Crime index of 69.5 makes Nairobi one of the higher-risk cities in this directory.",
+    "East Africa's largest economy and primary business hub. High-risk does not mean impossible.",
+    "Expat zones (Gigiri, Karen, Westlands) are well-established with 24hr security.",
+    "Terrorism threat is structural, not seasonal. Plan for it, not around it.",
+    "NE Kenya and Somalia border provinces are entirely different and much higher risk.",
+    "Nairobi has a large, well-connected African-American and diaspora community despite security challenges."
+  ],
+  "highlights": [
+    "East Africa's primary business hub with strong infrastructure",
+    "Well-established expat security zones with professional guard services",
+    "Active and large diaspora community",
+    "Strong medical infrastructure vs. regional peers"
+  ],
+  "challenges": [
+    "Carjacking requires consistent night-time precautions",
+    "Terrorism threat demands situational awareness in public spaces",
+    "Ongoing protests create unpredictable security flashpoints",
+    "High crime index requires experienced-level urban awareness"
+  ],
+  "relatedCitySlug": "nairobi",
+  "nomadCitiesUrl": "/directories/nomad-cities/nairobi"
+}
