@@ -1,0 +1,87 @@
+{
+  "city": "Nairobi",
+  "citySlug": "nairobi",
+  "country": "Kenya",
+  "countryCode": "KE",
+  "flag": "🇰🇪",
+  "region": "East Africa",
+  "timezone": "UTC+3",
+  "language": "Swahili / English",
+  "currency": "Kenyan Shilling (KES)",
+  "summary": "East Africa's tech capital and the continent's most connected city. Nairobi went fully visa-free for most Western passports in January 2024, has 5G in key neighborhoods, and hosts the largest expat community in sub-Saharan Africa outside South Africa.",
+  "lastUpdated": "2026-11-08",
+  "dataSource": "Numbeo, Nomad List, Speedtest, US State Dept",
+  "overallScore": 81,
+  "scores": {
+    "costOfLiving": 75,
+    "internet": 85,
+    "safety": 55,
+    "weather": 90,
+    "visaEase": 95,
+    "expatCommunity": 90,
+    "nomadInfra": 85
+  },
+  "costOfLiving": {
+    "monthlyBudgetUSD": { "min": 1500, "max": 2500 },
+    "rentOneBRCentralUSD": { "min": 600, "max": 1000 },
+    "localMealUSD": 5,
+    "coworkingMonthUSD": { "min": 80, "max": 200 },
+    "source": "Numbeo, Nomad List (2024-2025)"
+  },
+  "internet": {
+    "fixedBroadbandMbps": { "min": 20, "max": 50 },
+    "mobileQuality": "5G available in Westlands, 4G+ nationwide",
+    "reliabilityNotes": "Safaricom's fiber (Faiba Home) covers major neighborhoods. Mobile data is fast and affordable. Power outages are less common than West African cities.",
+    "mainProviders": ["Safaricom", "Airtel Kenya", "Faiba (JTL)"]
+  },
+  "safety": {
+    "numbeoSafetyIndex": 31.7,
+    "numbeoCrimeIndex": 68.3,
+    "usDeptStateLevel": 2,
+    "usDeptStateLevelLabel": "Exercise Increased Caution",
+    "safeNeighborhoods": ["Westlands", "Kilimani", "Karen", "Lavington", "Gigiri", "Runda"],
+    "cautionAreas": ["Eastleigh", "Kibera", "Mathare", "Nairobi CBD at night"],
+    "keyNotes": "Petty theft, bag snatching, and carjacking occur. Terrorism threat from Al-Shabaab is a background concern. Stick to expat-frequented neighborhoods. Uber is reliable and safer than street taxis."
+  },
+  "weather": {
+    "tempRangeCelsius": { "min": 13, "max": 26 },
+    "drySeasonMonths": "January to March and July to October",
+    "rainySeasonMonths": "April to June (long rains) and November to December (short rains)",
+    "bestMonthsToVisit": "January to March and July to September",
+    "climateNotes": "Nairobi sits at 1,795 metres elevation. The result is an almost perfect temperate climate with no humidity, no extreme heat, and comfortably cool evenings year-round. Best climate of all 8 cities on this list."
+  },
+  "coworking": [
+    { "name": "iHub", "neighborhood": "Westlands (Senteu Plaza)" },
+    { "name": "Nairobi Garage", "neighborhood": "Westlands" },
+    { "name": "The Foundry", "neighborhood": "Westlands" },
+    { "name": "ALX Africa Hub", "neighborhood": "Karen" },
+    { "name": "Regus Nairobi", "neighborhood": "Upper Hill" },
+    { "name": "Spaces Nairobi", "neighborhood": "Westlands" }
+  ],
+  "visaEase": {
+    "rating": "easy",
+    "ratingLabel": "Easy",
+    "usPassport": "Visa-free as of January 2024. 90-day stay on arrival.",
+    "ukPassport": "Visa-free as of January 2024. 90-day stay on arrival.",
+    "caPassport": "Visa-free as of January 2024. 90-day stay on arrival.",
+    "nomadVisaExists": false,
+    "nomadVisaNote": "No dedicated nomad visa, but the new visa-free policy makes extended stays practical. Apply for a Special Pass for stays beyond 90 days.",
+    "specialNote": "Kenya's January 2024 visa-free policy applies to all nationalities. It is one of the most significant policy shifts in African travel access in recent years.",
+    "visaSourceUrl": "https://immigration.go.ke"
+  },
+  "expatCommunity": {
+    "estimatedSize": "70,000 to 100,000 expats",
+    "keyHubs": ["Westlands", "Kilimani", "Karen", "Lavington", "Gigiri (UN compound area)"],
+    "notableCommunities": ["UN and NGO workers", "Silicon Savannah tech entrepreneurs", "Kenyan-British and Kenyan-American returnees", "South Asian business community (3rd and 4th generation)"]
+  },
+  "keyFacts": [
+    "Kenya went fully visa-free for all nationalities in January 2024, the most dramatic access improvement of any African country in recent years",
+    "Nairobi's Silicon Savannah cluster in Westlands hosts M-Pesa (the mobile money system that processes more transactions than PayPal in Africa), Safaricom, and hundreds of tech startups",
+    "iHub, the co-working and innovation hub that opened in 2010, is widely credited with launching East Africa's tech ecosystem and continues to anchor Nairobi's global tech reputation",
+    "Nairobi's elevation (1,795m) produces year-round temperatures in the 18-26 degrees Celsius range with low humidity, making it the most livable climate of any major African city"
+  ],
+  "whyItMatters": "Nairobi is the most practical African city for a first-time diaspora returnee or digital nomad. The combination of English fluency, visa-free entry, 5G internet, a massive expat infrastructure, and the best climate on this list creates a low-friction landing pad. Silicon Savannah is real: M-Pesa, iHub, and a generation of Kenyan tech entrepreneurs have built an ecosystem that attracts global capital and talent. The safety concerns are manageable with neighborhood awareness. For the diaspora returnee who wants to build, invest, or simply live well while staying connected to global work, Nairobi delivers more of what matters than any other city in East Africa.",
+  "nomadRating": "excellent",
+  "highlights": ["Visa-free for US/UK/CA since 2024", "Best climate on the list", "5G in Westlands", "Silicon Savannah tech ecosystem", "Largest expat community in East Africa"],
+  "challenges": ["Higher crime index", "Traffic in Westlands/CBD", "More expensive than peers", "Al-Shabaab terrorism background risk"]
+}

@@ -1,0 +1,87 @@
+{
+  "city": "Dakar",
+  "citySlug": "dakar",
+  "country": "Senegal",
+  "countryCode": "SN",
+  "flag": "🇸🇳",
+  "region": "West Africa",
+  "timezone": "UTC+0",
+  "language": "French / Wolof",
+  "currency": "West African CFA Franc (XOF)",
+  "summary": "West Africa's most welcoming city for the diaspora. Senegal's concept of teranga (radical hospitality) is not tourism marketing; it defines daily interactions. Dakar is visa-free for US, UK, and Canadian passports, sits on UTC+0 for European work, and has built one of West Africa's most credible tech ecosystems.",
+  "lastUpdated": "2026-11-08",
+  "dataSource": "Numbeo, Nomad List, US State Dept, field research",
+  "overallScore": 74,
+  "scores": {
+    "costOfLiving": 82,
+    "internet": 72,
+    "safety": 72,
+    "weather": 72,
+    "visaEase": 95,
+    "expatCommunity": 75,
+    "nomadInfra": 68
+  },
+  "costOfLiving": {
+    "monthlyBudgetUSD": { "min": 1000, "max": 1800 },
+    "rentOneBRCentralUSD": { "min": 400, "max": 800 },
+    "localMealUSD": 4,
+    "coworkingMonthUSD": { "min": 100, "max": 200 },
+    "source": "Numbeo, Expatistan, Nomad List (2024-2025)",
+    "currencyNote": "The XOF (CFA Franc) is pegged to the Euro. Same currency as Abidjan, same stability advantages. Dakar is slightly more affordable than Abidjan overall."
+  },
+  "internet": {
+    "fixedBroadbandMbps": { "min": 20, "max": 45 },
+    "mobileQuality": "4G and limited 5G (Orange Senegal launched 5G in Dakar in 2022)",
+    "reliabilityNotes": "Decent connectivity in Plateau, Almadies, Mermoz, and Point E neighborhoods. SENELEC power can be intermittent in outer neighborhoods. Coworking spaces have fiber and backup power. International connectivity via ACE and SAT-3 submarine cables.",
+    "mainProviders": ["Orange Senegal", "Free Senegal", "Expresso Senegal"]
+  },
+  "safety": {
+    "numbeoSafetyIndex": 55,
+    "numbeoCrimeIndex": 45,
+    "usDeptStateLevel": 2,
+    "usDeptStateLevelLabel": "Exercise Increased Caution",
+    "safeNeighborhoods": ["Almadies", "Ngor", "Mermoz", "Point E", "Les Mamelles", "Ouakam"],
+    "cautionAreas": ["Medina", "Sandaga market area (crowded, pickpocket risk)"],
+    "keyNotes": "Dakar is one of West Africa's safest capitals. Violent crime against foreigners is rare. Motorcycle bag snatching exists but is less prevalent than in Abidjan. Tourist police are visible in key areas. The culture of teranga creates a generally welcoming environment for outsiders."
+  },
+  "weather": {
+    "tempRangeCelsius": { "min": 18, "max": 32 },
+    "drySeasonMonths": "November to June (Harmattan winds, increasingly warm March-June)",
+    "rainySeasonMonths": "July to September",
+    "bestMonthsToVisit": "November to February",
+    "climateNotes": "Atlantic Ocean influence keeps Dakar cooler and drier than inland Sahel cities. Rains (July-September) are intense but short. Best nomad months: November to February with temperatures 18-26 degrees Celsius and almost no rain."
+  },
+  "coworking": [
+    { "name": "CTIC Dakar", "neighborhood": "Sicap Mermoz (oldest tech incubator in West Africa, est. 2011)" },
+    { "name": "Jokkolabs Dakar", "neighborhood": "Sacre-Coeur / Mermoz" },
+    { "name": "Impact Hub Dakar", "neighborhood": "Les Almadies" },
+    { "name": "Concree", "neighborhood": "Les Almadies" },
+    { "name": "Dakar Coworking", "neighborhood": "Plateau" }
+  ],
+  "visaEase": {
+    "rating": "easy",
+    "ratingLabel": "Visa-Free",
+    "usPassport": "Visa-free. 90 days on arrival. No pre-arrangement needed.",
+    "ukPassport": "Visa-free. 90 days on arrival.",
+    "caPassport": "Visa-free. 90 days on arrival.",
+    "nomadVisaExists": false,
+    "nomadVisaNote": "No dedicated digital nomad visa, but visa-free 90-day entry with favorable tolerance for long-stay remote workers. Carte de Sejour available for stays beyond 90 days.",
+    "specialNote": "Senegal is one of the most accessible African countries for North American and British travelers. Just land and go.",
+    "visaSourceUrl": "https://www.visasenegal.sn"
+  },
+  "expatCommunity": {
+    "estimatedSize": "30,000 to 50,000 expats",
+    "keyHubs": ["Almadies", "Ngor", "Mermoz", "Point E", "Yoff"],
+    "notableCommunities": ["French expats (15,000-20,000)", "Lebanese and West African regional communities", "Senegalese-American returnees in Yoff", "Senegalese diaspora returnees from France and Italy", "Growing Black diaspora community from US and Caribbean"]
+  },
+  "keyFacts": [
+    "US, UK, and Canadian passports enter Dakar visa-free for 90 days on arrival, the most frictionless entry of any French-speaking African capital for North American travelers",
+    "Senegal is one of West Africa's most stable democracies with a tradition of peaceful elections and power transfers dating to independence in 1960",
+    "CTIC Dakar, founded in 2011, is the oldest tech incubator in West Africa and helped launch Wave (Senegal's fintech unicorn), which now processes billions in mobile money transactions across West Africa",
+    "UTC+0 timezone makes Dakar ideal for European client work and offers a 5-hour difference from US Eastern time, manageable for US-based client calls"
+  ],
+  "whyItMatters": "Dakar may be the single most compelling city on this list for African-American and Caribbean diaspora returnees who want to connect with West African culture without navigating a former colonial capital's legacy tensions. Teranga, the Senegalese concept of radical hospitality, is not marketing. It is woven into daily interactions in a way that makes Dakar feel like a city that wants you there. The concept of an African city that is genuinely friendly to outsiders rather than merely tolerant of them is not something to take for granted. For Senegalese-Americans returning from France, the US, or Italy, Dakar's moment has arrived: the economy is growing, the tech scene is nascent enough to need global-skilled founders, and neighborhoods like Almadies and Yoff are developing genuine returnee community clusters. Arrive visa-free, work on European time, budget on CFA Franc stability, and discover that West Africa's warmest cultural welcome belongs to Senegal.",
+  "nomadRating": "excellent",
+  "highlights": ["Visa-free for US/UK/CA passports", "Safest West African capital on this list", "CFA Franc stability", "UTC+0 for European work", "Legendary teranga (hospitality) culture", "Atlantic beaches within the city"],
+  "challenges": ["French language required", "Slower internet than East African cities", "SENELEC power can be intermittent", "Smaller English-language business network", "UTC+0 is a 5-hour gap from US Eastern"]
+}

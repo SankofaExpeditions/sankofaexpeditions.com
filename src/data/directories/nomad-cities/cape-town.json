@@ -1,0 +1,87 @@
+{
+  "city": "Cape Town",
+  "citySlug": "cape-town",
+  "country": "South Africa",
+  "countryCode": "ZA",
+  "flag": "🇿🇦",
+  "region": "Southern Africa",
+  "timezone": "UTC+2",
+  "language": "English / Afrikaans / Xhosa",
+  "currency": "South African Rand (ZAR)",
+  "summary": "Africa's most developed digital nomad infrastructure, fastest internet, and highest quality of life. South Africa is the only African country with an official Digital Nomad Visa (launched 2024). Cape Town regularly appears on global nomad city rankings and offers world-class coworking, food, and lifestyle at mid-range prices.",
+  "lastUpdated": "2026-11-08",
+  "dataSource": "Numbeo, Nomad List, South African Home Affairs, Speedtest",
+  "overallScore": 78,
+  "scores": {
+    "costOfLiving": 72,
+    "internet": 90,
+    "safety": 42,
+    "weather": 85,
+    "visaEase": 88,
+    "expatCommunity": 92,
+    "nomadInfra": 95
+  },
+  "costOfLiving": {
+    "monthlyBudgetUSD": { "min": 1800, "max": 2500 },
+    "rentOneBRCentralUSD": { "min": 700, "max": 1200 },
+    "localMealUSD": 8,
+    "coworkingMonthUSD": { "min": 150, "max": 250 },
+    "source": "Numbeo, Nomad List (2024-2025)",
+    "currencyNote": "Rand weakness vs USD makes Cape Town significantly more affordable than its quality of life suggests. A city-center apartment and coworking membership for under $1,500/month is realistic."
+  },
+  "internet": {
+    "fixedBroadbandMbps": { "min": 45, "max": 85 },
+    "mobileQuality": "4G excellent, 5G launching (limited coverage)",
+    "reliabilityNotes": "Best internet infrastructure on this list. Major ISPs (Vumatel, Openserve, Frogfoot) provide fiber to most central neighborhoods. Load-shedding (rolling power cuts from Eskom) is the primary reliability challenge. Coworking spaces have generators.",
+    "mainProviders": ["Vumatel", "Openserve", "Telkom", "Vodacom", "MTN SA"]
+  },
+  "safety": {
+    "numbeoSafetyIndex": 32,
+    "numbeoCrimeIndex": 68,
+    "usDeptStateLevel": 2,
+    "usDeptStateLevelLabel": "Exercise Increased Caution",
+    "safeNeighborhoods": ["Sea Point", "Green Point", "De Waterkant", "Camps Bay", "Bloubergstrand", "Claremont", "Rondebosch"],
+    "cautionAreas": ["Cape Flats", "Khayelitsha", "Mitchells Plain", "Cape Town CBD after dark"],
+    "keyNotes": "Cape Town has significant crime inequality: tourist and nomad areas (Sea Point, Green Point, De Waterkant) are genuinely safe with normal precautions. Township areas have serious gang violence that does not affect visitors who stay in known nomad zones. Carjacking and smash-and-grab theft occur in some areas. Use Uber, not street taxis."
+  },
+  "weather": {
+    "tempRangeCelsius": { "min": 8, "max": 28 },
+    "drySeasonMonths": "November to April (summer)",
+    "rainySeasonMonths": "May to August (winter)",
+    "bestMonthsToVisit": "November to April",
+    "climateNotes": "Mediterranean climate. Warm, dry summers (November-April) are spectacular. Winters (May-August) are mild but wet and windy. Table Mountain and the Atlantic coast provide stunning scenery year-round."
+  },
+  "coworking": [
+    { "name": "Workshop17", "neighborhood": "Watershed (V&A Waterfront)" },
+    { "name": "The Workspace", "neighborhood": "De Waterkant" },
+    { "name": "Regus Cape Town", "neighborhood": "Century City" },
+    { "name": "Greenpoint Workspace", "neighborhood": "Green Point" },
+    { "name": "Impact Hub Cape Town", "neighborhood": "Cape Town CBD" }
+  ],
+  "visaEase": {
+    "rating": "easy",
+    "ratingLabel": "Easy + Nomad Visa Available",
+    "usPassport": "Visa-free, 90 days on arrival.",
+    "ukPassport": "Visa-free, 90 days on arrival.",
+    "caPassport": "Visa-free, 90 days on arrival.",
+    "nomadVisaExists": true,
+    "nomadVisaNote": "South Africa launched a Digital Nomad Visa in 2024 for stays up to 3 years. Requirements: remote work contract, minimum $2,790/month income, health insurance. Apply via South African Home Affairs.",
+    "specialNote": "South Africa is the only sub-Saharan African country with an official, operational Digital Nomad Visa as of November 2026.",
+    "visaSourceUrl": "https://www.dha.gov.za"
+  },
+  "expatCommunity": {
+    "estimatedSize": "100,000+ expats",
+    "keyHubs": ["Sea Point", "Green Point", "De Waterkant", "Camps Bay", "Bloubergstrand"],
+    "notableCommunities": ["British and European nomads and long-stay visitors", "Zimbabwean and Zimbabwean-South African communities", "Nigerian and West African business community", "African-American diaspora (smaller but growing)"]
+  },
+  "keyFacts": [
+    "South Africa is the only country in sub-Saharan Africa with an official Digital Nomad Visa, launched in 2024 and valid for up to 3 years",
+    "Cape Town consistently appears on global digital nomad rankings. Its combination of fast internet, world-class food and wine, and Mediterranean lifestyle at Rand-weakened prices is genuinely competitive with Lisbon or Medellin.",
+    "Load-shedding (Eskom rolling power cuts) peaked at 10+ hours per day in 2023 but has significantly improved in 2024-2025. All serious coworking spaces have generators.",
+    "The Cape Winelands (Stellenbosch, Franschhoek) are a 45-minute drive from the city center, adding a quality-of-life dimension that no other African city can match"
+  ],
+  "whyItMatters": "Cape Town has the most mature nomad infrastructure in Africa by any objective measure: the fastest internet, the only official nomad visa, the largest expat community, the best coworking ecosystem, and a lifestyle that competes with globally recognized nomad cities. The safety challenge is real but geographically concentrated in areas that nomads and tourists do not occupy. For the diaspora returnee or nomad who wants African presence without sacrificing quality of life, Cape Town is the closest thing on the continent to a no-compromise answer. The Rand's weakness against the dollar means your money goes further than the city's quality suggests. The tradeoff is distance: Cape Town is the southern tip of a large continent, removed from West and East African business networks in a way that Nairobi or Accra are not.",
+  "nomadRating": "excellent",
+  "highlights": ["Only official Digital Nomad Visa in sub-Saharan Africa", "Fastest internet on the list", "Mediterranean climate and world-class lifestyle", "Largest expat community", "Rand weakness = USD value"],
+  "challenges": ["High crime index (concentrated in specific areas)", "Load-shedding (improving)", "Geographically isolated from rest of continent", "Race dynamics can be complex for diaspora returnees"]
+}

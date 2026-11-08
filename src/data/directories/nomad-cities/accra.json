@@ -1,0 +1,86 @@
+{
+  "city": "Accra",
+  "citySlug": "accra",
+  "country": "Ghana",
+  "countryCode": "GH",
+  "flag": "🇬🇭",
+  "region": "West Africa",
+  "timezone": "UTC+0",
+  "language": "English",
+  "currency": "Ghanaian Cedi (GHS)",
+  "summary": "Ghana's capital is the spiritual home of the African diaspora. With English as the official language, a Right of Abode pathway for people of African descent, and the energy of the Year of Return movement, Accra draws more Black diaspora returnees than any city on this list.",
+  "lastUpdated": "2026-11-08",
+  "dataSource": "Numbeo, Nomad List, US State Dept, field research",
+  "overallScore": 72,
+  "scores": {
+    "costOfLiving": 78,
+    "internet": 55,
+    "safety": 65,
+    "weather": 62,
+    "visaEase": 68,
+    "expatCommunity": 85,
+    "nomadInfra": 65
+  },
+  "costOfLiving": {
+    "monthlyBudgetUSD": { "min": 1500, "max": 2000 },
+    "rentOneBRCentralUSD": { "min": 700, "max": 1000 },
+    "localMealUSD": 10,
+    "coworkingMonthUSD": { "min": 150, "max": 300 },
+    "source": "Numbeo, Nomad List (2024-2025)"
+  },
+  "internet": {
+    "fixedBroadbandMbps": { "min": 15, "max": 28 },
+    "mobileQuality": "4G (limited 5G trials)",
+    "reliabilityNotes": "Power outages (dumsor) affect connectivity in some neighborhoods. Coworking spaces typically have generators and stable fiber.",
+    "mainProviders": ["MTN Ghana", "AirtelTigo", "Vodafone Ghana"]
+  },
+  "safety": {
+    "numbeoSafetyIndex": 47.7,
+    "numbeoCrimeIndex": 52.3,
+    "usDeptStateLevel": 1,
+    "usDeptStateLevelLabel": "Exercise Normal Precautions",
+    "safeNeighborhoods": ["East Legon", "Cantonments", "Labone", "Airport Residential"],
+    "cautionAreas": ["Nima", "Agbogbloshie (electronics market)"],
+    "keyNotes": "Accra is generally safe for tourists and diaspora returnees. Petty theft and vehicle crime exist in crowded areas. Violent crime against foreigners is rare."
+  },
+  "weather": {
+    "tempRangeCelsius": { "min": 24, "max": 33 },
+    "drySeasonMonths": "November to March",
+    "rainySeasonMonths": "April to June and September to October",
+    "bestMonthsToVisit": "November to February",
+    "climateNotes": "Hot and humid year-round. Harmattan winds from the Sahara bring drier, hazy conditions from December to February."
+  },
+  "coworking": [
+    { "name": "Impact Hub Accra", "neighborhood": "East Legon" },
+    { "name": "MEST Africa", "neighborhood": "Dzorwulu" },
+    { "name": "Regus Accra", "neighborhood": "Airport City" },
+    { "name": "Coconut Grove Coworking", "neighborhood": "Airport Residential" },
+    { "name": "BusyInternet", "neighborhood": "Ring Road Central" }
+  ],
+  "visaEase": {
+    "rating": "medium",
+    "ratingLabel": "Medium",
+    "usPassport": "Visa required. e-Visa available online. $60 for 60 days.",
+    "ukPassport": "Visa required. e-Visa available online.",
+    "caPassport": "Visa required. e-Visa available online.",
+    "nomadVisaExists": false,
+    "nomadVisaNote": null,
+    "specialNote": "People of African descent can apply for the Right of Abode, granting indefinite stay rights in Ghana. Processing takes 3-6 months. This is Ghana's most powerful draw for diaspora returnees.",
+    "visaSourceUrl": "https://mfa.gov.gh/evisa-application/"
+  },
+  "expatCommunity": {
+    "estimatedSize": "5,000 to 8,000 expats plus a large African-American diaspora returnee community",
+    "keyHubs": ["East Legon", "Cantonments", "Labone", "Accra New Town"],
+    "notableCommunities": ["African-American Year of Return community", "Nigerian business community", "Lebanese business community", "Afro-European returnees"]
+  },
+  "keyFacts": [
+    "Ghana is the only country in Africa offering a formal Right of Abode pathway for people of African descent, granting indefinite residency",
+    "The Year of Return (2019) and Beyond the Return program brought over 500,000 diaspora visitors and sparked a permanent returnee community",
+    "English is the official language, eliminating the language barrier that affects most other African cities on this list",
+    "Accra has the most direct flights from Atlanta, New York, and London of any sub-Saharan city, with direct Delta service to Atlanta daily"
+  ],
+  "whyItMatters": "No city on this list carries more emotional weight for the African-American diaspora than Accra. The Year of Return was not a marketing campaign; it was a reckoning. Tens of thousands came and thousands stayed. For Black Americans, Caribbeans, and Afro-Europeans looking for a place that actively wants them and has built infrastructure to receive them, Accra is unmatched. The Right of Abode program, the English language environment, the deep Ghanaian-American ties, and the growing returnee business community make Accra the most culturally resonant base on the continent. Its infrastructure challenges (power, internet, traffic) are real but manageable, and they are improving.",
+  "nomadRating": "good",
+  "highlights": ["Right of Abode for diaspora", "English-speaking", "Direct flights from USA", "Vibrant returnee community"],
+  "challenges": ["Power outages (dumsor)", "Traffic congestion", "Visa required for most passports", "Slower internet than East Africa"]
+}

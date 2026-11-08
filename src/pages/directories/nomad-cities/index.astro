@@ -1,0 +1,581 @@
+---
+import { readFileSync, readdirSync } from 'fs';
+import { join } from 'path';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const dataDir = join(process.cwd(), 'src/data/directories/nomad-cities');
+const files = readdirSync(dataDir).filter(f => f.endsWith('.json'));
+const cities = files
+  .map(f => {
+    const d = JSON.parse(readFileSync(join(dataDir, f), 'utf-8'));
+    return { ...d, slug: f.replace('.json', '') };
+  })
+  .sort((a, b) => b.overallScore - a.overallScore);
+
+const title = 'Best African Cities for Digital Nomads and Diaspora Returnees | Sankofa Expeditions';
+const description = 'Ranked guide to 8 African cities for digital nomads: Accra, Nairobi, Kigali, Lagos, Cape Town, Dakar, Abidjan, Dar es Salaam. Cost, wifi, safety, visa, coworking.';
+
+const ratingColor: Record<string, string> = {
+  excellent: '#22c55e',
+  good: '#3b82f6',
+  advanced: '#f59e0b',
+};
+const ratingLabel: Record<string, string> = {
+  excellent: 'Excellent',
+  good: 'Good',
+  advanced: 'Advanced',
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://sankofaexpeditions.com/directories/nomad-cities",
+      "url": "https://sankofaexpeditions.com/directories/nomad-cities",
+      "name": title,
+      "description": description,
+      "breadcrumb": { "@id": "https://sankofaexpeditions.com/directories/nomad-cities#breadcrumb" },
+      "isPartOf": { "@id": "https://sankofaexpeditions.com" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sankofaexpeditions.com/directories/nomad-cities#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sankofaexpeditions.com" },
+        { "@type": "ListItem", "position": 2, "name": "Directories", "item": "https://sankofaexpeditions.com/directories" },
+        { "@type": "ListItem", "position": 3, "name": "Nomad Cities for Africa", "item": "https://sankofaexpeditions.com/directories/nomad-cities" }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "name": "Best African Cities for Digital Nomads",
+      "numberOfItems": cities.length,
+      "itemListElement": cities.map((c, i) => ({
+        "@type": "ListItem",
+        "position": i + 1,
+        "name": `${c.city}, ${c.country}`,
+        "url": `https://sankofaexpeditions.com/directories/nomad-cities/${c.slug}`,
+        "description": c.summary
+      }))
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which African city is best for digital nomads?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nairobi, Kenya ranks highest for overall nomad infrastructure with 5G internet, visa-free entry since 2024, and East Africa's largest expat community. Kigali, Rwanda is the safest option with the most reliable power and internet. Cape Town, South Africa is the only city with an official Digital Nomad Visa and the fastest internet on the continent."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which African city is safest for diaspora returnees?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kigali, Rwanda has the highest safety rating of any city on this list with a Numbeo Safety Index of 75.1 and a US State Department Level 1 advisory. Dakar, Senegal is the safest West African city on the list."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which African city is most affordable for digital nomads?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dar es Salaam, Tanzania and Dakar, Senegal are the most affordable, with monthly budgets starting around $1,000. Kigali is next at $1,200 minimum. Lagos, Nigeria has become very affordable in USD terms due to Naira devaluation but requires more experience navigating the city."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does any African country have a digital nomad visa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. South Africa launched a Digital Nomad Visa in 2024 for stays up to 3 years. Requirements include a remote work contract and minimum income of $2,790/month. No other sub-Saharan African country on this list has an official digital nomad visa as of November 2026."
+          }
+        }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <main class="nomad-index">
+
+    <!-- Hero -->
+    <section class="ni-hero">
+      <div class="container">
+        <div class="ni-hero__breadcrumb">
+          <a href="/">Home</a> <span>/</span>
+          <a href="/directories">Directories</a> <span>/</span>
+          <span>Nomad Cities</span>
+        </div>
+        <h1 class="ni-hero__title">Nomad Cities for Africa</h1>
+        <p class="ni-hero__subtitle">Ranked data for 8 African cities: cost, wifi, safety, visa, coworking. Built for the diaspora returnee and global nomad who refuses a vague answer.</p>
+        <div class="ni-hero__stats">
+          <div class="ni-stat">
+            <span class="ni-stat__number">{cities.length}</span>
+            <span class="ni-stat__label">Cities Ranked</span>
+          </div>
+          <div class="ni-stat">
+            <span class="ni-stat__number">7</span>
+            <span class="ni-stat__label">Data Dimensions</span>
+          </div>
+          <div class="ni-stat">
+            <span class="ni-stat__number">1</span>
+            <span class="ni-stat__label">Official Nomad Visa</span>
+          </div>
+          <div class="ni-stat">
+            <span class="ni-stat__number">3</span>
+            <span class="ni-stat__label">Visa-Free for US/UK/CA</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="section section--light">
+      <div class="container">
+        <h2 class="section-title">Quick Comparison</h2>
+        <div class="table-wrapper">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>City</th>
+                <th>Score</th>
+                <th>Budget / mo</th>
+                <th>Internet</th>
+                <th>Safety Index</th>
+                <th>Visa (US/UK/CA)</th>
+                <th>Nomad Visa</th>
+              </tr>
+            </thead>
+            <tbody>
+              {cities.map((c, i) => (
+                <tr class={i === 0 ? 'table-row--top' : ''}>
+                  <td>
+                    <a href={`/directories/nomad-cities/${c.slug}`} class="city-link">
+                      <span class="city-link__flag">{c.flag}</span>
+                      <span class="city-link__name">{c.city}</span>
+                    </a>
+                  </td>
+                  <td>
+                    <span class="score-pill">{c.overallScore}</span>
+                  </td>
+                  <td class="td-budget">${c.costOfLiving.monthlyBudgetUSD.min}&ndash;${c.costOfLiving.monthlyBudgetUSD.max}</td>
+                  <td class="td-internet">{c.internet.fixedBroadbandMbps.min}&ndash;{c.internet.fixedBroadbandMbps.max} Mbps</td>
+                  <td>
+                    <span class={`safety-pill ${c.safety.numbeoSafetyIndex >= 60 ? 'safety-pill--high' : c.safety.numbeoSafetyIndex >= 40 ? 'safety-pill--mid' : 'safety-pill--low'}`}>
+                      {c.safety.numbeoSafetyIndex}
+                    </span>
+                  </td>
+                  <td>
+                    <span class={`visa-pill visa-pill--${c.visaEase.rating}`}>{c.visaEase.ratingLabel}</span>
+                  </td>
+                  <td class="td-nomad">
+                    {c.visaEase.nomadVisaExists ? '✅ Yes' : '—'}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- City Cards Grid -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">All 8 Cities</h2>
+        <div class="city-grid">
+          {cities.map((c, i) => (
+            <a href={`/directories/nomad-cities/${c.slug}`} class="city-card">
+              <div class="city-card__header">
+                <span class="city-card__rank">#{i + 1}</span>
+                <span class="city-card__flag">{c.flag}</span>
+                <div class="city-card__score">
+                  <span class="city-card__score-num">{c.overallScore}</span>
+                </div>
+              </div>
+              <h3 class="city-card__name">{c.city}</h3>
+              <p class="city-card__country">{c.country} &middot; {c.region}</p>
+              <p class="city-card__summary">{c.summary.slice(0, 110)}&hellip;</p>
+              <div class="city-card__chips">
+                <span class="chip chip--budget">${c.costOfLiving.monthlyBudgetUSD.min}&ndash;${c.costOfLiving.monthlyBudgetUSD.max}/mo</span>
+                <span class="chip" style={`background: ${ratingColor[c.nomadRating] || '#6b7280'}18; color: ${ratingColor[c.nomadRating] || '#444'}`}>
+                  {ratingLabel[c.nomadRating] || c.nomadRating}
+                </span>
+                {c.visaEase.nomadVisaExists && <span class="chip chip--visa">Nomad Visa</span>}
+              </div>
+              <div class="city-card__footer">
+                <span class="city-card__visa">{c.visaEase.ratingLabel}</span>
+                <span class="city-card__arrow">View Details &rarr;</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Methodology -->
+    <section class="section section--light">
+      <div class="container container--narrow">
+        <h2 class="section-title">How We Score</h2>
+        <div class="method-grid">
+          {[
+            { icon: '💰', label: 'Cost of Living', desc: 'Monthly budget ranges from Numbeo, Nomad List, and expat community data. Higher score = more affordable in USD.' },
+            { icon: '📶', label: 'Internet', desc: 'Fixed broadband Mbps from Speedtest Global Index. Mobile quality and reliability from ISP data and field reports.' },
+            { icon: '🛡️', label: 'Safety', desc: 'Numbeo Safety Index plus US State Dept travel advisory levels. Cross-referenced with expat community reports.' },
+            { icon: '☀️', label: 'Weather', desc: 'Year-round comfort score. Moderate temperatures, low humidity, and predictable dry seasons score highest.' },
+            { icon: '🛂', label: 'Visa Ease', desc: 'Entry barriers for US, UK, and Canadian passports. Visa-free = highest score. Official nomad visa adds bonus points.' },
+            { icon: '👥', label: 'Expat Community', desc: 'Estimated expat population and strength of diaspora returnee networks. Larger established communities = easier soft landing.' },
+            { icon: '🖥️', label: 'Nomad Infrastructure', desc: 'Quantity and quality of coworking spaces, generator backup, fiber availability, and nomad-friendly business environment.' },
+          ].map(m => (
+            <div class="method-card">
+              <span class="method-card__icon">{m.icon}</span>
+              <h3 class="method-card__label">{m.label}</h3>
+              <p class="method-card__desc">{m.desc}</p>
+            </div>
+          ))}
+        </div>
+        <p class="method-note">Data updated November 2026. Sources: Numbeo, Nomad List, Speedtest Global Index, US State Department, OpenWeatherMap, field research. Live API integrations in progress: cost and internet data will auto-refresh quarterly once connected.</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+      <div class="container container--narrow">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-list">
+          {[
+            {
+              q: 'Which African city is best for digital nomads?',
+              a: 'Nairobi, Kenya leads on overall nomad infrastructure: 5G internet, visa-free entry since January 2024, Silicon Savannah tech ecosystem, and the best year-round climate of any city on this list. Kigali is the safest choice. Cape Town has the only official Digital Nomad Visa in sub-Saharan Africa.'
+            },
+            {
+              q: 'Which African city is safest for diaspora returnees?',
+              a: 'Kigali, Rwanda has the highest safety rating on this list with a Numbeo Safety Index of 75.1 and a US State Department Level 1 advisory. Dakar, Senegal is the safest West African city, also rated well above the continental average.'
+            },
+            {
+              q: 'Which African city is most affordable for nomads?',
+              a: 'Dar es Salaam and Dakar are most affordable at $1,000-$1,800/month. Kigali starts at $1,200. Cape Town offers strong value given its quality of life due to Rand weakness against the dollar.'
+            },
+            {
+              q: 'Does any African country have a digital nomad visa?',
+              a: 'Yes. South Africa launched a Digital Nomad Visa in 2024 valid for up to 3 years. Requirements include a remote work contract and minimum $2,790/month income. No other sub-Saharan country on this list has an official nomad visa as of November 2026.'
+            },
+            {
+              q: 'Which African city is best for Black diaspora returnees from the US?',
+              a: 'Accra, Ghana is the most symbolically significant with the Year of Return movement and the Right of Abode program for people of African descent. Dakar is the most welcoming culturally. Nairobi offers the best combination of infrastructure and ease of entry.'
+            },
+          ].map(faq => (
+            <details class="faq-item">
+              <summary class="faq-item__q">{faq.q}</summary>
+              <p class="faq-item__a">{faq.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section--cta">
+      <div class="container container--narrow">
+        <h2 class="cta-title">Know where you want to go. Need help getting there?</h2>
+        <p class="cta-body">Sankofa Expeditions specializes in relocation planning for the African diaspora. We handle visa strategy, neighborhood selection, housing research, banking setup, and on-the-ground logistics.</p>
+        <div class="cta-actions">
+          <a href="/consult" class="btn btn--primary">Book a Free Consultation</a>
+          <a href="/expeditions" class="btn btn--ghost">Our Expedition Packages</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>
+
+<style>
+.nomad-index { background: #FAFAFA; }
+
+/* Hero */
+.ni-hero {
+  background: #0A0A0A;
+  color: #fff;
+  padding: 3rem 0 2.5rem;
+}
+.ni-hero__breadcrumb {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.ni-hero__breadcrumb a { color: rgba(255,255,255,0.6); text-decoration: none; }
+.ni-hero__breadcrumb a:hover { color: #fff; }
+.ni-hero__title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 0.75rem;
+  line-height: 1.1;
+}
+.ni-hero__subtitle {
+  color: rgba(255,255,255,0.75);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 60ch;
+  margin: 0 0 2rem;
+}
+.ni-hero__stats {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.ni-stat { text-align: center; }
+.ni-stat__number { display: block; font-size: 2rem; font-weight: 800; color: #fff; line-height: 1; }
+.ni-stat__label { font-size: 0.75rem; color: rgba(255,255,255,0.55); text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* Sections */
+.section { padding: 3rem 0; }
+.section--light { background: #fff; }
+.section--cta { background: #111; color: #fff; }
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 600;
+  color: #111;
+  margin: 0 0 1.5rem;
+}
+
+/* Container */
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+.container--narrow { max-width: 820px; }
+
+/* Comparison Table */
+.table-wrapper { overflow-x: auto; }
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+.compare-table th {
+  background: #0A0A0A;
+  color: rgba(255,255,255,0.75);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  white-space: nowrap;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.compare-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #e5e5e5;
+  vertical-align: middle;
+  color: #333;
+}
+.compare-table tbody tr:hover { background: #f8f8f8; }
+.table-row--top td { background: rgba(34,197,94,0.04); }
+.city-link { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; }
+.city-link__flag { font-size: 1.1rem; }
+.city-link__name { font-weight: 600; color: #111; white-space: nowrap; }
+.city-link:hover .city-link__name { text-decoration: underline; }
+.score-pill {
+  display: inline-block;
+  background: #0A0A0A;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  min-width: 2.5rem;
+  text-align: center;
+}
+.safety-pill {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+}
+.safety-pill--high { background: rgba(34,197,94,0.1); color: #15803d; }
+.safety-pill--mid { background: rgba(234,179,8,0.1); color: #92400e; }
+.safety-pill--low { background: rgba(239,68,68,0.1); color: #b91c1c; }
+.visa-pill {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.visa-pill--easy { background: rgba(34,197,94,0.1); color: #15803d; }
+.visa-pill--medium { background: rgba(59,130,246,0.1); color: #1d4ed8; }
+.visa-pill--hard { background: rgba(234,179,8,0.1); color: #92400e; }
+.td-budget, .td-internet { white-space: nowrap; }
+.td-nomad { text-align: center; }
+
+/* City Cards Grid */
+.city-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+.city-card {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.city-card:hover {
+  border-color: #0A0A0A;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+.city-card__header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.city-card__rank {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #999;
+  min-width: 1.5rem;
+}
+.city-card__flag { font-size: 1.75rem; }
+.city-card__score {
+  margin-left: auto;
+  background: #0A0A0A;
+  color: #fff;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.city-card__score-num { font-size: 0.85rem; font-weight: 800; }
+.city-card__name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #111;
+  margin: 0 0 0.2rem;
+}
+.city-card__country { font-size: 0.8rem; color: #888; margin: 0 0 0.75rem; }
+.city-card__summary { font-size: 0.88rem; color: #555; line-height: 1.55; margin: 0 0 1rem; flex: 1; }
+.city-card__chips { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
+.chip {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: #f0f0f0;
+  color: #555;
+}
+.chip--budget { background: #f5f5f5; color: #333; }
+.chip--visa { background: rgba(34,197,94,0.1); color: #15803d; }
+.city-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f0f0f0;
+}
+.city-card__visa { font-size: 0.8rem; color: #666; }
+.city-card__arrow { font-size: 0.8rem; font-weight: 600; color: #111; }
+
+/* Methodology */
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.method-card {
+  padding: 1.1rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+}
+.method-card__icon { font-size: 1.25rem; display: block; margin-bottom: 0.5rem; }
+.method-card__label { font-size: 0.9rem; font-weight: 700; color: #111; margin: 0 0 0.4rem; }
+.method-card__desc { font-size: 0.82rem; color: #666; line-height: 1.5; margin: 0; }
+.method-note { font-size: 0.8rem; color: #888; line-height: 1.6; }
+
+/* FAQ */
+.faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
+.faq-item {
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 1.1rem 1.25rem;
+}
+.faq-item__q {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #111;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.faq-item__q::after { content: '+'; font-size: 1.1rem; color: #888; }
+details[open] .faq-item__q::after { content: '−'; }
+.faq-item__a {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0.75rem 0 0;
+}
+
+/* CTA */
+.cta-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  color: #fff;
+  margin: 0 0 0.75rem;
+  font-weight: 600;
+}
+.cta-body { color: rgba(255,255,255,0.75); font-size: 1rem; line-height: 1.6; margin-bottom: 1.5rem; max-width: 60ch; }
+.cta-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn--primary {
+  display: inline-block;
+  padding: 0.85rem 1.75rem;
+  background: #fff;
+  color: #0A0A0A;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+.btn--primary:hover { background: rgba(255,255,255,0.9); }
+.btn--ghost {
+  display: inline-block;
+  padding: 0.85rem 1.75rem;
+  background: transparent;
+  color: rgba(255,255,255,0.8);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+.btn--ghost:hover { border-color: rgba(255,255,255,0.6); color: #fff; }
+
+@media (max-width: 600px) {
+  .ni-hero__stats { gap: 1rem; }
+  .city-grid { grid-template-columns: 1fr; }
+  .compare-table { font-size: 0.8rem; }
+}
+</style>

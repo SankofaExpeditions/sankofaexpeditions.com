@@ -1,0 +1,88 @@
+{
+  "city": "Lagos",
+  "citySlug": "lagos",
+  "country": "Nigeria",
+  "countryCode": "NG",
+  "flag": "🇳🇬",
+  "region": "West Africa",
+  "timezone": "UTC+1",
+  "language": "English",
+  "currency": "Nigerian Naira (NGN)",
+  "summary": "Africa's largest city and commercial powerhouse. Lagos is not for the faint-hearted, but it rewards those who can navigate it with unmatched business opportunity, cultural energy, and an entrepreneurial ecosystem building some of the continent's most important fintech companies.",
+  "lastUpdated": "2026-11-08",
+  "dataSource": "Numbeo, Nomad List, US State Dept, field research",
+  "overallScore": 61,
+  "scores": {
+    "costOfLiving": 82,
+    "internet": 55,
+    "safety": 42,
+    "weather": 50,
+    "visaEase": 40,
+    "expatCommunity": 80,
+    "nomadInfra": 60
+  },
+  "costOfLiving": {
+    "monthlyBudgetUSD": { "min": 1500, "max": 2500 },
+    "rentOneBRCentralUSD": { "min": 800, "max": 1500 },
+    "localMealUSD": 3,
+    "coworkingMonthUSD": { "min": 100, "max": 250 },
+    "source": "Numbeo, Nomad List (2024-2025). Note: Naira devaluation (60%+ since 2022) makes USD costs volatile. These figures reflect current USD purchasing power.",
+    "currencyNote": "The Naira has lost over 60% of its value since 2022. This dramatically lowers USD costs for foreigners while creating economic strain for locals."
+  },
+  "internet": {
+    "fixedBroadbandMbps": { "min": 12, "max": 17 },
+    "mobileQuality": "4G (limited 5G rollout in Victoria Island)",
+    "reliabilityNotes": "Internet quality is improving but remains uneven. Victoria Island and Lekki have best fiber coverage. Power outages require generator backup. Major coworking spaces all have dedicated fiber and generators.",
+    "mainProviders": ["MTN Nigeria", "Airtel Nigeria", "Spectranet", "Smile"]
+  },
+  "safety": {
+    "numbeoSafetyIndex": 27.6,
+    "numbeoCrimeIndex": 72.4,
+    "usDeptStateLevel": 2,
+    "usDeptStateLevelLabel": "Exercise Increased Caution (some areas Level 3)",
+    "safeNeighborhoods": ["Victoria Island", "Ikoyi", "Lekki Phase 1", "Yaba (tech area)"],
+    "cautionAreas": ["Oshodi", "Alaba", "Agege", "traveling at night outside V.I./Lekki"],
+    "keyNotes": "Lagos requires neighborhood awareness. Victoria Island and Ikoyi are well-policed and relatively safe. Kidnapping for ransom has occurred primarily outside Lagos. Violent traffic confrontations (road rage) are a real risk. Never take unofficial taxis."
+  },
+  "weather": {
+    "tempRangeCelsius": { "min": 24, "max": 33 },
+    "drySeasonMonths": "November to March",
+    "rainySeasonMonths": "April to October",
+    "bestMonthsToVisit": "November to February",
+    "climateNotes": "Hot and very humid year-round due to coastal location. Rainy season brings flooding in low-lying areas. November to February is the most tolerable window."
+  },
+  "coworking": [
+    { "name": "CcHub (Co-Creation Hub)", "neighborhood": "Yaba" },
+    { "name": "Swivel Lagos", "neighborhood": "Victoria Island" },
+    { "name": "Regus Lagos", "neighborhood": "Victoria Island" },
+    { "name": "The Nest Lagos", "neighborhood": "Yaba" },
+    { "name": "43 Clicks", "neighborhood": "Ikoyi" },
+    { "name": "Work.able", "neighborhood": "Lekki Phase 1" }
+  ],
+  "visaEase": {
+    "rating": "hard",
+    "ratingLabel": "Requires Pre-Arrangement",
+    "usPassport": "Visa required. Must apply before travel at a Nigerian embassy or consulate. Processing 3-10 business days. Single entry $160.",
+    "ukPassport": "Visa required. Must apply before travel.",
+    "caPassport": "Visa required. Must apply before travel.",
+    "nomadVisaExists": false,
+    "nomadVisaNote": "Nigeria has no digital nomad visa. Business visa or tourist visa required. Extensions through the Nigeria Immigration Service.",
+    "specialNote": "Nigerian diaspora (dual citizenship holders) or those with Citizenship by Descent face fewer barriers. The visa requirement is the primary friction point for first-time visitors.",
+    "visaSourceUrl": "https://immigration.gov.ng"
+  },
+  "expatCommunity": {
+    "estimatedSize": "50,000 to 70,000 expats",
+    "keyHubs": ["Victoria Island", "Ikoyi", "Lekki Phase 1", "Yaba (tech startup area)"],
+    "notableCommunities": ["Nollywood and entertainment industry", "Fintech/startup community in Yaba", "Nigerian-American and Nigerian-British returnees", "Lebanese and Indian business communities"]
+  },
+  "keyFacts": [
+    "Lagos is home to Africa's most important fintech ecosystem: Flutterwave, Paystack, Opay, Moniepoint, and PiggyVest were all founded here",
+    "CcHub (Co-Creation Hub) in Yaba is the original African tech incubator and helped launch dozens of Nigeria's most successful startups",
+    "Naira devaluation since 2022 has made Lagos one of the most affordable major African cities in USD terms for foreigners, while creating real hardship for locals",
+    "Lagos handles 60% of Nigeria's commercial activity and is the port of entry for most of West Africa's imported goods, making it the continent's unavoidable business capital"
+  ],
+  "whyItMatters": "Lagos is not a city you ease into. It is a city that tests you and pays out accordingly. If you are building a business with continental Africa ambitions, Lagos is not optional; it is the game board. The city has more capital, more commercial density, and more raw entrepreneurial energy than any other African city. The Yaba tech district, locally called Yabacon Valley, produced a generation of founders who built companies competing with global fintech leaders. For the diaspora returnee with business intent, Lagos offers access and opportunity that no other African city matches. The tradeoffs are real: the visa is harder, the safety requires vigilance, and the infrastructure demands patience. But Lagos rewards presence in a way that cannot be replicated from outside.",
+  "nomadRating": "advanced",
+  "highlights": ["Africa's fintech capital", "English-speaking", "Largest economy in Africa", "Yabacon Valley startup ecosystem", "Affordable in USD due to Naira devaluation"],
+  "challenges": ["Visa required (pre-travel)", "High crime index", "Traffic and flooding", "Infrastructure unpredictability", "Not recommended for first-time Africa visitors"]
+}

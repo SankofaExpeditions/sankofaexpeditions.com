@@ -1,0 +1,87 @@
+{
+  "city": "Abidjan",
+  "citySlug": "abidjan",
+  "country": "Cote d'Ivoire",
+  "countryCode": "CI",
+  "flag": "🇨🇮",
+  "region": "West Africa",
+  "timezone": "UTC+0",
+  "language": "French",
+  "currency": "West African CFA Franc (XOF)",
+  "summary": "West Africa's economic powerhouse and the entry point to the French-speaking African market. Abidjan is growing fast, has a stable Euro-pegged currency (CFA Franc), and is positioning itself as the gateway for investment across Francophone West Africa's 300 million people.",
+  "lastUpdated": "2026-11-08",
+  "dataSource": "Numbeo, Nomad List, US State Dept, Coworker.com",
+  "overallScore": 65,
+  "scores": {
+    "costOfLiving": 68,
+    "internet": 70,
+    "safety": 55,
+    "weather": 55,
+    "visaEase": 65,
+    "expatCommunity": 72,
+    "nomadInfra": 65
+  },
+  "costOfLiving": {
+    "monthlyBudgetUSD": { "min": 1500, "max": 2500 },
+    "rentOneBRCentralUSD": { "min": 700, "max": 1200 },
+    "localMealUSD": 5,
+    "coworkingMonthUSD": { "min": 150, "max": 300 },
+    "source": "Numbeo, Expatistan (2024-2025)",
+    "currencyNote": "The XOF (CFA Franc) is pegged to the Euro at a fixed rate, providing budget stability unusual for African cities. This is a meaningful advantage for long-stay planning."
+  },
+  "internet": {
+    "fixedBroadbandMbps": { "min": 20, "max": 40 },
+    "mobileQuality": "4G (Orange CI and MTN Cote d'Ivoire, 5G pilot in progress)",
+    "reliabilityNotes": "Internet improving rapidly. Fiber coverage in Plateau (CBD), Cocody, Marcory, and Riviera. Power can be intermittent in some areas. Major coworking spaces have generators.",
+    "mainProviders": ["Orange Cote d'Ivoire", "MTN Cote d'Ivoire", "Moov Africa"]
+  },
+  "safety": {
+    "numbeoSafetyIndex": 43,
+    "numbeoCrimeIndex": 57,
+    "usDeptStateLevel": 2,
+    "usDeptStateLevelLabel": "Exercise Increased Caution",
+    "safeNeighborhoods": ["Cocody (Deux Plateaux, Riviera)", "Marcory", "Plateau (CBD during day)", "Zone 4"],
+    "cautionAreas": ["Adjame", "Abobo", "Yopougon", "Plateau after dark"],
+    "keyNotes": "Abidjan requires neighborhood awareness. Cocody's Riviera and Deux Plateaux districts are relatively safe and are the primary expat and nomad zones. Motorcycle bag snatching exists citywide. Night transport should be via Uber or vetted drivers, not street taxis."
+  },
+  "weather": {
+    "tempRangeCelsius": { "min": 24, "max": 32 },
+    "drySeasonMonths": "December to February and July to September",
+    "rainySeasonMonths": "March to June (long rains) and October to November (short rains)",
+    "bestMonthsToVisit": "December to February",
+    "climateNotes": "Hot and humid coastal climate. The December-February dry season is the most comfortable. Rainy season brings heavy downpours and occasional flooding in low-lying areas."
+  },
+  "coworking": [
+    { "name": "CIPMEN Impact Hub", "neighborhood": "Cocody" },
+    { "name": "Orange Digital Center", "neighborhood": "Plateau (CBD)" },
+    { "name": "Djoumalaflat Hub", "neighborhood": "Cocody Riviera" },
+    { "name": "Regus Abidjan", "neighborhood": "Plateau (CBD)" },
+    { "name": "Africa Tech Hub", "neighborhood": "Cocody" }
+  ],
+  "visaEase": {
+    "rating": "medium",
+    "ratingLabel": "e-Visa Required",
+    "usPassport": "e-Visa required. Apply online. 90-day single entry approximately $73.",
+    "ukPassport": "e-Visa required. Apply online.",
+    "caPassport": "e-Visa required. Apply online.",
+    "nomadVisaExists": false,
+    "nomadVisaNote": "No digital nomad visa. Business visa or standard tourist visa required. Carte de Sejour (resident card) available for longer stays.",
+    "specialNote": "French-speaking comfort is essential. Abidjan operates almost entirely in French. Business, government, and daily life require French fluency or a local fixer.",
+    "visaSourceUrl": "https://snedai.com/e-visa/"
+  },
+  "expatCommunity": {
+    "estimatedSize": "50,000 to 80,000 expats",
+    "keyHubs": ["Cocody (Riviera, Deux Plateaux)", "Plateau (CBD)", "Zone 4", "Marcory"],
+    "notableCommunities": ["French expatriates (25,000-30,000, the largest French community in Africa outside North Africa)", "Lebanese business community", "West African regional business community", "Ivorian diaspora returnees from France and Belgium"]
+  },
+  "keyFacts": [
+    "Cote d'Ivoire has been the fastest growing economy in West Africa for most of the past decade, averaging 7-8% GDP growth annually",
+    "The CFA Franc is pegged to the Euro at a fixed rate, making Abidjan's cost structure predictable and immune to the currency volatility that affects Accra, Lagos, and Dar es Salaam",
+    "Abidjan handles most of landlocked West Africa's trade: Burkina Faso, Mali, Niger, and Guinea all route a significant share of imports and exports through the port of Abidjan",
+    "The city has the largest French expatriate community in sub-Saharan Africa, which has built a support infrastructure (French schools, clinics, restaurants) that simplifies long stays"
+  ],
+  "whyItMatters": "Abidjan is the entry point for Francophone West Africa's 300 million person market. If your business or investment thesis involves the UEMOA (West African Economic and Monetary Union) zone, Abidjan is not optional. The CFA Franc's Euro peg is a rare gift in African finance: budget stability you can count on. The French expatriate infrastructure is the most developed in sub-Saharan Africa and makes settling in easier than it looks on paper. The tradeoff is language: Abidjan operates in French and English fluency alone will not carry you far. For the Afro-Francophone diaspora from France, Canada, Belgium, and Switzerland, Abidjan is the natural African base, increasingly attractive as the economy grows and infrastructure improves.",
+  "nomadRating": "good",
+  "highlights": ["Euro-pegged CFA Franc = budget stability", "Fastest growing West African economy", "Gateway to Francophone West Africa market", "Large expat infrastructure", "UTC+0 for European client work"],
+  "challenges": ["French language required", "e-Visa required", "High heat and humidity", "Safety requires neighborhood awareness", "Less developed English-language nomad community"]
+}

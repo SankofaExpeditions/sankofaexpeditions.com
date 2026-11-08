@@ -1,0 +1,87 @@
+{
+  "city": "Dar es Salaam",
+  "citySlug": "dar-es-salaam",
+  "country": "Tanzania",
+  "countryCode": "TZ",
+  "flag": "🇹🇿",
+  "region": "East Africa",
+  "timezone": "UTC+3",
+  "language": "Swahili / English",
+  "currency": "Tanzanian Shilling (TZS)",
+  "summary": "Tanzania's commercial capital is East Africa's most culturally immersive city for the diaspora. Dar es Salaam sits on the Indian Ocean, moves at a human pace, and offers authentic Swahili cultural experience at the most affordable prices on this list.",
+  "lastUpdated": "2026-11-08",
+  "dataSource": "Numbeo, Nomad List, US State Dept, Coworker.com",
+  "overallScore": 63,
+  "scores": {
+    "costOfLiving": 85,
+    "internet": 60,
+    "safety": 62,
+    "weather": 60,
+    "visaEase": 68,
+    "expatCommunity": 65,
+    "nomadInfra": 55
+  },
+  "costOfLiving": {
+    "monthlyBudgetUSD": { "min": 1000, "max": 1800 },
+    "rentOneBRCentralUSD": { "min": 400, "max": 700 },
+    "localMealUSD": 4,
+    "coworkingMonthUSD": { "min": 100, "max": 200 },
+    "source": "Numbeo, Expatistan (2024-2025)",
+    "currencyNote": "Dar es Salaam is the most affordable city on this list. A comfortable nomad lifestyle with apartment and coworking is achievable for under $1,500/month."
+  },
+  "internet": {
+    "fixedBroadbandMbps": { "min": 15, "max": 30 },
+    "mobileQuality": "4G (Vodacom and Airtel have good 4G coverage)",
+    "reliabilityNotes": "Connectivity improving steadily. Fiber available in major business districts (Masaki, Msasani Peninsula, Upanga). Power can be intermittent. Coworking spaces have generators and dedicated fiber.",
+    "mainProviders": ["Vodacom Tanzania", "Airtel Tanzania", "Tigo Tanzania (Millicom)", "TTCL Fiber"]
+  },
+  "safety": {
+    "numbeoSafetyIndex": 48,
+    "numbeoCrimeIndex": 52,
+    "usDeptStateLevel": 2,
+    "usDeptStateLevelLabel": "Exercise Increased Caution",
+    "safeNeighborhoods": ["Masaki", "Msasani Peninsula", "Oyster Bay", "Upanga", "Mikocheni"],
+    "cautionAreas": ["Kariakoo market area at night", "City center CBD at night"],
+    "keyNotes": "Dar es Salaam is moderately safe. Petty theft and pickpocketing occur in crowded areas. Violent crime against foreigners is not common but has occurred. Masaki and Msasani Peninsula are the safest areas for expats and nomads. Avoid carrying valuables in busy markets."
+  },
+  "weather": {
+    "tempRangeCelsius": { "min": 24, "max": 33 },
+    "drySeasonMonths": "June to October",
+    "rainySeasonMonths": "March to May (long rains) and November to December (short rains)",
+    "bestMonthsToVisit": "June to October",
+    "climateNotes": "Hot, humid coastal climate on the Indian Ocean. The dry season (June-October) is the most comfortable period. Heat and humidity can be intense December through March."
+  },
+  "coworking": [
+    { "name": "Buni Innovation Hub", "neighborhood": "Kinondoni (near Msasani)" },
+    { "name": "Impact Hub Dar es Salaam", "neighborhood": "Msasani Peninsula" },
+    { "name": "KINU Hub", "neighborhood": "CBD / Upanga" },
+    { "name": "Regus Dar es Salaam", "neighborhood": "Masaki" },
+    { "name": "NextSpace Dar", "neighborhood": "Mikocheni" }
+  ],
+  "visaEase": {
+    "rating": "medium",
+    "ratingLabel": "e-Visa Required",
+    "usPassport": "e-Visa required. Apply online at eservices.immigration.go.tz. Single entry $50.",
+    "ukPassport": "e-Visa required. Single entry $50.",
+    "caPassport": "e-Visa required. Single entry $50.",
+    "nomadVisaExists": false,
+    "nomadVisaNote": "No digital nomad visa exists for Tanzania. Tourist visa or business visa required for extended stays.",
+    "specialNote": "Tanzania also controls the spice island of Zanzibar. Many nomads combine a few weeks in Dar es Salaam with time in Zanzibar (Stone Town, Nungwi) which requires the same e-visa.",
+    "visaSourceUrl": "https://eservices.immigration.go.tz"
+  },
+  "expatCommunity": {
+    "estimatedSize": "20,000 to 40,000 expats",
+    "keyHubs": ["Masaki", "Msasani Peninsula", "Oyster Bay"],
+    "notableCommunities": ["NGO and UN workers", "East African regional business community", "Indian-Tanzanian community (long-established)", "Growing Tanzanian-diaspora returnees from UK and North America"]
+  },
+  "keyFacts": [
+    "Dar es Salaam is East Africa's most authentically Swahili city. The coastal Arab-African culture, food, music, and architecture are distinct from inland East African cities.",
+    "Tanzania is one of East Africa's most politically stable countries with no history of post-independence ethnic conflict and a tradition of peaceful power transfers",
+    "Zanzibar is part of Tanzania and accessible by 1-hour ferry. Many nomads base in Dar and work from Stone Town or the northern beaches for extended periods",
+    "Tanzania has no income tax on foreign-sourced income for non-resident individuals, making it attractive for nomads earning outside Tanzania"
+  ],
+  "whyItMatters": "Dar es Salaam is for the diaspora returnee who wants authentic African immersion over infrastructure polish. The city moves slower than Nairobi or Lagos. The Indian Ocean is at your door. The food is magnificent. The Swahili language is one of the continent's great linguistic bridges, spoken from Mozambique to Uganda. If you are building a business serving East and Central Africa and want to actually understand the region, Dar is the university. The internet is not the fastest and the visa requires advance planning, but the monthly cost is the most affordable on this list, the political stability is genuine, and the quality of daily life for someone willing to adapt is high. Add Zanzibar as a weekend option and the lifestyle argument becomes compelling.",
+  "nomadRating": "good",
+  "highlights": ["Most affordable on the list", "Authentic Swahili culture", "Indian Ocean coastal location", "Zanzibar access by ferry", "Politically stable"],
+  "challenges": ["Slower internet than peers", "e-Visa required", "High heat and humidity", "Less developed nomad infrastructure", "Smaller English-language business community"]
+}
