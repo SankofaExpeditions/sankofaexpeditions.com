@@ -31,6 +31,16 @@ const levelColor: Record<number, string> = {
   4: '#ef4444',
 };
 
+// Crime index heat color: green -> yellow -> orange -> red
+function crimeColor(index: number): string {
+  if (index < 30) return '#22c55e';       // green
+  if (index < 50) return '#84cc16';       // yellow-green
+  if (index < 60) return '#f59e0b';       // amber
+  if (index < 70) return '#f97316';       // orange
+  if (index < 80) return '#ef4444';       // red
+  return '#dc2626';                        // deep red
+}
+
 const levelLabel: Record<number, string> = {
   1: 'Exercise Normal Precautions',
   2: 'Exercise Increased Caution',
@@ -151,13 +161,13 @@ const jsonLd = {
           <div class="comparison-row">
             <div class="comparison-city comparison-city--african">
               <span class="comparison-name">{data.city}</span>
-              <span class="comparison-score">{data.numbeo.crimeIndex}</span>
+              <span class="comparison-score" style={`color: ${crimeColor(data.numbeo.crimeIndex)}`}>{data.numbeo.crimeIndex}</span>
             </div>
             <div class="comparison-vs">vs.</div>
             {data.westernComparisons.map((comp: { city: string; stateOrCountry: string; crimeIndex: number }) => (
               <div class="comparison-city comparison-city--western">
                 <span class="comparison-name">{comp.city}, {comp.stateOrCountry}</span>
-                <span class="comparison-score">{comp.crimeIndex}</span>
+                <span class="comparison-score" style={`color: ${crimeColor(comp.crimeIndex)}`}>{comp.crimeIndex}</span>
               </div>
             ))}
           </div>
@@ -550,18 +560,6 @@ const jsonLd = {
     font-weight: 700;
     font-family: var(--font-heading);
     line-height: 1;
-  }
-
-  .comparison-city--african .comparison-score {
-    color: #fff;
-  }
-
-  .comparison-city--african .comparison-name {
-    color: rgba(255,255,255,0.9);
-  }
-
-  .comparison-city--western .comparison-score {
-    color: rgba(255,255,255,0.65);
   }
 
   .comparison-city--western .comparison-name {
