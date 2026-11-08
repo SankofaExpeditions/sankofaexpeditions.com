@@ -193,6 +193,77 @@ const jsonLd = {
     </div>
   </section>
 
+  <section class="perspective-section">
+    <div class="container container--narrow">
+      <div class="perspective-eyebrow">Context that changes everything</div>
+      <h2>Put the numbers in perspective</h2>
+      <p class="perspective-intro">These African cities are scored on the same Numbeo methodology as every city in the world. Here is what that scale looks like when you apply it equally.</p>
+      <div class="perspective-grid">
+        <div class="perspective-item">
+          <div class="perspective-scores">
+            <span class="p-score p-score--africa">79.9</span>
+            <span class="p-sep">Cape Town</span>
+          </div>
+          <div class="perspective-scores">
+            <span class="p-score p-score--west">79.2</span>
+            <span class="p-sep">St. Louis, MO</span>
+          </div>
+          <div class="perspective-scores">
+            <span class="p-score p-score--west">79.1</span>
+            <span class="p-sep">Memphis, TN</span>
+          </div>
+          <p class="perspective-note">Cape Town scores between St. Louis and Memphis. Neither US city carries a travel advisory.</p>
+        </div>
+        <div class="perspective-item">
+          <div class="perspective-scores">
+            <span class="p-score p-score--africa">72.8</span>
+            <span class="p-sep">Lagos</span>
+          </div>
+          <div class="perspective-scores">
+            <span class="p-score p-score--west">72.8</span>
+            <span class="p-sep">Milwaukee, WI</span>
+          </div>
+          <div class="perspective-scores">
+            <span class="p-score p-score--west">74.0</span>
+            <span class="p-sep">Detroit, MI</span>
+          </div>
+          <p class="perspective-note">Lagos scores identically to Milwaukee. Detroit scores higher. No one warns you not to visit Detroit for a conference.</p>
+        </div>
+        <div class="perspective-item">
+          <div class="perspective-scores">
+            <span class="p-score p-score--africa">69.5</span>
+            <span class="p-sep">Nairobi</span>
+          </div>
+          <div class="perspective-scores">
+            <span class="p-score p-score--west">67.8</span>
+            <span class="p-sep">Chicago, IL</span>
+          </div>
+          <div class="perspective-scores">
+            <span class="p-score p-score--west">67.5</span>
+            <span class="p-sep">Atlanta, GA</span>
+          </div>
+          <p class="perspective-note">Nairobi sits just above Chicago and Atlanta. Both are major Black diaspora cultural destinations with active tourism.</p>
+        </div>
+        <div class="perspective-item">
+          <div class="perspective-scores">
+            <span class="p-score p-score--africa">48.3</span>
+            <span class="p-sep">Dakar</span>
+          </div>
+          <div class="perspective-scores">
+            <span class="p-score p-score--west">53.1</span>
+            <span class="p-sep">London, UK</span>
+          </div>
+          <div class="perspective-scores">
+            <span class="p-score p-score--africa">26.9</span>
+            <span class="p-sep">Kigali</span>
+          </div>
+          <p class="perspective-note">Dakar scores safer than London. Kigali scores safer than virtually every major city in Europe or North America.</p>
+        </div>
+      </div>
+      <p class="perspective-footnote">Source: Numbeo 2025. Same scoring methodology applied to all cities globally. The question is not whether Africa is safe. The question is whether the standard being applied to Africa is applied equally everywhere else.</p>
+    </div>
+  </section>
+
   <section class="legend-section">
     <div class="container container--narrow">
       <h2>How to Read This Directory</h2>
@@ -477,6 +548,96 @@ const jsonLd = {
 
   .city-card:hover .card-cta {
     color: #fff;
+  }
+
+  /* Perspective section */
+  .perspective-section {
+    padding: var(--space-3xl) 0;
+    background: var(--color-black);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .perspective-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: var(--space-sm);
+  }
+
+  .perspective-section h2 {
+    color: #fff;
+    margin-bottom: var(--space-md);
+  }
+
+  .perspective-intro {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.65;
+    margin-bottom: var(--space-2xl);
+    max-width: 640px;
+  }
+
+  .perspective-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-xl);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .perspective-item {
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .perspective-scores {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-sm);
+  }
+
+  .p-score {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    line-height: 1;
+    min-width: 3.5rem;
+  }
+
+  .p-score--africa {
+    color: rgba(255,255,255,0.95);
+  }
+
+  .p-score--west {
+    color: rgba(255,255,255,0.3);
+  }
+
+  .p-sep {
+    font-size: 0.8125rem;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .perspective-note {
+    font-size: 0.8125rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.55;
+    margin: var(--space-sm) 0 0;
+    padding-top: var(--space-sm);
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .perspective-footnote {
+    font-size: 0.8125rem;
+    color: rgba(255,255,255,0.35);
+    line-height: 1.6;
+    border-left: 2px solid rgba(255,255,255,0.1);
+    padding-left: var(--space-md);
+    font-style: italic;
   }
 
   /* Legend */

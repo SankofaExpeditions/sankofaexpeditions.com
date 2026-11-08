@@ -93,5 +93,9 @@
     "French language barrier in emergency situations for English-speakers"
   ],
   "relatedCitySlug": "abidjan",
-  "nomadCitiesUrl": "/directories/nomad-cities/abidjan"
+  "nomadCitiesUrl": "/directories/nomad-cities/abidjan",
+  "westernComparisons": [
+    { "city": "Denver", "stateOrCountry": "CO, USA", "crimeIndex": 58.0 },
+    { "city": "Nottingham", "stateOrCountry": "UK", "crimeIndex": 67.8 }
+  ]
 }

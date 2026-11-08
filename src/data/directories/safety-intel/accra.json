@@ -92,5 +92,9 @@
     "Rising express kidnapping incidents in 2024-2025"
   ],
   "relatedCitySlug": "accra",
-  "nomadCitiesUrl": "/directories/nomad-cities/accra"
+  "nomadCitiesUrl": "/directories/nomad-cities/accra",
+  "westernComparisons": [
+    { "city": "Phoenix", "stateOrCountry": "AZ, USA", "crimeIndex": 57.1 },
+    { "city": "Denver", "stateOrCountry": "CO, USA", "crimeIndex": 58.0 }
+  ]
 }

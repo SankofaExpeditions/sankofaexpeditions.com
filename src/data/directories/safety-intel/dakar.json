@@ -90,5 +90,9 @@
     "Traffic and infrastructure challenges in outer suburbs"
   ],
   "relatedCitySlug": "dakar",
-  "nomadCitiesUrl": "/directories/nomad-cities/dakar"
+  "nomadCitiesUrl": "/directories/nomad-cities/dakar",
+  "westernComparisons": [
+    { "city": "London", "stateOrCountry": "UK", "crimeIndex": 53.1 },
+    { "city": "Bristol", "stateOrCountry": "UK", "crimeIndex": 53.9 }
+  ]
 }

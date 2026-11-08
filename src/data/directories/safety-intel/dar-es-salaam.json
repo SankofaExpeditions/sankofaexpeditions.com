@@ -91,5 +91,9 @@
     "Zanzibar has a distinctly higher risk profile than the mainland"
   ],
   "relatedCitySlug": "dar-es-salaam",
-  "nomadCitiesUrl": "/directories/nomad-cities/dar-es-salaam"
+  "nomadCitiesUrl": "/directories/nomad-cities/dar-es-salaam",
+  "westernComparisons": [
+    { "city": "London", "stateOrCountry": "UK", "crimeIndex": 53.1 },
+    { "city": "Phoenix", "stateOrCountry": "AZ, USA", "crimeIndex": 57.1 }
+  ]
 }

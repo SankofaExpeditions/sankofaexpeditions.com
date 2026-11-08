@@ -145,6 +145,26 @@ const jsonLd = {
         {data.overallRiskLabel}
       </div>
 
+      {data.westernComparisons && data.westernComparisons.length > 0 && (
+        <div class="context-comparison">
+          <div class="comparison-label">Numbeo Crime Index context</div>
+          <div class="comparison-row">
+            <div class="comparison-city comparison-city--african">
+              <span class="comparison-name">{data.city}</span>
+              <span class="comparison-score">{data.numbeo.crimeIndex}</span>
+            </div>
+            <div class="comparison-vs">vs.</div>
+            {data.westernComparisons.map((comp: { city: string; stateOrCountry: string; crimeIndex: number }) => (
+              <div class="comparison-city comparison-city--western">
+                <span class="comparison-name">{comp.city}, {comp.stateOrCountry}</span>
+                <span class="comparison-score">{comp.crimeIndex}</span>
+              </div>
+            ))}
+          </div>
+          <p class="comparison-note">Same scoring methodology. Same scale. The question "is Africa safe?" deserves the same scrutiny applied to these cities, which no one hesitates to visit.</p>
+        </div>
+      )}
+
       <p class="hero-summary">{data.summary}</p>
     </div>
   </section>
@@ -488,7 +508,80 @@ const jsonLd = {
     margin: 0;
   }
 
-  /* Alerts */
+  /* Western comparison block */
+  .context-comparison {
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-xl);
+    background: rgba(255,255,255,0.03);
+  }
+
+  .comparison-label {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: var(--space-md);
+  }
+
+  .comparison-row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-md);
+  }
+
+  .comparison-city {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .comparison-name {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.85);
+  }
+
+  .comparison-score {
+    font-size: 1.375rem;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    line-height: 1;
+  }
+
+  .comparison-city--african .comparison-score {
+    color: rgba(255,255,255,0.9);
+  }
+
+  .comparison-city--western .comparison-score {
+    color: rgba(255,255,255,0.45);
+  }
+
+  .comparison-city--western .comparison-name {
+    color: rgba(255,255,255,0.5);
+  }
+
+  .comparison-vs {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.3);
+    padding: 0 var(--space-xs);
+  }
+
+  .comparison-note {
+    font-size: 0.8125rem;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.6;
+    margin: 0;
+    font-style: italic;
+  }
+
+
   .alerts-section {
     padding: var(--space-2xl) 0;
     background: rgba(239, 68, 68, 0.06);

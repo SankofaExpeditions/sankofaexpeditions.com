@@ -98,5 +98,9 @@
     "Cape Flats gang violence is a structural crisis (not tourist-relevant but shapes city-wide stats)"
   ],
   "relatedCitySlug": "cape-town",
-  "nomadCitiesUrl": "/directories/nomad-cities/cape-town"
+  "nomadCitiesUrl": "/directories/nomad-cities/cape-town",
+  "westernComparisons": [
+    { "city": "St. Louis", "stateOrCountry": "MO, USA", "crimeIndex": 79.2 },
+    { "city": "Memphis", "stateOrCountry": "TN, USA", "crimeIndex": 79.1 }
+  ]
 }

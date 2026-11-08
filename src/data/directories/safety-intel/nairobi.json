@@ -95,5 +95,9 @@
     "High crime index requires experienced-level urban awareness"
   ],
   "relatedCitySlug": "nairobi",
-  "nomadCitiesUrl": "/directories/nomad-cities/nairobi"
+  "nomadCitiesUrl": "/directories/nomad-cities/nairobi",
+  "westernComparisons": [
+    { "city": "Chicago", "stateOrCountry": "IL, USA", "crimeIndex": 67.8 },
+    { "city": "Atlanta", "stateOrCountry": "GA, USA", "crimeIndex": 67.5 }
+  ]
 }
