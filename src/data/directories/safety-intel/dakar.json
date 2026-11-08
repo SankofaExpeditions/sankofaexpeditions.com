@@ -92,7 +92,7 @@
   "relatedCitySlug": "dakar",
   "nomadCitiesUrl": "/directories/nomad-cities/dakar",
   "westernComparisons": [
-    { "city": "London", "stateOrCountry": "UK", "crimeIndex": 53.1 },
-    { "city": "Bristol", "stateOrCountry": "UK", "crimeIndex": 53.9 }
+    { "city": "Miami", "stateOrCountry": "FL, USA", "crimeIndex": 53.3 },
+    { "city": "London", "stateOrCountry": "UK", "crimeIndex": 53.1 }
   ]
 }

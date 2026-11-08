@@ -98,6 +98,6 @@
   "nomadCitiesUrl": "/directories/nomad-cities/lagos",
   "westernComparisons": [
     { "city": "Milwaukee", "stateOrCountry": "WI, USA", "crimeIndex": 72.8 },
-    { "city": "Detroit", "stateOrCountry": "MI, USA", "crimeIndex": 74.0 }
+    { "city": "Nottingham", "stateOrCountry": "UK", "crimeIndex": 67.8 }
   ]
 }

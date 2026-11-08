@@ -95,6 +95,6 @@
   "nomadCitiesUrl": "/directories/nomad-cities/accra",
   "westernComparisons": [
     { "city": "Phoenix", "stateOrCountry": "AZ, USA", "crimeIndex": 57.1 },
-    { "city": "Denver", "stateOrCountry": "CO, USA", "crimeIndex": 58.0 }
+    { "city": "Liverpool", "stateOrCountry": "UK", "crimeIndex": 59.8 }
   ]
 }
