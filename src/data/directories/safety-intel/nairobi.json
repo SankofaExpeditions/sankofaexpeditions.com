@@ -97,7 +97,7 @@
   "relatedCitySlug": "nairobi",
   "nomadCitiesUrl": "/directories/nomad-cities/nairobi",
   "westernComparisons": [
-    { "city": "Chicago", "stateOrCountry": "IL, USA", "crimeIndex": 67.8 },
-    { "city": "Birmingham", "stateOrCountry": "UK", "crimeIndex": 67.5 }
+    { "city": "New Orleans", "stateOrCountry": "LA, USA", "crimeIndex": 73.7 },
+    { "city": "Marseille", "stateOrCountry": "France", "crimeIndex": 69.2 }
   ]
 }

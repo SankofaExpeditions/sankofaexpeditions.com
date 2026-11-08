@@ -94,7 +94,7 @@
   "relatedCitySlug": "accra",
   "nomadCitiesUrl": "/directories/nomad-cities/accra",
   "westernComparisons": [
-    { "city": "Phoenix", "stateOrCountry": "AZ, USA", "crimeIndex": 57.1 },
-    { "city": "Liverpool", "stateOrCountry": "UK", "crimeIndex": 59.8 }
+    { "city": "San Francisco", "stateOrCountry": "CA, USA", "crimeIndex": 59.4 },
+    { "city": "Marseille", "stateOrCountry": "France", "crimeIndex": 69.2 }
   ]
 }

@@ -100,7 +100,7 @@
   "relatedCitySlug": "cape-town",
   "nomadCitiesUrl": "/directories/nomad-cities/cape-town",
   "westernComparisons": [
-    { "city": "St. Louis", "stateOrCountry": "MO, USA", "crimeIndex": 79.2 },
-    { "city": "Manchester", "stateOrCountry": "UK", "crimeIndex": 61.8 }
+    { "city": "Memphis", "stateOrCountry": "TN, USA", "crimeIndex": 77.6 },
+    { "city": "St. Louis", "stateOrCountry": "MO, USA", "crimeIndex": 77.1 }
   ]
 }

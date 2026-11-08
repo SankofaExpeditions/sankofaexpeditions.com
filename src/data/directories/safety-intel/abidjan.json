@@ -95,7 +95,7 @@
   "relatedCitySlug": "abidjan",
   "nomadCitiesUrl": "/directories/nomad-cities/abidjan",
   "westernComparisons": [
-    { "city": "Denver", "stateOrCountry": "CO, USA", "crimeIndex": 58.0 },
-    { "city": "Nottingham", "stateOrCountry": "UK", "crimeIndex": 67.8 }
+    { "city": "Portland", "stateOrCountry": "OR, USA", "crimeIndex": 61.0 },
+    { "city": "Naples", "stateOrCountry": "Italy", "crimeIndex": 72.2 }
   ]
 }

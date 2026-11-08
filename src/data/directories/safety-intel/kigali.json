@@ -88,7 +88,7 @@
   "relatedCitySlug": "kigali",
   "nomadCitiesUrl": "/directories/nomad-cities/kigali",
   "westernComparisons": [
-    { "city": "London", "stateOrCountry": "UK", "crimeIndex": 53.1 },
-    { "city": "Miami", "stateOrCountry": "FL, USA", "crimeIndex": 53.3 }
+    { "city": "New York", "stateOrCountry": "NY, USA", "crimeIndex": 46.8 },
+    { "city": "Prague", "stateOrCountry": "Czech Republic", "crimeIndex": 29.0 }
   ]
 }
