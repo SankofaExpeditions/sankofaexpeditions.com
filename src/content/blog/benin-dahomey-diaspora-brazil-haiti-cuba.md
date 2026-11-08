@@ -2,6 +2,7 @@
 title: "The Kingdom of Dahomey, the Door of No Return, and the Diaspora It Made: Benin, Brazil, Haiti, Cuba"
 description: "The enslaved Africans who built Bahia, fed the Haitian Revolution, and shaped Cuban music did not come from a vague Africa. Many came from one specific place: Ouidah, in the Kingdom of Dahomey, in what is now the Republic of Benin. Their cultural fingerprints are still readable in the Americas today."
 publishDate: 2026-11-07
+updatedDate: 2026-11-07
 author: "Sankofa Expeditions"
 category: "DIASPORA HISTORY"
 tags: ["Benin diaspora", "Kingdom of Dahomey", "Ouidah", "Door of No Return", "Candomblé", "Haitian Vodou", "Afro-Brazilian", "slave trade history", "diaspora return"]

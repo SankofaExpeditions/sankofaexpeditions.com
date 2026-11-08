@@ -149,7 +149,7 @@ const jsonLd = [
           Sankofa Expeditions was born to fix that.
         </p>
         <p>
-          Founded by someone who lived the diaspora experience and saw firsthand that the biggest barrier to meaningful engagement with Africa wasn't money or desire ,  <strong>it was intelligence</strong>. Real, verified, on-the-ground intelligence about how things actually work. Where to go. Who to trust. What it actually costs. What the visa situation really looks like. What nobody tells you until you've already landed.
+          Founded by someone who lived the diaspora experience and saw firsthand that the biggest barrier to meaningful engagement with Africa wasn't money or desire, <strong>it was intelligence</strong>. Real, verified, on-the-ground intelligence about how things actually work. Where to go. Who to trust. What it actually costs. What the visa situation really looks like. What nobody tells you until you've already landed.
         </p>
         <p>
           We built Sankofa because we got tired of watching people get burned by bad information, exploited by middlemen, and disillusioned by experiences that didn't match the marketing. The diaspora deserves better. Africa deserves better. This is our answer.
@@ -262,6 +262,35 @@ const jsonLd = [
         <p>
           We don't name-drop or chase clout. We let the intelligence speak for itself. When we say something about a country, a visa process, a cost of living, or an opportunity, it's because someone in our network has verified it. That's the standard.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion -->
+  <section class="about-faq" aria-labelledby="about-faq-heading">
+    <div class="container">
+      <h2 id="about-faq-heading">Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary class="faq-question">What exactly is Sankofa Expeditions and what do they do?</summary>
+          <div class="faq-answer"><p>Sankofa Expeditions is an intelligence platform built by the African diaspora, for the diaspora. We deliver verified, on-the-ground intelligence about Africa, covering travel, relocation, business facilitation, investment scouting, and heritage reconnection across all 54 African nations.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Is Sankofa Expeditions a travel agency or something different?</summary>
+          <div class="faq-answer"><p>No. We are an intelligence platform, not a traditional travel agency. Travel agencies sell packages and itineraries. We deliver verified intelligence, the kind that helps you navigate visa processes, understand local economies, find trustworthy partners, and make informed decisions about Africa.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">What does 'Sankofa' mean?</summary>
+          <div class="faq-answer"><p>Sankofa is an Akan word from Ghana meaning 'go back and get it.' The Sankofa bird flies forward while looking backward, carrying an egg symbolizing the future nurtured by wisdom from the past. It represents the importance of learning from history to build a better future.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">Which African countries does Sankofa Expeditions cover and can they research any country?</summary>
+          <div class="faq-answer"><p>We provide intelligence across all 54 African nations. Our coverage includes visa requirements, cost of living, safety profiles, business environments, diaspora communities, and on-the-ground infrastructure for every country on the continent.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">How is Sankofa Expeditions different from other Africa travel or relocation companies?</summary>
+          <div class="faq-answer"><p>Three key differences: (1) We deliver intelligence, not itineraries, verified, actionable data rather than tourist packages. (2) We cover all 54 nations, not just popular destinations. (3) We are diaspora-owned and diaspora-led, we understand the return journey because we live it.</p></div>
+        </details>
       </div>
     </div>
   </section>
@@ -499,6 +528,49 @@ const jsonLd = [
     font-size: 1.35rem;
     font-weight: 600;
     color: var(--color-text-light);
+  }
+
+  /* =====================
+     FAQ Accordion
+     ===================== */
+  .about-faq {
+    padding: var(--space-2xl) 0;
+    background: var(--color-dark);
+  }
+  .about-faq h2 {
+    font-size: 1.75rem;
+    color: var(--color-text-on-dark);
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .faq-list { max-width: 760px; margin: 0 auto; }
+  .faq-item {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 1rem 0;
+  }
+  .faq-question {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-on-dark);
+    cursor: pointer;
+    list-style: none;
+    padding-right: 1.5rem;
+    position: relative;
+  }
+  .faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: var(--color-gold, #c4841d);
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+  details[open] .faq-question::after { content: '-'; }
+  .faq-answer {
+    padding: 0.75rem 0 0.5rem;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.65;
   }
 
   /* =====================

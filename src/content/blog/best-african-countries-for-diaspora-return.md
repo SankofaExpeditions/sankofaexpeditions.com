@@ -14,7 +14,7 @@ faq:
   - question: "How much money do I need to relocate to Africa?"
     answer: "Plan for $15,000–$50,000 in first-year costs depending on the country and lifestyle. This includes upfront rent (often 1–2 years in advance in West Africa), shipping, visa/permit fees, and setup costs. Monthly living expenses range from $800–$3,000 depending on location and standard of living."
   - question: "Can I keep my US citizenship if I get African citizenship?"
-    answer: "It depends on the African country. The US allows dual citizenship on its end. 27 African countries allow dual citizenship including Ghana, Kenya, Nigeria, Rwanda, Senegal, and South Africa (since 2025). Countries like Tanzania, Botswana, and Ethiopia restrict dual citizenship."
+    answer: "It depends on the African country. The US allows dual citizenship on its end. Many African countries allow dual citizenship including Ghana, Kenya, Nigeria, Rwanda, and Senegal. South Africa allows dual citizenship but requires prior written permission from the Department of Home Affairs before you naturalize abroad. Countries like Tanzania, Botswana, and Ethiopia restrict dual citizenship."
   - question: "Which sub-Saharan African countries are safest to live in as a diaspora returnee?"
     answer: "Safety varies enormously by country and city. Rwanda, Botswana, and Cape Verde are among the safest countries on the continent, comparable to or safer than many US cities. Ghana and Senegal are considered safe by regional standards. South Africa and Nigeria have higher crime rates that require adaptation."
   - question: "What is healthcare like in sub-Saharan Africa for someone relocating from the US?"
@@ -216,7 +216,7 @@ Rated 4/5, the best in East and West Africa. Aga Khan University Hospital, Nairo
 
 | Criterion | Score | Detail |
 |-----------|-------|--------|
-| Visa & Residency | 6/10 | Dual citizenship newly accessible (2025 court ruling); visa process bureaucratic |
+| Visa & Residency | 6/10 | Dual citizenship allowed with prior DHA permission; visa process bureaucratic |
 | Cost of Living | 7/10 | $1,200–$3,000/month in Cape Town or Johannesburg |
 | Safety | 4/10 | High crime rates, especially in Johannesburg |
 | Diaspora Community | 6/10 | Smaller African-American community; strong local diversity |
@@ -228,7 +228,7 @@ Rated 4/5, the best in East and West Africa. Aga Khan University Hospital, Nairo
 
 South Africa has what no other African country can match: **genuinely first-world infrastructure alongside African identity**. World-class hospitals (Netcare, Mediclinic, Life Healthcare), reliable banking (Standard Bank, FNB, Nedbank), functional courts, and telecoms that work. Healthcare is rated 5/5 for expats, you will almost never need medical evacuation. Private hospitals here perform organ transplants, complex cardiac surgery, and oncology treatment at international standards.
 
-The May 2025 Constitutional Court ruling striking down dual citizenship restrictions changed the game. Previously, South Africans who acquired another citizenship lost their SA citizenship. Now diaspora can hold both. The economy is the largest and most diversified on the continent, mining, finance, manufacturing, tech, agriculture, and a growing creative industry. Johannesburg is Africa's financial capital. Cape Town is its creative and lifestyle capital. Durban is an underrated coastal option with the largest Indian Ocean port in Africa.
+South Africa formally allows dual citizenship under the Citizenship Act (Act 88 of 1995), but Section 6(1)(a) requires that South Africans obtain prior written permission from the Department of Home Affairs **before** naturalizing in another country in order to retain their South African citizenship. South Africans who naturalized abroad without first obtaining this permission lose their SA citizenship automatically. Many diaspora South Africans are unaware they have already lost citizenship this way. Those who have lost it can apply for re-acquisition through the Department of Home Affairs, but this is not automatic. If you are a South African considering naturalizing elsewhere, apply for prior permission from DHA first. The economy is the largest and most diversified on the continent, mining, finance, manufacturing, tech, agriculture, and a growing creative industry. Johannesburg is Africa's financial capital. Cape Town is its creative and lifestyle capital. Durban is an underrated coastal option with the largest Indian Ocean port in Africa.
 
 For diaspora with professional skills, South Africa's Critical Skills Visa program offers a pathway to permanent residence if you work in sectors like engineering, IT, healthcare, or finance. The investor visa requires a ZAR 5 million (~$270,000) capital commitment but grants immediate residency.
 
@@ -450,7 +450,7 @@ Botswana has been Africa's governance success story for decades, democratic sinc
 
 This matters because giving up your US, UK, or Caribbean passport is a dealbreaker for most diaspora. The following 27 African countries formally allow dual citizenship:
 
-Angola, Burundi, Cabo Verde, Comoros, Côte d'Ivoire, Djibouti, Gabon, Gambia, **Ghana**, Kenya, Lesotho, Malawi, Mali, Mozambique, Niger, **Nigeria**, **Rwanda**, São Tomé and Príncipe, **Senegal**, Sierra Leone, **South Africa** (since 2025), Sudan, Tunisia, Uganda, Zambia, Zimbabwe.
+Angola, Burundi, Cabo Verde, Comoros, Côte d'Ivoire, Djibouti, Gabon, Gambia, **Ghana**, Kenya, Lesotho, Malawi, Mali, Mozambique, Niger, **Nigeria**, **Rwanda**, São Tomé and Príncipe, **Senegal**, Sierra Leone, **South Africa** (prior DHA permission required before naturalizing abroad), Sudan, Tunisia, Uganda, Zambia, Zimbabwe.
 
 **Countries that restrict dual citizenship:** Tanzania, Cameroon, Ethiopia (offers Origin ID instead), Eritrea, Botswana, Namibia, DRC, Egypt (requires government permission).
 

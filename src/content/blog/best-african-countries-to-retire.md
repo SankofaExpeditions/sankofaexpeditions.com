@@ -191,7 +191,7 @@ Cape Town's private healthcare system is the best on the continent. Netcare, Lif
 
 | Criterion | Score | Notes |
 |-----------|-------|-------|
-| Retirement Visa | 7/10 | 5-year Special Residence Permit for retirees |
+| Retirement Visa | 7/10 | 2-year Ordinary Residence Permit (renewable); 10-year Special Residence Permit via Move to Rwanda for qualifying diaspora |
 | Healthcare | 7/10 | Kigali public health strong; complex care limited |
 | Cost of Living | 9/10 | $1,200-$1,800/month comfortable in Kigali |
 | Safety | 10/10 | Among the safest countries in Africa and the world |
@@ -203,7 +203,12 @@ Rwanda is the only country on this list that keeps surprising people. Travelers 
 
 **The Retirement Pathway**
 
-Rwanda offers a 5-year Special Residence Permit that covers retirees and other long-term residents. Requirements include proof of financial stability and health insurance. Contact the Directorate General of Immigration and Emigration in Kigali for current fee schedules and documentation requirements.
+Rwanda does not have a dedicated retiree visa. Long-term residence for retirees is possible through two routes:
+
+- **2-year Ordinary Residence Permit**: Available to any qualified foreigner who can demonstrate financial stability and health insurance. This is the standard long-term residence option and is renewable indefinitely.
+- **10-year Special Residence Permit via Move to Rwanda**: Available to qualifying people of African descent (diaspora), investors, and skilled professionals through Rwanda's Move to Rwanda program, administered by the Rwanda Development Board. This is not a retirement-specific permit but covers diaspora who qualify under the program's criteria.
+
+There is no Rwanda-specific "5-year retiree permit." Contact the Directorate General of Immigration and Emigration (DGIE) in Kigali or the Rwanda Development Board for current fee schedules and documentation requirements for either pathway.
 
 **Kigali as a City**
 

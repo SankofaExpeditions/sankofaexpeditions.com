@@ -2,6 +2,7 @@
 title: "Africa Bitcoin Conference 2026: ABC Comes to Malawi for the First Time"
 description: "The 5th Annual Africa Bitcoin Conference heads to Blantyre, Malawi on December 2-4, 2026. Here's why ABC 2026 matters, who's speaking, and how to get there."
 publishDate: 2026-11-07
+updatedDate: 2026-11-07
 author: "Sankofa Expeditions"
 category: "BITCOIN AFRICA"
 tags: ["Africa Bitcoin Conference", "ABC 2026", "Bitcoin Africa", "Malawi", "Lightning Network", "Bitcoin conference"]

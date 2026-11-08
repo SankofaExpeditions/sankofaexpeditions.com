@@ -2,6 +2,7 @@
 title: "Why African Americans Are the Only Diaspora Not Building Back Home"
 description: "Every diaspora in America sends remittances home and builds estates abroad. African Americans are the exception. Here is why, and what to do."
 publishDate: 2026-06-17
+updatedDate: 2026-06-17
 author: "Sankofa Expeditions"
 category: "DIASPORA INTELLIGENCE"
 tags: ["diaspora", "remittances", "African Americans", "Ghana", "Rwanda", "Right of Abode", "return", "investment"]
@@ -11,9 +12,9 @@ faq:
   - question: "Why do African immigrants send money to Africa but African Americans don't?"
     answer: "The African American community largely lacks the specific country-of-origin ties that drive remittance behavior in other diaspora groups. Slavery systematically severed knowledge of origin countries, ethnic groups, and family networks across generations. This is not a cultural deficiency but the predictable result of forced erasure of cross-border identity."
   - question: "Can African Americans get residency in Africa?"
-    answer: "Yes. Ghana's Citizenship Act, 2000 (Act 591), Section 13, grants the Right of Abode to any person of African descent in the diaspora. It has been in force since October 2000. Rwanda's Move to Rwanda program, launched in 2021, offers 10-year renewable residence permits and a citizenship pathway to people of African descent worldwide, including African Americans."
+    answer: "Yes. Ghana's Immigration Act 2000 (Act 573), Section 17, grants the Right of Abode to any person of African descent in the diaspora. It has been in force since October 2000. Rwanda's Move to Rwanda program, launched in 2021, offers 10-year renewable residence permits and a citizenship pathway to people of African descent worldwide, including African Americans."
   - question: "What is the Right of Abode in Ghana?"
-    answer: "The Right of Abode is a provision under Ghana's Citizenship Act, 2000 (Act 591) that grants any person of African descent in the diaspora the right to live and work in Ghana indefinitely. It does not require an investment minimum or proof of specific Ghanaian ancestry. Applications go through the Ghana Immigration Service."
+    answer: "The Right of Abode is a provision under Ghana's Immigration Act 2000 (Act 573), Section 17, that grants any person of African descent in the diaspora the right to live and work in Ghana indefinitely. It does not require an investment minimum or proof of specific Ghanaian ancestry. Applications go through the Ghana Immigration Service."
   - question: "How much money flows into sub-Saharan Africa as remittances each year?"
     answer: "All of sub-Saharan Africa combined received approximately $54 billion in remittances in 2023, according to World Bank data. By comparison, India received $125 billion and Mexico received $67 billion. Most remittances to Africa come from African-born immigrants, not from African Americans."
   - question: "What is Rwanda's Move to Rwanda program?"
@@ -102,7 +103,7 @@ Here is the good news that most people have not heard: there are real frameworks
 
 ### Ghana: A Law That Has Been on the Books for 25 Years
 
-The Ghana Citizenship Act, 2000 (Act 591), Section 13, grants the Right of Abode to any person of African descent in the diaspora. Permanent residency. No investment minimum. No ancestry documentation required beyond proving African descent. The right to live and work in Ghana indefinitely.
+Ghana's Immigration Act 2000 (Act 573), Section 17, grants the Right of Abode to any person of African descent in the diaspora. Permanent residency. No investment minimum. No ancestry documentation required beyond proving African descent. The right to live and work in Ghana indefinitely.
 
 This has been law since October 1, 2000.
 
@@ -113,7 +114,7 @@ It is one of the cleanest legal pathways to African residency available anywhere
 Verification steps:
 
 - Confirm your application through the Ghana Immigration Service
-- Consult a Ghana-based attorney familiar with Act 591 to handle the application properly
+- Consult a Ghana-based attorney familiar with the Immigration Act 2000 (Act 573) to handle the application properly
 - Verify that your documents meet current requirements, which are subject to administrative updates even when the law itself has not changed
 - Conduct in-person or agent-conducted checks on any property before committing money
 
@@ -237,7 +238,7 @@ Start there.
 
 ---
 
-*Ready to start verifying? Explore our [complete guide to the best African countries for diaspora return](/blog/best-african-countries-for-diaspora-return), our [deep dive on relocating to Ghana](/blog/complete-guide-relocating-to-ghana), and our [Africa visa intelligence guide](/blog/africa-visa-guide-for-americans) covering all 54 countries. If you want intelligence tailored to your specific situation, [our services page](/services) has the details.*
+*Ready to start verifying? Explore our [complete guide to the best African countries for diaspora return](/blog/best-african-countries-for-diaspora-return), our [deep dive on relocating to Ghana](/blog/complete-guide-relocating-to-ghana), and our [Africa visa intelligence guide](/blog/africa-visa-guide-for-americans) covering all 54 countries. If you want intelligence tailored to your specific situation, [our services page](/consult) has the details.*
 
 ---
 
@@ -248,7 +249,7 @@ Start there.
 3. Pew Research Center, "Remittance Outflows from the United States," December 13, 2023
 4. Pew Research Center, "African Immigrants in the U.S.," January 31, 2022
 5. U.S. Census Bureau, Population Estimates Program, 2023
-6. Ghana Citizenship Act, 2000 (Act 591), Section 13, ILO NATLEX
+6. Ghana Immigration Act 2000 (Act 573), Section 17, ILO NATLEX
 7. The EastAfrican, "Rwanda launches Move to Rwanda diaspora programme," October 2021
 8. McKinsey and Company, "The Economic State of Black America," June 2021
 9. Ghana Business News, January 16, 2020, citing Ghana Tourism Authority

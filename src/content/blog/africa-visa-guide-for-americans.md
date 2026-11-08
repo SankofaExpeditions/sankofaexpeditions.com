@@ -144,7 +144,7 @@ This is why European passport holders (particularly French, British, and Portugu
 
 **Senegal** is a key diaspora destination for Americans and a major tourism market for French citizens. French nationals benefit from deep bilateral agreements that go beyond standard visa-free access, including easier long-stay arrangements and business permits.
 
-**Mauritius** deserves special mention for its universal openness and its Premium Visa program, which grants a one-year stay for remote workers and retirees regardless of nationality.
+**Mauritius** offers universal visa-free entry and a Premium Visa program, which grants a one-year stay for remote workers and retirees regardless of nationality.
 
 ---
 

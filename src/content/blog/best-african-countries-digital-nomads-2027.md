@@ -1,8 +1,8 @@
 ---
 title: "Best African Countries for Digital Nomads in 2027"
 description: "Africa nomad visas in 2027: Namibia, Cape Verde, Rwanda, Kenya, South Africa. Verified requirements, real costs, and what nobody else tells you."
-publishDate: 2027-01-15
-updatedDate: 2027-01-15
+publishDate: 2026-11-07
+updatedDate: 2026-11-07
 author: "Sankofa Expeditions"
 category: "Digital Nomad Intelligence"
 tags: ["digital nomad", "Africa nomad visa", "remote work Africa", "Namibia Digital Nomad Visa", "Cape Verde nomad visa", "Rwanda remote work", "Nairobi digital nomad", "Africa remote work 2027"]
@@ -302,16 +302,6 @@ We rank these on what matters for practical decision-making: legal standing, inf
 
 ---
 
-The continent is building for you. Some countries faster than others. Some with formal programs that give you legal standing. Some with the infrastructure but not yet the legal framework.
-
-What none of them are doing is waiting for you to feel ready.
-
-The information exists. The pathways exist. The communities exist.
-
-What moves you from reading about it to actually being there is a decision you make, not a visa category.
-
----
-
 ## Deep Dives: Country Profiles Worth Knowing Cold
 
 Before you book anything, here is what actually matters about each country at ground level. The stuff that does not appear in government visa portals.
@@ -408,6 +398,6 @@ What moves you from reading about it to actually being there is a decision you m
 
 ---
 
-*All program details verified from primary government sources as of January 2027. Digital nomad visa programs can change without notice. Verify current requirements at official government portals before making any travel or immigration decisions. This is intelligence, not legal advice.*
+*All program details verified from primary government sources as of November 2026, with forward-looking projections for 2027 programs. Digital nomad visa programs can change without notice. Verify current requirements at official government portals before making any travel or immigration decisions. This is intelligence, not legal advice.*
 
-*Ready to build your Africa remote work plan? Start with our [Nomad Visas Directory](/directories/nomad-visas) for verified, regularly updated program details on all six countries covered here. Or [contact us](/contact) to start a conversation about what your specific situation looks like.*
+*Ready to build your Africa remote work plan? Start with our [Nomad Visas Directory](/directories/nomad-visas) for verified, regularly updated program details on all six countries covered here. Or [book a free consult](/consult) to start a conversation about what your specific situation looks like.*
