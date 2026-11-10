@@ -11,15 +11,6 @@ const groups = [
     tagline: 'Where to go, where to live, what it actually costs.',
     directories: [
       {
-        slug: 'nomad-cities',
-        name: 'Nomad Cities for Africa',
-        description: 'Ranked data for 8 African cities: cost of living, wifi speeds, safety scores, visa requirements, and coworking infrastructure. Built for diaspora returnees who want real numbers, not vibes.',
-        countriesLive: ['Accra', 'Nairobi', 'Lagos', 'Kigali', 'Cape Town', 'Dar es Salaam', 'Abidjan', 'Dakar'],
-        countriesQueued: [],
-        eyebrow: 'City Rankings',
-        icon: '◎',
-      },
-      {
         slug: 'safety-intel',
         name: 'Africa Safety Intelligence',
         description: 'City-by-city safety scores, US State Dept advisories, Numbeo crime data, safe neighborhoods, and practical intel for 8 African cities. The question every diaspora traveler asks first, answered with real data.',
@@ -46,6 +37,15 @@ const groups = [
         eyebrow: 'Reconnect Officially',
         icon: '◉',
       },
+      {
+        slug: 'nomad-cities',
+        name: 'Nomad Cities for Africa',
+        description: 'Ranked data for 8 African cities: cost of living, wifi speeds, safety scores, visa requirements, and coworking infrastructure. Built for diaspora returnees who want real numbers, not vibes.',
+        countriesLive: ['Accra', 'Nairobi', 'Lagos', 'Kigali', 'Cape Town', 'Dar es Salaam', 'Abidjan', 'Dakar'],
+        countriesQueued: [],
+        eyebrow: 'City Rankings',
+        icon: '◎',
+      },
     ],
   },
   {
@@ -53,6 +53,16 @@ const groups = [
     label: 'Legal & Professional',
     tagline: 'The lawyers and professionals you need before you move, buy, or invest.',
     directories: [
+      {
+        slug: null,
+        name: 'Expat Service Providers',
+        description: 'Relocation agents, local banks, visa attorneys, real estate brokers, and shipping companies with verified track records working with the diaspora.',
+        countriesLive: [],
+        countriesQueued: ['Ghana', 'South Africa', 'Kenya'],
+        eyebrow: 'Relocation Infrastructure',
+        icon: '◎',
+        comingSoon: true,
+      },
       {
         slug: 'real-estate-lawyers',
         name: 'Ghana Real Estate Lawyers',
@@ -71,16 +81,6 @@ const groups = [
         eyebrow: 'Immigration Law',
         icon: '◈',
       },
-      {
-        slug: null,
-        name: 'Expat Service Providers',
-        description: 'Relocation agents, local banks, visa attorneys, real estate brokers, and shipping companies with verified track records working with the diaspora.',
-        countriesLive: [],
-        countriesQueued: ['Ghana', 'South Africa', 'Kenya'],
-        eyebrow: 'Relocation Infrastructure',
-        icon: '◎',
-        comingSoon: true,
-      },
     ],
   },
   {
@@ -89,15 +89,6 @@ const groups = [
     tagline: 'Vetted healthcare and emergency intel for every country on your list.',
     directories: [
       {
-        slug: 'doctors',
-        name: 'Doctors and Travel Clinics',
-        description: 'Yellow fever vaccination centers, travel medicine clinics, and diaspora-recommended GPs and specialists across sub-Saharan Africa. The yellow card, malaria prophylaxis, and trusted care in one directory.',
-        countriesLive: ['Ghana', 'Nigeria', 'Kenya', 'Rwanda', 'South Africa'],
-        countriesQueued: [],
-        eyebrow: 'Healthcare',
-        icon: '✚',
-      },
-      {
         slug: 'dentists',
         name: 'Diaspora-Trusted Dentists',
         description: 'Vetted dental clinics across sub-Saharan Africa, filtered for international training, USD pricing, and diaspora accessibility. Trust signals matter more than proximity when you are far from home.',
@@ -105,6 +96,15 @@ const groups = [
         countriesQueued: [],
         eyebrow: 'Dental Care',
         icon: '✦',
+      },
+      {
+        slug: 'doctors',
+        name: 'Doctors and Travel Clinics',
+        description: 'Yellow fever vaccination centers, travel medicine clinics, and diaspora-recommended GPs and specialists across sub-Saharan Africa. The yellow card, malaria prophylaxis, and trusted care in one directory.',
+        countriesLive: ['Ghana', 'Nigeria', 'Kenya', 'Rwanda', 'South Africa'],
+        countriesQueued: [],
+        eyebrow: 'Healthcare',
+        icon: '✚',
       },
       {
         slug: 'emergency-contacts',
@@ -124,15 +124,6 @@ const groups = [
     tagline: 'Sound money, coworking, and the ecosystem built for life on the continent.',
     directories: [
       {
-        slug: 'bitcoin-circular-economies',
-        name: 'Bitcoin Circular Economies',
-        description: 'Operating communities across Africa where people earn, spend, and save in Bitcoin daily. No speculation, no exchanges. Just sound money working in real life.',
-        countriesLive: ['Ghana', 'South Africa'],
-        countriesQueued: ['Kenya', 'Mozambique', 'Nigeria'],
-        eyebrow: 'Bitcoin in Africa',
-        icon: '₿',
-      },
-      {
         slug: null,
         name: 'African Coworking Spaces',
         description: 'Verified coworking spaces across the continent for diaspora remote workers, entrepreneurs, and digital nomads. Real costs, real amenities, real reviews.',
@@ -141,6 +132,15 @@ const groups = [
         eyebrow: 'Work Infrastructure',
         icon: '⬡',
         comingSoon: true,
+      },
+      {
+        slug: 'bitcoin-circular-economies',
+        name: 'Bitcoin Circular Economies',
+        description: 'Operating communities across Africa where people earn, spend, and save in Bitcoin daily. No speculation, no exchanges. Just sound money working in real life.',
+        countriesLive: ['Ghana', 'South Africa'],
+        countriesQueued: ['Kenya', 'Mozambique', 'Nigeria'],
+        eyebrow: 'Bitcoin in Africa',
+        icon: '₿',
       },
     ],
   },
