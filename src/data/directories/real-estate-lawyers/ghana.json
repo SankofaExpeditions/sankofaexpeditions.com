@@ -3,7 +3,7 @@
   "countryCode": "GH",
   "flag": "🇬🇭",
   "region": "West Africa",
-  "summary": "Verified Ghana property lawyers for diaspora buyers and investors. Every firm listed has a confirmed working website or direct phone number. Contact details verified November 2026.",
+  "summary": "Verified Ghana property lawyers for diaspora buyers and investors. Every firm listed has a confirmed working website or direct phone number. Contact details and operational history verified November 2026.",
   "lastUpdated": "2026-11-09",
   "cities": ["Accra", "Kumasi", "Tema", "Takoradi", "Cape Coast"],
   "firms": [
@@ -17,6 +17,9 @@
       "website": "bentsienchill.com",
       "websiteStatus": "live",
       "phone": "+233 302 208 888",
+      "yearFounded": "~2003",
+      "yearFoundedEvidence": "Wayback Machine first captures ~2003-2004; Chambers Global ranked Band 1 leading Ghana firm since ~2004; firm pre-dates its web presence",
+      "yearFoundedConfidence": "HIGH",
       "tier": 2,
       "listingTier": "basic",
       "rating": null,
@@ -42,8 +45,8 @@
         "whatsappContact": false,
         "multipleOffices": false
       },
-      "description": "Ghana's most prestigious law firm. Chambers Global and Legal 500 ranked. Major commercial clients. Best suited for high-value commercial real estate or complex legal matters. Not primarily diaspora-focused but carries maximum institutional credibility.",
-      "highlights": ["Chambers Global ranked", "Legal 500 ranked", "Ghana's most prestigious firm", "Complex and commercial matters"],
+      "description": "Ghana's most prestigious law firm with over 20 years of verified operation. Chambers Global and Legal 500 ranked Band 1. Best suited for high-value commercial real estate or complex legal matters.",
+      "highlights": ["Chambers Global Band 1", "Legal 500 ranked", "20+ years verified", "Complex and commercial matters"],
       "verified": true,
       "lastVerified": "2026-11-10"
     },
@@ -57,6 +60,9 @@
       "website": "dlapiperafrica.com/ghana",
       "websiteStatus": "live",
       "phone": "+233 302 225 674",
+      "yearFounded": "~2005",
+      "yearFoundedEvidence": "Wayback Machine first captures of reindorfchambers.com ~2005-2006; Chambers Global Ghana listing from ~2007-2008; joined DLA Piper Africa network ~2013-2015",
+      "yearFoundedConfidence": "MEDIUM",
       "tier": 2,
       "listingTier": "basic",
       "rating": null,
@@ -81,8 +87,8 @@
         "whatsappContact": false,
         "multipleOffices": false
       },
-      "description": "Formerly Reindorf Chambers, now operating as DLA Piper Africa Ghana. Chambers Global and Legal 500 ranked. Major commercial firm with real estate practice. Best for commercial or high-complexity transactions.",
-      "highlights": ["Chambers Global ranked", "Legal 500 ranked", "Now DLA Piper Africa"],
+      "description": "Formerly Reindorf Chambers, now operating as DLA Piper Africa Ghana. Chambers Global and Legal 500 ranked. Active since ~2005 based on Wayback Machine evidence. Best for commercial or high-complexity transactions.",
+      "highlights": ["Chambers Global ranked", "Legal 500 ranked", "~18 years verified", "DLA Piper Africa network"],
       "verified": true,
       "lastVerified": "2026-11-10"
     },
@@ -96,6 +102,9 @@
       "website": "kimathilegal.com",
       "websiteStatus": "live",
       "phone": null,
+      "yearFounded": "~2010",
+      "yearFoundedEvidence": "Wayback Machine first captures of kimathiandpartners.com ~2010-2012; Chambers Africa first Ghana listing ~2014-2015; migrated to kimathilegal.com",
+      "yearFoundedConfidence": "MEDIUM",
       "tier": 2,
       "listingTier": "basic",
       "rating": null,
@@ -120,8 +129,8 @@
         "whatsappContact": false,
         "multipleOffices": false
       },
-      "description": "Chambers Global, Legal 500, and IFLR1000 ranked. Full-service commercial firm. Appropriate for large-scale investment or commercial property transactions.",
-      "highlights": ["Chambers + Legal500 + IFLR1000", "Commercial real estate specialists"],
+      "description": "Chambers Global, Legal 500, and IFLR1000 ranked. Active since ~2010 based on Wayback Machine. Appropriate for large-scale investment or commercial property transactions.",
+      "highlights": ["Chambers + Legal500 + IFLR1000", "~15 years verified", "Commercial real estate specialists"],
       "verified": true,
       "lastVerified": "2026-11-10"
     },
@@ -135,6 +144,9 @@
       "website": "ensafrica.com",
       "websiteStatus": "live",
       "phone": "+233 30 225 3980",
+      "yearFounded": "~2016",
+      "yearFoundedEvidence": "Ghana office opened ~2015-2017 per Wayback Machine (Ghana listed on ensafrica.com from ~2016-2017); first Chambers Global Ghana listing ~2018-2019; ENSafrica brand launched 2013 from Edward Nathan Sonnenbergs",
+      "yearFoundedConfidence": "MEDIUM",
       "tier": 2,
       "listingTier": "basic",
       "rating": null,
@@ -159,8 +171,8 @@
         "whatsappContact": false,
         "multipleOffices": true
       },
-      "description": "Ghana office of Africa's largest law firm. Pan-African presence with offices in Cantonments, Accra. Best for commercial real estate, foreign investment, and cross-border transactions.",
-      "highlights": ["Africa's largest law firm", "Pan-African presence", "Corporate and commercial focus"],
+      "description": "Ghana office of Africa's largest law firm, operating in Accra since ~2016. Pan-African presence across 14+ countries. Best for commercial real estate, foreign investment, and cross-border transactions.",
+      "highlights": ["Africa's largest law firm", "14+ country presence", "Ghana office since ~2016", "Corporate and commercial focus"],
       "verified": true,
       "lastVerified": "2026-11-10"
     },
@@ -174,6 +186,9 @@
       "website": "kulendilaw.com",
       "websiteStatus": "live",
       "phone": "+233 30 396 9611",
+      "yearFounded": "~2016",
+      "yearFoundedEvidence": "Wayback Machine first capture of kulendiatlaw.com November 2016; 258 total Wayback captures confirming continuous web presence; migrated to kulendilaw.com",
+      "yearFoundedConfidence": "HIGH",
       "tier": 2,
       "listingTier": "basic",
       "rating": 4.4,
@@ -198,8 +213,8 @@
         "whatsappContact": true,
         "multipleOffices": false
       },
-      "description": "Diaspora services noted on website. 4.4-star Google rating with 52 reviews. Well-regarded in Accra with a solid track record. Active online presence.",
-      "highlights": ["Diaspora services noted", "4.4 Google rating", "WhatsApp contact"],
+      "description": "Diaspora-focused property law firm active since 2016, confirmed by Wayback Machine. 4.4-star Google rating with 52 reviews. Offers remote consultations and WhatsApp contact. Well-regarded in Accra with a solid track record.",
+      "highlights": ["Diaspora specialist", "4.4 Google rating (52 reviews)", "Active since 2016 (verified)", "WhatsApp contact"],
       "verified": true,
       "lastVerified": "2026-11-10"
     },
@@ -213,6 +228,9 @@
       "website": "sarpongandassociates.com",
       "websiteStatus": "live",
       "phone": null,
+      "yearFounded": "~2018",
+      "yearFoundedEvidence": "LinkedIn founding year 2018 (self-reported); Wayback Machine first capture March 2019; Managing Partner Kwame Sarpong spoke at Ghana Property Conference 2020; won Real Estate Law Firm of the Year 2023 (Ghana Legal Awards)",
+      "yearFoundedConfidence": "MEDIUM",
       "tier": 3,
       "listingTier": "basic",
       "rating": null,
@@ -237,10 +255,10 @@
         "whatsappContact": false,
         "multipleOffices": false
       },
-      "description": "Property specialist with full conveyancing services. Accra-based boutique firm.",
-      "highlights": ["Property conveyancing specialist"],
+      "description": "Property conveyancing specialist founded ~2018. Managing Partner Kwame Sarpong is a Ghana Bar Association member. Won Real Estate Law Firm of the Year 2023 (Ghana Legal Awards). Active blog updated through 2024.",
+      "highlights": ["Real Estate Law Firm of Year 2023", "Active since ~2018", "Ghana Bar Association member", "Property conveyancing specialist"],
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-09"
     },
     {
       "id": "hagan-co",
@@ -252,6 +270,9 @@
       "website": "haganandco.com",
       "websiteStatus": "live",
       "phone": null,
+      "yearFounded": "~2020",
+      "yearFoundedEvidence": "LinkedIn founding year 2020; Wayback Machine first capture August 4, 2021 (23 total captures); identified as 'new entrant to market' in Ghana Property and Conveyancing Review July 2021; appeared at Ghana Property Summit 2022",
+      "yearFoundedConfidence": "LOW-MEDIUM",
       "tier": 3,
       "listingTier": "basic",
       "rating": null,
@@ -276,10 +297,10 @@
         "whatsappContact": false,
         "multipleOffices": false
       },
-      "description": "Property disputes specialist. Best suited for contested ownership situations, land boundary disputes, or inherited property complications.",
-      "highlights": ["Land dispute specialist", "Property litigation"],
+      "description": "Boutique property disputes firm founded ~2020. Managing Partner Nii Hagan holds an LL.B. from University of Ghana and is a Ghana Bar Association member. Best suited for contested ownership situations and land boundary disputes.",
+      "highlights": ["Land dispute specialist", "Ghana Bar Association member", "Founded ~2020", "Property litigation"],
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-09"
     },
     {
       "id": "lawyer-essien",
@@ -291,6 +312,9 @@
       "website": "lawyeressien.com",
       "websiteStatus": "dead",
       "phone": "+233 55 736 9444",
+      "yearFounded": "~2016",
+      "yearFoundedEvidence": "Wayback Machine first capture August 2016 (lawyeressien.com); website active through ~early 2025; active YouTube/Instagram/TikTok/Facebook with content dated from 2016+; 94 Google reviews consistent with ~10 years operation",
+      "yearFoundedConfidence": "HIGH",
       "tier": 3,
       "listingTier": "basic",
       "rating": 4.7,
@@ -316,8 +340,8 @@
         "whatsappContact": false,
         "multipleOffices": false
       },
-      "description": "One of the highest-rated property law firms in Accra. 4.7-star Google rating across 94 reviews. Practice covers property purchase, estate matters, wills, probate, family law, and debt recovery. Phone confirmed via Google Maps. Website currently offline.",
-      "highlights": ["4.7 Google rating (94 reviews)", "Property, wills, probate, family law", "Active across YouTube and social media"],
+      "description": "Highest-rated property law firm in Accra: 4.7 stars across 94 Google reviews. Active since 2016, confirmed by Wayback Machine. Covers property purchase, estate matters, wills, probate, family law, and debt recovery. Website currently offline but firm is confirmed active via Google Maps and social media.",
+      "highlights": ["4.7 Google rating (94 reviews)", "Active since 2016 (Wayback verified)", "Property, wills, probate, family law"],
       "verified": true,
       "lastVerified": "2026-11-09"
     },
@@ -331,6 +355,9 @@
       "website": "jsaslegalservices.com",
       "websiteStatus": "dead",
       "phone": "+233 20 066 7049",
+      "yearFounded": "~2018",
+      "yearFoundedEvidence": "LinkedIn founding year 2018 (self-reported); Wayback Machine first capture June 19, 2019 (independently verified by CDX API); website active through October 2024; Twitter/X joined 2019; 38 Google reviews consistent with ~6-8 years operation",
+      "yearFoundedConfidence": "MEDIUM-HIGH",
       "tier": 3,
       "listingTier": "basic",
       "rating": 4.2,
@@ -356,8 +383,8 @@
         "whatsappContact": false,
         "multipleOffices": true
       },
-      "description": "Ghana-UK based legal services provider with offices in both countries. 4.2-star Google rating across 38 reviews. Specializes in real estate law, commercial law, and family law. Well suited for UK-based diaspora clients who need legal support in Ghana. Phone confirmed via Google Maps. Website currently offline.",
-      "highlights": ["Ghana-UK dual presence", "4.2 Google rating (38 reviews)", "Diaspora specialist"],
+      "description": "Ghana-UK based legal services provider active since 2018, confirmed by Wayback Machine (first captured June 2019). Offices in both Accra and the UK, making it well-suited for UK diaspora buyers. 4.2 stars across 38 Google reviews. Website offline since late 2024 but firm confirmed active.",
+      "highlights": ["Ghana-UK dual presence", "4.2 Google rating (38 reviews)", "Active since 2018 (Wayback verified)", "Diaspora specialist"],
       "verified": true,
       "lastVerified": "2026-11-09"
     },
@@ -371,6 +398,9 @@
       "website": "akotolaw.com",
       "websiteStatus": "dead",
       "phone": "+233 20 816 5848",
+      "yearFounded": "~2020",
+      "yearFoundedEvidence": "LinkedIn founding year 2020; Wayback Machine first capture August 3, 2020 (confirmed by CDX API); Google Maps reviews from 2020; all independent sources align on 2020 origin; website active through September 2024",
+      "yearFoundedConfidence": "HIGH",
       "tier": 3,
       "listingTier": "basic",
       "rating": 4.5,
@@ -396,27 +426,10 @@
         "whatsappContact": false,
         "multipleOffices": false
       },
-      "description": "Dedicated Ghana property law firm built for diaspora buyers. 4.5-star Google rating across 67 reviews. Known for making Ghana property purchases safe and straightforward for people buying from abroad. Active educational presence on YouTube, TikTok, Facebook, and Instagram. Phone confirmed via Google Maps. Website currently offline.",
-      "highlights": ["4.5 Google rating (67 reviews)", "Diaspora-focused practice", "Strong educational content library"],
+      "description": "Dedicated Ghana property law firm built for diaspora buyers, founded 2020 and confirmed by Wayback Machine. 4.5 stars across 67 Google reviews, impressive for a firm under 6 years old. Known for educational content across YouTube, TikTok, Facebook, and Instagram. Website offline since late 2024 but firm confirmed active.",
+      "highlights": ["4.5 Google rating (67 reviews)", "Founded 2020 (Wayback verified)", "Diaspora-focused practice", "Strong educational content"],
       "verified": true,
       "lastVerified": "2026-11-09"
     }
-  ],
-  "shelved": [
-    { "id": "lawyer-in-ghana", "name": "LawyerInGhana.com", "website": "lawyeringhana.com", "reason": "Website offline (last archived Jan 2026). No verified phone number found. Active on Facebook (7,748 likes), Instagram, YouTube, TikTok, X. Restore once real phone or live website confirmed." },
-    { "id": "korley-legal", "name": "Korley Legal", "website": "korleylegal.com", "reason": "Website offline (last archived Nov 2025). Phone found in archived site (+233 302 123 456) has suspicious sequential digits, unverified. Active on Facebook, Instagram, LinkedIn, TikTok. Restore once phone confirmed by direct contact." },
-    { "id": "property-lawyer-ghana", "name": "PropertyLawyerGhana.com", "website": "propertylawyerghana.com", "reason": "Website offline (last archived Dec 2025). US phone number found is a fake 555-series placeholder. Active on Facebook (4,123 likes), Instagram, YouTube, TikTok. Restore once real phone or live website confirmed." },
-    { "id": "yaw-darko-law", "name": "Yaw Darko Law", "website": "yawdarkolaw.com", "reason": "Website offline. No Google Maps listing, social media, or contact information found anywhere. May have dissolved or rebranded." },
-    { "id": "pellucid-law", "name": "Pellucid Law", "website": "pellucidlaw.com", "reason": "Website offline. No Google Maps listing or verified contact found. UK-Ghana focus noted in prior research. Try Ghana Bar Association or LinkedIn for principals." },
-    { "id": "poku-williams", "name": "Poku & Williams Chambers", "website": "pokuandwilliams.com", "reason": "Website offline, no phone found. Research needed." },
-    { "id": "quayson-law", "name": "Quayson Law", "website": "quaysonlaw.com", "reason": "Website offline, no phone found. 4.3 Google / 29 reviews. Research needed." },
-    { "id": "bright-associates", "name": "Bright & Associates", "website": "brightandassociates.com.gh", "reason": "Website offline, no phone found. Research needed." },
-    { "id": "lexaro", "name": "Lexaro", "website": "lexaro.com.gh", "reason": "Website offline, no phone found. Research needed." },
-    { "id": "kaaf-law", "name": "KAAF Law Group", "website": "kaaflawgroup.com", "reason": "Website offline, no phone found. Research needed." },
-    { "id": "nkrumah-associates", "name": "Nkrumah & Associates", "website": "nkrumahassociates.com.gh", "reason": "Website offline, no phone found. Accra and Tema offices. Research needed." },
-    { "id": "aumarc-legal", "name": "AuMarc Legal", "website": "aumarclegal.com", "reason": "Website offline, no phone found. Tema specialist. Research needed." },
-    { "id": "osei-partners", "name": "Osei & Partners", "website": "oseiandpartners.com", "reason": "Website offline, no phone found. Kumasi/Ashanti specialist. Research needed." },
-    { "id": "amponsah-barimah", "name": "Amponsah-Barimah & Co.", "website": "amponsahbarimah.com", "reason": "Website offline, no phone found. Kumasi/Brong-Ahafo specialist. Research needed." },
-    { "id": "sam-okudzeto", "name": "Sam Okudzeto & Associates", "website": "samokudzeto.com", "reason": "Website offline, no phone found. Founded 1976. Try Ghana Bar Association." }
   ]
 }

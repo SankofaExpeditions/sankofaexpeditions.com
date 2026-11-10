@@ -155,10 +155,15 @@ const jsonLd = [
           <article class="firm-row">
             <div class="firm-row-info">
               <h3 class="firm-row-name">{firm.name}</h3>
-              <span class="firm-row-city">{firm.city}</span>
-              {firm.rating && (
-                <span class="firm-row-rating">★ {firm.rating} {firm.reviewSource} ({firm.reviewCount})</span>
-              )}
+              <div class="firm-row-meta">
+                <span class="firm-row-city">{firm.city}</span>
+                {firm.yearFounded && (
+                  <span class="firm-row-est" title={firm.yearFoundedEvidence}>Est. {firm.yearFounded}</span>
+                )}
+                {firm.rating && (
+                  <span class="firm-row-rating">★ {firm.rating} {firm.reviewSource} ({firm.reviewCount})</span>
+                )}
+              </div>
             </div>
             <p class="firm-row-desc">{firm.description}</p>
             <div class="firm-row-tags">
@@ -188,7 +193,7 @@ const jsonLd = [
       <dl class="faq-list">
         <div class="faq-item">
           <dt>Which Ghana property lawyers can I actually contact right now?</dt>
-          <dd>Kulendi @ Law (4.4 Google, +233 30 396 9611), Bentsi-Enchill Letsa & Ankomah (Chambers Global ranked, +233 302 208 888), ENSafrica Ghana (+233 30 225 3980), DLA Piper Africa Ghana (+233 302 225 674), Kimathi & Partners (kimathilegal.com), Sarpong & Associates (sarpongandassociates.com), and Hagan & Co (haganandco.com). All have confirmed working websites or direct phone numbers.</dd>
+          <dd>All 10 firms on this page are reachable. With a live website: Kulendi @ Law (kulendilaw.com, +233 30 396 9611), Bentsi-Enchill Letsa & Ankomah (bentsienchill.com, +233 302 208 888), ENSafrica Ghana (ensafrica.com, +233 30 225 3980), DLA Piper Africa Ghana (dlapiperafrica.com/ghana, +233 302 225 674), Kimathi & Partners (kimathilegal.com), Sarpong & Associates (sarpongandassociates.com), Hagan & Co (haganandco.com). By phone only: Lawyer Essien & Associates (+233 55 736 9444, 4.7 Google), JSAS Legal (+233 20 066 7049, Ghana-UK), Akoto Law (+233 20 816 5848, 4.5 Google).</dd>
         </div>
         <div class="faq-item">
           <dt>How much does a Ghana property lawyer charge?</dt>
@@ -597,6 +602,27 @@ const jsonLd = [
     align-items: baseline;
     gap: var(--space-md);
     flex-wrap: wrap;
+  }
+
+  .firm-row-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+  }
+
+  .firm-row-est {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+    padding: 2px 7px;
+    cursor: default;
   }
 
   .firm-row-name {
