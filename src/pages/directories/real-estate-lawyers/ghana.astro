@@ -242,9 +242,18 @@ const jsonLd = [
             )}
 
             <div class="firm-card-footer">
-              <a href={`https://${firm.website}`} target="_blank" rel="noopener noreferrer" class="firm-link">
-                Visit {firm.website} &rarr;
-              </a>
+              {firm.phone && (
+                <a href={`tel:${firm.phone.replace(/\s/g, '')}`} class="firm-phone">
+                  📞 {firm.phone}
+                </a>
+              )}
+              {firm.websiteStatus === 'live' ? (
+                <a href={`https://${firm.website}`} target="_blank" rel="noopener noreferrer" class="firm-link">
+                  Visit {firm.website} &rarr;
+                </a>
+              ) : (
+                <span class="firm-link firm-link--dead">Website currently offline</span>
+              )}
               <span class="firm-city-tag">{firm.city}</span>
             </div>
           </article>
@@ -273,7 +282,14 @@ const jsonLd = [
                 <span class="tag">{h}</span>
               ))}
             </div>
-            <a href={`https://${firm.website}`} target="_blank" rel="noopener noreferrer" class="firm-row-link">{firm.website} &rarr;</a>
+            {firm.phone && (
+              <a href={`tel:${firm.phone.replace(/\s/g, '')}`} class="firm-phone">📞 {firm.phone}</a>
+            )}
+            {firm.websiteStatus === 'live' ? (
+              <a href={`https://${firm.website}`} target="_blank" rel="noopener noreferrer" class="firm-row-link">{firm.website} &rarr;</a>
+            ) : (
+              <span class="firm-row-link firm-link--dead">Website currently offline</span>
+            )}
           </article>
         ))}
       </div>
@@ -300,7 +316,14 @@ const jsonLd = [
                 <span class="tag">{h}</span>
               ))}
             </div>
-            <a href={`https://${firm.website}`} target="_blank" rel="noopener noreferrer" class="firm-row-link">{firm.website} &rarr;</a>
+            {firm.phone && (
+              <a href={`tel:${firm.phone.replace(/\s/g, '')}`} class="firm-phone">📞 {firm.phone}</a>
+            )}
+            {firm.websiteStatus === 'live' ? (
+              <a href={`https://${firm.website}`} target="_blank" rel="noopener noreferrer" class="firm-row-link">{firm.website} &rarr;</a>
+            ) : (
+              <span class="firm-row-link firm-link--dead">Website currently offline</span>
+            )}
           </article>
         ))}
       </div>
@@ -667,6 +690,20 @@ const jsonLd = [
     text-decoration: underline;
   }
 
+  .firm-link.firm-link--dead,
+  span.firm-link--dead {
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--color-text-muted);
+    font-style: italic;
+    cursor: default;
+  }
+  .firm-link.firm-link--dead:hover,
+  span.firm-link--dead:hover {
+    text-decoration: none;
+  }
+
   .firm-city-tag {
     font-size: 0.7rem;
     text-transform: uppercase;
@@ -759,6 +796,29 @@ const jsonLd = [
 
   .firm-row-link:hover {
     text-decoration: underline;
+  }
+
+  .firm-link--dead {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    font-style: italic;
+    cursor: default;
+  }
+
+  .firm-phone {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text);
+    text-decoration: none;
+    padding: 4px 10px;
+    border: 1px solid var(--color-border);
+    margin-bottom: var(--space-sm);
+  }
+
+  .firm-phone:hover {
+    background: var(--color-bg-alt);
   }
 
   /* FAQ */
