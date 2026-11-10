@@ -2,119 +2,147 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const title = 'Africa Directories | Sankofa Expeditions®';
-const description = 'Verified directories of African Bitcoin circular economies, coworking spaces, emergency contacts, and expat services. Researched and updated weekly.';
+const description = 'Verified directories of African cities, immigration lawyers, real estate lawyers, doctors, dentists, Bitcoin circular economies, and emergency contacts. Researched and updated weekly.';
 
-const directories = [
+const groups = [
   {
-    slug: 'nomad-cities',
-    name: 'Nomad Cities for Africa',
-    description: 'Ranked data for 8 African cities: cost of living, wifi speeds, safety scores, visa requirements, and coworking infrastructure. Built for diaspora returnees who want real numbers, not vibes.',
-    countriesLive: ['Accra', 'Nairobi', 'Lagos', 'Kigali', 'Cape Town', 'Dar es Salaam', 'Abidjan', 'Dakar'],
-    countriesQueued: [],
-    eyebrow: 'City Rankings',
-    icon: '◎',
+    id: 'discover',
+    label: 'Discover',
+    tagline: 'Where to go, where to live, what it actually costs.',
+    directories: [
+      {
+        slug: 'nomad-cities',
+        name: 'Nomad Cities for Africa',
+        description: 'Ranked data for 8 African cities: cost of living, wifi speeds, safety scores, visa requirements, and coworking infrastructure. Built for diaspora returnees who want real numbers, not vibes.',
+        countriesLive: ['Accra', 'Nairobi', 'Lagos', 'Kigali', 'Cape Town', 'Dar es Salaam', 'Abidjan', 'Dakar'],
+        countriesQueued: [],
+        eyebrow: 'City Rankings',
+        icon: '◎',
+      },
+      {
+        slug: 'safety-intel',
+        name: 'Africa Safety Intelligence',
+        description: 'City-by-city safety scores, US State Dept advisories, Numbeo crime data, safe neighborhoods, and practical intel for 8 African cities. The question every diaspora traveler asks first, answered with real data.',
+        countriesLive: ['Accra', 'Nairobi', 'Lagos', 'Kigali', 'Cape Town', 'Dar es Salaam', 'Abidjan', 'Dakar'],
+        countriesQueued: [],
+        eyebrow: 'Safety Intel',
+        icon: '◈',
+      },
+      {
+        slug: 'nomad-visas',
+        name: 'Digital Nomad Visas',
+        description: 'Which African countries have remote work visas, what they cost, and what they actually require. Official sources only. If a program hasn\'t launched on the government website, we say so.',
+        countriesLive: ['Namibia', 'South Africa', 'Rwanda', 'Kenya', 'Cape Verde'],
+        countriesQueued: [],
+        eyebrow: 'Work from Africa',
+        icon: '◫',
+      },
+      {
+        slug: 'citizenship',
+        name: 'Dual Citizenship Tracker',
+        description: 'A verified guide to dual citizenship rules and diaspora right-of-return programs across Africa. Which countries allow it, what it costs, and what the process actually looks like.',
+        countriesLive: ['Ghana', 'Nigeria', 'Sierra Leone', 'Kenya', 'South Africa', 'Senegal', 'Ethiopia'],
+        countriesQueued: [],
+        eyebrow: 'Reconnect Officially',
+        icon: '◉',
+      },
+    ],
   },
   {
-    slug: 'safety-intel',
-    name: 'Africa Safety Intelligence',
-    description: 'City-by-city safety scores, US State Dept advisories, Numbeo crime data, safe neighborhoods, and practical intel for 8 African cities. The question every diaspora traveler asks first, answered with real data.',
-    countriesLive: ['Accra', 'Nairobi', 'Lagos', 'Kigali', 'Cape Town', 'Dar es Salaam', 'Abidjan', 'Dakar'],
-    countriesQueued: [],
-    eyebrow: 'Safety Intel',
-    icon: '◈',
+    id: 'legal',
+    label: 'Legal & Professional',
+    tagline: 'The lawyers and professionals you need before you move, buy, or invest.',
+    directories: [
+      {
+        slug: 'real-estate-lawyers',
+        name: 'Ghana Real Estate Lawyers',
+        description: 'The only diaspora-focused directory of Ghana property lawyers. 25 verified firms in Accra, Kumasi, and Tema. Sorted by diaspora specialization, remote access, and fee transparency. Find a lawyer before you wire a dollar.',
+        countriesLive: ['Ghana'],
+        countriesQueued: ['Nigeria', 'Kenya', 'South Africa'],
+        eyebrow: 'Property Law',
+        icon: '⚖',
+      },
+      {
+        slug: 'immigration-lawyers',
+        name: 'Immigration Lawyers for Diaspora',
+        description: 'Vetted immigration lawyers across sub-Saharan Africa specializing in diaspora relocation. Ghana Right of Abode, GIPC investor permits, CERPAC Nigeria, Kenya investor permits, South Africa critical skills visas, and Rwanda long-term residency.',
+        countriesLive: ['Ghana', 'Nigeria', 'Kenya', 'Rwanda', 'South Africa'],
+        countriesQueued: [],
+        eyebrow: 'Immigration Law',
+        icon: '◈',
+      },
+      {
+        slug: null,
+        name: 'Expat Service Providers',
+        description: 'Relocation agents, local banks, visa attorneys, real estate brokers, and shipping companies with verified track records working with the diaspora.',
+        countriesLive: [],
+        countriesQueued: ['Ghana', 'South Africa', 'Kenya'],
+        eyebrow: 'Relocation Infrastructure',
+        icon: '◎',
+        comingSoon: true,
+      },
+    ],
   },
   {
-    slug: 'bitcoin-circular-economies',
-    name: 'Bitcoin Circular Economies',
-    description: 'Operating communities across Africa where people earn, spend, and save in Bitcoin daily. No speculation, no exchanges. Just sound money working in real life.',
-    countriesLive: ['Ghana', 'South Africa'],
-    countriesQueued: ['Kenya', 'Mozambique', 'Nigeria'],
-    eyebrow: 'Bitcoin in Africa',
-    icon: '₿',
+    id: 'health',
+    label: 'Health & Safety',
+    tagline: 'Vetted healthcare and emergency intel for every country on your list.',
+    directories: [
+      {
+        slug: 'doctors',
+        name: 'Doctors and Travel Clinics',
+        description: 'Yellow fever vaccination centers, travel medicine clinics, and diaspora-recommended GPs and specialists across sub-Saharan Africa. The yellow card, malaria prophylaxis, and trusted care in one directory.',
+        countriesLive: ['Ghana', 'Nigeria', 'Kenya', 'Rwanda', 'South Africa'],
+        countriesQueued: [],
+        eyebrow: 'Healthcare',
+        icon: '✚',
+      },
+      {
+        slug: 'dentists',
+        name: 'Diaspora-Trusted Dentists',
+        description: 'Vetted dental clinics across sub-Saharan Africa, filtered for international training, USD pricing, and diaspora accessibility. Trust signals matter more than proximity when you are far from home.',
+        countriesLive: ['Ghana', 'Nigeria', 'Kenya', 'Rwanda', 'South Africa'],
+        countriesQueued: [],
+        eyebrow: 'Dental Care',
+        icon: '✦',
+      },
+      {
+        slug: 'emergency-contacts',
+        name: 'Emergency Contacts by Country',
+        description: 'Embassy numbers, hospitals, legal contacts, and insurance providers for African countries. The intel you hope you never need but must have before you land.',
+        countriesLive: ['Ghana', 'Kenya', 'Nigeria', 'Rwanda', 'South Africa'],
+        countriesQueued: [],
+        eyebrow: 'Emergency Intel',
+        icon: '◉',
+        comingSoon: false,
+      },
+    ],
   },
   {
-    slug: 'nomad-visas',
-    name: 'Digital Nomad Visas',
-    description: 'Which African countries have remote work visas, what they cost, and what they actually require. Official sources only. If a program hasn\'t launched on the government website, we say so.',
-    countriesLive: ['Namibia', 'South Africa', 'Rwanda', 'Kenya', 'Cape Verde'],
-    countriesQueued: [],
-    eyebrow: 'Work from Africa',
-    icon: '◫',
-  },
-  {
-    slug: 'citizenship',
-    name: 'Dual Citizenship Tracker',
-    description: 'A verified guide to dual citizenship rules and diaspora right-of-return programs across Africa. Which countries allow it, what it costs, and what the process actually looks like.',
-    countriesLive: ['Ghana', 'Nigeria', 'Sierra Leone', 'Kenya', 'South Africa', 'Senegal', 'Ethiopia'],
-    countriesQueued: [],
-    eyebrow: 'Reconnect Officially',
-    icon: '◉',
-  },
-  {
-    slug: null,
-    name: 'African Coworking Spaces',
-    description: 'Verified coworking spaces across the continent for diaspora remote workers, entrepreneurs, and digital nomads. Real costs, real amenities, real reviews.',
-    countriesLive: [],
-    countriesQueued: ['Ghana', 'South Africa', 'Kenya', 'Rwanda', 'Nigeria'],
-    eyebrow: 'Work Infrastructure',
-    icon: '⬡',
-    comingSoon: true,
-  },
-  {
-    slug: 'real-estate-lawyers',
-    name: 'Ghana Real Estate Lawyers',
-    description: 'The only diaspora-focused directory of Ghana property lawyers. 25 verified firms in Accra, Kumasi, and Tema. Sorted by diaspora specialization, remote access, and fee transparency. Find a lawyer before you wire a dollar.',
-    countriesLive: ['Ghana'],
-    countriesQueued: ['Nigeria', 'Kenya', 'South Africa'],
-    eyebrow: 'Property Law',
-    icon: '⚖',
-  },
-  {
-    slug: 'dentists',
-    name: 'Diaspora-Trusted Dentists',
-    description: 'Vetted dental clinics across sub-Saharan Africa, filtered for international training, USD pricing, and diaspora accessibility. Trust signals matter more than proximity when you are far from home.',
-    countriesLive: ['Ghana', 'Nigeria', 'Kenya', 'Rwanda', 'South Africa'],
-    countriesQueued: [],
-    eyebrow: 'Dental Care',
-    icon: '✦',
-  },
-  {
-    slug: 'doctors',
-    name: 'Doctors and Travel Clinics',
-    description: 'Yellow fever vaccination centers, travel medicine clinics, and diaspora-recommended GPs and specialists across sub-Saharan Africa. The yellow card, malaria prophylaxis, and trusted care in one directory.',
-    countriesLive: ['Ghana', 'Nigeria', 'Kenya', 'Rwanda', 'South Africa'],
-    countriesQueued: [],
-    eyebrow: 'Healthcare',
-    icon: '✚',
-  },
-  {
-    slug: 'immigration-lawyers',
-    name: 'Immigration Lawyers for Diaspora',
-    description: 'Vetted immigration lawyers across sub-Saharan Africa specializing in diaspora relocation. Ghana Right of Abode, GIPC investor permits, CERPAC Nigeria, Kenya investor permits, South Africa critical skills visas, and Rwanda long-term residency.',
-    countriesLive: ['Ghana', 'Nigeria', 'Kenya', 'Rwanda', 'South Africa'],
-    countriesQueued: [],
-    eyebrow: 'Immigration Law',
-    icon: '⚖',
-  },
-  {
-    slug: 'emergency-contacts',
-    name: 'Emergency Contacts by Country',
-    description: 'Embassy numbers, hospitals, legal contacts, and insurance providers for African countries. The intel you hope you never need but must have before you land.',
-    countriesLive: ['Ghana', 'Kenya', 'Nigeria', 'Rwanda', 'South Africa'],
-    countriesQueued: [],
-    eyebrow: 'Safety Intel',
-    icon: '◈',
-    comingSoon: false,
-  },
-  {
-    slug: null,
-    name: 'Expat Service Providers',
-    description: 'Relocation agents, local banks, visa attorneys, real estate brokers, and shipping companies with verified track records working with the diaspora.',
-    countriesLive: [],
-    countriesQueued: ['Ghana', 'South Africa', 'Kenya'],
-    eyebrow: 'Relocation Infrastructure',
-    icon: '◎',
-    comingSoon: true,
+    id: 'money',
+    label: 'Money & Community',
+    tagline: 'Sound money, coworking, and the ecosystem built for life on the continent.',
+    directories: [
+      {
+        slug: 'bitcoin-circular-economies',
+        name: 'Bitcoin Circular Economies',
+        description: 'Operating communities across Africa where people earn, spend, and save in Bitcoin daily. No speculation, no exchanges. Just sound money working in real life.',
+        countriesLive: ['Ghana', 'South Africa'],
+        countriesQueued: ['Kenya', 'Mozambique', 'Nigeria'],
+        eyebrow: 'Bitcoin in Africa',
+        icon: '₿',
+      },
+      {
+        slug: null,
+        name: 'African Coworking Spaces',
+        description: 'Verified coworking spaces across the continent for diaspora remote workers, entrepreneurs, and digital nomads. Real costs, real amenities, real reviews.',
+        countriesLive: [],
+        countriesQueued: ['Ghana', 'South Africa', 'Kenya', 'Rwanda', 'Nigeria'],
+        eyebrow: 'Work Infrastructure',
+        icon: '⬡',
+        comingSoon: true,
+      },
+    ],
   },
 ];
 
@@ -155,55 +183,75 @@ const jsonLd = [
     </div>
   </section>
 
-  <section class="section directories-grid-section">
+  <nav class="jump-nav" aria-label="Jump to directory category">
     <div class="container">
-      <div class="directories-grid">
-        {directories.map((dir) => (
-          <article class:list={['dir-card', { 'dir-card--soon': dir.comingSoon }]}>
-            <div class="dir-card-top">
-              <div class="dir-icon" aria-hidden="true">{dir.icon}</div>
-              <span class="dir-eyebrow">{dir.eyebrow}</span>
-            </div>
-            <h2 class="dir-name">{dir.name}</h2>
-            <p class="dir-desc">{dir.description}</p>
-
-            {dir.countriesLive.length > 0 && (
-              <div class="dir-countries">
-                <span class="countries-label">Live now:</span>
-                <ul class="countries-list">
-                  {dir.countriesLive.map((c) => (
-                    <li>
-                      {dir.slug
-                        ? <a href={`/directories/${dir.slug}/${c.toLowerCase().replace(/\s+/g, '-')}`}>{c}</a>
-                        : <span>{c}</span>
-                      }
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {dir.countriesQueued.length > 0 && (
-              <div class="dir-countries dir-countries--queued">
-                <span class="countries-label">{dir.comingSoon ? 'Building:' : 'In queue:'}</span>
-                <ul class="countries-list countries-list--muted">
-                  {dir.countriesQueued.map((c) => <li>{c}</li>)}
-                </ul>
-              </div>
-            )}
-
-            <div class="dir-card-footer">
-              {dir.slug && !dir.comingSoon ? (
-                <a href={`/directories/${dir.slug}`} class="dir-cta">Browse Directory &rarr;</a>
-              ) : (
-                <span class="dir-soon-label">Coming Soon</span>
-              )}
-            </div>
-          </article>
+      <ul class="jump-list" role="list">
+        {groups.map((group) => (
+          <li>
+            <a href={`#${group.id}`} class="jump-link">{group.label}</a>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
-  </section>
+  </nav>
+
+  <div class="directories-body">
+    {groups.map((group) => (
+      <section class="dir-group" id={group.id}>
+        <div class="container">
+          <div class="dir-group-header">
+            <h2 class="dir-group-label">{group.label}</h2>
+            <p class="dir-group-tagline">{group.tagline}</p>
+          </div>
+          <div class="directories-grid">
+            {group.directories.map((dir) => (
+              <article class:list={['dir-card', { 'dir-card--soon': dir.comingSoon }]}>
+                <div class="dir-card-top">
+                  <div class="dir-icon" aria-hidden="true">{dir.icon}</div>
+                  <span class="dir-eyebrow">{dir.eyebrow}</span>
+                </div>
+                <h3 class="dir-name">{dir.name}</h3>
+                <p class="dir-desc">{dir.description}</p>
+
+                {dir.countriesLive.length > 0 && (
+                  <div class="dir-countries">
+                    <span class="countries-label">Live now:</span>
+                    <ul class="countries-list">
+                      {dir.countriesLive.map((c) => (
+                        <li>
+                          {dir.slug
+                            ? <a href={`/directories/${dir.slug}/${c.toLowerCase().replace(/\s+/g, '-')}`}>{c}</a>
+                            : <span>{c}</span>
+                          }
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {dir.countriesQueued.length > 0 && (
+                  <div class="dir-countries dir-countries--queued">
+                    <span class="countries-label">{dir.comingSoon ? 'Building:' : 'In queue:'}</span>
+                    <ul class="countries-list countries-list--muted">
+                      {dir.countriesQueued.map((c) => <li>{c}</li>)}
+                    </ul>
+                  </div>
+                )}
+
+                <div class="dir-card-footer">
+                  {dir.slug && !dir.comingSoon ? (
+                    <a href={`/directories/${dir.slug}`} class="dir-cta">Browse Directory &rarr;</a>
+                  ) : (
+                    <span class="dir-soon-label">Coming Soon</span>
+                  )}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    ))}
+  </div>
 
   <section class="section methodology-section">
     <div class="container container--narrow">
@@ -215,9 +263,9 @@ const jsonLd = [
         Directories are updated weekly. If you are running or know of a project that belongs here, <a href="/contact">reach out</a>.
       </p>
       <div class="dir-crosslinks">
-        <a href="/blog" class="btn btn--secondary">Read the Intelligence Blog →</a>
-        <a href="/travel" class="btn btn--secondary">Plan a Trip →</a>
-        <a href="/consult" class="btn btn--secondary">Book a Free Consultation →</a>
+        <a href="/blog" class="btn btn--secondary">Read the Intelligence Blog &rarr;</a>
+        <a href="/travel" class="btn btn--secondary">Plan a Trip &rarr;</a>
+        <a href="/consult" class="btn btn--secondary">Book a Free Consultation &rarr;</a>
       </div>
     </div>
   </section>
@@ -254,17 +302,90 @@ const jsonLd = [
     max-width: 60ch;
   }
 
-  /* Grid */
-  .directories-grid-section {
+  /* Jump Nav */
+  .jump-nav {
+    background: var(--color-dark);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: var(--space-md) 0;
+    position: sticky;
+    top: var(--header-height);
+    z-index: 50;
+  }
+
+  .jump-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: var(--space-xs);
+    flex-wrap: wrap;
+  }
+
+  .jump-link {
+    display: inline-block;
+    padding: 6px 16px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 2px;
+    transition: color 0.15s, border-color 0.15s, background 0.15s;
+    white-space: nowrap;
+  }
+
+  .jump-link:hover {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.07);
+  }
+
+  /* Directory Groups */
+  .directories-body {
     background: var(--color-bg-alt);
   }
 
+  .dir-group {
+    padding: var(--space-4xl) 0 var(--space-3xl);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .dir-group:last-child {
+    border-bottom: none;
+  }
+
+  .dir-group-header {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .dir-group-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--color-text-muted);
+    margin: 0 0 var(--space-sm);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--color-border);
+    display: inline-block;
+  }
+
+  .dir-group-tagline {
+    font-size: 1.0625rem;
+    color: var(--color-text-muted);
+    margin: var(--space-sm) 0 0;
+    line-height: 1.6;
+  }
+
+  /* Grid */
   .directories-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-xl);
     max-width: 1100px;
-    margin: 0 auto;
   }
 
   @media (min-width: 700px) {
@@ -437,5 +558,28 @@ const jsonLd = [
 
   .methodology-section a {
     color: var(--color-text);
+  }
+
+  .dir-crosslinks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+  }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .jump-list {
+      gap: 6px;
+    }
+
+    .jump-link {
+      font-size: 0.72rem;
+      padding: 5px 12px;
+    }
+
+    .dir-group-label {
+      font-size: 0.7rem;
+    }
   }
 </style>
