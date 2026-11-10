@@ -5,120 +5,14 @@
   "region": "East Africa",
   "capitalCity": "Kigali",
   "summary": "Rwanda punches well above its weight in healthcare quality. King Faisal Hospital Kigali is JCI-accredited, the same international certification held by the top hospitals in the United States and Western Europe. 12 verified providers in Kigali covering travel medicine and diaspora-vetted medical care.",
-  "lastUpdated": "2026-11-07",
-  "cities": ["Kigali"],
-  "totalProviders": 12,
-  "travelClinicsCount": 3,
-  "diasporaVettedCount": 6,
+  "lastUpdated": "2026-11-10",
+  "cities": [
+    "Kigali"
+  ],
+  "totalProviders": 1,
+  "travelClinicsCount": 0,
+  "diasporaVettedCount": 0,
   "providers": [
-    {
-      "id": "rw-travel-01",
-      "name": "Kigali Travel Medicine and Vaccination Centre",
-      "slug": "kigali-travel-medicine-centre",
-      "type": "travel-clinic",
-      "city": "Kigali",
-      "citySlug": "kigali",
-      "neighborhood": "Kiyovu",
-      "website": "kigalitravelmed.rw",
-      "tier": 1,
-      "listingTier": "featured",
-      "rating": 4.6,
-      "reviewCount": 52,
-      "reviewSource": "Google",
-      "specialties": ["Travel Medicine", "Yellow Fever Vaccination", "Malaria Prophylaxis", "Pre-Travel Consultation", "Typhoid", "Meningitis", "Health Certificates"],
-      "enrichment": {
-        "diasporaVetted": true,
-        "internationallyTrained": true,
-        "englishSpeaking": true,
-        "yellowFeverCert": true,
-        "travelMedicine": true,
-        "generalPractice": false,
-        "obgyn": false,
-        "pediatrics": false,
-        "cardiology": false,
-        "acceptsUSD": true,
-        "acceptsInsurance": false,
-        "whatsappContact": true,
-        "onlineBooking": false,
-        "emergencyAvailable": false
-      },
-      "description": "Kigali's dedicated travel medicine facility in Kiyovu, close to the city centre and major diplomatic residences. Official yellow fever vaccination authority. Serves diaspora visitors, diplomats, and UN staff based in Kigali. Travel medicine physicians trained in WHO protocols. Same-day yellow fever certificate issuance. USD accepted and prominently used in Kigali's international community.",
-      "highlights": ["Official yellow fever authority", "Kiyovu city centre location", "Same-day cert issuance", "Serves diplomatic and UN community"],
-      "verified": true,
-      "lastVerified": "2026-11-07"
-    },
-    {
-      "id": "rw-travel-02",
-      "name": "Kimihurura International Medical Centre",
-      "slug": "kimihurura-international-medical",
-      "type": "travel-clinic",
-      "city": "Kigali",
-      "citySlug": "kigali",
-      "neighborhood": "Kimihurura",
-      "website": "kimihururamed.rw",
-      "tier": 1,
-      "listingTier": "verified",
-      "rating": 4.4,
-      "reviewCount": 38,
-      "reviewSource": "Google",
-      "specialties": ["Travel Medicine", "Yellow Fever Vaccination", "Pre-Travel Consultation", "Routine Vaccinations"],
-      "enrichment": {
-        "diasporaVetted": true,
-        "internationallyTrained": false,
-        "englishSpeaking": true,
-        "yellowFeverCert": true,
-        "travelMedicine": true,
-        "generalPractice": true,
-        "obgyn": false,
-        "pediatrics": false,
-        "cardiology": false,
-        "acceptsUSD": true,
-        "acceptsInsurance": false,
-        "whatsappContact": true,
-        "onlineBooking": false,
-        "emergencyAvailable": false
-      },
-      "description": "Combined travel clinic and general practice in Kimihurura, the embassy district of Kigali. Yellow fever vaccination and travel medicine alongside general GP services. English-speaking staff accustomed to serving the international community. Convenient for diaspora visitors staying in the Kimihurura and Kacyiru areas. USD accepted.",
-      "highlights": ["Kimihurura embassy district", "Yellow fever cert and GP combined", "English-speaking international staff", "USD accepted"],
-      "verified": true,
-      "lastVerified": "2026-11-07"
-    },
-    {
-      "id": "rw-travel-03",
-      "name": "Remera Travel and Vaccination Clinic",
-      "slug": "remera-travel-vaccination-clinic",
-      "type": "travel-clinic",
-      "city": "Kigali",
-      "citySlug": "kigali",
-      "neighborhood": "Remera",
-      "website": "remeravaccine.rw",
-      "tier": 2,
-      "listingTier": "basic",
-      "rating": 4.1,
-      "reviewCount": 22,
-      "reviewSource": "Google",
-      "specialties": ["Yellow Fever Vaccination", "Travel Vaccinations", "Health Certificates"],
-      "enrichment": {
-        "diasporaVetted": false,
-        "internationallyTrained": false,
-        "englishSpeaking": true,
-        "yellowFeverCert": true,
-        "travelMedicine": false,
-        "generalPractice": false,
-        "obgyn": false,
-        "pediatrics": false,
-        "cardiology": false,
-        "acceptsUSD": false,
-        "acceptsInsurance": false,
-        "whatsappContact": false,
-        "onlineBooking": false,
-        "emergencyAvailable": false
-      },
-      "description": "Neighborhood vaccination clinic in Remera near the airport corridor. Yellow fever certificates and routine travel vaccinations. Good fallback option for those in the eastern parts of Kigali. Rwandan Franc pricing. Walk-in available.",
-      "highlights": ["Remera near airport corridor", "Walk-in yellow fever certs", "Routine travel vaccinations"],
-      "verified": true,
-      "lastVerified": "2026-11-07"
-    },
     {
       "id": "rw-hospital-01",
       "name": "King Faisal Hospital Kigali",
@@ -133,7 +27,19 @@
       "rating": 4.5,
       "reviewCount": 287,
       "reviewSource": "Google",
-      "specialties": ["Emergency Medicine", "Cardiology", "Cardiac Surgery", "Oncology", "Neurology", "Internal Medicine", "Obstetrics and Gynecology", "Pediatrics", "Orthopedics", "Renal Medicine", "ICU"],
+      "specialties": [
+        "Emergency Medicine",
+        "Cardiology",
+        "Cardiac Surgery",
+        "Oncology",
+        "Neurology",
+        "Internal Medicine",
+        "Obstetrics and Gynecology",
+        "Pediatrics",
+        "Orthopedics",
+        "Renal Medicine",
+        "ICU"
+      ],
       "enrichment": {
         "diasporaVetted": true,
         "internationallyTrained": true,
@@ -151,9 +57,166 @@
         "emergencyAvailable": true
       },
       "description": "King Faisal Hospital Kigali is JCI-accredited: the Joint Commission International certification, the same standard held by the top hospitals in the United States, the United Kingdom, and Western Europe. This is not a marketing claim. It is independently verified international certification. Rwanda's most advanced medical facility, used by diplomats, UN staff, NGO personnel, and the Rwandan government. Full specialist coverage including cardiac surgery, oncology, and neurology. Accepts major international insurance including BUPA, Cigna, and AXA. 24-hour emergency with ICU.",
-      "highlights": ["JCI-ACCREDITED: same standard as top US and UK hospitals", "Used by diplomats, UN staff, and Rwanda government", "Accepts BUPA, Cigna, AXA international insurance", "Full specialist suite including cardiac surgery and oncology"],
+      "highlights": [
+        "JCI-ACCREDITED: same standard as top US and UK hospitals",
+        "Used by diplomats, UN staff, and Rwanda government",
+        "Accepts BUPA, Cigna, AXA international insurance",
+        "Full specialist suite including cardiac surgery and oncology"
+      ],
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "live",
+      "phone": null
+    }
+  ],
+  "shelved": [
+    {
+      "id": "rw-travel-01",
+      "name": "Kigali Travel Medicine and Vaccination Centre",
+      "slug": "kigali-travel-medicine-centre",
+      "type": "travel-clinic",
+      "city": "Kigali",
+      "citySlug": "kigali",
+      "neighborhood": "Kiyovu",
+      "website": "kigalitravelmed.rw",
+      "tier": 1,
+      "listingTier": "featured",
+      "rating": 4.6,
+      "reviewCount": 52,
+      "reviewSource": "Google",
+      "specialties": [
+        "Travel Medicine",
+        "Yellow Fever Vaccination",
+        "Malaria Prophylaxis",
+        "Pre-Travel Consultation",
+        "Typhoid",
+        "Meningitis",
+        "Health Certificates"
+      ],
+      "enrichment": {
+        "diasporaVetted": true,
+        "internationallyTrained": true,
+        "englishSpeaking": true,
+        "yellowFeverCert": true,
+        "travelMedicine": true,
+        "generalPractice": false,
+        "obgyn": false,
+        "pediatrics": false,
+        "cardiology": false,
+        "acceptsUSD": true,
+        "acceptsInsurance": false,
+        "whatsappContact": false,
+        "onlineBooking": false,
+        "emergencyAvailable": false
+      },
+      "description": "Kigali's dedicated travel medicine facility in Kiyovu, close to the city centre and major diplomatic residences. Official yellow fever vaccination authority. Serves diaspora visitors, diplomats, and UN staff based in Kigali. Travel medicine physicians trained in WHO protocols. Same-day yellow fever certificate issuance. USD accepted and prominently used in Kigali's international community.",
+      "highlights": [
+        "Official yellow fever authority",
+        "Kiyovu city centre location",
+        "Same-day cert issuance",
+        "Serves diplomatic and UN community"
+      ],
+      "verified": true,
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
+    },
+    {
+      "id": "rw-travel-02",
+      "name": "Kimihurura International Medical Centre",
+      "slug": "kimihurura-international-medical",
+      "type": "travel-clinic",
+      "city": "Kigali",
+      "citySlug": "kigali",
+      "neighborhood": "Kimihurura",
+      "website": "kimihururamed.rw",
+      "tier": 1,
+      "listingTier": "verified",
+      "rating": 4.4,
+      "reviewCount": 38,
+      "reviewSource": "Google",
+      "specialties": [
+        "Travel Medicine",
+        "Yellow Fever Vaccination",
+        "Pre-Travel Consultation",
+        "Routine Vaccinations"
+      ],
+      "enrichment": {
+        "diasporaVetted": true,
+        "internationallyTrained": false,
+        "englishSpeaking": true,
+        "yellowFeverCert": true,
+        "travelMedicine": true,
+        "generalPractice": true,
+        "obgyn": false,
+        "pediatrics": false,
+        "cardiology": false,
+        "acceptsUSD": true,
+        "acceptsInsurance": false,
+        "whatsappContact": false,
+        "onlineBooking": false,
+        "emergencyAvailable": false
+      },
+      "description": "Combined travel clinic and general practice in Kimihurura, the embassy district of Kigali. Yellow fever vaccination and travel medicine alongside general GP services. English-speaking staff accustomed to serving the international community. Convenient for diaspora visitors staying in the Kimihurura and Kacyiru areas. USD accepted.",
+      "highlights": [
+        "Kimihurura embassy district",
+        "Yellow fever cert and GP combined",
+        "English-speaking international staff",
+        "USD accepted"
+      ],
+      "verified": true,
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
+    },
+    {
+      "id": "rw-travel-03",
+      "name": "Remera Travel and Vaccination Clinic",
+      "slug": "remera-travel-vaccination-clinic",
+      "type": "travel-clinic",
+      "city": "Kigali",
+      "citySlug": "kigali",
+      "neighborhood": "Remera",
+      "website": "remeravaccine.rw",
+      "tier": 2,
+      "listingTier": "basic",
+      "rating": 4.1,
+      "reviewCount": 22,
+      "reviewSource": "Google",
+      "specialties": [
+        "Yellow Fever Vaccination",
+        "Travel Vaccinations",
+        "Health Certificates"
+      ],
+      "enrichment": {
+        "diasporaVetted": false,
+        "internationallyTrained": false,
+        "englishSpeaking": true,
+        "yellowFeverCert": true,
+        "travelMedicine": false,
+        "generalPractice": false,
+        "obgyn": false,
+        "pediatrics": false,
+        "cardiology": false,
+        "acceptsUSD": false,
+        "acceptsInsurance": false,
+        "whatsappContact": false,
+        "onlineBooking": false,
+        "emergencyAvailable": false
+      },
+      "description": "Neighborhood vaccination clinic in Remera near the airport corridor. Yellow fever certificates and routine travel vaccinations. Good fallback option for those in the eastern parts of Kigali. Rwandan Franc pricing. Walk-in available.",
+      "highlights": [
+        "Remera near airport corridor",
+        "Walk-in yellow fever certs",
+        "Routine travel vaccinations"
+      ],
+      "verified": true,
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "rw-clinic-01",
@@ -169,7 +232,14 @@
       "rating": 4.3,
       "reviewCount": 94,
       "reviewSource": "Google",
-      "specialties": ["General Practice", "Internal Medicine", "Obstetrics and Gynecology", "Pediatrics", "Diagnostics", "Minor Surgery"],
+      "specialties": [
+        "General Practice",
+        "Internal Medicine",
+        "Obstetrics and Gynecology",
+        "Pediatrics",
+        "Diagnostics",
+        "Minor Surgery"
+      ],
       "enrichment": {
         "diasporaVetted": true,
         "internationallyTrained": true,
@@ -182,14 +252,22 @@
         "cardiology": false,
         "acceptsUSD": true,
         "acceptsInsurance": true,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": false,
         "emergencyAvailable": false
       },
       "description": "One of Kigali's most respected private clinics, located in Kacyiru near Rwanda's government institutions and diplomatic quarter. Covers general medicine, OB/GYN, and pediatrics. French and English-speaking staff reflecting Rwanda's bilingual professional class. Known in the diaspora community as a reliable alternative when King Faisal is at capacity. USD accepted.",
-      "highlights": ["Kacyiru diplomatic quarter", "French and English speaking", "Reliable alternative to King Faisal", "USD accepted"],
+      "highlights": [
+        "Kacyiru diplomatic quarter",
+        "French and English speaking",
+        "Reliable alternative to King Faisal",
+        "USD accepted"
+      ],
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "rw-clinic-02",
@@ -205,7 +283,13 @@
       "rating": 4.4,
       "reviewCount": 71,
       "reviewSource": "Google",
-      "specialties": ["General Practice", "Internal Medicine", "Pediatrics", "Diagnostics", "Pharmacy"],
+      "specialties": [
+        "General Practice",
+        "Internal Medicine",
+        "Pediatrics",
+        "Diagnostics",
+        "Pharmacy"
+      ],
       "enrichment": {
         "diasporaVetted": true,
         "internationallyTrained": true,
@@ -218,14 +302,22 @@
         "cardiology": false,
         "acceptsUSD": true,
         "acceptsInsurance": true,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": false,
         "emergencyAvailable": false
       },
       "description": "Modern private clinic in Kimihurura serving the embassy and international business community in Kigali. Internationally trained GP and pediatrician on staff. English-speaking throughout. On-site laboratory and pharmacy. Regularly recommended in diaspora forums and international community networks. USD accepted.",
-      "highlights": ["Kimihurura embassy area", "Internationally trained GP and pediatrician", "English-speaking throughout", "Diaspora forum recommended"],
+      "highlights": [
+        "Kimihurura embassy area",
+        "Internationally trained GP and pediatrician",
+        "English-speaking throughout",
+        "Diaspora forum recommended"
+      ],
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "rw-specialist-01",
@@ -241,7 +333,12 @@
       "rating": 4.3,
       "reviewCount": 44,
       "reviewSource": "Google",
-      "specialties": ["Obstetrics and Gynecology", "Prenatal Care", "Family Planning", "Women's Health"],
+      "specialties": [
+        "Obstetrics and Gynecology",
+        "Prenatal Care",
+        "Family Planning",
+        "Women's Health"
+      ],
       "enrichment": {
         "diasporaVetted": false,
         "internationallyTrained": true,
@@ -254,14 +351,22 @@
         "cardiology": false,
         "acceptsUSD": true,
         "acceptsInsurance": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": false,
         "emergencyAvailable": false
       },
       "description": "Women's specialist clinic in Gacuriro, one of Kigali's expanding residential areas. Internationally trained gynecologist. Serves diaspora women returning for prenatal care or gynecological consultations. English-speaking. USD accepted for direct pay.",
-      "highlights": ["Internationally trained gynecologist", "Gacuriro residential area", "English-speaking", "USD direct pay"],
+      "highlights": [
+        "Internationally trained gynecologist",
+        "Gacuriro residential area",
+        "English-speaking",
+        "USD direct pay"
+      ],
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "rw-clinic-03",
@@ -277,7 +382,12 @@
       "rating": 4.0,
       "reviewCount": 38,
       "reviewSource": "Google",
-      "specialties": ["General Practice", "Internal Medicine", "Diagnostics", "Pharmacy"],
+      "specialties": [
+        "General Practice",
+        "Internal Medicine",
+        "Diagnostics",
+        "Pharmacy"
+      ],
       "enrichment": {
         "diasporaVetted": false,
         "internationallyTrained": false,
@@ -295,9 +405,16 @@
         "emergencyAvailable": false
       },
       "description": "Rwanda Social Security Board-linked medical centre in Kicukiro. Good for routine GP and diagnostics. Insurance-linked and affordable. Best used by diaspora who have Rwandan health coverage through employment or as a convenient neighborhood option in Kicukiro.",
-      "highlights": ["Insurance-linked affordability", "Kicukiro location", "Routine GP and diagnostics"],
+      "highlights": [
+        "Insurance-linked affordability",
+        "Kicukiro location",
+        "Routine GP and diagnostics"
+      ],
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "rw-specialist-02",
@@ -313,7 +430,12 @@
       "rating": null,
       "reviewCount": null,
       "reviewSource": null,
-      "specialties": ["Internal Medicine", "Hypertension", "Diabetes Management", "Cardiology Referrals"],
+      "specialties": [
+        "Internal Medicine",
+        "Hypertension",
+        "Diabetes Management",
+        "Cardiology Referrals"
+      ],
       "enrichment": {
         "diasporaVetted": false,
         "internationallyTrained": true,
@@ -326,14 +448,22 @@
         "cardiology": false,
         "acceptsUSD": true,
         "acceptsInsurance": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": false,
         "emergencyAvailable": false
       },
       "description": "Specialist internist in Kiyovu with training from Belgium. Sees patients for hypertension, cardiovascular risk, and chronic disease management. Good option for diaspora managing conditions while in Kigali. French and English speaking. USD accepted direct pay.",
-      "highlights": ["Belgium-trained internist", "French and English speaking", "Chronic disease management", "USD direct pay"],
+      "highlights": [
+        "Belgium-trained internist",
+        "French and English speaking",
+        "Chronic disease management",
+        "USD direct pay"
+      ],
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "rw-clinic-04",
@@ -349,7 +479,12 @@
       "rating": 4.0,
       "reviewCount": 29,
       "reviewSource": "Google",
-      "specialties": ["General Practice", "Pediatrics", "Minor Surgery", "Laboratory"],
+      "specialties": [
+        "General Practice",
+        "Pediatrics",
+        "Minor Surgery",
+        "Laboratory"
+      ],
       "enrichment": {
         "diasporaVetted": false,
         "internationallyTrained": false,
@@ -367,9 +502,16 @@
         "emergencyAvailable": false
       },
       "description": "Community polyclinic in Nyamirambo serving the southern districts of Kigali. Covers GP and pediatrics. Good for diaspora visitors staying in that part of the city. Local insurance accepted. French-primary with some English capability.",
-      "highlights": ["Nyamirambo coverage", "Pediatrics and GP", "Local insurance accepted"],
+      "highlights": [
+        "Nyamirambo coverage",
+        "Pediatrics and GP",
+        "Local insurance accepted"
+      ],
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "rw-hospital-02",
@@ -385,7 +527,13 @@
       "rating": 3.9,
       "reviewCount": 142,
       "reviewSource": "Google",
-      "specialties": ["Emergency Medicine", "General Surgery", "Internal Medicine", "Orthopedics", "Pediatrics"],
+      "specialties": [
+        "Emergency Medicine",
+        "General Surgery",
+        "Internal Medicine",
+        "Orthopedics",
+        "Pediatrics"
+      ],
       "enrichment": {
         "diasporaVetted": false,
         "internationallyTrained": true,
@@ -403,9 +551,17 @@
         "emergencyAvailable": true
       },
       "description": "Public military hospital open to civilians. Good trauma and emergency capability, particularly relevant for the Kanombe and Remera areas near the airport. Internationally trained surgeons. Best used as a backup emergency option or for orthopedic trauma when King Faisal is at capacity. Government hospital pricing.",
-      "highlights": ["Trauma and emergency capability", "Near Kigali International Airport", "Internationally trained surgeons", "Government pricing"],
+      "highlights": [
+        "Trauma and emergency capability",
+        "Near Kigali International Airport",
+        "Internationally trained surgeons",
+        "Government pricing"
+      ],
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "rw-hospital-03",
@@ -421,7 +577,12 @@
       "rating": 3.7,
       "reviewCount": 98,
       "reviewSource": "Google",
-      "specialties": ["Emergency Medicine", "General Medicine", "Maternal Health", "Pediatrics"],
+      "specialties": [
+        "Emergency Medicine",
+        "General Medicine",
+        "Maternal Health",
+        "Pediatrics"
+      ],
       "enrichment": {
         "diasporaVetted": false,
         "internationallyTrained": false,
@@ -439,9 +600,17 @@
         "emergencyAvailable": true
       },
       "description": "Public district hospital in Kimironko serving the northeastern parts of Kigali. Rwanda's public health system is notably better-managed than regional peers, so this is a reliable emergency fallback. Use King Faisal or private clinics for planned care, but this is a viable emergency option in the Kimironko and Gisozi areas.",
-      "highlights": ["Kimironko coverage", "Emergency fallback", "Rwanda public health system reliability", "Mutuelles insurance accepted"],
+      "highlights": [
+        "Kimironko coverage",
+        "Emergency fallback",
+        "Rwanda public health system reliability",
+        "Mutuelles insurance accepted"
+      ],
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     }
   ]
 }

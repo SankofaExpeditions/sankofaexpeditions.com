@@ -5,12 +5,15 @@
   "region": "East Africa",
   "capitalCity": "Nairobi",
   "summary": "Diaspora-trusted dentists in Kenya, covering Nairobi. 12 verified clinics sorted by international training, USD pricing, and diaspora accessibility. Nairobi is the professional dental hub for East Africa, with a cluster of internationally trained practitioners in Karen, Westlands, and Upper Hill.",
-  "lastUpdated": "2026-11-07",
-  "cities": ["Nairobi"],
-  "totalClinics": 12,
-  "diasporaVettedCount": 6,
-  "internationalTrainedCount": 5,
-  "clinics": [
+  "lastUpdated": "2026-11-10",
+  "cities": [
+    "Nairobi"
+  ],
+  "totalClinics": 0,
+  "diasporaVettedCount": 0,
+  "internationalTrainedCount": 0,
+  "clinics": [],
+  "shelved": [
     {
       "id": "karen-dental-centre",
       "name": "Karen Dental Centre",
@@ -24,7 +27,14 @@
       "rating": 4.8,
       "reviewCount": 128,
       "reviewSource": "Google",
-      "services": ["General Dentistry", "Cosmetic", "Implants", "Orthodontics", "Emergency", "Teeth Whitening"],
+      "services": [
+        "General Dentistry",
+        "Cosmetic",
+        "Implants",
+        "Orthodontics",
+        "Emergency",
+        "Teeth Whitening"
+      ],
       "feeRangeUSD": "45-200",
       "enrichment": {
         "diasporaVetted": true,
@@ -32,7 +42,7 @@
         "englishSpeaking": true,
         "acceptsUSD": true,
         "acceptsInsurance": true,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": true,
         "emergencyAvailable": true,
         "generalDentistry": true,
@@ -42,10 +52,18 @@
         "dentalTourism": false
       },
       "description": "Karen's most-reviewed dental practice and a consistent recommendation in Nairobi diaspora groups. Lead dentist trained at the University of Edinburgh before returning to Nairobi. 4.8-star Google rating across 128 reviews. Full implant and cosmetic menu. USD accepted, online booking, insurance from several international plans accepted. Equipment maintained to international standards including digital panoramic X-ray.",
-      "highlights": ["University of Edinburgh trained", "4.8 Google rating", "USD and international insurance", "Digital X-ray on-site"],
+      "highlights": [
+        "University of Edinburgh trained",
+        "4.8 Google rating",
+        "USD and international insurance",
+        "Digital X-ray on-site"
+      ],
       "trainingNote": "Lead dentist completed BDS and postgraduate studies at the University of Edinburgh, Scotland.",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "westlands-dental-clinic-nairobi",
@@ -60,7 +78,13 @@
       "rating": 4.6,
       "reviewCount": 94,
       "reviewSource": "Google",
-      "services": ["General Dentistry", "Cosmetic", "Implants", "Veneers", "Emergency"],
+      "services": [
+        "General Dentistry",
+        "Cosmetic",
+        "Implants",
+        "Veneers",
+        "Emergency"
+      ],
       "feeRangeUSD": "50-220",
       "enrichment": {
         "diasporaVetted": true,
@@ -68,7 +92,7 @@
         "englishSpeaking": true,
         "acceptsUSD": true,
         "acceptsInsurance": true,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": true,
         "emergencyAvailable": true,
         "generalDentistry": true,
@@ -78,10 +102,18 @@
         "dentalTourism": false
       },
       "description": "Modern Westlands practice serving Nairobi's business district community and a large expat patient base. Lead dentist trained at the University of Cape Town with additional implantology certification. Known for professional communication, USD-quoted pricing, and reliable emergency access. Regularly cited by US and UK diaspora moving to Nairobi as the go-to for trust and familiarity.",
-      "highlights": ["UCT-trained lead dentist", "Implantology certified", "USD pricing", "Business district location"],
+      "highlights": [
+        "UCT-trained lead dentist",
+        "Implantology certified",
+        "USD pricing",
+        "Business district location"
+      ],
       "trainingNote": "Lead dentist trained at the University of Cape Town Dental School with postgraduate implantology certification.",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "upper-hill-dental-nairobi",
@@ -96,7 +128,13 @@
       "rating": 4.5,
       "reviewCount": 76,
       "reviewSource": "Google",
-      "services": ["General Dentistry", "Cosmetic", "Orthodontics", "Teeth Whitening", "Root Canal"],
+      "services": [
+        "General Dentistry",
+        "Cosmetic",
+        "Orthodontics",
+        "Teeth Whitening",
+        "Root Canal"
+      ],
       "feeRangeUSD": "40-180",
       "enrichment": {
         "diasporaVetted": true,
@@ -104,7 +142,7 @@
         "englishSpeaking": true,
         "acceptsUSD": true,
         "acceptsInsurance": true,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": false,
         "emergencyAvailable": false,
         "generalDentistry": true,
@@ -114,10 +152,18 @@
         "dentalTourism": false
       },
       "description": "Upper Hill practice near the hospital and financial district. Well-reviewed by NGO workers, UN staff, and diaspora professionals. Dentist completed additional training in the Netherlands. Accepts USD and major insurance plans. Strong orthodontics practice. Known for calm and professional environment.",
-      "highlights": ["Netherlands postgraduate training", "UN/NGO community trusted", "Insurance accepted", "Orthodontics specialty"],
+      "highlights": [
+        "Netherlands postgraduate training",
+        "UN/NGO community trusted",
+        "Insurance accepted",
+        "Orthodontics specialty"
+      ],
       "trainingNote": "Lead dentist completed postgraduate orthodontics training in the Netherlands.",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "lavington-smiles-nairobi",
@@ -132,7 +178,13 @@
       "rating": 4.4,
       "reviewCount": 55,
       "reviewSource": "Google",
-      "services": ["General Dentistry", "Cosmetic", "Teeth Whitening", "Orthodontics", "Pediatric Dentistry"],
+      "services": [
+        "General Dentistry",
+        "Cosmetic",
+        "Teeth Whitening",
+        "Orthodontics",
+        "Pediatric Dentistry"
+      ],
       "feeRangeUSD": "35-160",
       "enrichment": {
         "diasporaVetted": true,
@@ -140,7 +192,7 @@
         "englishSpeaking": true,
         "acceptsUSD": true,
         "acceptsInsurance": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": false,
         "emergencyAvailable": false,
         "generalDentistry": true,
@@ -150,10 +202,18 @@
         "dentalTourism": false
       },
       "description": "Family-friendly practice in Lavington, one of Nairobi's most popular diaspora residential neighbourhoods. Good for families with children, strong pediatric dentistry. USD accepted. Well-regarded by the diaspora families who have settled in Lavington and Kileleshwa. Domestic training but long track record and diaspora-aware communication style.",
-      "highlights": ["Lavington neighbourhood", "Family and pediatric focus", "USD accepted", "Diaspora family recommended"],
+      "highlights": [
+        "Lavington neighbourhood",
+        "Family and pediatric focus",
+        "USD accepted",
+        "Diaspora family recommended"
+      ],
       "trainingNote": "Lead dentist trained at the University of Nairobi School of Dental Sciences.",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "nairobi-dental-upperhill",
@@ -168,7 +228,12 @@
       "rating": 4.2,
       "reviewCount": 48,
       "reviewSource": "Google",
-      "services": ["General Dentistry", "Implants", "Root Canal", "Emergency"],
+      "services": [
+        "General Dentistry",
+        "Implants",
+        "Root Canal",
+        "Emergency"
+      ],
       "feeRangeUSD": "45-200",
       "enrichment": {
         "diasporaVetted": false,
@@ -176,7 +241,7 @@
         "englishSpeaking": true,
         "acceptsUSD": true,
         "acceptsInsurance": true,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": false,
         "emergencyAvailable": true,
         "generalDentistry": true,
@@ -186,10 +251,18 @@
         "dentalTourism": false
       },
       "description": "Multi-dentist practice based at Upper Hill Medical Centre. Insurance accepted from a wide range of Kenyan and international plans. Implants available. Emergency same-day slots on most weekdays. USD accepted at reception. Well-suited for diaspora professionals with corporate health cover.",
-      "highlights": ["Upper Hill Medical Centre", "Insurance accepted", "Implants", "Emergency access"],
+      "highlights": [
+        "Upper Hill Medical Centre",
+        "Insurance accepted",
+        "Implants",
+        "Emergency access"
+      ],
       "trainingNote": null,
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "kileleshwa-dental-nairobi",
@@ -204,7 +277,12 @@
       "rating": 4.1,
       "reviewCount": 37,
       "reviewSource": "Google",
-      "services": ["General Dentistry", "Teeth Whitening", "Extractions", "Orthodontics"],
+      "services": [
+        "General Dentistry",
+        "Teeth Whitening",
+        "Extractions",
+        "Orthodontics"
+      ],
       "feeRangeUSD": "30-150",
       "enrichment": {
         "diasporaVetted": false,
@@ -212,7 +290,7 @@
         "englishSpeaking": true,
         "acceptsUSD": true,
         "acceptsInsurance": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": false,
         "emergencyAvailable": false,
         "generalDentistry": true,
@@ -222,10 +300,17 @@
         "dentalTourism": false
       },
       "description": "Kileleshwa neighbourhood practice serving a residential community popular with diaspora returnees. Good for maintenance and orthodontic cases. USD accepted. English fluent. Walk-in and WhatsApp booking.",
-      "highlights": ["Kileleshwa neighbourhood", "USD accepted", "Orthodontics"],
+      "highlights": [
+        "Kileleshwa neighbourhood",
+        "USD accepted",
+        "Orthodontics"
+      ],
       "trainingNote": null,
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "ridgeways-dental-nairobi",
@@ -240,7 +325,11 @@
       "rating": 4.0,
       "reviewCount": 24,
       "reviewSource": "Google",
-      "services": ["General Dentistry", "Teeth Whitening", "Root Canal"],
+      "services": [
+        "General Dentistry",
+        "Teeth Whitening",
+        "Root Canal"
+      ],
       "feeRangeUSD": "30-140",
       "enrichment": {
         "diasporaVetted": false,
@@ -248,7 +337,7 @@
         "englishSpeaking": true,
         "acceptsUSD": false,
         "acceptsInsurance": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": false,
         "emergencyAvailable": false,
         "generalDentistry": true,
@@ -258,10 +347,16 @@
         "dentalTourism": false
       },
       "description": "Ridgeways coverage option north of Nairobi. Useful for diaspora settling in Ridgeways, Runda, or Gigiri. USD not accepted but accessible via WhatsApp for appointment confirmation.",
-      "highlights": ["Ridgeways/Runda coverage", "WhatsApp contact"],
+      "highlights": [
+        "Ridgeways/Runda coverage",
+        "WhatsApp contact"
+      ],
       "trainingNote": null,
       "verified": false,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "ngong-road-dental-nairobi",
@@ -276,7 +371,11 @@
       "rating": 3.9,
       "reviewCount": 19,
       "reviewSource": "Google",
-      "services": ["General Dentistry", "Extractions", "Teeth Whitening"],
+      "services": [
+        "General Dentistry",
+        "Extractions",
+        "Teeth Whitening"
+      ],
       "feeRangeUSD": "25-110",
       "enrichment": {
         "diasporaVetted": false,
@@ -284,7 +383,7 @@
         "englishSpeaking": true,
         "acceptsUSD": false,
         "acceptsInsurance": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": false,
         "emergencyAvailable": false,
         "generalDentistry": true,
@@ -294,10 +393,16 @@
         "dentalTourism": false
       },
       "description": "Along Ngong Road, accessible from Karen and Langata. Useful secondary option for diaspora settled in those areas who want something closer than the Karen/Lavington practices.",
-      "highlights": ["Ngong Road corridor", "Karen/Langata access"],
+      "highlights": [
+        "Ngong Road corridor",
+        "Karen/Langata access"
+      ],
       "trainingNote": null,
       "verified": false,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "mwangi-dental-westlands",
@@ -312,7 +417,10 @@
       "rating": null,
       "reviewCount": null,
       "reviewSource": null,
-      "services": ["General Dentistry", "Extractions"],
+      "services": [
+        "General Dentistry",
+        "Extractions"
+      ],
       "feeRangeUSD": "25-90",
       "enrichment": {
         "diasporaVetted": false,
@@ -330,10 +438,16 @@
         "dentalTourism": false
       },
       "description": "Walk-in community practice in Westlands. Useful for essential care on a tight budget. Limited range.",
-      "highlights": ["Westlands walk-in", "Budget-friendly"],
+      "highlights": [
+        "Westlands walk-in",
+        "Budget-friendly"
+      ],
       "trainingNote": null,
       "verified": false,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "hurlingham-dental-nairobi",
@@ -348,7 +462,11 @@
       "rating": null,
       "reviewCount": null,
       "reviewSource": null,
-      "services": ["General Dentistry", "Extractions", "Teeth Whitening"],
+      "services": [
+        "General Dentistry",
+        "Extractions",
+        "Teeth Whitening"
+      ],
       "feeRangeUSD": "25-100",
       "enrichment": {
         "diasporaVetted": false,
@@ -356,7 +474,7 @@
         "englishSpeaking": true,
         "acceptsUSD": false,
         "acceptsInsurance": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": false,
         "emergencyAvailable": false,
         "generalDentistry": true,
@@ -366,10 +484,16 @@
         "dentalTourism": false
       },
       "description": "Coverage option in Hurlingham between Upper Hill and Karen. Useful for diaspora moving between those areas. Essential services.",
-      "highlights": ["Hurlingham corridor", "WhatsApp contact"],
+      "highlights": [
+        "Hurlingham corridor",
+        "WhatsApp contact"
+      ],
       "trainingNote": null,
       "verified": false,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "spring-valley-dental-nairobi",
@@ -384,7 +508,10 @@
       "rating": null,
       "reviewCount": null,
       "reviewSource": null,
-      "services": ["General Dentistry", "Extractions"],
+      "services": [
+        "General Dentistry",
+        "Extractions"
+      ],
       "feeRangeUSD": "25-90",
       "enrichment": {
         "diasporaVetted": false,
@@ -402,10 +529,16 @@
         "dentalTourism": false
       },
       "description": "Spring Valley neighbourhood practice. Useful for diaspora settled in this Westlands-adjacent area. Walk-in for essential care.",
-      "highlights": ["Spring Valley coverage", "Walk-in"],
+      "highlights": [
+        "Spring Valley coverage",
+        "Walk-in"
+      ],
       "trainingNote": null,
       "verified": false,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "woodlands-dental-nairobi",
@@ -420,7 +553,11 @@
       "rating": null,
       "reviewCount": null,
       "reviewSource": null,
-      "services": ["General Dentistry", "Teeth Whitening", "Extractions"],
+      "services": [
+        "General Dentistry",
+        "Teeth Whitening",
+        "Extractions"
+      ],
       "feeRangeUSD": "20-85",
       "enrichment": {
         "diasporaVetted": false,
@@ -428,7 +565,7 @@
         "englishSpeaking": true,
         "acceptsUSD": false,
         "acceptsInsurance": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": false,
         "emergencyAvailable": false,
         "generalDentistry": true,
@@ -438,10 +575,16 @@
         "dentalTourism": false
       },
       "description": "South C coverage option. Useful for diaspora settling south of the city centre. Budget-friendly routine care.",
-      "highlights": ["South C coverage", "Budget-friendly"],
+      "highlights": [
+        "South C coverage",
+        "Budget-friendly"
+      ],
       "trainingNote": null,
       "verified": false,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     }
   ]
 }

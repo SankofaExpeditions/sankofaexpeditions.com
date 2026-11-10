@@ -5,84 +5,15 @@
   "region": "Southern Africa",
   "capitalCity": "Pretoria",
   "summary": "Diaspora-trusted dentists in South Africa, covering Cape Town and Johannesburg. 14 verified clinics combining international-standard care with significant cost advantages: implants and veneers run 40 to 60 percent less than UK or US prices. South Africa is the only country in this directory where dental tourism is a genuine and rational option for the diaspora.",
-  "lastUpdated": "2026-11-07",
-  "cities": ["Cape Town", "Johannesburg"],
-  "totalClinics": 14,
-  "diasporaVettedCount": 7,
-  "internationalTrainedCount": 6,
+  "lastUpdated": "2026-11-10",
+  "cities": [
+    "Cape Town",
+    "Johannesburg"
+  ],
+  "totalClinics": 2,
+  "diasporaVettedCount": 0,
+  "internationalTrainedCount": 2,
   "clinics": [
-    {
-      "id": "atlantic-dental-green-point",
-      "name": "Atlantic Dental Studio",
-      "slug": "atlantic-dental-studio",
-      "city": "Cape Town",
-      "citySlug": "cape-town",
-      "neighborhood": "Green Point",
-      "website": "atlanticdental.co.za",
-      "tier": 1,
-      "listingTier": "featured",
-      "rating": 4.9,
-      "reviewCount": 187,
-      "reviewSource": "Google",
-      "services": ["General Dentistry", "Cosmetic", "Implants", "Veneers", "Orthodontics", "Teeth Whitening", "Emergency"],
-      "feeRangeUSD": "60-500",
-      "enrichment": {
-        "diasporaVetted": true,
-        "internationallyTrained": true,
-        "englishSpeaking": true,
-        "acceptsUSD": true,
-        "acceptsInsurance": true,
-        "whatsappContact": true,
-        "onlineBooking": true,
-        "emergencyAvailable": true,
-        "generalDentistry": true,
-        "cosmeticDentistry": true,
-        "implants": true,
-        "orthodontics": true,
-        "dentalTourism": true
-      },
-      "description": "Green Point's highest-rated dental practice and a consistent first recommendation for diaspora visiting Cape Town for dental work. Lead dentist trained at UCT Dental Faculty with postgraduate implantology and cosmetic training in Germany. 4.9 Google rating across 187 reviews. USD accepted, online booking. Full-service implant and cosmetic studio: a single implant typically costs USD 900 to 1,200 versus USD 3,000 to 5,000 in the USA or UK. Veneers at USD 350 to 500 per tooth versus USD 1,200 to 2,500 in the UK. Regular patients travel from London, New York, and Toronto specifically for major dental work here.",
-      "highlights": ["UCT and Germany postgraduate trained", "Implants 60% below UK/US prices", "4.9 Google rating", "USD accepted", "Dental tourism specialist"],
-      "trainingNote": "Lead dentist trained at UCT Dental Faculty with postgraduate implantology training in Frankfurt, Germany.",
-      "verified": true,
-      "lastVerified": "2026-11-07"
-    },
-    {
-      "id": "camps-bay-dental-clinic",
-      "name": "Camps Bay Dental Clinic",
-      "slug": "camps-bay-dental-clinic",
-      "city": "Cape Town",
-      "citySlug": "cape-town",
-      "neighborhood": "Camps Bay",
-      "website": "campsbaydentalclinic.co.za",
-      "tier": 1,
-      "listingTier": "featured",
-      "rating": 4.7,
-      "reviewCount": 143,
-      "reviewSource": "Google",
-      "services": ["General Dentistry", "Cosmetic", "Veneers", "Teeth Whitening", "Implants", "Emergency"],
-      "feeRangeUSD": "70-480",
-      "enrichment": {
-        "diasporaVetted": true,
-        "internationallyTrained": true,
-        "englishSpeaking": true,
-        "acceptsUSD": true,
-        "acceptsInsurance": true,
-        "whatsappContact": true,
-        "onlineBooking": true,
-        "emergencyAvailable": true,
-        "generalDentistry": true,
-        "cosmeticDentistry": true,
-        "implants": true,
-        "orthodontics": false,
-        "dentalTourism": true
-      },
-      "description": "One of Cape Town's most visible cosmetic practices, located in Camps Bay. Regularly handles international patients combining dental work with Cape Town visits. Lead dentist trained at Wits followed by advanced cosmetic training in London. Known specifically for porcelain veneers, teeth whitening, and implants at 40 to 60 percent below UK pricing. USD accepted, online booking, full digital X-ray suite on-site.",
-      "highlights": ["Wits and London trained", "Porcelain veneers specialist", "40-60% below UK prices", "Dental tourism friendly"],
-      "trainingNote": "Lead dentist trained at University of the Witwatersrand with advanced cosmetic training at the Eastman Dental Institute, London.",
-      "verified": true,
-      "lastVerified": "2026-11-07"
-    },
     {
       "id": "sea-point-dental-cape-town",
       "name": "Sea Point Dental Practice",
@@ -96,7 +27,14 @@
       "rating": 4.6,
       "reviewCount": 108,
       "reviewSource": "Google",
-      "services": ["General Dentistry", "Cosmetic", "Implants", "Orthodontics", "Invisalign", "Teeth Whitening"],
+      "services": [
+        "General Dentistry",
+        "Cosmetic",
+        "Implants",
+        "Orthodontics",
+        "Invisalign",
+        "Teeth Whitening"
+      ],
       "feeRangeUSD": "60-450",
       "enrichment": {
         "diasporaVetted": true,
@@ -104,7 +42,7 @@
         "englishSpeaking": true,
         "acceptsUSD": true,
         "acceptsInsurance": true,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": true,
         "emergencyAvailable": false,
         "generalDentistry": true,
@@ -114,46 +52,17 @@
         "dentalTourism": true
       },
       "description": "Modern Sea Point practice serving Cape Town's residential Atlantic Seaboard community and a growing dental tourism clientele. UCT-trained dentist with Invisalign provider certification. Implants at USD 950 to 1,300 versus USD 3,500 in the USA. Orthodontics at 50 to 60 percent below UK/US prices. Packages designed for international patients including consultation scheduling before arrival. USD and credit cards accepted.",
-      "highlights": ["UCT trained", "Invisalign provider", "Implants 60% below US prices", "Pre-arrival packages"],
+      "highlights": [
+        "UCT trained",
+        "Invisalign provider",
+        "Implants 60% below US prices",
+        "Pre-arrival packages"
+      ],
       "trainingNote": "Lead dentist trained at UCT Dental Faculty. Certified Invisalign and implant provider.",
       "verified": true,
-      "lastVerified": "2026-11-07"
-    },
-    {
-      "id": "cape-town-cbd-dental",
-      "name": "Cape Town City Dental",
-      "slug": "cape-town-city-dental",
-      "city": "Cape Town",
-      "citySlug": "cape-town",
-      "neighborhood": "Cape Town CBD",
-      "website": "capetowncitydental.co.za",
-      "tier": 1,
-      "listingTier": "verified",
-      "rating": 4.4,
-      "reviewCount": 76,
-      "reviewSource": "Google",
-      "services": ["General Dentistry", "Cosmetic", "Teeth Whitening", "Implants", "Emergency"],
-      "feeRangeUSD": "55-400",
-      "enrichment": {
-        "diasporaVetted": true,
-        "internationallyTrained": false,
-        "englishSpeaking": true,
-        "acceptsUSD": true,
-        "acceptsInsurance": true,
-        "whatsappContact": true,
-        "onlineBooking": false,
-        "emergencyAvailable": true,
-        "generalDentistry": true,
-        "cosmeticDentistry": true,
-        "implants": true,
-        "orthodontics": false,
-        "dentalTourism": true
-      },
-      "description": "Centrally located CBD clinic accessible from Cape Town hotels and Airbnbs. Good choice for diaspora visiting Cape Town who need dental care or want to combine treatment with a city trip. Emergency access available. USD accepted. Transparent pricing quoted via WhatsApp. Well-reviewed by international patients.",
-      "highlights": ["CBD location, hotel-accessible", "USD accepted", "Emergency access", "Dental tourism friendly"],
-      "trainingNote": "Lead dentist trained at Stellenbosch University, Faculty of Dentistry.",
-      "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "live",
+      "phone": null
     },
     {
       "id": "sandton-dental-studio",
@@ -168,7 +77,15 @@
       "rating": 4.8,
       "reviewCount": 162,
       "reviewSource": "Google",
-      "services": ["General Dentistry", "Cosmetic", "Implants", "Veneers", "Orthodontics", "Invisalign", "Emergency"],
+      "services": [
+        "General Dentistry",
+        "Cosmetic",
+        "Implants",
+        "Veneers",
+        "Orthodontics",
+        "Invisalign",
+        "Emergency"
+      ],
       "feeRangeUSD": "65-500",
       "enrichment": {
         "diasporaVetted": true,
@@ -176,7 +93,7 @@
         "englishSpeaking": true,
         "acceptsUSD": true,
         "acceptsInsurance": true,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": true,
         "emergencyAvailable": true,
         "generalDentistry": true,
@@ -186,10 +103,173 @@
         "dentalTourism": true
       },
       "description": "Sandton's most-reviewed dental practice and a top recommendation across Johannesburg diaspora communities. Lead dentist trained at Wits with postgraduate training at the University of Pennsylvania. Full cosmetic, implant, and orthodontic menu. USD accepted. Implants at USD 950 to 1,400 versus USD 3,500 in the USA. Veneers at USD 380 to 550 per tooth versus USD 1,500 to 2,500 in the UK. Invisalign at approximately 50 percent below UK pricing. Regularly handles diaspora patients visiting Johannesburg specifically for dental work.",
-      "highlights": ["Wits and UPenn trained", "4.8 Google rating", "Implants 65% below US prices", "Dental tourism specialist"],
+      "highlights": [
+        "Wits and UPenn trained",
+        "4.8 Google rating",
+        "Implants 65% below US prices",
+        "Dental tourism specialist"
+      ],
       "trainingNote": "Lead dentist trained at University of the Witwatersrand with postgraduate training at the University of Pennsylvania School of Dental Medicine.",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "live",
+      "phone": null
+    }
+  ],
+  "shelved": [
+    {
+      "id": "atlantic-dental-green-point",
+      "name": "Atlantic Dental Studio",
+      "slug": "atlantic-dental-studio",
+      "city": "Cape Town",
+      "citySlug": "cape-town",
+      "neighborhood": "Green Point",
+      "website": "atlanticdental.co.za",
+      "tier": 1,
+      "listingTier": "featured",
+      "rating": 4.9,
+      "reviewCount": 187,
+      "reviewSource": "Google",
+      "services": [
+        "General Dentistry",
+        "Cosmetic",
+        "Implants",
+        "Veneers",
+        "Orthodontics",
+        "Teeth Whitening",
+        "Emergency"
+      ],
+      "feeRangeUSD": "60-500",
+      "enrichment": {
+        "diasporaVetted": true,
+        "internationallyTrained": true,
+        "englishSpeaking": true,
+        "acceptsUSD": true,
+        "acceptsInsurance": true,
+        "whatsappContact": false,
+        "onlineBooking": true,
+        "emergencyAvailable": true,
+        "generalDentistry": true,
+        "cosmeticDentistry": true,
+        "implants": true,
+        "orthodontics": true,
+        "dentalTourism": true
+      },
+      "description": "Green Point's highest-rated dental practice and a consistent first recommendation for diaspora visiting Cape Town for dental work. Lead dentist trained at UCT Dental Faculty with postgraduate implantology and cosmetic training in Germany. 4.9 Google rating across 187 reviews. USD accepted, online booking. Full-service implant and cosmetic studio: a single implant typically costs USD 900 to 1,200 versus USD 3,000 to 5,000 in the USA or UK. Veneers at USD 350 to 500 per tooth versus USD 1,200 to 2,500 in the UK. Regular patients travel from London, New York, and Toronto specifically for major dental work here.",
+      "highlights": [
+        "UCT and Germany postgraduate trained",
+        "Implants 60% below UK/US prices",
+        "4.9 Google rating",
+        "USD accepted",
+        "Dental tourism specialist"
+      ],
+      "trainingNote": "Lead dentist trained at UCT Dental Faculty with postgraduate implantology training in Frankfurt, Germany.",
+      "verified": true,
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
+    },
+    {
+      "id": "camps-bay-dental-clinic",
+      "name": "Camps Bay Dental Clinic",
+      "slug": "camps-bay-dental-clinic",
+      "city": "Cape Town",
+      "citySlug": "cape-town",
+      "neighborhood": "Camps Bay",
+      "website": "campsbaydentalclinic.co.za",
+      "tier": 1,
+      "listingTier": "featured",
+      "rating": 4.7,
+      "reviewCount": 143,
+      "reviewSource": "Google",
+      "services": [
+        "General Dentistry",
+        "Cosmetic",
+        "Veneers",
+        "Teeth Whitening",
+        "Implants",
+        "Emergency"
+      ],
+      "feeRangeUSD": "70-480",
+      "enrichment": {
+        "diasporaVetted": true,
+        "internationallyTrained": true,
+        "englishSpeaking": true,
+        "acceptsUSD": true,
+        "acceptsInsurance": true,
+        "whatsappContact": false,
+        "onlineBooking": true,
+        "emergencyAvailable": true,
+        "generalDentistry": true,
+        "cosmeticDentistry": true,
+        "implants": true,
+        "orthodontics": false,
+        "dentalTourism": true
+      },
+      "description": "One of Cape Town's most visible cosmetic practices, located in Camps Bay. Regularly handles international patients combining dental work with Cape Town visits. Lead dentist trained at Wits followed by advanced cosmetic training in London. Known specifically for porcelain veneers, teeth whitening, and implants at 40 to 60 percent below UK pricing. USD accepted, online booking, full digital X-ray suite on-site.",
+      "highlights": [
+        "Wits and London trained",
+        "Porcelain veneers specialist",
+        "40-60% below UK prices",
+        "Dental tourism friendly"
+      ],
+      "trainingNote": "Lead dentist trained at University of the Witwatersrand with advanced cosmetic training at the Eastman Dental Institute, London.",
+      "verified": true,
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
+    },
+    {
+      "id": "cape-town-cbd-dental",
+      "name": "Cape Town City Dental",
+      "slug": "cape-town-city-dental",
+      "city": "Cape Town",
+      "citySlug": "cape-town",
+      "neighborhood": "Cape Town CBD",
+      "website": "capetowncitydental.co.za",
+      "tier": 1,
+      "listingTier": "verified",
+      "rating": 4.4,
+      "reviewCount": 76,
+      "reviewSource": "Google",
+      "services": [
+        "General Dentistry",
+        "Cosmetic",
+        "Teeth Whitening",
+        "Implants",
+        "Emergency"
+      ],
+      "feeRangeUSD": "55-400",
+      "enrichment": {
+        "diasporaVetted": true,
+        "internationallyTrained": false,
+        "englishSpeaking": true,
+        "acceptsUSD": true,
+        "acceptsInsurance": true,
+        "whatsappContact": false,
+        "onlineBooking": false,
+        "emergencyAvailable": true,
+        "generalDentistry": true,
+        "cosmeticDentistry": true,
+        "implants": true,
+        "orthodontics": false,
+        "dentalTourism": true
+      },
+      "description": "Centrally located CBD clinic accessible from Cape Town hotels and Airbnbs. Good choice for diaspora visiting Cape Town who need dental care or want to combine treatment with a city trip. Emergency access available. USD accepted. Transparent pricing quoted via WhatsApp. Well-reviewed by international patients.",
+      "highlights": [
+        "CBD location, hotel-accessible",
+        "USD accepted",
+        "Emergency access",
+        "Dental tourism friendly"
+      ],
+      "trainingNote": "Lead dentist trained at Stellenbosch University, Faculty of Dentistry.",
+      "verified": true,
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "rosebank-dental-johannesburg",
@@ -204,7 +284,14 @@
       "rating": 4.6,
       "reviewCount": 119,
       "reviewSource": "Google",
-      "services": ["General Dentistry", "Cosmetic", "Implants", "Veneers", "Teeth Whitening", "Emergency"],
+      "services": [
+        "General Dentistry",
+        "Cosmetic",
+        "Implants",
+        "Veneers",
+        "Teeth Whitening",
+        "Emergency"
+      ],
       "feeRangeUSD": "60-470",
       "enrichment": {
         "diasporaVetted": true,
@@ -212,7 +299,7 @@
         "englishSpeaking": true,
         "acceptsUSD": true,
         "acceptsInsurance": true,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": true,
         "emergencyAvailable": true,
         "generalDentistry": true,
@@ -222,10 +309,18 @@
         "dentalTourism": true
       },
       "description": "Multi-dentist group practice in Rosebank serving Johannesburg's professional and international community. UCT-trained lead dentist with additional cosmetic training in Italy. Known for porcelain veneers, full arch implants, and teeth whitening. USD accepted, online booking. Implants 55 to 65 percent below UK/US pricing. Packages available for international patients planning dental tourism trips to Johannesburg.",
-      "highlights": ["UCT and Italy cosmetic trained", "Multi-dentist practice", "Implant and veneer packages", "Dental tourism packages"],
+      "highlights": [
+        "UCT and Italy cosmetic trained",
+        "Multi-dentist practice",
+        "Implant and veneer packages",
+        "Dental tourism packages"
+      ],
       "trainingNote": "Lead dentist trained at UCT Dental Faculty with advanced cosmetic dentistry training in Milan, Italy.",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "morningside-dental-johannesburg",
@@ -240,7 +335,13 @@
       "rating": 4.4,
       "reviewCount": 84,
       "reviewSource": "Google",
-      "services": ["General Dentistry", "Cosmetic", "Implants", "Orthodontics", "Emergency"],
+      "services": [
+        "General Dentistry",
+        "Cosmetic",
+        "Implants",
+        "Orthodontics",
+        "Emergency"
+      ],
       "feeRangeUSD": "55-420",
       "enrichment": {
         "diasporaVetted": true,
@@ -248,7 +349,7 @@
         "englishSpeaking": true,
         "acceptsUSD": true,
         "acceptsInsurance": true,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": false,
         "emergencyAvailable": true,
         "generalDentistry": true,
@@ -258,10 +359,18 @@
         "dentalTourism": true
       },
       "description": "Established Morningside practice with strong diaspora reviews. Good full-service option for implants and orthodontics at South Africa pricing. USD accepted. Insurance from Discovery, Bonitas, and several international plans. Emergency access on most days.",
-      "highlights": ["Full implant and ortho menu", "USD and insurance", "Morningside location", "Emergency access"],
+      "highlights": [
+        "Full implant and ortho menu",
+        "USD and insurance",
+        "Morningside location",
+        "Emergency access"
+      ],
       "trainingNote": "Lead dentist trained at University of the Witwatersrand School of Oral Health Sciences.",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "cape-quarter-dental-capetown",
@@ -276,7 +385,12 @@
       "rating": 4.3,
       "reviewCount": 67,
       "reviewSource": "Google",
-      "services": ["General Dentistry", "Teeth Whitening", "Cosmetic", "Veneers"],
+      "services": [
+        "General Dentistry",
+        "Teeth Whitening",
+        "Cosmetic",
+        "Veneers"
+      ],
       "feeRangeUSD": "55-380",
       "enrichment": {
         "diasporaVetted": false,
@@ -284,7 +398,7 @@
         "englishSpeaking": true,
         "acceptsUSD": true,
         "acceptsInsurance": true,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": false,
         "emergencyAvailable": false,
         "generalDentistry": true,
@@ -294,10 +408,17 @@
         "dentalTourism": true
       },
       "description": "Boutique cosmetic practice at Cape Quarter in De Waterkant. Well-located for diaspora based near the V and A Waterfront or City Bowl. Good for teeth whitening and veneers at South Africa pricing. USD accepted.",
-      "highlights": ["V&A Waterfront area", "Cosmetic and veneers", "USD accepted"],
+      "highlights": [
+        "V&A Waterfront area",
+        "Cosmetic and veneers",
+        "USD accepted"
+      ],
       "trainingNote": null,
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "fourways-dental-johannesburg",
@@ -312,7 +433,12 @@
       "rating": 4.2,
       "reviewCount": 53,
       "reviewSource": "Google",
-      "services": ["General Dentistry", "Teeth Whitening", "Implants", "Emergency"],
+      "services": [
+        "General Dentistry",
+        "Teeth Whitening",
+        "Implants",
+        "Emergency"
+      ],
       "feeRangeUSD": "50-380",
       "enrichment": {
         "diasporaVetted": false,
@@ -320,7 +446,7 @@
         "englishSpeaking": true,
         "acceptsUSD": false,
         "acceptsInsurance": true,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": false,
         "emergencyAvailable": true,
         "generalDentistry": true,
@@ -330,10 +456,17 @@
         "dentalTourism": false
       },
       "description": "Fourways coverage option north of Sandton. Good for diaspora settling in the northern suburbs. Insurance from several major medical aids accepted. Emergency access. USD not accepted at this location.",
-      "highlights": ["Fourways / northern suburbs", "Insurance accepted", "Emergency access"],
+      "highlights": [
+        "Fourways / northern suburbs",
+        "Insurance accepted",
+        "Emergency access"
+      ],
       "trainingNote": null,
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "southern-suburbs-dental-cape-town",
@@ -348,7 +481,12 @@
       "rating": 4.1,
       "reviewCount": 44,
       "reviewSource": "Google",
-      "services": ["General Dentistry", "Teeth Whitening", "Root Canal", "Orthodontics"],
+      "services": [
+        "General Dentistry",
+        "Teeth Whitening",
+        "Root Canal",
+        "Orthodontics"
+      ],
       "feeRangeUSD": "50-320",
       "enrichment": {
         "diasporaVetted": false,
@@ -356,7 +494,7 @@
         "englishSpeaking": true,
         "acceptsUSD": false,
         "acceptsInsurance": true,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": false,
         "emergencyAvailable": false,
         "generalDentistry": true,
@@ -366,10 +504,17 @@
         "dentalTourism": false
       },
       "description": "Claremont practice serving the southern suburbs corridor. Good coverage for diaspora settling near UCT or Constantia. Insurance accepted from major South African medical aids.",
-      "highlights": ["Southern suburbs coverage", "Insurance accepted", "Orthodontics"],
+      "highlights": [
+        "Southern suburbs coverage",
+        "Insurance accepted",
+        "Orthodontics"
+      ],
       "trainingNote": null,
       "verified": false,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "craighall-dental-johannesburg",
@@ -384,7 +529,12 @@
       "rating": 4.0,
       "reviewCount": 38,
       "reviewSource": "Google",
-      "services": ["General Dentistry", "Teeth Whitening", "Extractions", "Emergency"],
+      "services": [
+        "General Dentistry",
+        "Teeth Whitening",
+        "Extractions",
+        "Emergency"
+      ],
       "feeRangeUSD": "50-350",
       "enrichment": {
         "diasporaVetted": false,
@@ -392,7 +542,7 @@
         "englishSpeaking": true,
         "acceptsUSD": false,
         "acceptsInsurance": true,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": false,
         "emergencyAvailable": true,
         "generalDentistry": true,
@@ -402,10 +552,16 @@
         "dentalTourism": false
       },
       "description": "Craighall Park practice, well-located between Rosebank and Hyde Park. Insurance accepted. Emergency access. Useful secondary option for diaspora based in central Joburg.",
-      "highlights": ["Craighall / central Joburg", "Insurance and emergency"],
+      "highlights": [
+        "Craighall / central Joburg",
+        "Insurance and emergency"
+      ],
       "trainingNote": null,
       "verified": false,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "atlantic-seaboard-dental-bantry",
@@ -420,7 +576,10 @@
       "rating": null,
       "reviewCount": null,
       "reviewSource": null,
-      "services": ["General Dentistry", "Teeth Whitening"],
+      "services": [
+        "General Dentistry",
+        "Teeth Whitening"
+      ],
       "feeRangeUSD": "55-300",
       "enrichment": {
         "diasporaVetted": false,
@@ -438,10 +597,15 @@
         "dentalTourism": false
       },
       "description": "Coverage option on the Atlantic Seaboard between Sea Point and Camps Bay. Essential services, useful as a local backup.",
-      "highlights": ["Bantry Bay / Atlantic Seaboard"],
+      "highlights": [
+        "Bantry Bay / Atlantic Seaboard"
+      ],
       "trainingNote": null,
       "verified": false,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "brooklyn-dental-johannesburg",
@@ -456,7 +620,10 @@
       "rating": null,
       "reviewCount": null,
       "reviewSource": null,
-      "services": ["General Dentistry", "Extractions"],
+      "services": [
+        "General Dentistry",
+        "Extractions"
+      ],
       "feeRangeUSD": "45-280",
       "enrichment": {
         "diasporaVetted": false,
@@ -474,10 +641,15 @@
         "dentalTourism": false
       },
       "description": "Coverage option in Birnam/Illovo area. Useful for diaspora settled east of Sandton. Essential services only.",
-      "highlights": ["Birnam / Illovo coverage"],
+      "highlights": [
+        "Birnam / Illovo coverage"
+      ],
       "trainingNote": null,
       "verified": false,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "wynberg-dental-cape-town",
@@ -492,7 +664,11 @@
       "rating": null,
       "reviewCount": null,
       "reviewSource": null,
-      "services": ["General Dentistry", "Extractions", "Teeth Whitening"],
+      "services": [
+        "General Dentistry",
+        "Extractions",
+        "Teeth Whitening"
+      ],
       "feeRangeUSD": "45-280",
       "enrichment": {
         "diasporaVetted": false,
@@ -500,7 +676,7 @@
         "englishSpeaking": true,
         "acceptsUSD": false,
         "acceptsInsurance": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": false,
         "emergencyAvailable": false,
         "generalDentistry": true,
@@ -510,10 +686,16 @@
         "dentalTourism": false
       },
       "description": "Coverage option in Wynberg for diaspora based in the southern suburbs. Essential services, budget-friendly for a Cape Town practice.",
-      "highlights": ["Wynberg / southern suburbs", "Essential care"],
+      "highlights": [
+        "Wynberg / southern suburbs",
+        "Essential care"
+      ],
       "trainingNote": null,
       "verified": false,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     }
   ]
 }

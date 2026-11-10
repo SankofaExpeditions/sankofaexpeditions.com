@@ -5,12 +5,65 @@
   "region": "West Africa",
   "capitalCity": "Accra",
   "summary": "Diaspora-trusted dentists in Ghana, covering Accra and Kumasi. 14 verified clinics sorted by international training, USD pricing, and diaspora accessibility. Accra has a growing tier of internationally trained dentists serving the returning diaspora community.",
-  "lastUpdated": "2026-11-07",
-  "cities": ["Accra", "Kumasi"],
-  "totalClinics": 14,
-  "diasporaVettedCount": 7,
-  "internationalTrainedCount": 5,
+  "lastUpdated": "2026-11-10",
+  "cities": [
+    "Accra",
+    "Kumasi"
+  ],
+  "totalClinics": 1,
+  "diasporaVettedCount": 0,
+  "internationalTrainedCount": 1,
   "clinics": [
+    {
+      "id": "labone-family-dental",
+      "name": "Labone Family Dental",
+      "slug": "labone-family-dental",
+      "city": "Accra",
+      "citySlug": "accra",
+      "neighborhood": "Labone",
+      "website": "labonedental.com",
+      "tier": 1,
+      "listingTier": "verified",
+      "rating": 4.3,
+      "reviewCount": 44,
+      "reviewSource": "Google",
+      "services": [
+        "General Dentistry",
+        "Pediatric Dentistry",
+        "Orthodontics",
+        "Teeth Whitening"
+      ],
+      "feeRangeUSD": "35-130",
+      "enrichment": {
+        "diasporaVetted": true,
+        "internationallyTrained": false,
+        "englishSpeaking": true,
+        "acceptsUSD": true,
+        "acceptsInsurance": true,
+        "whatsappContact": false,
+        "onlineBooking": false,
+        "emergencyAvailable": false,
+        "generalDentistry": true,
+        "cosmeticDentistry": false,
+        "implants": false,
+        "orthodontics": true,
+        "dentalTourism": false
+      },
+      "description": "Family-run practice in Labone serving the neighbourhood for over a decade. Good reputation for pediatric dentistry and orthodontics. Comfortable English, USD accepted without question. While the lead dentist trained domestically at the University of Ghana Dental School, the practice has solid diaspora reviews on Google from families relocating. Appointment by WhatsApp.",
+      "highlights": [
+        "Family practice, 10+ years",
+        "Pediatric specialist",
+        "USD accepted",
+        "WhatsApp booking"
+      ],
+      "trainingNote": "Lead dentist trained at University of Ghana Dental School, Korle Bu.",
+      "verified": true,
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "live",
+      "phone": null
+    }
+  ],
+  "shelved": [
     {
       "id": "smilecare-east-legon",
       "name": "SmileCare Dental Clinic",
@@ -24,7 +77,13 @@
       "rating": 4.7,
       "reviewCount": 112,
       "reviewSource": "Google",
-      "services": ["General Dentistry", "Cosmetic", "Implants", "Orthodontics", "Emergency"],
+      "services": [
+        "General Dentistry",
+        "Cosmetic",
+        "Implants",
+        "Orthodontics",
+        "Emergency"
+      ],
       "feeRangeUSD": "45-180",
       "enrichment": {
         "diasporaVetted": true,
@@ -32,7 +91,7 @@
         "englishSpeaking": true,
         "acceptsUSD": true,
         "acceptsInsurance": true,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": true,
         "emergencyAvailable": true,
         "generalDentistry": true,
@@ -42,10 +101,18 @@
         "dentalTourism": false
       },
       "description": "One of East Legon's most visible diaspora-aware dental practices. Lead dentist completed postgraduate training at King's College London before returning to Ghana. 4.7-star Google rating with over 100 reviews, many from returnees and visiting diaspora. USD accepted. Online booking available. Known for patience with patients who have anxiety about dental care.",
-      "highlights": ["KCL-trained lead dentist", "USD accepted", "Online booking", "Emergency same-day slots"],
+      "highlights": [
+        "KCL-trained lead dentist",
+        "USD accepted",
+        "Online booking",
+        "Emergency same-day slots"
+      ],
       "trainingNote": "Lead dentist completed postgraduate training at King's College London Dental Institute.",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "osei-dental-airport",
@@ -60,7 +127,13 @@
       "rating": 4.6,
       "reviewCount": 87,
       "reviewSource": "Google",
-      "services": ["General Dentistry", "Cosmetic", "Teeth Whitening", "Emergency", "Orthodontics"],
+      "services": [
+        "General Dentistry",
+        "Cosmetic",
+        "Teeth Whitening",
+        "Emergency",
+        "Orthodontics"
+      ],
       "feeRangeUSD": "40-150",
       "enrichment": {
         "diasporaVetted": true,
@@ -68,7 +141,7 @@
         "englishSpeaking": true,
         "acceptsUSD": true,
         "acceptsInsurance": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": false,
         "emergencyAvailable": true,
         "generalDentistry": true,
@@ -78,10 +151,18 @@
         "dentalTourism": false
       },
       "description": "Established Airport Residential practice run by a Ghanaian-trained dentist with additional certifications from the University of Toronto. Well-known among Accra's diplomatic and expat community. WhatsApp-first booking, USD accepted without issue. 4.6 Google rating across 87 reviews. Straightforward pricing quoted upfront.",
-      "highlights": ["University of Toronto additional training", "Diplomatic community trusted", "WhatsApp booking", "Upfront pricing"],
+      "highlights": [
+        "University of Toronto additional training",
+        "Diplomatic community trusted",
+        "WhatsApp booking",
+        "Upfront pricing"
+      ],
       "trainingNote": "Lead dentist holds additional certification from the University of Toronto, Canada.",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "cantonments-dental-centre",
@@ -96,7 +177,13 @@
       "rating": 4.4,
       "reviewCount": 63,
       "reviewSource": "Google",
-      "services": ["General Dentistry", "Cosmetic", "Implants", "Teeth Whitening", "Root Canal"],
+      "services": [
+        "General Dentistry",
+        "Cosmetic",
+        "Implants",
+        "Teeth Whitening",
+        "Root Canal"
+      ],
       "feeRangeUSD": "50-200",
       "enrichment": {
         "diasporaVetted": true,
@@ -104,7 +191,7 @@
         "englishSpeaking": true,
         "acceptsUSD": true,
         "acceptsInsurance": true,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": true,
         "emergencyAvailable": false,
         "generalDentistry": true,
@@ -114,46 +201,18 @@
         "dentalTourism": false
       },
       "description": "Modern clinic in Cantonments serving Accra's professional class. Two dentists, both trained in Ghana with CPD certifications in the UK. Full implant and cosmetic menu. Insurance accepted from several major Ghanaian and international providers. Online booking via WhatsApp and website form. Multilingual front desk comfortable with diaspora clients arriving from the US or UK.",
-      "highlights": ["CPD certified UK", "Insurance accepted", "Implants available", "Modern equipment"],
+      "highlights": [
+        "CPD certified UK",
+        "Insurance accepted",
+        "Implants available",
+        "Modern equipment"
+      ],
       "trainingNote": "Both dentists hold UK Continuing Professional Development certifications in implantology and cosmetic dentistry.",
       "verified": true,
-      "lastVerified": "2026-11-07"
-    },
-    {
-      "id": "labone-family-dental",
-      "name": "Labone Family Dental",
-      "slug": "labone-family-dental",
-      "city": "Accra",
-      "citySlug": "accra",
-      "neighborhood": "Labone",
-      "website": "labonedental.com",
-      "tier": 1,
-      "listingTier": "verified",
-      "rating": 4.3,
-      "reviewCount": 44,
-      "reviewSource": "Google",
-      "services": ["General Dentistry", "Pediatric Dentistry", "Orthodontics", "Teeth Whitening"],
-      "feeRangeUSD": "35-130",
-      "enrichment": {
-        "diasporaVetted": true,
-        "internationallyTrained": false,
-        "englishSpeaking": true,
-        "acceptsUSD": true,
-        "acceptsInsurance": true,
-        "whatsappContact": true,
-        "onlineBooking": false,
-        "emergencyAvailable": false,
-        "generalDentistry": true,
-        "cosmeticDentistry": false,
-        "implants": false,
-        "orthodontics": true,
-        "dentalTourism": false
-      },
-      "description": "Family-run practice in Labone serving the neighbourhood for over a decade. Good reputation for pediatric dentistry and orthodontics. Comfortable English, USD accepted without question. While the lead dentist trained domestically at the University of Ghana Dental School, the practice has solid diaspora reviews on Google from families relocating. Appointment by WhatsApp.",
-      "highlights": ["Family practice, 10+ years", "Pediatric specialist", "USD accepted", "WhatsApp booking"],
-      "trainingNote": "Lead dentist trained at University of Ghana Dental School, Korle Bu.",
-      "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "vcare-dental-accra",
@@ -168,7 +227,12 @@
       "rating": 4.1,
       "reviewCount": 38,
       "reviewSource": "Google",
-      "services": ["General Dentistry", "Teeth Whitening", "Extractions", "Emergency"],
+      "services": [
+        "General Dentistry",
+        "Teeth Whitening",
+        "Extractions",
+        "Emergency"
+      ],
       "feeRangeUSD": "30-100",
       "enrichment": {
         "diasporaVetted": false,
@@ -176,7 +240,7 @@
         "englishSpeaking": true,
         "acceptsUSD": true,
         "acceptsInsurance": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": false,
         "emergencyAvailable": true,
         "generalDentistry": true,
@@ -186,10 +250,17 @@
         "dentalTourism": false
       },
       "description": "Well-reviewed neighbourhood clinic in East Legon Hills. Covers essential dental services at accessible prices. Good for routine care, emergency extractions, and check-ups. English-speaking. USD accepted. Reliable but limited scope.",
-      "highlights": ["Accessible pricing", "Emergency same-day", "USD accepted"],
+      "highlights": [
+        "Accessible pricing",
+        "Emergency same-day",
+        "USD accepted"
+      ],
       "trainingNote": null,
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "dental-care-accra-ridge",
@@ -204,7 +275,12 @@
       "rating": 4.0,
       "reviewCount": 29,
       "reviewSource": "Google",
-      "services": ["General Dentistry", "Cosmetic", "Teeth Whitening", "Root Canal"],
+      "services": [
+        "General Dentistry",
+        "Cosmetic",
+        "Teeth Whitening",
+        "Root Canal"
+      ],
       "feeRangeUSD": "35-120",
       "enrichment": {
         "diasporaVetted": false,
@@ -212,7 +288,7 @@
         "englishSpeaking": true,
         "acceptsUSD": false,
         "acceptsInsurance": true,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": false,
         "emergencyAvailable": false,
         "generalDentistry": true,
@@ -222,10 +298,17 @@
         "dentalTourism": false
       },
       "description": "Established Ridge practice with insurance relationships and a consistent Google presence. Cosmetic services available at mid-range prices. USD not accepted at this time, fees quoted in GHS. Useful for insured diaspora returnees.",
-      "highlights": ["Insurance accepted", "Cosmetic services", "Central location"],
+      "highlights": [
+        "Insurance accepted",
+        "Cosmetic services",
+        "Central location"
+      ],
       "trainingNote": null,
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "asante-smile-dental-accra",
@@ -240,7 +323,11 @@
       "rating": 3.9,
       "reviewCount": 21,
       "reviewSource": "Google",
-      "services": ["General Dentistry", "Teeth Whitening", "Extractions"],
+      "services": [
+        "General Dentistry",
+        "Teeth Whitening",
+        "Extractions"
+      ],
       "feeRangeUSD": "25-80",
       "enrichment": {
         "diasporaVetted": false,
@@ -248,7 +335,7 @@
         "englishSpeaking": true,
         "acceptsUSD": false,
         "acceptsInsurance": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": false,
         "emergencyAvailable": false,
         "generalDentistry": true,
@@ -258,10 +345,16 @@
         "dentalTourism": false
       },
       "description": "Budget-friendly practice in Adenta covering essential care. Useful if you are based outside of central Accra. Limited cosmetic scope. Good for maintenance and check-ups.",
-      "highlights": ["Budget-friendly", "Eastern Accra coverage"],
+      "highlights": [
+        "Budget-friendly",
+        "Eastern Accra coverage"
+      ],
       "trainingNote": null,
       "verified": false,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "gold-coast-dental-tema",
@@ -276,7 +369,11 @@
       "rating": 4.0,
       "reviewCount": 18,
       "reviewSource": "Google",
-      "services": ["General Dentistry", "Extractions", "Emergency"],
+      "services": [
+        "General Dentistry",
+        "Extractions",
+        "Emergency"
+      ],
       "feeRangeUSD": "25-90",
       "enrichment": {
         "diasporaVetted": false,
@@ -284,7 +381,7 @@
         "englishSpeaking": true,
         "acceptsUSD": false,
         "acceptsInsurance": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": false,
         "emergencyAvailable": true,
         "generalDentistry": true,
@@ -294,10 +391,16 @@
         "dentalTourism": false
       },
       "description": "Coverage option for diaspora settled in Tema or working near the port. Good emergency access. Limited range. Useful as a backup if you are on that side of Greater Accra.",
-      "highlights": ["Tema coverage", "Emergency access"],
+      "highlights": [
+        "Tema coverage",
+        "Emergency access"
+      ],
       "trainingNote": null,
       "verified": false,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "nhyira-dental-kumasi",
@@ -312,7 +415,12 @@
       "rating": 4.3,
       "reviewCount": 34,
       "reviewSource": "Google",
-      "services": ["General Dentistry", "Orthodontics", "Teeth Whitening", "Extractions"],
+      "services": [
+        "General Dentistry",
+        "Orthodontics",
+        "Teeth Whitening",
+        "Extractions"
+      ],
       "feeRangeUSD": "30-110",
       "enrichment": {
         "diasporaVetted": false,
@@ -320,7 +428,7 @@
         "englishSpeaking": true,
         "acceptsUSD": true,
         "acceptsInsurance": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": false,
         "emergencyAvailable": false,
         "generalDentistry": true,
@@ -330,10 +438,17 @@
         "dentalTourism": false
       },
       "description": "Reputable Kumasi practice in the upscale Ahodwo neighbourhood. Well-reviewed by local professionals and a small but steady stream of diaspora returnees building in Kumasi. USD accepted, English fluent. Orthodontics specialty.",
-      "highlights": ["Kumasi coverage", "Orthodontics", "USD accepted"],
+      "highlights": [
+        "Kumasi coverage",
+        "Orthodontics",
+        "USD accepted"
+      ],
       "trainingNote": null,
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "sunshine-dental-kumasi",
@@ -348,7 +463,11 @@
       "rating": 3.8,
       "reviewCount": 16,
       "reviewSource": "Google",
-      "services": ["General Dentistry", "Extractions", "Teeth Whitening"],
+      "services": [
+        "General Dentistry",
+        "Extractions",
+        "Teeth Whitening"
+      ],
       "feeRangeUSD": "25-85",
       "enrichment": {
         "diasporaVetted": false,
@@ -356,7 +475,7 @@
         "englishSpeaking": true,
         "acceptsUSD": false,
         "acceptsInsurance": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": false,
         "emergencyAvailable": false,
         "generalDentistry": true,
@@ -366,10 +485,17 @@
         "dentalTourism": false
       },
       "description": "Near KNUST campus, good for diaspora building or investing in the Kumasi university area. Essential services, modest pricing. Limited scope.",
-      "highlights": ["Near KNUST", "Budget-friendly", "Kumasi coverage"],
+      "highlights": [
+        "Near KNUST",
+        "Budget-friendly",
+        "Kumasi coverage"
+      ],
       "trainingNote": null,
       "verified": false,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "apex-dental-kumasi",
@@ -384,7 +510,10 @@
       "rating": null,
       "reviewCount": null,
       "reviewSource": null,
-      "services": ["General Dentistry", "Extractions"],
+      "services": [
+        "General Dentistry",
+        "Extractions"
+      ],
       "feeRangeUSD": "20-70",
       "enrichment": {
         "diasporaVetted": false,
@@ -402,10 +531,16 @@
         "dentalTourism": false
       },
       "description": "Walk-in community dental studio in Bantama. Useful for diaspora visiting family in this part of Kumasi. Essential care only.",
-      "highlights": ["Walk-in accepted", "Bantama coverage"],
+      "highlights": [
+        "Walk-in accepted",
+        "Bantama coverage"
+      ],
       "trainingNote": null,
       "verified": false,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "duffour-dental-accra",
@@ -420,7 +555,11 @@
       "rating": null,
       "reviewCount": null,
       "reviewSource": null,
-      "services": ["General Dentistry", "Teeth Whitening", "Extractions"],
+      "services": [
+        "General Dentistry",
+        "Teeth Whitening",
+        "Extractions"
+      ],
       "feeRangeUSD": "25-90",
       "enrichment": {
         "diasporaVetted": false,
@@ -428,7 +567,7 @@
         "englishSpeaking": true,
         "acceptsUSD": false,
         "acceptsInsurance": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": false,
         "emergencyAvailable": false,
         "generalDentistry": true,
@@ -438,10 +577,16 @@
         "dentalTourism": false
       },
       "description": "Neighbourhood practice in Dzorwulu, west of East Legon. Good for diaspora based near Abelemkpe or Dzorwulu. Limited range but consistently open and accessible by WhatsApp.",
-      "highlights": ["Dzorwulu / west Accra coverage", "WhatsApp contact"],
+      "highlights": [
+        "Dzorwulu / west Accra coverage",
+        "WhatsApp contact"
+      ],
       "trainingNote": null,
       "verified": false,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "greater-accra-dental-madina",
@@ -456,7 +601,10 @@
       "rating": null,
       "reviewCount": null,
       "reviewSource": null,
-      "services": ["General Dentistry", "Extractions"],
+      "services": [
+        "General Dentistry",
+        "Extractions"
+      ],
       "feeRangeUSD": "20-65",
       "enrichment": {
         "diasporaVetted": false,
@@ -474,10 +622,15 @@
         "dentalTourism": false
       },
       "description": "Coverage option for diaspora based in Madina or northern Accra. Essential services only.",
-      "highlights": ["Madina / north Accra coverage"],
+      "highlights": [
+        "Madina / north Accra coverage"
+      ],
       "trainingNote": null,
       "verified": false,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "kwame-dental-haatso",
@@ -492,7 +645,10 @@
       "rating": null,
       "reviewCount": null,
       "reviewSource": null,
-      "services": ["General Dentistry", "Extractions"],
+      "services": [
+        "General Dentistry",
+        "Extractions"
+      ],
       "feeRangeUSD": "20-60",
       "enrichment": {
         "diasporaVetted": false,
@@ -500,7 +656,7 @@
         "englishSpeaking": true,
         "acceptsUSD": false,
         "acceptsInsurance": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": false,
         "emergencyAvailable": false,
         "generalDentistry": true,
@@ -510,10 +666,16 @@
         "dentalTourism": false
       },
       "description": "Community clinic in Haatso. Good coverage for diaspora settled in the Haatso/East Legon Hills corridor. Walk-in friendly.",
-      "highlights": ["Haatso coverage", "Walk-in friendly"],
+      "highlights": [
+        "Haatso coverage",
+        "Walk-in friendly"
+      ],
       "trainingNote": null,
       "verified": false,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     }
   ]
 }

@@ -249,11 +249,25 @@ const jsonLd = [
     </div>
   </section>
 
+  {firms.length === 0 && (
+    <section class="section empty-state-section">
+      <div class="container container--narrow">
+        <div class="empty-state">
+          <p class="empty-state-icon">🔍</p>
+          <h2>Directory Under Verification</h2>
+          <p>We are actively verifying immigration {isSouthAfrica ? 'attorneys' : 'lawyers'} in {country} who can be reached by real diaspora clients. Our quality standard: every listed firm must have a working website or confirmed phone number. We found that our initial data did not meet this bar, so we have cleared it and are building the list properly.</p>
+          <p>Check back soon. The FAQ section below still covers key programs and what to look for in an immigration {isSouthAfrica ? 'attorney' : 'lawyer'}.</p>
+        </div>
+      </div>
+    </section>
+  )}
+
+  {tier1Firms.length > 0 && (
   <section class="section tier1-section">
     <div class="container">
       <header class="section-header">
         <h2>Top Diaspora-Focused {isSouthAfrica ? 'Immigration Attorneys' : 'Immigration Lawyers'}</h2>
-        <p>These firms actively specialize in diaspora relocation. All offer remote consultations. All reachable via WhatsApp.</p>
+        <p>These firms actively specialize in diaspora relocation. All offer remote consultations.</p>
       </header>
 
       <div class="firms-grid">
@@ -263,6 +277,9 @@ const jsonLd = [
               <div class="firm-info">
                 <div class="firm-name-row">
                   <h3 class="firm-name">{firm.name}</h3>
+                  {firm.yearFounded && (
+                    <span class="firm-est-badge" title={firm.yearFoundedEvidence}>Est. {firm.yearFounded}</span>
+                  )}
                   {firm.listingTier === 'featured' && (
                     <span class="listing-badge listing-badge--featured">Featured</span>
                   )}
@@ -295,9 +312,9 @@ const jsonLd = [
                 <span class="enrich-icon" aria-hidden="true">{firm.enrichment.freeConsultation ? '✓' : '·'}</span>
                 <span>Free first consult</span>
               </div>
-              <div class={`enrich-item ${firm.enrichment.whatsappContact ? 'enrich-yes' : 'enrich-no'}`}>
-                <span class="enrich-icon" aria-hidden="true">{firm.enrichment.whatsappContact ? '✓' : '·'}</span>
-                <span>WhatsApp</span>
+              <div class={`enrich-item ${firm.phone ? 'enrich-yes' : 'enrich-no'}`}>
+                <span class="enrich-icon" aria-hidden="true">{firm.phone ? '✓' : '·'}</span>
+                <span>WhatsApp / Phone</span>
               </div>
               {isGhana && (
                 <div class={`enrich-item ${firm.enrichment.rightOfAbode ? 'enrich-yes' : 'enrich-no'}`}>
@@ -350,9 +367,16 @@ const jsonLd = [
             )}
 
             <div class="firm-card-footer">
-              <a href={`https://${firm.website}`} target="_blank" rel="noopener noreferrer" class="firm-link">
-                Visit {firm.website} &rarr;
-              </a>
+              {firm.phone && (
+                <a href={`tel:${firm.phone.replace(/\s/g, '')}`} class="firm-phone">📞 {firm.phone}</a>
+              )}
+              {firm.websiteStatus === 'live' ? (
+                <a href={`https://${firm.website}`} target="_blank" rel="noopener noreferrer" class="firm-link">
+                  Visit {firm.website} &rarr;
+                </a>
+              ) : (
+                <span class="firm-link firm-link--dead">Website currently offline</span>
+              )}
               <span class="firm-city-tag">{firm.city}</span>
             </div>
           </article>
@@ -360,6 +384,7 @@ const jsonLd = [
       </div>
     </div>
   </section>
+  )}
 
   {tier2Firms.length > 0 && (
     <section class="section established-section">
@@ -374,7 +399,12 @@ const jsonLd = [
             <article class="firm-row">
               <div class="firm-row-info">
                 <h3 class="firm-row-name">{firm.name}</h3>
-                <span class="firm-row-city">{firm.city}</span>
+                <div class="firm-row-meta">
+                  <span class="firm-row-city">{firm.city}</span>
+                  {firm.yearFounded && (
+                    <span class="firm-row-est" title={firm.yearFoundedEvidence}>Est. {firm.yearFounded}</span>
+                  )}
+                </div>
               </div>
               <p class="firm-row-desc">{firm.description}</p>
               <div class="firm-row-tags">
@@ -382,7 +412,16 @@ const jsonLd = [
                   <span class="tag">{h}</span>
                 ))}
               </div>
-              <a href={`https://${firm.website}`} target="_blank" rel="noopener noreferrer" class="firm-row-link">{firm.website} &rarr;</a>
+              <div class="firm-row-contact">
+                {firm.phone && (
+                  <a href={`tel:${firm.phone.replace(/\s/g, '')}`} class="firm-phone">📞 {firm.phone}</a>
+                )}
+                {firm.websiteStatus === 'live' ? (
+                  <a href={`https://${firm.website}`} target="_blank" rel="noopener noreferrer" class="firm-row-link">{firm.website} &rarr;</a>
+                ) : (
+                  <span class="firm-row-link firm-link--dead">Website currently offline</span>
+                )}
+              </div>
             </article>
           ))}
         </div>
@@ -403,7 +442,12 @@ const jsonLd = [
             <article class="firm-row">
               <div class="firm-row-info">
                 <h3 class="firm-row-name">{firm.name}</h3>
-                <span class="firm-row-city">{firm.city}</span>
+                <div class="firm-row-meta">
+                  <span class="firm-row-city">{firm.city}</span>
+                  {firm.yearFounded && (
+                    <span class="firm-row-est" title={firm.yearFoundedEvidence}>Est. {firm.yearFounded}</span>
+                  )}
+                </div>
               </div>
               <p class="firm-row-desc">{firm.description}</p>
               <div class="firm-row-tags">
@@ -411,7 +455,16 @@ const jsonLd = [
                   <span class="tag">{h}</span>
                 ))}
               </div>
-              <a href={`https://${firm.website}`} target="_blank" rel="noopener noreferrer" class="firm-row-link">{firm.website} &rarr;</a>
+              <div class="firm-row-contact">
+                {firm.phone && (
+                  <a href={`tel:${firm.phone.replace(/\s/g, '')}`} class="firm-phone">📞 {firm.phone}</a>
+                )}
+                {firm.websiteStatus === 'live' ? (
+                  <a href={`https://${firm.website}`} target="_blank" rel="noopener noreferrer" class="firm-row-link">{firm.website} &rarr;</a>
+                ) : (
+                  <span class="firm-row-link firm-link--dead">Website currently offline</span>
+                )}
+              </div>
             </article>
           ))}
         </div>
@@ -432,7 +485,7 @@ const jsonLd = [
         {isGhana && (
           <div class="faq-item">
             <dt>Can I apply for Right of Abode without a traditional family tree?</dt>
-            <dd>Yes. The best Right of Abode solicitors in Accra have established alternative documentation processes using DNA ancestry test results, historical research, affidavits, and community evidence. This is specifically designed for African Americans who cannot produce conventional genealogical records. All 4 Tier 1 firms in this directory have documented experience with this process.</dd>
+            <dd>Yes. The best Right of Abode solicitors in Accra have established alternative documentation processes using DNA ancestry test results, historical research, affidavits, and community evidence. This is specifically designed for African Americans who cannot produce conventional genealogical records. Look for firms that explicitly mention DNA ancestry documentation pathways in their practice description.</dd>
           </div>
         )}
         {isNigeria && (
@@ -449,11 +502,11 @@ const jsonLd = [
         )}
         <div class="faq-item">
           <dt>How much does an immigration lawyer in {country} cost?</dt>
-          <dd>Initial consultations typically range from USD 50 to USD 200, with {freeConsult.length} firms in this directory offering free first calls. Full permit applications range from USD 300 to USD 2,000 depending on complexity. Investor permit applications, which involve business registration alongside immigration paperwork, tend to cost more. Fees are usually quoted in USD for diaspora clients.</dd>
+          <dd>Initial consultations typically range from USD 50 to USD 200, with many diaspora-focused firms offering free first calls. Full permit applications range from USD 300 to USD 2,000 depending on complexity. Investor permit applications, which involve business registration alongside immigration paperwork, tend to cost more. Fees are usually quoted in USD for diaspora clients.</dd>
         </div>
         <div class="faq-item">
           <dt>Can I work with a {country} immigration lawyer remotely from the US or UK?</dt>
-          <dd>{remoteReady.length} of {firms.length} firms in this directory offer remote consultations. WhatsApp is the standard communication channel. Most immigration paperwork can be managed remotely, with the lawyer acting as your representative in {capitalCity}. Physical presence is typically required only for biometrics and final permit collection.</dd>
+          <dd>Yes. Diaspora-focused immigration lawyers typically offer remote consultations and document management. WhatsApp is the standard communication channel. Most immigration paperwork can be managed remotely, with the lawyer acting as your representative in {capitalCity}. Physical presence is typically required only for biometrics and final permit collection.</dd>
         </div>
       </dl>
     </div>
@@ -828,6 +881,86 @@ const jsonLd = [
 
   .firm-link:hover {
     color: var(--color-text-muted);
+  }
+
+  .firm-link--dead {
+    font-size: 0.8125rem;
+    color: rgba(255,255,255,0.4);
+    font-style: italic;
+  }
+
+  .firm-phone {
+    display: inline-block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--color-text);
+    text-decoration: none;
+    margin-right: 0.75rem;
+  }
+
+  .firm-phone:hover {
+    color: var(--color-text-muted);
+  }
+
+  .firm-est-badge {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 3px;
+    padding: 2px 7px;
+    color: rgba(255,255,255,0.8);
+    cursor: default;
+  }
+
+  .firm-row-est {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 3px;
+    padding: 2px 7px;
+    color: rgba(255,255,255,0.8);
+    cursor: default;
+    margin-left: 0.5rem;
+  }
+
+  .firm-row-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .firm-row-contact {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  .empty-state-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .empty-state h2 {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .empty-state p {
+    color: rgba(255,255,255,0.8);
+    max-width: 600px;
+    margin: 0 auto var(--space-sm);
   }
 
   .firm-city-tag {

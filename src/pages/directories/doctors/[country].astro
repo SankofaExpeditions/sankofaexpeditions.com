@@ -251,9 +251,16 @@ const jsonLd = [
             )}
 
             <div class="provider-card-footer">
-              <a href={`https://${provider.website}`} target="_blank" rel="noopener noreferrer" class="provider-link">
-                Visit {provider.website} &rarr;
-              </a>
+              {provider.phone && (
+                <a href={`tel:${provider.phone.replace(/\s/g, '')}`} class="provider-phone">📞 {provider.phone}</a>
+              )}
+              {provider.websiteStatus === 'live' ? (
+                <a href={`https://${provider.website}`} target="_blank" rel="noopener noreferrer" class="provider-link">
+                  Visit {provider.website} &rarr;
+                </a>
+              ) : (
+                <span class="provider-link provider-link--dead">Website currently offline</span>
+              )}
               <span class="provider-location-tag">{provider.neighborhood}</span>
             </div>
           </article>
@@ -359,9 +366,16 @@ const jsonLd = [
             )}
 
             <div class="provider-card-footer">
-              <a href={`https://${provider.website}`} target="_blank" rel="noopener noreferrer" class="provider-link">
-                Visit {provider.website} &rarr;
-              </a>
+              {provider.phone && (
+                <a href={`tel:${provider.phone.replace(/\s/g, '')}`} class="provider-phone">📞 {provider.phone}</a>
+              )}
+              {provider.websiteStatus === 'live' ? (
+                <a href={`https://${provider.website}`} target="_blank" rel="noopener noreferrer" class="provider-link">
+                  Visit {provider.website} &rarr;
+                </a>
+              ) : (
+                <span class="provider-link provider-link--dead">Website currently offline</span>
+              )}
               <span class="provider-location-tag">{provider.neighborhood}</span>
             </div>
           </article>
@@ -382,7 +396,16 @@ const jsonLd = [
                   <span class="tag">{h}</span>
                 ))}
               </div>
-              <a href={`https://${provider.website}`} target="_blank" rel="noopener noreferrer" class="provider-row-link">{provider.website} &rarr;</a>
+              <div class="provider-row-contact">
+                {provider.phone && (
+                  <a href={`tel:${provider.phone.replace(/\s/g, '')}`} class="provider-phone">📞 {provider.phone}</a>
+                )}
+                {provider.websiteStatus === 'live' ? (
+                  <a href={`https://${provider.website}`} target="_blank" rel="noopener noreferrer" class="provider-row-link">{provider.website} &rarr;</a>
+                ) : (
+                  <span class="provider-row-link provider-link--dead">Website currently offline</span>
+                )}
+              </div>
             </article>
           ))}
         </div>

@@ -4,14 +4,24 @@
   "flag": "🇳🇬",
   "region": "West Africa",
   "capitalCity": "Abuja",
-  "summary": "Nigeria immigration law serves two distinct diaspora client groups: Nigerians abroad who want to understand or formalize their retained Nigerian citizenship, and non-Nigerians (including African Americans) who want to live or invest in Nigeria via CERPAC or NIPC investor routes. This directory covers 10 verified immigration lawyers and solicitors across Lagos and Abuja.",
-  "lastUpdated": "2026-11-07",
-  "cities": ["Lagos", "Abuja"],
-  "totalFirms": 10,
-  "diasporaSpecialistCount": 5,
-  "keyPrograms": ["CERPAC", "STR Visa to CERPAC", "NIPC Investor Visa", "Dual Citizenship Documentation", "Business Permit"],
+  "summary": "Nigeria immigration law serves two distinct diaspora client groups: Nigerians abroad who want to understand or formalize their retained Nigerian citizenship, and non-Nigerians (including African Americans) who want to live or invest in Nigeria via CERPAC or NIPC investor routes. This directory is being updated with verified immigration lawyers and solicitors across Lagos and Abuja.",
+  "lastUpdated": "2026-11-10",
+  "cities": [
+    "Lagos",
+    "Abuja"
+  ],
+  "totalFirms": 0,
+  "diasporaSpecialistCount": 0,
+  "keyPrograms": [
+    "CERPAC",
+    "STR Visa to CERPAC",
+    "NIPC Investor Visa",
+    "Dual Citizenship Documentation",
+    "Business Permit"
+  ],
   "contextNote": "Nigeria has two distinct immigration use cases for the diaspora. First: Nigerians in the diaspora hold Nigerian citizenship by birth and do not lose it by acquiring foreign nationality. However, they often need legal help understanding their retained citizenship rights, obtaining Nigerian passports, and navigating dual nationality documentation. Second: Non-Nigerians (including African Americans) relocating to Nigeria have no Right of Abode equivalent. They must use the CERPAC system (a residency card for foreigners) obtained after entry on an STR (Subject to Regularization) visa, or qualify for an investor permit through the Nigerian Investment Promotion Commission (NIPC). Both routes require qualified legal guidance due to the complexity of Nigerian Immigration Service bureaucracy.",
-  "firms": [
+  "firms": [],
+  "shelved": [
     {
       "id": "lagos-immigration-law",
       "name": "Lagos Immigration Law",
@@ -24,7 +34,13 @@
       "rating": 4.7,
       "reviewCount": 63,
       "reviewSource": "Google",
-      "practiceAreas": ["CERPAC", "STR Visa", "NIPC Investor Permit", "Dual Citizenship", "Work Permits"],
+      "practiceAreas": [
+        "CERPAC",
+        "STR Visa",
+        "NIPC Investor Permit",
+        "Dual Citizenship",
+        "Work Permits"
+      ],
       "enrichment": {
         "diasporaSpecialist": true,
         "nigerianDualCitizenship": true,
@@ -33,15 +49,26 @@
         "workPermit": true,
         "remoteConsultation": true,
         "freeConsultation": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "englishSpeaking": true
       },
       "description": "One of Lagos's most visible immigration law firms serving both returning Nigerians and non-Nigerian diaspora clients. For Nigerians abroad, they handle dual citizenship documentation and passport matters. For African Americans and others wanting to relocate, they guide clients through the STR visa to CERPAC pathway and NIPC investor permit applications. 4.7 Google rating. Active YouTube channel explaining Nigerian immigration in plain English.",
-      "highlights": ["Both Nigerian diaspora and non-Nigerian clients", "STR to CERPAC pathway specialists", "YouTube immigration education channel", "WhatsApp accessible"],
+      "highlights": [
+        "Both Nigerian diaspora and non-Nigerian clients",
+        "STR to CERPAC pathway specialists",
+        "YouTube immigration education channel",
+        "WhatsApp accessible"
+      ],
       "barAssociation": "Nigerian Bar Association",
       "consultationFeeUSD": "100-250",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "yearFounded": null,
+      "yearFoundedEvidence": "Domain unregistered. No Wayback Machine history found as of Nov 2026 verification. Entry requires replacement with verified firm data.",
+      "yearFoundedConfidence": "UNVERIFIED",
+      "reason": "Domain unregistered, no Wayback history, no verifiable phone. AI-generated entry pending replacement with verified real firm data."
     },
     {
       "id": "okafor-associates-lagos",
@@ -55,7 +82,13 @@
       "rating": 4.5,
       "reviewCount": 41,
       "reviewSource": "Google",
-      "practiceAreas": ["CERPAC", "NIPC Investor Permit", "Dual Citizenship", "Corporate Immigration", "Work Permits"],
+      "practiceAreas": [
+        "CERPAC",
+        "NIPC Investor Permit",
+        "Dual Citizenship",
+        "Corporate Immigration",
+        "Work Permits"
+      ],
       "enrichment": {
         "diasporaSpecialist": true,
         "nigerianDualCitizenship": true,
@@ -64,15 +97,26 @@
         "workPermit": true,
         "remoteConsultation": true,
         "freeConsultation": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "englishSpeaking": true
       },
       "description": "Lagos firm with a strong corporate and diaspora immigration practice. Handles NIPC investor permit applications for non-Nigerians who want to live and invest in Lagos, alongside dual citizenship documentation for returning Nigerians. Known for navigating the Nigerian Investment Promotion Commission process efficiently, which is the primary legal route for African Americans and others wanting long-term residence in Nigeria.",
-      "highlights": ["NIPC investor permit specialists", "Nigerian dual citizenship documentation", "Corporate immigration included", "Remote consultations"],
+      "highlights": [
+        "NIPC investor permit specialists",
+        "Nigerian dual citizenship documentation",
+        "Corporate immigration included",
+        "Remote consultations"
+      ],
       "barAssociation": "Nigerian Bar Association",
       "consultationFeeUSD": "150-300",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "yearFounded": null,
+      "yearFoundedEvidence": "Domain unregistered. No Wayback Machine history found as of Nov 2026 verification. Entry requires replacement with verified firm data.",
+      "yearFoundedConfidence": "UNVERIFIED",
+      "reason": "Domain unregistered, no Wayback history, no verifiable phone. AI-generated entry pending replacement with verified real firm data."
     },
     {
       "id": "nigerian-diaspora-legal",
@@ -86,7 +130,12 @@
       "rating": 4.4,
       "reviewCount": 35,
       "reviewSource": "Google",
-      "practiceAreas": ["CERPAC", "STR Visa", "Dual Citizenship", "NIPC Investor Permit"],
+      "practiceAreas": [
+        "CERPAC",
+        "STR Visa",
+        "Dual Citizenship",
+        "NIPC Investor Permit"
+      ],
       "enrichment": {
         "diasporaSpecialist": true,
         "nigerianDualCitizenship": true,
@@ -95,15 +144,26 @@
         "workPermit": false,
         "remoteConsultation": true,
         "freeConsultation": true,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "englishSpeaking": true
       },
       "description": "Diaspora-first immigration solicitors based in Lagos with a specific focus on serving the African American community interested in Nigeria. Explicitly addresses the question of what immigration options exist for non-Nigerians who want to call Lagos home. Free initial consultations available. Confirmed Google Ads targeting diaspora audiences. Known for honest framing: they tell clients upfront that Nigeria has no Right of Abode equivalent and explain what realistically exists.",
-      "highlights": ["Explicit African American client focus", "Free initial consultation", "Honest program framing", "STR visa to CERPAC specialists"],
+      "highlights": [
+        "Explicit African American client focus",
+        "Free initial consultation",
+        "Honest program framing",
+        "STR visa to CERPAC specialists"
+      ],
       "barAssociation": "Nigerian Bar Association",
       "consultationFeeUSD": "Free / 100-200",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "yearFounded": null,
+      "yearFoundedEvidence": "Domain unregistered. No Wayback Machine history found as of Nov 2026 verification. Entry requires replacement with verified firm data.",
+      "yearFoundedConfidence": "UNVERIFIED",
+      "reason": "Domain unregistered, no Wayback history, no verifiable phone. AI-generated entry pending replacement with verified real firm data."
     },
     {
       "id": "coker-chambers-nigeria",
@@ -117,7 +177,13 @@
       "rating": 4.3,
       "reviewCount": 27,
       "reviewSource": "Google",
-      "practiceAreas": ["CERPAC", "Business Visa", "NIPC Investor Permit", "Corporate Immigration", "Work Permits"],
+      "practiceAreas": [
+        "CERPAC",
+        "Business Visa",
+        "NIPC Investor Permit",
+        "Corporate Immigration",
+        "Work Permits"
+      ],
       "enrichment": {
         "diasporaSpecialist": true,
         "nigerianDualCitizenship": false,
@@ -126,15 +192,26 @@
         "workPermit": true,
         "remoteConsultation": true,
         "freeConsultation": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "englishSpeaking": true
       },
       "description": "Lagos chambers with a strong business immigration practice. Specialist in NIPC investor permit applications for diaspora entrepreneurs entering the Nigerian market. Well-suited for clients who are starting businesses and need immigration tied to their corporate structure. Active Linkedin presence with immigration guides for professionals and investors.",
-      "highlights": ["Investor and entrepreneur focus", "NIPC application specialists", "LinkedIn immigration guides", "Corporate immigration bundled"],
+      "highlights": [
+        "Investor and entrepreneur focus",
+        "NIPC application specialists",
+        "LinkedIn immigration guides",
+        "Corporate immigration bundled"
+      ],
       "barAssociation": "Nigerian Bar Association",
       "consultationFeeUSD": "150-250",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "yearFounded": null,
+      "yearFoundedEvidence": "Domain unregistered. No Wayback Machine history found as of Nov 2026 verification. Entry requires replacement with verified firm data.",
+      "yearFoundedConfidence": "UNVERIFIED",
+      "reason": "Domain unregistered, no Wayback history, no verifiable phone. AI-generated entry pending replacement with verified real firm data."
     },
     {
       "id": "abuja-immigration-advocates",
@@ -148,7 +225,13 @@
       "rating": 4.2,
       "reviewCount": 19,
       "reviewSource": "Google",
-      "practiceAreas": ["CERPAC", "STR Visa", "Dual Citizenship", "NIPC Investor Permit", "Work Permits"],
+      "practiceAreas": [
+        "CERPAC",
+        "STR Visa",
+        "Dual Citizenship",
+        "NIPC Investor Permit",
+        "Work Permits"
+      ],
       "enrichment": {
         "diasporaSpecialist": true,
         "nigerianDualCitizenship": true,
@@ -157,15 +240,26 @@
         "workPermit": true,
         "remoteConsultation": true,
         "freeConsultation": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "englishSpeaking": true
       },
       "description": "Abuja-based firm positioned close to the Nigerian Immigration Service federal headquarters and the NIPC offices. This proximity is a practical advantage for clients whose matters require direct liaison with federal immigration authorities. Handles both returning Nigerians needing dual citizenship documentation and non-Nigerian diaspora using the CERPAC route.",
-      "highlights": ["Proximity to NIS federal HQ", "NIPC office liaison advantage", "Dual citizenship documentation", "Full CERPAC processing"],
+      "highlights": [
+        "Proximity to NIS federal HQ",
+        "NIPC office liaison advantage",
+        "Dual citizenship documentation",
+        "Full CERPAC processing"
+      ],
       "barAssociation": "Nigerian Bar Association",
       "consultationFeeUSD": "100-200",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "yearFounded": null,
+      "yearFoundedEvidence": "Domain unregistered. No Wayback Machine history found as of Nov 2026 verification. Entry requires replacement with verified firm data.",
+      "yearFoundedConfidence": "UNVERIFIED",
+      "reason": "Domain unregistered, no Wayback history, no verifiable phone. AI-generated entry pending replacement with verified real firm data."
     },
     {
       "id": "bright-law-nigeria",
@@ -179,7 +273,11 @@
       "rating": null,
       "reviewCount": null,
       "reviewSource": null,
-      "practiceAreas": ["CERPAC", "Work Permits", "Corporate Immigration"],
+      "practiceAreas": [
+        "CERPAC",
+        "Work Permits",
+        "Corporate Immigration"
+      ],
       "enrichment": {
         "diasporaSpecialist": false,
         "nigerianDualCitizenship": false,
@@ -188,15 +286,25 @@
         "workPermit": true,
         "remoteConsultation": false,
         "freeConsultation": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "englishSpeaking": true
       },
       "description": "Lagos commercial law firm with an immigration department primarily serving multinational corporate clients. Handles CERPAC renewals and work permit applications as part of HR and employment packages. Not diaspora-focused but competent for straightforward CERPAC processing.",
-      "highlights": ["Corporate CERPAC processing", "Work permit renewals", "Multinational client experience"],
+      "highlights": [
+        "Corporate CERPAC processing",
+        "Work permit renewals",
+        "Multinational client experience"
+      ],
       "barAssociation": "Nigerian Bar Association",
       "consultationFeeUSD": null,
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "yearFounded": null,
+      "yearFoundedEvidence": "Domain unregistered. No Wayback Machine history found as of Nov 2026 verification. Entry requires replacement with verified firm data.",
+      "yearFoundedConfidence": "UNVERIFIED",
+      "reason": "Domain unregistered, no Wayback history, no verifiable phone. AI-generated entry pending replacement with verified real firm data."
     },
     {
       "id": "adekunle-co-lagos",
@@ -210,7 +318,12 @@
       "rating": null,
       "reviewCount": null,
       "reviewSource": null,
-      "practiceAreas": ["CERPAC", "Business Permit", "NIPC Investor Permit", "Corporate"],
+      "practiceAreas": [
+        "CERPAC",
+        "Business Permit",
+        "NIPC Investor Permit",
+        "Corporate"
+      ],
       "enrichment": {
         "diasporaSpecialist": false,
         "nigerianDualCitizenship": false,
@@ -223,11 +336,21 @@
         "englishSpeaking": true
       },
       "description": "Established Lagos solicitors firm with experience in NIPC investor permits and business permits. Primarily serves corporate clients but can be engaged for investor permit applications by diaspora entrepreneurs. Full-service commercial practice.",
-      "highlights": ["Established Lagos firm", "NIPC investor permit experience", "Business permit applications"],
+      "highlights": [
+        "Established Lagos firm",
+        "NIPC investor permit experience",
+        "Business permit applications"
+      ],
       "barAssociation": "Nigerian Bar Association",
       "consultationFeeUSD": null,
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "yearFounded": null,
+      "yearFoundedEvidence": "Domain unregistered. No Wayback Machine history found as of Nov 2026 verification. Entry requires replacement with verified firm data.",
+      "yearFoundedConfidence": "UNVERIFIED",
+      "reason": "Domain unregistered, no Wayback history, no verifiable phone. AI-generated entry pending replacement with verified real firm data."
     },
     {
       "id": "delta-legal-partners",
@@ -241,7 +364,12 @@
       "rating": 4.0,
       "reviewCount": 14,
       "reviewSource": "Google",
-      "practiceAreas": ["CERPAC", "STR Visa", "Work Permits", "Dual Citizenship"],
+      "practiceAreas": [
+        "CERPAC",
+        "STR Visa",
+        "Work Permits",
+        "Dual Citizenship"
+      ],
       "enrichment": {
         "diasporaSpecialist": false,
         "nigerianDualCitizenship": true,
@@ -250,15 +378,26 @@
         "workPermit": true,
         "remoteConsultation": true,
         "freeConsultation": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "englishSpeaking": true
       },
       "description": "Lagos firm with immigration and dual citizenship practice. Handles CERPAC applications and dual citizenship documentation for Nigerians who have naturalized abroad. Can handle matters remotely for clients outside Nigeria. Good mid-tier option for straightforward cases.",
-      "highlights": ["Dual citizenship documentation", "CERPAC processing", "Remote consultations", "WhatsApp contact"],
+      "highlights": [
+        "Dual citizenship documentation",
+        "CERPAC processing",
+        "Remote consultations",
+        "WhatsApp contact"
+      ],
       "barAssociation": "Nigerian Bar Association",
       "consultationFeeUSD": "75-150",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "yearFounded": null,
+      "yearFoundedEvidence": "Domain unregistered. No Wayback Machine history found as of Nov 2026 verification. Entry requires replacement with verified firm data.",
+      "yearFoundedConfidence": "UNVERIFIED",
+      "reason": "Domain unregistered, no Wayback history, no verifiable phone. AI-generated entry pending replacement with verified real firm data."
     },
     {
       "id": "lagos-barrister-group",
@@ -272,7 +411,10 @@
       "rating": null,
       "reviewCount": null,
       "reviewSource": null,
-      "practiceAreas": ["CERPAC", "Work Permits"],
+      "practiceAreas": [
+        "CERPAC",
+        "Work Permits"
+      ],
       "enrichment": {
         "diasporaSpecialist": false,
         "nigerianDualCitizenship": false,
@@ -281,15 +423,25 @@
         "workPermit": true,
         "remoteConsultation": false,
         "freeConsultation": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "englishSpeaking": true
       },
       "description": "Boutique Lagos legal practice handling CERPAC and work permit applications. Appropriate for routine permit renewals and straightforward CERPAC cases. Limited in scope for complex diaspora immigration matters.",
-      "highlights": ["Boutique CERPAC practice", "Work permit processing", "WhatsApp contact"],
+      "highlights": [
+        "Boutique CERPAC practice",
+        "Work permit processing",
+        "WhatsApp contact"
+      ],
       "barAssociation": "Nigerian Bar Association",
       "consultationFeeUSD": "50-100",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "yearFounded": null,
+      "yearFoundedEvidence": "Domain unregistered. No Wayback Machine history found as of Nov 2026 verification. Entry requires replacement with verified firm data.",
+      "yearFoundedConfidence": "UNVERIFIED",
+      "reason": "Domain unregistered, no Wayback history, no verifiable phone. AI-generated entry pending replacement with verified real firm data."
     },
     {
       "id": "ibadan-law-centre",
@@ -303,7 +455,11 @@
       "rating": null,
       "reviewCount": null,
       "reviewSource": null,
-      "practiceAreas": ["CERPAC", "Dual Citizenship", "Work Permits"],
+      "practiceAreas": [
+        "CERPAC",
+        "Dual Citizenship",
+        "Work Permits"
+      ],
       "enrichment": {
         "diasporaSpecialist": false,
         "nigerianDualCitizenship": true,
@@ -312,15 +468,25 @@
         "workPermit": true,
         "remoteConsultation": true,
         "freeConsultation": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "englishSpeaking": true
       },
       "description": "Lagos-registered practice with southwestern Nigeria coverage. Handles dual citizenship documentation for diaspora Nigerians and standard CERPAC applications. Remote consultations available. Boutique in scale but covers the core immigration use cases.",
-      "highlights": ["Dual citizenship documentation", "Southwestern Nigeria coverage", "Remote consultations"],
+      "highlights": [
+        "Dual citizenship documentation",
+        "Southwestern Nigeria coverage",
+        "Remote consultations"
+      ],
       "barAssociation": "Nigerian Bar Association",
       "consultationFeeUSD": "50-100",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "yearFounded": null,
+      "yearFoundedEvidence": "Domain unregistered. No Wayback Machine history found as of Nov 2026 verification. Entry requires replacement with verified firm data.",
+      "yearFoundedConfidence": "UNVERIFIED",
+      "reason": "Domain unregistered, no Wayback history, no verifiable phone. AI-generated entry pending replacement with verified real firm data."
     }
   ]
 }

@@ -5,12 +5,15 @@
   "region": "East Africa",
   "capitalCity": "Kigali",
   "summary": "Diaspora-trusted dentists in Rwanda, covering Kigali. 10 verified clinics sorted by international training, USD pricing, and diaspora accessibility. Kigali is a smaller but fast-growing dental market, with a cluster of modern practices near King Faisal Hospital and the Kimihurura district.",
-  "lastUpdated": "2026-11-07",
-  "cities": ["Kigali"],
-  "totalClinics": 10,
-  "diasporaVettedCount": 5,
-  "internationalTrainedCount": 4,
-  "clinics": [
+  "lastUpdated": "2026-11-10",
+  "cities": [
+    "Kigali"
+  ],
+  "totalClinics": 0,
+  "diasporaVettedCount": 0,
+  "internationalTrainedCount": 0,
+  "clinics": [],
+  "shelved": [
     {
       "id": "kigali-dental-centre-kimihurura",
       "name": "Kigali Dental Centre",
@@ -24,7 +27,14 @@
       "rating": 4.7,
       "reviewCount": 89,
       "reviewSource": "Google",
-      "services": ["General Dentistry", "Cosmetic", "Implants", "Orthodontics", "Emergency", "Teeth Whitening"],
+      "services": [
+        "General Dentistry",
+        "Cosmetic",
+        "Implants",
+        "Orthodontics",
+        "Emergency",
+        "Teeth Whitening"
+      ],
       "feeRangeUSD": "50-220",
       "enrichment": {
         "diasporaVetted": true,
@@ -32,7 +42,7 @@
         "englishSpeaking": true,
         "acceptsUSD": true,
         "acceptsInsurance": true,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": true,
         "emergencyAvailable": true,
         "generalDentistry": true,
@@ -42,10 +52,18 @@
         "dentalTourism": false
       },
       "description": "Kigali's most reviewed dental clinic and the first choice for diaspora returnees across the city. Lead dentist completed training at the University of Cape Town followed by postgraduate implantology training in Belgium. 4.7 Google rating across 89 reviews. USD accepted, online booking, insurance from RSSB and several international plans. Frequently cited in diaspora Rwanda relocation groups as the top trusted dentist in Kigali.",
-      "highlights": ["UCT and Belgium postgraduate trained", "4.7 Google rating", "USD and RSSB insurance", "Full implant menu"],
+      "highlights": [
+        "UCT and Belgium postgraduate trained",
+        "4.7 Google rating",
+        "USD and RSSB insurance",
+        "Full implant menu"
+      ],
       "trainingNote": "Lead dentist trained at University of Cape Town and completed postgraduate implantology in Belgium.",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "rwandental-king-faisal",
@@ -60,7 +78,13 @@
       "rating": 4.5,
       "reviewCount": 67,
       "reviewSource": "Google",
-      "services": ["General Dentistry", "Cosmetic", "Veneers", "Teeth Whitening", "Emergency"],
+      "services": [
+        "General Dentistry",
+        "Cosmetic",
+        "Veneers",
+        "Teeth Whitening",
+        "Emergency"
+      ],
       "feeRangeUSD": "45-200",
       "enrichment": {
         "diasporaVetted": true,
@@ -68,7 +92,7 @@
         "englishSpeaking": true,
         "acceptsUSD": true,
         "acceptsInsurance": true,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": false,
         "emergencyAvailable": true,
         "generalDentistry": true,
@@ -78,10 +102,18 @@
         "dentalTourism": false
       },
       "description": "Modern practice near King Faisal Hospital in Kacyiru, one of the most recommended clinics for diaspora visiting or relocating to Kigali. Dentist trained at the University of Nairobi with additional cosmetic dentistry training in India. USD accepted. Emergency access on call. Comfortable with international patients, transparent pricing, strong cosmetic scope.",
-      "highlights": ["Near King Faisal Hospital", "Cosmetic specialty", "USD accepted", "Emergency on call"],
+      "highlights": [
+        "Near King Faisal Hospital",
+        "Cosmetic specialty",
+        "USD accepted",
+        "Emergency on call"
+      ],
       "trainingNote": "Lead dentist trained at University of Nairobi with postgraduate cosmetic training in India.",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "vision-dental-kigali-gasabo",
@@ -96,7 +128,12 @@
       "rating": 4.4,
       "reviewCount": 52,
       "reviewSource": "Google",
-      "services": ["General Dentistry", "Orthodontics", "Teeth Whitening", "Root Canal"],
+      "services": [
+        "General Dentistry",
+        "Orthodontics",
+        "Teeth Whitening",
+        "Root Canal"
+      ],
       "feeRangeUSD": "40-180",
       "enrichment": {
         "diasporaVetted": true,
@@ -104,7 +141,7 @@
         "englishSpeaking": true,
         "acceptsUSD": true,
         "acceptsInsurance": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": false,
         "emergencyAvailable": false,
         "generalDentistry": true,
@@ -114,10 +151,18 @@
         "dentalTourism": false
       },
       "description": "Well-reviewed Gasabo practice serving Kigali's growing residential districts including Remera and Kibagabaga. Lead dentist trained at the University of Ghana Medical School. Strong orthodontics. USD accepted without question. Recommended by multiple American and British returnees in Kigali expat forums.",
-      "highlights": ["University of Ghana trained", "Gasabo / Remera area", "USD accepted", "Orthodontics"],
+      "highlights": [
+        "University of Ghana trained",
+        "Gasabo / Remera area",
+        "USD accepted",
+        "Orthodontics"
+      ],
       "trainingNote": "Lead dentist trained at the University of Ghana School of Dentistry.",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "smile-line-dental-kigali",
@@ -132,7 +177,12 @@
       "rating": 4.3,
       "reviewCount": 41,
       "reviewSource": "Google",
-      "services": ["General Dentistry", "Cosmetic", "Teeth Whitening", "Pediatric Dentistry"],
+      "services": [
+        "General Dentistry",
+        "Cosmetic",
+        "Teeth Whitening",
+        "Pediatric Dentistry"
+      ],
       "feeRangeUSD": "40-170",
       "enrichment": {
         "diasporaVetted": true,
@@ -140,7 +190,7 @@
         "englishSpeaking": true,
         "acceptsUSD": true,
         "acceptsInsurance": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": false,
         "emergencyAvailable": false,
         "generalDentistry": true,
@@ -150,10 +200,18 @@
         "dentalTourism": false
       },
       "description": "Modern clinic in Nyarutarama, a popular neighbourhood for diaspora settling in Kigali. Comfortable with international patients. Pediatric dentistry available. USD accepted. While lead dentist trained domestically, the practice has built strong diaspora trust through consistent communication and international-standard equipment.",
-      "highlights": ["Nyarutarama neighbourhood", "Family and pediatric focus", "USD accepted", "Diaspora community trusted"],
+      "highlights": [
+        "Nyarutarama neighbourhood",
+        "Family and pediatric focus",
+        "USD accepted",
+        "Diaspora community trusted"
+      ],
       "trainingNote": "Lead dentist trained at the University of Rwanda School of Medicine and Pharmacy.",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "dental-care-kigali-cbd",
@@ -168,7 +226,12 @@
       "rating": 4.1,
       "reviewCount": 33,
       "reviewSource": "Google",
-      "services": ["General Dentistry", "Teeth Whitening", "Root Canal", "Emergency"],
+      "services": [
+        "General Dentistry",
+        "Teeth Whitening",
+        "Root Canal",
+        "Emergency"
+      ],
       "feeRangeUSD": "40-180",
       "enrichment": {
         "diasporaVetted": false,
@@ -176,7 +239,7 @@
         "englishSpeaking": true,
         "acceptsUSD": false,
         "acceptsInsurance": true,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": false,
         "emergencyAvailable": true,
         "generalDentistry": true,
@@ -186,10 +249,17 @@
         "dentalTourism": false
       },
       "description": "CBD practice accepting RSSB and several corporate insurance plans. Emergency access available. Useful for diaspora working in central Kigali government or commercial roles with health benefits. USD not accepted but prices quoted on request.",
-      "highlights": ["CBD location", "RSSB insurance accepted", "Emergency access"],
+      "highlights": [
+        "CBD location",
+        "RSSB insurance accepted",
+        "Emergency access"
+      ],
       "trainingNote": null,
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "platinum-dental-kigali-kibagabaga",
@@ -204,7 +274,11 @@
       "rating": 4.0,
       "reviewCount": 27,
       "reviewSource": "Google",
-      "services": ["General Dentistry", "Teeth Whitening", "Orthodontics"],
+      "services": [
+        "General Dentistry",
+        "Teeth Whitening",
+        "Orthodontics"
+      ],
       "feeRangeUSD": "35-160",
       "enrichment": {
         "diasporaVetted": false,
@@ -212,7 +286,7 @@
         "englishSpeaking": true,
         "acceptsUSD": true,
         "acceptsInsurance": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": false,
         "emergencyAvailable": false,
         "generalDentistry": true,
@@ -222,10 +296,17 @@
         "dentalTourism": false
       },
       "description": "Kibagabaga practice serving the eastern Kigali residential zone. USD accepted. Good for diaspora settling in this growing part of the city. Orthodontics available.",
-      "highlights": ["Kibagabaga / east Kigali", "USD accepted", "Orthodontics"],
+      "highlights": [
+        "Kibagabaga / east Kigali",
+        "USD accepted",
+        "Orthodontics"
+      ],
       "trainingNote": null,
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "bright-smile-kigali-remera",
@@ -240,7 +321,11 @@
       "rating": 3.9,
       "reviewCount": 18,
       "reviewSource": "Google",
-      "services": ["General Dentistry", "Teeth Whitening", "Extractions"],
+      "services": [
+        "General Dentistry",
+        "Teeth Whitening",
+        "Extractions"
+      ],
       "feeRangeUSD": "30-130",
       "enrichment": {
         "diasporaVetted": false,
@@ -248,7 +333,7 @@
         "englishSpeaking": true,
         "acceptsUSD": false,
         "acceptsInsurance": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": false,
         "emergencyAvailable": false,
         "generalDentistry": true,
@@ -258,10 +343,16 @@
         "dentalTourism": false
       },
       "description": "Coverage option in Remera, near the airport corridor. Useful for diaspora settling in this central Kigali area. Routine care, budget-friendly.",
-      "highlights": ["Remera / near airport", "Budget-friendly"],
+      "highlights": [
+        "Remera / near airport",
+        "Budget-friendly"
+      ],
       "trainingNote": null,
       "verified": false,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "apex-dental-kigali-kacyiru",
@@ -276,7 +367,10 @@
       "rating": null,
       "reviewCount": null,
       "reviewSource": null,
-      "services": ["General Dentistry", "Extractions"],
+      "services": [
+        "General Dentistry",
+        "Extractions"
+      ],
       "feeRangeUSD": "30-110",
       "enrichment": {
         "diasporaVetted": false,
@@ -294,10 +388,16 @@
         "dentalTourism": false
       },
       "description": "Walk-in community practice in Kacyiru. Useful for essential care near the government district. Limited range.",
-      "highlights": ["Kacyiru coverage", "Walk-in accepted"],
+      "highlights": [
+        "Kacyiru coverage",
+        "Walk-in accepted"
+      ],
       "trainingNote": null,
       "verified": false,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "new-life-dental-kigali-gisozi",
@@ -312,7 +412,10 @@
       "rating": null,
       "reviewCount": null,
       "reviewSource": null,
-      "services": ["General Dentistry", "Extractions"],
+      "services": [
+        "General Dentistry",
+        "Extractions"
+      ],
       "feeRangeUSD": "25-90",
       "enrichment": {
         "diasporaVetted": false,
@@ -320,7 +423,7 @@
         "englishSpeaking": true,
         "acceptsUSD": false,
         "acceptsInsurance": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "onlineBooking": false,
         "emergencyAvailable": false,
         "generalDentistry": true,
@@ -330,10 +433,16 @@
         "dentalTourism": false
       },
       "description": "Coverage option in Gisozi, north Kigali. Useful for diaspora investing or based in this area. Essential services only.",
-      "highlights": ["Gisozi / north Kigali", "Essential care"],
+      "highlights": [
+        "Gisozi / north Kigali",
+        "Essential care"
+      ],
       "trainingNote": null,
       "verified": false,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     },
     {
       "id": "harmony-dental-kigali-niboye",
@@ -348,7 +457,11 @@
       "rating": null,
       "reviewCount": null,
       "reviewSource": null,
-      "services": ["General Dentistry", "Extractions", "Teeth Whitening"],
+      "services": [
+        "General Dentistry",
+        "Extractions",
+        "Teeth Whitening"
+      ],
       "feeRangeUSD": "25-100",
       "enrichment": {
         "diasporaVetted": false,
@@ -366,10 +479,16 @@
         "dentalTourism": false
       },
       "description": "South Kigali community dental practice. Coverage for diaspora based in Kicukiro or Niboye. Essential services.",
-      "highlights": ["Kicukiro / south Kigali coverage", "Essential care"],
+      "highlights": [
+        "Kicukiro / south Kigali coverage",
+        "Essential care"
+      ],
       "trainingNote": null,
       "verified": false,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     }
   ]
 }

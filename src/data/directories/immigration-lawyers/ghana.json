@@ -4,14 +4,24 @@
   "flag": "🇬🇭",
   "region": "West Africa",
   "capitalCity": "Accra",
-  "summary": "Ghana offers the only formal immigration program in the world designed specifically for the African diaspora: the Right of Abode. African Americans and Afro-Caribbeans with proven African ancestry can obtain indefinite residence rights. This directory covers 13 verified immigration lawyers and solicitors in Accra who specialize in Right of Abode, GIPC investor permits, and naturalization for diaspora clients.",
-  "lastUpdated": "2026-11-07",
-  "cities": ["Accra", "Kumasi"],
-  "totalFirms": 13,
-  "diasporaSpecialistCount": 8,
-  "keyPrograms": ["Right of Abode", "GIPC Investor Permit", "Naturalization", "Indefinite Leave to Remain", "Resident Permit"],
+  "summary": "Ghana offers the only formal immigration program in the world designed specifically for the African diaspora: the Right of Abode. African Americans and Afro-Caribbeans with proven African ancestry can obtain indefinite residence rights. This directory is being updated with verified, reachable immigration lawyers and solicitors in Accra who specialize in Right of Abode, GIPC investor permits, and naturalization for diaspora clients.",
+  "lastUpdated": "2026-11-10",
+  "cities": [
+    "Accra",
+    "Kumasi"
+  ],
+  "totalFirms": 0,
+  "diasporaSpecialistCount": 0,
+  "keyPrograms": [
+    "Right of Abode",
+    "GIPC Investor Permit",
+    "Naturalization",
+    "Indefinite Leave to Remain",
+    "Resident Permit"
+  ],
   "contextNote": "Ghana's Right of Abode program is a creation of the Ghana Immigration Service under the Ghana Immigration Act 2000 (Act 573). It is the only immigration instrument in sub-Saharan Africa that explicitly recognizes the African diaspora's claim to return. A good Right of Abode lawyer understands not just the application process but the documentation challenge: slavery destroyed most genealogical records for African Americans, so experienced lawyers use DNA ancestry results, historical records, and affidavit-based alternative documentation strategies.",
-  "firms": [
+  "firms": [],
+  "shelved": [
     {
       "id": "diaspora-legal-ghana",
       "name": "Diaspora Legal Ghana",
@@ -24,7 +34,13 @@
       "rating": 4.8,
       "reviewCount": 76,
       "reviewSource": "Google",
-      "practiceAreas": ["Right of Abode", "GIPC Investor Permit", "Naturalization", "Citizenship", "Work Permits"],
+      "practiceAreas": [
+        "Right of Abode",
+        "GIPC Investor Permit",
+        "Naturalization",
+        "Citizenship",
+        "Work Permits"
+      ],
       "enrichment": {
         "diasporaSpecialist": true,
         "rightOfAbode": true,
@@ -35,15 +51,26 @@
         "propertyLinkedImmigration": false,
         "remoteConsultation": true,
         "freeConsultation": true,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "englishSpeaking": true
       },
       "description": "Accra's most prominent Right of Abode specialist for African American and Afro-Caribbean clients. The firm built its practice around the Year of Return movement and has since processed hundreds of ROA applications. Notably, they have a documented process for clients who cannot provide traditional genealogical documentation due to the destruction of ancestral records during slavery, using DNA ancestry results alongside affidavits and community evidence. Free 30-minute initial consultations. 4.8 Google rating.",
-      "highlights": ["Right of Abode for African Americans without traditional documentation", "Free initial consultation", "Remote process end-to-end", "WhatsApp accessible"],
+      "highlights": [
+        "Right of Abode for African Americans without traditional documentation",
+        "Free initial consultation",
+        "Remote process end-to-end",
+        "WhatsApp accessible"
+      ],
       "barAssociation": "Ghana Bar Association",
       "consultationFeeUSD": "Free / 100-300",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "yearFounded": null,
+      "yearFoundedEvidence": "Domain unregistered. No Wayback Machine history found as of Nov 2026 verification. Entry requires replacement with verified firm data.",
+      "yearFoundedConfidence": "UNVERIFIED",
+      "reason": "Domain unregistered, no Wayback history, no verifiable phone. AI-generated entry pending replacement with verified real firm data."
     },
     {
       "id": "kwame-mensah-associates",
@@ -57,7 +84,13 @@
       "rating": 4.6,
       "reviewCount": 52,
       "reviewSource": "Google",
-      "practiceAreas": ["Right of Abode", "GIPC Investor Permit", "Resident Permit", "Work Permits", "Citizenship"],
+      "practiceAreas": [
+        "Right of Abode",
+        "GIPC Investor Permit",
+        "Resident Permit",
+        "Work Permits",
+        "Citizenship"
+      ],
       "enrichment": {
         "diasporaSpecialist": true,
         "rightOfAbode": true,
@@ -68,15 +101,26 @@
         "propertyLinkedImmigration": true,
         "remoteConsultation": true,
         "freeConsultation": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "englishSpeaking": true
       },
       "description": "Full-service immigration solicitors with a dedicated diaspora practice group. Handles both Right of Abode applications and GIPC investor permit routes, making them useful for diaspora members who also want to invest in Ghana. Known for guiding clients through the Ghana Investment Promotion Centre registration process alongside immigration paperwork. USD-denominated consultation fees for international clients. Active YouTube presence explaining the ROA process in plain English.",
-      "highlights": ["Dual ROA and investor permit expertise", "USD-denominated fees", "YouTube education channel", "Property-linked immigration available"],
+      "highlights": [
+        "Dual ROA and investor permit expertise",
+        "USD-denominated fees",
+        "YouTube education channel",
+        "Property-linked immigration available"
+      ],
       "barAssociation": "Ghana Bar Association",
       "consultationFeeUSD": "150-250",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "yearFounded": null,
+      "yearFoundedEvidence": "Domain unregistered. No Wayback Machine history found as of Nov 2026 verification. Entry requires replacement with verified firm data.",
+      "yearFoundedConfidence": "UNVERIFIED",
+      "reason": "Domain unregistered, no Wayback history, no verifiable phone. AI-generated entry pending replacement with verified real firm data."
     },
     {
       "id": "ghana-diaspora-law",
@@ -90,7 +134,12 @@
       "rating": 4.5,
       "reviewCount": 44,
       "reviewSource": "Google",
-      "practiceAreas": ["Right of Abode", "Naturalization", "Resident Permit", "Document Authentication"],
+      "practiceAreas": [
+        "Right of Abode",
+        "Naturalization",
+        "Resident Permit",
+        "Document Authentication"
+      ],
       "enrichment": {
         "diasporaSpecialist": true,
         "rightOfAbode": true,
@@ -101,15 +150,26 @@
         "propertyLinkedImmigration": false,
         "remoteConsultation": true,
         "freeConsultation": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "englishSpeaking": true
       },
       "description": "Online-first immigration law firm founded by a British-Ghanaian solicitor with specific experience serving UK and North American diaspora clients. Specializes purely in immigration matters with no property or commercial law crossover, which means deep focus on the ROA and naturalization pathways. Confirmed Google Ads targeting diaspora clients searching for Right of Abode help. Fully remote process with document upload portal.",
-      "highlights": ["British-Ghanaian founder", "Immigration-only practice", "Fully remote document process", "Google Ads confirms diaspora focus"],
+      "highlights": [
+        "British-Ghanaian founder",
+        "Immigration-only practice",
+        "Fully remote document process",
+        "Google Ads confirms diaspora focus"
+      ],
       "barAssociation": "Ghana Bar Association",
       "consultationFeeUSD": "100-200",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "yearFounded": null,
+      "yearFoundedEvidence": "Domain unregistered. No Wayback Machine history found as of Nov 2026 verification. Entry requires replacement with verified firm data.",
+      "yearFoundedConfidence": "UNVERIFIED",
+      "reason": "Domain unregistered, no Wayback history, no verifiable phone. AI-generated entry pending replacement with verified real firm data."
     },
     {
       "id": "accra-immigration-law-centre",
@@ -123,7 +183,13 @@
       "rating": 4.4,
       "reviewCount": 38,
       "reviewSource": "Google",
-      "practiceAreas": ["Right of Abode", "Resident Permit", "Citizenship", "Work Permits", "GIPC Investor Permit"],
+      "practiceAreas": [
+        "Right of Abode",
+        "Resident Permit",
+        "Citizenship",
+        "Work Permits",
+        "GIPC Investor Permit"
+      ],
       "enrichment": {
         "diasporaSpecialist": true,
         "rightOfAbode": true,
@@ -134,15 +200,26 @@
         "propertyLinkedImmigration": false,
         "remoteConsultation": true,
         "freeConsultation": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "englishSpeaking": true
       },
       "description": "One of the larger immigration-focused practices in Accra, handling the full spectrum from student permits through to naturalization. The diaspora practice arm handles Right of Abode applications with a structured process developed through years of Year of Return client intake. Good choice for clients who need both immigration and business registration support simultaneously, as they coordinate with business lawyers in-house.",
-      "highlights": ["Full-spectrum immigration practice", "In-house business registration coordination", "Year of Return experience", "WhatsApp accessible"],
+      "highlights": [
+        "Full-spectrum immigration practice",
+        "In-house business registration coordination",
+        "Year of Return experience",
+        "WhatsApp accessible"
+      ],
       "barAssociation": "Ghana Bar Association",
       "consultationFeeUSD": "100-250",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "yearFounded": null,
+      "yearFoundedEvidence": "Domain unregistered. No Wayback Machine history found as of Nov 2026 verification. Entry requires replacement with verified firm data.",
+      "yearFoundedConfidence": "UNVERIFIED",
+      "reason": "Domain unregistered, no Wayback history, no verifiable phone. AI-generated entry pending replacement with verified real firm data."
     },
     {
       "id": "nkrumah-partners-accra",
@@ -156,7 +233,12 @@
       "rating": 4.3,
       "reviewCount": 29,
       "reviewSource": "Google",
-      "practiceAreas": ["Right of Abode", "Naturalization", "Citizenship", "Document Authentication"],
+      "practiceAreas": [
+        "Right of Abode",
+        "Naturalization",
+        "Citizenship",
+        "Document Authentication"
+      ],
       "enrichment": {
         "diasporaSpecialist": true,
         "rightOfAbode": true,
@@ -167,15 +249,26 @@
         "propertyLinkedImmigration": false,
         "remoteConsultation": true,
         "freeConsultation": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "englishSpeaking": true
       },
       "description": "Boutique Accra firm known specifically in the Right of Abode and citizenship community. Handles DNA ancestry documentation pathways for African Americans who lack traditional genealogical records. Has represented clients from the United States, UK, and Caribbean in ROA matters. Active on social media with educational content about the Right of Abode process. Instagram presence with 3,000+ followers in the diaspora community.",
-      "highlights": ["DNA ancestry documentation pathway", "Citizenship by naturalization specialist", "Active Instagram education content", "Caribbean diaspora experience"],
+      "highlights": [
+        "DNA ancestry documentation pathway",
+        "Citizenship by naturalization specialist",
+        "Active Instagram education content",
+        "Caribbean diaspora experience"
+      ],
       "barAssociation": "Ghana Bar Association",
       "consultationFeeUSD": "100-200",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "yearFounded": null,
+      "yearFoundedEvidence": "Domain unregistered. No Wayback Machine history found as of Nov 2026 verification. Entry requires replacement with verified firm data.",
+      "yearFoundedConfidence": "UNVERIFIED",
+      "reason": "Domain unregistered, no Wayback history, no verifiable phone. AI-generated entry pending replacement with verified real firm data."
     },
     {
       "id": "agyemang-law-group",
@@ -189,7 +282,12 @@
       "rating": null,
       "reviewCount": null,
       "reviewSource": null,
-      "practiceAreas": ["GIPC Investor Permit", "Work Permits", "Right of Abode", "Business Registration"],
+      "practiceAreas": [
+        "GIPC Investor Permit",
+        "Work Permits",
+        "Right of Abode",
+        "Business Registration"
+      ],
       "enrichment": {
         "diasporaSpecialist": true,
         "rightOfAbode": true,
@@ -200,15 +298,26 @@
         "propertyLinkedImmigration": true,
         "remoteConsultation": true,
         "freeConsultation": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "englishSpeaking": true
       },
       "description": "Investor-focused immigration solicitors whose core client base is diaspora entrepreneurs setting up businesses in Ghana. Specialist in GIPC investor permits, which require a minimum capital injection and business registration with the Registrar General. Well-suited for diaspora clients who want to invest and live in Ghana simultaneously via the investor permit route. Also handles Right of Abode for clients who prefer that pathway.",
-      "highlights": ["Investor permit primary specialist", "Business registration bundled", "GIPC minimum capital guidance", "Property-linked immigration available"],
+      "highlights": [
+        "Investor permit primary specialist",
+        "Business registration bundled",
+        "GIPC minimum capital guidance",
+        "Property-linked immigration available"
+      ],
       "barAssociation": "Ghana Bar Association",
       "consultationFeeUSD": "150-300",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "yearFounded": null,
+      "yearFoundedEvidence": "Domain unregistered. No Wayback Machine history found as of Nov 2026 verification. Entry requires replacement with verified firm data.",
+      "yearFoundedConfidence": "UNVERIFIED",
+      "reason": "Domain unregistered, no Wayback history, no verifiable phone. AI-generated entry pending replacement with verified real firm data."
     },
     {
       "id": "ofori-legal-accra",
@@ -222,7 +331,12 @@
       "rating": 4.1,
       "reviewCount": 22,
       "reviewSource": "Google",
-      "practiceAreas": ["Right of Abode", "Resident Permit", "Work Permits", "GIPC Investor Permit"],
+      "practiceAreas": [
+        "Right of Abode",
+        "Resident Permit",
+        "Work Permits",
+        "GIPC Investor Permit"
+      ],
       "enrichment": {
         "diasporaSpecialist": true,
         "rightOfAbode": true,
@@ -233,15 +347,26 @@
         "propertyLinkedImmigration": false,
         "remoteConsultation": true,
         "freeConsultation": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "englishSpeaking": true
       },
       "description": "Mid-size Accra solicitors firm with an active immigration department serving diaspora clients from the US, UK, and Canada. Known for clear upfront pricing and a structured client intake process that maps immigration goals to the best-fit program. Good choice for clients who want honest advice about whether Right of Abode or the investor permit route makes more practical sense for their situation.",
-      "highlights": ["Transparent upfront pricing", "ROA vs investor permit advisory", "US/UK/Canada diaspora experience", "Remote intake available"],
+      "highlights": [
+        "Transparent upfront pricing",
+        "ROA vs investor permit advisory",
+        "US/UK/Canada diaspora experience",
+        "Remote intake available"
+      ],
       "barAssociation": "Ghana Bar Association",
       "consultationFeeUSD": "100-200",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "yearFounded": null,
+      "yearFoundedEvidence": "Domain unregistered. No Wayback Machine history found as of Nov 2026 verification. Entry requires replacement with verified firm data.",
+      "yearFoundedConfidence": "UNVERIFIED",
+      "reason": "Domain unregistered, no Wayback history, no verifiable phone. AI-generated entry pending replacement with verified real firm data."
     },
     {
       "id": "boateng-chambers",
@@ -255,7 +380,13 @@
       "rating": null,
       "reviewCount": null,
       "reviewSource": null,
-      "practiceAreas": ["Right of Abode", "Naturalization", "GIPC Investor Permit", "Work Permits", "Citizenship"],
+      "practiceAreas": [
+        "Right of Abode",
+        "Naturalization",
+        "GIPC Investor Permit",
+        "Work Permits",
+        "Citizenship"
+      ],
       "enrichment": {
         "diasporaSpecialist": true,
         "rightOfAbode": true,
@@ -266,15 +397,26 @@
         "propertyLinkedImmigration": false,
         "remoteConsultation": true,
         "freeConsultation": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "englishSpeaking": true
       },
       "description": "Full-service immigration chambers offering the complete range of diaspora immigration services. Handles Right of Abode, GIPC investor permits, naturalization after Right of Abode qualification, and work permits. The firm has explicit experience with the naturalization pathway that follows Right of Abode, which is valuable for diaspora members who want eventual Ghanaian citizenship rather than just indefinite stay rights.",
-      "highlights": ["Full diaspora immigration suite", "Naturalization after ROA pathway", "Document authentication in-house", "Full remote process available"],
+      "highlights": [
+        "Full diaspora immigration suite",
+        "Naturalization after ROA pathway",
+        "Document authentication in-house",
+        "Full remote process available"
+      ],
       "barAssociation": "Ghana Bar Association",
       "consultationFeeUSD": "150-300",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "yearFounded": null,
+      "yearFoundedEvidence": "Domain unregistered. No Wayback Machine history found as of Nov 2026 verification. Entry requires replacement with verified firm data.",
+      "yearFoundedConfidence": "UNVERIFIED",
+      "reason": "Domain unregistered, no Wayback history, no verifiable phone. AI-generated entry pending replacement with verified real firm data."
     },
     {
       "id": "mensah-co-solicitors",
@@ -288,7 +430,11 @@
       "rating": null,
       "reviewCount": null,
       "reviewSource": null,
-      "practiceAreas": ["Immigration", "Corporate", "Commercial"],
+      "practiceAreas": [
+        "Immigration",
+        "Corporate",
+        "Commercial"
+      ],
       "enrichment": {
         "diasporaSpecialist": false,
         "rightOfAbode": true,
@@ -303,11 +449,21 @@
         "englishSpeaking": true
       },
       "description": "Established Accra firm with a broad practice covering corporate, commercial, and immigration matters. Handles immigration as part of a larger corporate client service rather than as a diaspora specialty. Appropriate for clients relocating for corporate employment who need immigration tied to a business structure.",
-      "highlights": ["Established Accra firm", "Corporate immigration focus", "Full-service commercial practice"],
+      "highlights": [
+        "Established Accra firm",
+        "Corporate immigration focus",
+        "Full-service commercial practice"
+      ],
       "barAssociation": "Ghana Bar Association",
       "consultationFeeUSD": null,
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "yearFounded": null,
+      "yearFoundedEvidence": "Domain unregistered. No Wayback Machine history found as of Nov 2026 verification. Entry requires replacement with verified firm data.",
+      "yearFoundedConfidence": "UNVERIFIED",
+      "reason": "Domain unregistered, no Wayback history, no verifiable phone. AI-generated entry pending replacement with verified real firm data."
     },
     {
       "id": "dugan-boateng-legal",
@@ -321,7 +477,11 @@
       "rating": null,
       "reviewCount": null,
       "reviewSource": null,
-      "practiceAreas": ["Immigration", "Commercial Law", "Employment Law"],
+      "practiceAreas": [
+        "Immigration",
+        "Commercial Law",
+        "Employment Law"
+      ],
       "enrichment": {
         "diasporaSpecialist": false,
         "rightOfAbode": false,
@@ -336,11 +496,21 @@
         "englishSpeaking": true
       },
       "description": "Commercial-focused legal practice with an immigration department primarily serving corporate expatriate clients. Handles GIPC investor permits and work permits as part of business incorporation packages. Not diaspora-focused but well-regarded in the corporate sector.",
-      "highlights": ["Corporate expatriate immigration", "Business incorporation bundled", "GIPC investor permits"],
+      "highlights": [
+        "Corporate expatriate immigration",
+        "Business incorporation bundled",
+        "GIPC investor permits"
+      ],
       "barAssociation": "Ghana Bar Association",
       "consultationFeeUSD": null,
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "yearFounded": null,
+      "yearFoundedEvidence": "Domain unregistered. No Wayback Machine history found as of Nov 2026 verification. Entry requires replacement with verified firm data.",
+      "yearFoundedConfidence": "UNVERIFIED",
+      "reason": "Domain unregistered, no Wayback history, no verifiable phone. AI-generated entry pending replacement with verified real firm data."
     },
     {
       "id": "ghana-immigration-solutions",
@@ -354,7 +524,11 @@
       "rating": 3.9,
       "reviewCount": 18,
       "reviewSource": "Google",
-      "practiceAreas": ["Resident Permit", "Work Permits", "GIPC Investor Permit"],
+      "practiceAreas": [
+        "Resident Permit",
+        "Work Permits",
+        "GIPC Investor Permit"
+      ],
       "enrichment": {
         "diasporaSpecialist": false,
         "rightOfAbode": false,
@@ -365,15 +539,26 @@
         "propertyLinkedImmigration": false,
         "remoteConsultation": true,
         "freeConsultation": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "englishSpeaking": true
       },
       "description": "Immigration consultancy and legal advisory firm handling permit renewals, investor permits, and document authentication. Not a Right of Abode specialist, but provides competent processing of GIPC permits and standard resident permits for those who qualify through investment or employment.",
-      "highlights": ["Permit renewals", "Document authentication", "GIPC processing", "WhatsApp contact"],
+      "highlights": [
+        "Permit renewals",
+        "Document authentication",
+        "GIPC processing",
+        "WhatsApp contact"
+      ],
       "barAssociation": "Ghana Bar Association",
       "consultationFeeUSD": "75-150",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "yearFounded": null,
+      "yearFoundedEvidence": "Domain unregistered. No Wayback Machine history found as of Nov 2026 verification. Entry requires replacement with verified firm data.",
+      "yearFoundedConfidence": "UNVERIFIED",
+      "reason": "Domain unregistered, no Wayback history, no verifiable phone. AI-generated entry pending replacement with verified real firm data."
     },
     {
       "id": "accra-law-partners",
@@ -387,7 +572,11 @@
       "rating": null,
       "reviewCount": null,
       "reviewSource": null,
-      "practiceAreas": ["Immigration", "Corporate", "Real Estate"],
+      "practiceAreas": [
+        "Immigration",
+        "Corporate",
+        "Real Estate"
+      ],
       "enrichment": {
         "diasporaSpecialist": false,
         "rightOfAbode": false,
@@ -402,11 +591,21 @@
         "englishSpeaking": true
       },
       "description": "Multi-practice firm covering corporate, real estate, and immigration. Can coordinate property acquisition and investor permit applications together, which is useful for diaspora clients who want to both purchase property and regularize their stay through the GIPC route.",
-      "highlights": ["Property and immigration combined", "Corporate and real estate practice", "GIPC coordination"],
+      "highlights": [
+        "Property and immigration combined",
+        "Corporate and real estate practice",
+        "GIPC coordination"
+      ],
       "barAssociation": "Ghana Bar Association",
       "consultationFeeUSD": null,
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "yearFounded": null,
+      "yearFoundedEvidence": "Domain unregistered. No Wayback Machine history found as of Nov 2026 verification. Entry requires replacement with verified firm data.",
+      "yearFoundedConfidence": "UNVERIFIED",
+      "reason": "Domain unregistered, no Wayback history, no verifiable phone. AI-generated entry pending replacement with verified real firm data."
     },
     {
       "id": "kokrobitey-legal",
@@ -420,7 +619,11 @@
       "rating": null,
       "reviewCount": null,
       "reviewSource": null,
-      "practiceAreas": ["Right of Abode", "Resident Permit", "Document Authentication"],
+      "practiceAreas": [
+        "Right of Abode",
+        "Resident Permit",
+        "Document Authentication"
+      ],
       "enrichment": {
         "diasporaSpecialist": true,
         "rightOfAbode": true,
@@ -431,15 +634,26 @@
         "propertyLinkedImmigration": false,
         "remoteConsultation": true,
         "freeConsultation": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "englishSpeaking": true
       },
       "description": "Small boutique practice based near Kokrobitey, west of Accra, known in the diaspora community for handling Right of Abode applications for clients who have settled in the Greater Accra beach corridor. Document authentication specialist. Limited in scope but accessible and community-rooted.",
-      "highlights": ["Community-based practice", "ROA experience", "Document authentication", "WhatsApp contact"],
+      "highlights": [
+        "Community-based practice",
+        "ROA experience",
+        "Document authentication",
+        "WhatsApp contact"
+      ],
       "barAssociation": "Ghana Bar Association",
       "consultationFeeUSD": "75-150",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "yearFounded": null,
+      "yearFoundedEvidence": "Domain unregistered. No Wayback Machine history found as of Nov 2026 verification. Entry requires replacement with verified firm data.",
+      "yearFoundedConfidence": "UNVERIFIED",
+      "reason": "Domain unregistered, no Wayback history, no verifiable phone. AI-generated entry pending replacement with verified real firm data."
     }
   ]
 }

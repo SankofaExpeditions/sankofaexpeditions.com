@@ -4,14 +4,24 @@
   "flag": "🇰🇪",
   "region": "East Africa",
   "capitalCity": "Nairobi",
-  "summary": "Kenya's 'Silicon Savannah' reputation makes it a draw for tech entrepreneurs and remote workers from the African diaspora. Immigration advocates in Nairobi handle Class G investor permits, special passes, and employment permits for diaspora clients who want to live and build in Kenya. This directory covers 10 verified immigration advocates across Nairobi and Mombasa.",
-  "lastUpdated": "2026-11-07",
-  "cities": ["Nairobi", "Mombasa"],
-  "totalFirms": 10,
-  "diasporaSpecialistCount": 5,
-  "keyPrograms": ["Class G Investor Permit", "Special Pass", "Employment Permit Class G", "Dependent Pass", "East African Community Pass"],
+  "summary": "Kenya's 'Silicon Savannah' reputation makes it a draw for tech entrepreneurs and remote workers from the African diaspora. Immigration advocates in Nairobi handle Class G investor permits, special passes, and employment permits for diaspora clients who want to live and build in Kenya. This directory is being updated with verified immigration advocates across Nairobi and Mombasa.",
+  "lastUpdated": "2026-11-10",
+  "cities": [
+    "Nairobi",
+    "Mombasa"
+  ],
+  "totalFirms": 0,
+  "diasporaSpecialistCount": 0,
+  "keyPrograms": [
+    "Class G Investor Permit",
+    "Special Pass",
+    "Employment Permit Class G",
+    "Dependent Pass",
+    "East African Community Pass"
+  ],
   "contextNote": "Kenya's immigration system is administered by the Directorate of Immigration Services. Legal professionals in Kenya are called 'advocates', not solicitors or attorneys. The Law Society of Kenya is the governing bar. For diaspora clients: Kenya has no Right of Abode equivalent. Citizenship by descent requires at least one Kenyan parent or grandparent, so this route is closed to most African Americans. The practical long-term residence routes are the Class G Investor Permit (requires a registered business in Kenya with investment documentation) or the Special Pass (temporary, 3-6 months, while permit applications are processed). East African Community rules allow freer movement for EAC passport holders, but African Americans and most diaspora clients do not qualify for EAC provisions.",
-  "firms": [
+  "firms": [],
+  "shelved": [
     {
       "id": "nairobi-immigration-advocates",
       "name": "Nairobi Immigration Advocates",
@@ -24,7 +34,13 @@
       "rating": 4.7,
       "reviewCount": 58,
       "reviewSource": "Google",
-      "practiceAreas": ["Class G Investor Permit", "Special Pass", "Employment Permit", "Dependent Pass", "EAC Movement"],
+      "practiceAreas": [
+        "Class G Investor Permit",
+        "Special Pass",
+        "Employment Permit",
+        "Dependent Pass",
+        "EAC Movement"
+      ],
       "enrichment": {
         "diasporaSpecialist": true,
         "investorPermit": true,
@@ -33,15 +49,26 @@
         "eacMovement": false,
         "remoteConsultation": true,
         "freeConsultation": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "englishSpeaking": true
       },
       "description": "Nairobi's most visible immigration advocates for diaspora clients. Handles Class G investor permits for African Americans and diaspora entrepreneurs setting up Kenyan businesses, as well as special passes for those in-process. Known for clear timelines and transparent government fee breakdowns. Active Instagram and LinkedIn presence educating the diaspora about Kenya immigration options. 4.7 Google rating.",
-      "highlights": ["Class G investor permit specialists", "Clear government fee breakdowns", "Active diaspora social media", "Special pass processing"],
+      "highlights": [
+        "Class G investor permit specialists",
+        "Clear government fee breakdowns",
+        "Active diaspora social media",
+        "Special pass processing"
+      ],
       "barAssociation": "Law Society of Kenya",
       "consultationFeeUSD": "100-200",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "yearFounded": null,
+      "yearFoundedEvidence": "Domain unregistered. No Wayback Machine history found as of Nov 2026 verification. Entry requires replacement with verified firm data.",
+      "yearFoundedConfidence": "UNVERIFIED",
+      "reason": "Domain unregistered, no Wayback history, no verifiable phone. AI-generated entry pending replacement with verified real firm data."
     },
     {
       "id": "kamau-partners-nairobi",
@@ -55,7 +82,12 @@
       "rating": 4.5,
       "reviewCount": 44,
       "reviewSource": "Google",
-      "practiceAreas": ["Class G Investor Permit", "Employment Permit", "Special Pass", "Business Registration"],
+      "practiceAreas": [
+        "Class G Investor Permit",
+        "Employment Permit",
+        "Special Pass",
+        "Business Registration"
+      ],
       "enrichment": {
         "diasporaSpecialist": true,
         "investorPermit": true,
@@ -64,15 +96,26 @@
         "eacMovement": false,
         "remoteConsultation": true,
         "freeConsultation": true,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "englishSpeaking": true
       },
       "description": "Full-service advocates practice offering immigration and business registration together, which is the practical combination needed for a Class G investor permit. Free initial consultations for diaspora clients. Known for Silicon Savannah client base including tech founders and remote workers setting up Kenyan entities. Active YouTube channel explaining the investor permit process step by step.",
-      "highlights": ["Free initial consultation", "Business registration bundled with immigration", "Silicon Savannah tech client base", "YouTube immigration guides"],
+      "highlights": [
+        "Free initial consultation",
+        "Business registration bundled with immigration",
+        "Silicon Savannah tech client base",
+        "YouTube immigration guides"
+      ],
       "barAssociation": "Law Society of Kenya",
       "consultationFeeUSD": "Free / 100-200",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "yearFounded": null,
+      "yearFoundedEvidence": "Domain unregistered. No Wayback Machine history found as of Nov 2026 verification. Entry requires replacement with verified firm data.",
+      "yearFoundedConfidence": "UNVERIFIED",
+      "reason": "Domain unregistered, no Wayback history, no verifiable phone. AI-generated entry pending replacement with verified real firm data."
     },
     {
       "id": "kenya-diaspora-law",
@@ -86,7 +129,12 @@
       "rating": 4.4,
       "reviewCount": 33,
       "reviewSource": "Google",
-      "practiceAreas": ["Class G Investor Permit", "Special Pass", "Dependent Pass", "Employment Permit"],
+      "practiceAreas": [
+        "Class G Investor Permit",
+        "Special Pass",
+        "Dependent Pass",
+        "Employment Permit"
+      ],
       "enrichment": {
         "diasporaSpecialist": true,
         "investorPermit": true,
@@ -95,15 +143,26 @@
         "eacMovement": false,
         "remoteConsultation": true,
         "freeConsultation": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "englishSpeaking": true
       },
       "description": "Diaspora-focused advocates practice built specifically for African Americans and Afro-Europeans considering Kenya. Directly addresses the citizenship by descent question (requires Kenyan parent or grandparent, so not available to most diaspora clients) and pivots clients to realistic options. Fully remote intake process for clients still abroad. Confirmed Google Ads targeting diaspora audiences.",
-      "highlights": ["Explicit African American focus", "Honest citizenship by descent framing", "Fully remote intake", "Google Ads confirms diaspora marketing"],
+      "highlights": [
+        "Explicit African American focus",
+        "Honest citizenship by descent framing",
+        "Fully remote intake",
+        "Google Ads confirms diaspora marketing"
+      ],
       "barAssociation": "Law Society of Kenya",
       "consultationFeeUSD": "100-200",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "yearFounded": null,
+      "yearFoundedEvidence": "Domain unregistered. No Wayback Machine history found as of Nov 2026 verification. Entry requires replacement with verified firm data.",
+      "yearFoundedConfidence": "UNVERIFIED",
+      "reason": "Domain unregistered, no Wayback history, no verifiable phone. AI-generated entry pending replacement with verified real firm data."
     },
     {
       "id": "silicon-savannah-legal",
@@ -117,7 +176,12 @@
       "rating": 4.3,
       "reviewCount": 28,
       "reviewSource": "Google",
-      "practiceAreas": ["Class G Investor Permit", "Employment Permit", "Business Registration", "Tech Startup Immigration"],
+      "practiceAreas": [
+        "Class G Investor Permit",
+        "Employment Permit",
+        "Business Registration",
+        "Tech Startup Immigration"
+      ],
       "enrichment": {
         "diasporaSpecialist": true,
         "investorPermit": true,
@@ -126,15 +190,26 @@
         "eacMovement": false,
         "remoteConsultation": true,
         "freeConsultation": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "englishSpeaking": true
       },
       "description": "Nairobi advocates specifically positioned for the tech and startup diaspora entering Kenya. Handles Class G investor permits and employment permits for tech founders and remote workers registering Kenyan companies. Understands the iHub, Westlands, and Kilimani tech hub corridors where diaspora entrepreneurs tend to settle. Strong connections to startup community organizations.",
-      "highlights": ["Tech and startup immigration focus", "Kenya tech hub community connections", "Investor permit for founders", "Remote consultation available"],
+      "highlights": [
+        "Tech and startup immigration focus",
+        "Kenya tech hub community connections",
+        "Investor permit for founders",
+        "Remote consultation available"
+      ],
       "barAssociation": "Law Society of Kenya",
       "consultationFeeUSD": "100-250",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "yearFounded": null,
+      "yearFoundedEvidence": "Domain unregistered. No Wayback Machine history found as of Nov 2026 verification. Entry requires replacement with verified firm data.",
+      "yearFoundedConfidence": "UNVERIFIED",
+      "reason": "Domain unregistered, no Wayback history, no verifiable phone. AI-generated entry pending replacement with verified real firm data."
     },
     {
       "id": "ochieng-advocates-nairobi",
@@ -148,7 +223,12 @@
       "rating": 4.2,
       "reviewCount": 21,
       "reviewSource": "Google",
-      "practiceAreas": ["Class G Investor Permit", "Employment Permit", "Dependent Pass", "Special Pass"],
+      "practiceAreas": [
+        "Class G Investor Permit",
+        "Employment Permit",
+        "Dependent Pass",
+        "Special Pass"
+      ],
       "enrichment": {
         "diasporaSpecialist": true,
         "investorPermit": true,
@@ -157,15 +237,26 @@
         "eacMovement": false,
         "remoteConsultation": true,
         "freeConsultation": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "englishSpeaking": true
       },
       "description": "Nairobi advocates with experience serving diaspora clients from the US, UK, and Caribbean who relocate to Kenya. Full investor permit and employment permit practice. Known for handling families relocating together via dependent pass applications for spouses and children. Good choice for diaspora couples or families moving to Kenya.",
-      "highlights": ["Family relocation specialist", "Dependent pass for spouses and children", "US/UK/Caribbean diaspora experience", "Full investor permit practice"],
+      "highlights": [
+        "Family relocation specialist",
+        "Dependent pass for spouses and children",
+        "US/UK/Caribbean diaspora experience",
+        "Full investor permit practice"
+      ],
       "barAssociation": "Law Society of Kenya",
       "consultationFeeUSD": "100-200",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "yearFounded": null,
+      "yearFoundedEvidence": "Domain unregistered. No Wayback Machine history found as of Nov 2026 verification. Entry requires replacement with verified firm data.",
+      "yearFoundedConfidence": "UNVERIFIED",
+      "reason": "Domain unregistered, no Wayback history, no verifiable phone. AI-generated entry pending replacement with verified real firm data."
     },
     {
       "id": "kenyatta-legal-associates",
@@ -179,7 +270,12 @@
       "rating": null,
       "reviewCount": null,
       "reviewSource": null,
-      "practiceAreas": ["Employment Permit", "Special Pass", "Corporate Immigration", "Work Permits"],
+      "practiceAreas": [
+        "Employment Permit",
+        "Special Pass",
+        "Corporate Immigration",
+        "Work Permits"
+      ],
       "enrichment": {
         "diasporaSpecialist": false,
         "investorPermit": false,
@@ -192,11 +288,21 @@
         "englishSpeaking": true
       },
       "description": "Established Nairobi advocates firm with immigration as part of a broader commercial practice. Handles employment permits and special passes for corporate clients. Not diaspora-focused but competent for employer-sponsored immigration cases.",
-      "highlights": ["Established commercial practice", "Corporate employment permits", "Special pass processing"],
+      "highlights": [
+        "Established commercial practice",
+        "Corporate employment permits",
+        "Special pass processing"
+      ],
       "barAssociation": "Law Society of Kenya",
       "consultationFeeUSD": null,
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "yearFounded": null,
+      "yearFoundedEvidence": "Domain unregistered. No Wayback Machine history found as of Nov 2026 verification. Entry requires replacement with verified firm data.",
+      "yearFoundedConfidence": "UNVERIFIED",
+      "reason": "Domain unregistered, no Wayback history, no verifiable phone. AI-generated entry pending replacement with verified real firm data."
     },
     {
       "id": "mombasa-law-centre",
@@ -210,7 +316,11 @@
       "rating": 4.0,
       "reviewCount": 16,
       "reviewSource": "Google",
-      "practiceAreas": ["Class G Investor Permit", "Special Pass", "Employment Permit"],
+      "practiceAreas": [
+        "Class G Investor Permit",
+        "Special Pass",
+        "Employment Permit"
+      ],
       "enrichment": {
         "diasporaSpecialist": false,
         "investorPermit": true,
@@ -219,15 +329,26 @@
         "eacMovement": false,
         "remoteConsultation": true,
         "freeConsultation": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "englishSpeaking": true
       },
       "description": "Mombasa-based advocates covering coastal Kenya immigration matters. Useful for diaspora clients settling on the Kenyan coast rather than Nairobi. Handles Class G investor permits and special passes. Remote consultations available.",
-      "highlights": ["Coastal Kenya coverage", "Class G investor permits", "Remote consultations", "WhatsApp contact"],
+      "highlights": [
+        "Coastal Kenya coverage",
+        "Class G investor permits",
+        "Remote consultations",
+        "WhatsApp contact"
+      ],
       "barAssociation": "Law Society of Kenya",
       "consultationFeeUSD": "75-150",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "yearFounded": null,
+      "yearFoundedEvidence": "Domain unregistered. No Wayback Machine history found as of Nov 2026 verification. Entry requires replacement with verified firm data.",
+      "yearFoundedConfidence": "UNVERIFIED",
+      "reason": "Domain unregistered, no Wayback history, no verifiable phone. AI-generated entry pending replacement with verified real firm data."
     },
     {
       "id": "nairobi-business-immigration",
@@ -241,7 +362,11 @@
       "rating": null,
       "reviewCount": null,
       "reviewSource": null,
-      "practiceAreas": ["Class G Investor Permit", "Business Registration", "Employment Permit"],
+      "practiceAreas": [
+        "Class G Investor Permit",
+        "Business Registration",
+        "Employment Permit"
+      ],
       "enrichment": {
         "diasporaSpecialist": false,
         "investorPermit": true,
@@ -250,15 +375,25 @@
         "eacMovement": false,
         "remoteConsultation": false,
         "freeConsultation": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "englishSpeaking": true
       },
       "description": "Nairobi practice specializing in business-linked immigration: Class G investor permits and employment permits bundled with Kenya company registration. Primarily serves business clients. Not diaspora-focused but useful for investor permit cases.",
-      "highlights": ["Investor permit and business registration combined", "Company registration in-house", "Employment permits"],
+      "highlights": [
+        "Investor permit and business registration combined",
+        "Company registration in-house",
+        "Employment permits"
+      ],
       "barAssociation": "Law Society of Kenya",
       "consultationFeeUSD": null,
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "yearFounded": null,
+      "yearFoundedEvidence": "Domain unregistered. No Wayback Machine history found as of Nov 2026 verification. Entry requires replacement with verified firm data.",
+      "yearFoundedConfidence": "UNVERIFIED",
+      "reason": "Domain unregistered, no Wayback history, no verifiable phone. AI-generated entry pending replacement with verified real firm data."
     },
     {
       "id": "rift-valley-advocates",
@@ -272,7 +407,11 @@
       "rating": null,
       "reviewCount": null,
       "reviewSource": null,
-      "practiceAreas": ["Special Pass", "Employment Permit", "Dependent Pass"],
+      "practiceAreas": [
+        "Special Pass",
+        "Employment Permit",
+        "Dependent Pass"
+      ],
       "enrichment": {
         "diasporaSpecialist": false,
         "investorPermit": false,
@@ -281,15 +420,25 @@
         "eacMovement": false,
         "remoteConsultation": false,
         "freeConsultation": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "englishSpeaking": true
       },
       "description": "Boutique Nairobi-registered advocates with regional Kenya experience. Handles employment permits and special passes. Limited in scope for investor permit applications but accessible for routine permit matters.",
-      "highlights": ["Boutique practice", "Employment permit processing", "Special pass applications"],
+      "highlights": [
+        "Boutique practice",
+        "Employment permit processing",
+        "Special pass applications"
+      ],
       "barAssociation": "Law Society of Kenya",
       "consultationFeeUSD": "50-100",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "yearFounded": null,
+      "yearFoundedEvidence": "Domain unregistered. No Wayback Machine history found as of Nov 2026 verification. Entry requires replacement with verified firm data.",
+      "yearFoundedConfidence": "UNVERIFIED",
+      "reason": "Domain unregistered, no Wayback history, no verifiable phone. AI-generated entry pending replacement with verified real firm data."
     },
     {
       "id": "coast-legal-kenya",
@@ -303,7 +452,11 @@
       "rating": null,
       "reviewCount": null,
       "reviewSource": null,
-      "practiceAreas": ["Special Pass", "Employment Permit", "Class G Investor Permit"],
+      "practiceAreas": [
+        "Special Pass",
+        "Employment Permit",
+        "Class G Investor Permit"
+      ],
       "enrichment": {
         "diasporaSpecialist": false,
         "investorPermit": true,
@@ -312,15 +465,26 @@
         "eacMovement": false,
         "remoteConsultation": true,
         "freeConsultation": false,
-        "whatsappContact": true,
+        "whatsappContact": false,
         "englishSpeaking": true
       },
       "description": "Mombasa boutique advocates with coastal Kenya coverage. Handles immigration for clients based in Diani, Malindi, and the Lamu archipelago, areas where diaspora clients frequently seek long-term residence. Remote consultations available. Limited firm size but locally knowledgeable.",
-      "highlights": ["Diani and coastal corridor coverage", "Remote consultations", "Investor permit applications", "WhatsApp accessible"],
+      "highlights": [
+        "Diani and coastal corridor coverage",
+        "Remote consultations",
+        "Investor permit applications",
+        "WhatsApp accessible"
+      ],
       "barAssociation": "Law Society of Kenya",
       "consultationFeeUSD": "50-100",
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "yearFounded": null,
+      "yearFoundedEvidence": "Domain unregistered. No Wayback Machine history found as of Nov 2026 verification. Entry requires replacement with verified firm data.",
+      "yearFoundedConfidence": "UNVERIFIED",
+      "reason": "Domain unregistered, no Wayback history, no verifiable phone. AI-generated entry pending replacement with verified real firm data."
     }
   ]
 }

@@ -294,9 +294,16 @@ const jsonLd = [
             )}
 
             <div class="clinic-card-footer">
-              <a href={`https://${clinic.website}`} target="_blank" rel="noopener noreferrer" class="clinic-link">
-                Visit {clinic.website} &rarr;
-              </a>
+              {clinic.phone && (
+                <a href={`tel:${clinic.phone.replace(/\s/g, '')}`} class="clinic-phone">📞 {clinic.phone}</a>
+              )}
+              {clinic.websiteStatus === 'live' ? (
+                <a href={`https://${clinic.website}`} target="_blank" rel="noopener noreferrer" class="clinic-link">
+                  Visit {clinic.website} &rarr;
+                </a>
+              ) : (
+                <span class="clinic-link clinic-link--dead">Website currently offline</span>
+              )}
               <span class="clinic-city-tag">{clinic.city}</span>
             </div>
           </article>
@@ -329,7 +336,16 @@ const jsonLd = [
                   <span class="tag">{h}</span>
                 ))}
               </div>
-              <a href={`https://${clinic.website}`} target="_blank" rel="noopener noreferrer" class="clinic-row-link">{clinic.website} &rarr;</a>
+              <div class="clinic-row-contact">
+                {clinic.phone && (
+                  <a href={`tel:${clinic.phone.replace(/\s/g, '')}`} class="clinic-phone">📞 {clinic.phone}</a>
+                )}
+                {clinic.websiteStatus === 'live' ? (
+                  <a href={`https://${clinic.website}`} target="_blank" rel="noopener noreferrer" class="clinic-row-link">{clinic.website} &rarr;</a>
+                ) : (
+                  <span class="clinic-row-link clinic-link--dead">Website currently offline</span>
+                )}
+              </div>
             </article>
           ))}
         </div>
@@ -358,7 +374,16 @@ const jsonLd = [
                   <span class="tag">{h}</span>
                 ))}
               </div>
-              <a href={`https://${clinic.website}`} target="_blank" rel="noopener noreferrer" class="clinic-row-link">{clinic.website} &rarr;</a>
+              <div class="clinic-row-contact">
+                {clinic.phone && (
+                  <a href={`tel:${clinic.phone.replace(/\s/g, '')}`} class="clinic-phone">📞 {clinic.phone}</a>
+                )}
+                {clinic.websiteStatus === 'live' ? (
+                  <a href={`https://${clinic.website}`} target="_blank" rel="noopener noreferrer" class="clinic-row-link">{clinic.website} &rarr;</a>
+                ) : (
+                  <span class="clinic-row-link clinic-link--dead">Website currently offline</span>
+                )}
+              </div>
             </article>
           ))}
         </div>

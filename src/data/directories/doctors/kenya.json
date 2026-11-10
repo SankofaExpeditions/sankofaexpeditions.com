@@ -5,48 +5,14 @@
   "region": "East Africa",
   "capitalCity": "Nairobi",
   "summary": "Nairobi is the medical hub of East Africa, home to internationally accredited hospitals serving the entire region. 13 verified providers covering travel medicine, general practice, and specialist care in Parklands, Upper Hill, Karen, and Westlands. The go-to destination for medical care across East and Central Africa.",
-  "lastUpdated": "2026-11-07",
-  "cities": ["Nairobi"],
-  "totalProviders": 13,
-  "travelClinicsCount": 4,
-  "diasporaVettedCount": 8,
+  "lastUpdated": "2026-11-10",
+  "cities": [
+    "Nairobi"
+  ],
+  "totalProviders": 7,
+  "travelClinicsCount": 0,
+  "diasporaVettedCount": 0,
   "providers": [
-    {
-      "id": "ke-travel-01",
-      "name": "Nairobi Travel Clinic",
-      "slug": "nairobi-travel-clinic",
-      "type": "travel-clinic",
-      "city": "Nairobi",
-      "citySlug": "nairobi",
-      "neighborhood": "Upper Hill",
-      "website": "nairobittravelclinic.com",
-      "tier": 1,
-      "listingTier": "featured",
-      "rating": 4.7,
-      "reviewCount": 94,
-      "reviewSource": "Google",
-      "specialties": ["Travel Medicine", "Yellow Fever Vaccination", "Malaria Prophylaxis", "Pre-Travel Consultation", "Typhoid", "Meningitis", "Rabies Prophylaxis"],
-      "enrichment": {
-        "diasporaVetted": true,
-        "internationallyTrained": true,
-        "englishSpeaking": true,
-        "yellowFeverCert": true,
-        "travelMedicine": true,
-        "generalPractice": false,
-        "obgyn": false,
-        "pediatrics": false,
-        "cardiology": false,
-        "acceptsUSD": true,
-        "acceptsInsurance": false,
-        "whatsappContact": true,
-        "onlineBooking": true,
-        "emergencyAvailable": false
-      },
-      "description": "Nairobi's most specialized travel medicine clinic, located in Upper Hill near the city's major international hospital corridor. Recognized yellow fever vaccination authority. Serves diaspora visitors, NGO staff, UN personnel, and international travelers arriving or departing from JKIA. Travel medicine physicians trained in tropical medicine and pre-travel health protocols. Full documentation service. USD pricing transparent.",
-      "highlights": ["Upper Hill medical district location", "Official yellow fever authority", "Tropical medicine specialists", "Serves UN and NGO community"],
-      "verified": true,
-      "lastVerified": "2026-11-07"
-    },
     {
       "id": "ke-travel-02",
       "name": "Aga Khan Travel Health Centre",
@@ -61,7 +27,13 @@
       "rating": 4.6,
       "reviewCount": 72,
       "reviewSource": "Google",
-      "specialties": ["Travel Medicine", "Yellow Fever Vaccination", "Malaria Prophylaxis", "Pre-Travel Consultation", "Immunizations"],
+      "specialties": [
+        "Travel Medicine",
+        "Yellow Fever Vaccination",
+        "Malaria Prophylaxis",
+        "Pre-Travel Consultation",
+        "Immunizations"
+      ],
       "enrichment": {
         "diasporaVetted": true,
         "internationallyTrained": true,
@@ -79,81 +51,16 @@
         "emergencyAvailable": false
       },
       "description": "Travel health service operated under the Aga Khan Hospital network, one of East Africa's most trusted healthcare brands. Yellow fever vaccination and certificate issuance. Full pre-travel consultation with WHO protocol-trained physicians. The institutional backing of the Aga Khan network means consistent standards, international insurance acceptance, and full documentation.",
-      "highlights": ["Aga Khan Hospital network backing", "WHO protocol travel medicine", "International insurance accepted", "Online booking available"],
+      "highlights": [
+        "Aga Khan Hospital network backing",
+        "WHO protocol travel medicine",
+        "International insurance accepted",
+        "Online booking available"
+      ],
       "verified": true,
-      "lastVerified": "2026-11-07"
-    },
-    {
-      "id": "ke-travel-03",
-      "name": "Karen Travel Medicine Centre",
-      "slug": "karen-travel-medicine-centre",
-      "type": "travel-clinic",
-      "city": "Nairobi",
-      "citySlug": "nairobi",
-      "neighborhood": "Karen",
-      "website": "karentravelmed.co.ke",
-      "tier": 2,
-      "listingTier": "basic",
-      "rating": 4.3,
-      "reviewCount": 38,
-      "reviewSource": "Google",
-      "specialties": ["Yellow Fever Vaccination", "Travel Vaccinations", "Malaria Prophylaxis", "Health Certificates"],
-      "enrichment": {
-        "diasporaVetted": false,
-        "internationallyTrained": false,
-        "englishSpeaking": true,
-        "yellowFeverCert": true,
-        "travelMedicine": true,
-        "generalPractice": false,
-        "obgyn": false,
-        "pediatrics": false,
-        "cardiology": false,
-        "acceptsUSD": true,
-        "acceptsInsurance": false,
-        "whatsappContact": true,
-        "onlineBooking": false,
-        "emergencyAvailable": false
-      },
-      "description": "Travel vaccination clinic in Karen serving the southwestern residential suburb popular with diaspora returnees and international residents. Yellow fever certificates issued on-site. Convenient for those living in Karen, Langata, and Ngong Road corridor who prefer to avoid Upper Hill traffic. USD accepted.",
-      "highlights": ["Karen residential area", "Yellow fever cert on-site", "Convenient for southwest Nairobi", "USD accepted"],
-      "verified": true,
-      "lastVerified": "2026-11-07"
-    },
-    {
-      "id": "ke-travel-04",
-      "name": "Westlands Vaccination and Travel Clinic",
-      "slug": "westlands-vaccination-travel-clinic",
-      "type": "travel-clinic",
-      "city": "Nairobi",
-      "citySlug": "nairobi",
-      "neighborhood": "Westlands",
-      "website": "westlandsvaccine.com",
-      "tier": 2,
-      "listingTier": "basic",
-      "rating": 4.0,
-      "reviewCount": 27,
-      "reviewSource": "Google",
-      "specialties": ["Yellow Fever Vaccination", "Travel Vaccines", "Health Certificates"],
-      "enrichment": {
-        "diasporaVetted": false,
-        "internationallyTrained": false,
-        "englishSpeaking": true,
-        "yellowFeverCert": true,
-        "travelMedicine": false,
-        "generalPractice": false,
-        "obgyn": false,
-        "pediatrics": false,
-        "cardiology": false,
-        "acceptsUSD": false,
-        "acceptsInsurance": false,
-        "whatsappContact": false,
-        "onlineBooking": false,
-        "emergencyAvailable": false
-      },
-      "description": "Walk-in vaccination clinic in Westlands. Yellow fever certificates and standard travel vaccinations. Good fallback option for those in the Westlands and Parklands area needing documentation before travel. KES pricing. Walk-in only.",
-      "highlights": ["Westlands location", "Walk-in service", "Yellow fever certs"],
-      "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "live",
+      "phone": null
     },
     {
       "id": "ke-hospital-01",
@@ -169,7 +76,18 @@
       "rating": 4.6,
       "reviewCount": 423,
       "reviewSource": "Google",
-      "specialties": ["Emergency Medicine", "Cardiology", "Oncology", "Neurology", "Neurosurgery", "Orthopedics", "Internal Medicine", "Pediatrics", "Obstetrics and Gynecology", "Renal Medicine"],
+      "specialties": [
+        "Emergency Medicine",
+        "Cardiology",
+        "Oncology",
+        "Neurology",
+        "Neurosurgery",
+        "Orthopedics",
+        "Internal Medicine",
+        "Pediatrics",
+        "Obstetrics and Gynecology",
+        "Renal Medicine"
+      ],
       "enrichment": {
         "diasporaVetted": true,
         "internationallyTrained": true,
@@ -187,9 +105,16 @@
         "emergencyAvailable": true
       },
       "description": "East Africa's most internationally recognized private hospital, affiliated with Aga Khan University. The first choice for diaspora visitors, diplomatic staff, UN personnel, and international patients across the region. Doctors trained at Johns Hopkins, UK Royal Colleges, and other top international institutions. Accepts BUPA, Cigna, AXA, and most major international insurers. The regional referral destination for complex cases from across East and Central Africa.",
-      "highlights": ["East Africa's most internationally recognized hospital", "Accepts BUPA, Cigna, AXA", "Doctors trained at Johns Hopkins, UK Royal Colleges", "Regional referral centre for East Africa"],
+      "highlights": [
+        "East Africa's most internationally recognized hospital",
+        "Accepts BUPA, Cigna, AXA",
+        "Doctors trained at Johns Hopkins, UK Royal Colleges",
+        "Regional referral centre for East Africa"
+      ],
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "live",
+      "phone": null
     },
     {
       "id": "ke-hospital-02",
@@ -205,7 +130,17 @@
       "rating": 4.4,
       "reviewCount": 571,
       "reviewSource": "Google",
-      "specialties": ["Emergency Medicine", "Cardiology", "Cardiac Surgery", "Oncology", "Orthopedics", "Internal Medicine", "Pediatrics", "Renal Medicine", "Neurosurgery"],
+      "specialties": [
+        "Emergency Medicine",
+        "Cardiology",
+        "Cardiac Surgery",
+        "Oncology",
+        "Orthopedics",
+        "Internal Medicine",
+        "Pediatrics",
+        "Renal Medicine",
+        "Neurosurgery"
+      ],
       "enrichment": {
         "diasporaVetted": true,
         "internationallyTrained": true,
@@ -223,9 +158,16 @@
         "emergencyAvailable": true
       },
       "description": "One of East Africa's oldest and most respected private hospitals, with 70+ years of history. Located in Upper Hill, the core of Nairobi's private medical district. Full-service multi-specialty hospital with cardiac surgery, oncology, and neurosurgery. Consistently ranked alongside Aga Khan as the best private care in Kenya. Major international insurer acceptance. Fully equipped diagnostic centre.",
-      "highlights": ["70+ year history, East Africa institution", "Cardiac surgery and oncology capabilities", "Major international insurance", "Upper Hill medical district"],
+      "highlights": [
+        "70+ year history, East Africa institution",
+        "Cardiac surgery and oncology capabilities",
+        "Major international insurance",
+        "Upper Hill medical district"
+      ],
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "live",
+      "phone": null
     },
     {
       "id": "ke-hospital-03",
@@ -241,7 +183,15 @@
       "rating": 4.3,
       "reviewCount": 334,
       "reviewSource": "Google",
-      "specialties": ["Emergency Medicine", "Internal Medicine", "Cardiology", "Pediatrics", "Obstetrics and Gynecology", "Orthopedics", "General Surgery"],
+      "specialties": [
+        "Emergency Medicine",
+        "Internal Medicine",
+        "Cardiology",
+        "Pediatrics",
+        "Obstetrics and Gynecology",
+        "Orthopedics",
+        "General Surgery"
+      ],
       "enrichment": {
         "diasporaVetted": true,
         "internationallyTrained": true,
@@ -259,45 +209,16 @@
         "emergencyAvailable": true
       },
       "description": "One of Nairobi's top three private hospitals, located in Parklands. Known for strong emergency services, good cardiology, and reliable general medicine. Often slightly more accessible in terms of appointment availability than Aga Khan or Nairobi Hospital. Preferred by some diaspora families for pediatrics and OB/GYN. Major insurance acceptance.",
-      "highlights": ["Top 3 Nairobi private hospitals", "Strong emergency services", "Good pediatrics and OB/GYN", "Parklands location"],
+      "highlights": [
+        "Top 3 Nairobi private hospitals",
+        "Strong emergency services",
+        "Good pediatrics and OB/GYN",
+        "Parklands location"
+      ],
       "verified": true,
-      "lastVerified": "2026-11-07"
-    },
-    {
-      "id": "ke-hospital-04",
-      "name": "Karen Hospital",
-      "slug": "karen-hospital",
-      "type": "hospital",
-      "city": "Nairobi",
-      "citySlug": "nairobi",
-      "neighborhood": "Karen",
-      "website": "karenhospital.co.ke",
-      "tier": 1,
-      "listingTier": "verified",
-      "rating": 4.4,
-      "reviewCount": 198,
-      "reviewSource": "Google",
-      "specialties": ["Emergency Medicine", "Internal Medicine", "Obstetrics and Gynecology", "Pediatrics", "General Surgery", "Diagnostics"],
-      "enrichment": {
-        "diasporaVetted": true,
-        "internationallyTrained": true,
-        "englishSpeaking": true,
-        "yellowFeverCert": false,
-        "travelMedicine": false,
-        "generalPractice": true,
-        "obgyn": true,
-        "pediatrics": true,
-        "cardiology": false,
-        "acceptsUSD": true,
-        "acceptsInsurance": true,
-        "whatsappContact": false,
-        "onlineBooking": true,
-        "emergencyAvailable": true
-      },
-      "description": "Modern private hospital in Karen serving the diaspora-heavy southwestern residential belt of Nairobi. Well regarded for obstetrics, gynecology, and pediatrics. Many diaspora returnees choose Karen Hospital for its proximity to Karen, Langata, and Runda, avoiding the Upper Hill commute. Full emergency capabilities. USD and international insurance accepted.",
-      "highlights": ["Serves Karen and Langata diaspora belt", "Strong OB/GYN and pediatrics", "Avoids Upper Hill commute", "USD and international insurance"],
-      "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "live",
+      "phone": null
     },
     {
       "id": "ke-specialist-01",
@@ -313,7 +234,13 @@
       "rating": 4.1,
       "reviewCount": 87,
       "reviewSource": "Google",
-      "specialties": ["General Practice", "Occupational Health", "Diagnostics", "Minor Procedures", "Pharmacy"],
+      "specialties": [
+        "General Practice",
+        "Occupational Health",
+        "Diagnostics",
+        "Minor Procedures",
+        "Pharmacy"
+      ],
       "enrichment": {
         "diasporaVetted": false,
         "internationallyTrained": false,
@@ -331,81 +258,16 @@
         "emergencyAvailable": false
       },
       "description": "Multi-site clinic network serving Nairobi's professional community. Good for routine GP consultations, annual check-ups, and minor procedures. Insurance-linked, making it very accessible for diaspora residents with Kenya or international health coverage. Multiple locations across Nairobi reduce commute friction.",
-      "highlights": ["Multi-site Nairobi network", "Insurance-linked, accessible pricing", "Routine GP and check-ups", "Multiple convenient locations"],
+      "highlights": [
+        "Multi-site Nairobi network",
+        "Insurance-linked, accessible pricing",
+        "Routine GP and check-ups",
+        "Multiple convenient locations"
+      ],
       "verified": true,
-      "lastVerified": "2026-11-07"
-    },
-    {
-      "id": "ke-specialist-02",
-      "name": "Nairobi Women's Hospital",
-      "slug": "nairobi-womens-hospital",
-      "type": "hospital",
-      "city": "Nairobi",
-      "citySlug": "nairobi",
-      "neighborhood": "Hurlingham",
-      "website": "nwhkenya.org",
-      "tier": 2,
-      "listingTier": "basic",
-      "rating": 4.2,
-      "reviewCount": 221,
-      "reviewSource": "Google",
-      "specialties": ["Obstetrics and Gynecology", "Fertility", "Pediatrics", "Internal Medicine", "Counseling"],
-      "enrichment": {
-        "diasporaVetted": false,
-        "internationallyTrained": true,
-        "englishSpeaking": true,
-        "yellowFeverCert": false,
-        "travelMedicine": false,
-        "generalPractice": false,
-        "obgyn": true,
-        "pediatrics": true,
-        "cardiology": false,
-        "acceptsUSD": true,
-        "acceptsInsurance": true,
-        "whatsappContact": false,
-        "onlineBooking": false,
-        "emergencyAvailable": true
-      },
-      "description": "Nairobi's dedicated women's health hospital with strong obstetrics, gynecology, and fertility services. Recommended for diaspora women returning to deliver or access reproductive health services in Nairobi. Multiple locations. Known for professional female-led clinical environment. Major insurer acceptance.",
-      "highlights": ["Dedicated women's health hospital", "Strong fertility programme", "Female-led clinical environment", "Major insurer acceptance"],
-      "verified": true,
-      "lastVerified": "2026-11-07"
-    },
-    {
-      "id": "ke-specialist-03",
-      "name": "Dr. Kamau Cardiology and Internal Medicine",
-      "slug": "kamau-cardiology-internal-medicine",
-      "type": "specialist",
-      "city": "Nairobi",
-      "citySlug": "nairobi",
-      "neighborhood": "Upper Hill",
-      "website": "kamaucardiology.co.ke",
-      "tier": 2,
-      "listingTier": "basic",
-      "rating": null,
-      "reviewCount": null,
-      "reviewSource": null,
-      "specialties": ["Cardiology", "Internal Medicine", "Hypertension", "Diabetes Management"],
-      "enrichment": {
-        "diasporaVetted": false,
-        "internationallyTrained": true,
-        "englishSpeaking": true,
-        "yellowFeverCert": false,
-        "travelMedicine": false,
-        "generalPractice": false,
-        "obgyn": false,
-        "pediatrics": false,
-        "cardiology": true,
-        "acceptsUSD": true,
-        "acceptsInsurance": false,
-        "whatsappContact": true,
-        "onlineBooking": false,
-        "emergencyAvailable": false
-      },
-      "description": "Specialist internist and cardiologist in Upper Hill. UK-trained with post-graduate fellowship in cardiology. Sees diaspora patients for cardiovascular evaluation, hypertension management, and second opinions. USD direct pay. Referred by Aga Khan and Nairobi Hospital.",
-      "highlights": ["UK-trained cardiologist", "Second opinion services", "Upper Hill location", "USD direct pay"],
-      "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "live",
+      "phone": null
     },
     {
       "id": "ke-clinic-01",
@@ -421,7 +283,13 @@
       "rating": 4.0,
       "reviewCount": 187,
       "reviewSource": "Google",
-      "specialties": ["Emergency Medicine", "Internal Medicine", "Pediatrics", "Oncology", "General Surgery"],
+      "specialties": [
+        "Emergency Medicine",
+        "Internal Medicine",
+        "Pediatrics",
+        "Oncology",
+        "General Surgery"
+      ],
       "enrichment": {
         "diasporaVetted": false,
         "internationallyTrained": true,
@@ -439,9 +307,16 @@
         "emergencyAvailable": true
       },
       "description": "Mission hospital with strong academic ties and reliable standards. Good for pediatrics and general surgery. Located in South B, useful for those in that area of Nairobi. Insurance-linked, affordable pricing. Well-regarded oncology service. Emergency available 24 hours.",
-      "highlights": ["Mission hospital, reliable standards", "Pediatrics and oncology", "South B location", "24-hour emergency"],
+      "highlights": [
+        "Mission hospital, reliable standards",
+        "Pediatrics and oncology",
+        "South B location",
+        "24-hour emergency"
+      ],
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "live",
+      "phone": null
     },
     {
       "id": "ke-clinic-02",
@@ -457,7 +332,12 @@
       "rating": 3.9,
       "reviewCount": 55,
       "reviewSource": "Google",
-      "specialties": ["General Practice", "Pharmacy", "Diagnostics", "Minor Procedures"],
+      "specialties": [
+        "General Practice",
+        "Pharmacy",
+        "Diagnostics",
+        "Minor Procedures"
+      ],
       "enrichment": {
         "diasporaVetted": false,
         "internationallyTrained": false,
@@ -475,9 +355,315 @@
         "emergencyAvailable": false
       },
       "description": "Walk-in clinic and pharmacy in Parklands. Good for routine GP visits and prescription pickups. Limited specialist scope but functional for minor illness. Insurance accepted. Best used for routine care or as an overflow option when the larger hospitals have long appointment waits.",
-      "highlights": ["Parklands walk-in", "On-site pharmacy", "Local insurance accepted"],
+      "highlights": [
+        "Parklands walk-in",
+        "On-site pharmacy",
+        "Local insurance accepted"
+      ],
       "verified": true,
-      "lastVerified": "2026-11-07"
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "live",
+      "phone": null
+    }
+  ],
+  "shelved": [
+    {
+      "id": "ke-travel-01",
+      "name": "Nairobi Travel Clinic",
+      "slug": "nairobi-travel-clinic",
+      "type": "travel-clinic",
+      "city": "Nairobi",
+      "citySlug": "nairobi",
+      "neighborhood": "Upper Hill",
+      "website": "nairobittravelclinic.com",
+      "tier": 1,
+      "listingTier": "featured",
+      "rating": 4.7,
+      "reviewCount": 94,
+      "reviewSource": "Google",
+      "specialties": [
+        "Travel Medicine",
+        "Yellow Fever Vaccination",
+        "Malaria Prophylaxis",
+        "Pre-Travel Consultation",
+        "Typhoid",
+        "Meningitis",
+        "Rabies Prophylaxis"
+      ],
+      "enrichment": {
+        "diasporaVetted": true,
+        "internationallyTrained": true,
+        "englishSpeaking": true,
+        "yellowFeverCert": true,
+        "travelMedicine": true,
+        "generalPractice": false,
+        "obgyn": false,
+        "pediatrics": false,
+        "cardiology": false,
+        "acceptsUSD": true,
+        "acceptsInsurance": false,
+        "whatsappContact": false,
+        "onlineBooking": true,
+        "emergencyAvailable": false
+      },
+      "description": "Nairobi's most specialized travel medicine clinic, located in Upper Hill near the city's major international hospital corridor. Recognized yellow fever vaccination authority. Serves diaspora visitors, NGO staff, UN personnel, and international travelers arriving or departing from JKIA. Travel medicine physicians trained in tropical medicine and pre-travel health protocols. Full documentation service. USD pricing transparent.",
+      "highlights": [
+        "Upper Hill medical district location",
+        "Official yellow fever authority",
+        "Tropical medicine specialists",
+        "Serves UN and NGO community"
+      ],
+      "verified": true,
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
+    },
+    {
+      "id": "ke-travel-03",
+      "name": "Karen Travel Medicine Centre",
+      "slug": "karen-travel-medicine-centre",
+      "type": "travel-clinic",
+      "city": "Nairobi",
+      "citySlug": "nairobi",
+      "neighborhood": "Karen",
+      "website": "karentravelmed.co.ke",
+      "tier": 2,
+      "listingTier": "basic",
+      "rating": 4.3,
+      "reviewCount": 38,
+      "reviewSource": "Google",
+      "specialties": [
+        "Yellow Fever Vaccination",
+        "Travel Vaccinations",
+        "Malaria Prophylaxis",
+        "Health Certificates"
+      ],
+      "enrichment": {
+        "diasporaVetted": false,
+        "internationallyTrained": false,
+        "englishSpeaking": true,
+        "yellowFeverCert": true,
+        "travelMedicine": true,
+        "generalPractice": false,
+        "obgyn": false,
+        "pediatrics": false,
+        "cardiology": false,
+        "acceptsUSD": true,
+        "acceptsInsurance": false,
+        "whatsappContact": false,
+        "onlineBooking": false,
+        "emergencyAvailable": false
+      },
+      "description": "Travel vaccination clinic in Karen serving the southwestern residential suburb popular with diaspora returnees and international residents. Yellow fever certificates issued on-site. Convenient for those living in Karen, Langata, and Ngong Road corridor who prefer to avoid Upper Hill traffic. USD accepted.",
+      "highlights": [
+        "Karen residential area",
+        "Yellow fever cert on-site",
+        "Convenient for southwest Nairobi",
+        "USD accepted"
+      ],
+      "verified": true,
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
+    },
+    {
+      "id": "ke-travel-04",
+      "name": "Westlands Vaccination and Travel Clinic",
+      "slug": "westlands-vaccination-travel-clinic",
+      "type": "travel-clinic",
+      "city": "Nairobi",
+      "citySlug": "nairobi",
+      "neighborhood": "Westlands",
+      "website": "westlandsvaccine.com",
+      "tier": 2,
+      "listingTier": "basic",
+      "rating": 4.0,
+      "reviewCount": 27,
+      "reviewSource": "Google",
+      "specialties": [
+        "Yellow Fever Vaccination",
+        "Travel Vaccines",
+        "Health Certificates"
+      ],
+      "enrichment": {
+        "diasporaVetted": false,
+        "internationallyTrained": false,
+        "englishSpeaking": true,
+        "yellowFeverCert": true,
+        "travelMedicine": false,
+        "generalPractice": false,
+        "obgyn": false,
+        "pediatrics": false,
+        "cardiology": false,
+        "acceptsUSD": false,
+        "acceptsInsurance": false,
+        "whatsappContact": false,
+        "onlineBooking": false,
+        "emergencyAvailable": false
+      },
+      "description": "Walk-in vaccination clinic in Westlands. Yellow fever certificates and standard travel vaccinations. Good fallback option for those in the Westlands and Parklands area needing documentation before travel. KES pricing. Walk-in only.",
+      "highlights": [
+        "Westlands location",
+        "Walk-in service",
+        "Yellow fever certs"
+      ],
+      "verified": true,
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
+    },
+    {
+      "id": "ke-hospital-04",
+      "name": "Karen Hospital",
+      "slug": "karen-hospital",
+      "type": "hospital",
+      "city": "Nairobi",
+      "citySlug": "nairobi",
+      "neighborhood": "Karen",
+      "website": "karenhospital.co.ke",
+      "tier": 1,
+      "listingTier": "verified",
+      "rating": 4.4,
+      "reviewCount": 198,
+      "reviewSource": "Google",
+      "specialties": [
+        "Emergency Medicine",
+        "Internal Medicine",
+        "Obstetrics and Gynecology",
+        "Pediatrics",
+        "General Surgery",
+        "Diagnostics"
+      ],
+      "enrichment": {
+        "diasporaVetted": true,
+        "internationallyTrained": true,
+        "englishSpeaking": true,
+        "yellowFeverCert": false,
+        "travelMedicine": false,
+        "generalPractice": true,
+        "obgyn": true,
+        "pediatrics": true,
+        "cardiology": false,
+        "acceptsUSD": true,
+        "acceptsInsurance": true,
+        "whatsappContact": false,
+        "onlineBooking": true,
+        "emergencyAvailable": true
+      },
+      "description": "Modern private hospital in Karen serving the diaspora-heavy southwestern residential belt of Nairobi. Well regarded for obstetrics, gynecology, and pediatrics. Many diaspora returnees choose Karen Hospital for its proximity to Karen, Langata, and Runda, avoiding the Upper Hill commute. Full emergency capabilities. USD and international insurance accepted.",
+      "highlights": [
+        "Serves Karen and Langata diaspora belt",
+        "Strong OB/GYN and pediatrics",
+        "Avoids Upper Hill commute",
+        "USD and international insurance"
+      ],
+      "verified": true,
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
+    },
+    {
+      "id": "ke-specialist-02",
+      "name": "Nairobi Women's Hospital",
+      "slug": "nairobi-womens-hospital",
+      "type": "hospital",
+      "city": "Nairobi",
+      "citySlug": "nairobi",
+      "neighborhood": "Hurlingham",
+      "website": "nwhkenya.org",
+      "tier": 2,
+      "listingTier": "basic",
+      "rating": 4.2,
+      "reviewCount": 221,
+      "reviewSource": "Google",
+      "specialties": [
+        "Obstetrics and Gynecology",
+        "Fertility",
+        "Pediatrics",
+        "Internal Medicine",
+        "Counseling"
+      ],
+      "enrichment": {
+        "diasporaVetted": false,
+        "internationallyTrained": true,
+        "englishSpeaking": true,
+        "yellowFeverCert": false,
+        "travelMedicine": false,
+        "generalPractice": false,
+        "obgyn": true,
+        "pediatrics": true,
+        "cardiology": false,
+        "acceptsUSD": true,
+        "acceptsInsurance": true,
+        "whatsappContact": false,
+        "onlineBooking": false,
+        "emergencyAvailable": true
+      },
+      "description": "Nairobi's dedicated women's health hospital with strong obstetrics, gynecology, and fertility services. Recommended for diaspora women returning to deliver or access reproductive health services in Nairobi. Multiple locations. Known for professional female-led clinical environment. Major insurer acceptance.",
+      "highlights": [
+        "Dedicated women's health hospital",
+        "Strong fertility programme",
+        "Female-led clinical environment",
+        "Major insurer acceptance"
+      ],
+      "verified": true,
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
+    },
+    {
+      "id": "ke-specialist-03",
+      "name": "Dr. Kamau Cardiology and Internal Medicine",
+      "slug": "kamau-cardiology-internal-medicine",
+      "type": "specialist",
+      "city": "Nairobi",
+      "citySlug": "nairobi",
+      "neighborhood": "Upper Hill",
+      "website": "kamaucardiology.co.ke",
+      "tier": 2,
+      "listingTier": "basic",
+      "rating": null,
+      "reviewCount": null,
+      "reviewSource": null,
+      "specialties": [
+        "Cardiology",
+        "Internal Medicine",
+        "Hypertension",
+        "Diabetes Management"
+      ],
+      "enrichment": {
+        "diasporaVetted": false,
+        "internationallyTrained": true,
+        "englishSpeaking": true,
+        "yellowFeverCert": false,
+        "travelMedicine": false,
+        "generalPractice": false,
+        "obgyn": false,
+        "pediatrics": false,
+        "cardiology": true,
+        "acceptsUSD": true,
+        "acceptsInsurance": false,
+        "whatsappContact": false,
+        "onlineBooking": false,
+        "emergencyAvailable": false
+      },
+      "description": "Specialist internist and cardiologist in Upper Hill. UK-trained with post-graduate fellowship in cardiology. Sees diaspora patients for cardiovascular evaluation, hypertension management, and second opinions. USD direct pay. Referred by Aga Khan and Nairobi Hospital.",
+      "highlights": [
+        "UK-trained cardiologist",
+        "Second opinion services",
+        "Upper Hill location",
+        "USD direct pay"
+      ],
+      "verified": true,
+      "lastVerified": "2026-11-07",
+      "websiteStatus": "dead",
+      "phone": null,
+      "reason": "Domain unregistered or dead as of Nov 2026 verification. No phone found. AI-generated entry pending replacement with verified data."
     }
   ]
 }
